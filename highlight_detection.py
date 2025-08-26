@@ -43,7 +43,7 @@ def iter_frame_dirs(
 def encode_text(model, tokenizer, tags):
     text_embeddings_dict = {}
     for idx, tag in enumerate(tags):
-        input_id = tokenizer(tag)
+        input_id = tokenizer(tag).to(args.device)
         with torch.no_grad(), torch.cuda.amp.autocast():
             text_embedding = model.encode_text(input_id)
             text_embedding /= text_embedding.norm(dim=-1, keepdim=True)
@@ -62,7 +62,7 @@ def encode_vision(model, image_processor, args):
                 print(f"❌ Skipping {image_dir}: {e}")
                 continue    
 
-            image_tensor = image_processor(image).unsqueeze(0)
+            image_tensor = image_processor(image).unsqueeze(0).to(args.device)
 
             with torch.no_grad(), torch.cuda.amp.autocast():
                 image_embedding = model.encode_image(image_tensor)
@@ -92,11 +92,12 @@ if __name__ == "__main__":
     tags = ["fried noodle", "cat", "food", "dog on the grass", "burger", "pizza"]
 
     model, _, image_processor = mobileclip.create_model_and_transforms(args.model_name, pretrained=args.model_path)
+    model = model.to(args.device).eval()
     tokenizer = mobileclip.get_tokenizer(args.model_name)
 
     # process text 
-    text_embeddings = encode_text(model, tokenizer, tags)
-    text_embeddings_batch = model.encode_text(tokenizer(tags))
+    text_embeddings = encode_text(model, tokenizer, tags) # dict: {tag : text_embedding}
+    text_embeddings_batch = model.encode_text(tokenizer(tags).to(args.device)).half() # text embeddings tensor
 
     for k,v in enumerate(text_embeddings):
         print(f"[{k}] {v}: {(text_embeddings[v].type(), text_embeddings[v].shape, text_embeddings[v][:, 10:20])}")
