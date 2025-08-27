@@ -75,9 +75,10 @@ def encode_vision(model, image_processor, args):
     return video_embeddings
 
 
-def visualize_tagging_on_video(frame_dirs, tags, frames_tagging_cos, threshold, args, frames_dir):
+def visualize_tagging_on_video(frame_dirs, tags, frames_tagging_cos, threshold, args, frames_dir, max_tags_to_show=5):
     """
-    Visualizes tag similarity scores on video frames and saves as a video.
+    Visualizes tag similarity scores by appending a bottom panel to each frame and saves as video.
+    
     Args:
         frame_dirs (List[Path]): List of N image paths.
         tags (List[str]): List of M tag strings.
@@ -85,6 +86,7 @@ def visualize_tagging_on_video(frame_dirs, tags, frames_tagging_cos, threshold, 
         threshold (float): Minimum score to display tag.
         args: Argument object with args.output_dir.
         frames_dir: Current directory name for output naming.
+        max_tags_to_show (int): Maximum number of tags to display per frame, sorted by score descending.
     """
     print(len(frame_dirs), len(frames_tagging_cos))
     assert len(frame_dirs) == len(frames_tagging_cos), "Frame count mismatch"
@@ -92,10 +94,17 @@ def visualize_tagging_on_video(frame_dirs, tags, frames_tagging_cos, threshold, 
     os.makedirs(args.output_dir, exist_ok=True)
     output_path = os.path.join(args.output_dir, f"{Path(frames_dir).stem}.mp4")
 
-    # Read one frame to get size
+    # Get size from one sample frame
     sample_frame = cv2.imread(str(frame_dirs[0]))
-    height, width, _ = sample_frame.shape
-    out = cv2.VideoWriter(output_path, cv2.VideoWriter_fourcc(*'mp4v'), 10, (width, height))
+    if sample_frame is None:
+        raise ValueError(f"Cannot read sample frame: {frame_dirs[0]}")
+    h, w, _ = sample_frame.shape
+
+    # Reserve extra space at bottom for tag overlay
+    panel_height = 60 + 30 * max_tags_to_show
+    output_size = (w, h + panel_height)
+
+    out = cv2.VideoWriter(output_path, cv2.VideoWriter_fourcc(*'mp4v'), 10, output_size)
 
     for idx, frame_path in enumerate(frame_dirs):
         frame = cv2.imread(str(frame_path))
@@ -104,20 +113,21 @@ def visualize_tagging_on_video(frame_dirs, tags, frames_tagging_cos, threshold, 
             continue
 
         tag_scores = frames_tagging_cos[idx]
-        tag_texts = []
+        filtered = [(tags[i], tag_scores[i]) for i in range(len(tag_scores)) if tag_scores[i] >= threshold]
+        top_tags = sorted(filtered, key=lambda x: x[1], reverse=True)[:max_tags_to_show]
 
-        for i, score in enumerate(tag_scores):
-            if score >= threshold:
-                tag_texts.append(f"{tags[i]}: {score:.2f}")
+        # Create a bottom panel
+        panel = np.ones((panel_height, w, 3), dtype=np.uint8) * 255  # white background
 
-        # Draw tags
-        y0 = 30
-        dy = 30
-        for i, tag_text in enumerate(tag_texts):
-            y = y0 + i * dy
-            cv2.putText(frame, tag_text, (10, y), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
+        for i, (tag, score) in enumerate(top_tags):
+            y = 30 + i * 30
+            text = f"{tag}: {score:.2f}"
+            cv2.putText(panel, text, (10, y), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
 
-        out.write(frame)
+        # Stack frame and panel vertically
+        combined_frame = np.vstack((frame, panel))
+
+        out.write(combined_frame)
 
     out.release()
     print(f"✅ Saved visualized video: {output_path}")
@@ -140,7 +150,17 @@ if __name__ == "__main__":
     args.model_name = os.path.splitext(os.path.basename(args.model_path))[0]
 
     # process tags
-    tags = ["volcano",
+    tags = [
+      "sports",
+      "tennis",
+      "bedminton",
+      "driving",
+      "walking",
+      "traffic",
+      "vehicle",  
+        
+        
+      "volcano",
       "sea view",
       "beach",
       "forest",
@@ -342,11 +362,9 @@ if __name__ == "__main__":
             for idx, tag in enumerate(tags):
                 detection[tag] = text_probs[0, idx].item()
 
-            print(f"| {image_dir}: {detection}")
-
             for text_idx, (text, text_embedding) in enumerate(text_embeddings.items()):
                 cos_sim = F.cosine_similarity(image_embedding, text_embedding.expand_as(image_embedding), dim=1)  # shape: [256]
-                print(f"|---->{text}: {cos_sim.max()}")
+                # print(f"|---->{text}: {cos_sim.max()}")
                 frame_tagging_cos.append(cos_sim.max())
             frames_tagging_cos.append(frame_tagging_cos)
             frame_dirs.append(image_dir)
