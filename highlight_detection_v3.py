@@ -3,11 +3,10 @@ import argparse
 import os
 import sys
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 from datetime import datetime
 
 # ---- Optional determinism env var before importing torch ----
-# (Still set again inside --deterministic block for safety.)
 os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":16:8")
 
 import random
@@ -21,17 +20,11 @@ import matplotlib.pyplot as plt
 
 # ========== Determinism helper ==========
 def setup_determinism(seed: int = 1234):
-    """
-    Make runs deterministic as much as possible (PyTorch + cuDNN/cuBLAS).
-    Call this early in main() if args.deterministic is True.
-    """
     os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":16:8")
-
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
-
     torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.deterministic = True
     torch.backends.cuda.matmul.allow_tf32 = False
@@ -41,10 +34,6 @@ def setup_determinism(seed: int = 1234):
 
 # ========== MobileCLIP + tokenizer loader ==========
 def _import_mobileclip_and_tokenize():
-    """
-    Returns (mobileclip_module, tokenizer_fn)
-    tokenizer_fn comes from mobileclip.tokenize or open_clip.tokenize
-    """
     mobileclip_mod = None
     tokenizer_fn = None
     try:
@@ -86,7 +75,6 @@ def encode_images(model, processor, image_paths: List[Path], device: str, batch_
         batch_paths = image_paths[i : i + batch_size]
         imgs = []
         for p in batch_paths:
-            # EXIF-aware, deterministic load
             img = Image.open(p).convert("RGB")
             img = ImageOps.exif_transpose(img)
             imgs.append(processor(img))
@@ -143,7 +131,6 @@ def build_strip_with_labels(
 
     font = font or ImageFont.load_default()
 
-    # Resize to unified height
     resized, widths = [], []
     for p in image_paths:
         im = Image.open(p).convert("RGB")
@@ -166,7 +153,6 @@ def build_strip_with_labels(
     for i, (im, p, w) in enumerate(zip(resized, image_paths, widths)):
         strip.paste(im, (x, 0))
 
-        # Label (truncate to fit)
         name = p.name
         max_px = w - 4
         text = name
@@ -186,21 +172,56 @@ def build_strip_with_labels(
 
         centers_idx_space.append(i)
         centers_px.append(x + w / 2.0)
-
         x += w + frame_margin
 
     return strip, np.array(centers_idx_space, dtype=float), np.array(centers_px, dtype=float)
 
 
+# ========== Fusion helpers ==========
+def safe_norm(x: torch.Tensor) -> torch.Tensor:
+    n = x.norm(p=2)
+    return x / n if n > 0 else x
+
+
+def taf_fuse_single_ref(text_emb: torch.Tensor, ref_img_emb: torch.Tensor, beta: float, gamma: float) -> torch.Tensor:
+    """
+    Text-Aligned Fusion for a single reference image.
+    Returns a normalized fused vector.
+    """
+    dot_it = torch.clamp((ref_img_emb * text_emb).sum(), -1.0, 1.0)
+    i_parallel = dot_it * text_emb
+    i_perp = ref_img_emb - i_parallel
+    i_parallel_n = safe_norm(i_parallel)
+    i_perp_n = safe_norm(i_perp)
+    fused = F.normalize((1.0 - beta) * text_emb + beta * i_parallel_n + gamma * i_perp_n, dim=-1)
+    return fused
+
+
+def taf_fuse_multi_refs(text_emb: torch.Tensor, ref_embs: torch.Tensor, beta: float, gamma: float) -> torch.Tensor:
+    """
+    TAF for multiple reference embeddings (shape [K, D]).
+    Applies TAF per-ref, averages fused vectors, then normalizes.
+    """
+    fused_list = []
+    for k in range(ref_embs.size(0)):
+        fused_k = taf_fuse_single_ref(text_emb, ref_embs[k], beta, gamma)
+        fused_list.append(fused_k)
+    fused_stack = torch.stack(fused_list, dim=0)           # [K, D]
+    fused_mean = fused_stack.mean(dim=0)                   # [D]
+    return F.normalize(fused_mean, dim=-1)                 # [D]
+
+
 # ========== Main ==========
 def main():
     parser = argparse.ArgumentParser(
-        description="MobileCLIP retrieval with TAF, pixel-aligned plots, determinism option, and timestamped outputs."
+        description="MobileCLIP retrieval with TAF (single & multi-ref), pixel-aligned plots, determinism, timestamped outputs."
     )
     parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip_s0.pt")
     parser.add_argument("--device", type=str, default="cuda:0")
     parser.add_argument("--frames_dir", type=str, required=True)
     parser.add_argument("--ref_image", type=str, required=True)
+    parser.add_argument("--ref_images_dir", type=str, default=None,
+                        help="Optional directory of multiple reference images for multi-ref TAF fusion.")
     parser.add_argument("--text", type=str, required=True)
     # Blends
     parser.add_argument("--alpha", type=float, default=0.5, help="Classic blend weight for text (0=image, 1=text).")
@@ -253,58 +274,65 @@ def main():
     model, _, image_processor = mobileclip.create_model_and_transforms(model_name)
     model.to(device).eval()
 
-    # Load checkpoint (flexible keys)
+    # Load checkpoint
     ckpt = torch.load(args.model_path, map_location="cpu")
     state_dict = ckpt.get("state_dict", ckpt)
     model.load_state_dict(state_dict, strict=False)
 
-    # ---- Encode ----
+    # ---- Encode frames ----
     print(f"Encoding {len(image_paths)} frames ...")
     frame_embs = encode_images(model, image_processor, image_paths, device, args.batch_size)  # [N, D]
 
-    # Reference image (EXIF-aware for encoding & plotting)
-    ref_im_for_encode = Image.open(ref_image_path).convert("RGB")
-    ref_im_for_encode = ImageOps.exif_transpose(ref_im_for_encode)
+    # ---- Encode single ref image ----
     ref_img_emb = encode_images(model, image_processor, [ref_image_path], device, 1).squeeze(0)  # [D]
 
+    # ---- Encode text ----
     text_emb = encode_text(model, tokenizer_fn, args.text, device, args.context_length)  # [D]
 
     # ---- Base similarities ----
-    sim_ref = cosine_sim(frame_embs, ref_img_emb).cpu().numpy()
+    sim_ref  = cosine_sim(frame_embs, ref_img_emb).cpu().numpy()
     sim_text = cosine_sim(frame_embs, text_emb).cpu().numpy()
 
     # Classic weighted-sum blend
-    alpha = float(args.alpha)
+    alpha     = float(args.alpha)
     blend_vec = F.normalize((1.0 - alpha) * ref_img_emb + alpha * text_emb, dim=-1)
     sim_blend = cosine_sim(frame_embs, blend_vec).cpu().numpy()
 
-    # ---- Text-Aligned Fusion (TAF) ----
-    beta = float(args.beta)
+    # ---- Single-ref TAF ----
+    beta  = float(args.beta)
     gamma = float(args.gamma)
-
-    dot_it = torch.clamp((ref_img_emb * text_emb).sum(), -1.0, 1.0)
-    i_parallel = dot_it * text_emb            # along text direction
-    i_perp = ref_img_emb - i_parallel         # orthogonal residual
-
-    def safe_norm(x: torch.Tensor) -> torch.Tensor:
-        n = x.norm(p=2)
-        return x / n if n > 0 else x
-
-    i_parallel_n = safe_norm(i_parallel)
-    i_perp_n = safe_norm(i_perp)
-
-    taf_vec = F.normalize((1.0 - beta) * text_emb + beta * i_parallel_n + gamma * i_perp_n, dim=-1)
+    taf_vec = taf_fuse_single_ref(text_emb, ref_img_emb, beta, gamma)
     sim_taf = cosine_sim(frame_embs, taf_vec).cpu().numpy()
+
+    # ---- Multi-ref TAF (optional) ----
+    sim_multi_taf: Optional[np.ndarray] = None
+    multi_ref_count = 0
+    if args.ref_images_dir:
+        ref_dir = Path(args.ref_images_dir)
+        if ref_dir.exists() and ref_dir.is_dir():
+            multi_ref_paths = list_image_paths(ref_dir)
+            if multi_ref_paths:
+                ref_embs_multi = encode_images(model, image_processor, multi_ref_paths, device, args.batch_size)  # [K, D]
+                multi_ref_count = ref_embs_multi.size(0)
+                taf_multi_vec = taf_fuse_multi_refs(text_emb, ref_embs_multi, beta, gamma)  # [D]
+                sim_multi_taf = cosine_sim(frame_embs, taf_multi_vec).cpu().numpy()
+            else:
+                print(f"[Warn] No images found in --ref_images_dir={ref_dir}", file=sys.stderr)
+        else:
+            print(f"[Warn] --ref_images_dir not found or not a dir: {ref_dir}", file=sys.stderr)
 
     # ---- CSV (timestamped) ----
     csv_path = Path(args.output_csv) if args.output_csv else out_dir / f"{prefix}_scores.csv"
-    df = pd.DataFrame({
+    out_dict = {
         "frame": [str(p) for p in image_paths],
         "sim_text": sim_text,
         "sim_ref_image": sim_ref,
         f"sim_blend_alpha_{alpha:.2f}": sim_blend,
         f"sim_taf_beta_{beta:.2f}_gamma_{gamma:.2f}": sim_taf,
-    })
+    }
+    if sim_multi_taf is not None:
+        out_dict[f"sim_multi_taf_beta_{beta:.2f}_gamma_{gamma:.2f}_K_{multi_ref_count}"] = sim_multi_taf
+    df = pd.DataFrame(out_dict)
     df.to_csv(csv_path, index=False)
     print(f"Saved CSV to: {csv_path}")
 
@@ -328,13 +356,19 @@ def main():
     N = len(image_paths)
 
     base_dpi = float(args.dpi)
-    fig_w_in = max(10.0, strip_w / base_dpi)  # whole figure scales with number of frames (no hard cap)
-    fig_h_in = 15.0                            # tall enough for 6 rows
+    # rows: 6 without multi, 7 with multi
+    num_rows = 7 if sim_multi_taf is not None else 6
+    fig_w_in = max(10.0, strip_w / base_dpi)
+    fig_h_in = 15.0 if num_rows == 6 else 17.0
 
     fig = plt.figure(figsize=(fig_w_in, fig_h_in), dpi=base_dpi)
-    gs = fig.add_gridspec(6, 1, height_ratios=[2.0, 2.3, 1.4, 1.4, 1.4, 1.4], hspace=0.5)
+    if num_rows == 6:
+        ratios = [2.0, 2.3, 1.4, 1.4, 1.4, 1.4]
+    else:
+        ratios = [2.0, 2.3, 1.35, 1.35, 1.35, 1.35, 1.35]
+    gs = fig.add_gridspec(num_rows, 1, height_ratios=ratios, hspace=0.5)
 
-    # Row 1: reference image + text (EXIF-aware for display)
+    # Row 1: reference image + text
     gs_row1 = gs[0].subgridspec(1, 2, width_ratios=[1.2, 1.0], wspace=0.2)
     ax_ref = fig.add_subplot(gs_row1[0, 0])
     ref_im_for_plot = Image.open(ref_image_path).convert("RGB")
@@ -349,14 +383,14 @@ def main():
         f"Text Prompt:\n{args.text}\n\n"
         f"Model: {model_name}\n"
         f"Frames: {N}\n"
-        f"alpha (classic): {alpha:.2f}\n"
-        f"β (TAF parallel): {beta:.2f}\n"
-        f"γ (TAF orthogonal): {gamma:.2f}\n"
-        f"Deterministic: {'Yes' if args.deterministic else 'No'}"
+        f"α (classic): {alpha:.2f} | β (TAF∥): {beta:.2f} | γ (TAF⊥): {gamma:.2f}\n"
+        f"Multi-Ref: {'Yes' if sim_multi_taf is not None else 'No'}"
+        + (f' | K={multi_ref_count}' if sim_multi_taf is not None else '')
+        + f"\nDeterministic: {'Yes' if args.deterministic else 'No'}"
     )
     ax_text.text(0.01, 0.98, info, va="top", ha="left", fontsize=11, wrap=True)
 
-    # Row 2: frame strip (pixel extent so axes match curves)
+    # Row 2: frame strip
     ax_strip = fig.add_subplot(gs[1])
     ax_strip.imshow(strip_np, extent=[0, strip_w, 0, strip_h])
     ax_strip.set_xlim(0, strip_w)
@@ -364,7 +398,7 @@ def main():
     ax_strip.set_title("Frame Sequence (names under each frame)", fontsize=12)
     ax_strip.axis("off")
 
-    # Rows 3–6: similarity curves at pixel centers, sharing x-range with strip
+    # Curve helper
     def plot_curve(ax, title, y):
         ax.plot(centers_px, y)
         ax.set_xlim(0, strip_w)
@@ -373,30 +407,25 @@ def main():
         ax.grid(True, alpha=0.3)
         ax.tick_params(axis='x', which='both', labelbottom=False)
 
-    ax3 = fig.add_subplot(gs[2])
-    plot_curve(ax3, "Text→Frame Similarity", sim_text)
+    # Rows 3..: curves
+    ax3 = fig.add_subplot(gs[2]); plot_curve(ax3, "Text→Frame Similarity", sim_text)
+    ax4 = fig.add_subplot(gs[3]); plot_curve(ax4, "Ref Image→Frame Similarity", sim_ref)
+    ax5 = fig.add_subplot(gs[4]); plot_curve(ax5, f"Blended→Frame Similarity (α={alpha:.2f})", sim_blend)
+    ax6 = fig.add_subplot(gs[5]); plot_curve(ax6, f"TAF→Frame Similarity (β={beta:.2f}, γ={gamma:.2f})", sim_taf)
 
-    ax4 = fig.add_subplot(gs[3], sharex=ax3)
-    plot_curve(ax4, "Ref Image→Frame Similarity", sim_ref)
-
-    ax5 = fig.add_subplot(gs[4], sharex=ax3)
-    plot_curve(ax5, f"Blended→Frame Similarity (α={alpha:.2f})", sim_blend)
-
-    ax6 = fig.add_subplot(gs[5], sharex=ax3)
-    ax6.plot(centers_px, sim_taf)
-    ax6.set_xlim(0, strip_w)
-    ax6.set_xlabel("Frame centers (pixel aligned)")
-    ax6.set_ylabel("cosine")
-    ax6.set_title(f"TAF→Frame Similarity (β={beta:.2f}, γ={gamma:.2f})")
-    ax6.grid(True, alpha=0.3)
-    ax6.tick_params(axis='x', which='both', labelbottom=False)
+    if sim_multi_taf is not None:
+        ax7 = fig.add_subplot(gs[6])
+        plot_curve(ax7, f"Multi-Ref TAF→Frame Similarity (K={multi_ref_count})", sim_multi_taf)
+        ax7.set_xlabel("Frame centers (pixel aligned)")
+    else:
+        ax6.set_xlabel("Frame centers (pixel aligned)")
 
     vis_path = out_dir / f"{prefix}_overview.png"
     plt.savefig(vis_path, bbox_inches="tight", dpi=args.dpi)
     plt.close(fig)
     print(f"Saved visualization to: {vis_path}")
 
-    # ---- Top-K prints (after plotting, for clean logs) ----
+    # ---- Top-K prints ----
     def print_topk(series: pd.Series, title: str, k: int):
         order = series.to_numpy().argsort()[::-1][:k]
         print(f"\nTop {k} frames — {title}")
@@ -409,6 +438,9 @@ def main():
     print_topk(df[blend_col], f"Blended Retrieval (alpha={alpha:.2f})", args.topk)
     taf_col = [c for c in df.columns if c.startswith("sim_taf_beta_")][0]
     print_topk(df[taf_col], f"TAF Retrieval (β={beta:.2f}, γ={gamma:.2f})", args.topk)
+    if sim_multi_taf is not None:
+        multi_col = [c for c in df.columns if c.startswith("sim_multi_taf_beta_")][0]
+        print_topk(df[multi_col], f"Multi-Ref TAF Retrieval (K={multi_ref_count})", args.topk)
 
 
 if __name__ == "__main__":
