@@ -3,25 +3,56 @@ import argparse
 import os
 import sys
 from pathlib import Path
-from typing import List
+from typing import List, Tuple
+from datetime import datetime
 
+# ---- Optional determinism env var before importing torch ----
+# (Still set again inside --deterministic block for safety.)
+os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":16:8")
+
+import random
+import numpy as np
 import torch
 import torch.nn.functional as F
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 
-# --- Robust imports for MobileCLIP + tokenization ---
+
+# ========== Determinism helper ==========
+def setup_determinism(seed: int = 1234):
+    """
+    Make runs deterministic as much as possible (PyTorch + cuDNN/cuBLAS).
+    Call this early in main() if args.deterministic is True.
+    """
+    os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":16:8")
+
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
+    torch.use_deterministic_algorithms(True)
+
+
+# ========== MobileCLIP + tokenizer loader ==========
 def _import_mobileclip_and_tokenize():
-    mobileclip = None
+    """
+    Returns (mobileclip_module, tokenizer_fn)
+    tokenizer_fn comes from mobileclip.tokenize or open_clip.tokenize
+    """
+    mobileclip_mod = None
     tokenizer_fn = None
     try:
         import mobileclip  # noqa: F401
-        mobileclip = sys.modules["mobileclip"]
-        tokenizer_fn = getattr(mobileclip, "tokenize", None)
+        mobileclip_mod = sys.modules["mobileclip"]
+        tokenizer_fn = getattr(mobileclip_mod, "tokenize", None)
     except Exception:
-        mobileclip = None
+        mobileclip_mod = None
 
     if tokenizer_fn is None:
         try:
@@ -30,19 +61,14 @@ def _import_mobileclip_and_tokenize():
         except Exception:
             tokenizer_fn = None
 
-    if mobileclip is None:
-        raise ImportError(
-            "Could not import 'mobileclip'. Please install/ensure it's on PYTHONPATH."
-        )
-
+    if mobileclip_mod is None:
+        raise ImportError("Could not import 'mobileclip'. Please install/ensure it's on PYTHONPATH.")
     if tokenizer_fn is None:
-        raise ImportError(
-            "Could not find a tokenizer. Ensure either 'mobileclip.tokenize' or 'open_clip.tokenize' is available."
-        )
-
-    return mobileclip, tokenizer_fn
+        raise ImportError("Could not find a tokenizer. Ensure either 'mobileclip.tokenize' or 'open_clip.tokenize' is available.")
+    return mobileclip_mod, tokenizer_fn
 
 
+# ========== IO helpers ==========
 def list_image_paths(frames_dir: Path) -> List[Path]:
     exts = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
     files = [p for p in sorted(frames_dir.iterdir()) if p.suffix.lower() in exts]
@@ -51,6 +77,7 @@ def list_image_paths(frames_dir: Path) -> List[Path]:
     return files
 
 
+# ========== Encoders ==========
 @torch.no_grad()
 def encode_images(model, processor, image_paths: List[Path], device: str, batch_size: int) -> torch.Tensor:
     """Return L2-normalized image embeddings of shape [N, D]."""
@@ -59,7 +86,9 @@ def encode_images(model, processor, image_paths: List[Path], device: str, batch_
         batch_paths = image_paths[i : i + batch_size]
         imgs = []
         for p in batch_paths:
+            # EXIF-aware, deterministic load
             img = Image.open(p).convert("RGB")
+            img = ImageOps.exif_transpose(img)
             imgs.append(processor(img))
         pixel_batch = torch.stack(imgs, dim=0).to(device)
         feats = model.encode_image(pixel_batch)
@@ -82,141 +111,292 @@ def cosine_sim(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
     return (a * b).sum(dim=-1)
 
 
-def build_horizontal_montage(image_paths: List[Path], target_height: int = 120, max_width: int = 8000) -> Image.Image:
+# ========== Visualization builders ==========
+def _truncate_middle(s: str, max_chars: int) -> str:
+    if len(s) <= max_chars:
+        return s
+    if max_chars <= 3:
+        return s[:max_chars]
+    keep = (max_chars - 3) // 2
+    return f"{s[:keep]}...{s[-keep:]}"
+
+
+def build_strip_with_labels(
+    image_paths: List[Path],
+    frame_height: int = 200,
+    frame_margin: int = 8,
+    label_height: int = 28,
+    font: ImageFont.ImageFont | None = None,
+    text_color=(240, 240, 240),
+    bg_color=(0, 0, 0),
+) -> Tuple[Image.Image, np.ndarray, np.ndarray]:
     """
-    Create a single-row montage of all frames (kept in order).
-    Each frame is resized to target_height while preserving aspect ratio.
-    If total width exceeds max_width, we downscale the entire strip at the end.
+    Build a single-row strip of frames (kept order) with margins + filename labels.
+    Returns:
+      strip (PIL.Image)
+      centers_idx_space (np.ndarray): frame indices 0..N-1
+      centers_px (np.ndarray): pixel x-centers in the final strip image
     """
-    # Load & resize each image to target_height
-    resized = []
-    widths = []
-    total_w = 0
+    N = len(image_paths)
+    if N == 0:
+        raise ValueError("No images to montage")
+
+    font = font or ImageFont.load_default()
+
+    # Resize to unified height
+    resized, widths = [], []
     for p in image_paths:
         im = Image.open(p).convert("RGB")
+        im = ImageOps.exif_transpose(im)
         w, h = im.size
-        if h == 0:
-            continue
-        scale = target_height / h
+        scale = frame_height / max(1, h)
         new_w = max(1, int(round(w * scale)))
-        im_resized = im.resize((new_w, target_height), Image.BILINEAR)
-        resized.append(im_resized)
+        resized_im = im.resize((new_w, frame_height), Image.BILINEAR)
+        resized.append(resized_im)
         widths.append(new_w)
-        total_w += new_w
 
-    if total_w == 0:
-        raise ValueError("Could not build montage: zero total width")
+    total_w = sum(widths) + frame_margin * (N - 1)
+    total_h = frame_height + label_height
 
-    strip = Image.new("RGB", (total_w, target_height), (0, 0, 0))
+    strip = Image.new("RGB", (total_w, total_h), bg_color)
+    draw = ImageDraw.Draw(strip)
+
     x = 0
-    for im in resized:
+    centers_idx_space, centers_px = [], []
+    for i, (im, p, w) in enumerate(zip(resized, image_paths, widths)):
         strip.paste(im, (x, 0))
-        x += im.size[0]
 
-    # Downscale if too wide for typical renderers
-    if strip.size[0] > max_width:
-        scale = max_width / strip.size[0]
-        new_w = int(round(strip.size[0] * scale))
-        new_h = int(round(strip.size[1] * scale))
-        strip = strip.resize((new_w, new_h), Image.BILINEAR)
+        # Label (truncate to fit)
+        name = p.name
+        max_px = w - 4
+        text = name
+        if hasattr(font, "getlength"):
+            while font.getlength(text) > max_px and len(text) > 4:
+                text = _truncate_middle(text, len(text) - 1)
+            tw = font.getlength(text)
+        else:
+            avg_char_px = 6.0
+            max_chars = max(4, int(max_px / avg_char_px))
+            text = _truncate_middle(text, max_chars)
+            tw = len(text) * 6.0
 
-    return strip
+        tx = x + (w - tw) / 2
+        ty = frame_height + (label_height - (font.size if hasattr(font, "size") else 10)) / 2 - 1
+        draw.text((tx, ty), text, font=font, fill=text_color)
+
+        centers_idx_space.append(i)
+        centers_px.append(x + w / 2.0)
+
+        x += w + frame_margin
+
+    return strip, np.array(centers_idx_space, dtype=float), np.array(centers_px, dtype=float)
 
 
+# ========== Main ==========
 def main():
     parser = argparse.ArgumentParser(
-        description="MobileCLIP retrieval over frames with visualization (ref image, text, blended)."
+        description="MobileCLIP retrieval with TAF, pixel-aligned plots, determinism option, and timestamped outputs."
     )
-    parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip_s0.pt",
-                        help="Path to MobileCLIP checkpoint (.pt/.pth).")
-    parser.add_argument("--device", type=str, default="cuda:0", help="Device, e.g., cuda:0 or cpu.")
-    parser.add_argument("--frames_dir", type=str, required=True,
-                        help="Directory containing extracted video frames (images).")
-    parser.add_argument("--ref_image", type=str, required=True, help="Reference image file path.")
-    parser.add_argument("--text", type=str, required=True, help="Text prompt.")
-    parser.add_argument("--alpha", type=float, default=0.5,
-                        help="Blend weight for text (0=image-only, 1=text-only).")
-    parser.add_argument("--batch_size", type=int, default=64, help="Batch size for image encoding.")
-    parser.add_argument("--context_length", type=int, default=77, help="Text tokenizer context length.")
-    parser.add_argument("--output_csv", type=str, default=None,
-                        help="CSV path; if omitted, saved under --output_dir.")
-    parser.add_argument("--output_dir", type=str, required=True,
-                        help="Directory to save outputs (CSV + visualization).")
-    parser.add_argument("--topk", type=int, default=10, help="Print top-K frames for each method.")
-    parser.add_argument("--montage_height", type=int, default=120,
-                        help="Pixel height for the frame-strip montage row.")
-    parser.add_argument("--fig_width_per_100_frames", type=float, default=10.0,
-                        help="Figure width grows with frame count; width ~= (N/100)*this.")
+    parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip_s0.pt")
+    parser.add_argument("--device", type=str, default="cuda:0")
+    parser.add_argument("--frames_dir", type=str, required=True)
+    parser.add_argument("--ref_image", type=str, required=True)
+    parser.add_argument("--text", type=str, required=True)
+    # Blends
+    parser.add_argument("--alpha", type=float, default=0.5, help="Classic blend weight for text (0=image, 1=text).")
+    parser.add_argument("--beta", type=float, default=0.4, help="TAF weight for text-aligned visual detail (parallel).")
+    parser.add_argument("--gamma", type=float, default=0.1, help="TAF weight for orthogonal visual detail.")
+    # Batching / text
+    parser.add_argument("--batch_size", type=int, default=64)
+    parser.add_argument("--context_length", type=int, default=77)
+    # Outputs
+    parser.add_argument("--output_csv", type=str, default=None)
+    parser.add_argument("--output_dir", type=str, required=True)
+    parser.add_argument("--topk", type=int, default=10)
+    # Visualization
+    parser.add_argument("--frame_height", type=int, default=200)
+    parser.add_argument("--frame_margin", type=int, default=8)
+    parser.add_argument("--label_height", type=int, default=28)
+    parser.add_argument("--label_font_size", type=int, default=12)
+    parser.add_argument("--dpi", type=int, default=150)
+    # Determinism
+    parser.add_argument("--deterministic", action="store_true", help="Enable deterministic execution.")
+    parser.add_argument("--seed", type=int, default=1234, help="Random seed when --deterministic is set.")
     args = parser.parse_args()
 
-    out_dir = Path(args.output_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
+    if args.deterministic:
+        setup_determinism(args.seed)
 
-    # --- Build output naming prefix ---
+    # ---- Timestamped output naming ----
+    time_tag = datetime.now().strftime("%Y%m%d_%H%M%S")
     ref_stem = Path(args.ref_image).stem
-    # use first 5 words from text prompt as clue
     prompt_words = args.text.strip().lower().split()
     clue = "_".join(prompt_words[:5]) if prompt_words else "prompt"
     clue = "".join([c if c.isalnum() or c in "_-" else "_" for c in clue])
-    prefix = f"{ref_stem}__{clue}"
+    prefix = f"{ref_stem}__{clue}__{time_tag}"
 
-    # make dedicated subfolder under --output_dir
-    out_subdir = out_dir / prefix
-    out_subdir.mkdir(parents=True, exist_ok=True)
-    
-    # Imports
+    out_root = Path(args.output_dir)
+    out_dir = out_root / prefix
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    # ---- Load model & tokenizer ----
     mobileclip, tokenizer_fn = _import_mobileclip_and_tokenize()
-
     device = args.device
+
     frames_dir = Path(args.frames_dir)
+    image_paths = list_image_paths(frames_dir)
     ref_image_path = Path(args.ref_image)
     if not ref_image_path.exists():
         raise FileNotFoundError(f"Reference image not found: {ref_image_path}")
 
-    image_paths = list_image_paths(frames_dir)
-
-    # Create model & preprocess
     model_name = os.path.splitext(os.path.basename(args.model_path))[0]
     model, _, image_processor = mobileclip.create_model_and_transforms(model_name)
-    model.to(device)
-    model.eval()
+    model.to(device).eval()
 
-    # Load checkpoint
+    # Load checkpoint (flexible keys)
     ckpt = torch.load(args.model_path, map_location="cpu")
     state_dict = ckpt.get("state_dict", ckpt)
-    missing, unexpected = model.load_state_dict(state_dict, strict=False)
-    if missing:
-        print(f"[Warn] Missing keys in state_dict: {len(missing)}", file=sys.stderr)
-    if unexpected:
-        print(f"[Warn] Unexpected keys in state_dict: {len(unexpected)}", file=sys.stderr)
+    model.load_state_dict(state_dict, strict=False)
 
-    # Encode frames
+    # ---- Encode ----
     print(f"Encoding {len(image_paths)} frames ...")
-    frame_embs = encode_images(model, image_processor, image_paths, device, args.batch_size)
+    frame_embs = encode_images(model, image_processor, image_paths, device, args.batch_size)  # [N, D]
 
-    # Encode ref image + text
-    ref_img_emb = encode_images(model, image_processor, [ref_image_path], device, 1).squeeze(0)
-    text_emb = encode_text(model, tokenizer_fn, args.text, device, args.context_length)
+    # Reference image (EXIF-aware for encoding & plotting)
+    ref_im_for_encode = Image.open(ref_image_path).convert("RGB")
+    ref_im_for_encode = ImageOps.exif_transpose(ref_im_for_encode)
+    ref_img_emb = encode_images(model, image_processor, [ref_image_path], device, 1).squeeze(0)  # [D]
 
-    # Similarities
-    sim_ref = cosine_sim(frame_embs, ref_img_emb).cpu().numpy()     # [N]
-    sim_text = cosine_sim(frame_embs, text_emb).cpu().numpy()       # [N]
+    text_emb = encode_text(model, tokenizer_fn, args.text, device, args.context_length)  # [D]
+
+    # ---- Base similarities ----
+    sim_ref = cosine_sim(frame_embs, ref_img_emb).cpu().numpy()
+    sim_text = cosine_sim(frame_embs, text_emb).cpu().numpy()
+
+    # Classic weighted-sum blend
     alpha = float(args.alpha)
     blend_vec = F.normalize((1.0 - alpha) * ref_img_emb + alpha * text_emb, dim=-1)
-    sim_blend = cosine_sim(frame_embs, blend_vec).cpu().numpy()     # [N]
+    sim_blend = cosine_sim(frame_embs, blend_vec).cpu().numpy()
 
-    # Save CSV
+    # ---- Text-Aligned Fusion (TAF) ----
+    beta = float(args.beta)
+    gamma = float(args.gamma)
+
+    dot_it = torch.clamp((ref_img_emb * text_emb).sum(), -1.0, 1.0)
+    i_parallel = dot_it * text_emb            # along text direction
+    i_perp = ref_img_emb - i_parallel         # orthogonal residual
+
+    def safe_norm(x: torch.Tensor) -> torch.Tensor:
+        n = x.norm(p=2)
+        return x / n if n > 0 else x
+
+    i_parallel_n = safe_norm(i_parallel)
+    i_perp_n = safe_norm(i_perp)
+
+    taf_vec = F.normalize((1.0 - beta) * text_emb + beta * i_parallel_n + gamma * i_perp_n, dim=-1)
+    sim_taf = cosine_sim(frame_embs, taf_vec).cpu().numpy()
+
+    # ---- CSV (timestamped) ----
+    csv_path = Path(args.output_csv) if args.output_csv else out_dir / f"{prefix}_scores.csv"
     df = pd.DataFrame({
         "frame": [str(p) for p in image_paths],
         "sim_text": sim_text,
         "sim_ref_image": sim_ref,
         f"sim_blend_alpha_{alpha:.2f}": sim_blend,
+        f"sim_taf_beta_{beta:.2f}_gamma_{gamma:.2f}": sim_taf,
     })
-    csv_path = Path(args.output_csv) if args.output_csv else out_subdir / "retrieval_scores.csv"
     df.to_csv(csv_path, index=False)
-    print(f"Saved per-frame similarity scores to: {csv_path}")
+    print(f"Saved CSV to: {csv_path}")
 
-    # Print top-K
+    # ---- Visualization (pixel-accurate alignment) ----
+    try:
+        font = ImageFont.truetype("DejaVuSans.ttf", args.label_font_size)
+    except Exception:
+        font = ImageFont.load_default()
+
+    strip_img, _, centers_px = build_strip_with_labels(
+        image_paths=image_paths,
+        frame_height=args.frame_height,
+        frame_margin=args.frame_margin,
+        label_height=args.label_height,
+        font=font,
+        text_color=(240, 240, 240),
+        bg_color=(0, 0, 0),
+    )
+    strip_np = np.asarray(strip_img)
+    strip_h, strip_w = strip_np.shape[0], strip_np.shape[1]
+    N = len(image_paths)
+
+    base_dpi = float(args.dpi)
+    fig_w_in = max(10.0, strip_w / base_dpi)  # whole figure scales with number of frames (no hard cap)
+    fig_h_in = 15.0                            # tall enough for 6 rows
+
+    fig = plt.figure(figsize=(fig_w_in, fig_h_in), dpi=base_dpi)
+    gs = fig.add_gridspec(6, 1, height_ratios=[2.0, 2.3, 1.4, 1.4, 1.4, 1.4], hspace=0.5)
+
+    # Row 1: reference image + text (EXIF-aware for display)
+    gs_row1 = gs[0].subgridspec(1, 2, width_ratios=[1.2, 1.0], wspace=0.2)
+    ax_ref = fig.add_subplot(gs_row1[0, 0])
+    ref_im_for_plot = Image.open(ref_image_path).convert("RGB")
+    ref_im_for_plot = ImageOps.exif_transpose(ref_im_for_plot)
+    ax_ref.imshow(ref_im_for_plot)
+    ax_ref.set_title("Reference Image", fontsize=12)
+    ax_ref.axis("off")
+
+    ax_text = fig.add_subplot(gs_row1[0, 1])
+    ax_text.axis("off")
+    info = (
+        f"Text Prompt:\n{args.text}\n\n"
+        f"Model: {model_name}\n"
+        f"Frames: {N}\n"
+        f"alpha (classic): {alpha:.2f}\n"
+        f"β (TAF parallel): {beta:.2f}\n"
+        f"γ (TAF orthogonal): {gamma:.2f}\n"
+        f"Deterministic: {'Yes' if args.deterministic else 'No'}"
+    )
+    ax_text.text(0.01, 0.98, info, va="top", ha="left", fontsize=11, wrap=True)
+
+    # Row 2: frame strip (pixel extent so axes match curves)
+    ax_strip = fig.add_subplot(gs[1])
+    ax_strip.imshow(strip_np, extent=[0, strip_w, 0, strip_h])
+    ax_strip.set_xlim(0, strip_w)
+    ax_strip.set_ylim(0, strip_h)
+    ax_strip.set_title("Frame Sequence (names under each frame)", fontsize=12)
+    ax_strip.axis("off")
+
+    # Rows 3–6: similarity curves at pixel centers, sharing x-range with strip
+    def plot_curve(ax, title, y):
+        ax.plot(centers_px, y)
+        ax.set_xlim(0, strip_w)
+        ax.set_ylabel("cosine")
+        ax.set_title(title)
+        ax.grid(True, alpha=0.3)
+        ax.tick_params(axis='x', which='both', labelbottom=False)
+
+    ax3 = fig.add_subplot(gs[2])
+    plot_curve(ax3, "Text→Frame Similarity", sim_text)
+
+    ax4 = fig.add_subplot(gs[3], sharex=ax3)
+    plot_curve(ax4, "Ref Image→Frame Similarity", sim_ref)
+
+    ax5 = fig.add_subplot(gs[4], sharex=ax3)
+    plot_curve(ax5, f"Blended→Frame Similarity (α={alpha:.2f})", sim_blend)
+
+    ax6 = fig.add_subplot(gs[5], sharex=ax3)
+    ax6.plot(centers_px, sim_taf)
+    ax6.set_xlim(0, strip_w)
+    ax6.set_xlabel("Frame centers (pixel aligned)")
+    ax6.set_ylabel("cosine")
+    ax6.set_title(f"TAF→Frame Similarity (β={beta:.2f}, γ={gamma:.2f})")
+    ax6.grid(True, alpha=0.3)
+    ax6.tick_params(axis='x', which='both', labelbottom=False)
+
+    vis_path = out_dir / f"{prefix}_overview.png"
+    plt.savefig(vis_path, bbox_inches="tight", dpi=args.dpi)
+    plt.close(fig)
+    print(f"Saved visualization to: {vis_path}")
+
+    # ---- Top-K prints (after plotting, for clean logs) ----
     def print_topk(series: pd.Series, title: str, k: int):
         order = series.to_numpy().argsort()[::-1][:k]
         print(f"\nTop {k} frames — {title}")
@@ -227,72 +407,8 @@ def main():
     print_topk(df["sim_ref_image"], "Reference Image Retrieval", args.topk)
     blend_col = [c for c in df.columns if c.startswith("sim_blend_alpha_")][0]
     print_topk(df[blend_col], f"Blended Retrieval (alpha={alpha:.2f})", args.topk)
-
-    # ---------- Visualization ----------
-    # Build the montage strip for row 2 (all frames in sequence)
-    montage = build_horizontal_montage(image_paths, target_height=args.montage_height)
-    montage_np = np.asarray(montage)
-
-    # Compute figure size adaptively:
-    N = len(image_paths)
-    fig_w = max(10.0, (N / 100.0) * args.fig_width_per_100_frames)  # scales with frame count
-    # Use a tall figure to host 5 rows (images + 3 curves)
-    fig_h = 12.0
-    fig = plt.figure(figsize=(fig_w, fig_h))
-    gs = fig.add_gridspec(5, 1, height_ratios=[2.0, 2.0, 1.5, 1.5, 1.5], hspace=0.45)
-
-    # Row 1: reference image (left) + text prompt (right) using two columns within row 1
-    gs_row1 = gs[0].subgridspec(1, 2, width_ratios=[1.2, 1.0], wspace=0.2)
-    ax_ref = fig.add_subplot(gs_row1[0, 0])
-    ref_im = Image.open(ref_image_path).convert("RGB")
-    ax_ref.imshow(ref_im)
-    ax_ref.set_title("Reference Image", fontsize=12)
-    ax_ref.axis("off")
-
-    ax_text = fig.add_subplot(gs_row1[0, 1])
-    ax_text.axis("off")
-    txt = (f"Text Prompt:\n{args.text}\n\n"
-           f"Model: {model_name}\n"
-           f"Frames: {N}\n"
-           f"alpha (blend weight for text): {alpha:.2f}")
-    ax_text.text(0.01, 0.98, txt, va="top", ha="left", fontsize=11, wrap=True)
-
-    # Row 2: montage strip of frames
-    ax_strip = fig.add_subplot(gs[1])
-    ax_strip.imshow(montage_np)
-    ax_strip.set_title("Frame Sequence (in order)", fontsize=12)
-    ax_strip.axis("off")
-
-    # Rows 3-5: aligned similarity curves
-    x = np.arange(N)
-
-    ax3 = fig.add_subplot(gs[2])
-    ax3.plot(x, sim_text)
-    ax3.set_xlim([0, N - 1 if N > 1 else 1])
-    ax3.set_ylabel("cosine")
-    ax3.set_title("Text→Frame Similarity")
-
-    ax4 = fig.add_subplot(gs[3], sharex=ax3)
-    ax4.plot(x, sim_ref)
-    ax4.set_xlim([0, N - 1 if N > 1 else 1])
-    ax4.set_ylabel("cosine")
-    ax4.set_title("Ref Image→Frame Similarity")
-
-    ax5 = fig.add_subplot(gs[4], sharex=ax3)
-    ax5.plot(x, sim_blend)
-    ax5.set_xlim([0, N - 1 if N > 1 else 1])
-    ax5.set_xlabel("Frame Index (sorted by filename)")
-    ax5.set_ylabel("cosine")
-    ax5.set_title(f"Blended→Frame Similarity (alpha={alpha:.2f})")
-
-    # Light grid on all three curve plots
-    for ax in (ax3, ax4, ax5):
-        ax.grid(True, alpha=0.3)
-
-    vis_path = out_subdir / "retrieval_overview.png"
-    plt.savefig(vis_path, bbox_inches="tight", dpi=150)
-    plt.close(fig)
-    print(f"Saved visualization to: {vis_path}")
+    taf_col = [c for c in df.columns if c.startswith("sim_taf_beta_")][0]
+    print_topk(df[taf_col], f"TAF Retrieval (β={beta:.2f}, γ={gamma:.2f})", args.topk)
 
 
 if __name__ == "__main__":
