@@ -132,6 +132,66 @@ def visualize_tagging_on_video(frame_dirs, tags, frames_tagging_cos, threshold, 
     out.release()
     print(f"✅ Saved visualized video: {output_path}")
 
+def load_tags(tags_arg):
+    """Load tags from a comma-separated string, a .txt file, or a JSON file.
+    Robust to quotes, extra spaces, and structured JSON dicts.
+    """
+    def clean(tag: str) -> str:
+        if not isinstance(tag, str):
+            tag = str(tag)
+        # strip whitespace and trailing commas/semicolons
+        tag = tag.strip().strip(",;")
+        # strip surrounding brackets if passed accidentally
+        tag = tag.strip("[]{}")
+        # remove surrounding quotes repeatedly if present
+        while len(tag) > 1 and tag[0] in ("'", '"') and tag[-1] in ("'", '"'):
+            tag = tag[1:-1].strip()
+        return tag
+
+    tags = []
+
+    if isinstance(tags_arg, (list, tuple)):
+        # Already a list of tags
+        tags = tags_arg
+
+    elif isinstance(tags_arg, str):
+        if os.path.isfile(tags_arg):
+            # File path input
+            if tags_arg.endswith(".json"):
+                with open(tags_arg, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                # flatten JSON if it’s a dict of categories
+                if isinstance(data, dict):
+                    for v in data.values():
+                        if isinstance(v, list):
+                            tags.extend(v)
+                elif isinstance(data, list):
+                    tags = data
+                else:
+                    raise ValueError("Unsupported JSON structure for tags")
+            elif tags_arg.endswith(".txt"):
+                with open(tags_arg, "r", encoding="utf-8") as f:
+                    for line in f:
+                        tags.extend(line.split(","))
+            else:
+                raise ValueError("Unsupported file format: must be .txt or .json")
+        else:
+            # Treat as raw comma-separated string
+            tags = tags_arg.split(",")
+    else:
+        raise TypeError("tags_arg must be a string, list, or tuple")
+
+    # Final cleaning + deduplication (preserve order)
+    cleaned = []
+    seen = set()
+    for tag in tags:
+        ct = clean(tag)
+        if ct and ct not in seen:
+            cleaned.append(ct)
+            seen.add(ct)
+
+    return cleaned
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -145,193 +205,13 @@ if __name__ == "__main__":
     parser.add_argument("--device", type = str, default = "cuda:0", help = "device to be used")
     parser.add_argument("--video_dir", type=str, default=None, help="location of image file")
     parser.add_argument("--frame_dir", type=str, default=None, help="location of image file")
+    parser.add_argument("--tags", type=str, default="./tags_v1_1_enhanced_specified.txt")
     args = parser.parse_args()
 
     args.model_name = os.path.splitext(os.path.basename(args.model_path))[0]
 
     # process tags
-    tags = [
-      "sports",
-      "tennis",
-      "bedminton",
-      "driving",
-      "walking",
-      "traffic",
-      "vehicle",  
-        
-        
-      "volcano",
-      "sea view",
-      "beach",
-      "forest",
-      "grassland",
-      "lake",
-      "river",
-      "waterfall",
-      "canyon",
-      "mountain",
-      "sunrise",
-      "sunset",
-      "starry sky",
-      "Milky Way",
-      "aurora",
-      "desert",
-      "farmland",
-      "meadow",
-      "plateau",
-      "snow-capped mountain",
-      "glacier",
-      "cave",
-      "field",
-      "riverside",
-      "sailing",
-      "aviation",
-      "island",
-      "terraced fields",
-      "moon",
-      "rock formation",
-      "diving",
-      "rafting",
-      "swimming",
-      "skiing",
-      "ice cave",
-      "bonfire",
-      "hot air balloon",
-      "cable car",
-      "train",
-      "amusement park",
-      "bridge",
-      "cityscape", 
-
-      "sea view",
-      "beach",
-      "coral reef",
-      "sailing",
-      "surfing",
-      "waves",
-      "diving",
-      "snorkeling",
-
-      "volcano",
-      "forest",
-      "grassland",
-      "lake",
-      "mountain",
-      "sunrise",
-      "sunset",
-      "glacier",
-      "aurora",
-      "waterfall",
-      "hot spring",
-      "rafting",
-      "desert",
-      "starry sky",
-      "moon",
-      "snow-capped mountain",
-      "cable car",
-      "hot air balloon",
-      "bonfire",
-      "skiing",
-      "camping",
-      "riverside",
-      "meadow", 
-
-      "kissing",
-      "flying kiss",
-      "eating",
-      "drinking",
-      "blowing air",
-      "singing",
-      "smiling",
-      "drinking coffee",
-      "pointing",
-      "nodding",
-      "shaking head",
-      "patting head",
-      "covering face",
-      "cute blink",
-      "adorable head tilt",
-
-      "hugging",
-      "clapping",
-      "waving",
-      "throwing objects",
-      "catching objects",
-      "height comparison",
-      "cheering",
-      "raising cups",
-      "handshake",
-      "high-five",
-      "patting",
-      "holding",
-      "hugging child",
-      "lifting child",
-      "carrying",
-      "spreading arms",
-      
-      "jumping",
-      "running",
-      "crawling",
-      "kneeling on one knee",
-
-      "running toward someone",
-      "hugging",
-      "playing together",
-      "carrying child",
-      "eating",
-      "smiling",
-      "hugging child",
-      "pushing stroller",
-      "blowing bubbles",
-      "child crying",
-      "child walking",
-      
-      "rolling",
-      "eating",
-      "running around",
-      "cuddling",
-      "sleeping",
-      "playful rolling",
-
-      "city walk",
-      "neon lights",
-      "bar",
-      "aquarium",
-      "square",
-      "amusement park",
-      "church",
-      "alley",
-      "pet",
-      "park",
-      "sports",
-      "swimming",
-      "water park",
-      "zoo",
-      "theater",
-      "exhibition",
-      "gym",
-      "flower market",
-      "cat cafe",
-      "shopping",
-      "train station",
-      "bus",
-      "airport",
-      "scenic viewpoint",
-      "family trip",
-
-      "dishes",
-      "desserts",
-      "drinks",
-
-      "main course",
-        "baked goods",
-        "sweets",
-        "snacks",
-        "beverages", 
-
-    "food gathering",
-    "group photo"
-      ]
+    tags = load_tags(args.tags)
 
     model, _, image_processor = mobileclip.create_model_and_transforms(args.model_name, pretrained=args.model_path)
     model = model.to(args.device).eval()
@@ -341,8 +221,8 @@ if __name__ == "__main__":
     text_embeddings = encode_text(model, tokenizer, tags) # dict: {tag : text_embedding}
     text_embeddings_batch = model.encode_text(tokenizer(tags).to(args.device)).half() # text embeddings tensor
 
-    for k,v in enumerate(text_embeddings):
-        print(f"[{k}] {v}: {(text_embeddings[v].type(), text_embeddings[v].shape, text_embeddings[v][:, 10:20])}")
+    # for k,v in enumerate(text_embeddings):
+    #     print(f"[{k}] {v}: {(text_embeddings[v].type(), text_embeddings[v].shape, text_embeddings[v][:, 10:20])}")
     
     # process vision 
     vision_embeddings = encode_vision(model, image_processor, args)
