@@ -13,6 +13,7 @@ import random
 import numpy as np
 import torch
 import torch.nn.functional as F
+from torch.cuda.amp import autocast
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -32,64 +33,58 @@ def setup_determinism(seed: int = 1234):
     torch.use_deterministic_algorithms(True)
 
 
-# ================= MobileCLIP loader =================
-def _import_mobileclip_and_tokenize():
-    mobileclip_mod = None
-    tokenizer_fn = None
+# ================= MobileCLIP loader helpers =================
+def _import_mobileclip():
     try:
         import mobileclip  # noqa: F401
-        mobileclip_mod = sys.modules["mobileclip"]
-        tokenizer_fn = getattr(mobileclip_mod, "tokenize", None)
-    except Exception:
-        mobileclip_mod = None
-
-    if tokenizer_fn is None:
-        try:
-            import open_clip  # noqa: F401
-            tokenizer_fn = sys.modules["open_clip"].tokenize
-        except Exception:
-            tokenizer_fn = None
-
-    if mobileclip_mod is None:
-        raise ImportError("Could not import 'mobileclip'. Please install/ensure it's on PYTHONPATH.")
-    if tokenizer_fn is None:
-        raise ImportError("Could not find a tokenizer. Ensure either 'mobileclip.tokenize' or 'open_clip.tokenize' is available.")
-    return mobileclip_mod, tokenizer_fn
+        return sys.modules["mobileclip"]
+    except Exception as e:
+        raise ImportError("Could not import 'mobileclip'. Please install/ensure it's on PYTHONPATH.") from e
 
 
 # ================= IO helpers =================
 def list_image_paths(frames_dir: Path) -> List[Path]:
-    exts = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
-    files = [p for p in sorted(frames_dir.iterdir()) if p.suffix.lower() in exts]
+    exts = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".tif", ".tiff"}
+    files = [p for p in sorted(frames_dir.iterdir()) if p.is_file() and p.suffix.lower() in exts]
     if not files:
         raise FileNotFoundError(f"No images found in {frames_dir}")
     return files
 
 
-# ================= Encoders =================
+# ================= Encoders (MobileCLIP style) =================
 @torch.no_grad()
-def encode_images(model, processor, image_paths: List[Path], device: str, batch_size: int) -> torch.Tensor:
-    """Return L2-normalized image embeddings of shape [N, D]."""
+def encode_images(model, image_processor, image_paths: List[Path], device: str, batch_size: int, use_amp: bool = True) -> torch.Tensor:
+    """
+    Encode images using MobileCLIP transforms + AMP (like your reference).
+    Returns L2-normalized embeddings of shape [N, D].
+    """
     embs = []
     for i in range(0, len(image_paths), batch_size):
         batch_paths = image_paths[i : i + batch_size]
         imgs = []
         for p in batch_paths:
             img = Image.open(p).convert("RGB")
-            img = ImageOps.exif_transpose(img)
-            imgs.append(processor(img))
+            img = ImageOps.exif_transpose(img)  # EXIF-aware orientation
+            imgs.append(image_processor(img))
         pixel_batch = torch.stack(imgs, dim=0).to(device)
-        feats = model.encode_image(pixel_batch)
-        feats = F.normalize(feats, dim=-1)
+
+        with autocast(enabled=use_amp):
+            feats = model.encode_image(pixel_batch)
+        feats = F.normalize(feats, dim=-1)  # L2 normalize like reference
         embs.append(feats)
     return torch.cat(embs, dim=0)
 
 
 @torch.no_grad()
-def encode_text(model, tokenizer_fn, text: str, device: str, context_length: int) -> torch.Tensor:
-    """Return L2-normalized text embedding of shape [D]."""
-    tokens = tokenizer_fn([text], context_length=context_length).to(device)
-    tfeat = model.encode_text(tokens)
+def encode_text(model, tokenizer, text: str, device: str, context_length: int, use_amp: bool = True) -> torch.Tensor:
+    """
+    Encode a single text prompt with MobileCLIP tokenizer (like your reference).
+    Returns L2-normalized embedding of shape [D].
+    """
+    # tokenizer from mobileclip.get_tokenizer(model_name)
+    tokens = tokenizer([text], context_length=context_length).to(device)
+    with autocast(enabled=use_amp):
+        tfeat = model.encode_text(tokens)  # [1, D]
     tfeat = F.normalize(tfeat, dim=-1)
     return tfeat.squeeze(0)
 
@@ -221,9 +216,10 @@ def cos_push_multi_refs(text_emb: torch.Tensor, ref_embs: torch.Tensor, push_lam
 # ================= Main =================
 def main():
     parser = argparse.ArgumentParser(
-        description="MobileCLIP retrieval with TAF (single/multi) + Cos-Push (single/multi), pixel-aligned plots, determinism, timestamped outputs."
+        description="MobileCLIP retrieval (MobileCLIP-native loading) with TAF/Cos-Push (single & multi), fixed y-axis curves, adaptive height, timestamped outputs."
     )
-    parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip_s0.pt")
+    parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip_s0.pt",
+                        help="Path to MobileCLIP checkpoint (e.g., mobileclip_s0.pt)")
     parser.add_argument("--device", type=str, default="cuda:0")
     parser.add_argument("--frames_dir", type=str, required=True)
     parser.add_argument("--ref_image", type=str, required=True)
@@ -235,10 +231,7 @@ def main():
     parser.add_argument("--alpha", type=float, default=0.5, help="Classic blend weight for text (0=image, 1=text).")
     parser.add_argument("--beta", type=float, default=0.4, help="TAF weight for text-aligned visual detail (parallel).")
     parser.add_argument("--gamma", type=float, default=0.1, help="TAF weight for orthogonal visual detail.")
-
-    # Cos-Push controls
-    parser.add_argument("--push_lambda", type=float, default=0.5,
-                        help="Cos-Push strength λ (i_push = norm(i + λ t)).")
+    parser.add_argument("--push_lambda", type=float, default=0.5, help="Cos-Push strength (i_push = norm(i + λ t)).")
 
     # Batching / text
     parser.add_argument("--batch_size", type=int, default=64)
@@ -248,6 +241,7 @@ def main():
     parser.add_argument("--output_csv", type=str, default=None)
     parser.add_argument("--output_dir", type=str, required=True)
     parser.add_argument("--topk", type=int, default=10)
+    parser.add_argument("--print_topk", action = "store_true", help="If to print frame idx and score for the top-k results")
 
     # Visualization
     parser.add_argument("--frame_height", type=int, default=200)
@@ -256,9 +250,11 @@ def main():
     parser.add_argument("--label_font_size", type=int, default=12)
     parser.add_argument("--dpi", type=int, default=150)
 
-    # Determinism
+    # Determinism + AMP
     parser.add_argument("--deterministic", action="store_true", help="Enable deterministic execution.")
     parser.add_argument("--seed", type=int, default=1234, help="Random seed when --deterministic is set.")
+    parser.add_argument("--no_amp", action="store_true", help="Disable autocast (AMP) if you want full FP32.")
+
     args = parser.parse_args()
 
     if args.deterministic:
@@ -276,34 +272,37 @@ def main():
     out_dir = out_root / prefix
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # ---- Load model & tokenizer ----
-    mobileclip, tokenizer_fn = _import_mobileclip_and_tokenize()
-    device = args.device
+    # ---- Load MobileCLIP model + transforms + tokenizer (REFERENCE STYLE) ----
+    mobileclip = _import_mobileclip()
+    # Derive model_name from checkpoint file name (same as your reference)
+    model_name = os.path.splitext(os.path.basename(args.model_path))[0]
 
+    # Create model & transforms with pretrained checkpoint path
+    model, _, image_processor = mobileclip.create_model_and_transforms(model_name, pretrained=args.model_path)
+    model = model.to(args.device).eval()
+
+    # MobileCLIP tokenizer
+    tokenizer = mobileclip.get_tokenizer(model_name)
+
+    device = args.device
+    use_amp = not args.no_amp
+
+    # ---- Gather inputs ----
     frames_dir = Path(args.frames_dir)
     image_paths = list_image_paths(frames_dir)
     ref_image_path = Path(args.ref_image)
     if not ref_image_path.exists():
         raise FileNotFoundError(f"Reference image not found: {ref_image_path}")
 
-    model_name = os.path.splitext(os.path.basename(args.model_path))[0]
-    model, _, image_processor = mobileclip.create_model_and_transforms(model_name)
-    model.to(device).eval()
-
-    # Load checkpoint
-    ckpt = torch.load(args.model_path, map_location="cpu")
-    state_dict = ckpt.get("state_dict", ckpt)
-    model.load_state_dict(state_dict, strict=False)
-
     # ---- Encode frames ----
     print(f"Encoding {len(image_paths)} frames ...")
-    frame_embs = encode_images(model, image_processor, image_paths, device, args.batch_size)  # [N, D]
+    frame_embs = encode_images(model, image_processor, image_paths, device, args.batch_size, use_amp=use_amp)  # [N, D]
 
     # ---- Encode single ref image ----
-    ref_img_emb = encode_images(model, image_processor, [ref_image_path], device, 1).squeeze(0)  # [D]
+    ref_img_emb = encode_images(model, image_processor, [ref_image_path], device, 1, use_amp=use_amp).squeeze(0)  # [D]
 
-    # ---- Encode text ----
-    text_emb = encode_text(model, tokenizer_fn, args.text, device, args.context_length)  # [D]
+    # ---- Encode text (MobileCLIP tokenizer) ----
+    text_emb = encode_text(model, tokenizer, args.text, device, args.context_length, use_amp=use_amp)  # [D]
 
     # ---- Base similarities ----
     sim_ref  = cosine_sim(frame_embs, ref_img_emb).cpu().numpy()
@@ -334,7 +333,7 @@ def main():
         if ref_dir.exists() and ref_dir.is_dir():
             multi_ref_paths = list_image_paths(ref_dir)
             if multi_ref_paths:
-                ref_embs_multi = encode_images(model, image_processor, multi_ref_paths, device, args.batch_size)  # [K, D]
+                ref_embs_multi = encode_images(model, image_processor, multi_ref_paths, device, args.batch_size, use_amp=use_amp)  # [K, D]
                 multi_ref_count = ref_embs_multi.size(0)
                 # Multi TAF
                 taf_multi_vec = taf_fuse_multi_refs(text_emb, ref_embs_multi, beta, gamma)
@@ -366,7 +365,7 @@ def main():
     df.to_csv(csv_path, index=False)
     print(f"Saved CSV to: {csv_path}")
 
-    # ---- Visualization (pixel-accurate alignment) ----
+    # ---- Visualization (pixel-accurate alignment, fixed y in [0,1], adaptive height) ----
     try:
         font = ImageFont.truetype("DejaVuSans.ttf", args.label_font_size)
     except Exception:
@@ -387,21 +386,20 @@ def main():
 
     base_dpi = float(args.dpi)
 
-    # Base rows: 6 (Text, Ref, Blend, TAF single, plus Row1+Row2 for header/frames)
-    # +1 for Cos-Push single; +1 for TAF-multi (if any); +1 for Cos-Push multi (if any)
+    # rows: header+frames + Text + Ref + Blend + TAF + Push (+ optional Multi-TAF, Multi-Push)
     num_rows = 7 + (1 if sim_multi_taf is not None else 0) + (1 if sim_multi_push is not None else 0)
 
+    # width proportional to montage width
     fig_w_in = max(10.0, strip_w / base_dpi)
-    # Height ratios: keep first two larger; each curve ~1.3
-    ratios = [2.0, 2.3]  # Row1 header, Row2 frames
-    # We'll append per-curve rows progressively to match the order below.
-    curve_ratio = 1.35
-    # Compute total figure height heuristically
-    fig_h_in = 2.0 + 2.3 + curve_ratio * (num_rows - 2)  # simple sum in inches units proxy
+
+    # Adaptive height: add extra vertical space when many frames so curves are readable
+    extra_height = (N // 50) * 1.5   # +1.5 inches per 50 frames
+    per_curve_height = 1.3 + extra_height / max(1, (num_rows - 2))
+    fig_h_in = 2.0 + 2.3 + per_curve_height * (num_rows - 2)
     fig_h_in = max(15.0, fig_h_in)
 
     fig = plt.figure(figsize=(fig_w_in, fig_h_in), dpi=base_dpi)
-    gs = fig.add_gridspec(num_rows, 1, height_ratios=[2.0, 2.3] + [curve_ratio] * (num_rows - 2), hspace=0.5)
+    gs = fig.add_gridspec(num_rows, 1, height_ratios=[2.0, 2.3] + [per_curve_height] * (num_rows - 2), hspace=0.5)
 
     # Row 1: Reference image + text
     gs_row1 = gs[0].subgridspec(1, 2, width_ratios=[1.2, 1.0], wspace=0.2)
@@ -421,7 +419,7 @@ def main():
         f"α (classic): {alpha:.2f} | β (TAF∥): {beta:.2f} | γ (TAF⊥): {gamma:.2f} | λ (Push): {push_lambda:.2f}\n"
         f"Multi-Ref: {'Yes' if (sim_multi_taf is not None or sim_multi_push is not None) else 'No'}"
         + (f' | K={multi_ref_count}' if (sim_multi_taf is not None or sim_multi_push is not None) else '')
-        + f"\nDeterministic: {'Yes' if args.deterministic else 'No'}"
+        + f"\nDeterministic: {'Yes' if args.deterministic else 'No'} | AMP: {'On' if use_amp else 'Off'}"
     )
     ax_text.text(0.01, 0.98, info, va="top", ha="left", fontsize=11, wrap=True)
 
@@ -433,49 +431,47 @@ def main():
     ax_strip.set_title("Frame Sequence (names under each frame)", fontsize=12)
     ax_strip.axis("off")
 
-    # Helper to plot curves aligned to pixel centers
+    # Helper to plot curves aligned to pixel centers (fixed y-range)
     def plot_curve(ax, title, y, xlabel=False):
-        ax.plot(centers_px, y)
+        ax.plot(centers_px, y, marker="o")
         ax.set_xlim(0, strip_w)
-        ax.set_ylim(0.0, 1.0)  # <<— FIXED Y-AXIS RANGE FOR ALL PLOTS
+
+        ymin, ymax = y.min(), y.max()
+        span = max(ymax - ymin, 0.1)   # at least 0.1 range
+        margin = 0.1 * span
+        ax.set_ylim(max(0.0, ymin - margin), min(1.0, ymax + margin))
+
         if xlabel:
             ax.set_xlabel("Frame centers (pixel aligned)")
         ax.set_ylabel("cosine")
         ax.set_title(title)
         ax.grid(True, alpha=0.3)
-        ax.tick_params(axis='x', which='both', labelbottom=False)
-
-    # Row 3: Text
+        ax.tick_params(axis="x", which="both", labelbottom=False)
+        
+    # Rows: all retrieval methods
     row_i = 2
     ax3 = fig.add_subplot(gs[row_i]); row_i += 1
     plot_curve(ax3, "Text→Frame Similarity", sim_text)
 
-    # Row 4: Ref
     ax4 = fig.add_subplot(gs[row_i]); row_i += 1
     plot_curve(ax4, "Ref Image→Frame Similarity", sim_ref)
 
-    # Row 5: Classic Blend
     ax5 = fig.add_subplot(gs[row_i]); row_i += 1
     plot_curve(ax5, f"Blended→Frame Similarity (α={alpha:.2f})", sim_blend)
 
-    # Row 6: TAF single
     ax6 = fig.add_subplot(gs[row_i]); row_i += 1
     plot_curve(ax6, f"TAF→Frame Similarity (β={beta:.2f}, γ={gamma:.2f})", sim_taf)
 
-    # Row 7: Cos-Push single (always shown)
     ax7 = fig.add_subplot(gs[row_i]); row_i += 1
     plot_curve(ax7, f"Cos-Push→Frame Similarity (λ={push_lambda:.2f})", sim_push)
 
-    # Row 8: TAF multi (optional)
     if sim_multi_taf is not None:
         ax8 = fig.add_subplot(gs[row_i]); row_i += 1
         plot_curve(ax8, f"Multi-Ref TAF→Frame Similarity (K={multi_ref_count})", sim_multi_taf)
 
-    # Row 9: Cos-Push multi (optional, last row shows x-label)
-    xlabel_on_last = True
     if sim_multi_push is not None:
         ax9 = fig.add_subplot(gs[row_i]); row_i += 1
-        plot_curve(ax9, f"Multi-Ref Cos-Push→Frame Similarity (λ={push_lambda:.2f}, K={multi_ref_count})", sim_multi_push, xlabel=xlabel_on_last)
+        plot_curve(ax9, f"Multi-Ref Cos-Push→Frame Similarity (λ={push_lambda:.2f}, K={multi_ref_count})", sim_multi_push, xlabel=True)
     else:
         # If multi-row not present, give xlabel to the last plotted axis (ax7 or ax8)
         (ax8 if sim_multi_taf is not None else ax7).set_xlabel("Frame centers (pixel aligned)")
@@ -491,21 +487,21 @@ def main():
         print(f"\nTop {k} frames — {title}")
         for rank, idx in enumerate(order, start=1):
             print(f"{rank:>2}. {Path(image_paths[idx]).name:50s}  score={series.iloc[idx]:.4f}")
-
-    print_topk(df["sim_text"], "Text Retrieval", args.topk)
-    print_topk(df["sim_ref_image"], "Reference Image Retrieval", args.topk)
-    blend_col = [c for c in df.columns if c.startswith("sim_blend_alpha_")][0]
-    print_topk(df[blend_col], f"Blended Retrieval (alpha={alpha:.2f})", args.topk)
-    taf_col = [c for c in df.columns if c.startswith("sim_taf_beta_")][0]
-    print_topk(df[taf_col], f"TAF Retrieval (β={beta:.2f}, γ={gamma:.2f})", args.topk)
-    push_col = [c for c in df.columns if c.startswith("sim_push_lambda_")][0]
-    print_topk(df[push_col], f"Cos-Push Retrieval (λ={push_lambda:.2f})", args.topk)
-    if sim_multi_taf is not None:
-        multi_taf_col = [c for c in df.columns if c.startswith("sim_multi_taf_beta_")][0]
-        print_topk(df[multi_taf_col], f"Multi-Ref TAF Retrieval (K={multi_ref_count})", args.topk)
-    if sim_multi_push is not None:
-        multi_push_col = [c for c in df.columns if c.startswith("sim_multi_push_lambda_")][0]
-        print_topk(df[multi_push_col], f"Multi-Ref Cos-Push Retrieval (λ={push_lambda:.2f}, K={multi_ref_count})", args.topk)
+    if args.print_topk:
+        print_topk(df["sim_text"], "Text Retrieval", args.topk)
+        print_topk(df["sim_ref_image"], "Reference Image Retrieval", args.topk)
+        blend_col = [c for c in df.columns if c.startswith("sim_blend_alpha_")][0]
+        print_topk(df[blend_col], f"Blended Retrieval (alpha={alpha:.2f})", args.topk)
+        taf_col = [c for c in df.columns if c.startswith("sim_taf_beta_")][0]
+        print_topk(df[taf_col], f"TAF Retrieval (β={beta:.2f}, γ={gamma:.2f})", args.topk)
+        push_col = [c for c in df.columns if c.startswith("sim_push_lambda_")][0]
+        print_topk(df[push_col], f"Cos-Push Retrieval (λ={push_lambda:.2f})", args.topk)
+        if sim_multi_taf is not None:
+            multi_taf_col = [c for c in df.columns if c.startswith("sim_multi_taf_beta_")][0]
+            print_topk(df[multi_taf_col], f"Multi-Ref TAF Retrieval (K={multi_ref_count})", args.topk)
+        if sim_multi_push is not None:
+            multi_push_col = [c for c in df.columns if c.startswith("sim_multi_push_lambda_")][0]
+            print_topk(df[multi_push_col], f"Multi-Ref Cos-Push Retrieval (λ={push_lambda:.2f}, K={multi_ref_count})", args.topk)
 
 
 if __name__ == "__main__":
