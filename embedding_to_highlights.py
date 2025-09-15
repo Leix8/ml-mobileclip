@@ -61,17 +61,18 @@ def list_image_paths(dir_path: Path) -> List[Path]:
 
 
 def sample_video_frames(video_path: str, target_fps: int) -> List[Image.Image]:
-    """Read video frames downsampled to target_fps."""
     frames = []
     if not _HAS_CV2:
         raise RuntimeError("OpenCV required for --video mode.")
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
         raise RuntimeError(f"Failed to open video: {video_path}")
-    native_fps = cap.get(cv2.CAP_PROP_FPS)
-    stride = max(1, int(round(native_fps / target_fps)))
+    native_fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
+    stride = max(1, int(round(native_fps / max(1, target_fps))))
+    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 0)
     idx = 0
-    with tqdm(total=int(cap.get(cv2.CAP_PROP_FRAME_COUNT)), desc="Reading video frames") as pbar:
+    with tqdm(total=total_frames if total_frames > 0 else None,
+              desc="Reading video frames", unit="f") as pbar:
         while True:
             ret, frame = cap.read()
             if not ret:
@@ -80,7 +81,8 @@ def sample_video_frames(video_path: str, target_fps: int) -> List[Image.Image]:
                 rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 frames.append(Image.fromarray(rgb))
             idx += 1
-            pbar.update(1)
+            if total_frames > 0:
+                pbar.update(1)
     cap.release()
     return frames
 
@@ -92,7 +94,7 @@ def encode_images(model, image_processor, pil_images: List[Image.Image],
     if len(pil_images) == 0:
         return torch.empty(0, device=device)
     embs = []
-    for i in tqdm(range(0, len(pil_images), batch_size), desc="Encoding frames"):
+    for i in tqdm(range(0, len(pil_images), batch_size), desc="Encoding frames", unit="batch"):
         imgs = [image_processor(im) for im in pil_images[i: i + batch_size]]
         pixel_batch = torch.stack(imgs, dim=0).to(device)
         with autocast(enabled=use_amp):
@@ -107,30 +109,52 @@ def cosine_sim_batch(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
 
 
 # ================= Plotting helpers =================
-def draw_score_panel(scores_dict: Dict[str, np.ndarray],
-                     current_idx: int,
-                     topk_indices: Dict[str, np.ndarray],
-                     width_px: int = 1400,
-                     height_per_row: int = 120,
-                     dpi: int = 100) -> Image.Image:
+def draw_score_panel(
+    scores_dict: Dict[str, np.ndarray],
+    current_idx: int,
+    topk_indices: Dict[str, np.ndarray],
+    width_px: int = 1400,
+    height_per_row: int = 120,
+    dpi: int = 100,
+    tag_labels: Dict[str, List[str]] = None
+) -> Image.Image:
     methods = list(scores_dict.keys())
     R = len(methods)
     fig = plt.figure(figsize=(width_px / dpi, (R * height_per_row) / dpi), dpi=dpi)
     gs = fig.add_gridspec(R, 1, hspace=0.6)
+
     for r, m in enumerate(methods):
         ax = fig.add_subplot(gs[r])
         s = scores_dict[m]
-        ax.plot(np.arange(len(s)), s, marker=".", linewidth=1)
+        x = np.arange(len(s))
+        ax.plot(x, s, marker=".", linewidth=1)
         ax.axvline(current_idx, color="red", linestyle="--", linewidth=2)
-        if m in topk_indices:
-            idxs = topk_indices[m]
+
+        ymin, ymax = float(s.min()), float(s.max())
+        span = max(0.1, ymax - ymin)
+
+        # top-k markers
+        if m in topk_indices and topk_indices[m].size > 0:
+            idxs = np.asarray(topk_indices[m], dtype=int)
             vals = s[idxs]
-            ax.scatter(idxs, vals, s=120, marker="v")
+            ax.scatter(idxs, vals, s=40, marker="v", color="black", zorder=3)
             for xi, yi in zip(idxs, vals):
-                ax.text(xi, yi, " ✂", fontsize=12, ha="left", va="bottom")
-        ax.set_ylabel("cos"); ax.set_title(m); ax.grid(True, alpha=0.3)
-        if r == R - 1: ax.set_xlabel("frame idx")
-        else: ax.tick_params(axis="x", labelbottom=False)
+                ax.text(xi, yi + 0.02 * span, "✂", fontsize=10,
+                        ha="center", va="center", color="red", zorder=4)
+                # tag annotation
+                if tag_labels and m in tag_labels:
+                    ax.text(xi, yi + 0.05 * span, tag_labels[m][xi],
+                            fontsize=8, ha="center", va="bottom", alpha=0.8, color="blue")
+
+        ax.set_ylim(ymin - 0.1 * span, ymax + 0.1 * span)
+        ax.set_ylabel("cos")
+        ax.set_title(m)
+        ax.grid(True, alpha=0.3)
+        if r == R - 1:
+            ax.set_xlabel("frame idx")
+        else:
+            ax.tick_params(axis="x", which="both", labelbottom=False)
+
     fig.canvas.draw()
     buf = np.frombuffer(fig.canvas.buffer_rgba(), dtype=np.uint8)
     plot_img = buf.reshape(fig.canvas.get_width_height()[::-1] + (4,))
@@ -145,30 +169,43 @@ def load_font(size: int = 18) -> ImageFont.ImageFont:
         return ImageFont.load_default()
 
 
-def make_info_panel(frame_img: Image.Image, meta_text: str,
-                    right_panel_width: int = 420, pad: int = 12,
-                    bg=(15, 15, 15), fg=(240, 240, 240)) -> Image.Image:
+def make_info_panel(
+    frame_img: Image.Image,
+    meta_text: str,
+    right_panel_width: int = 420,
+    pad: int = 12,
+    bg=(15, 15, 15),
+    fg=(240, 240, 240),
+) -> Image.Image:
     w_frame, h_frame = frame_img.size
     panel_w = w_frame + right_panel_width
     panel_h = h_frame
     canvas = Image.new("RGB", (panel_w, panel_h), bg)
     canvas.paste(frame_img, (0, 0))
+
     draw = ImageDraw.Draw(canvas)
     font = load_font(18)
+
     def wrap_text(text, font, max_w):
-        words, lines, cur = text.split(), [], ""
+        words = text.split()
+        lines = []
+        cur = ""
         for w in words:
             test = (cur + " " + w).strip()
             if draw.textlength(test, font=font) <= max_w:
                 cur = test
             else:
-                if cur: lines.append(cur)
+                if cur:
+                    lines.append(cur)
                 cur = w
-        if cur: lines.append(cur)
+        if cur:
+            lines.append(cur)
         return "\n".join(lines)
+
     wrapped = "\n".join([wrap_text(line, font, right_panel_width - 2 * pad)
                          for line in meta_text.splitlines()])
     draw.multiline_text((w_frame + pad, pad), wrapped, font=font, fill=fg, spacing=4)
+
     return canvas
 
 
@@ -192,14 +229,14 @@ def get_vector_from_entry(entry: Dict[str, Any], path: List[str]) -> np.ndarray:
 
 # ================= Main =================
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description="Video highlight retrieval visualization, combine across tags if --all_in_one."
+    )
     parser.add_argument("--embeddings", type=str, required=True)
     parser.add_argument("--frames", type=str, help="Directory of frames")
     parser.add_argument("--video", type=str, help="Video file path")
     parser.add_argument("--output_dir", type=str, required=True)
-    parser.add_argument("--fps", type=int, default=5,
-                        help="Target FPS for sampling frames and writing video.")
-    parser.add_argument("--tag_id", type=str, default=None)
+    parser.add_argument("--fps", type=int, default=5)
     parser.add_argument("--topk", type=int, default=10)
     parser.add_argument("--bg_samples", type=int, default=128)
     parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip_s0.pt")
@@ -207,16 +244,17 @@ def main():
     parser.add_argument("--batch_size", type=int, default=64)
     parser.add_argument("--no_amp", action="store_true")
     parser.add_argument("--seed", type=int, default=1234)
+    parser.add_argument("--all_in_one", action="store_true",
+                        help="If set, combine scores across tags (per method, keep highest score per frame and label tag).")
     args = parser.parse_args()
 
     setup_determinism(args.seed)
 
-    # Load embeddings
-    with open(args.embeddings) as f:
+    with open(args.embeddings, "r") as f:
         emb_json = json.load(f)
     entries = extract_tag_entries(emb_json)
-    if args.tag_id:
-        entries = [e for e in entries if e["id"] == args.tag_id]
+    if len(entries) == 0:
+        raise ValueError("No tag entries found.")
 
     # Load MobileCLIP
     mobileclip = _import_mobileclip()
@@ -225,48 +263,42 @@ def main():
     model = model.to(args.device).eval()
     use_amp = not args.no_amp
 
-    # Load frames (either from dir or video)
+    # Load frames
     pil_frames, frame_names = [], []
     if args.video:
         pil_frames = sample_video_frames(args.video, args.fps)
         frame_names = [f"frame_{i:05d}.jpg" for i in range(len(pil_frames))]
     elif args.frames:
         all_paths = list_image_paths(Path(args.frames))
-        stride = max(1, int(round(30 / args.fps)))  # assume base 30fps
-        pil_frames = [Image.open(p).convert("RGB") for i, p in enumerate(all_paths) if i % stride == 0]
-        frame_names = [p.name for i, p in enumerate(all_paths) if i % stride == 0]
+        base_fps = 30.0
+        stride = max(1, int(round(base_fps / max(1, args.fps))))
+        sel = [i for i in range(len(all_paths)) if i % stride == 0]
+        for i in tqdm(sel, desc="Reading frame images", unit="img"):
+            p = all_paths[i]
+            im = Image.open(p).convert("RGB")
+            im = ImageOps.exif_transpose(im)
+            pil_frames.append(im)
+            frame_names.append(p.name)
     else:
         raise ValueError("Either --frames or --video must be given")
 
-    # Encode frames
     frame_embs = encode_images(model, image_processor, pil_frames, args.device, args.batch_size, use_amp=use_amp)
     N = frame_embs.size(0)
 
     # Background centroid
-    bg_idxs = np.sort(np.random.choice(np.arange(N), size=min(args.bg_samples, N), replace=False))
+    bg_count = min(args.bg_samples, N)
+    bg_idxs = np.sort(np.random.choice(np.arange(N), size=bg_count, replace=False))
     bg_centroid = F.normalize(frame_embs[torch.from_numpy(bg_idxs)].mean(dim=0), dim=-1)
 
-    # Utility for top-k
-    def topk_indices(arr: np.ndarray, k: int) -> np.ndarray:
-        k = min(k, arr.size)
-        return np.argpartition(arr, -k)[-k:][np.argsort(arr[np.argpartition(arr, -k)[-k:]])][::-1]
+    # Collect all scores
+    all_tag_scores = {m: [] for m in ["Text", "TAF", "Cos-Push", "Debiased TAF", "Debiased Cos-Push"]}
+    all_tag_labels = []
 
-    # Iterate tags
-    out_dir = Path(args.output_dir); out_dir.mkdir(parents=True, exist_ok=True)
     for entry in entries:
-        tag_id = entry.get("id", "tag")
-        tag_text = entry.get("tag", tag_id)
-        num_ref = entry.get("num_ref", 0)
-        model_str = entry.get("model", model_name)
-
-        # Embeddings
+        tag_text = entry.get("tag", entry.get("id", "tag"))
         text_vec = get_vector_from_entry(entry, ["embedding", "tag_embedding"])
-        taf_obj = entry["embedding"]["multi_ref_TAF_embedding"]
-        taf_vec = np.array(taf_obj["data"]["value"], dtype=np.float32)
-        taf_beta, taf_gamma = float(taf_obj["params"]["beta"]), float(taf_obj["params"]["gamma"])
-        push_obj = entry["embedding"]["multi_ref_push_embedding"]
-        push_vec = np.array(push_obj["data"]["value"], dtype=np.float32)
-        push_lambda = float(push_obj["params"]["push_lambda"])
+        taf_vec = np.array(entry["embedding"]["multi_ref_TAF_embedding"]["data"]["value"], dtype=np.float32)
+        push_vec = np.array(entry["embedding"]["multi_ref_push_embedding"]["data"]["value"], dtype=np.float32)
 
         text_t = F.normalize(torch.tensor(text_vec, device=args.device), dim=-1)
         taf_t = F.normalize(torch.tensor(taf_vec, device=args.device), dim=-1)
@@ -280,64 +312,79 @@ def main():
         sim_taf_deb = cosine_sim_batch(frame_embs, debiased_taf).cpu().numpy()
         sim_push_deb = cosine_sim_batch(frame_embs, debiased_push).cpu().numpy()
 
-        method_series = {
-            "Text → Frame": sim_text,
-            "Multi-Ref TAF → Frame": sim_taf,
-            "Multi-Ref Cos-Push → Frame": sim_push,
-            "Debiased TAF (bg-centroid) → Frame": sim_taf_deb,
-            "Debiased Cos-Push (bg-centroid) → Frame": sim_push_deb,
-        }
-        topk_map = {name: topk_indices(arr, args.topk) for name, arr in method_series.items()}
+        all_tag_scores["Text"].append((sim_text, tag_text))
+        all_tag_scores["TAF"].append((sim_taf, tag_text))
+        all_tag_scores["Cos-Push"].append((sim_push, tag_text))
+        all_tag_scores["Debiased TAF"].append((sim_taf_deb, tag_text))
+        all_tag_scores["Debiased Cos-Push"].append((sim_push_deb, tag_text))
 
-        # Save CSV
-        import pandas as pd
-        df = pd.DataFrame({"frame": frame_names})
-        for name, arr in method_series.items():
-            df[name.replace(" ", "_")] = arr
-        csv_path = out_dir / f"{tag_id}_scores.csv"
-        df.to_csv(csv_path, index=False)
-        print(f"[{tag_id}] Saved scores CSV to {csv_path}")
+    # Combine across tags
+    combined_scores = {}
+    combined_labels = {}
+    topk_map = {}
+    for m, sims_tags in all_tag_scores.items():
+        stacked = np.stack([s for s, _ in sims_tags], axis=1)
+        tag_names = [t for _, t in sims_tags]
+        best_idx = stacked.argmax(axis=1)
+        best_scores = stacked.max(axis=1)
+        best_labels = [tag_names[j] for j in best_idx]
+        combined_scores[m] = best_scores
+        combined_labels[m] = best_labels
 
-        # Video writer setup
-        sample_im = pil_frames[0]
-        target_h = 360
-        scale = target_h / sample_im.height
-        target_w = int(sample_im.width * scale)
-        def resize_img(im): return im.resize((target_w, target_h), Image.BILINEAR)
+        # compute top-k
+        k = min(args.topk, N)
+        idxs = np.argpartition(best_scores, -k)[-k:]
+        topk_map[m] = idxs[np.argsort(best_scores[idxs])][::-1]
 
-        meta_text = (
-            f"Tag ID: {tag_id}\nTag: {tag_text}\nModel: {model_str}\n#Ref: {num_ref}\n"
-            f"TAF β={taf_beta:.2f}, γ={taf_gamma:.2f}\nPush λ={push_lambda:.2f}\nBG samples: {len(bg_idxs)}"
-        )
-        sample_upper = make_info_panel(resize_img(pil_frames[0]), meta_text)
-        width_upper, height_upper = sample_upper.size
-        sample_plot = draw_score_panel(method_series, 0, topk_map, width_px=width_upper, height_per_row=120)
-        width_plot, height_plot = sample_plot.size
-        canvas_w, canvas_h = width_upper, height_upper + height_plot
+    # Save CSV
+    import pandas as pd
+    csv_path = Path(args.output_dir) / "scores.csv"
+    df = pd.DataFrame({"frame": frame_names})
+    for m, arr in combined_scores.items():
+        df[m] = arr
+        df[m + "_BestTag"] = combined_labels[m]
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(csv_path, index=False)
+    print(f"Saved CSV to {csv_path}")
 
-        out_video_path = out_dir / f"{tag_id}_highlights.mp4"
+    # Visualization
+    sample_im = pil_frames[0]
+    target_h = 360
+    scale = target_h / sample_im.height
+    target_w = int(sample_im.width * scale)
+    def resize_img(im): return im.resize((target_w, target_h), Image.BILINEAR)
+
+    sample_upper = make_info_panel(resize_img(sample_im), "Combined across tags")
+    width_upper, height_upper = sample_upper.size
+    sample_plot = draw_score_panel(combined_scores, 0, topk_map, width_px=width_upper, height_per_row=120, tag_labels=combined_labels)
+    width_plot, height_plot = sample_plot.size
+    canvas_w, canvas_h = width_upper, height_upper + height_plot
+
+    out_video_path = Path(args.output_dir) / "highlights.mp4"
+    if _HAS_CV2:
+        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+        vw = cv2.VideoWriter(str(out_video_path), fourcc, args.fps, (canvas_w, canvas_h))
+    elif _HAS_IMAGEIO:
+        vw = imageio.get_writer(str(out_video_path), fps=args.fps, codec="libx264", quality=8)
+    else:
+        raise RuntimeError("No video writer available")
+
+    for idx, (im, fname) in enumerate(tqdm(zip(pil_frames, frame_names), total=N, desc="Composing video", unit="f")):
+        upper_panel = make_info_panel(resize_img(im), f"Frame {idx+1}/{N} {fname}")
+        plot_panel = draw_score_panel(combined_scores, idx, topk_map, width_px=canvas_w, height_per_row=120, tag_labels=combined_labels)
+        canvas = Image.new("RGB", (canvas_w, canvas_h), (0, 0, 0))
+        canvas.paste(upper_panel, (0, 0))
+        canvas.paste(plot_panel, (0, height_upper))
+        frame_np = np.array(canvas)
         if _HAS_CV2:
-            fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-            vw = cv2.VideoWriter(str(out_video_path), fourcc, args.fps, (canvas_w, canvas_h))
-        elif _HAS_IMAGEIO:
-            vw = imageio.get_writer(str(out_video_path), fps=args.fps, codec="libx264", quality=8)
+            vw.write(frame_np[:, :, ::-1])
         else:
-            raise RuntimeError("No video writer available")
-
-        for idx, (im, fname) in enumerate(tqdm(zip(pil_frames, frame_names),
-                                               total=N, desc=f"Composing video {tag_id}")):
-            upper_panel = make_info_panel(resize_img(im),
-                meta_text + f"\n\nFrame: {idx+1}/{N}\nFile: {fname}")
-            plot_panel = draw_score_panel(method_series, idx, topk_map, width_px=canvas_w, height_per_row=120)
-            canvas = Image.new("RGB", (canvas_w, canvas_h))
-            canvas.paste(upper_panel, (0, 0)); canvas.paste(plot_panel, (0, height_upper))
-            frame_np = np.array(canvas)
-            if _HAS_CV2: vw.write(frame_np[:, :, ::-1])
-            else: vw.append_data(frame_np)
-
-        if _HAS_CV2: vw.release()
-        else: vw.close()
-        print(f"[{tag_id}] Saved highlight video to {out_video_path}")
+            vw.append_data(frame_np)
+    if _HAS_CV2:
+        vw.release()
+    else:
+        vw.close()
+    print(f"Saved highlight video to {out_video_path}")
 
 
 if __name__ == "__main__":
