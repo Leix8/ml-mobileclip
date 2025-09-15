@@ -226,6 +226,16 @@ def get_vector_from_entry(entry: Dict[str, Any], path: List[str]) -> np.ndarray:
         d = d[p]
     return np.array(d["value"], dtype=np.float32)
 
+# ================= Utils =================
+def get_name_from_path(p: str) -> str:
+    path = Path(p)
+    if path.is_dir():
+        # directory → return last folder name
+        return path.name
+    else:
+        # file → return filename without extension
+        return path.stem
+
 
 # ================= Main =================
 def main():
@@ -265,10 +275,13 @@ def main():
 
     # Load frames
     pil_frames, frame_names = [], []
+    output_prefix = None
     if args.video:
+        output_prefix = get_name_from_path(args.video)
         pil_frames = sample_video_frames(args.video, args.fps)
         frame_names = [f"frame_{i:05d}.jpg" for i in range(len(pil_frames))]
     elif args.frames:
+        output_prefix = get_name_from_path(args.frames)
         all_paths = list_image_paths(Path(args.frames))
         base_fps = 30.0
         stride = max(1, int(round(base_fps / max(1, args.fps))))
@@ -338,7 +351,7 @@ def main():
 
     # Save CSV
     import pandas as pd
-    csv_path = Path(args.output_dir) / "scores.csv"
+    csv_path = Path(args.output_dir) / f"{output_prefix}_scores.csv"
     df = pd.DataFrame({"frame": frame_names})
     for m, arr in combined_scores.items():
         df[m] = arr
@@ -360,7 +373,7 @@ def main():
     width_plot, height_plot = sample_plot.size
     canvas_w, canvas_h = width_upper, height_upper + height_plot
 
-    out_video_path = Path(args.output_dir) / "highlights.mp4"
+    out_video_path = Path(args.output_dir) / f"{output_prefix}_highlights.mp4"
     if _HAS_CV2:
         fourcc = cv2.VideoWriter_fourcc(*"mp4v")
         vw = cv2.VideoWriter(str(out_video_path), fourcc, args.fps, (canvas_w, canvas_h))
