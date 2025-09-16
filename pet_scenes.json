@@ -1,5 +1,8 @@
 {
   "pet_scenes": [
-    "pet jumping", "pet sleeping", "pet eating", "pet running" 
+    {"tag": "pet jumping", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_jumping"},
+    {"tag": "pet sleeping", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_sleeping"},
+    {"tag": "pet eating", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_eating"}, 
+    {"tag": "pet running", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_running"} 
   ]
 }

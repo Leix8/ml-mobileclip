@@ -1,0 +1,13 @@
+{
+  "pet_scenes": [
+    {"tag": "Corgi running fast across the grass.", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_jumping"},
+    {"tag": "Dog jumping in the air while chasing a ball.", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_sleeping"},
+    {"tag": "Corgi sprinting to fetch a toy.", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_eating"}, 
+    {"tag": "Excited dog chasing after a rolling ball.", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_running"},
+    {"tag": "Dog grabbing a colorful toy ball while playing fetch.", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_jumping"},
+    {"tag": "Energetic dog pouncing on a ball in the park.", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_sleeping"},
+    {"tag": "Happy corgi showing excitement while running and playing.", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_eating"}, 
+    {"tag": "Corgi performing a sudden jump or burst of speed.", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_running"},
+    {"tag": "Dog chasing the toy with determination.", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_running"} 
+  ]
+}
