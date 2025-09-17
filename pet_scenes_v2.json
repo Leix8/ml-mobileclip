@@ -1,0 +1,9 @@
+{
+  "pet_scenes": [
+    {"tag": "a dog jumps up", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_jumping"},
+    {"tag": "a dog is sleeping", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_sleeping"},
+    {"tag": "a dog is eating", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_eating"}, 
+    {"tag": "a dog is running", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_running"},
+    {"tag": "NA", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_running"} 
+  ]
+}

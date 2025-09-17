@@ -339,7 +339,7 @@ def main():
     parser.add_argument("--seed", type=int, default=1234)
     parser.add_argument("--all_in_one", action="store_true",
                         help="If set, combine scores across tags (per method, keep highest score per frame and label tag).")
-    parser.add_argument("--nms_window_frames", type=int, default=15,
+    parser.add_argument("--nms_window_frames", type=int, default=5,
                         help="NMS suppression half-width in sampled frames (used if --nms_window_sec is not provided or not applicable).")
     parser.add_argument("--nms_window_sec", type=float, default=None,
                         help="NMS suppression half-width in seconds (preferred for videos; converted to sampled frames).")
