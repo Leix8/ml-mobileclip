@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 
 """
-Video frame retrieval visualization with MobileCLIP.
+Video frame retrieval visualization with MobileCLIP (AMP enabled, OpenCV only).
 - Deterministic runs
 - Safe MobileCLIP import
 - Multiple prompt JSON support
+- Cosine similarity saved to .npy
 - Visualization video with synced vertical lines
 """
 
@@ -13,7 +14,6 @@ import argparse
 import os
 import sys
 import json
-import time
 import random
 from pathlib import Path
 from typing import List, Dict, Any, Tuple
@@ -23,7 +23,15 @@ from PIL import Image
 
 import torch
 import torch.nn.functional as F
+from torch.cuda.amp import autocast
 from tqdm import tqdm
+
+import cv2
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from matplotlib.gridspec import GridSpec
+
 
 # ================= Determinism =================
 def setup_determinism(seed: int = 1234):
@@ -46,25 +54,6 @@ def _import_mobileclip():
         return sys.modules["mobileclip"]
     except Exception as e:
         raise ImportError("Could not import 'mobileclip'. Please install/ensure it's on PYTHONPATH.") from e
-
-
-# ---- Visualization / IO ----
-import matplotlib
-matplotlib.use("Agg")  # headless rendering
-import matplotlib.pyplot as plt
-from matplotlib.gridspec import GridSpec
-
-try:
-    import cv2
-    _HAS_CV2 = True
-except Exception:
-    _HAS_CV2 = False
-
-try:
-    import imageio
-    _HAS_IMAGEIO = True
-except Exception:
-    _HAS_IMAGEIO = False
 
 
 # -------------------- Utilities --------------------
@@ -113,73 +102,23 @@ def iter_frame_paths(frames_dir: str) -> List[Path]:
     return paths
 
 
-def sample_indices(total_count: int, source_fps: float, target_fps: float) -> List[int]:
-    if total_count <= 0:
-        return []
-    if target_fps <= 0:
-        target_fps = 1.0
-    if source_fps <= 0:
-        source_fps = 30.0
-
-    step = max(1, int(round(source_fps / target_fps)))
-    idxs = list(range(0, total_count, step))
-    if idxs[-1] != total_count - 1:
-        idxs.append(total_count - 1)
-    return idxs
-
-
-def read_video_frames(video_path: str) -> Tuple[List[Image.Image], float]:
+def read_video_cv2(video_path: str) -> Tuple[List[Image.Image], float]:
     if not os.path.isfile(video_path):
         raise FileNotFoundError(f"Video not found: {video_path}")
+    cap = cv2.VideoCapture(video_path)
+    if not cap.isOpened():
+        raise RuntimeError(f"Failed to open video: {video_path}")
 
+    fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
     frames = []
-    source_fps = 30.0
-
-    if _HAS_CV2:
-        cap = cv2.VideoCapture(video_path)
-        if not cap.isOpened():
-            raise RuntimeError(f"Failed to open video: {video_path}")
-        fps = cap.get(cv2.CAP_PROP_FPS)
-        if fps and fps > 0:
-            source_fps = float(fps)
-        while True:
-            ok, frame = cap.read()
-            if not ok:
-                break
-            frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            frames.append(Image.fromarray(frame_rgb))
-        cap.release()
-    elif _HAS_IMAGEIO:
-        reader = imageio.get_reader(video_path)
-        try:
-            meta = reader.get_meta_data()
-            source_fps = float(meta.get("fps", 30.0))
-        except Exception:
-            source_fps = 30.0
-        for frame in reader:
-            frames.append(Image.fromarray(frame))
-        reader.close()
-    else:
-        raise RuntimeError("Neither OpenCV nor imageio is available to read video.")
-
-    return frames, source_fps
-
-
-def write_video(path: str, frames_bgr: List[np.ndarray], fps: float):
-    h, w = frames_bgr[0].shape[:2]
-    if _HAS_CV2:
-        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-        out = cv2.VideoWriter(path, fourcc, fps, (w, h))
-        if not out.isOpened():
-            raise RuntimeError("Failed to open VideoWriter.")
-        for f in frames_bgr:
-            out.write(f)
-        out.release()
-    elif _HAS_IMAGEIO:
-        frames_rgb = [f[:, :, ::-1] for f in frames_bgr]
-        imageio.mimsave(path, frames_rgb, fps=fps, quality=8)
-    else:
-        raise RuntimeError("Neither OpenCV nor imageio available for writing video.")
+    while True:
+        ok, frame = cap.read()
+        if not ok:
+            break
+        frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        frames.append(Image.fromarray(frame_rgb))
+    cap.release()
+    return frames, float(fps)
 
 
 def pil_to_tensor_for_mobileclip(img: Image.Image, image_processor) -> torch.Tensor:
@@ -188,9 +127,8 @@ def pil_to_tensor_for_mobileclip(img: Image.Image, image_processor) -> torch.Ten
 
 # -------------------- Core Pipeline --------------------
 def main():
-    parser = argparse.ArgumentParser(description="Video frame retrieval visualization with MobileCLIP")
-    parser.add_argument("--prompt_json", type=str, nargs="+", required=False)
-    parser.add_argument("--embeddings", type=str, required=True)
+    parser = argparse.ArgumentParser(description="Video frame retrieval visualization with MobileCLIP + AMP (OpenCV only)")
+    parser.add_argument("--prompt_json", type=str, nargs="+", required=True)
     grp = parser.add_mutually_exclusive_group(required=True)
     grp.add_argument("--video", type=str, default=None)
     grp.add_argument("--frames", type=str, default=None)
@@ -199,6 +137,7 @@ def main():
     parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip_s0.pt")
     parser.add_argument("--device", type=str, default="cuda:0")
     parser.add_argument("--seed", type=int, default=1234)
+    parser.add_argument("--no_amp", action="store_true", help="Disable AMP, use strict float32")
     parser.add_argument("--fig_width", type=int, default=1280)
     parser.add_argument("--fig_height", type=int, default=720)
     parser.add_argument("--dpi", type=int, default=100)
@@ -208,7 +147,6 @@ def main():
     os.makedirs(args.output_dir, exist_ok=True)
 
     # ---- Load prompt JSONs ----
-    
     prompt_specs = load_prompt_jsons(args.prompt_json)
     tag_counts = [len(ps["flat_tags"]) for ps in prompt_specs]
     num_rows = min(tag_counts)
@@ -216,7 +154,7 @@ def main():
 
     # ---- Load frames ----
     if args.video is not None:
-        frames_all, src_fps = read_video_frames(args.video)
+        frames_all, src_fps = read_video_cv2(args.video)
         src_desc = f"video: {Path(args.video).name}"
     else:
         frame_paths = iter_frame_paths(args.frames)
@@ -224,7 +162,8 @@ def main():
         src_fps = 30.0
         src_desc = f"frames_dir: {Path(args.frames).name} (assume 30 fps)"
 
-    sel_idxs = sample_indices(len(frames_all), src_fps, args.fps)
+    step = max(1, int(round(src_fps / args.fps)))
+    sel_idxs = list(range(0, len(frames_all), step))
     sampled_frames = [frames_all[i] for i in sel_idxs]
     T = len(sampled_frames)
     print(f"{T} frames have been loaded")
@@ -247,56 +186,40 @@ def main():
     model = model.to(device).eval()
     tokenizer = mobileclip.get_tokenizer(model_name)
 
-    with open(args.embeddings, "r") as f:
-        emb_json = json.load(f)
-    entries = extract_tag_entries(emb_json)
-    if len(entries) == 0:
-        raise ValueError("No tag entries found in embeddings JSON.")
-    
-    def _get_vec(entry: Dict[str, Any], key_path: List[str]) -> torch.Tensor:
-        vec = get_vector_from_entry(entry, key_path)  # np
-        return F.normalize(torch.tensor(vec, device=args.device), dim=-1)
-    
-    def cosine_sim_batch(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
-        return (a * b).sum(dim=-1)
-
-    text_t = None
-    for entry in entries:
-        tag_text = entry.get("tag", entry.get("id", "tag"))
-        text_t = _get_vec(entry, ["embedding", "tag_embedding"])
-
-        sim_text = cosine_sim_batch(frame_embs, text_t).cpu().numpy()
+    use_amp = not args.no_amp
 
     # ---- Encode text ----
     with torch.no_grad():
         text_embeds = []
-        for ps in tqdm(prompt_specs, desc = "encoding tags"):
+        for ps in tqdm(prompt_specs, desc="encoding tags"):
             tags = [ps["flat_tags"][i] for i in range(num_rows)]
-            toks = tokenizer(tags).to(device)
-            te = model.encode_text(toks)
-            te = F.normalize(te, dim=-1)
+            toks = tokenizer(tags).to(device)  # must stay long
+            with autocast(enabled=use_amp):
+                te = model.encode_text(toks)
+            te = F.normalize(te.float(), dim=-1)
             text_embeds.append(te)
 
     # ---- Encode frames ----
     with torch.no_grad():
         img_embeds = []
-        for img in tqdm(sampled_frames, desc = "encoding frames"):
-            x = pil_to_tensor_for_mobileclip(img, image_processor).to(device)
-            fe = model.encode_image(x)
-            fe = F.normalize(fe, dim=-1)
+        for img in tqdm(sampled_frames, desc="encoding frames"):
+            x = pil_to_tensor_for_mobileclip(img, image_processor).to(device).float()
+            with autocast(enabled=use_amp):
+                fe = model.encode_image(x)
+            fe = F.normalize(fe.float(), dim=-1)
             img_embeds.append(fe.squeeze(0).cpu())
         img_embeds = torch.stack(img_embeds, dim=0)
 
     sims = torch.zeros((num_rows, len(prompt_specs), T), dtype=torch.float32)
-    for s, te in enumerate(text_t):
+    for s, te in enumerate(text_embeds):
         s_mat = torch.matmul(img_embeds, te.cpu().T)
         sims[:, s, :] = s_mat.T
 
-    npy_out_name = ("compare_tag_sim_" + (Path(args.video).stem if args.video else Path(args.frames).name) + ".npy")
-    np.save(os.path.join(args.output_dir, npy_out_name), sims.numpy())
-    # np.save(os.path.join(args.output_dir, "similarities.npy"), sims.numpy())
-
-    # ---- Visualization ----
+    # ---- Save sims to .npy ----
+    npy_out = Path(args.output_dir) / f"compare_tag_sim_{src_desc.replace(' ', '_')}.npy"
+    np.save(npy_out, sims.numpy())
+    print(f"[OUT] Saved similarities to {npy_out}")
+    # ---- Visualization video ----
     fig_w_in = args.fig_width / args.dpi
     fig_h_in = args.fig_height / args.dpi
     fig = plt.figure(figsize=(fig_w_in, fig_h_in), dpi=args.dpi)
@@ -304,26 +227,7 @@ def main():
     top_rows = max(3, int((num_rows + 5) * 0.55))
     ax_img = fig.add_subplot(gs[:top_rows, 0])
     plot_axes = [fig.add_subplot(gs[top_rows + r: top_rows + r + 1, 0]) for r in range(num_rows)]
-    lines = []
     x_vals = np.arange(T)
-
-    for r in range(num_rows):
-        ax = plot_axes[r]
-        per_row_lines = []
-        for s in range(len(prompt_specs)):
-            (ln,) = ax.plot(x_vals, sims[r, s, :].numpy(), linewidth=1.2)
-            per_row_lines.append(ln)
-        lines.append(per_row_lines)
-        if len(prompt_specs) > 1:
-            labels = [ps["groups"][0]["items"][r]["tag"] for ps in prompt_specs]
-            ax.legend(labels, fontsize=8, loc="upper right", framealpha=0.6)
-        ax.set_xlim(0, T - 1)
-        ydata = sims[r, :, :].numpy().reshape(-1)
-        ax.set_ylim(float(np.min(ydata)), float(np.max(ydata)))
-        ax.set_ylabel("cos sim", fontsize=9)
-        # ax.set_title(f"Tag {r+1}: {row_tag_labels[r]}", fontsize=10, pad=2)
-        ax._vline = ax.axvline(0, linestyle="--", linewidth=1.0)
-        ax.tick_params(axis='both', which='major', labelsize=8)
 
     ax_img.axis("off")
     suptitle = fig.suptitle("", fontsize=11)
@@ -332,6 +236,8 @@ def main():
         ax_img.clear()
         ax_img.axis("off")
         ax_img.imshow(pil_img)
+
+        # update text above
         timestamp_sec = t / max(args.fps, 1e-6)
         meta = [
             f"Source: {src_desc}",
@@ -341,21 +247,42 @@ def main():
             f"Frame idx: {t}/{T-1} | Time: {timestamp_sec:.2f}s"
         ]
         ax_img.set_title(" | ".join(meta), fontsize=10, pad=6)
+
+        # draw similarity curves fresh for this frame
         for r in range(num_rows):
-            plot_axes[r]._vline.set_xdata([t, t])
+            ax = plot_axes[r]
+            ax.clear()
+            for s in range(len(prompt_specs)):
+                y = sims[r, s, :].numpy().clip(-1, 1)  # safe range
+                ax.plot(x_vals, y, linewidth=1.2)
+            if len(prompt_specs) > 1:
+                labels = [ps["groups"][0]["items"][r]["tag"] for ps in prompt_specs]
+                ax.legend(labels, fontsize=8, loc="upper right", framealpha=0.6)
+            ax.set_xlim(0, T - 1)
+            ymin, ymax = np.nanmin(y), np.nanmax(y)
+            if not np.isfinite(ymin) or not np.isfinite(ymax) or ymin == ymax:
+                ymin, ymax = -1.0, 1.0
+            ax.set_ylim(ymin, ymax)
+            ax.set_ylabel("cos sim", fontsize=9)
+            ax.axvline(t, linestyle="--", linewidth=1.0, color="red")
+
         suptitle.set_text("Video Retrieval Similarity (cosine)")
         fig.canvas.draw()
 
         w, h = fig.canvas.get_width_height()
         argb = np.frombuffer(fig.canvas.tostring_argb(), dtype=np.uint8).reshape(h, w, 4)
-        # ARGB → RGB
         rgb = argb[:, :, 1:4]
-        return rgb[:, :, ::-1]   # to BGR
+        return rgb[:, :, ::-1]  # RGB→BGR
 
     out_name = ("compare_tag_viz_" + (Path(args.video).stem if args.video else Path(args.frames).name) + ".mp4")
     out_path = os.path.join(args.output_dir, out_name)
-    bgr_frames = [render_frame(t, sampled_frames[t]) for t in range(T)]
-    write_video(out_path, bgr_frames, fps=max(args.fps, 1.0))
+    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+    vw = cv2.VideoWriter(out_path, fourcc, args.fps, (args.fig_width, args.fig_height))
+
+    for t in tqdm(range(T), desc="Composing video"):
+        frame_bgr = render_frame(t, sampled_frames[t])
+        vw.write(frame_bgr)
+    vw.release()
     print(f"[OUT] Wrote visualization video: {out_path}")
 
 

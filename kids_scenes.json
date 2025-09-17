@@ -1,0 +1,10 @@
+{
+  "pet_scenes": [
+    {"tag": "smiling", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_jumping"},
+    {"tag": "kid's smiling", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_jumping"},
+    {"tag": "reading", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_sleeping"},
+    {"tag": "clapping", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_eating"}, 
+    {"tag": "kid and parent", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_running"},
+    {"tag": ".", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_running"} 
+  ]
+}
