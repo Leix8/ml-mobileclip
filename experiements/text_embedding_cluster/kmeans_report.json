@@ -1,0 +1,36 @@
+{
+  "k": 8,
+  "silhouette_cosine": 0.5184923410415649,
+  "clusters": {
+    "0": [
+      "A cat or dog eating food",
+      "a dog is eating"
+    ],
+    "1": [
+      "smiling",
+      "kid's smiling"
+    ],
+    "2": [
+      "A dog jumping or leaping",
+      "a dog jumps up"
+    ],
+    "3": [
+      "reading",
+      "."
+    ],
+    "4": [
+      "clapping"
+    ],
+    "5": [
+      "A cat or dog sleeping or resting.",
+      "a dog is sleeping"
+    ],
+    "6": [
+      "kid and parent"
+    ],
+    "7": [
+      "A dog running.",
+      "a dog is running"
+    ]
+  }
+}
