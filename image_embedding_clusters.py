@@ -217,23 +217,26 @@ def main():
 
     # ---- MobileCLIP ----
     model_name = infer_model_name_from_ckpt(args.model_path)
-    model, _, image_processor = open_clip.create_model_and_transforms(model_name, pretrained=args.model_path)
+    model_kwargs = {}
+    if not (model_name.endswith("S3") or model_name.endswith("S4") or model_name.endswith("L-14")):
+        model_kwargs = {"image_mean": (0, 0, 0), "image_std": (1, 1, 1)}
+    model, _, image_processor = open_clip.create_model_and_transforms(model_name, pretrained=args.model_path, **model_kwargs)
     device = torch.device(args.device if torch.cuda.is_available() else "cpu")
     model = model.to(device).eval()
     model = reparameterize_model(model)
     tokenizer = open_clip.get_tokenizer(model_name)
 
-    outdir = Path(f"{args.outdir}_{model_name}"); outdir.mkdir(parents=True, exist_ok=True)
+    outdir = Path(f"{args.outdir}{model_name}"); outdir.mkdir(parents=True, exist_ok=True)
 
     # ---- Encode images ----
     ims = [Image.open(p).convert("RGB") for p in paths]
-    with torch.no_grad():
+    with torch.no_grad(),  torch.cuda.amp.autocast():
         embs = []
         for i in range(0, len(ims), 32):
             batch = ims[i:i+32]
-            x = torch.stack([image_processor(im) for im in batch], dim=0).to(device).float()
+            x = torch.stack([image_processor(im) for im in batch], dim=0).to(device)
             fe = model.encode_image(x)
-            fe = F.normalize(fe.float(), dim=-1)
+            fe = F.normalize(fe, dim=-1)
             embs.append(fe.cpu())
         E = torch.cat(embs, dim=0).numpy()  # [N, D], L2-normalized
 
