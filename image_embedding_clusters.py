@@ -205,7 +205,6 @@ def main():
     args = ap.parse_args()
 
     set_seed(args.seed)
-    outdir = Path(args.outdir); outdir.mkdir(parents=True, exist_ok=True)
 
     paths = []
     for d in args.images_dir:
@@ -219,6 +218,8 @@ def main():
     device = torch.device(args.device if torch.cuda.is_available() else "cpu")
     model = model.to(device).eval()
     tokenizer = mobileclip.get_tokenizer(model_name)
+
+    outdir = Path(f"{args.outdir}_{model_name}"); outdir.mkdir(parents=True, exist_ok=True)
 
     # ---- Encode images ----
     ims = [Image.open(p).convert("RGB") for p in paths]

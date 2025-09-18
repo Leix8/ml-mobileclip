@@ -2,6 +2,7 @@
 checkpoints
 highlight_detection
 data
+experiements
 #Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

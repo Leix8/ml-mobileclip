@@ -169,6 +169,7 @@ def main():
                         help="Parent directory for fallback lookup.")
     parser.add_argument("--output_dir", type=str, required=True,
                         help="Where to save the output json.")
+    parser.add_argument("--output_suffix", type=str, required=False)
     parser.add_argument("--llm_generated", action="store_true",
                         help="Enable more aggressive tag normalization for fallback mode.")
     parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip_s0.pt")
@@ -245,7 +246,7 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     base = Path(args.scene_json).stem
     flag = "_llmgen" if args.llm_generated else ""
-    out_path = out_dir / f"{base}{flag}_embeddings.json"
+    out_path = out_dir / f"{base}{flag}_{model_name}_embeddings.json"
     with open(out_path, "w") as f:
         json.dump(results, f, indent=2)
     print(f"Saved embeddings to {out_path}")
