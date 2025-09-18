@@ -184,6 +184,10 @@ def load_text_dirs(mobileclip, model, tokenizer, prompts: List[str], device: tor
         te = F.normalize(te.float(), dim=-1)
     return te.cpu().numpy()  # [P, D]
 
+def safe_norm(x: torch.Tensor) -> torch.Tensor:
+    n = x.norm(p=2)
+    return x / n if n > 0 else x
+
 def list_all_images(root_dir: str) -> List[Path]:
     root = Path(root_dir)
     if not root.exists():
@@ -192,6 +196,21 @@ def list_all_images(root_dir: str) -> List[Path]:
     if not imgs:
         raise RuntimeError(f"No images found in {root_dir}")
     return sorted(imgs, key=lambda p: p.name.lower())
+
+def taf_fuse_multi_refs(text_emb: torch.Tensor, ref_embs: torch.Tensor,
+                        beta: float = 0.4, gamma: float = 0.1) -> torch.Tensor:
+    if ref_embs.size(0) == 0:
+        return text_emb
+    fused = []
+    for k in range(ref_embs.size(0)):
+        ref = ref_embs[k]
+        dot_it = torch.clamp((ref * text_emb).sum(), -1.0, 1.0)
+        i_parallel = dot_it * text_emb
+        i_perp = ref - i_parallel
+        fused.append((1.0 - beta) * text_emb +
+                     beta * safe_norm(i_parallel) +
+                     gamma * safe_norm(i_perp))
+    return F.normalize(torch.stack(fused, dim=0), dim=-1)
 
 # ---------- Main ----------
 def main():
@@ -205,6 +224,7 @@ def main():
     ap.add_argument("--remove_top_pcs", type=int, default=0, help="remove top-K PCs from image embeddings")
     ap.add_argument("--debias_bg", action="store_true", help="subtract mean of random subset (background centroid)")
     ap.add_argument("--text_prompts", type=str, nargs="*", default=[], help="optional text prompts to project onto")
+    ap.add_argument("--taf", action="store_true", help="optional to run cluster with taf")
     ap.add_argument("--auto_kmax", type=int, default=10, help="max clusters to scan for KMeans")
     args = ap.parse_args()
 
@@ -244,8 +264,27 @@ def main():
     if args.debias_bg:
         idx = np.random.choice(len(E), size=min(128, len(E)), replace=False)
         bg = E[idx].mean(0, keepdims=True)
-        E = E - bg
-        E = E / (np.linalg.norm(E, axis=1, keepdims=True) + 1e-6)
+        E_bg = E - bg
+        E_bg = E_bg / (np.linalg.norm(E, axis=1, keepdims=True) + 1e-6)
+        X2_bg = run_projection(E_bg, args.proj, seed=args.seed)
+        save_scatter(X2_bg, paths, labels=None,
+                    title=f"image embeddings (bg debiased) ({args.proj.upper()})",
+                    out=str(outdir/f"scatter_{args.proj}_debias_bg.png"),
+                    thumbnails=True)
+
+    # ---- Optional text aligned fusion ----
+    if args.taf and args.text_prompts:
+        T = load_text_dirs(open_clip, model, tokenizer, args.text_prompts, device)  # [P, D], L2-normalized
+        for idx, text_emb in enumerate(T):
+            print(f"check E.shape: {torch.tensor(E).shape}")
+            taf_embs = taf_fuse_multi_refs(torch.tensor(text_emb), torch.tensor(E)).cpu().numpy()
+            print(f"check taf_embds.shape: {torch.tensor(taf_embs.shape)}")
+            X2_taf = run_projection(taf_embs, args.proj, seed = args.seed)
+            save_scatter(X2_taf, paths, labels = None, 
+                    title = f"image embeddings (taf with {args.text_prompts[idx]})", 
+                    out = str(outdir/f"scatter_{args.proj}_taf_w_{args.text_prompts[idx]}.png"),
+                    thumbnails = True)
+
     if args.remove_top_pcs > 0:
         E = remove_top_pcs(E, k=args.remove_top_pcs)
 
