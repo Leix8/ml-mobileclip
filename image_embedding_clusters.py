@@ -294,7 +294,7 @@ def main():
 
     # ---- Optional: project onto text prompts (semantic axes) ----
     if args.text_prompts:
-        T = load_text_dirs(mobileclip, model, tokenizer, args.text_prompts, device)  # [P, D], L2-normalized
+        T = load_text_dirs(open_clip, model, tokenizer, args.text_prompts, device)  # [P, D], L2-normalized
         # pick first prompt or compute direction between two prompts
         if len(T) == 1:
             w = T[0]
