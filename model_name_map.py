@@ -1,21 +1,21 @@
 # model_name_map.py
 MODEL_NAME_MAP = {
     # MobileCLIP1
-    "mobileclip_s0": "MobileCLIP-S0",
-    "mobileclip_s1": "MobileCLIP-S1",
-    "mobileclip_s2": "MobileCLIP-S2",
+    "mobileclip-s0": "mobileclip_s0",
+    "mobileclip-s1": "MobileCLIP-S1",
+    "mobileclip-s2": "MobileCLIP-S2",
     "mobileclip-b": "MobileCLIP-B",
     "mobileclip-blt": "MobileCLIP-B-LT",
-    "mobileclip_s3": "MobileCLIP-S3",
-    "mobileclip_l14": "MobileCLIP-L-14",
+    "mobileclip-s3": "MobileCLIP-S3",
+    "mobileclip-l14": "MobileCLIP-L-14",
     "mobileclip-s4": "MobileCLIP-S4",
 
     # MobileCLIP2
-    "mobileclip2_s0": "MobileCLIP2-S0",
-    "mobileclip2_s2": "MobileCLIP2-S2",
+    "mobileclip2-s0": "MobileCLIP2-S0",
+    "mobileclip2-s2": "MobileCLIP2-S2",
     "mobileclip2-b": "MobileCLIP2-B",
-    "mobileclip2_s3": "MobileCLIP2-S3",
-    "mobileclip2_l14": "MobileCLIP2-L-14",
+    "mobileclip2-s3": "MobileCLIP2-S3",
+    "mobileclip2-l14": "MobileCLIP2-L-14",
     "mobileclip2-s4": "MobileCLIP2-S4",
 }
 
@@ -30,4 +30,4 @@ def infer_model_name_from_ckpt(ckpt_path: str) -> str:
     key = base.lower().replace("_", "-")  # normalize
     if key in MODEL_NAME_MAP:
         return MODEL_NAME_MAP[key]
-    raise ValueError(f"Unknown checkpoint-to-model mapping for '{base}'")
+    raise ValueError(f"Unknown checkpoint-to-model mapping for '{base} -> {key}'")

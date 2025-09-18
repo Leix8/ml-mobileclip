@@ -3,6 +3,7 @@ highlight_detection
 open_clip
 scene_tags
 embedding_database
+experiements
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
