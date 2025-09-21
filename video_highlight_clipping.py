@@ -183,7 +183,7 @@ def load_frames_from_video(video_path: str, play_fps: Optional[float], max_side:
 
     cap.release()
     effective_play_fps = target_fps if len(frames) > 1 else orig_fps
-    return frames, duration_s, width, height, effective_play_fps
+    return frames, duration_s, target_w, target_h, effective_play_fps
 
 
 # load the embeddings to retrieve upon
@@ -479,7 +479,7 @@ def predict_highlight_clip(
     else:
         merged = raw_intervals
 
-    return [{"start_idx": s, "end_idx": e} for (s, e) in merged]
+    return [{"start_idx": s, "end_idx": e, "start_time": s / max(play_fps, 1e-6) , "end_time": e / max(play_fps, 1e-6)} for (s, e) in merged]
 
 
 # visualize the save the result as video
@@ -650,6 +650,158 @@ def visualize_video_clipping(
 
     out.release()
 
+import cv2
+import numpy as np
+from typing import List, Dict, Tuple, Optional
+
+def generate_clipped_video(
+    video_path: str,
+    video_clips: List[Dict[str, float]],
+    output_path: str,
+    fps: int = 15,
+    max_side: int = 640,
+    clip_duration: int = 2,
+    transition: str = "black",   # "none", "fade", "crossfade"
+    transition_len: int = 10         # in frames
+):
+    """
+    Generate highlight video from original video, based on clip timestamps.
+
+    Args:
+        video_path: path to original video
+        video_clips: list of {"start_time": float, "end_time": float} in seconds
+        output_path: where to save
+        fps: target playback fps
+        max_side: resize so that longer side <= max_side
+        transition: transition type
+        transition_len: number of frames for transition
+    """
+    cap = cv2.VideoCapture(video_path)
+    if not cap.isOpened():
+        raise FileNotFoundError(f"Cannot open video: {video_path}")
+
+    orig_w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    orig_h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+    # scaling factor
+    max_dim = max(orig_w, orig_h)
+    if max_dim > max_side:
+        scale = max_side / max_dim
+        out_w, out_h = int(round(orig_w * scale)), int(round(orig_h * scale))
+    else:
+        out_w, out_h = orig_w, orig_h
+
+    # writer
+    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+    out = cv2.VideoWriter(output_path, fourcc, fps, (out_w, out_h))
+    if not out.isOpened():
+        raise RuntimeError(f"Cannot open VideoWriter for {output_path}")
+
+    def resize_frame(frame):
+        return cv2.resize(frame, (out_w, out_h), interpolation=cv2.INTER_AREA)
+
+    def extract_clip(start_t: float, end_t: float):
+        """Extract frames from start_time to end_time at target fps"""
+        duration = end_t - start_t
+        num_frames = int(round(duration * fps))
+        frames = []
+        for i in range(num_frames):
+            t = start_t + i / fps
+            ok, frame = cap.read()
+            if not ok:
+                break
+            frames.append(resize_frame(frame))
+        return frames
+
+    # precompute total frames
+    total_frames = len(video_clips) * (fps * clip_duration)
+
+    if transition == "black":
+        pause_len = transition_len // 2
+        total_frames += (len(video_clips) - 1) * (2 * transition_len + pause_len)
+    elif transition == "fade":
+        total_frames += (len(video_clips) - 1) * transition_len * 2
+    elif transition == "crossfade":
+        total_frames += (len(video_clips) - 1) * transition_len
+    
+    total_frames = len(video_clips) * (fps * clip_duration)   # each highlight is 2s
+
+    pbar = tqdm(total=total_frames, desc="Writing highlight video", unit="frame")
+
+    # process clips
+    for ci, clip in enumerate(video_clips):
+        s_t, e_t = clip["start_time"], clip["end_time"]
+
+        # ensure 2s duration (center ±1s)
+        mid = 0.5 * (s_t + e_t)
+        s_t = max(0.0, mid - clip_duration / 2)
+        e_t = mid + clip_duration / 2
+
+        clip_frames = extract_clip(s_t, e_t)
+        for f in clip_frames:
+            out.write(f)
+            pbar.update(1)
+
+        # transitions between clips
+        if ci < len(video_clips) - 1 and transition != "none":
+            next_mid = 0.5 * (video_clips[ci+1]["start_time"] + video_clips[ci+1]["end_time"])
+            next_s = max(0.0, next_mid - 1.0)
+            next_e = next_mid + 1.0
+            next_frames = extract_clip(next_s, next_e)
+
+            if len(clip_frames) > 0 and len(next_frames) > 0:
+                last_frame = clip_frames[-1]
+                first_next = next_frames[0]
+
+                if transition == "fade":
+                    black = np.zeros_like(last_frame)
+                    for t in range(transition_len):
+                        alpha = 1 - t / transition_len
+                        out.write(cv2.addWeighted(last_frame, alpha, black, 1 - alpha, 0))
+                        pbar.update(1)
+                    for t in range(transition_len):
+                        alpha = t / transition_len
+                        out.write(cv2.addWeighted(first_next, alpha, black, 1 - alpha, 0))
+                        pbar.update(1)
+
+                elif transition == "crossfade":
+                    for t in range(transition_len):
+                        alpha = t / transition_len
+                        blended = cv2.addWeighted(last_frame, 1 - alpha, first_next, alpha, 0)
+                        out.write(blended)
+                        pbar.update(1)
+                
+                elif transition == "black":
+                    # Fade out last frame to black
+                    last_frame = clip_frames[-1]
+                    black = np.zeros((out_h, out_w, 3), dtype=np.uint8)
+
+                    for t in range(transition_len):
+                        alpha = 1 - t / transition_len
+                        blended = cv2.addWeighted(last_frame, alpha, black, 1 - alpha, 0)
+                        out.write(blended)
+                        pbar.update(1)
+
+                    # Keep black frames for pause
+                    for _ in range(transition_len // 2):
+                        out.write(black)
+                        pbar.update(1)
+
+                    # Fade in from black to first frame of next clip
+                    next_mid = 0.5 * (video_clips[ci+1]["start_time"] + video_clips[ci+1]["end_time"])
+                    next_s, next_e = max(0.0, next_mid - 1.0), next_mid + 1.0
+                    next_frames = extract_clip(next_s, next_e)
+
+                    if len(next_frames) > 0:
+                        first_next = next_frames[0]
+                        for t in range(transition_len):
+                            alpha = t / transition_len
+                            blended = cv2.addWeighted(first_next, alpha, black, 1 - alpha, 0)
+                            out.write(blended)
+                            pbar.update(1)
+
+    cap.release()
+    out.release()
 
 # ---------------- Main ---------------- #
 
@@ -760,12 +912,21 @@ def main():
     os.makedirs(os.path.dirname(txt_out), exist_ok=True)
     with open(txt_out, "w", encoding="utf-8") as f:
         for c in clips:
-            s, e = c["start_idx"], c["end_idx"]
-            ts = s / max(play_fps, 1e-6)
-            te = e / max(play_fps, 1e-6)
+            s, e, ts, te = c["start_idx"], c["end_idx"], c["start_time"], c["end_time"]
             f.write(f"{s}-{e}  ({ts:.3f}s - {te:.3f}s)\n")
     print(f"[INFO] Wrote: {txt_out}")
-
+  
+    clipped_video_out = Path(args.outdir) / (Path(f"{model_name}")) / (Path(args.video).stem + f"_highlights.mp4")
+    generate_clipped_video(
+    video_path = args.video, 
+    video_clips = clips,
+    output_path = clipped_video_out,
+    fps = 15,
+    max_side = 300,
+    transition = "black",   # "none", "fade", "crossfade"
+    transition_len = 10         # frames
+    )
+    print(f"[INFO] Wrote: {clipped_video_out}")
 
 if __name__ == "__main__":
     main()
