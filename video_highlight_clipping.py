@@ -490,165 +490,161 @@ def visualize_video_clipping(
     video_highlight_clips: List[Dict[str, int]],
     video_frames: List[np.ndarray],
     play_fps: float,
-    max_side: int = 250,
+    method: str,
+    model_name: str,
+    params: Dict[str, Any],
     max_tags_to_draw: int = 6,
-    draw_best_tag_curve: bool = True,
     show_score_ranges: Tuple[float, float] = (-0.1, 1.0),
     font_scale: float = 0.6,
-    thickness: int = 1
+    thickness: int = 1,
+    canvas_max_side: int = 800,
+    frame_max_side: int = 400,
+    thumb_h: int = 60,
 ):
-    """
-    Writes an MP4 with two panels:
-      - Top: video frame, with a green bar below when inside a predicted clip.
-      - Bottom: rolling score plot of (up to) max_tags_to_draw tag curves + current fused score, with a vertical cursor.
-    """
-    # Prepare quick lookups
     sampled_idx = cos_sim_score_stats["sampled_idx"]
     Ns = len(sampled_idx)
     per_tag = cos_sim_score_stats["per_tag"]
     best_per_frame = cos_sim_score_stats["best_per_frame"]
 
-    # Choose tags to draw: top tags by global max score
-    tag_max = []
-    for tag, pack in per_tag.items():
-        tag_max.append((tag, float(np.max(pack["scores"])) if len(pack["scores"]) else -1e9))
-    tag_max.sort(key=lambda x: x[1], reverse=True)
-    draw_tags = [t for t, _ in tag_max[:max_tags_to_draw]]
-
-    # Pre-render plots as images to speed up (one per frame)
-    # We'll draw a static base (axes, curves) and only add the moving cursor per frame.
-
-    # Build a canvas size
-    h, w = video_frames[0].shape[:2]
-    # compute scaling factor so that max(h,w) <= max_side
-    max_dim = max(w, h)
-    if max_dim > max_side:
-        scale = max_side / max_dim
-        target_w = int(round(w * scale))
-        target_h = int(round(h * scale))
+    # --- Resize video frame dimension if too big ---
+    frame_h, frame_w = video_frames[0].shape[:2]
+    frame_max_dim = max(frame_w, frame_h)
+    if frame_max_dim > frame_max_side:
+        frame_scale = frame_max_side / frame_max_dim
+        frame_w = int(round(frame_w * frame_scale))
+        frame_h = int(round(frame_h * frame_scale))
     else:
-        target_w, target_h = w, h
-    bottom_h = max(180, h // 3)
+        frame_scale = 1.0
+
     pad = 10
+    meta_w = 320
+    plot_h = 200
 
-    # Render curves into a white canvas using OpenCV (simple axes)
-    def render_static_plot() -> np.ndarray:
-        canvas = np.ones((bottom_h, w, 3), dtype=np.uint8) * 255
+    canvas_w = frame_w + meta_w + 3 * pad
+    canvas_h = frame_h + thumb_h + plot_h + 5 * pad
 
-        # Axes
-        left, right = 60, w - 10
-        top, bottom = 20, bottom_h - 30
+    max_dim = max(canvas_w, canvas_h)
+    if max_dim > canvas_max_side:
+        scale = canvas_max_side / max_dim
+        out_w, out_h = int(round(canvas_w * scale)), int(round(canvas_h * scale))
+    else:
+        scale = 1.0
+        out_w, out_h = canvas_w, canvas_h
 
-        # Y ticks (score range)
-        y_min, y_max = show_score_ranges
-        for yv in np.linspace(y_min, y_max, 5):
-            y = int(round(np.interp(yv, [y_min, y_max], [bottom, top])))
-            cv2.line(canvas, (left, y), (right, y), (220, 220, 220), 1)
-            cv2.putText(canvas, f"{yv:.2f}", (5, y + 4), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0,0,0), 1, cv2.LINE_AA)
+    # --- Precompute thumbnails (fixed width) ---
+    num_thumbs = min(20, len(video_frames))
+    step = max(1, len(video_frames) // num_thumbs)
+    thumb_w = (canvas_w - 2 * pad) // num_thumbs
+    thumbs = []
+    for i in range(0, len(video_frames), step):
+        th = cv2.resize(video_frames[i], (thumb_w, thumb_h), interpolation=cv2.INTER_AREA)
+        thumbs.append((i, th))
 
-        # X ticks (frames)
-        for xv in np.linspace(0, Ns-1, 6):
-            x = int(round(np.interp(xv, [0, Ns-1], [left, right])))
-            cv2.line(canvas, (x, top), (x, bottom), (235, 235, 235), 1)
-            cv2.putText(canvas, f"{int(xv)}", (x-10, bottom+20), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0,0,0), 1, cv2.LINE_AA)
+    # --- Highlight mask ---
+    highlight_mask = np.zeros(len(video_frames), dtype=np.uint8)
+    for clip in video_highlight_clips:
+        s, e = clip["start_idx"], clip["end_idx"]
+        highlight_mask[s:e+1] = 1
 
-        # Draw tag curves
-        colors = {}
-        rng = np.random.RandomState(42)
-        for tag in draw_tags:
-            colors[tag] = tuple(int(c) for c in rng.randint(50, 220, size=3))
-
-        for tag in draw_tags:
-            s = per_tag[tag]["scores"]
-            if len(s) != Ns:
-                # If some tag scores were computed on a slightly different sampling,
-                # we reindex/interp onto sampled_idx positions; for now, assume aligned.
-                pass
-            pts = []
-            for i, sv in enumerate(s):
-                x = int(round(np.interp(i, [0, Ns-1], [left, right])))
-                y = int(round(np.interp(sv, [y_min, y_max], [bottom, top])))
-                pts.append((x, y))
-            for i in range(1, len(pts)):
-                cv2.line(canvas, pts[i-1], pts[i], colors[tag], 2)
-            # Tag label
-            cv2.putText(canvas, tag[:24], (right-150, top+15+20*list(colors.keys()).index(tag)),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, colors[tag], 2, cv2.LINE_AA)
-
-        # Draw fused/best curve (optional)
-        if draw_best_tag_curve:
-            fused = np.array(best_per_frame["score"], dtype=np.float32)
-            pts = []
-            for i, sv in enumerate(fused):
-                x = int(round(np.interp(i, [0, Ns-1], [left, right])))
-                y = int(round(np.interp(sv, [y_min, y_max], [bottom, top])))
-                pts.append((x, y))
-            for i in range(1, len(pts)):
-                cv2.line(canvas, pts[i-1], pts[i], (0, 0, 0), 2)  # black fused curve
-            cv2.putText(canvas, "fused", (right-70, top+15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,0), 2, cv2.LINE_AA)
-
-        # Axis box
-        cv2.rectangle(canvas, (left, top), (right, bottom), (0,0,0), 1)
-        return canvas
-
-    static_plot = render_static_plot()
-
-    # Make a quick mask of clip membership per frame
-    in_clip = np.zeros(len(video_frames), dtype=np.uint8)
-    for itv in video_highlight_clips:
-        s, e = itv["start_idx"], itv["end_idx"]
-        in_clip[s:e+1] = 1
-
-    # Video writer
+    # --- VideoWriter ---
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-    out = cv2.VideoWriter(output_path, fourcc, play_fps, (w, h + bottom_h + pad))
-    if not out.isOpened():
-        raise RuntimeError(f"Cannot open VideoWriter for {output_path}")
+    out = cv2.VideoWriter(output_path, fourcc, play_fps, (out_w, out_h))
 
-    # Map from global frame idx -> local sample idx (or nearest)
     global_to_local = {g: i for i, g in enumerate(sampled_idx)}
 
+    rng = np.random.RandomState(42)
+    colors = {tag: tuple(int(c) for c in rng.randint(50, 220, size=3))
+              for tag in list(per_tag.keys())[:max_tags_to_draw]}
+
     for g_idx, frame in enumerate(video_frames):
-        # Cursor position: nearest local sample
-        if len(sampled_idx) == 0:
-            local_i = 0
-        else:
-            if g_idx in global_to_local:
-                local_i = global_to_local[g_idx]
-            else:
-                # nearest
-                local_i = int(np.argmin(np.abs(np.array(sampled_idx) - g_idx)))
-        # Compose the final canvas
-        canvas = np.ones((h + bottom_h + pad, w, 3), dtype=np.uint8) * 255
+        # resize frame if needed
+        if frame_scale != 1.0:
+            frame = cv2.resize(frame, (frame_w, frame_h), interpolation=cv2.INTER_AREA)
 
-        # Top: video + clip marker
-        canvas[0:h, 0:w] = frame if (frame.shape[1], frame.shape[0]) != (target_w, target_h) else cv2.resize(frame, (target_w, target_h), interpolation=cv2.INTER_AREA)
-        bar_h = 8
-        color = (80, 200, 80) if in_clip[g_idx] else (200, 200, 200)
-        cv2.rectangle(canvas, (0, h - bar_h), (w, h), color, -1)
+        # --- canvas ---
+        canvas = np.ones((canvas_h, canvas_w, 3), dtype=np.uint8) * 255
 
-        # Caption about current best tag & score
-        if len(sampled_idx) > 0:
-            best_tag = str(best_per_frame["tag"][local_i])
-            best_score = float(best_per_frame["score"][local_i])
-            cv2.putText(
-                canvas,
-                f"t={g_idx:05d}  best=[{best_tag}]  score={best_score:.3f}",
-                (10, 24),
-                cv2.FONT_HERSHEY_SIMPLEX,
-                font_scale,
-                (0,0,0),
-                2,
-                cv2.LINE_AA,
-            )
+        # upper section: frame
+        y0, x0 = pad, pad
+        canvas[y0:y0+frame_h, x0:x0+frame_w] = frame
 
-        # Bottom: plot + cursor
-        plot = static_plot.copy()
-        left, right = 60, w - 10
-        top, bottom = 20, bottom_h - 30
-        x_cursor = int(round(np.interp(local_i, [0, max(1, len(sampled_idx)-1)], [left, right])))
-        cv2.line(plot, (x_cursor, top), (x_cursor, bottom), (50, 50, 255), 2)
-        canvas[h + pad : h + pad + bottom_h, 0:w] = plot
+        # upper section: metadata
+        meta_x = frame_w + 2*pad
+        y_line = y0 + 20
+        info_lines = [
+            f"Frame {g_idx}/{len(video_frames)}",
+            f"Method: {method}",
+            f"Model: {model_name}",
+            f"Params: {params}",
+        ]
+        if g_idx in global_to_local:
+            li = global_to_local[g_idx]
+            info_lines.append(f"Best tag: {best_per_frame['tag'][li]}")
+            info_lines.append(f"Score: {best_per_frame['score'][li]:.3f}")
+        for txt in info_lines:
+            cv2.putText(canvas, txt, (meta_x, y_line),
+                        cv2.FONT_HERSHEY_SIMPLEX, font_scale, (0,0,0), 1, cv2.LINE_AA)
+            y_line += 22
+
+        # middle section: timeline bar
+        bar_y, bar_x = frame_h + 2*pad, pad
+        for idx, (fi, th) in enumerate(thumbs):
+            x1 = bar_x + idx * thumb_w
+            canvas[bar_y:bar_y+thumb_h, x1:x1+thumb_w] = th
+
+            if highlight_mask[fi]:
+                overlay = canvas[bar_y:bar_y+thumb_h, x1:x1+thumb_w].copy()
+                overlay[:] = (50, 200, 50)
+                cv2.addWeighted(overlay, 0.3, canvas[bar_y:bar_y+thumb_h, x1:x1+thumb_w],
+                                0.7, 0, canvas[bar_y:bar_y+thumb_h, x1:x1+thumb_w])
+
+        # cursor on timeline
+        cur_idx = int(g_idx * num_thumbs / len(video_frames))
+        if cur_idx < len(thumbs):
+            x_c = bar_x + cur_idx * thumb_w + thumb_w // 2
+            cv2.line(canvas, (x_c, bar_y), (x_c, bar_y+thumb_h), (0,0,255), 2)
+
+        # lower section: score curves
+        plot_y = bar_y + thumb_h + pad
+        plot_x0, plot_x1 = pad, canvas_w - pad
+        plot_y0, plot_y1 = plot_y, plot_y + plot_h
+
+        cv2.rectangle(canvas, (plot_x0, plot_y0), (plot_x1, plot_y1), (200,200,200), 1)
+
+        for tag, pack in list(per_tag.items())[:max_tags_to_draw]:
+            s = pack["scores"]
+            pts = []
+            for i, sv in enumerate(s):
+                x = int(np.interp(i, [0, Ns-1], [plot_x0, plot_x1]))
+                y = int(np.interp(sv, show_score_ranges, [plot_y1, plot_y0]))
+                pts.append((x,y))
+            for i in range(1,len(pts)):
+                cv2.line(canvas, pts[i-1], pts[i], colors[tag], 2)
+
+        # moving cursor
+        if g_idx in global_to_local:
+            li = global_to_local[g_idx]
+            x_c = int(np.interp(li, [0,Ns-1],[plot_x0,plot_x1]))
+            cv2.line(canvas, (x_c, plot_y0), (x_c, plot_y1), (0,0,255), 2)
+
+        # highlight markers
+        for clip in video_highlight_clips:
+            s, e = clip["start_idx"], clip["end_idx"]
+            x_s = int(np.interp(s, [0,len(video_frames)-1],[plot_x0,plot_x1]))
+            x_e = int(np.interp(e, [0,len(video_frames)-1],[plot_x0,plot_x1]))
+            cv2.rectangle(canvas, (x_s, plot_y0), (x_e, plot_y1), (0,255,0), 1)
+
+        # legend
+        legend_y = plot_y1 + 20
+        lx = plot_x0
+        for tag, color in colors.items():
+            cv2.rectangle(canvas, (lx, legend_y-10), (lx+15, legend_y+5), color, -1)
+            cv2.putText(canvas, tag[:20], (lx+20, legend_y),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,0), 1, cv2.LINE_AA)
+            lx += 150
+
+        if scale != 1.0:
+            canvas = cv2.resize(canvas, (out_w, out_h), interpolation=cv2.INTER_AREA)
 
         out.write(canvas)
 
@@ -752,7 +748,10 @@ def main():
             video_highlight_clips=clips,
             video_frames=frames,
             play_fps=play_fps,
-            max_tags_to_draw=args.max_tags_to_draw
+            max_tags_to_draw=args.max_tags_to_draw,
+            method = args.method,
+            model_name = model_name,
+            params = {"nms_window": args.nms_window, "nms_threshold": args.nms_threshold}
         )
         print(f"[INFO] Wrote: {mp4_out}")
 
