@@ -4,6 +4,7 @@ open_clip
 scene_tags
 embedding_database
 experiements
+highlight_clipping
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

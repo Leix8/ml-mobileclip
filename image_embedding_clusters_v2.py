@@ -153,6 +153,57 @@ def save_scatter(X2, paths, labels=None, title="", out="scatter.png", thumbnails
     plt.savefig(out)
     plt.close()
 
+def save_scatter_modalities(
+    image_embeddings, image_paths,
+    text_embeddings=None, text_labels=None,
+    method="pca", seed=1234,
+    title="", out="scatter.png", thumbnails=True
+):
+    # ===== 1. Stack all embeddings =====
+    all_embeddings = []
+    modalities = []
+
+    if image_embeddings is not None and len(image_embeddings) > 0:
+        all_embeddings.append(image_embeddings)
+        modalities += ["image"] * len(image_embeddings)
+
+    if text_embeddings is not None and len(text_embeddings) > 0:
+        all_embeddings.append(text_embeddings)
+        modalities += ["text"] * len(text_embeddings)
+
+    all_embeddings = np.vstack(all_embeddings)
+    modalities = np.array(modalities)
+
+    # ===== 2. Project jointly =====
+    X2 = run_projection(all_embeddings, method=method, seed=seed)
+
+    # ===== 3. Split results =====
+    X2_images = X2[modalities == "image"]
+    X2_text   = X2[modalities == "text"]
+
+    # ===== 4. Plot =====
+    plt.figure(figsize=(10,7), dpi=120)
+    ax = plt.gca()
+
+    # Images
+    if len(X2_images) > 0:
+        ax.scatter(X2_images[:,0], X2_images[:,1], s=10, alpha=0.3, c="blue")
+        if thumbnails and len(image_paths) <= 300:
+            add_thumbnails(ax, X2_images, image_paths, zoom=1.0)
+
+    # Text
+    if len(X2_text) > 0 and text_labels is not None:
+        ax.scatter(X2_text[:,0], X2_text[:,1], s=40, alpha=0.8, c="red", marker="x")
+        for (x,y), txt in zip(X2_text, text_labels):
+            ax.text(x, y, txt, fontsize=9, ha="center", va="center",
+                    bbox=dict(facecolor="white", alpha=0.6, edgecolor="none", pad=1))
+
+    ax.set_title(title)
+    ax.grid(True, alpha=0.25)
+    plt.tight_layout()
+    plt.savefig(out)
+    plt.close()
+
 def save_heatmap(C, paths, out="cosine_heatmap.png"):
     import seaborn as sns  # if not installed, comment and use plt.imshow
     names = [p.stem[:18] for p in paths]
@@ -362,9 +413,14 @@ def main():
 
     # fall back to visualize global info, regardless of group
     E = []
+    text_embeddings = []
+    text_labels = []
     for tag, embeddings in groups_embedding.items():
         E.append(embeddings["image_embeddings"])
+        text_embeddings.append(embeddings["text_embedding"])
+        text_labels.append(tag)
     E = np.concatenate(E, axis = 0)
+    text_embeddings = np.concatenate(text_embeddings, axis = 0)
     paths = paths_all
 
     if args.remove_top_pcs > 0:
@@ -386,11 +442,22 @@ def main():
         plt.close()
 
     # ---- 2D projection ----
+    save_scatter_modalities(
+        E, paths,
+        text_embeddings=text_embeddings, text_labels=text_labels,
+        method="pca", seed=1234,
+        title=f"multi-modality embeddings ({args.proj.upper()})", 
+        out=str(outdir/f"scatter_{args.proj}_multimodal.png"),
+        thumbnails=True
+    )
+
+    # ----- other stats ---------
     X2 = run_projection(E, args.proj, seed=args.seed)
-    save_scatter(X2, paths, labels=None,
-                 title=f"MobileCLIP image embeddings ({args.proj.upper()})",
-                 out=str(outdir/f"scatter_{args.proj}.png"),
-                 thumbnails=True)
+    # save_scatter(X2, paths, labels=None,
+    #              title=f"MobileCLIP image embeddings ({args.proj.upper()})",
+    #              out=str(outdir/f"scatter_{args.proj}.png"),
+    #              thumbnails=True)
+    
 
     # ---- KMeans auto-k + report ----
     try:
