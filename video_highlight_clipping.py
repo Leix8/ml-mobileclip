@@ -850,6 +850,8 @@ def main():
     model, tokenizer, image_processor, model_name = load_model(args.model_path, device=args.device, precision=args.precision)
     print(f"[INFO] {model_name} model has been loaded")
 
+    # add model version validation here 
+
     # Map frames for encoding
     sampled_idx = get_encoding_idx(frames, play_fps=play_fps, encoding_fps=enc_fps)
     print(f"[INFO] Sampled {len(sampled_idx)} frames for scoring (out of {len(frames)}).")
@@ -916,7 +918,7 @@ def main():
             f.write(f"{s}-{e}  ({ts:.3f}s - {te:.3f}s)\n")
     print(f"[INFO] Wrote: {txt_out}")
   
-    clipped_video_out = Path(args.outdir) / (Path(f"{model_name}")) / (Path(args.video).stem + f"_highlights.mp4")
+    clipped_video_out = str(base) + "_composed_video.mp4"
     generate_clipped_video(
     video_path = args.video, 
     video_clips = clips,
