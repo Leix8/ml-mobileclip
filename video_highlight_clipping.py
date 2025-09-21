@@ -133,7 +133,7 @@ def merge_intervals(intervals: List[Tuple[int, int]]) -> List[Tuple[int, int]]:
 # ---------------- Core API (your skeleton) ---------------- #
 
 # load frames and other metadata from given video and downsample to the target fps to play video, if it's smaller than original fps
-def load_frames_from_video(video_path: str, play_fps: Optional[float]) -> Tuple[List[np.ndarray], float, int, int, float]:
+def load_frames_from_video(video_path: str, play_fps: Optional[float], max_side: int = 500) -> Tuple[List[np.ndarray], float, int, int, float]:
     """
     Returns:
         video_frames: list of BGR frames (np.ndarray HxWx3)
@@ -152,6 +152,15 @@ def load_frames_from_video(video_path: str, play_fps: Optional[float]) -> Tuple[
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     duration_s = total_frames / max(orig_fps, 1e-6)
 
+    # compute scaling factor so that max(h,w) <= max_side
+    max_dim = max(width, height)
+    if max_dim > max_side:
+        scale = max_side / max_dim
+        target_w = int(round(width * scale))
+        target_h = int(round(height * scale))
+    else:
+        target_w, target_h = width, height
+    
     # If play_fps is None or 0, keep original; else, downsample if play_fps < orig_fps
     if not play_fps or play_fps <= 0:
         target_fps = orig_fps
@@ -167,6 +176,9 @@ def load_frames_from_video(video_path: str, play_fps: Optional[float]) -> Tuple[
         ok, frame = cap.read()
         if not ok:
             break
+        # --- Downsample to fit within max_side ---
+        if (frame.shape[1], frame.shape[0]) != (target_w, target_h):
+            frame = cv2.resize(frame, (target_w, target_h), interpolation=cv2.INTER_AREA)
         frames.append(frame)
 
     cap.release()
@@ -478,6 +490,7 @@ def visualize_video_clipping(
     video_highlight_clips: List[Dict[str, int]],
     video_frames: List[np.ndarray],
     play_fps: float,
+    max_side: int = 250,
     max_tags_to_draw: int = 6,
     draw_best_tag_curve: bool = True,
     show_score_ranges: Tuple[float, float] = (-0.1, 1.0),
@@ -507,8 +520,16 @@ def visualize_video_clipping(
 
     # Build a canvas size
     h, w = video_frames[0].shape[:2]
+    # compute scaling factor so that max(h,w) <= max_side
+    max_dim = max(w, h)
+    if max_dim > max_side:
+        scale = max_side / max_dim
+        target_w = int(round(w * scale))
+        target_h = int(round(h * scale))
+    else:
+        target_w, target_h = w, h
     bottom_h = max(180, h // 3)
-    pad = 8
+    pad = 10
 
     # Render curves into a white canvas using OpenCV (simple axes)
     def render_static_plot() -> np.ndarray:
@@ -601,7 +622,7 @@ def visualize_video_clipping(
         canvas = np.ones((h + bottom_h + pad, w, 3), dtype=np.uint8) * 255
 
         # Top: video + clip marker
-        canvas[0:h, 0:w] = frame
+        canvas[0:h, 0:w] = frame if (frame.shape[1], frame.shape[0]) != (target_w, target_h) else cv2.resize(frame, (target_w, target_h), interpolation=cv2.INTER_AREA)
         bar_h = 8
         color = (80, 200, 80) if in_clip[g_idx] else (200, 200, 200)
         cv2.rectangle(canvas, (0, h - bar_h), (w, h), color, -1)
