@@ -264,21 +264,27 @@ def load_embedding_database(scene_json: str, method: str) -> Dict[str, Any]:
             tag: {
               'embedding': torch.Tensor [1,D],
               'weight': float,
-              'params': dict   # only if provided
+              'params': dict,   # only if provided
+              'model': str      # model used to generate embedding
             }, ...
-          }
+          },
+          'models': set[str]   # set of all unique model names in DB
         }
     """
     with open(scene_json, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    db = {"tags": {}}
+    db = {"tags": {}, "models": set()}
     scenes = data.get("pet_scenes", [])
 
-    for entry in tqdm(scenes, desc = "loading embedding database"):
+    for entry in tqdm(scenes, desc="loading embedding database"):
         tag = entry.get("tag", None)
         if not tag:
             continue
+
+        model_name = entry.get("model", None)
+        if model_name:
+            db["models"].add(model_name)
 
         emb_pack = entry.get("embedding", {})
         if method not in emb_pack:
@@ -294,10 +300,11 @@ def load_embedding_database(scene_json: str, method: str) -> Dict[str, Any]:
             db["tags"][tag] = {
                 "embedding": tensor,
                 "weight": 1.0,
-                "params": {}
+                "params": {},
+                "model": model_name,
             }
 
-        # Case 2: nested format with params+data (multi_ref_TAF_embedding / push_embedding)
+        # Case 2: nested format with params+data
         elif "data" in raw_emb and "value" in raw_emb["data"]:
             arr = np.array(raw_emb["data"]["value"], dtype=np.float32)
             tensor = torch.tensor(arr, dtype=torch.float32)
@@ -305,7 +312,8 @@ def load_embedding_database(scene_json: str, method: str) -> Dict[str, Any]:
             db["tags"][tag] = {
                 "embedding": tensor,
                 "weight": 1.0,
-                "params": raw_emb.get("params", {})
+                "params": raw_emb.get("params", {}),
+                "model": model_name,
             }
 
     return db
@@ -963,7 +971,11 @@ def main():
     model, tokenizer, image_processor, model_name = load_model(args.model_path, device=args.device, precision=args.precision)
     print(f"[INFO] {model_name} model has been loaded")
 
-    # add model version validation here 
+    # model match validation 
+    if model_name not in db["models"]:
+        raise ValueError(f"Loaded model {model_name} does not match DB models {db['models']}")
+    else:
+        print(f"[INFO] Model validation passed: loaded {model_name} matches embedding_database scene_json ({db['models']}).")
 
     # Map frames for encoding
     sampled_idx = get_encoding_idx(frames, play_fps=play_fps, encoding_fps=enc_fps)
