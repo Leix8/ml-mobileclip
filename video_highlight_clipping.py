@@ -188,6 +188,67 @@ def load_frames_from_video(video_path: str, play_fps: Optional[float], max_side:
     effective_play_fps = target_fps if len(frames) > 1 else orig_fps
     return frames, duration_s, target_w, target_h, effective_play_fps
 
+def load_frames_from_video_resampled(
+    video_path: str,
+    play_fps: float,
+    max_side: int = None,   # optional resize: keep aspect, longest side <= max_side
+) -> Tuple[List[np.ndarray], float, int, int]:
+    """
+    Frame-accurate downsampler: decodes sequentially from the start and keeps frames
+    at target 'play_fps' by time accumulation. Returns (frames, duration_sec, width, height)
+    where width/height are ORIGINAL sizes (before optional resize).
+    """
+    cap = cv2.VideoCapture(video_path)
+    if not cap.isOpened():
+        raise FileNotFoundError(f"Cannot open video: {video_path}")
+
+    src_fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
+    total_src_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) or 0
+
+    src_w  = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    src_h  = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    duration = total_src_frames / src_fps if total_src_frames > 0 else 0.0
+
+    # optional resize target
+    def maybe_resize(fr):
+        if max_side is None:
+            return fr
+        h, w = fr.shape[:2]
+        m = max(h, w)
+        if m <= max_side:
+            return fr
+        scale = max_side / float(m)
+        out_w, out_h = int(round(w*scale)), int(round(h*scale))
+        return cv2.resize(fr, (out_w, out_h), interpolation=cv2.INTER_AREA)
+
+    frames = []
+    # time bookkeeping
+    dt_src = 1.0 / src_fps
+    dt_out = 1.0 / play_fps
+    t_src  = 0.0
+    t_next = 0.0  # next time we want to keep a frame (starting at 0)
+
+    f_idx = 0
+    while True:
+        ok, fr = cap.read()
+        if not ok:
+            break
+        # keep a frame when we've passed the next output sample time
+        if t_src + 1e-6 >= t_next:
+            frames.append(maybe_resize(fr))
+            t_next += dt_out
+        t_src += dt_src
+        f_idx += 1
+
+    cap.release()
+
+    # Sanity: expected count
+    expected = int(round((duration if duration > 0 else (f_idx/src_fps)) * play_fps))
+    if abs(len(frames) - expected) > max(3, 0.02*expected):
+        print(f"[WARN] Downsampled frames {len(frames)} != expected {expected} "
+              f"(src_fps={src_fps:.3f}, play_fps={play_fps}, duration≈{duration:.2f}s)")
+
+    return frames, duration, src_w, src_h, play_fps
 
 # load the embeddings to retrieve upon
 def load_embedding_database(scene_json: str, method: str) -> Dict[str, Any]:
@@ -886,7 +947,7 @@ def main():
     os.makedirs(args.outdir, exist_ok=True)
 
     # Load video
-    frames, duration_s, W, H, play_fps = load_frames_from_video(args.video, args.play_fps)
+    frames, duration_s, W, H, play_fps = load_frames_from_video_resampled(args.video, args.play_fps)
     if len(frames) == 0:
         raise RuntimeError("No frames decoded.")
     print(f"[INFO] Video loaded: {len(frames)} frames @ {play_fps:.3f} fps, size {W}x{H}, duration {duration_s:.2f}s")
