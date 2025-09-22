@@ -484,8 +484,6 @@ def predict_highlight_clip(
 
     return [{"start_idx": s, "end_idx": e, "start_time": s / max(play_fps, 1e-6) , "end_time": e / max(play_fps, 1e-6)} for (s, e) in merged]
 
-
-
 def render_score_plot(
     g_idx: int,
     sampled_idx: List[int],
@@ -524,10 +522,15 @@ def render_score_plot(
                 show_score_ranges[0]-0.05,
                 f"Clip {idx+1}", ha="center", va="top", fontsize=7, color="green")
 
-    # highlight markers (scissors)
+    # highlight markers with tag+score annotations
     for h in highlight_idx:
         ax.scatter(h["index"], h["score"], marker="x", c="red", s=40, zorder=5)
-
+        tag = h.get("tag", "")
+        score = h.get("score", 0.0)
+        ax.text(h["index"], h["score"]+0.02,   # slightly above the point
+                f"{tag} ({score:.2f})",
+                fontsize=7, color="darkgreen",
+                ha="center", va="bottom", rotation=15)
     # current frame line
     ax.axvline(g_idx, color="red", lw=1.5)
 
@@ -542,7 +545,63 @@ def render_score_plot(
 
     return img
 
+def render_static_plot(
+    sampled_idx: List[int],
+    per_tag: Dict[str, Any],
+    best_per_frame: Dict[str, Any],
+    video_highlight_clips: List[Dict[str, int]],
+    highlight_idx: List[Dict[str, Any]],
+    plot_mode: str,
+    max_tags_to_draw: int,
+    show_score_ranges: Tuple[float, float],
+    video_len: int, 
+    plot_w: int,
+    plot_h: int
+) -> np.ndarray:
+    """Render static background score plot (no current-frame line)."""
+    fig, ax = plt.subplots(figsize=(plot_w/100, plot_h/100), dpi=100)
+    ax.set_ylim(show_score_ranges)
+    ax.set_xlim(0, video_len-1)   # full video length    ax.set_xlabel("Frame index")
+    ax.set_ylabel("Score")
 
+    # curves
+    if plot_mode in ("tags", "all"):
+        for tag, pack in list(per_tag.items())[:max_tags_to_draw]:
+            ax.plot(sampled_idx, pack["scores"], label=tag, lw=1)
+
+    if plot_mode in ("fused", "all"):
+        ax.plot(sampled_idx, best_per_frame["score"], color="black", lw=2, label="Fused")
+
+    # clip ranges
+    for idx, clip in enumerate(video_highlight_clips):
+        print(f"retrieved clip: {idx}, {clip}")
+        ax.axvline(clip["start_idx"], color="green", lw=1, ls="--")
+        ax.axvline(clip["end_idx"], color="green", lw=1, ls="--")
+        ax.text((clip["start_idx"]+clip["end_idx"])/2,
+                show_score_ranges[0]-0.05,
+                f"Clip {idx+1}", ha="center", va="top", fontsize=7, color="green")
+
+    # highlight markers
+    for h in highlight_idx:
+        print(f"retrieved highlight index: {h}")
+        ax.scatter(h["index"], h["score"], marker="x", c="red", s=40, zorder=5)
+        tag = h.get("tag", "")
+        score = h.get("score", 0.0)
+        ax.text(h["index"], h["score"]+0.02, f"{tag} ({score:.2f})",
+                fontsize=7, color="darkgreen",
+                ha="center", va="bottom", rotation=15)
+
+    ax.legend(fontsize=6, loc="upper right", ncol=2, frameon=False)
+
+    # render once
+    canvas = FigureCanvas(fig)
+    canvas.draw()
+    buf = np.asarray(canvas.buffer_rgba())
+    img = np.asarray(buf)[..., :3]  # drop alpha
+    plt.close(fig)
+    return img
+
+# -------- VISUALIZATION FUNCTION --------
 def visualize_video_clipping(
     output_path: str,
     cos_sim_score_stats: Dict[str, Any],
@@ -553,20 +612,21 @@ def visualize_video_clipping(
     method: str,
     model_name: str,
     params: Dict[str, Any],
-    plot_mode: str = "all",  # "fused", "tags", "all"
+    plot_mode: str = "all",
     max_tags_to_draw: int = 6,
     show_score_ranges: Tuple[float, float] = (-0.1, 1.0),
     font_scale: float = 0.6,
-    thickness: int = 1,
     canvas_max_side: int = 800,
     frame_max_side: int = 400,
+    show_thumbnails: bool = False,
     thumb_h: int = 60,
 ):
     sampled_idx = cos_sim_score_stats["sampled_idx"]
     per_tag = cos_sim_score_stats["per_tag"]
     best_per_frame = cos_sim_score_stats["best_per_frame"]
+    print(f"cos sim score stats: {cos_sim_score_stats}")
 
-    # --- Resize video frame dimension if too big ---
+    # --- resize video frame dimension if too big ---
     frame_h, frame_w = video_frames[0].shape[:2]
     frame_max_dim = max(frame_w, frame_h)
     if frame_max_dim > frame_max_side:
@@ -579,8 +639,9 @@ def visualize_video_clipping(
     pad = 10
     meta_w = 360
     plot_h = 240
+    thumb_section_h = thumb_h if show_thumbnails else 0
     canvas_w = frame_w + meta_w + 3 * pad
-    canvas_h = frame_h + thumb_h + plot_h + 9 * pad
+    canvas_h = frame_h + thumb_section_h + plot_h + 9 * pad
 
     max_dim = max(canvas_w, canvas_h)
     if max_dim > canvas_max_side:
@@ -590,19 +651,35 @@ def visualize_video_clipping(
         scale = 1.0
         out_w, out_h = canvas_w, canvas_h
 
-    # --- Precompute thumbnails ---
-    num_thumbs = min(20, len(video_frames))
-    step = max(1, len(video_frames) // num_thumbs)
-    thumb_w = (canvas_w - 2 * pad) // num_thumbs
-    thumbs = [(i, cv2.resize(video_frames[i], (thumb_w, thumb_h), interpolation=cv2.INTER_AREA))
-              for i in range(0, len(video_frames), step)]
+    # --- precompute thumbnails strip ---
+    timeline_strip = None
+    if show_thumbnails:
+        num_thumbs = min(20, len(video_frames))
+        step = max(1, len(video_frames) // num_thumbs)
+        thumb_w = (canvas_w - 2 * pad) // num_thumbs
+        strip = np.ones((thumb_h, canvas_w-2*pad, 3), dtype=np.uint8) * 255
+        for idx, fi in enumerate(range(0, len(video_frames), step)):
+            th = cv2.resize(video_frames[fi], (thumb_w, thumb_h), interpolation=cv2.INTER_AREA)
+            x1 = idx * thumb_w
+            strip[:, x1:x1+thumb_w] = th
+        timeline_strip = strip
 
-    # --- Highlight mask ---
-    highlight_mask = np.zeros(len(video_frames), dtype=np.uint8)
-    for clip in video_highlight_clips:
-        highlight_mask[clip["start_idx"]:clip["end_idx"]+1] = 1
+    # --- static plot background ---
+    static_plot = render_static_plot(
+        sampled_idx=sampled_idx,
+        per_tag=per_tag,
+        best_per_frame=best_per_frame,
+        video_highlight_clips=video_highlight_clips,
+        highlight_idx=highlight_idx,
+        plot_mode=plot_mode,
+        max_tags_to_draw=max_tags_to_draw,
+        show_score_ranges=show_score_ranges,
+        plot_w=canvas_w-2*pad,
+        plot_h=plot_h,
+        video_len = len(video_frames)
+    )
 
-    # --- VideoWriter ---
+    # --- video writer ---
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     out = cv2.VideoWriter(output_path, fourcc, play_fps, (out_w, out_h))
 
@@ -612,7 +689,7 @@ def visualize_video_clipping(
 
         canvas = np.ones((canvas_h, canvas_w, 3), dtype=np.uint8) * 255
 
-        # upper section: video frame
+        # upper: video frame
         y0, x0 = pad, pad
         canvas[y0:y0+frame_h, x0:x0+frame_w] = frame
 
@@ -629,54 +706,23 @@ def visualize_video_clipping(
         cv2.putText(canvas, f"Model: {model_name}", (meta_x, y_line),
                     cv2.FONT_HERSHEY_SIMPLEX, fs, (0,0,0), 1, cv2.LINE_AA)
 
-        # middle section: timeline bar
-        bar_y, bar_x = frame_h + 2*pad, pad
-        for idx, (fi, th) in enumerate(thumbs):
-            x1 = bar_x + idx * thumb_w
-            canvas[bar_y:bar_y+thumb_h, x1:x1+thumb_w] = th
-            if not highlight_mask[fi]:
-                overlay = canvas[bar_y:bar_y+thumb_h, x1:x1+thumb_w].copy()
-                overlay[:] = (180, 180, 180)
-                cv2.addWeighted(overlay, 0.6, canvas[bar_y:bar_y+thumb_h, x1:x1+thumb_w],
-                                0.4, 0, canvas[bar_y:bar_y+thumb_h, x1:x1+thumb_w])
+        # middle: timeline strip
+        bar_y = frame_h + 2*pad
+        if show_thumbnails and timeline_strip is not None:
+            canvas[bar_y:bar_y+thumb_h, pad:pad+timeline_strip.shape[1]] = timeline_strip
+            # cursor
+            cur_idx = int(g_idx * timeline_strip.shape[1] / len(video_frames))
+            cv2.line(canvas, (pad+cur_idx, bar_y), (pad+cur_idx, bar_y+thumb_h), (0,0,255), 2)
 
-        # cursor line on timeline
-        cur_idx = int(g_idx * num_thumbs / len(video_frames))
-        if cur_idx < len(thumbs):
-            x_c = bar_x + cur_idx * thumb_w + thumb_w // 2
-            cv2.line(canvas, (x_c, bar_y), (x_c, bar_y+thumb_h), (0,0,255), 2)
+        # lower: static plot + dynamic cursor
+        plot_y = frame_h + 2*pad + (thumb_h if show_thumbnails else 0) + pad
+        plot_img = static_plot.copy()
+        x_c = int(np.interp(g_idx, [0, len(video_frames)-1], [0, plot_img.shape[1]-1]))
+        cv2.line(plot_img, (x_c, 0), (x_c, plot_img.shape[0]-1), (0,0,255), 1)
 
-        # lower section: matplotlib score plot
-        plot_y = bar_y + thumb_h + pad
-        plot_img = render_score_plot(
-            g_idx=g_idx,
-            sampled_idx=sampled_idx,
-            per_tag=per_tag,
-            best_per_frame=best_per_frame,
-            video_highlight_clips=video_highlight_clips,
-            highlight_idx=highlight_idx,
-            plot_mode=plot_mode,
-            max_tags_to_draw=max_tags_to_draw,
-            show_score_ranges=show_score_ranges,
-            plot_w=canvas_w-2*pad,
-            plot_h=plot_h
-        )
         ph, pw = plot_img.shape[:2]
-        canvas[plot_y:plot_y+ph, pad:pad+pw] = cv2.cvtColor(plot_img, cv2.COLOR_RGB2BGR)
+        canvas[plot_y:plot_y+ph, pad:pad+pw] = plot_img
 
-        # always show all clips' tag+score under plot
-        ann_y = plot_y + ph + 20
-        for idx, clip in enumerate(video_highlight_clips):
-            clip_tags = [h for h in highlight_idx if clip["start_idx"] <= h["index"] <= clip["end_idx"]]
-            if clip_tags:
-                tag = clip_tags[0]["tag"]
-                score = clip_tags[0]["score"]
-                cv2.putText(canvas, f"Clip {idx+1}: {tag} ({score:.2f})",
-                            (pad+15, ann_y), cv2.FONT_HERSHEY_SIMPLEX,
-                            0.45, (0,80,0), 1, cv2.LINE_AA)
-                ann_y += 18
-
-        # scale canvas if needed
         if scale != 1.0:
             canvas = cv2.resize(canvas, (out_w, out_h), interpolation=cv2.INTER_AREA)
 
@@ -731,12 +777,9 @@ def generate_clipped_video(
         return cv2.resize(frame, (out_w, out_h), interpolation=cv2.INTER_AREA)
 
     def extract_clip(start_t: float, end_t: float):
-        """Extract frames from start_time to end_time at target fps"""
-        duration = end_t - start_t
-        num_frames = int(round(duration * fps))
         frames = []
-        for i in range(num_frames):
-            t = start_t + i / fps
+        cap.set(cv2.CAP_PROP_POS_MSEC, start_t * 1000)
+        while cap.get(cv2.CAP_PROP_POS_MSEC) < end_t * 1000:
             ok, frame = cap.read()
             if not ok:
                 break
@@ -854,7 +897,7 @@ def main():
     ap.add_argument("--nms_window", type=int, default=5, help="half-width (in sampled frames) for 1D NMS")
     ap.add_argument("--nms_threshold", type=float, default=0.25)
     ap.add_argument("--topk", type=int, default=5, help="number of peaks to keep")
-    ap.add_argument("--clip_pad_sec", type=float, default=2.0, help="padding seconds before/after highlight frame")
+    ap.add_argument("--clip_pad_sec", type=float, default=1.5, help="padding seconds before/after highlight frame")
     ap.add_argument("--min_clip_sec", type=float, default=1.0)
     ap.add_argument("--max_tags_to_draw", type=int, default=6)
     ap.add_argument("--no_video", action="store_true", help="do not render visualization video")
@@ -914,7 +957,7 @@ def main():
     )
 
     # Save results
-    base = Path(args.outdir) / (Path(f"{model_name}")) / (Path(args.video).stem + f"_highlights_{args.method}")
+    base = Path(args.outdir) / (Path(f"{model_name}")) / (Path(args.video).stem) / (Path(args.video).stem + f"_highlights_{args.method}")
     json_out = str(base) + ".json"
     os.makedirs(os.path.dirname(json_out), exist_ok=True)
     with open(json_out, "w", encoding="utf-8") as f:
