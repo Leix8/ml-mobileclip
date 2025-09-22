@@ -229,17 +229,20 @@ def load_frames_from_video_resampled(
     t_next = 0.0  # next time we want to keep a frame (starting at 0)
 
     f_idx = 0
-    while True:
-        ok, fr = cap.read()
-        if not ok:
-            break
-        # keep a frame when we've passed the next output sample time
-        if t_src + 1e-6 >= t_next:
-            frames.append(maybe_resize(fr))
-            t_next += dt_out
-        t_src += dt_src
-        f_idx += 1
+    with tqdm(total=(total_src_frames), desc="Loading video frames", unit="frame") as pbar:
+        while True:
+            ok, fr = cap.read()
+            if not ok:
+                break
+            # keep a frame when we've passed the next output sample time
+            if t_src + 1e-6 >= t_next:
+                frames.append(maybe_resize(fr))
+                t_next += dt_out
+            t_src += dt_src
+            f_idx += 1
+            pbar.update(1)
 
+    pbar.close()
     cap.release()
 
     # Sanity: expected count
@@ -882,24 +885,34 @@ def generate_clipped_video(
 
     # estimate total frames for tqdm if you want (optional)
     # from tqdm import tqdm
-    # total_frames = int(len(video_clips) * fps * (video_clips[0]["end_time"] - video_clips[0]["start_time"]))
-    # pbar = tqdm(total=total_frames, desc="Writing highlight video", unit="frame")
+    total_frames = int(len(video_clips) * fps * (video_clips[0]["end_time"] - video_clips[0]["start_time"]))
+    pbar = tqdm(total=total_frames, desc="Writing highlight video", unit="frame")
 
     for ci, clip in enumerate(video_clips):
         s_t, e_t = float(clip["start_time"]), float(clip["end_time"])
         clip_frames = extract_clip_resampled(s_t, e_t)
         for f in clip_frames:
             out.write(f)
-            # pbar.update(1)
+            pbar.update(1)
 
         # transitions
         if ci < len(video_clips) - 1 and transition != "none":
             if transition == "black":
-                black = np.zeros((out_h, out_w, 3), dtype=np.uint8)
-                # simple, fast black gap
-                for _ in range(transition_len):
-                    out.write(black)
-                    # pbar.update(1)
+                if clip_frames:
+                    last = clip_frames[-1]
+                    black = np.zeros_like(last)
+
+                    # fade out last frame → black
+                    for t in range(transition_len):
+                        a = 1 - t / transition_len
+                        blended = cv2.addWeighted(last, a, black, 1 - a, 0)
+                        out.write(blended)
+                        pbar.update(1)
+                    # hold pure black for a short pause
+                    for _ in range(max(1, transition_len // 2)):
+                        out.write(black)
+                        pbar.update(1)
+                    
             elif transition == "fade":
                 if clip_frames:
                     last = clip_frames[-1]
@@ -907,17 +920,17 @@ def generate_clipped_video(
                     for t in range(transition_len):
                         a = 1 - t / transition_len
                         out.write(cv2.addWeighted(last, a, black, 1 - a, 0))
-                        # pbar.update(1)
+                        pbar.update(1)
                     for t in range(transition_len):
                         a = t / transition_len
                         out.write(cv2.addWeighted(black, 1 - a, black, 0, 0))  # hold black or fade-in next first frame if you prefetch
-                        # pbar.update(1)
+                        pbar.update(1)
             elif transition == "crossfade":
                 # optional: prefetch next clip's first frame and blend
                 pass
 
     # if 'pbar' used:
-    # pbar.close()
+    pbar.close()
     cap.release()
     out.release()
 
@@ -975,7 +988,7 @@ def main():
     if model_name not in db["models"]:
         raise ValueError(f"Loaded model {model_name} does not match DB models {db['models']}")
     else:
-        print(f"[INFO] Model validation passed: loaded {model_name} matches embedding_database scene_json ({db['models']}).")
+        print(f"[INFO] Model validation passed: loaded{model_name} matches embedding_database scene_json ({db['models']}).")
 
     # Map frames for encoding
     sampled_idx = get_encoding_idx(frames, play_fps=play_fps, encoding_fps=enc_fps)
