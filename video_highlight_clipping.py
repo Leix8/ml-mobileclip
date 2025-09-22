@@ -574,7 +574,6 @@ def render_static_plot(
 
     # clip ranges
     for idx, clip in enumerate(video_highlight_clips):
-        print(f"retrieved clip: {idx}, {clip}")
         ax.axvline(clip["start_idx"], color="green", lw=1, ls="--")
         ax.axvline(clip["end_idx"], color="green", lw=1, ls="--")
         ax.text((clip["start_idx"]+clip["end_idx"])/2,
@@ -583,7 +582,6 @@ def render_static_plot(
 
     # highlight markers
     for h in highlight_idx:
-        print(f"retrieved highlight index: {h}")
         ax.scatter(h["index"], h["score"], marker="x", c="red", s=40, zorder=5)
         tag = h.get("tag", "")
         score = h.get("score", 0.0)
@@ -599,7 +597,15 @@ def render_static_plot(
     buf = np.asarray(canvas.buffer_rgba())
     img = np.asarray(buf)[..., :3]  # drop alpha
     plt.close(fig)
-    return img
+
+    bbox = ax.get_position()  # normalized figure coords
+    fig_w, fig_h = fig.canvas.get_width_height()
+    ax_left   = int(bbox.x0 * fig_w)
+    ax_right  = int(bbox.x1 * fig_w)
+    ax_top    = int((1.0 - bbox.y1) * fig_h)
+    ax_bottom = int((1.0 - bbox.y0) * fig_h)
+
+    return img, (ax_left, ax_top, ax_right, ax_bottom)
 
 # -------- VISUALIZATION FUNCTION --------
 def visualize_video_clipping(
@@ -624,7 +630,6 @@ def visualize_video_clipping(
     sampled_idx = cos_sim_score_stats["sampled_idx"]
     per_tag = cos_sim_score_stats["per_tag"]
     best_per_frame = cos_sim_score_stats["best_per_frame"]
-    print(f"cos sim score stats: {cos_sim_score_stats}")
 
     # --- resize video frame dimension if too big ---
     frame_h, frame_w = video_frames[0].shape[:2]
@@ -665,7 +670,7 @@ def visualize_video_clipping(
         timeline_strip = strip
 
     # --- static plot background ---
-    static_plot = render_static_plot(
+    static_plot, ax_bbox = render_static_plot(
         sampled_idx=sampled_idx,
         per_tag=per_tag,
         best_per_frame=best_per_frame,
@@ -678,6 +683,7 @@ def visualize_video_clipping(
         plot_h=plot_h,
         video_len = len(video_frames)
     )
+    ax_left, ax_top, ax_right, ax_bottom = ax_bbox
 
     # --- video writer ---
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
@@ -717,8 +723,8 @@ def visualize_video_clipping(
         # lower: static plot + dynamic cursor
         plot_y = frame_h + 2*pad + (thumb_h if show_thumbnails else 0) + pad
         plot_img = static_plot.copy()
-        x_c = int(np.interp(g_idx, [0, len(video_frames)-1], [0, plot_img.shape[1]-1]))
-        cv2.line(plot_img, (x_c, 0), (x_c, plot_img.shape[0]-1), (0,0,255), 1)
+        x_pix = int(np.interp(g_idx, [0, len(video_frames)-1], [ax_left, ax_right]))
+        cv2.line(plot_img, (x_pix, ax_top), (x_pix, ax_bottom), (0,0,255), 1)
 
         ph, pw = plot_img.shape[:2]
         canvas[plot_y:plot_y+ph, pad:pad+pw] = plot_img
