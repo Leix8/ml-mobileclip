@@ -94,7 +94,8 @@ def run_projection_fast(X: np.ndarray, method: str, seed=1234) -> np.ndarray:
         reducer = umap.UMAP(n_components=2, random_state=seed, metric="cosine", min_dist=0.1)
         return reducer.fit_transform(X_reduced)
     elif method == "tsne":
-        return TSNE(n_components=2, random_state=seed, metric="cosine", perplexity=30).fit_transform(X_reduced)
+        max_perp = max(2, min(30, X_reduced.shape[0] // 3))
+        return TSNE(n_components=2, random_state=seed, metric="cosine", perplexity=max_perp).fit_transform(X_reduced)
     else:
         raise ValueError(f"Unknown or unavailable method: {method}")
 

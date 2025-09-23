@@ -14,7 +14,13 @@ import open_clip
 from mobileclip.modules.common.mobileone import reparameterize_model
 from model_name_map import MODEL_NAME_MAP, infer_model_name_from_ckpt
 
-from embedding_processor import *
+# ========== Monkey-patch icrawler to avoid NoneType bug ==========
+from icrawler import parser
+_old_parse = parser.Parser.parse
+def _safe_parse(self, response, **kwargs):
+    result = _old_parse(self, response, **kwargs)
+    return result or []  # return [] instead of None
+parser.Parser.parse = _safe_parse
 
 
 # ================== Image Crawler ==================
@@ -44,7 +50,8 @@ def encode_image(model, processor, path: Path, device="cuda"):
     return feat
 
 
-def filter_images(model, processor, tokenizer, tag: str, img_paths, keep_num=30, device="cuda", num_threads=8):
+def filter_images(model, processor, tokenizer, tag: str, img_paths, keep_num=30,
+                  device="cuda", num_threads=8, threshold=0.1):
     """Filter images based on CLIP similarity with text prompt"""
     # text embedding
     tok = tokenizer([tag]).to(device)
@@ -64,17 +71,24 @@ def filter_images(model, processor, tokenizer, tag: str, img_paths, keep_num=30,
             sim = float(np.dot(text_feat, feat))
             results.append((sim, futures[fut]))
 
-    # sort by similarity and keep top-K
-    results.sort(key=lambda x: x[0], reverse=True)
-    keep = [p for _, p in results[:keep_num]]
+    # apply loose threshold
+    keep = [p for sim, p in results if sim >= threshold]
+
+    # fallback: if too few survived, keep top-K
+    if len(keep) < keep_num:
+        results.sort(key=lambda x: x[0], reverse=True)
+        keep = [p for _, p in results[:keep_num]]
+
     return keep
 
 
 # ================== Main ==================
-def main(json_file: str, model_path: str, output_dir: str, device="cuda", num_per_tag=30):
+def main(json_file: str, model_path: str, output_dir: str,
+         device="cuda", num_per_tag=30, threshold=0.2):
+
     os.makedirs(output_dir, exist_ok=True)
 
-    # load MobileCLIP2
+    # ---- Load model ----
     model_name = infer_model_name_from_ckpt(args.model_path)
     model_kwargs = {}
     if not (model_name.endswith("S3") or model_name.endswith("S4") or model_name.endswith("L-14")):
@@ -88,17 +102,19 @@ def main(json_file: str, model_path: str, output_dir: str, device="cuda", num_pe
     with open(json_file, "r") as f:
         data = json.load(f)
 
+    # ====== update ref_dir inline ======
     for entry in data["pet_scenes"]:
         tag = entry["tag"]
-        ref_dir = Path(entry["ref_dir"])  # final filtered save location
+        ref_dir = Path(output_dir) / tag.replace(" ", "_")
         os.makedirs(ref_dir, exist_ok=True)
+        entry["ref_dir"] = str(ref_dir)  # update JSON
 
         tmp_dir = Path(output_dir) / f"tmp_{tag.replace(' ', '_')}"
         if tmp_dir.exists():
             shutil.rmtree(tmp_dir)
 
         print(f"[INFO] Searching for '{tag}' ...")
-        download_images_from_prompt(tag, str(tmp_dir), max_images=num_per_tag*5)  # overfetch
+        download_images_from_prompt(tag, str(tmp_dir), max_images=num_per_tag * 5)  # overfetch
 
         img_paths = list(tmp_dir.rglob("*.jpg")) + list(tmp_dir.rglob("*.png"))
         if not img_paths:
@@ -106,7 +122,11 @@ def main(json_file: str, model_path: str, output_dir: str, device="cuda", num_pe
             continue
 
         print(f"[INFO] Filtering {len(img_paths)} images with CLIP...")
-        keep_paths = filter_images(model, image_processor, tokenizer, tag, img_paths, keep_num=num_per_tag, device=device)
+        keep_paths = filter_images(
+            model, image_processor, tokenizer, tag,
+            img_paths, keep_num=num_per_tag,
+            device=device, threshold=threshold
+        )
 
         # copy filtered images
         for i, p in enumerate(keep_paths):
@@ -117,15 +137,24 @@ def main(json_file: str, model_path: str, output_dir: str, device="cuda", num_pe
 
         shutil.rmtree(tmp_dir)  # clean temp dir
 
+    # save updated JSON with new ref_dir
+    updated_json = Path(output_dir) / "scene_updated.json"
+    with open(updated_json, "w") as f:
+        json.dump(data, f, indent=2)
+
+    print(f"[DONE] Updated JSON saved to {updated_json}")
+
 
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--json", type=str, required=True, help="Path to json file")
-    parser.add_argument("--model_path", type=str, required=True, help="Path to MobileCLIP2 checkpoint")
-    parser.add_argument("--output_dir", type=str, default="./downloads_tmp", help="Temp directory for crawling")
+    parser.add_argument("--scene_json", type=str, default = "./scene_tags/pet_scenes_crawled.json", help="Path to original scene_json")
+    parser.add_argument("--model_path", type=str, default = "./checkpoints/mobileclip2_s4.pt", help="Path to MobileCLIP2 checkpoint")
+    parser.add_argument("--output_dir", type=str, default="./ref_images", help="Directory to save images + new JSON")
     parser.add_argument("--device", type=str, default="cuda", help="Device (cuda or cpu)")
     parser.add_argument("--num_per_tag", type=int, default=30, help="Number of filtered samples per tag")
+    parser.add_argument("--threshold", type=float, default=0.2, help="Similarity threshold for filtering")
     args = parser.parse_args()
 
-    main(args.json, args.model_path, args.output_dir, device=args.device, num_per_tag=args.num_per_tag)
+    main(args.scene_json, args.model_path, args.output_dir,
+         device=args.device, num_per_tag=args.num_per_tag, threshold=args.threshold)
