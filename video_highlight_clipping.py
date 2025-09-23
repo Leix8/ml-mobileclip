@@ -75,6 +75,7 @@ import sys
 import json
 import math
 import random
+import time
 from typing import List, Dict, Any, Tuple, Optional
 
 import numpy as np
@@ -449,16 +450,21 @@ def predict_highlight_idx(
         stats: dictionary with per-tag score curves
     """
     # 1) Encode sampled frames
+    start = time.perf_counter()
     feats = []
     for i in tqdm(sampled_frame_idx, desc = "embedding sampled frames"):
         emb = encode_image(model, image_processor, video_frames[i],
                            device=device, precision=precision)
         feats.append(emb)
+
     feats = torch.stack(feats, dim=0)  # [Ns,D]
     feats = F.normalize(feats, dim=-1)
+    end = time.perf_counter()
+    print(f"[PROFILING] image encoding time: {end - start:.4f}s to encode {len(feats)} frames")
 
     # 2) Compute cosine similarity with each tag embedding
     per_tag_scores: Dict[str, Dict[str, Any]] = {}
+    start = time.perf_counter()
     for tag, pack in embedding_database["tags"].items():
         refE = pack["embedding"]   # [1,D]
         w    = float(pack.get("weight", 1.0))
@@ -477,8 +483,11 @@ def predict_highlight_idx(
             "weight": w,
             "params": params,  # keep params here for analysis/logging
         }
+    end = time.perf_counter()
+    print(f"[PROFILING] cos similarity calculation time: {end - start:.4f}s for {len(per_tag_scores.keys())} text embeddings x {len(feats)} image embeddings")
 
     # 3) Fuse across tags: take best scoring tag per frame
+    start = time.perf_counter()
     Ns = len(sampled_frame_idx)
     fused_scores = np.full(Ns, -1e9, dtype=np.float32)
     fused_tags   = np.array([""] * Ns, dtype=object)
@@ -488,17 +497,26 @@ def predict_highlight_idx(
         better = s > fused_scores
         fused_scores[better] = s[better]
         fused_tags[better] = tag
+    end = time.perf_counter()
+    print(f"[PROFILING] best score fusion time: {end - start:.4f}s")
 
     # 4) Apply NMS on fused scores
+    start = time.perf_counter()
     keep_idx_local = nms_1d(fused_scores, window=nms_window, threshold=nms_threshold)
+    end = time.perf_counter()
+    print(f"[PROFILING] NMS time: {end - start:.4f}s to propose {len(keep_idx_local)} NMS index")
 
     # 5) Select top-k peaks
+    start = time.perf_counter()
     keep_idx_local = sorted(
         keep_idx_local,
         key=lambda i: float(fused_scores[i]),
         reverse=True
     )[:topk]
+    end = time.perf_counter()
+    print(f"[PROFILING] Top-K time: {end - start:.4f}s to propose {len(keep_idx_local)} top-k index")
 
+    start = time.perf_counter()
     highlight_idx = []
     for i_local in keep_idx_local:
         idx_global = sampled_frame_idx[i_local]
@@ -510,7 +528,7 @@ def predict_highlight_idx(
             "score": float(fused_scores[i_local]),
             "params": params,  # pass along tag params for context
         })
-
+    print(f"highlight_idx: {highlight_idx}")
     # 6) Collect stats
     stats = {
         "per_tag": per_tag_scores,
@@ -520,6 +538,8 @@ def predict_highlight_idx(
         },
         "sampled_idx": sampled_frame_idx,
     }
+    end = time.perf_counter()
+    print(f"[PROFILING] highlight stats collection time: {end - start:.4f}s")
 
     return highlight_idx, stats
 
@@ -535,6 +555,7 @@ def predict_highlight_clip(
     """
     Returns list of dicts: [{"start_idx": int, "end_idx": int}, ...]
     """
+    start = time.perf_counter()
     pad = seconds_to_frames(pad_sec, play_fps)
     min_len = seconds_to_frames(min_clip_sec, play_fps)
     N = len(video_frames)
@@ -553,6 +574,9 @@ def predict_highlight_clip(
         merged = merge_intervals(raw_intervals)
     else:
         merged = raw_intervals
+
+    end = time.perf_counter()
+    print(f"[PROFILING] clip convertion time: {end - start:.4f}s to convert {len(highlight_idx)} highlight index to {len(merged)} clip intervals")
 
     return [{"start_idx": s, "end_idx": e, "start_time": s / max(play_fps, 1e-6) , "end_time": e / max(play_fps, 1e-6)} for (s, e) in merged]
 
@@ -974,10 +998,14 @@ def main():
     print(f"[INFO] Video loaded: {len(frames)} frames @ {play_fps:.3f} fps, size {W}x{H}, duration {duration_s:.2f}s")
 
     # Load embeddings DB
+    start = time.perf_counter()
     db = load_embedding_database(args.scene_json, method=args.method)
     enc_fps = args.encoding_fps if args.encoding_fps > 0 else (db.get("encoding_fps") or play_fps)
     if not enc_fps or enc_fps <= 0:
         enc_fps = play_fps
+    end = time.perf_counter()
+    num_embeddings = len(db["tags"].keys())
+    print(f"[PROFILING] embedding database loading time: {end - start:.4f}s to load {num_embeddings} embeddings")
     print(f"[INFO] Encoding fps: {enc_fps}")
 
     # Load model
@@ -995,6 +1023,7 @@ def main():
     print(f"[INFO] Sampled {len(sampled_idx)} frames for scoring (out of {len(frames)}).")
 
     # Predict highlight indices
+    start = time.perf_counter()
     highlights, stats = predict_highlight_idx(
         model=model,
         image_processor=image_processor,
@@ -1007,6 +1036,8 @@ def main():
         nms_threshold=args.nms_threshold,
         topk=args.topk,
     )
+    end = time.perf_counter()
+    print(f"[PROFILING] predict highlight index calculation time: {end - start:.4f}s")
 
     # Predict clips from highlight frames
     clips = predict_highlight_clip(
@@ -1056,7 +1087,8 @@ def main():
             s, e, ts, te = c["start_idx"], c["end_idx"], c["start_time"], c["end_time"]
             f.write(f"{s}-{e}  ({ts:.3f}s - {te:.3f}s)\n")
     print(f"[INFO] Wrote: {txt_out}")
-  
+    
+    start = time.perf_counter()
     clipped_video_out = str(base) + "_composed_video.mp4"
     generate_clipped_video(
     video_path = args.video, 
@@ -1067,6 +1099,8 @@ def main():
     transition = "black",   # "none", "fade", "crossfade"
     transition_len = 10         # frames
     )
+    end = time.perf_counter()
+    print(f"[PROFILING] highlight video composing time: {end - start:.4f}s to compose {len(clips)} clips with 15 fps")
     print(f"[INFO] Wrote: {clipped_video_out}")
 
 if __name__ == "__main__":

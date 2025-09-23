@@ -3,12 +3,12 @@ import open_clip
 from PIL import Image
 from mobileclip.modules.common.mobileone import reparameterize_model
 
-model_name = "MobileCLIP2-B"
+model_name = "MobileCLIP2-S4"
 model_kwargs = {}
 if not (model_name.endswith("S3") or model_name.endswith("S4") or model_name.endswith("L-14")):
     model_kwargs = {"image_mean": (0, 0, 0), "image_std": (1, 1, 1)}
 
-model, _, preprocess = open_clip.create_model_and_transforms(model_name, pretrained="./checkpoints/mobileclip2_b.pt", **model_kwargs)
+model, _, preprocess = open_clip.create_model_and_transforms(model_name, pretrained="./checkpoints/mobileclip2_s4.pt", **model_kwargs)
 tokenizer = open_clip.get_tokenizer(model_name)
 
 # Model needs to be in eval mode for inference because of batchnorm layers unlike ViTs
@@ -23,6 +23,7 @@ text = tokenizer(["a diagram", "a dog", "a cat", "a soccer"])
 with torch.no_grad(), torch.cuda.amp.autocast():
     image_features = model.encode_image(image)
     text_features = model.encode_text(text)
+    print(f"check embeddings: image_embedding = {image_features.shape}, text_embedding = {text_features.shape}")
     image_features /= image_features.norm(dim=-1, keepdim=True)
     text_features /= text_features.norm(dim=-1, keepdim=True)
 
