@@ -29,9 +29,6 @@ except ImportError:
     HAS_UMAP = False
     print("[WARN] umap-learn not installed; skipping UMAP.")
 
-import open_clip  # must include your MobileCLIP2 setup
-
-
 # ================== Helpers ==================
 def load_json(json_path: str) -> Dict:
     with open(json_path, "r") as f:
@@ -67,116 +64,7 @@ def get_embeddings(model, processor, tokenizer, tag: str, image_paths: List[Path
 def normalize(x: np.ndarray) -> np.ndarray:
     return x / np.linalg.norm(x, axis=-1, keepdims=True)
 
-
-# ================== Visualization ==================
-def run_projection(X: np.ndarray, method: str, seed=1234) -> np.ndarray:
-    method = method.lower()
-    if method == "pca":
-        Z = PCA(n_components=2, random_state=seed).fit_transform(X)
-        return Z
-    elif method == "umap" and HAS_UMAP:
-        reducer = umap.UMAP(n_components=2, random_state=seed, metric="cosine", min_dist=0.1)
-        return reducer.fit_transform(X)
-    elif method == "tsne":
-        Z = TSNE(n_components=2, random_state=seed, metric="cosine", perplexity=30).fit_transform(X)
-        return Z
-    else:
-        raise ValueError(f"Unknown or unavailable method: {method}")
-
-from matplotlib.offsetbox import OffsetImage, AnnotationBbox
-
-
-def run_projection_fast(X: np.ndarray, method: str, seed=1234) -> np.ndarray:
-    """Fast projection: PCA to 50D first, then apply chosen method."""
-    n_comp = min(50, X.shape[0]-1, X.shape[1])  # cannot exceed n_samples-1
-    X_reduced = PCA(n_components=n_comp, random_state=seed).fit_transform(X)    
-    if method == "pca":
-        return PCA(n_components=2, random_state=seed).fit_transform(X_reduced)
-    elif method == "umap" and HAS_UMAP:
-        reducer = umap.UMAP(n_components=2, random_state=seed, metric="cosine", min_dist=0.1)
-        return reducer.fit_transform(X_reduced)
-    elif method == "tsne":
-        max_perp = max(2, min(30, X_reduced.shape[0] // 3))
-        return TSNE(n_components=2, random_state=seed, metric="cosine", perplexity=max_perp).fit_transform(X_reduced)
-    else:
-        raise ValueError(f"Unknown or unavailable method: {method}")
-
-def run_projection_supervised(X: np.ndarray, y: List[str], method: str) -> np.ndarray:
-    method = method.lower()
-    if method == "lda":
-        lda = LDA(n_components=2)
-        # LDA needs labels as array
-        return lda.fit_transform(X, y)
-    else:
-        raise ValueError(f"Unknown supervised projection method: {method}")
-
-def run_all_projections(X, labels, modalities, image_paths, texts, output_dir, suffix=""):
-    for method in ["pca", "tsne", "umap"]:
-        if method == "umap" and not HAS_UMAP:
-            continue
-        try:
-            Z = run_projection_fast(X, method)
-            plot_embeddings(Z, labels, modalities, method+suffix,
-                            os.path.join(output_dir, f"proj_{method}{suffix}.png"))
-            plot_embeddings_with_thumbnails(Z, labels, modalities, image_paths, texts,
-                            method+suffix, os.path.join(output_dir, f"proj_{method}{suffix}_thumbs.png"))
-        except Exception as e:
-            print(f"[WARN] {method} projection on {suffix} failed: {e}")
-
-def plot_embeddings_with_thumbnails(Z, labels, modalities, image_paths, texts, method, save_path):
-    """Plot with thumbnails for images and text labels for text points."""
-    fig, ax = plt.subplots(figsize=(12, 10))
-
-    # faint scatter backdrop
-    ax.scatter(Z[:,0], Z[:,1], alpha=0.1, s=5, color="gray")
-
-    zoom = 0.5 if len(Z) < 100 else 0.25
-
-    for i, (x, y) in enumerate(Z):
-        if modalities[i] == "image" and image_paths[i] is not None:
-            try:
-                img = Image.open(image_paths[i]).convert("RGB")
-                img.thumbnail((64, 64))
-                imagebox = OffsetImage(img, zoom=zoom)
-                ab = AnnotationBbox(imagebox, (x, y), frameon=False)
-                ax.add_artist(ab)
-            except Exception:
-                ax.text(x, y, "[img]", fontsize=6, color="blue")
-        else:  # text
-            ax.text(x, y, texts[i], fontsize=8, color="red", ha="center")
-
-    ax.set_title(f"Projection with {method} (Thumbnails/Text)")
-    ax.set_xlim(Z[:,0].min()-1, Z[:,0].max()+1)
-    ax.set_ylim(Z[:,1].min()-1, Z[:,1].max()+1)
-    plt.savefig(save_path, dpi=150)
-    plt.close()
-
-def plot_embeddings(Z, labels, modalities, method, save_path):
-    plt.figure(figsize=(8, 6))
-    markers = {"image": "o", "text": "X"}
-    for lab in set(labels):
-        for mod in ["image", "text"]:
-            idx = [i for i, (l, m) in enumerate(zip(labels, modalities)) if l == lab and m == mod]
-            if not idx:
-                continue
-            plt.scatter(
-                Z[idx, 0], Z[idx, 1],
-                label=f"{lab}-{mod}",
-                marker=markers[mod], alpha=0.7
-            )
-    plt.legend()
-    plt.title(f"Projection with {method}")
-    plt.savefig(save_path, dpi=150)
-    plt.close()
-
-def plot_similarity_heatmap(embeddings, labels, modalities, save_path):
-    sims = embeddings @ embeddings.T
-    sns.heatmap(sims, xticklabels=labels, yticklabels=labels, cmap="coolwarm", center=0)
-    plt.title("Cosine Similarity Heatmap")
-    plt.savefig(save_path, dpi=150)
-    plt.close()
-
-# ================== Post-processing: Whitening & ISD ==================
+# ================== Whitening & ISD ==================
 def compute_whitening_matrix(X: np.ndarray, eps=1e-6):
     mu = X.mean(axis=0, keepdims=True)
     Xc = X - mu
@@ -191,64 +79,146 @@ def apply_whitening(X: np.ndarray, W: np.ndarray, mu: np.ndarray):
     return Xw / np.linalg.norm(Xw, axis=1, keepdims=True)
 
 def apply_isd(X: np.ndarray, topk_remove: int = 1):
-    """
-    ISD: make embeddings more isotropic by removing top-k principal components.
-    """
     mu = X.mean(axis=0, keepdims=True)
-    Xc = X - mu
-    U, S, _ = np.linalg.svd(Xc, full_matrices=False)
-    # Project away top-k PCs
-    Xc_proj = Xc - (Xc @ U[:, :topk_remove]) @ U[:, :topk_remove].T
+    Xc = X - mu  # [N, D]
+    # PCA via SVD on features
+    U, S, Vt = np.linalg.svd(Xc, full_matrices=False)  # Vt: [min(N,D), D]
+    V = Vt.T  # [D, min(N,D)]
+
+    if topk_remove > 0:
+        Xc_proj = Xc - (Xc @ V[:, :topk_remove]) @ V[:, :topk_remove].T
+    else:
+        Xc_proj = Xc
     return normalize(Xc_proj)
+
+# ================== Visualization ==================
+def run_projection(X: np.ndarray, method: str, seed=1234) -> np.ndarray:
+    method = method.lower()
+    if method == "pca":
+        return PCA(n_components=2, random_state=seed).fit_transform(X)
+    elif method == "umap" and HAS_UMAP:
+        reducer = umap.UMAP(n_components=2, random_state=seed, metric="cosine", min_dist=0.1)
+        return reducer.fit_transform(X)
+    elif method == "tsne":
+        return TSNE(n_components=2, random_state=seed, metric="cosine", perplexity=30).fit_transform(X)
+    else:
+        raise ValueError(f"Unknown or unavailable method: {method}")
+
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+
+def run_projection_fast(X: np.ndarray, method: str, seed=1234) -> np.ndarray:
+    n_comp = min(50, X.shape[0]-1, X.shape[1])
+    X_reduced = PCA(n_components=n_comp, random_state=seed).fit_transform(X)
+    if method == "pca":
+        return PCA(n_components=2, random_state=seed).fit_transform(X_reduced)
+    elif method == "umap" and HAS_UMAP:
+        reducer = umap.UMAP(n_components=2, random_state=seed, metric="cosine", min_dist=0.1)
+        return reducer.fit_transform(X_reduced)
+    elif method == "tsne":
+        max_perp = max(2, min(30, X_reduced.shape[0] // 3))
+        return TSNE(n_components=2, random_state=seed, metric="cosine", perplexity=max_perp).fit_transform(X_reduced)
+    else:
+        raise ValueError(f"Unknown or unavailable method: {method}")
+
+def run_projection_supervised(X: np.ndarray, y: List[str], method: str) -> np.ndarray:
+    if method.lower() == "lda":
+        lda = LDA(n_components=2)
+        return lda.fit_transform(X, y)
+    else:
+        raise ValueError(f"Unknown supervised projection method: {method}")
+
+def plot_embeddings_with_thumbnails(Z, labels, modalities, image_paths, texts, method, save_path):
+    fig, ax = plt.subplots(figsize=(12, 10))
+    ax.scatter(Z[:,0], Z[:,1], alpha=0.1, s=5, color="gray")
+    zoom = 0.5 if len(Z) < 100 else 0.25
+    for i, (x, y) in enumerate(Z):
+        if modalities[i] == "image" and image_paths[i] is not None:
+            try:
+                img = Image.open(image_paths[i]).convert("RGB")
+                img.thumbnail((64, 64))
+                imagebox = OffsetImage(img, zoom=zoom)
+                ab = AnnotationBbox(imagebox, (x, y), frameon=False)
+                ax.add_artist(ab)
+            except Exception:
+                ax.text(x, y, "[img]", fontsize=6, color="blue")
+        else:
+            ax.text(x, y, texts[i], fontsize=8, color="red", ha="center")
+    ax.set_title(f"Projection with {method} (Thumbnails/Text)")
+    ax.set_xlim(Z[:,0].min()-1, Z[:,0].max()+1)
+    ax.set_ylim(Z[:,1].min()-1, Z[:,1].max()+1)
+    plt.savefig(save_path, dpi=150)
+    plt.close()
+
+def plot_embeddings(Z, labels, modalities, method, save_path):
+    plt.figure(figsize=(8, 6))
+    markers = {"image": "o", "text": "X"}
+    for lab in set(labels):
+        for mod in ["image", "text"]:
+            idx = [i for i, (l, m) in enumerate(zip(labels, modalities)) if l == lab and m == mod]
+            if not idx:
+                continue
+            plt.scatter(Z[idx, 0], Z[idx, 1], label=f"{lab}-{mod}", marker=markers[mod], alpha=0.7)
+    plt.legend()
+    plt.title(f"Projection with {method}")
+    plt.savefig(save_path, dpi=150)
+    plt.close()
+
+def plot_similarity_heatmap(embeddings, labels, modalities, save_path):
+    sims = embeddings @ embeddings.T
+    sns.heatmap(sims, xticklabels=labels, yticklabels=labels, cmap="coolwarm", center=0)
+    plt.title("Cosine Similarity Heatmap")
+    plt.savefig(save_path, dpi=150)
+    plt.close()
+
+# ================== Quantitative Metrics ==================
+def compute_cluster_stats(X: np.ndarray, labels: List[str]):
+    sims = X @ X.T
+    labels = np.array(labels)
+    intra, inter = [], []
+    for i in range(len(labels)):
+        for j in range(i+1, len(labels)):
+            if labels[i] == labels[j]:
+                intra.append(sims[i,j])
+            else:
+                inter.append(sims[i,j])
+    intra_mean = np.mean(intra) if intra else 0
+    inter_mean = np.mean(inter) if inter else 0
+    ratio = intra_mean / (inter_mean + 1e-6)
+    return {"intra": float(intra_mean), "inter": float(inter_mean), "ratio": float(ratio)}
 
 # ================== Main ==================
 def main(json_path: str, model_path: str, output_dir: str, device="cuda"):
     os.makedirs(output_dir, exist_ok=True)
-
-    # ---- Load JSON ----
     data = load_json(json_path)["pet_scenes"]
 
-    # ---- Load model ----
-    model_name = infer_model_name_from_ckpt(args.model_path)
+    model_name = infer_model_name_from_ckpt(model_path)
     model_kwargs = {}
     if not (model_name.endswith("S3") or model_name.endswith("S4") or model_name.endswith("L-14")):
-        model_kwargs = {"image_mean": (0, 0, 0), "image_std": (1, 1, 1)}
-    model, _, image_processor = open_clip.create_model_and_transforms(model_name, pretrained=args.model_path, **model_kwargs)
-    device = torch.device(args.device if torch.cuda.is_available() else "cpu")
+        model_kwargs = {"image_mean": (0,0,0), "image_std": (1,1,1)}
+    model, _, image_processor = open_clip.create_model_and_transforms(model_name, pretrained=model_path, **model_kwargs)
+    device = torch.device(device if torch.cuda.is_available() else "cpu")
     model = model.to(device).eval()
     model = reparameterize_model(model)
     tokenizer = open_clip.get_tokenizer(model_name)
 
-    all_embeddings = []
-    labels, modalities, image_paths, texts = [], [], [], []
-
+    all_embeddings, labels, modalities, image_paths, texts = [], [], [], [], []
     for entry in tqdm(data, desc="Processing scenes"):
         tag = entry["tag"]
         ref_dir = entry.get("ref_dir")
         img_paths = load_images_from_dir(ref_dir) if ref_dir else []
-
         text_feat, img_feats = get_embeddings(model, image_processor, tokenizer, tag, img_paths, device=device)
-
         text_feat = normalize(text_feat.reshape(1, -1))[0]
         img_feats = normalize(img_feats) if len(img_feats) > 0 else np.zeros((0, text_feat.shape[0]))
-
-        # text
         all_embeddings.append(text_feat)
-        labels.append(tag)
-        modalities.append("text")
-        texts.append(tag)
-        image_paths.append(None)
-
-        # images
+        labels.append(tag); modalities.append("text"); texts.append(tag); image_paths.append(None)
         for p, f in zip(img_paths, img_feats):
             all_embeddings.append(f)
-            labels.append(tag)
-            modalities.append("image")
-            texts.append("")   # no text for image
-            image_paths.append(p)
-    
+            labels.append(tag); modalities.append("image"); texts.append(""); image_paths.append(p)
+
     all_embeddings = np.array(all_embeddings)
-    # ---- Whitening ----
+    print("Embeddings built, now compute transforms...")
+
+    # Whitening
     try:
         W, mu = compute_whitening_matrix(all_embeddings)
         all_embeddings_whiten = apply_whitening(all_embeddings, W, mu)
@@ -256,58 +226,58 @@ def main(json_path: str, model_path: str, output_dir: str, device="cuda"):
         print(f"[WARN] Whitening failed: {e}")
         all_embeddings_whiten = None
 
-    # ---- ISD ----
+    # ISD
     try:
         all_embeddings_isd = apply_isd(all_embeddings, topk_remove=1)
     except Exception as e:
         print(f"[WARN] ISD failed: {e}")
         all_embeddings_isd = None
-    print(f"complete encoding part, now calculate projection...")
-    
-    # ---- Projections ----
-    # ---- Original embeddings ----
-    run_all_projections(all_embeddings, labels, modalities, image_paths, texts, output_dir, suffix="")
 
-    # ---- Whitening embeddings ----
+    # Run projections & plots
+    def run_all(X, suffix):
+        for method in ["pca","tsne","umap"]:
+            if method == "umap" and not HAS_UMAP: continue
+            try:
+                Z = run_projection_fast(X, method)
+                plot_embeddings(Z, labels, modalities, f"{method}{suffix}", os.path.join(output_dir, f"proj_{method}{suffix}.png"))
+                plot_embeddings_with_thumbnails(Z, labels, modalities, image_paths, texts, f"{method}{suffix}", os.path.join(output_dir, f"proj_{method}{suffix}_thumbs.png"))
+            except Exception as e:
+                print(f"[WARN] {method} on {suffix} failed: {e}")
+        # Similarity heatmap
+        plot_similarity_heatmap(X, [f"{l}-{m}" for l,m in zip(labels, modalities)], modalities, os.path.join(output_dir, f"similarity_heatmap{suffix}.png"))
+        # Stats
+        stats = compute_cluster_stats(X, labels)
+        with open(os.path.join(output_dir, f"cluster_stats{suffix}.json"), "w") as f:
+            json.dump(stats, f, indent=2)
+        print(f"[STATS-{suffix}] {stats}")
+
+    run_all(all_embeddings, "")
     if all_embeddings_whiten is not None:
-        run_all_projections(all_embeddings_whiten, labels, modalities, image_paths, texts, output_dir, suffix="_whiten")
-
-    # ---- ISD embeddings ----
+        run_all(all_embeddings_whiten, "_whiten")
     if all_embeddings_isd is not None:
-        run_all_projections(all_embeddings_isd, labels, modalities, image_paths, texts, output_dir, suffix="_isd")
-        
-    # ---- Supervised Projection: LDA ----
+        run_all(all_embeddings_isd, "_isd")
+
+    # Supervised LDA (on original)
     try:
         Z_lda = run_projection_supervised(all_embeddings, labels, "lda")
         plot_embeddings(Z_lda, labels, modalities, "lda", os.path.join(output_dir, "proj_lda.png"))
-        plot_embeddings_with_thumbnails(
-            Z_lda, labels, modalities, image_paths, texts,
-            "lda", os.path.join(output_dir, "proj_lda_thumbs.png")
-        )
+        plot_embeddings_with_thumbnails(Z_lda, labels, modalities, image_paths, texts, "lda", os.path.join(output_dir, "proj_lda_thumbs.png"))
     except Exception as e:
         print(f"[WARN] LDA projection failed: {e}")
-        
- 
 
-    # ---- Similarity Heatmap ----
-    plot_similarity_heatmap(all_embeddings, [f"{l}-{m}" for l, m in zip(labels, modalities)], modalities,
-                            os.path.join(output_dir, "similarity_heatmap.png"))
-
-    # ---- Save embeddings & metadata ----
+    # Save embeddings & metadata
     np.save(os.path.join(output_dir, "embeddings.npy"), all_embeddings)
     with open(os.path.join(output_dir, "metadata.json"), "w") as f:
         json.dump({"labels": labels, "modalities": modalities}, f, indent=2)
 
     print(f"Done. Results saved to {output_dir}")
 
-
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--scene_json", type=str, default="./scene_tags/pet_scenes.json")
     parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip2_s4.pt")
-    parser.add_argument("--output_dir", type=str, default="./experiements/multimodal_embedding_cluster", help="Directory to save results")
-    parser.add_argument("--device", type=str, default="cuda", help="cuda or cpu")
+    parser.add_argument("--output_dir", type=str, default="./experiments/multimodal_embedding_cluster")
+    parser.add_argument("--device", type=str, default="cuda")
     args = parser.parse_args()
-
     main(args.scene_json, args.model_path, args.output_dir, device=args.device)
