@@ -280,4 +280,7 @@ if __name__ == "__main__":
     parser.add_argument("--output_dir", type=str, default="./experiments/multimodal_embedding_cluster")
     parser.add_argument("--device", type=str, default="cuda")
     args = parser.parse_args()
-    main(args.scene_json, args.model_path, args.output_dir, device=args.device)
+
+    json_file_name = os.path.splitext(os.path.basename(args.scene_json))[0]
+
+    main(args.scene_json, args.model_path, os.path.join(args.output_dir, json_file_name), device=args.device)

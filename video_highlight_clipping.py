@@ -90,6 +90,7 @@ import torch.nn.functional as F
 import open_clip
 from mobileclip.modules.common.mobileone import reparameterize_model
 from model_name_map import MODEL_NAME_MAP, infer_model_name_from_ckpt
+from transform import *
 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -427,70 +428,89 @@ def predict_highlight_idx(
     """
     Predict highlight frames from video given reference embeddings.
 
-    Args:
-        model, image_processor: MobileCLIP model and processor
-        device, precision: inference device & dtype
-        video_frames: list of frames (BGR np.ndarray)
-        sampled_frame_idx: indices of frames to encode
-        embedding_database: {
-            "tags": {
-                tag: {
-                    "embedding": torch.Tensor [1,D],
-                    "weight": float,
-                    "params": dict   # optional parameters from JSON
-                }
-            }
-        }
-        nms_window: half-window for local maxima suppression
-        nms_threshold: score threshold for NMS
-        topk: number of peaks to keep
-
-    Returns:
-        highlight_idx: list of {"index": idx_global, "tag": tag, "score": float, "params": dict}
-        stats: dictionary with per-tag score curves
+    Extra kwargs:
+        embed_space_mode: str = "raw" | "whiten" | "isd" | "whiten_isd"
+        isd_k: int = 1   # number of PCs to remove for ISD
+        pca_first: int or None = None   # optional PCA dimension for stability
     """
-    # 1) Encode sampled frames
+
+    # ================== Step 1: Encode sampled frames ==================
     start = time.perf_counter()
     feats = []
-    for i in tqdm(sampled_frame_idx, desc = "embedding sampled frames"):
+    for i in tqdm(sampled_frame_idx, desc="embedding sampled frames"):
         emb = encode_image(model, image_processor, video_frames[i],
                            device=device, precision=precision)
         feats.append(emb)
 
     feats = torch.stack(feats, dim=0)  # [Ns,D]
-    feats = F.normalize(feats, dim=-1)
+    feats = F.normalize(feats, dim=-1)  # keep unit norm
+    X_img = feats.cpu().numpy()
     end = time.perf_counter()
     print(f"[PROFILING] image encoding time: {end - start:.4f}s to encode {len(feats)} frames")
 
-    # 2) Compute cosine similarity with each tag embedding
-    per_tag_scores: Dict[str, Dict[str, Any]] = {}
-    start = time.perf_counter()
-    for tag, pack in embedding_database["tags"].items():
-        refE = pack["embedding"]   # [1,D]
-        w    = float(pack.get("weight", 1.0))
-        params = pack.get("params", {})
-
+    # ================== Step 2: Collect text embeddings ==================
+    tags = list(embedding_database["tags"].keys())
+    X_txt, tag_list, tag_weights, tag_params = [], [], [], []
+    for tag in tags:
+        pack = embedding_database["tags"][tag]
+        refE = pack.get("embedding", None)
         if refE is None:
             continue
+        X_txt.append(F.normalize(refE, dim=-1).cpu().numpy()[0])
+        tag_list.append(tag)
+        tag_weights.append(float(pack.get("weight", 1.0)))
+        tag_params.append(pack.get("params", {}))
+    X_txt = np.array(X_txt)
+    tag_weights = np.array(tag_weights)
 
-        # Cosine similarity [Ns]
-        scores_raw = torch.matmul(feats, refE.T).squeeze(-1)  # [Ns]
-        scores = (scores_raw * w).cpu().numpy()
+    # ================== Step 3: Apply Whitening / ISD if requested ==================
+    mode = kwargs.get("embed_space_mode", "raw")
+    print(f"ISD mode: {mode}")
+    isd_k = int(kwargs.get("isd_k", 2))
+    pca_first = kwargs.get("pca_first", None)
+
+    if mode != "raw":
+        X_img, X_txt, tparams = maybe_fit_transform(
+            X_img, X_txt,
+            mode=mode,
+            fit_mode="per_video",   # fit on current frames + tags
+            k=isd_k,
+            pca_first=pca_first
+        )
+        print(f"[INFO] Applied embedding transform: {mode}")
+
+    # ================== Step 4: Compute cosine similarities ==================
+    start = time.perf_counter()
+    S = X_img @ X_txt.T  # [Ns, Nt], since embeddings are normalized
+    per_tag_scores: Dict[str, Dict[str, Any]] = {}
+    for j, tag in enumerate(tag_list):
+        scores_raw = S[:, j]
+        w = tag_weights[j]
+        params = tag_params[j]
+
+        # Per-tag z-score normalization
+        mu, sigma = scores_raw.mean(), scores_raw.std()
+        sigma = sigma if sigma > 1e-6 else 1e-6
+        s_norm = (scores_raw - mu) / sigma
+
+        # Sigmoid mapping into (0,1)
+        scores = 1 / (1 + np.exp(-s_norm))
+        scores *= w
 
         per_tag_scores[tag] = {
-            "scores": scores,
+            "scores": scores_raw, # using scores_raw to skip z-normalize
             "sampled_idx": sampled_frame_idx,
             "weight": w,
-            "params": params,  # keep params here for analysis/logging
+            "params": params,
         }
     end = time.perf_counter()
-    print(f"[PROFILING] cos similarity calculation time: {end - start:.4f}s for {len(per_tag_scores.keys())} text embeddings x {len(feats)} image embeddings")
+    print(f"[PROFILING] similarity calc + zscore time: {end - start:.4f}s")
 
-    # 3) Fuse across tags: take best scoring tag per frame
+    # ================== Step 5: Fuse across tags ==================
     start = time.perf_counter()
     Ns = len(sampled_frame_idx)
     fused_scores = np.full(Ns, -1e9, dtype=np.float32)
-    fused_tags   = np.array([""] * Ns, dtype=object)
+    fused_tags = np.array([""] * Ns, dtype=object)
 
     for tag, pack in per_tag_scores.items():
         s = pack["scores"]
@@ -498,15 +518,15 @@ def predict_highlight_idx(
         fused_scores[better] = s[better]
         fused_tags[better] = tag
     end = time.perf_counter()
-    print(f"[PROFILING] best score fusion time: {end - start:.4f}s")
+    print(f"[PROFILING] fusion time: {end - start:.4f}s")
 
-    # 4) Apply NMS on fused scores
+    # ================== Step 6: Apply NMS ==================
     start = time.perf_counter()
     keep_idx_local = nms_1d(fused_scores, window=nms_window, threshold=nms_threshold)
     end = time.perf_counter()
     print(f"[PROFILING] NMS time: {end - start:.4f}s to propose {len(keep_idx_local)} NMS index")
 
-    # 5) Select top-k peaks
+    # ================== Step 7: Select top-k peaks ==================
     start = time.perf_counter()
     keep_idx_local = sorted(
         keep_idx_local,
@@ -514,9 +534,9 @@ def predict_highlight_idx(
         reverse=True
     )[:topk]
     end = time.perf_counter()
-    print(f"[PROFILING] Top-K time: {end - start:.4f}s to propose {len(keep_idx_local)} top-k index")
+    print(f"[PROFILING] Top-K time: {end - start:.4f}s")
 
-    start = time.perf_counter()
+    # ================== Step 8: Build output ==================
     highlight_idx = []
     for i_local in keep_idx_local:
         idx_global = sampled_frame_idx[i_local]
@@ -526,10 +546,11 @@ def predict_highlight_idx(
             "index": int(idx_global),
             "tag": tag,
             "score": float(fused_scores[i_local]),
-            "params": params,  # pass along tag params for context
+            "params": params,
         })
     print(f"highlight_idx: {highlight_idx}")
-    # 6) Collect stats
+
+    # ================== Step 9: Collect stats ==================
     stats = {
         "per_tag": per_tag_scores,
         "best_per_frame": {
@@ -537,9 +558,8 @@ def predict_highlight_idx(
             "tag": fused_tags.tolist(),
         },
         "sampled_idx": sampled_frame_idx,
+        "transform_mode": mode,
     }
-    end = time.perf_counter()
-    print(f"[PROFILING] highlight stats collection time: {end - start:.4f}s")
 
     return highlight_idx, stats
 
@@ -986,6 +1006,9 @@ def main():
     ap.add_argument("--plot_mode", type=str, default="fused",
                 choices=["fused", "tags", "all"],
                 help="Which curves to plot: fused best score, per-tag scores, or both")
+    ap.add_argument("--embed_space_mode", type=str, default="isd",
+                choices=["isd", "raw", "whiten", "whiten_isd"],
+                help="Which curves to plot: fused best score, per-tag scores, or both")
     args = ap.parse_args()
 
     setup_determinism(args.seed)
@@ -1024,6 +1047,7 @@ def main():
 
     # Predict highlight indices
     start = time.perf_counter()
+    kwargs = {"embed_space_mode": args.embed_space_mode}
     highlights, stats = predict_highlight_idx(
         model=model,
         image_processor=image_processor,
@@ -1035,6 +1059,7 @@ def main():
         nms_window=args.nms_window,
         nms_threshold=args.nms_threshold,
         topk=args.topk,
+        **kwargs
     )
     end = time.perf_counter()
     print(f"[PROFILING] predict highlight index calculation time: {end - start:.4f}s")
