@@ -18,6 +18,7 @@ from model_name_map import MODEL_NAME_MAP, infer_model_name_from_ckpt
 
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
 from embedding_processor import *
 
@@ -84,6 +85,7 @@ def run_projection(X: np.ndarray, method: str, seed=1234) -> np.ndarray:
 
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 
+
 def run_projection_fast(X: np.ndarray, method: str, seed=1234) -> np.ndarray:
     """Fast projection: PCA to 50D first, then apply chosen method."""
     n_comp = min(50, X.shape[0]-1, X.shape[1])  # cannot exceed n_samples-1
@@ -98,6 +100,28 @@ def run_projection_fast(X: np.ndarray, method: str, seed=1234) -> np.ndarray:
         return TSNE(n_components=2, random_state=seed, metric="cosine", perplexity=max_perp).fit_transform(X_reduced)
     else:
         raise ValueError(f"Unknown or unavailable method: {method}")
+
+def run_projection_supervised(X: np.ndarray, y: List[str], method: str) -> np.ndarray:
+    method = method.lower()
+    if method == "lda":
+        lda = LDA(n_components=2)
+        # LDA needs labels as array
+        return lda.fit_transform(X, y)
+    else:
+        raise ValueError(f"Unknown supervised projection method: {method}")
+
+def run_all_projections(X, labels, modalities, image_paths, texts, output_dir, suffix=""):
+    for method in ["pca", "tsne", "umap"]:
+        if method == "umap" and not HAS_UMAP:
+            continue
+        try:
+            Z = run_projection_fast(X, method)
+            plot_embeddings(Z, labels, modalities, method+suffix,
+                            os.path.join(output_dir, f"proj_{method}{suffix}.png"))
+            plot_embeddings_with_thumbnails(Z, labels, modalities, image_paths, texts,
+                            method+suffix, os.path.join(output_dir, f"proj_{method}{suffix}_thumbs.png"))
+        except Exception as e:
+            print(f"[WARN] {method} projection on {suffix} failed: {e}")
 
 def plot_embeddings_with_thumbnails(Z, labels, modalities, image_paths, texts, method, save_path):
     """Plot with thumbnails for images and text labels for text points."""
@@ -152,6 +176,30 @@ def plot_similarity_heatmap(embeddings, labels, modalities, save_path):
     plt.savefig(save_path, dpi=150)
     plt.close()
 
+# ================== Post-processing: Whitening & ISD ==================
+def compute_whitening_matrix(X: np.ndarray, eps=1e-6):
+    mu = X.mean(axis=0, keepdims=True)
+    Xc = X - mu
+    cov = np.cov(Xc, rowvar=False)
+    U, S, _ = np.linalg.svd(cov)
+    W = U @ np.diag(1.0 / np.sqrt(S + eps)) @ U.T
+    return W, mu
+
+def apply_whitening(X: np.ndarray, W: np.ndarray, mu: np.ndarray):
+    Xc = X - mu
+    Xw = Xc @ W
+    return Xw / np.linalg.norm(Xw, axis=1, keepdims=True)
+
+def apply_isd(X: np.ndarray, topk_remove: int = 1):
+    """
+    ISD: make embeddings more isotropic by removing top-k principal components.
+    """
+    mu = X.mean(axis=0, keepdims=True)
+    Xc = X - mu
+    U, S, _ = np.linalg.svd(Xc, full_matrices=False)
+    # Project away top-k PCs
+    Xc_proj = Xc - (Xc @ U[:, :topk_remove]) @ U[:, :topk_remove].T
+    return normalize(Xc_proj)
 
 # ================== Main ==================
 def main(json_path: str, model_path: str, output_dir: str, device="cuda"):
@@ -200,22 +248,46 @@ def main(json_path: str, model_path: str, output_dir: str, device="cuda"):
             image_paths.append(p)
     
     all_embeddings = np.array(all_embeddings)
+    # ---- Whitening ----
+    try:
+        W, mu = compute_whitening_matrix(all_embeddings)
+        all_embeddings_whiten = apply_whitening(all_embeddings, W, mu)
+    except Exception as e:
+        print(f"[WARN] Whitening failed: {e}")
+        all_embeddings_whiten = None
+
+    # ---- ISD ----
+    try:
+        all_embeddings_isd = apply_isd(all_embeddings, topk_remove=1)
+    except Exception as e:
+        print(f"[WARN] ISD failed: {e}")
+        all_embeddings_isd = None
     print(f"complete encoding part, now calculate projection...")
     
     # ---- Projections ----
-    for method in ["pca", "tsne", "umap"]:
-            if method == "umap" and not HAS_UMAP:
-                continue
-            Z = run_projection_fast(all_embeddings, method)
+    # ---- Original embeddings ----
+    run_all_projections(all_embeddings, labels, modalities, image_paths, texts, output_dir, suffix="")
 
-            # scatter plot
-            plot_embeddings(Z, labels, modalities, method, os.path.join(output_dir, f"proj_{method}.png"))
+    # ---- Whitening embeddings ----
+    if all_embeddings_whiten is not None:
+        run_all_projections(all_embeddings_whiten, labels, modalities, image_paths, texts, output_dir, suffix="_whiten")
 
-            # thumbnail/text plot
-            plot_embeddings_with_thumbnails(
-                Z, labels, modalities, image_paths, texts,
-                method, os.path.join(output_dir, f"proj_{method}_thumbs.png")
-            )
+    # ---- ISD embeddings ----
+    if all_embeddings_isd is not None:
+        run_all_projections(all_embeddings_isd, labels, modalities, image_paths, texts, output_dir, suffix="_isd")
+        
+    # ---- Supervised Projection: LDA ----
+    try:
+        Z_lda = run_projection_supervised(all_embeddings, labels, "lda")
+        plot_embeddings(Z_lda, labels, modalities, "lda", os.path.join(output_dir, "proj_lda.png"))
+        plot_embeddings_with_thumbnails(
+            Z_lda, labels, modalities, image_paths, texts,
+            "lda", os.path.join(output_dir, "proj_lda_thumbs.png")
+        )
+    except Exception as e:
+        print(f"[WARN] LDA projection failed: {e}")
+        
+ 
 
     # ---- Similarity Heatmap ----
     plot_similarity_heatmap(all_embeddings, [f"{l}-{m}" for l, m in zip(labels, modalities)], modalities,
