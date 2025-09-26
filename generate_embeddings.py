@@ -176,7 +176,7 @@ def main():
     parser.add_argument("--output_suffix", type=str, required=False)
     parser.add_argument("--llm_generated", action="store_true",
                         help="Enable more aggressive tag normalization for fallback mode.")
-    parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip2_b.pt")
+    parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip2_s4.pt")
     parser.add_argument("--device", type=str, default="cuda:0")
     parser.add_argument("--batch_size", type=int, default=64)
     parser.add_argument("--context_length", type=int, default=77)
@@ -226,6 +226,12 @@ def main():
             text_emb = encode_text(model, tokenizer, tag_text, args.device,
                                    args.context_length, use_amp=use_amp)
 
+            if ref_embs.numel() == 0:
+                visual_embs_pooled = torch.zeros(ref_embs.shape[1], device=ref_embs.device)
+            else:
+                pooled = ref_embs.mean(dim=0, keepdim=True)
+                visual_embs_pooled = F.normalize(pooled, dim=-1, eps=1e-6).squeeze(0)
+                
             taf_vec = taf_fuse_multi_refs(text_emb, ref_embs, args.beta, args.gamma)
             push_vec = cos_push_multi_refs(text_emb, ref_embs, args.push_lambda)
 
@@ -237,6 +243,7 @@ def main():
                 "model": model_name,
                 "embedding": {
                     "tag_embedding": tensor_to_jsonable(text_emb),
+                    "visual_embedding_pooling": tensor_to_jsonable(visual_embs_pooled),
                     "multi_ref_TAF_embedding": {
                         "params": {"beta": args.beta, "gamma": args.gamma},
                         "data": tensor_to_jsonable(taf_vec)
