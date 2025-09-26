@@ -451,18 +451,34 @@ def predict_highlight_idx(
     # ================== Step 2: Collect text embeddings ==================
     tags = list(embedding_database["tags"].keys())
     X_txt, tag_list, tag_weights, tag_params = [], [], [], []
+
     for tag in tags:
         pack = embedding_database["tags"][tag]
         refE = pack.get("embedding", None)
+
         if refE is None:
+            print(f"[WARN] No embedding for tag: {tag}")
             continue
-        X_txt.append(F.normalize(refE, dim=-1).cpu().numpy()[0])
+
+        # normalize + move to CPU
+        refE = F.normalize(refE, dim=-1).cpu()
+
+        # convert to numpy
+        refE_np = refE.numpy().squeeze()
+
+        # skip invalid (all zeros, NaN, Inf)
+        if not np.isfinite(refE_np).all() or np.linalg.norm(refE_np) < 1e-6:
+            print(f"[WARN] Invalid embedding for tag: {tag}")
+            continue
+
+        # otherwise safe to use
+        X_txt.append(refE_np)
         tag_list.append(tag)
         tag_weights.append(float(pack.get("weight", 1.0)))
         tag_params.append(pack.get("params", {}))
-    X_txt = np.array(X_txt)
-    tag_weights = np.array(tag_weights)
 
+    X_txt = np.array(X_txt) if X_txt else np.zeros((0, 768), dtype=np.float32)
+    tag_weights = np.array(tag_weights) if tag_weights else np.zeros((0,))
     # ================== Step 3: Apply Whitening / ISD if requested ==================
     mode = kwargs.get("embed_space_mode", "raw")
     print(f"ISD mode: {mode}")
@@ -984,7 +1000,7 @@ def main():
     ap = argparse.ArgumentParser("clip video based on MobileCLIP embeddings")
     ap.add_argument("--scene_json", type=str, required=True, help="path to scene JSON with tag embeddings")
     ap.add_argument("--video", type=str, required=True, help="path to input video file")
-    ap.add_argument("--model_path", type=str, default="./checkpoints/mobileclip2_b.pt")
+    ap.add_argument("--model_path", type=str, default="./checkpoints/mobileclip2_s4.pt")
     ap.add_argument("--device", type=str, default="cuda:0")
     ap.add_argument("--precision", type=str, default="fp16", choices=["fp32", "fp16", "bf16"])
     ap.add_argument("--outdir", type=str, default="./highlight_clipping")
@@ -992,7 +1008,7 @@ def main():
     ap.add_argument("--play_fps", type=float, default=5.0, help="playback/downsample fps (0=original)")
     ap.add_argument("--encoding_fps", type=float, default=1.0, help="fps used to generate embeddings (0=auto from scene_json or use play_fps)")
     ap.add_argument("--method", type=str, default="tag_embedding",
-                choices=["tag_embedding", "multi_ref_TAF_embedding", "multi_ref_push_embedding"],
+                choices=["tag_embedding", "multi_ref_TAF_embedding", "multi_ref_push_embedding", "visual_embedding_pooling"],
                 help="which embedding type from JSON to use")
     ap.add_argument("--per_tag_reduce", type=str, default="max", choices=["max", "mean"])
     ap.add_argument("--tag_mix", type=str, default="best", choices=["best", "sum", "both"])
