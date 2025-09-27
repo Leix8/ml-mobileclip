@@ -95,6 +95,8 @@ from transform import *
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
+from saliency_cropper import SaliencyCropper
+
 # ---------------- Utils ---------------- #
 
 def setup_determinism(seed: int = 1234):
@@ -350,10 +352,13 @@ def load_model(model_path: str, device: str = "cuda:0", precision: str = "fp16",
 
 # encode image
 @torch.no_grad()
-def encode_image(model, image_processor, image_bgr: np.ndarray, device: str = "cuda:0", precision: str = "fp16") -> torch.Tensor:
+def encode_image(model, image_processor, image_bgr: np.ndarray, device: str = "cuda:0", precision: str = "fp16", cropper = None) -> torch.Tensor:
     """
     Returns L2-normalized embedding [D] as torch.Tensor (float32 on CPU).
     """
+    if cropper:
+        image_bgr = cropper.crop(image_bgr)
+
     img_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
     pil = Image.fromarray(img_rgb)
     pixel = image_processor(pil).unsqueeze(0)  # [1,3,H,W]
@@ -437,9 +442,17 @@ def predict_highlight_idx(
     # ================== Step 1: Encode sampled frames ==================
     start = time.perf_counter()
     feats = []
+    
+    if kwargs.get("saliency_crop"):
+        # Choose method
+        # cropper = SaliencyCropper(method="opencv")
+        cropper = SaliencyCropper(method="sam", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b")
+    else:
+        cropper = None
+
     for i in tqdm(sampled_frame_idx, desc="embedding sampled frames"):
         emb = encode_image(model, image_processor, video_frames[i],
-                           device=device, precision=precision)
+                           device=device, precision=precision, cropper = cropper)
         feats.append(emb)
 
     feats = torch.stack(feats, dim=0)  # [Ns,D]
@@ -1003,7 +1016,7 @@ def main():
     ap.add_argument("--model_path", type=str, default="./checkpoints/mobileclip2_s4.pt")
     ap.add_argument("--device", type=str, default="cuda:0")
     ap.add_argument("--precision", type=str, default="fp16", choices=["fp32", "fp16", "bf16"])
-    ap.add_argument("--outdir", type=str, default="./highlight_clipping")
+    ap.add_argument("--output_dir", type=str, default="./highlight_clipping")
     ap.add_argument("--seed", type=int, default=1234)
     ap.add_argument("--play_fps", type=float, default=5.0, help="playback/downsample fps (0=original)")
     ap.add_argument("--encoding_fps", type=float, default=1.0, help="fps used to generate embeddings (0=auto from scene_json or use play_fps)")
@@ -1025,10 +1038,12 @@ def main():
     ap.add_argument("--embed_space_mode", type=str, default="isd",
                 choices=["isd", "raw", "whiten", "whiten_isd"],
                 help="Which curves to plot: fused best score, per-tag scores, or both")
+    ap.add_argument("--saliency_crop", action="store_true", help="encode only the cropped image based on saliency")
+
     args = ap.parse_args()
 
     setup_determinism(args.seed)
-    os.makedirs(args.outdir, exist_ok=True)
+    os.makedirs(args.output_dir, exist_ok=True)
 
     # Load video
     frames, duration_s, W, H, play_fps = load_frames_from_video_resampled(args.video, args.play_fps)
@@ -1063,7 +1078,7 @@ def main():
 
     # Predict highlight indices
     start = time.perf_counter()
-    kwargs = {"embed_space_mode": args.embed_space_mode}
+    kwargs = {"embed_space_mode": args.embed_space_mode, "saliency_crop": args.saliency_crop}
     highlights, stats = predict_highlight_idx(
         model=model,
         image_processor=image_processor,
@@ -1091,7 +1106,7 @@ def main():
     )
 
     # Save results
-    base = Path(args.outdir) / (Path(f"{model_name}")) / (Path(args.video).stem) / (Path(args.video).stem + f"_highlights_{args.method}")
+    base = Path(args.output_dir) / (Path(f"{model_name}")) / (Path(args.video).stem) / (Path(args.video).stem + f"_highlights_{args.method}")
     json_out = str(base) + ".json"
     os.makedirs(os.path.dirname(json_out), exist_ok=True)
     with open(json_out, "w", encoding="utf-8") as f:

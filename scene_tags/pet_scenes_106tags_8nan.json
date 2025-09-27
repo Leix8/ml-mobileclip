@@ -1,0 +1,36 @@
+{
+  "pet_scenes": [
+    {
+      "tag": "Cat_chasing_wand_toy_happily",
+      "ref_dir": "ref_images/Cat_chasing_wand_toy_happily"
+    },
+    {
+      "tag": "Dog rolling on back playfully",
+      "ref_dir": "ref_images/Dog_rolling_on_back_playfully"
+    },
+    {
+      "tag": "Dog panting with tongue out",
+      "ref_dir": "ref_images/Dog_panting_with_tongue_out"
+    },
+    {
+      "tag": "Owner playing fetch with dog",
+      "ref_dir": "ref_images/Owner_playing_fetch_with_dog"
+    },
+    {
+      "tag": "Owner and dog making eye contact",
+      "ref_dir": "ref_images/Owner_and_dog_making_eye_contact"
+    },
+    {
+      "tag": "Cat sunbathing on windowsill",
+      "ref_dir": "ref_images/Cat_sunbathing_on_windowsill"
+    },
+    {
+      "tag": "Dog chasing tail",
+      "ref_dir": "ref_images/Dog_chasing_tail"
+    },
+    {
+      "tag": "Dog slipping suddenly",
+      "ref_dir": "ref_images/Dog_slipping_suddenly"
+    }
+  ]
+}

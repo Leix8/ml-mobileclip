@@ -1,0 +1,57 @@
+{
+  "pet_scenes": [
+    {
+      "id": "a_dog_jumps_up",
+      "tag": "a dog jumps up",
+      "reference_dir": "/data01/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_jumping",
+      "num_ref": 10,
+      "model": "MobileCLIP2-B",
+      "embedding": {
+        "tag_embedding": {
+          "shape": [
+            512
+          ],
+          "dtype": "float16",
+          "value": [
+            0.007236480712890625,
+            ...
+            0.039398193359375
+          ]
+        },
+        "multi_ref_TAF_embedding": {
+          "params": {
+            "beta": 0.4,
+            "gamma": 0.1
+          },
+          "data": {
+            "shape": [
+              512
+            ],
+            "dtype": "float16",
+            "value": [
+              0.0051422119140625,
+            
+            ]
+          }
+        },
+        "multi_ref_push_embedding": {
+          "params": {
+            "push_lambda": 0.5
+          },
+          "data": {
+            "shape": [
+              512
+            ],
+            "dtype": "float16",
+            "value": [
+              -0.016021728515625,
+            
+              0.0218048095703125
+            ]
+          }
+        }
+      }
+    },
+    {}
+    ]
+}

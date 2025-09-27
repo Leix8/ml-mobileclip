@@ -1,12 +1,11 @@
 checkpoints
 highlight_detection
 open_clip
-scene_tags
-embedding_database
 experiements
 highlight_clipping
 ref_images
 experiments
+sam_checkpoints
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

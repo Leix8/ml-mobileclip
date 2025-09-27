@@ -1,0 +1,8 @@
+{
+  "pet_scenes": [
+    {"tag": "A dog jumping or leaping", "ref_dir": ""},
+    {"tag": "A cat or dog sleeping or resting.", "ref_dir": ""},
+    {"tag": "A cat or dog eating food", "ref_dir": ""}, 
+    {"tag": "A dog running.", "ref_dir": ""}
+  ]
+}

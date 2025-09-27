@@ -1,0 +1,9 @@
+{
+  "pet_scenes": [
+    {"tag": "A dog jumping or leaping", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_jumping"},
+    {"tag": "A cat or dog sleeping or resting.", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_sleeping"},
+    {"tag": "A cat or dog eating food", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_eating"}, 
+    {"tag": "A dog running.", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_running"},
+    {"tag": "NA", "ref_dir": "/home/leixu/workspace/workspace_leixu/ml-mobileclip/data/pet_scenes/pet_running"} 
+  ]
+}

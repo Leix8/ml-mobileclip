@@ -1,0 +1,428 @@
+{
+  "pet_scenes": [
+    {
+      "tag": "Dog running on grass",
+      "ref_dir": "ref_images/Dog_running_on_grass"
+    },
+    {
+      "tag": "Dog jumping excitedly",
+      "ref_dir": "ref_images/Dog_jumping_excitedly"
+    },
+    {
+      "tag": "Dog chasing frisbee",
+      "ref_dir": "ref_images/Dog_chasing_frisbee"
+    },
+    {
+      "tag": "Dog chasing ball",
+      "ref_dir": "ref_images/Dog_chasing_ball"
+    },
+    {
+      "tag": "Dog running with wagging tail",
+      "ref_dir": "ref_images/Dog_running_with_wagging_tail"
+    },
+    {
+      "tag": "Dog spinning in room",
+      "ref_dir": "ref_images/Dog_spinning_in_room"
+    },
+    {
+      "tag": "Dog stretching and rolling",
+      "ref_dir": "ref_images/Dog_stretching_and_rolling"
+    },
+    {
+      "tag": "Dog rolling on back playfully",
+      "ref_dir": "ref_images/Dog_rolling_on_back_playfully"
+    },
+    {
+      "tag": "Dog running with toy",
+      "ref_dir": "ref_images/Dog_running_with_toy"
+    },
+    {
+      "tag": "Dog walking with stick",
+      "ref_dir": "ref_images/Dog_walking_with_stick"
+    },
+    {
+      "tag": "Dog jumping into water",
+      "ref_dir": "ref_images/Dog_jumping_into_water"
+    },
+    {
+      "tag": "Cat jumping onto sofa",
+      "ref_dir": "ref_images/Cat_jumping_onto_sofa"
+    },
+    {
+      "tag": "Cat running across room",
+      "ref_dir": "ref_images/Cat_running_across_room"
+    },
+    {
+      "tag": "Cat jumping onto table",
+      "ref_dir": "ref_images/Cat_jumping_onto_table"
+    },
+    {
+      "tag": "Cat batting hanging toy",
+      "ref_dir": "ref_images/Cat_batting_hanging_toy"
+    },
+    {
+      "tag": "Cat chasing laser dot",
+      "ref_dir": "ref_images/Cat_chasing_laser_dot"
+    },
+    {
+      "tag": "Cat pouncing on toy",
+      "ref_dir": "ref_images/Cat_pouncing_on_toy"
+    },
+    {
+      "tag": "Cat hopping playfully",
+      "ref_dir": "ref_images/Cat_hopping_playfully"
+    },
+    {
+      "tag": "Dog smiling happily",
+      "ref_dir": "ref_images/Dog_smiling_happily"
+    },
+    {
+      "tag": "Dog panting with tongue out",
+      "ref_dir": "ref_images/Dog_panting_with_tongue_out"
+    },
+    {
+      "tag": "Dog staring curiously",
+      "ref_dir": "ref_images/Dog_staring_curiously"
+    },
+    {
+      "tag": "Dog tilting head",
+      "ref_dir": "ref_images/Dog_tilting_head"
+    },
+    {
+      "tag": "Dog looking sad",
+      "ref_dir": "ref_images/Dog_looking_sad"
+    },
+    {
+      "tag": "Dog looking innocent",
+      "ref_dir": "ref_images/Dog_looking_innocent"
+    },
+    {
+      "tag": "Dog looking shy",
+      "ref_dir": "ref_images/Dog_looking_shy"
+    },
+    {
+      "tag": "Dog lying down tired",
+      "ref_dir": "ref_images/Dog_lying_down_tired"
+    },
+    {
+      "tag": "Dog smiling with tongue out",
+      "ref_dir": "ref_images/Dog_smiling_with_tongue_out"
+    },
+    {
+      "tag": "Dog jumping excitedly toward",
+      "ref_dir": "ref_images/Dog_jumping_excitedly_toward"
+    },
+    {
+      "tag": "Cat staring with big eyes",
+      "ref_dir": "ref_images/Cat_staring_with_big_eyes"
+    },
+    {
+      "tag": "Cat tilting head",
+      "ref_dir": "ref_images/Cat_tilting_head"
+    },
+    {
+      "tag": "Cat looking aloof",
+      "ref_dir": "ref_images/Cat_looking_aloof"
+    },
+    {
+      "tag": "Cat yawning sleepily",
+      "ref_dir": "ref_images/Cat_yawning_sleepily"
+    },
+    {
+      "tag": "Cat squinting in sunlight",
+      "ref_dir": "ref_images/Cat_squinting_in_sunlight"
+    },
+    {
+      "tag": "Cat looking pitifully",
+      "ref_dir": "ref_images/Cat_looking_pitifully"
+    },
+    {
+      "tag": "Cat staring nervously",
+      "ref_dir": "ref_images/Cat_staring_nervously"
+    },
+    {
+      "tag": "Cat staring blankly",
+      "ref_dir": "ref_images/Cat_staring_blankly"
+    },
+    {
+      "tag": "Owner petting dog's head",
+      "ref_dir": "ref_images/Owner_petting_dog's_head"
+    },
+    {
+      "tag": "Owner hugging dog",
+      "ref_dir": "ref_images/Owner_hugging_dog"
+    },
+    {
+      "tag": "Dog cuddling with owner",
+      "ref_dir": "ref_images/Dog_cuddling_with_owner"
+    },
+    {
+      "tag": "Dog running with owner",
+      "ref_dir": "ref_images/Dog_running_with_owner"
+    },
+    {
+      "tag": "Dog rubbing against owner",
+      "ref_dir": "ref_images/Dog_rubbing_against_owner"
+    },
+    {
+      "tag": "Owner feeding dog treat",
+      "ref_dir": "ref_images/Owner_feeding_dog_treat"
+    },
+    {
+      "tag": "Owner playing fetch with dog",
+      "ref_dir": "ref_images/Owner_playing_fetch_with_dog"
+    },
+    {
+      "tag": "Owner bathing dog",
+      "ref_dir": "ref_images/Owner_bathing_dog"
+    },
+    {
+      "tag": "Owner brushing dog",
+      "ref_dir": "ref_images/Owner_brushing_dog"
+    },
+    {
+      "tag": "Owner and dog making eye contact",
+      "ref_dir": "ref_images/Owner_and_dog_making_eye_contact"
+    },
+    {
+      "tag": "Dog lying on owner",
+      "ref_dir": "ref_images/Dog_lying_on_owner"
+    },
+    {
+      "tag": "Owner walking dog",
+      "ref_dir": "ref_images/Owner_walking_dog"
+    },
+    {
+      "tag": "Owner holding cat",
+      "ref_dir": "ref_images/Owner_holding_cat"
+    },
+    {
+      "tag": "Cat lying on owner's shoulder",
+      "ref_dir": "ref_images/Cat_lying_on_owner's_shoulder"
+    },
+    {
+      "tag": "Cat cuddling with owner",
+      "ref_dir": "ref_images/Cat_cuddling_with_owner"
+    },
+    {
+      "tag": "Owner petting cat",
+      "ref_dir": "ref_images/Owner_petting_cat"
+    },
+    {
+      "tag": "Owner playing with cat wand",
+      "ref_dir": "ref_images/Owner_playing_with_cat_wand"
+    },
+    {
+      "tag": "Owner feeding cat",
+      "ref_dir": "ref_images/Owner_feeding_cat"
+    },
+    {
+      "tag": "Owner and cat making eye contact",
+      "ref_dir": "ref_images/Owner_and_cat_making_eye_contact"
+    },
+    {
+      "tag": "Cat sleeping on owner's lap",
+      "ref_dir": "ref_images/Cat_sleeping_on_owner's_lap"
+    },
+    {
+      "tag": "Dog playing in ocean",
+      "ref_dir": "ref_images/Dog_playing_in_ocean"
+    },
+    {
+      "tag": "Dog digging sand",
+      "ref_dir": "ref_images/Dog_digging_sand"
+    },
+    {
+      "tag": "Dog rolling in snow",
+      "ref_dir": "ref_images/Dog_rolling_in_snow"
+    },
+    {
+      "tag": "Dog walking in forest",
+      "ref_dir": "ref_images/Dog_walking_in_forest"
+    },
+    {
+      "tag": "Dog looking out car window",
+      "ref_dir": "ref_images/Dog_looking_out_car_window"
+    },
+    {
+      "tag": "Dog resting on sofa",
+      "ref_dir": "ref_images/Dog_resting_on_sofa"
+    },
+    {
+      "tag": "Dog sunbathing on balcony",
+      "ref_dir": "ref_images/Dog_sunbathing_on_balcony"
+    },
+    {
+      "tag": "Dog napping on bed",
+      "ref_dir": "ref_images/Dog_napping_on_bed"
+    },
+    {
+      "tag": "Cat sunbathing on windowsill",
+      "ref_dir": "ref_images/Cat_sunbathing_on_windowsill"
+    },
+    {
+      "tag": "Cat curled on sofa",
+      "ref_dir": "ref_images/Cat_curled_on_sofa"
+    },
+    {
+      "tag": "Cat playing on cat tree",
+      "ref_dir": "ref_images/Cat_playing_on_cat_tree"
+    },
+    {
+      "tag": "Cat napping on desk",
+      "ref_dir": "ref_images/Cat_napping_on_desk"
+    },
+    {
+      "tag": "Cat walking in garden",
+      "ref_dir": "ref_images/Cat_walking_in_garden"
+    },
+    {
+      "tag": "Cat stretching on carpet",
+      "ref_dir": "ref_images/Cat_stretching_on_carpet"
+    },
+    {
+      "tag": "Cat rubbing against owner in kitchen",
+      "ref_dir": "ref_images/Cat_rubbing_against_owner_in_kitchen"
+    },
+    {
+      "tag": "Dog chasing tail",
+      "ref_dir": "ref_images/Dog_chasing_tail"
+    },
+    {
+      "tag": "Dog slipping suddenly",
+      "ref_dir": "ref_images/Dog_slipping_suddenly"
+    },
+    {
+      "tag": "Dog falling into water",
+      "ref_dir": "ref_images/Dog_falling_into_water"
+    },
+    {
+      "tag": "Dog stuck in tight space",
+      "ref_dir": "ref_images/Dog_stuck_in_tight_space"
+    },
+    {
+      "tag": "Dog making funny face",
+      "ref_dir": "ref_images/Dog_making_funny_face"
+    },
+    {
+      "tag": "Dog jumping in surprise",
+      "ref_dir": "ref_images/Dog_jumping_in_surprise"
+    },
+    {
+      "tag": "Cat pouncing and missing",
+      "ref_dir": "ref_images/Cat_pouncing_and_missing"
+    },
+    {
+      "tag": "Cat startled with fur raised",
+      "ref_dir": "ref_images/Cat_startled_with_fur_raised"
+    },
+    {
+      "tag": "Cat crawling into box",
+      "ref_dir": "ref_images/Cat_crawling_into_box"
+    },
+    {
+      "tag": "Cat falling off table",
+      "ref_dir": "ref_images/Cat_falling_off_table"
+    },
+    {
+      "tag": "Cat scared by cucumber",
+      "ref_dir": "ref_images/Cat_scared_by_cucumber"
+    },
+    {
+      "tag": "Cat rolling on back cutely",
+      "ref_dir": "ref_images/Cat_rolling_on_back_cutely"
+    },
+    {
+      "tag": "Cat making exaggerated face",
+      "ref_dir": "ref_images/Cat_making_exaggerated_face"
+    },
+    {
+      "tag": "Dog face close-up",
+      "ref_dir": "ref_images/Dog_face_close-up"
+    },
+    {
+      "tag": "Dog eyes close-up",
+      "ref_dir": "ref_images/Dog_eyes_close-up"
+    },
+    {
+      "tag": "Dog tongue close-up",
+      "ref_dir": "ref_images/Dog_tongue_close-up"
+    },
+    {
+      "tag": "Dog paw close-up",
+      "ref_dir": "ref_images/Dog_paw_close-up"
+    },
+    {
+      "tag": "Dog nose close-up",
+      "ref_dir": "ref_images/Dog_nose_close-up"
+    },
+    {
+      "tag": "Dog eating close-up",
+      "ref_dir": "ref_images/Dog_eating_close-up"
+    },
+    {
+      "tag": "Cat eyes close-up",
+      "ref_dir": "ref_images/Cat_eyes_close-up"
+    },
+    {
+      "tag": "Cat whiskers close-up",
+      "ref_dir": "ref_images/Cat_whiskers_close-up"
+    },
+    {
+      "tag": "Cat paw close-up",
+      "ref_dir": "ref_images/Cat_paw_close-up"
+    },
+    {
+      "tag": "Cat grooming close-up",
+      "ref_dir": "ref_images/Cat_grooming_close-up"
+    },
+    {
+      "tag": "Cat sleeping close-up",
+      "ref_dir": "ref_images/Cat_sleeping_close-up"
+    },
+    {
+      "tag": "Cat licking paw close-up",
+      "ref_dir": "ref_images/Cat_licking_paw_close-up"
+    },
+    {
+      "tag": "Dog running happily to owner",
+      "ref_dir": "ref_images/Dog_running_happily_to_owner"
+    },
+    {
+      "tag": "Dog playing frisbee with owner",
+      "ref_dir": "ref_images/Dog_playing_frisbee_with_owner"
+    },
+    {
+      "tag": "Dog running in ocean splashing",
+      "ref_dir": "ref_images/Dog_running_in_ocean_splashing"
+    },
+    {
+      "tag": "Dog sleeping in owner's arms",
+      "ref_dir": "ref_images/Dog_sleeping_in_owner's_arms"
+    },
+    {
+      "tag": "Dog pouncing excitedly on owner",
+      "ref_dir": "ref_images/Dog_pouncing_excitedly_on_owner"
+    },
+    {
+      "tag": "Cat yawning on windowsill",
+      "ref_dir": "ref_images/Cat_yawning_on_windowsill"
+    },
+    {
+      "tag": "Cat chasing wand toy happily",
+      "ref_dir": "ref_images/Cat_chasing_wand_toy_happily"
+    },
+    {
+      "tag": "Cat curled on owner's lap sleeping",
+      "ref_dir": "ref_images/Cat_curled_on_owner's_lap_sleeping"
+    },
+    {
+      "tag": "Cat jumping to high place balancing",
+      "ref_dir": "ref_images/Cat_jumping_to_high_place_balancing"
+    },
+    {
+      "tag": "Cat making funny face at camera",
+      "ref_dir": "ref_images/Cat_making_funny_face_at_camera"
+    }
+  ]
+}
