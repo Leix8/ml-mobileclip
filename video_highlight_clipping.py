@@ -448,7 +448,7 @@ def predict_highlight_idx(
     if kwargs.get("saliency_crop"):
         # Choose method
         # cropper = SaliencyCropper(method="opencv")
-        cropper = SaliencyCropper(method="groundingdino", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b", text_prompt="dog")
+        cropper = SaliencyCropper(method="groundingdino", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b", text_prompt="dog, cat, or any other pets on the scene")
     else:
         cropper = None
 

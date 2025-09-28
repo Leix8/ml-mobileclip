@@ -100,47 +100,92 @@ class SaliencyCropper:
         return img_bgr[y:y+h, x:x+w], (x/img_w, y/img_h, w/img_w, h/img_h)
 
     def _crop_gdino(self, img_bgr):
-        img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
-
-        # numpy -> torch tensor [3,H,W], normalized
-        image_tensor = torch.from_numpy(img_rgb).permute(2,0,1).float() / 255.0  # [3,H,W]
-
-        boxes, logits, phrases = predict(
-            model=self.gdino_model,
-            image=image_tensor,
-            caption=self.text_prompt,
-            box_threshold=0.2,      # relaxed for higher recall
-            text_threshold=0.2,
-            device=self.device
-        )
-
+        """
+        GroundingDINO crop guided by text. Robust:
+        - handles normalized + unordered corners
+        - retries with looser thresholds / prompt variants
+        - ranks boxes by score*area to avoid tiny parts
+        - clamps/validates; falls back to full image
+        Returns: (crop_bgr, bbox_norm_xywh)
+        """
         img_h, img_w = img_bgr.shape[:2]
 
-        # if no detection → fallback to full image
-        if len(boxes) == 0:
+        # ---- to tensor [3,H,W], float in [0,1] then ImageNet normalize ----
+        img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
+        t = torch.from_numpy(img_rgb).permute(2, 0, 1).float() / 255.0
+        mean = torch.tensor([0.485, 0.456, 0.406]).view(3, 1, 1)
+        std  = torch.tensor([0.229, 0.224, 0.225]).view(3, 1, 1)
+        t = (t - mean) / std  # what DINO expects
+
+        # ---- try several prompts & thresholds for recall ----
+        prompts = [self.text_prompt,
+                f"a {self.text_prompt}" if self.text_prompt else None,
+                f"a photo of {self.text_prompt}" if self.text_prompt else None]
+        prompts = [p for p in prompts if p]
+
+        thresholds = [(0.30, 0.25), (0.20, 0.20), (0.10, 0.10)]
+
+        best_xyxy = None
+        for cap in prompts:
+            for box_th, txt_th in thresholds:
+                try:
+                    boxes, logits, phrases = predict(
+                        model=self.gdino_model,
+                        image=t,                # torch.Tensor [3,H,W], normalized
+                        caption=cap.lower(),
+                        box_threshold=box_th,
+                        text_threshold=txt_th,
+                        device=self.device
+                    )
+                except Exception:
+                    continue
+
+                if len(boxes) == 0:
+                    continue
+
+                # tensors -> numpy
+                boxes_np = boxes.cpu().numpy()              # [N, 4], normalized xyxy
+                if torch.is_tensor(logits):
+                    scores = torch.sigmoid(logits).cpu().numpy().reshape(-1)
+                else:
+                    scores = np.asarray(logits).reshape(-1)
+
+                # reorder corners, scale to pixels, clamp, validate
+                x1n, y1n, x2n, y2n = (boxes_np[:, 0], boxes_np[:, 1],
+                                    boxes_np[:, 2], boxes_np[:, 3])
+                x1 = (np.minimum(x1n, x2n) * img_w).astype(int)
+                y1 = (np.minimum(y1n, y2n) * img_h).astype(int)
+                x2 = (np.maximum(x1n, x2n) * img_w).astype(int)
+                y2 = (np.maximum(y1n, y2n) * img_h).astype(int)
+
+                x1 = np.clip(x1, 0, img_w - 1); x2 = np.clip(x2, 0, img_w - 1)
+                y1 = np.clip(y1, 0, img_h - 1); y2 = np.clip(y2, 0, img_h - 1)
+
+                w = (x2 - x1); h = (y2 - y1)
+                valid = (w > 5) & (h > 5)
+                if not np.any(valid):
+                    continue
+
+                # prefer big & confident boxes (avoid “tiny paw”)
+                area = w * h
+                idx_valid = np.where(valid)[0]
+                pick = idx_valid[np.argmax(scores[idx_valid] * area[idx_valid])]
+
+                best_xyxy = (int(x1[pick]), int(y1[pick]), int(x2[pick]), int(y2[pick]))
+                break  # stop on first valid pick for this prompt
+            if best_xyxy:
+                break
+
+        # ---- fallback: full image ----
+        if not best_xyxy:
             return img_bgr, (0.0, 0.0, 1.0, 1.0)
 
-        # pick highest-confidence box
-        box = boxes[0].cpu().numpy().astype(int)
-        x1, y1, x2, y2 = box
+        x1, y1, x2, y2 = best_xyxy
+        w,  h  = x2 - x1, y2 - y1
 
-        # validate box
-        if x2 <= x1 or y2 <= y1:  # zero or negative area
-            return img_bgr, (0.0, 0.0, 1.0, 1.0)
+        # expand slightly for context
+        x1, y1, w, h = self.expand_bbox(x1, y1, w, h, img_w, img_h, scale=1.15)
 
-        # clamp to image bounds
-        x1 = max(0, min(x1, img_w - 1))
-        x2 = max(0, min(x2, img_w - 1))
-        y1 = max(0, min(y1, img_h - 1))
-        y2 = max(0, min(y2, img_h - 1))
-
-        # recompute width/height
-        w, h = x2 - x1, y2 - y1
-        if w <= 5 or h <= 5:  # too small → likely noise
-            return img_bgr, (0.0, 0.0, 1.0, 1.0)
-
-        # expand bbox safely
-        x, y, w, h = self.expand_bbox(x1, y1, w, h, img_w, img_h, scale=1.1)
-
-        # crop and return normalized bbox
-        return img_bgr[y:y+h, x:x+w], (x/img_w, y/img_h, w/img_w, h/img_h)
+        crop = img_bgr[y1:y1+h, x1:x1+w]
+        bbox_norm = (x1 / img_w, y1 / img_h, w / img_w, h / img_h)
+        return crop, bbox_norm
