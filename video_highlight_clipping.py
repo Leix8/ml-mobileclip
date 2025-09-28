@@ -356,8 +356,9 @@ def encode_image(model, image_processor, image_bgr: np.ndarray, device: str = "c
     """
     Returns L2-normalized embedding [D] as torch.Tensor (float32 on CPU).
     """
+    saliency_bbox = None
     if cropper:
-        image_bgr = cropper.crop(image_bgr)
+        image_bgr, saliency_bbox = cropper.crop(image_bgr)
 
     img_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
     pil = Image.fromarray(img_rgb)
@@ -369,7 +370,7 @@ def encode_image(model, image_processor, image_bgr: np.ndarray, device: str = "c
         pixel = pixel.to(torch.bfloat16)
     feat = model.encode_image(pixel)  # [1,D]
     feat = F.normalize(feat.float(), dim=-1).squeeze(0).cpu()
-    return feat
+    return feat, saliency_bbox
 
 
 # calculate the sampling frame idx according to video_frames and play fps, so that the sampling is at encoding fps
@@ -442,18 +443,21 @@ def predict_highlight_idx(
     # ================== Step 1: Encode sampled frames ==================
     start = time.perf_counter()
     feats = []
-    
+    saliency_bboxes = []
+
     if kwargs.get("saliency_crop"):
         # Choose method
         # cropper = SaliencyCropper(method="opencv")
-        cropper = SaliencyCropper(method="sam", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b")
+        cropper = SaliencyCropper(method="groundingdino", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b", text_prompt="dog")
     else:
         cropper = None
 
     for i in tqdm(sampled_frame_idx, desc="embedding sampled frames"):
-        emb = encode_image(model, image_processor, video_frames[i],
+        emb, saliency_bbox = encode_image(model, image_processor, video_frames[i],
                            device=device, precision=precision, cropper = cropper)
         feats.append(emb)
+        if saliency_bbox:
+            saliency_bboxes.append(saliency_bbox)
 
     feats = torch.stack(feats, dim=0)  # [Ns,D]
     feats = F.normalize(feats, dim=-1)  # keep unit norm
@@ -588,6 +592,7 @@ def predict_highlight_idx(
         },
         "sampled_idx": sampled_frame_idx,
         "transform_mode": mode,
+        "saliency_bboxes": saliency_bboxes
     }
 
     return highlight_idx, stats
@@ -775,6 +780,7 @@ def visualize_video_clipping(
     sampled_idx = cos_sim_score_stats["sampled_idx"]
     per_tag = cos_sim_score_stats["per_tag"]
     best_per_frame = cos_sim_score_stats["best_per_frame"]
+    saliency_bboxes = cos_sim_score_stats["saliency_bboxes"]
 
     # --- resize video frame dimension if too big ---
     frame_h, frame_w = video_frames[0].shape[:2]
@@ -834,12 +840,23 @@ def visualize_video_clipping(
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     out = cv2.VideoWriter(output_path, fourcc, play_fps, (out_w, out_h))
 
+    encoding_stride = len(video_frames) // len(sampled_idx)  # stride size
+
     for g_idx, frame in enumerate(video_frames):
         if frame_scale != 1.0:
             frame = cv2.resize(frame, (frame_w, frame_h), interpolation=cv2.INTER_AREA)
-
+        
+        bbox_idx = g_idx // encoding_stride
+        if bbox_idx < len(saliency_bboxes):
+            x, y, w, h = saliency_bboxes[bbox_idx]
+            x = int(x * frame_w)
+            y = int(y * frame_h)
+            w = int(w * frame_w)
+            h = int(h * frame_h)
+            if g_idx % encoding_stride == 0:
+                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        
         canvas = np.ones((canvas_h, canvas_w, 3), dtype=np.uint8) * 255
-
         # upper: video frame
         y0, x0 = pad, pad
         canvas[y0:y0+frame_h, x0:x0+frame_w] = frame
@@ -1074,7 +1091,7 @@ def main():
 
     # Map frames for encoding
     sampled_idx = get_encoding_idx(frames, play_fps=play_fps, encoding_fps=enc_fps)
-    print(f"[INFO] Sampled {len(sampled_idx)} frames for scoring (out of {len(frames)}).")
+    print(f"[INFO] Sampled {len(sampled_idx)} frames for scoring (out of {len(frames)}), examples: {sampled_idx[:10]}.")
 
     # Predict highlight indices
     start = time.perf_counter()
