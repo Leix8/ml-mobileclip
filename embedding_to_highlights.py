@@ -545,7 +545,7 @@ def main():
 
     out_video_path = out_dir / f"{output_prefix}_highlights.mp4"
     if _HAS_CV2:
-        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+        fourcc = cv2.VideoWriter_fourcc(*"avc1")
         vw = cv2.VideoWriter(str(out_video_path), fourcc, args.fps, (canvas_w, canvas_h))
     elif _HAS_IMAGEIO:
         vw = imageio.get_writer(str(out_video_path), fps=args.fps, codec="libx264", quality=8)

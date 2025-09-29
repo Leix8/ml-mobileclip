@@ -448,7 +448,7 @@ def predict_highlight_idx(
     if kwargs.get("saliency_crop"):
         # Choose method
         # cropper = SaliencyCropper(method="opencv")
-        cropper = SaliencyCropper(method="groundingdino", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b", text_prompt="dog, cat, or any other pets on the scene")
+        cropper = SaliencyCropper(method="sam", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b", text_prompt="dog")
     else:
         cropper = None
 
@@ -837,7 +837,7 @@ def visualize_video_clipping(
     ax_left, ax_top, ax_right, ax_bottom = ax_bbox
 
     # --- video writer ---
-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+    fourcc = cv2.VideoWriter_fourcc(*"avc1")
     out = cv2.VideoWriter(output_path, fourcc, play_fps, (out_w, out_h))
 
     encoding_stride = len(video_frames) // len(sampled_idx)  # stride size
@@ -925,7 +925,7 @@ def generate_clipped_video(
         out_w, out_h = src_w, src_h
 
     # writer (use H.264 if available)
-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+    fourcc = cv2.VideoWriter_fourcc(*"avc1")
     out = cv2.VideoWriter(output_path, fourcc, fps, (out_w, out_h))
     if not out.isOpened():
         raise RuntimeError(f"Cannot open VideoWriter: {output_path}")
