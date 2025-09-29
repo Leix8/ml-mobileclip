@@ -448,7 +448,7 @@ def predict_highlight_idx(
     if kwargs.get("saliency_crop"):
         # Choose method
         # cropper = SaliencyCropper(method="opencv")
-        cropper = SaliencyCropper(method="sam", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b", text_prompt="dog")
+        cropper = SaliencyCropper(method="groundingdino", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b", text_prompt="dogs play with owner")
     else:
         cropper = None
 
@@ -840,7 +840,7 @@ def visualize_video_clipping(
     fourcc = cv2.VideoWriter_fourcc(*"avc1")
     out = cv2.VideoWriter(output_path, fourcc, play_fps, (out_w, out_h))
 
-    encoding_stride = len(video_frames) // len(sampled_idx)  # stride size
+    encoding_stride = int((len(video_frames) + len(sampled_idx) - 1) / len(sampled_idx))  # stride size
 
     for g_idx, frame in enumerate(video_frames):
         if frame_scale != 1.0:
