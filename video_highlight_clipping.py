@@ -448,7 +448,7 @@ def predict_highlight_idx(
     if kwargs.get("saliency_crop"):
         # Choose method
         # cropper = SaliencyCropper(method="opencv")
-        cropper = SaliencyCropper(method="groundingdino", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b", text_prompt="dogs play with owner")
+        cropper = SaliencyCropper(method="opencv", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b", text_prompt="dogs")
     else:
         cropper = None
 
@@ -499,7 +499,7 @@ def predict_highlight_idx(
     # ================== Step 3: Apply Whitening / ISD if requested ==================
     mode = kwargs.get("embed_space_mode", "raw")
     print(f"ISD mode: {mode}")
-    isd_k = int(kwargs.get("isd_k", 2))
+    isd_k = int(kwargs.get("isd_k", 1))
     pca_first = kwargs.get("pca_first", None)
 
     if mode != "raw":
@@ -1028,7 +1028,7 @@ def generate_clipped_video(
 
 def main():
     ap = argparse.ArgumentParser("clip video based on MobileCLIP embeddings")
-    ap.add_argument("--scene_json", type=str, required=True, help="path to scene JSON with tag embeddings")
+    ap.add_argument("--embeddings", type=str, required=True, help="path to scene JSON with tag embeddings")
     ap.add_argument("--video", type=str, required=True, help="path to input video file")
     ap.add_argument("--model_path", type=str, default="./checkpoints/mobileclip2_s4.pt")
     ap.add_argument("--device", type=str, default="cuda:0")
@@ -1049,10 +1049,10 @@ def main():
     ap.add_argument("--min_clip_sec", type=float, default=1.0)
     ap.add_argument("--max_tags_to_draw", type=int, default=6)
     ap.add_argument("--no_video", action="store_true", help="do not render visualization video")
-    ap.add_argument("--plot_mode", type=str, default="fused",
+    ap.add_argument("--plot_mode", type=str, default="tags",
                 choices=["fused", "tags", "all"],
                 help="Which curves to plot: fused best score, per-tag scores, or both")
-    ap.add_argument("--embed_space_mode", type=str, default="isd",
+    ap.add_argument("--embed_space_mode", type=str, default="raw",
                 choices=["isd", "raw", "whiten", "whiten_isd"],
                 help="Which curves to plot: fused best score, per-tag scores, or both")
     ap.add_argument("--saliency_crop", action="store_true", help="encode only the cropped image based on saliency")
@@ -1070,7 +1070,7 @@ def main():
 
     # Load embeddings DB
     start = time.perf_counter()
-    db = load_embedding_database(args.scene_json, method=args.method)
+    db = load_embedding_database(args.embeddings, method=args.method)
     enc_fps = args.encoding_fps if args.encoding_fps > 0 else (db.get("encoding_fps") or play_fps)
     if not enc_fps or enc_fps <= 0:
         enc_fps = play_fps

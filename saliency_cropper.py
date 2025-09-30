@@ -83,7 +83,7 @@ class SaliencyCropper:
             return img_bgr, None
         x, y, w, h = cv2.boundingRect(max(contours, key=cv2.contourArea))
         img_h, img_w = img_bgr.shape[:2]
-        x, y, w, h = self.expand_bbox(x, y, w, h, img_w, img_h, scale=1.1)
+        x, y, w, h = self.expand_bbox(x, y, w, h, img_w, img_h, scale=1.2)
         return img_bgr[y:y+h, x:x+w], (x/img_w, y/img_h, w/img_w, h/img_h)
 
     def _crop_sam(self, img_bgr):
@@ -184,7 +184,7 @@ class SaliencyCropper:
         w,  h  = x2 - x1, y2 - y1
 
         # expand slightly for context
-        x1, y1, w, h = self.expand_bbox(x1, y1, w, h, img_w, img_h, scale=1.15)
+        x1, y1, w, h = self.expand_bbox(x1, y1, w, h, img_w, img_h, scale=1.2)
 
         crop = img_bgr[y1:y1+h, x1:x1+w]
         bbox_norm = (x1 / img_w, y1 / img_h, w / img_w, h / img_h)
