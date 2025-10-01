@@ -445,10 +445,9 @@ def predict_highlight_idx(
     feats = []
     saliency_bboxes = []
 
-    if kwargs.get("saliency_crop"):
+    if kwargs.get("saliency_mode")!= "base":
         # Choose method
-        # cropper = SaliencyCropper(method="opencv")
-        cropper = SaliencyCropper(method="opencv", sam_checkpoint="./sam_checkpoints/sam_vit_b.pth", model_type="vit_b", text_prompt="dogs")
+        cropper = SaliencyCropper(method=kwargs["saliency_mode"], text_prompt=kwargs["saliency_prompts"])
     else:
         cropper = None
 
@@ -1055,8 +1054,9 @@ def main():
     ap.add_argument("--embed_space_mode", type=str, default="raw",
                 choices=["isd", "raw", "whiten", "whiten_isd"],
                 help="Which curves to plot: fused best score, per-tag scores, or both")
-    ap.add_argument("--saliency_crop", action="store_true", help="encode only the cropped image based on saliency")
-
+    ap.add_argument("--saliency_mode", type = str, default = "base",
+                    choices=["base", "sam", "gdino", "opencv"], help="method of saliency cropping")
+    ap.add_argument("--saliency_prompts", type = str, default = "pets")
     args = ap.parse_args()
 
     setup_determinism(args.seed)
@@ -1095,7 +1095,7 @@ def main():
 
     # Predict highlight indices
     start = time.perf_counter()
-    kwargs = {"embed_space_mode": args.embed_space_mode, "saliency_crop": args.saliency_crop}
+    kwargs = {"embed_space_mode": args.embed_space_mode, "saliency_mode": args.saliency_mode, "saliency_prompts": args.saliency_prompts}
     highlights, stats = predict_highlight_idx(
         model=model,
         image_processor=image_processor,
@@ -1123,7 +1123,7 @@ def main():
     )
 
     # Save results
-    base = Path(args.output_dir) / (Path(f"{model_name}")) / (Path(args.video).stem) / (Path(args.video).stem + f"_highlights_{args.method}")
+    base = Path(args.output_dir) / (Path(f"{model_name}")) / (Path(args.video).stem) / (Path(args.video).stem + f"_highlights_{args.method}Embed_{args.embed_space_mode}EmbedSpace_{args.saliency_mode}Saliency")
     json_out = str(base) + ".json"
     os.makedirs(os.path.dirname(json_out), exist_ok=True)
     with open(json_out, "w", encoding="utf-8") as f:

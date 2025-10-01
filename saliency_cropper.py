@@ -9,17 +9,14 @@ except ImportError:
     _HAS_SAM = False
 
 try:
-    from groundingdino.util.inference import load_model, predict
+    from transformers import AutoProcessor, AutoModelForZeroShotObjectDetection, infer_device
     _HAS_GDINO = True
 except ImportError:
     _HAS_GDINO = False
 
-
 class SaliencyCropper:
     def __init__(self, method="opencv", device="cuda",
-                 sam_checkpoint=None, model_type="vit_b",
-                 gdino_config="/home/leixu/workspace/workspace_leixu/GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py", 
-                 gdino_ckpt="/home/leixu/workspace/workspace_leixu/GroundingDINO/checkpoints/groundingdino_swint_ogc.pth", text_prompt=None):
+                 sam_checkpoint=None, model_type="vit_b", text_prompt=None):
         """
         Args:
             method: "opencv", "sam", or "groundingdino"
@@ -31,9 +28,7 @@ class SaliencyCropper:
             text_prompt: text used for bbox guidance (Grounding DINO only)
         """
         self.method = method
-        self.text_prompt = text_prompt
         self.device = device
-
         if method == "sam":
             if not _HAS_SAM:
                 raise ImportError("SAM not installed. Run: pip install git+https://github.com/facebookresearch/segment-anything.git")
@@ -43,23 +38,27 @@ class SaliencyCropper:
             sam.to(device)
             self.mask_generator = SamAutomaticMaskGenerator(sam)
 
-        elif method == "groundingdino":
+        elif method == "gdino":
             if not _HAS_GDINO:
-                raise ImportError("GroundingDINO not installed. Run: pip install groundingdino-py")
-            if gdino_config is None or gdino_ckpt is None or text_prompt is None:
-                raise ValueError("gdino_config, gdino_ckpt and text_prompt must be provided for GroundingDINO.")
-            self.gdino_model = load_model(gdino_config, gdino_ckpt)
-        else:
+                raise ImportError("GroundingDINO not installed.")
+            self.gdino_model_id = "IDEA-Research/grounding-dino-tiny"
+            self.gdino_processor = AutoProcessor.from_pretrained(self.gdino_model_id)
+            self.gdino_model = AutoModelForZeroShotObjectDetection.from_pretrained(self.gdino_model_id).to(self.device)
+            self.text_prompt = text_prompt  
+        
+        elif method == "opencv":
             self.mask_generator = None
 
     def crop(self, img_bgr: np.ndarray):
         """Run saliency detection and return cropped image (BGR, bbox_norm)."""
         if self.method == "sam":
             return self._crop_sam(img_bgr)
-        elif self.method == "groundingdino":
+        elif self.method == "gdino":
             return self._crop_gdino(img_bgr)
-        else:
+        elif self.method == "opencv":
             return self._crop_opencv(img_bgr)
+        else:
+            return self._crop_base(img_bgr)
 
     def expand_bbox(self, x, y, w, h, img_w, img_h, scale=1.2):
         """Expand bbox by scale while keeping it inside image bounds."""
@@ -71,6 +70,9 @@ class SaliencyCropper:
         y2 = int(min(img_h, cy + new_h/2))
         return x1, y1, x2 - x1, y2 - y1
 
+    def _crop_base(self, img_bgr):
+        return img_bgr, (0.0, 0.0, 1.0, 1.0)
+    
     def _crop_opencv(self, img_bgr):
         saliency = cv2.saliency.StaticSaliencySpectralResidual_create()
         success, saliency_map = saliency.computeSaliency(img_bgr)
@@ -112,74 +114,30 @@ class SaliencyCropper:
 
         # ---- to tensor [3,H,W], float in [0,1] then ImageNet normalize ----
         img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
-        t = torch.from_numpy(img_rgb).permute(2, 0, 1).float() / 255.0
-        mean = torch.tensor([0.485, 0.456, 0.406]).view(3, 1, 1)
-        std  = torch.tensor([0.229, 0.224, 0.225]).view(3, 1, 1)
-        t = (t - mean) / std  # what DINO expects
 
-        # ---- try several prompts & thresholds for recall ----
-        prompts = [self.text_prompt,
-                f"a {self.text_prompt}" if self.text_prompt else None,
-                f"a photo of {self.text_prompt}" if self.text_prompt else None]
+        prompts = [self.text_prompt]
         prompts = [p for p in prompts if p]
 
-        thresholds = [(0.30, 0.25), (0.20, 0.20), (0.10, 0.10)]
+        inputs = self.gdino_processor(images=img_rgb, text=prompts, return_tensors="pt").to(self.gdino_model.device)
+        with torch.no_grad():
+            outputs = self.gdino_model(**inputs)
+        results = self.gdino_processor.post_process_grounded_object_detection(
+            outputs,
+            inputs.input_ids,
+            threshold=0.4,
+            text_threshold=0.3,
+            target_sizes= [img_rgb.shape[:2]]
+        )
 
-        best_xyxy = None
-        for cap in prompts:
-            for box_th, txt_th in thresholds:
-                try:
-                    boxes, logits, phrases = predict(
-                        model=self.gdino_model,
-                        image=t,                # torch.Tensor [3,H,W], normalized
-                        caption=cap.lower(),
-                        box_threshold=box_th,
-                        text_threshold=txt_th,
-                        device=self.device
-                    )
-                except Exception:
-                    continue
-
-                if len(boxes) == 0:
-                    continue
-
-                # tensors -> numpy
-                boxes_np = boxes.cpu().numpy()              # [N, 4], normalized xyxy
-                if torch.is_tensor(logits):
-                    scores = torch.sigmoid(logits).cpu().numpy().reshape(-1)
-                else:
-                    scores = np.asarray(logits).reshape(-1)
-
-                # reorder corners, scale to pixels, clamp, validate
-                x1n, y1n, x2n, y2n = (boxes_np[:, 0], boxes_np[:, 1],
-                                    boxes_np[:, 2], boxes_np[:, 3])
-                x1 = (np.minimum(x1n, x2n) * img_w).astype(int)
-                y1 = (np.minimum(y1n, y2n) * img_h).astype(int)
-                x2 = (np.maximum(x1n, x2n) * img_w).astype(int)
-                y2 = (np.maximum(y1n, y2n) * img_h).astype(int)
-
-                x1 = np.clip(x1, 0, img_w - 1); x2 = np.clip(x2, 0, img_w - 1)
-                y1 = np.clip(y1, 0, img_h - 1); y2 = np.clip(y2, 0, img_h - 1)
-
-                w = (x2 - x1); h = (y2 - y1)
-                valid = (w > 5) & (h > 5)
-                if not np.any(valid):
-                    continue
-
-                # prefer big & confident boxes (avoid “tiny paw”)
-                area = w * h
-                idx_valid = np.where(valid)[0]
-                pick = idx_valid[np.argmax(scores[idx_valid] * area[idx_valid])]
-
-                best_xyxy = (int(x1[pick]), int(y1[pick]), int(x2[pick]), int(y2[pick]))
-                break  # stop on first valid pick for this prompt
-            if best_xyxy:
-                break
-
-        # ---- fallback: full image ----
-        if not best_xyxy:
-            return img_bgr, (0.0, 0.0, 1.0, 1.0)
-
+        best_xyxy = (0.0, 0.0, 1.0, 1.0)
+        best_score = -1
+        for result in results:
+            for box, score, label in zip(result["boxes"], result["scores"], result["labels"]):
+                if score > best_score:
+                    best_score = score
+                    # Convert tensor to list
+                    best_xyxy = [int(x) for x in box.tolist()]  # [x1, y1, x2, y2]
+                    
         x1, y1, x2, y2 = best_xyxy
         w,  h  = x2 - x1, y2 - y1
 
