@@ -1,8 +1,8 @@
 {
   "pet_scenes": [
-    {"tag": "pet jumping", "ref_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/ref_images/pet_jumping", "candidate_dir": ""},
-    {"tag": "pet sleeping", "ref_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/ref_images/pet_sleeping", "candidate_dir": ""},
-    {"tag": "pet eating", "ref_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/ref_images/pet_eating", "candidate_dir": ""}, 
-    {"tag": "pet running", "ref_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/ref_images/pet_running", "candidate_dir": ""} 
+    {"tag": "pet jumping", "ref_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/ref_images/pet_jumping", "candidate_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/candidate_images/pet_jumping"},
+    {"tag": "pet sleeping", "ref_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/ref_images/pet_sleeping", "candidate_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/candidate_images/pet_sleeping"},
+    {"tag": "pet eating", "ref_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/ref_images/pet_eating", "candidate_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/candidate_images/pet_eating"}, 
+    {"tag": "pet running", "ref_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/ref_images/pet_running", "candidate_dir": "/home/leixu/workspace/workspace_leixu/mobileclip2/candidate_images/pet_running"} 
   ]
 }

@@ -41,25 +41,38 @@ def load_images_from_dir(ref_dir: str, exts={".jpg", ".jpeg", ".png"}):
             paths.append(p)
     return paths
 
-def get_embeddings(model, processor, tokenizer, tag: str, image_paths: List[Path], device="cuda"):
+def get_embeddings(model, processor, tokenizer, tag: str, ref_paths: List[Path], cand_paths: List[Path], device="cuda"):
     # text
     tok = tokenizer([tag]).to(device)
     with torch.no_grad():
         text_feat = model.encode_text(tok).cpu().numpy()[0]
 
-    # images
-    image_feats = []
-    for img_path in image_paths:
-        try:
-            img = Image.open(img_path).convert("RGB")
-        except Exception:
-            continue
-        img_tensor = processor(img).unsqueeze(0).to(device)
-        with torch.no_grad():
-            feat = model.encode_image(img_tensor).cpu().numpy()[0]
-        image_feats.append(feat)
+    # ref_images
+    ref_feats = []
+    if ref_paths:
+        for ref_path in ref_paths:
+            try:
+                img = Image.open(ref_path).convert("RGB")
+            except Exception:
+                continue
+            img_tensor = processor(img).unsqueeze(0).to(device)
+            with torch.no_grad():
+                feat = model.encode_image(img_tensor).cpu().numpy()[0]
+            ref_feats.append(feat)
+        
+    cand_feats = []
+    if cand_paths:
+        for cand_path in cand_paths:
+            try:
+                img = Image.open(cand_path).convert("RGB")
+            except Exception:
+                continue
+            img_tensor = processor(img).unsqueeze(0).to(device)
+            with torch.no_grad():
+                feat = model.encode_image(img_tensor).cpu().numpy()[0]
+            cand_feats.append(feat)
 
-    return text_feat, np.array(image_feats)
+    return text_feat, np.array(ref_feats), np.array(cand_feats) 
 
 def normalize(x: np.ndarray) -> np.ndarray:
     return x / np.linalg.norm(x, axis=-1, keepdims=True)
@@ -151,9 +164,9 @@ def plot_embeddings_with_thumbnails(Z, labels, modalities, image_paths, texts, m
 
 def plot_embeddings(Z, labels, modalities, method, save_path):
     plt.figure(figsize=(8, 6))
-    markers = {"image": "o", "text": "X"}
+    markers = {"reference": "o", "text": "X", "candidate": "*",}
     for lab in set(labels):
-        for mod in ["image", "text"]:
+        for mod in ["reference", "candidate", "text"]:
             idx = [i for i, (l, m) in enumerate(zip(labels, modalities)) if l == lab and m == mod]
             if not idx:
                 continue
@@ -187,7 +200,12 @@ def compute_cluster_stats(X: np.ndarray, labels: List[str]):
     return {"intra": float(intra_mean), "inter": float(inter_mean), "ratio": float(ratio)}
 
 # ================== Main ==================
-def main(json_path: str, model_path: str, output_dir: str, device="cuda"):
+def main(args):
+    json_path = args.scene_json
+    model_path = args.model_path
+    json_file_name = os.path.splitext(os.path.basename(args.scene_json))[0]
+    output_dir = os.path.join(args.output_dir, json_file_name)
+    device= args.device
     os.makedirs(output_dir, exist_ok=True)
     data = load_json(json_path)["pet_scenes"]
 
@@ -204,45 +222,54 @@ def main(json_path: str, model_path: str, output_dir: str, device="cuda"):
     all_embeddings, labels, modalities, image_paths, texts = [], [], [], [], []
     for entry in tqdm(data, desc="Processing scenes"):
         tag = entry["tag"]
-        ref_dir = entry.get("ref_dir")
-        img_paths = load_images_from_dir(ref_dir) if ref_dir else []
-        text_feat, img_feats = get_embeddings(model, image_processor, tokenizer, tag, img_paths, device=device)
+        ref_dir = entry.get("ref_dir", "None")
+        ref_paths = load_images_from_dir(ref_dir) if ref_dir else []
+        cand_dir = entry.get("candidate_dir", None)
+        cand_paths = load_images_from_dir(cand_dir) if cand_dir else []
+        text_feat, ref_feats, cand_feats = get_embeddings(model, image_processor, tokenizer, tag, ref_paths, cand_paths, device=device)
         text_feat = normalize(text_feat.reshape(1, -1))[0]
-        img_feats = normalize(img_feats) if len(img_feats) > 0 else np.zeros((0, text_feat.shape[0]))
+        ref_feats = normalize(ref_feats) if len(ref_feats) > 0 else np.zeros((0, text_feat.shape[0]))
         all_embeddings.append(text_feat)
         labels.append(tag); modalities.append("text"); texts.append(tag); image_paths.append(None)
-        for p, f in zip(img_paths, img_feats):
+        for p, f in zip(ref_paths, ref_feats):
             all_embeddings.append(f)
-            labels.append(tag); modalities.append("image"); texts.append(""); image_paths.append(p)
-
+            labels.append(tag); modalities.append("reference"); texts.append(""); image_paths.append(p)
+        for p, f in zip(cand_paths, cand_feats):
+            all_embeddings.append(f)
+            labels.append(tag); modalities.append("candidate"); texts.append(""); image_paths.append(p)
+    
     all_embeddings = np.array(all_embeddings)
     print("Embeddings built, now compute transforms...")
 
     # Whitening
-    try:
-        W, mu = compute_whitening_matrix(all_embeddings)
-        all_embeddings_whiten = apply_whitening(all_embeddings, W, mu)
-    except Exception as e:
-        print(f"[WARN] Whitening failed: {e}")
-        all_embeddings_whiten = None
+    if args.whitening:
+        try:
+            W, mu = compute_whitening_matrix(all_embeddings)
+            all_embeddings_whiten = apply_whitening(all_embeddings, W, mu)
+        except Exception as e:
+            print(f"[WARN] Whitening failed: {e}")
+            all_embeddings_whiten = None
 
     # ISD
-    try:
-        all_embeddings_isd = apply_isd(all_embeddings, topk_remove=1)
-    except Exception as e:
-        print(f"[WARN] ISD failed: {e}")
-        all_embeddings_isd = None
+    if args.isd:
+        try:
+            all_embeddings_isd = apply_isd(all_embeddings, topk_remove=1)
+        except Exception as e:
+            print(f"[WARN] ISD failed: {e}")
+            all_embeddings_isd = None
 
     # Run projections & plots
     def run_all(X, suffix):
-        for method in ["pca","tsne","umap"]:
-            if method == "umap" and not HAS_UMAP: continue
-            try:
-                Z = run_projection_fast(X, method)
-                plot_embeddings(Z, labels, modalities, f"{method}{suffix}", os.path.join(output_dir, f"proj_{method}{suffix}.png"))
-                plot_embeddings_with_thumbnails(Z, labels, modalities, image_paths, texts, f"{method}{suffix}", os.path.join(output_dir, f"proj_{method}{suffix}_thumbs.png"))
-            except Exception as e:
-                print(f"[WARN] {method} on {suffix} failed: {e}")
+        method = args.projection
+        if method == "umap" and not HAS_UMAP:
+            print(f"[ERROR] running umap projection while HAS_UMAP has not been set")
+            return
+        try:
+            Z = run_projection_fast(X, method)
+            plot_embeddings(Z, labels, modalities, f"{method}{suffix}", os.path.join(output_dir, f"proj_{method}{suffix}.png"))
+            plot_embeddings_with_thumbnails(Z, labels, modalities, image_paths, texts, f"{method}{suffix}", os.path.join(output_dir, f"proj_{method}{suffix}_thumbs.png"))
+        except Exception as e:
+            print(f"[WARN] {method} on {suffix} failed: {e}")
         # Similarity heatmap
         plot_similarity_heatmap(X, [f"{l}-{m}" for l,m in zip(labels, modalities)], modalities, os.path.join(output_dir, f"similarity_heatmap{suffix}.png"))
         # Stats
@@ -252,9 +279,9 @@ def main(json_path: str, model_path: str, output_dir: str, device="cuda"):
         print(f"[STATS-{suffix}] {stats}")
 
     run_all(all_embeddings, "")
-    if all_embeddings_whiten is not None:
+    if args.whitening and all_embeddings_whiten is not None:
         run_all(all_embeddings_whiten, "_whiten")
-    if all_embeddings_isd is not None:
+    if args.isd and all_embeddings_isd is not None:
         run_all(all_embeddings_isd, "_isd")
 
     # Supervised LDA (on original)
@@ -279,8 +306,10 @@ if __name__ == "__main__":
     parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip2_s4.pt")
     parser.add_argument("--output_dir", type=str, default="./experiments/multimodal_embedding_cluster")
     parser.add_argument("--device", type=str, default="cuda")
+    parser.add_argument("--whitening", action = "store_true")
+    parser.add_argument("--isd", action = "store_true")
+    parser.add_argument("--projection", type = str, default = "pca", choices=["pca", "tsne", "umap"])
+
     args = parser.parse_args()
 
-    json_file_name = os.path.splitext(os.path.basename(args.scene_json))[0]
-
-    main(args.scene_json, args.model_path, os.path.join(args.output_dir, json_file_name), device=args.device)
+    main(args)
