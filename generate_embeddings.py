@@ -169,9 +169,9 @@ def main():
     )
     parser.add_argument("--scene_json", type=str, required=True,
                         help="Path to scene/tag json file.")
-    parser.add_argument("--ref_dir", type=str, required=True,
+    parser.add_argument("--ref_dir", type=str, required=False, default = "./", 
                         help="Parent directory for fallback lookup.")
-    parser.add_argument("--output_dir", type=str, required=True,
+    parser.add_argument("--output_dir", type=str, required=True, 
                         help="Where to save the output json.")
     parser.add_argument("--output_suffix", type=str, required=False)
     parser.add_argument("--llm_generated", action="store_true",
