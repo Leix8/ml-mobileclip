@@ -253,7 +253,7 @@ def main(args):
     # ISD
     if args.isd:
         try:
-            all_embeddings_isd = apply_isd(all_embeddings, topk_remove=1)
+            all_embeddings_isd = apply_isd(all_embeddings, topk_remove=args.isd_k)
         except Exception as e:
             print(f"[WARN] ISD failed: {e}")
             all_embeddings_isd = None
@@ -308,6 +308,7 @@ if __name__ == "__main__":
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--whitening", action = "store_true")
     parser.add_argument("--isd", action = "store_true")
+    parser.add_argument("--isd_k", type = int, default = 1)
     parser.add_argument("--projection", type = str, default = "pca", choices=["pca", "tsne", "umap"])
 
     args = parser.parse_args()
