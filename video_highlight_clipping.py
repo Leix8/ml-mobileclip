@@ -96,6 +96,8 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 from saliency_cropper import SaliencyCropper
+import numpy as np
+from scipy.ndimage import gaussian_filter1d
 
 # ---------------- Utils ---------------- #
 
@@ -415,6 +417,17 @@ def nms_1d(scores: np.ndarray, window: int, threshold: float) -> List[int]:
             keep.append(i)
     return keep
 
+def gaussian_smooth_1d(data, sigma):
+    """Smooths the input data using a Gaussian filter.
+
+    Args:
+        data (np.ndarray): Input data to be smoothed.
+        sigma (float): Standard deviation for Gaussian kernel.
+
+    Returns:
+        np.ndarray: Smoothed data.
+    """
+    return gaussian_filter1d(data, sigma=sigma)
 
 # core function, to predict the highlight frame index from the given video frames and methods
 @torch.no_grad()
@@ -520,14 +533,18 @@ def predict_highlight_idx(
         w = tag_weights[j]
         params = tag_params[j]
 
-        # Per-tag z-score normalization
-        mu, sigma = scores_raw.mean(), scores_raw.std()
-        sigma = sigma if sigma > 1e-6 else 1e-6
-        s_norm = (scores_raw - mu) / sigma
+        # add a section to smooth the scores over time
+        if kwargs.get("score_smooth_sigma", 0) > 0:  
+            scores_raw = gaussian_smooth_1d(scores_raw, sigma=kwargs["score_smooth_sigma"])     
+            
+        # # Per-tag z-score normalization -> not needed here
+        # mu, sigma = scores_raw.mean(), scores_raw.std()
+        # sigma = sigma if sigma > 1e-6 else 1e-6
+        # s_norm = (scores_raw - mu) / sigma
 
-        # Sigmoid mapping into (0,1)
-        scores = 1 / (1 + np.exp(-s_norm))
-        scores *= w
+        # # Sigmoid mapping into (0,1)
+        # scores = 1 / (1 + np.exp(-s_norm))
+        # scores *= w
 
         per_tag_scores[tag] = {
             "scores": scores_raw, # using scores_raw to skip z-normalize
@@ -974,6 +991,12 @@ def generate_clipped_video(
 
     # estimate total frames for tqdm if you want (optional)
     # from tqdm import tqdm
+    if len(video_clips) == 0:
+        print("[WARN] No video clips to write.")
+        cap.release()
+        out.release()
+        return
+    
     total_frames = int(len(video_clips) * fps * (video_clips[0]["end_time"] - video_clips[0]["start_time"]))
     pbar = tqdm(total=total_frames, desc="Writing highlight video", unit="frame")
 
@@ -1057,6 +1080,7 @@ def main():
     ap.add_argument("--saliency_mode", type = str, default = "base",
                     choices=["base", "sam", "gdino", "opencv"], help="method of saliency cropping")
     ap.add_argument("--saliency_prompts", type = str, default = "pets")
+    ap.add_argument("--score_smooth_sigma", type = float, default = 1)
     args = ap.parse_args()
 
     setup_determinism(args.seed)
@@ -1095,7 +1119,7 @@ def main():
 
     # Predict highlight indices
     start = time.perf_counter()
-    kwargs = {"embed_space_mode": args.embed_space_mode, "saliency_mode": args.saliency_mode, "saliency_prompts": args.saliency_prompts}
+    kwargs = {"embed_space_mode": args.embed_space_mode, "saliency_mode": args.saliency_mode, "saliency_prompts": args.saliency_prompts, "score_smooth_sigma": args.score_smooth_sigma}
     highlights, stats = predict_highlight_idx(
         model=model,
         image_processor=image_processor,
