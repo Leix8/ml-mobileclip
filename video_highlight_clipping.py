@@ -593,6 +593,7 @@ def predict_highlight_idx(
         params = per_tag_scores[tag]["params"]
         highlight_idx.append({
             "index": int(idx_global),
+            "encoding_index": int(i_local),
             "tag": tag,
             "score": float(fused_scores[i_local]),
             "params": params,
@@ -613,6 +614,164 @@ def predict_highlight_idx(
 
     return highlight_idx, stats
 
+# index to interval expansion, drop ratio version
+# def expand_from_peak(scores: np.ndarray,
+#                      peak_idx: int,
+#                      sample_to_encode_fps_scaler: float,
+#                      drop_ratio: float = 0.85,
+#                      min_len: int = 3, 
+#                      ) -> tuple[int, int]:
+#     """
+#     Expand left/right from a peak until scores fall below (peak_score * drop_ratio).
+#     Ensures at least min_len frames in the interval.
+#     """
+#     N_encode = len(scores)
+#     peak_score = scores[peak_idx]
+#     threshold = peak_score * drop_ratio
+
+#     # expand left
+#     s = peak_idx
+#     while s > 0 and scores[s - 1] >= threshold:
+#         s -= 1
+
+#     # expand right
+#     e = peak_idx
+#     while e < N_encode - 1 and scores[e + 1] >= threshold:
+#         e += 1
+#     # convert s,e from encoding fps idx to global idx
+#     s = s * sample_to_encode_fps_scaler
+#     e = min((e + 1) * sample_to_encode_fps_scaler - 1, int(N_encode * sample_to_encode_fps_scaler) - 1)
+
+#     # ensure minimum length
+#     if e - s + 1 < min_len:
+#         pad = (min_len - (e - s + 1)) // 2
+#         s = int(max(0, s - pad))
+#         e = int(min(int(N_encode * sample_to_encode_fps_scaler) - 1, e + pad))
+
+#     return s, e
+
+# index to interval expansion, gradiant version
+import numpy as np
+
+def expand_from_peak(
+    scores: np.ndarray,
+    peak_idx: int,
+    sample_to_encode_fps_scaler: float,
+    drop_ratio: float = 0.85,   # kept for interface compatibility (unused)
+    min_len: int = 3,
+) -> tuple[int, int]:
+    """
+    Expand left/right from a peak based on gradient sign changes.
+    Stops expansion when the score slope magnitude becomes small
+    or reverses direction. Ensures at least min_len frames in output.
+    """
+    N_encode = len(scores)
+    grad = np.gradient(scores)
+
+    # --- Expand left: move backward while gradient is positive or still rising ---
+    s = peak_idx
+    while s > 1:
+        # stop if gradient changes sign (no longer increasing toward the peak)
+        if grad[s - 1] <= 0:
+            break
+        s -= 1
+
+    # --- Expand right: move forward while gradient is negative or still falling ---
+    e = peak_idx
+    while e < N_encode - 2:
+        # stop if gradient changes sign (no longer decreasing after the peak)
+        if grad[e + 1] >= 0:
+            break
+        e += 1
+    print(f"peak_idx: {peak_idx}, expanded to: ({s}, {e})")
+    # --- Convert from encoded frame indices to global frame indices ---
+    s = int(s * sample_to_encode_fps_scaler)
+    e = int(min((e + 1) * sample_to_encode_fps_scaler - 1,
+                int(N_encode * sample_to_encode_fps_scaler) - 1))
+    print(f"peak_idx into global index: ({s}, {e})")
+    # --- Ensure minimum clip length ---
+    if e - s + 1 < min_len:
+        pad = (min_len - (e - s + 1)) // 2
+        s = int(max(0, s - pad))
+        e = int(min(int(N_encode * sample_to_encode_fps_scaler) - 1, e + pad))
+
+    return s, e
+
+
+def merge_intervals(intervals, iou_thr: float = 0.3):
+    """
+    Merge overlapping intervals based on temporal IoU threshold.
+    """
+    if not intervals:
+        return []
+
+    intervals = sorted(intervals, key=lambda x: x[0])
+    merged = [intervals[0]]
+
+    for s, e in intervals[1:]:
+        last_s, last_e = merged[-1]
+        inter = max(0, min(e, last_e) - max(s, last_s))
+        union = (e - s) + (last_e - last_s) - inter
+        iou = inter / union if union > 0 else 0
+
+        if iou > iou_thr or s <= last_e:  # overlap or close
+            merged[-1] = (last_s, max(last_e, e))
+        else:
+            merged.append((s, e))
+    return merged
+
+
+def predict_highlight_clip_adaptive(
+    video_frames,
+    highlight_idx: list[dict],
+    stats: dict,
+    play_fps: float,
+    min_clip_sec: float = 1.0,
+    drop_ratio: float = 0.85,
+    merge_iou_thr: float = 0.3
+):
+    """
+    Convert highlight frame indices into highlight clip intervals adaptively,
+    based on score shape rather than fixed pad_sec.
+    """
+    start_time = time.perf_counter()
+
+    N = len(video_frames)
+    min_len = int(min_clip_sec * play_fps) # minimum length in frames idx in to-play indexing
+
+    scores = stats["best_per_frame"]["score"]
+    if isinstance(scores, list):
+        scores = np.array(scores)  # Convert to NumPy array if it's a list
+    
+    sample_to_encode_fps_scaler = int((len(video_frames) + len(scores) - 1) / len(scores))  # stride size
+    
+    raw_intervals = []
+    for item in highlight_idx:
+        i = int(item["encoding_index"])
+        s, e = expand_from_peak(scores, i, drop_ratio=drop_ratio, min_len=min_len, sample_to_encode_fps_scaler=sample_to_encode_fps_scaler) # returned in global indexing
+        raw_intervals.append((s, e))
+    print(f"raw_intervals (before merge): {raw_intervals}")
+
+    merged = merge_intervals(raw_intervals, iou_thr=merge_iou_thr)
+    print(f"merged intervals: {merged}")
+
+    # in global index
+    results = [
+        {
+            "start_idx": s,
+            "end_idx": e,
+            "start_time": s / max(play_fps, 1e-6),
+            "end_time": e / max(play_fps, 1e-6),
+        }
+        for s, e in merged
+    ]
+
+    elapsed = time.perf_counter() - start_time
+    print(f"[PROFILING] clip conversion time: {elapsed:.4f}s "
+          f"→ {len(highlight_idx)} peaks → {len(merged)} clips")
+
+    return results
+
 # core function, to predict the highlight video clip duration based on highlight frame index
 def predict_highlight_clip(
     video_frames: List[np.ndarray],
@@ -630,6 +789,7 @@ def predict_highlight_clip(
     min_len = seconds_to_frames(min_clip_sec, play_fps)
     N = len(video_frames)
     raw_intervals = []
+
     for item in highlight_idx:
         i = int(item["index"])
         s = max(0, i - pad)
@@ -1056,6 +1216,7 @@ def main():
     ap.add_argument("--device", type=str, default="cuda:0")
     ap.add_argument("--precision", type=str, default="fp16", choices=["fp32", "fp16", "bf16"])
     ap.add_argument("--output_dir", type=str, default="./highlight_clipping")
+    ap.add_argument("--output_suffix", type=str, default="_highlight", help="suffix for output files")  # NEW ARGUMENT
     ap.add_argument("--seed", type=int, default=1234)
     ap.add_argument("--play_fps", type=float, default=5.0, help="playback/downsample fps (0=original)")
     ap.add_argument("--encoding_fps", type=float, default=1.0, help="fps used to generate embeddings (0=auto from scene_json or use play_fps)")
@@ -1064,7 +1225,7 @@ def main():
                 help="which embedding type from JSON to use")
     ap.add_argument("--per_tag_reduce", type=str, default="max", choices=["max", "mean"])
     ap.add_argument("--tag_mix", type=str, default="best", choices=["best", "sum", "both"])
-    ap.add_argument("--nms_window", type=int, default=5, help="half-width (in sampled frames) for 1D NMS")
+    ap.add_argument("--nms_window", type=int, default=3, help="half-width (in sampled frames) for 1D NMS")
     ap.add_argument("--nms_threshold", type=float, default=0.25)
     ap.add_argument("--topk", type=int, default=5, help="number of peaks to keep")
     ap.add_argument("--clip_pad_sec", type=float, default=1.5, help="padding seconds before/after highlight frame")
@@ -1081,6 +1242,7 @@ def main():
                     choices=["base", "sam", "gdino", "opencv"], help="method of saliency cropping")
     ap.add_argument("--saliency_prompts", type = str, default = "pets")
     ap.add_argument("--score_smooth_sigma", type = float, default = 1)
+    ap.add_argument("--interval_drop_ratio", type = float, default = 0.9, help="the ratio to drop from the peak score to determine the start/end of the highlight clip")
     args = ap.parse_args()
 
     setup_determinism(args.seed)
@@ -1137,17 +1299,44 @@ def main():
     print(f"[PROFILING] predict highlight index calculation time: {end - start:.4f}s")
 
     # Predict clips from highlight frames
-    clips = predict_highlight_clip(
-        video_frames=frames,
-        highlight_idx=highlights,
-        pad_sec=args.clip_pad_sec,
-        play_fps=play_fps,
-        min_clip_sec=args.min_clip_sec,
-        merge_if_overlap=True
-    )
+    # clips = predict_highlight_clip(
+    #     video_frames=frames,
+    #     highlight_idx=highlights,
+    #     pad_sec=args.clip_pad_sec,
+    #     play_fps=play_fps,
+    #     min_clip_sec=args.min_clip_sec,
+    #     merge_if_overlap=True
+    # )
+    scores = stats["best_per_frame"]["score"]
+    sampled_idx = stats["sampled_idx"]
+    print(f"check scores and sampled_idx len: {len(scores)}, {len(sampled_idx)}")
+    print(f"check N video frames: {len(frames)}")
+    # stats = {
+    #     "per_tag": per_tag_scores,
+    #     "best_per_frame": {
+    #         "score": fused_scores.tolist(),
+    #         "tag": fused_tags.tolist(),
+    #     },
+    #     "sampled_idx": sampled_frame_idx,
+    #     "transform_mode": mode,
+    #     "saliency_bboxes": saliency_bboxes
+    # }
+
+    clips = predict_highlight_clip_adaptive(
+        video_frames = frames,
+        highlight_idx= highlights,
+        stats = stats, 
+        play_fps = play_fps,
+        min_clip_sec= args.min_clip_sec,
+        merge_iou_thr= 0.3, 
+        drop_ratio= 0.85
+        )
 
     # Save results
-    base = Path(args.output_dir) / (Path(f"{model_name}")) / (Path(args.video).stem) / (Path(args.video).stem + f"_highlights_{args.method}Embed_{args.embed_space_mode}EmbedSpace_{args.saliency_mode}Saliency")
+    from datetime import datetime  # Ensure to import datetime at the top of your file
+
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    base = Path(args.output_dir) / (Path(f"{model_name}")) / (Path(args.video).stem) / (Path(args.video).stem + f"{args.method}Embed_{args.embed_space_mode}EmbedSpace_{args.saliency_mode}Saliency_{args.output_suffix}_{timestamp}")
     json_out = str(base) + ".json"
     os.makedirs(os.path.dirname(json_out), exist_ok=True)
     with open(json_out, "w", encoding="utf-8") as f:
