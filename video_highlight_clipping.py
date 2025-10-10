@@ -1336,7 +1336,7 @@ def main():
     from datetime import datetime  # Ensure to import datetime at the top of your file
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    base = Path(args.output_dir) / (Path(f"{model_name}")) / (Path(args.video).stem) / (Path(args.video).stem + f"{args.method}Embed_{args.embed_space_mode}EmbedSpace_{args.saliency_mode}Saliency_{args.output_suffix}_{timestamp}")
+    base = Path(args.output_dir) / (Path(f"{model_name}")) / (Path(args.video).stem) / (Path(args.video).stem + f"_{args.method}Embed_{args.embed_space_mode}EmbedSpace_{args.saliency_mode}Saliency_{args.output_suffix}_{timestamp}")
     json_out = str(base) + ".json"
     os.makedirs(os.path.dirname(json_out), exist_ok=True)
     with open(json_out, "w", encoding="utf-8") as f:
