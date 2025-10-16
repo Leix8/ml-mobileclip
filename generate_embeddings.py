@@ -16,7 +16,7 @@ from PIL import Image, ImageOps
 import open_clip
 from mobileclip.modules.common.mobileone import reparameterize_model
 from model_name_map import MODEL_NAME_MAP, infer_model_name_from_ckpt
-
+from tqdm import tqdm
 
 # ================= Determinism =================
 def setup_determinism(seed: int = 1234):
@@ -171,7 +171,7 @@ def main():
                         help="Path to scene/tag json file.")
     parser.add_argument("--ref_dir", type=str, required=False, default = "./", 
                         help="Parent directory for fallback lookup.")
-    parser.add_argument("--output_dir", type=str, required=True, 
+    parser.add_argument("--output_dir", type=str, required=False, default = "./embedding_database", 
                         help="Where to save the output json.")
     parser.add_argument("--output_suffix", type=str, required=False)
     parser.add_argument("--llm_generated", action="store_true",
@@ -210,31 +210,41 @@ def main():
     parent_dir = Path(args.ref_dir)
     results: Dict[str, List[Dict[str, Any]]] = {}
 
-    for key, tag_list in scenes_data.items():
-        results[key] = []
-        if not isinstance(tag_list, list):
-            print(f"[WARN] Expected list under key '{key}'", file=sys.stderr)
-            continue
+    if "metadata" in scenes_data: # the format indicator of scaled, generated tags 
+        scene_key = normalize_tag_id(scenes_data["metadata"].get("domain", "unknown_scenes"))
+        results[scene_key] = []
 
-        for item in tag_list:
-            tag_text, tag_id, ref_paths, ref_dir_used = gather_images_from_item(
-                parent_dir, item, args.llm_generated
-            )
-
-            ref_embs = encode_images(model, image_processor, ref_paths,
-                                     args.device, args.batch_size, use_amp=use_amp) if ref_paths else torch.empty(0, device=args.device)
+        for item in tqdm(scenes_data["prompts"], desc="Processing prompts"): 
+            tag_text = item.get("tag", "")
+            tag_id = normalize_tag_id(tag_text, True)  # Assuming tag_id is not available in the new format
+            
             text_emb = encode_text(model, tokenizer, tag_text, args.device,
-                                   args.context_length, use_amp=use_amp)
+                        args.context_length, use_amp=use_amp)
+            
+            ref_dir = item.get("ref_dir", None)
+            if ref_dir:
+                ref_paths, ref_dir_used = gather_images_from_item(
+                    parent_dir, item, args.llm_generated
+                )
 
-            if ref_embs.numel() == 0:
-                visual_embs_pooled = torch.zeros(ref_embs.shape[1], device=ref_embs.device)
+                ref_embs = encode_images(model, image_processor, ref_paths,
+                                        args.device, args.batch_size, use_amp=use_amp) if ref_paths else torch.empty(0, device=args.device)
+
+
+                if ref_embs.numel() == 0:
+                    visual_embs_pooled = torch.zeros(ref_embs.shape[1], device=ref_embs.device)
+                else:
+                    pooled = ref_embs.mean(dim=0, keepdim=True)
+                    visual_embs_pooled = F.normalize(pooled, dim=-1, eps=1e-6).squeeze(0)
+                    
+                taf_vec = taf_fuse_multi_refs(text_emb, ref_embs, args.beta, args.gamma)
+                push_vec = cos_push_multi_refs(text_emb, ref_embs, args.push_lambda)
             else:
-                pooled = ref_embs.mean(dim=0, keepdim=True)
-                visual_embs_pooled = F.normalize(pooled, dim=-1, eps=1e-6).squeeze(0)
-                
-            taf_vec = taf_fuse_multi_refs(text_emb, ref_embs, args.beta, args.gamma)
-            push_vec = cos_push_multi_refs(text_emb, ref_embs, args.push_lambda)
-
+                ref_embs = torch.empty(0, device=args.device)
+                ref_dir_used = None
+                visual_embs_pooled = None
+                taf_vec = None
+                push_vec = None
             entry = {
                 "id": tag_id,
                 "tag": tag_text,
@@ -243,18 +253,64 @@ def main():
                 "model": model_name,
                 "embedding": {
                     "tag_embedding": tensor_to_jsonable(text_emb),
-                    "visual_embedding_pooling": tensor_to_jsonable(visual_embs_pooled),
+                    "visual_embedding_pooling": tensor_to_jsonable(visual_embs_pooled) if visual_embs_pooled is not None else None,
                     "multi_ref_TAF_embedding": {
                         "params": {"beta": args.beta, "gamma": args.gamma},
-                        "data": tensor_to_jsonable(taf_vec)
+                        "data": tensor_to_jsonable(taf_vec) if taf_vec is not None else None
                     },
                     "multi_ref_push_embedding": {
                         "params": {"push_lambda": args.push_lambda},
-                        "data": tensor_to_jsonable(push_vec)
+                        "data": tensor_to_jsonable(push_vec) if push_vec is not None else None
                     }
                 }
             }
-            results[key].append(entry)
+            results[scene_key].append(entry)
+    else:
+        for key, tag_list in scenes_data.items():
+            results[key] = []
+            if not isinstance(tag_list, list):
+                print(f"[WARN] Expected list under key '{key}'", file=sys.stderr)
+                continue
+
+            for item in tag_list:
+                tag_text, tag_id, ref_paths, ref_dir_used = gather_images_from_item(
+                    parent_dir, item, args.llm_generated
+                )
+
+                ref_embs = encode_images(model, image_processor, ref_paths,
+                                        args.device, args.batch_size, use_amp=use_amp) if ref_paths else torch.empty(0, device=args.device)
+                text_emb = encode_text(model, tokenizer, tag_text, args.device,
+                                    args.context_length, use_amp=use_amp)
+
+                if ref_embs.numel() == 0:
+                    visual_embs_pooled = torch.zeros(ref_embs.shape[1], device=ref_embs.device)
+                else:
+                    pooled = ref_embs.mean(dim=0, keepdim=True)
+                    visual_embs_pooled = F.normalize(pooled, dim=-1, eps=1e-6).squeeze(0)
+                    
+                taf_vec = taf_fuse_multi_refs(text_emb, ref_embs, args.beta, args.gamma)
+                push_vec = cos_push_multi_refs(text_emb, ref_embs, args.push_lambda)
+
+                entry = {
+                    "id": tag_id,
+                    "tag": tag_text,
+                    "reference_dir": str(ref_dir_used) if ref_dir_used else None,
+                    "num_ref": int(ref_embs.size(0)),
+                    "model": model_name,
+                    "embedding": {
+                        "tag_embedding": tensor_to_jsonable(text_emb),
+                        "visual_embedding_pooling": tensor_to_jsonable(visual_embs_pooled),
+                        "multi_ref_TAF_embedding": {
+                            "params": {"beta": args.beta, "gamma": args.gamma},
+                            "data": tensor_to_jsonable(taf_vec)
+                        },
+                        "multi_ref_push_embedding": {
+                            "params": {"push_lambda": args.push_lambda},
+                            "data": tensor_to_jsonable(push_vec)
+                        }
+                    }
+                }
+                results[key].append(entry)
 
     # Save
     out_dir = Path(args.output_dir)

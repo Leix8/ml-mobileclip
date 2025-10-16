@@ -877,7 +877,7 @@ def render_static_plot(
     best_per_frame: Dict[str, Any],
     video_highlight_clips: List[Dict[str, int]],
     highlight_idx: List[Dict[str, Any]],
-    plot_mode: str,
+    plot_mode: List[str],
     max_tags_to_draw: int,
     show_score_ranges: Tuple[float, float],
     video_len: int, 
@@ -891,12 +891,26 @@ def render_static_plot(
     ax.set_ylabel("Score")
 
     # curves
-    if plot_mode in ("tags", "all"):
-        for tag, pack in list(per_tag.items())[:max_tags_to_draw]:
-            ax.plot(sampled_idx, pack["scores"], label=tag, lw=1)
+    for mode in plot_mode:
+        highlight_tags = set(h["tag"] for h in highlight_idx if "tag" in h)
+        if mode in ("selected", "all"):
+            for tag in highlight_tags:
+                if tag in per_tag:
+                    pack = per_tag[tag]
+                    ax.plot(sampled_idx, pack["scores"], label=tag, lw=1)
 
-    if plot_mode in ("fused", "all"):
-        ax.plot(sampled_idx, best_per_frame["score"], color="black", lw=2, label="Fused")
+        if mode in ("random", "all"):
+            tags_to_draw = list(per_tag.items())
+            if len(tags_to_draw) > max_tags_to_draw:
+                tags_to_draw = random.sample(tags_to_draw, max_tags_to_draw)
+            for tag, pack in tags_to_draw:
+                ax.plot(sampled_idx, pack["scores"], label=tag, lw=1, ls='--')
+
+        if mode in ("fused", "all"):
+            ax.plot(sampled_idx, best_per_frame["score"], color="red", lw=2, label="fused")
+        
+        # Adjust legend position to be below the plot
+        ax.legend(fontsize=6, loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=2, frameon=False) 
 
     # clip ranges
     for idx, clip in enumerate(video_highlight_clips):
@@ -944,7 +958,7 @@ def visualize_video_clipping(
     method: str,
     model_name: str,
     params: Dict[str, Any],
-    plot_mode: str = "all",
+    plot_mode: List[str] = ["tags", "fused"], 
     max_tags_to_draw: int = 6,
     show_score_ranges: Tuple[float, float] = (-0.1, 1.0),
     font_scale: float = 0.6,
@@ -1230,10 +1244,9 @@ def main():
     ap.add_argument("--topk", type=int, default=5, help="number of peaks to keep")
     ap.add_argument("--clip_pad_sec", type=float, default=1.5, help="padding seconds before/after highlight frame")
     ap.add_argument("--min_clip_sec", type=float, default=1.0)
-    ap.add_argument("--max_tags_to_draw", type=int, default=6)
+    ap.add_argument("--max_tags_to_draw", type=int, default=3)
     ap.add_argument("--no_video", action="store_true", help="do not render visualization video")
-    ap.add_argument("--plot_mode", type=str, default="tags",
-                choices=["fused", "tags", "all"],
+    ap.add_argument("--plot_mode", type=str, nargs='+', default=["selected", "fused", "random"], choices=["fused", "selected", "all", "random"],
                 help="Which curves to plot: fused best score, per-tag scores, or both")
     ap.add_argument("--embed_space_mode", type=str, default="raw",
                 choices=["isd", "raw", "whiten", "whiten_isd"],

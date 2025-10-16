@@ -7,6 +7,7 @@ ref_images
 experiments
 experiment
 sam_checkpoints
+embedding_database
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
