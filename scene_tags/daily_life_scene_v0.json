@@ -1,0 +1,24 @@
+{ 
+  "daily_life_scenes": [
+    {"tag": "Families walking and shopping in a modern mall.", "ref_dir": ""},
+    {"tag": "Children playing near colorful art installations in a shopping mall.", "ref_dir": ""},
+    {"tag": "People taking photos in front of a large cartoon statue or POP MART figure.", "ref_dir": ""},
+    {"tag": "Visitors gathering around an anime or character-themed display area.", "ref_dir": ""},
+    {"tag": "People participating in a drawing or craft workshop inside a shopping mall.", "ref_dir": ""},
+    {"tag": "Groups of friends walking or chatting on escalators inside a mall.", "ref_dir": ""},
+    {"tag": "Kids and families playing or running in an open plaza or public square.", "ref_dir": ""},
+    {"tag": "People relaxing and interacting in an outdoor community park.", "ref_dir": ""},
+    {"tag": "A group of people playing basketball at night under bright lights.", "ref_dir": ""},
+    {"tag": "People playing table tennis in a park during the evening.", "ref_dir": ""},
+    {"tag": "Night park illuminated by artistic light installations or glowing sculptures.", "ref_dir": ""},
+    {"tag": "Families and friends enjoying a casual evening in a park or plaza.", "ref_dir": ""},
+    {"tag": "People walking near modern buildings with glass architecture.", "ref_dir": ""},
+    {"tag": "Children and adults taking pictures near a floral sculpture or garden display.", "ref_dir": ""},
+    {"tag": "People photographing with tripods or cameras near architectural structures.", "ref_dir": ""},
+    {"tag": "A person walking through a mall with bright, futuristic decorations.", "ref_dir": ""},
+    {"tag": "Public outdoor activities in a leisure park or community square.", "ref_dir": ""},
+    {"tag": "People visiting a store with anime or cartoon-themed decorations.", "ref_dir": ""},
+    {"tag": "A large Totoro or animal figure attracting visitors for photos.", "ref_dir": ""},
+    {"tag": "Children interacting with glowing playground installations at night.", "ref_dir": ""}
+  ]
+}
