@@ -284,8 +284,9 @@ def load_embedding_database(scene_json: str, method: str) -> Dict[str, Any]:
         data = json.load(f)
 
     db = {"tags": {}, "models": set()}
-    scenes = data.get("pet_scenes", [])
-
+    # scenes = data.get("pet_scenes", []) 
+    scene_name, scenes = next(iter(data.items()))
+    
     for entry in tqdm(scenes, desc="loading embedding database"):
         tag = entry.get("tag", None)
         if not tag:

@@ -15,7 +15,12 @@ def print_result_table(image, scores, probs, labels, output_dir):  # Added outpu
     print(table)
 
     # Save scores to a file in the specified output directory
-    with open(os.path.join(output_dir, "scores_output.txt"), "a") as f:  # Append mode
+    scores_file_path = os.path.join(output_dir, "scores_output.txt")
+    if not os.path.exists(scores_file_path):  # Check if the file does not exist
+        with open(scores_file_path, "w") as f:  # Create the file if it does not exist
+            f.write("Scores Output\n\n")  # Write a header
+
+    with open(scores_file_path, "a") as f:  # Append mode
         f.write(f"Scores for {image}:\n")
         f.write(table.get_string() + "\n")  # Write the PrettyTable format to the file
         f.write("\n")
@@ -34,13 +39,20 @@ def print_result_table(image, scores, probs, labels, output_dir):  # Added outpu
 
 def main(image_dir, output_dir):
     text_labels = []
-    text_labels += ["a dog", " a dog is playing", "a dog is playing on the grass", "a dog is playing on the grass with a soccer"]
-    text_labels += ["a dog", " a dog is running", "a dog is running on the grass"]
-    text_labels += ["a dog", " a dog is running", "a dog is running in the living room"]
-    text_labels += ["a dog", " a dog is eating", "a dog is eating bones", "a dog is eating bones in the bedroom"]
-    text_labels += ["a dog", " a dog is sleeping", "a dog is sleeping in the garden"]
-    text_labels +=["a dog", " a dog is playing", "a dog is playing in the bedroom"]
-    text_labels += ["a cat", "a cat is jumping", "a cat is jumping in the living room", "a cat is jumping in the living room for a wand"]
+    # original group
+    # text_labels += ["a dog", " a dog is playing", "a dog is playing on the grass", "a dog is playing on the grass with a soccer"]
+    # text_labels += ["a dog", " a dog is running", "a dog is running on the grass"]
+    # text_labels += ["a dog", " a dog is running", "a dog is running in the living room"]
+    # text_labels += ["a dog", " a dog is eating", "a dog is eating bones", "a dog is eating bones in the bedroom"]
+    # text_labels += ["a dog", " a dog is sleeping", "a dog is sleeping in the garden"]
+    # text_labels +=["a dog", " a dog is playing", "a dog is playing in the bedroom"]
+    # text_labels += ["a cat", "a cat is jumping", "a cat is jumping in the living room", "a cat is jumping in the living room for a wand"]
+
+    # testing sentence vs words
+    text_labels += ["a dog is playing soccer on the grass", "dog, play, soccer, grass"]
+    text_labels += ["a dog is eating snacks in the livingroom", "dog, eat, snack, livingroom"]
+    text_labels += ["a cat is jumping for a wand in the bedroom", "cat, jump, wand, bedroom"]
+    text_labels += ["a dog is sleeping in the cage", "dog, sleep, cage"]
 
     model_name = "MobileCLIP2-S4"
     model_kwargs = {}
@@ -82,6 +94,9 @@ if __name__ == "__main__":
     parser.add_argument('--image_dir', type=str, required=True, help='Directory of input images')
     parser.add_argument('--output_dir', type=str, required=True, help='Directory to save output results')
     args = parser.parse_args()
+
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
 
     main(args.image_dir, args.output_dir)
 
