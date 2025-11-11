@@ -147,6 +147,44 @@ prompt_components = {
             "with food or drinks", "with a pet", 
             "with groceries or fruits"
         ]
+    },
+    "sport_and_workout_scene": {
+        "subjects": [
+            "a male athlete", "a female athlete", "a runner", "a sprinter", 
+            "a cyclist", "a swimmer", "a soccer player", "a basketball player", 
+            "a tennis player", "a boxer", "a weightlifter", "a yoga instructor", 
+            "a coach celebrating", "a cheering teammate", "a team celebrating a victory"
+        ],
+        "actions": [
+            "is sprinting at full speed", "is jumping high in the air", 
+            "is diving into the pool", "is scoring a goal", 
+            "is shooting a basketball", "is swinging a racket mid-serve", 
+            "is punching hard during training", "is lifting heavy weights overhead", 
+            "is crossing the finish line", "is celebrating a win", 
+            "is shouting in excitement", "is clapping or cheering", 
+            "is stretching before exercise", "is exhausted after a match", 
+            "is posing proudly with a medal"
+        ],
+        "scenarios": [
+            "on a running track during a race", "on a soccer field during a match", 
+            "on a basketball court in mid-game", "on a tennis court during a rally", 
+            "at a swimming pool during competition", "inside a gym during workout", 
+            "on a yoga mat in natural light", "on a mountain trail during a run", 
+            "on a beach during morning workout", "in a boxing ring under bright lights", 
+            "at a stadium filled with crowd", "on a podium receiving a medal", 
+            "in an outdoor sports event at sunset", "in a training field under rain", 
+            "in a locker room post-game moment"
+        ],
+        "objects": [
+            "with a ball mid-air", "with a tennis racket in motion", 
+            "with a basketball in hand", "with a dumbbell or barbell", 
+            "with a skipping rope mid-jump", "with boxing gloves", 
+            "with a bicycle helmet on", "with a yoga mat", 
+            "with a stopwatch or timer", "with sweat and towel", 
+            "with teammates hugging", "with a trophy or medal", 
+            "with sports shoes and uniform", "with gym equipment in the background", 
+            "with water splashing around"
+        ]
     }
 }
 
@@ -225,9 +263,9 @@ def estimate_intra_inter_ratio(
 def compute_cluster_stats(X: np.ndarray, labels: List[str]):
     # add stats for clusters counts, average cluster size, intra/inter-cluster similarity, noise ratio, etc.
     labels_set = set(labels)
-    cluster_cnt = len(labels_set) - (1 if "-1" in labels_set else 0)
+    num_cluster = len(labels_set) - (1 if "-1" in labels_set else 0)
     average_cluster_size = len(labels) / len(labels_set) if labels_set else 0
-    noise_cnt = labels.count("-1")
+    num_noise = labels.count("-1")
     noise_ratio = labels.count("-1") / len(labels) if len(labels) > 0 else 0
 
     X = normalize(X)
@@ -247,7 +285,7 @@ def compute_cluster_stats(X: np.ndarray, labels: List[str]):
     
     intra_mean, inter_mean, ratio = estimate_intra_inter_ratio(X, labels)
 
-    return {"intra": float(intra_mean), "inter": float(inter_mean), "ratio": float(ratio), "cluster_count": cluster_cnt, "average_cluster_size": float(average_cluster_size), "nosie_cnt": noise_cnt, "noise_ratio": float(noise_ratio)}
+    return {"intra": float(intra_mean), "inter": float(inter_mean), "ratio": float(ratio), "cluster_count": num_cluster, "average_cluster_size": float(average_cluster_size), "nosie_cnt": num_noise, "noise_ratio": float(noise_ratio)}
 
 def generate_prompts(subjects, actions, scenarios, objects, templates,
                      max_samples=200000, seed=42):
@@ -700,7 +738,7 @@ def main(args):
     stats["num_scenarios"] = len(scenarios)
     stats["num_objects"] = len(objects)
     stats["num_prompts"] = len(prompts)
-
+    
     print(f"[INFO] prepared to dump cluster stats: {stats}")
     stats_path = os.path.join(output_dir, f"{args.scene}_dbscan_cluster_stats.json")
     with open(stats_path, "w") as f:
@@ -778,7 +816,7 @@ if __name__ == "__main__":
     parser.add_argument("--eps", type=float, default=0.05)
     parser.add_argument("--min_points", type=int, default=2)
     parser.add_argument("--metric", type=str, default="cosine")
-    parser.add_argument("--scene", type=str, default="pet_scene", choices=["pet_scene", "family_scene", "daily_life_scene", "test_scene"])
+    parser.add_argument("--scene", type=str, default="pet_scene", choices=["test_scene", "pet_scene", "family_scene", "daily_life_scene", "sport_and_workout_scene"])
     args = parser.parse_args()
 
     main(args)
