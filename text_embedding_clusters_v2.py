@@ -5,6 +5,7 @@ import json
 import torch
 from torch.cuda.amp import autocast
 import time
+from datetime import datetime
 
 import numpy as np
 from pathlib import Path
@@ -39,6 +40,77 @@ import plotly.express as px
 from plotly.offline import plot as plot_offline
 
 # ================== Quantitative Metrics ==================
+import numpy as np
+from sklearn.preprocessing import normalize
+
+def estimate_intra_inter_ratio(
+    X,
+    labels,
+    max_intra_pairs=200_000,
+    max_inter_pairs=200_000,
+    seed=42,
+):
+    """
+    Efficiently estimate mean intra- and inter-class similarity
+    using random pairs, without forming full N x N matrix.
+
+    X: (N, D) embeddings
+    labels: (N,) int/str labels
+    """
+
+    rng = np.random.default_rng(seed)
+
+    # 1) Normalize to unit vectors (cosine sim = dot)
+    X = normalize(X.astype(np.float32), axis=1)
+    labels = np.asarray(labels)
+    N = X.shape[0]
+
+    # ---------- Intra-class ----------
+    intra_sims = []
+
+    for lab in np.unique(labels):
+        idx = np.where(labels == lab)[0]
+        m = len(idx)
+        if m < 2:
+            continue
+
+        # total possible pairs = m*(m-1)/2
+        num_pairs = min(max_intra_pairs, m * (m - 1) // 2)
+
+        # sample with replacement (good enough statistically, fast)
+        i = rng.choice(idx, size=num_pairs, replace=True)
+        j = rng.choice(idx, size=num_pairs, replace=True)
+
+        # drop i == j
+        mask = i != j
+        i, j = i[mask], j[mask]
+        if i.size == 0:
+            continue
+
+        sims = np.sum(X[i] * X[j], axis=1)
+        intra_sims.append(sims)
+
+    intra_mean = np.concatenate(intra_sims).mean() if intra_sims else 0.0
+
+    # ---------- Inter-class ----------
+    # oversample then filter to ensure enough cross-label pairs
+    inter_i = rng.integers(0, N, size=max_inter_pairs * 2)
+    inter_j = rng.integers(0, N, size=max_inter_pairs * 2)
+
+    mask = labels[inter_i] != labels[inter_j]
+    inter_i, inter_j = inter_i[mask], inter_j[mask]
+
+    if inter_i.size == 0:
+        inter_mean = 0.0
+    else:
+        inter_i = inter_i[:max_inter_pairs]
+        inter_j = inter_j[:max_inter_pairs]
+        sims_inter = np.sum(X[inter_i] * X[inter_j], axis=1)
+        inter_mean = sims_inter.mean()
+
+    ratio = intra_mean / (inter_mean + 1e-6)
+    return intra_mean, inter_mean, ratio
+
 def compute_cluster_stats(X: np.ndarray, labels: List[str]):
     # add stats for clusters counts, average cluster size, intra/inter-cluster similarity, noise ratio, etc.
     labels_set = set(labels)
@@ -48,19 +120,22 @@ def compute_cluster_stats(X: np.ndarray, labels: List[str]):
     noise_ratio = labels.count("-1") / len(labels) if len(labels) > 0 else 0
 
     X = normalize(X)
-    sims = X @ X.T
-    labels = np.array(labels)
-    intra, inter = [], []
-    for i in range(len(labels)):
-        for j in range(i+1, len(labels)):
-            if labels[i] == labels[j]:
-                intra.append(sims[i,j])
-            else:
-                inter.append(sims[i,j])
-    intra_mean = np.mean(intra) if intra else 0
-    inter_mean = np.mean(inter) if inter else 0
-    ratio = intra_mean / (inter_mean + 1e-6)
+
+    # sims = X @ X.T
+    # labels = np.array(labels)
+    # intra, inter = [], []
+    # for i in range(len(labels)):
+    #     for j in range(i+1, len(labels)):
+    #         if labels[i] == labels[j]:
+    #             intra.append(sims[i,j])
+    #         else:
+    #             inter.append(sims[i,j])
+    # intra_mean = np.mean(intra) if intra else 0
+    # inter_mean = np.mean(inter) if inter else 0
+    # ratio = intra_mean / (inter_mean + 1e-6)
     
+    intra_mean, inter_mean, ratio = estimate_intra_inter_ratio(X, labels)
+
     return {"intra": float(intra_mean), "inter": float(inter_mean), "ratio": float(ratio), "cluster_count": cluster_cnt, "average_cluster_size": float(average_cluster_size), "nosie_cnt": noise_cnt, "noise_ratio": float(noise_ratio)}
 
 
@@ -75,27 +150,27 @@ actions = [
     # Motion
     "is running", "is jumping", "is walking", "is chasing", "is rolling",
     # Interaction
-    # "is playing", "is fetching", "is tugging a toy", "is biting", "is scratching",
-    # "is licking its paw", "is sniffing something", "is shaking its body",
-    # # Emotion / Expression
-    # "is barking", "is meowing", "is wagging its tail", "is stretching",
-    # "is yawning", "is curious", "is watching something",
-    # # Static / Rest
-    # "is sleeping", "is lying down", "is sitting", "is resting", "is staying still"
+    "is playing", "is fetching", "is tugging a toy", "is biting", "is scratching",
+    "is licking its paw", "is sniffing something", "is shaking its body",
+    # Emotion / Expression
+    "is barking", "is meowing", "is wagging its tail", "is stretching",
+    "is yawning", "is curious", "is watching something",
+    # Static / Rest
+    "is sleeping", "is lying down", "is sitting", "is resting", "is staying still"
 ]
 
 scenes = [
     "on the grass", "in the park", "on the beach", "in the living room",
-    # "in the bedroom", "in the kitchen", "in the backyard", "in the garden",
-    # "on the sofa", "on the bed", "by the window", "on the floor",
-    # "in the yard", "at home", "outdoors", "under the table"
+    "in the bedroom", "in the kitchen", "in the backyard", "in the garden",
+    "on the sofa", "on the bed", "by the window", "on the floor",
+    "in the yard", "at home", "outdoors", "under the table"
 ]
 
 objects = [
     "with a ball", "with a frisbee", "with a toy", "with a stick", "with a bone",
-    # "with a rope", "with a plush toy", "with a pillow", "with food", "with a bowl",
-    # "chasing another pet", "playing with a person", "looking at the camera",
-    # "being brushed", "taking a bath", "wearing a collar", "next to its owner"
+    "with a rope", "with a plush toy", "with a pillow", "with food", "with a bowl",
+    "chasing another pet", "playing with a person", "looking at the camera",
+    "being brushed", "taking a bath", "wearing a collar", "next to its owner"
 ]
 templates = [
     # "{s} {a}",
@@ -535,16 +610,19 @@ def main(args):
     clustered_prompts = defaultdict(list)
     for i, lab in enumerate(labels):
         clustered_prompts[str(lab)].append(prompts[i])
-
+    
+    print(f"[INFO] Prepared clustered prompts for {len(clustered_prompts)} clusters.")
     stats = compute_cluster_stats(embeddings, [str(l) for l in labels])
     stats["eps"] = args.eps
     stats["min_samples"] = args.min_points
-    stats["metric"] = "cosine"
+    stats["metric"] = args.metric
 
+    print(f"[INFO] prepared to dump cluster stats: {stats}")
     stats_path = os.path.join(output_dir, "dbscan_cluster_stats.json")
     with open(stats_path, "w") as f:
         json.dump(stats, f, indent=4)
 
+    print(f"[INFO] prepare to dump clustered prompts.")
     prompts_path = os.path.join(output_dir, "dbscan_clustered_pet_prompts.json")
     with open(prompts_path, "w") as f:
         json.dump(clustered_prompts, f, indent=4)   
@@ -565,6 +643,44 @@ def main(args):
                                   filename=interactive_plot_path)
     print(f"[INFO] Saved interactive cluster plot to {interactive_plot_path}.")
 
+    db_full = {
+        "metadata": {
+            "domain": "pet scenes",
+            "generator": "pet_scenes_full",
+            "created_at": datetime.now().isoformat(),
+            "prompt_count": len(prompts)
+        },
+        "prompts": [{"tag": p} for p in prompts],
+    }
+
+    out_file = os.path.join(output_dir, "dbscan_pet_prompts_full.json")
+    with open(out_file, "w") as f:
+        json.dump(db_full, f, indent=2, ensure_ascii=False)
+
+    pruned_prompts = []
+    # make a small set of pruned prompts by taking one from each cluster
+    unique_labels = set(labels)
+    for lab in unique_labels:
+        idx = np.where(labels == lab)[0]
+        if len(idx) > 0:
+            pruned_prompts.append(prompts[idx[0]])
+    db_pruned = {
+        "metadata": {
+            "domain": "pet scenes",
+            "generator": "pet_scenes_dbscan_cluster_pruned",
+            "created_at": datetime.now().isoformat(),
+            "eps": args.eps,
+            "min_samples": args.min_points,
+            "metric": args.metric,
+            "prompt_count": len(pruned_prompts)
+        },
+        "prompts": [{"tag": p} for p in pruned_prompts],
+    }
+
+    out_file = os.path.join(output_dir, "dbscan_pet_prompts_dbscan_cluster_pruned.json")
+    with open(out_file, "w") as f:
+        json.dump(db_pruned, f, indent=2, ensure_ascii=False)
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
@@ -577,6 +693,7 @@ if __name__ == "__main__":
     parser.add_argument("--device", type=str, default="cuda:0")
     parser.add_argument("--eps", type=float, default=0.05)
     parser.add_argument("--min_points", type=int, default=2)
+    parser.add_argument("--metric", type=str, default="cosine")
     args = parser.parse_args()
 
     main(args)
