@@ -39,6 +39,117 @@ from typing import List, Dict, Any, Optional, Callable, Sequence, Tuple
 import plotly.express as px
 from plotly.offline import plot as plot_offline
 
+# ================== Prompt Components ==================
+prompt_components = {
+    "templates": [
+        "{s} {a} {sc} {o}"
+    ],
+    "test_scene": {
+        "subjects": ["a person", "a cat"],
+        "actions": ["is running", "is jumping"],
+        "scenarios": ["in the park", "on the beach"],
+        "objects": ["with a ball", "with a frisbee"]
+    },
+    "pet_scene": {
+        "subjects": [
+            "a dog", "a cat", "a puppy", "a kitten", "two dogs", "two cats",
+            "a corgi", "a husky", "a golden retriever", "a small dog", 
+            "a large dog", "a small cat", "a pet", "a domestic animal"
+        ],
+        "actions": [
+            "is running", "is jumping", "is walking", "is chasing", "is rolling",
+            "is playing", "is fetching", "is tugging a toy", "is biting", 
+            "is scratching", "is licking its paw", "is sniffing something", 
+            "is shaking its body", "is barking", "is meowing", "is wagging its tail", 
+            "is stretching", "is yawning", "is curious", "is watching something", 
+            "is sleeping", "is lying down", "is sitting", "is resting", 
+            "is staying still"
+        ],
+        "scenarios": [
+            "on the grass", "in the park", "on the beach", "in the living room", 
+            "in the bedroom", "in the kitchen", "in the backyard", "in the garden", 
+            "on the sofa", "on the bed", "by the window", "on the floor", 
+            "in the yard", "at home", "outdoors", "under the table"
+        ],
+        "objects": [
+            "with a ball", "with a frisbee", "with a toy", "with a stick", 
+            "with a bone", "with a rope", "with a plush toy", "with a pillow", 
+            "with food", "with a bowl", "chasing another pet", 
+            "playing with a person", "looking at the camera", "being brushed", 
+            "taking a bath", "wearing a collar", "next to its owner"
+        ]
+    },
+    "family_scene": {
+        "subjects": [
+            "a man", "a woman", "a child", "two children", "a baby", 
+            "a teenager", "an elderly man", "an elderly woman", 
+            "a father and child", "a mother and child", "two siblings", 
+            "grandparents with grandchildren", "a family with a pet", 
+            "the whole family"
+        ],
+        "actions": [
+            "is laughing", "is smiling at the camera", "is hugging", 
+            "is playing together", "is running", "is jumping", 
+            "is holding hands", "is cooking", "is eating together", 
+            "is celebrating a birthday", "is opening gifts", 
+            "is reading together", "is watching TV", "is taking a selfie", 
+            "is posing for a photo", "is walking together", 
+            "is playing with the pet", "is decorating for a holiday"
+        ],
+        "scenarios": [
+            "in the living room", "on the couch", "at the dining table", 
+            "in the kitchen", "in the backyard", "in the park", 
+            "at a playground", "at the beach", "on a city street", 
+            "in a bedroom", "outside the house", "at a birthday party", 
+            "at a family gathering", "on vacation outdoors", 
+            "at a school event"
+        ],
+        "objects": [
+            "with a ball", "with a toy", "with a book", 
+            "with a tablet or phone", "with a TV in the background", 
+            "with food on the table", "with a birthday cake", 
+            "with balloons", "with wrapped gifts", "with a stroller", 
+            "with a bicycle", "with a picnic blanket", 
+            "with the family pet", "with party decorations", 
+            "with holiday decorations"
+        ]
+    },
+    "daily_life_scene": {
+        "subjects": [
+            "a man", "a woman", "a young adult", "a teenager", 
+            "a child", "a baby", "an elderly man", "an elderly woman", 
+            "a couple", "a group of friends", "a coworker", 
+            "a family", "a student", "a person walking a dog", 
+            "a person riding a bicycle"
+        ],
+        "actions": [
+            "is talking on the phone", "is drinking coffee", 
+            "is typing on a laptop", "is cooking", "is reading a book", 
+            "is writing or drawing", "is waiting at a bus stop", 
+            "is walking across the street", "is jogging or exercising", 
+            "is taking a photo", "is shopping for groceries", 
+            "is doing laundry", "is cleaning the room", 
+            "is feeding a pet", "is relaxing on the couch"
+        ],
+        "scenarios": [
+            "in the kitchen", "in the living room", "in a bedroom", 
+            "at a coffee shop", "at the office", "in a park", 
+            "on a city street", "at the bus stop", "in a classroom", 
+            "in a supermarket", "at the gym", "on public transportation", 
+            "on the balcony", "in the backyard", "at a restaurant table"
+        ],
+        "objects": [
+            "with a phone", "with a laptop", "with a tablet", 
+            "with a cup of coffee", "with a newspaper or magazine", 
+            "with a backpack", "with shopping bags", "with earphones", 
+            "with gym equipment", "with cleaning tools", 
+            "with books and notebooks", "with a camera", 
+            "with food or drinks", "with a pet", 
+            "with groceries or fruits"
+        ]
+    }
+}
+
 # ================== Quantitative Metrics ==================
 import numpy as np
 from sklearn.preprocessing import normalize
@@ -138,56 +249,15 @@ def compute_cluster_stats(X: np.ndarray, labels: List[str]):
 
     return {"intra": float(intra_mean), "inter": float(inter_mean), "ratio": float(ratio), "cluster_count": cluster_cnt, "average_cluster_size": float(average_cluster_size), "nosie_cnt": noise_cnt, "noise_ratio": float(noise_ratio)}
 
-
-# ================== Prompt Generation & Clustering ==================
-subjects = [
-    "a dog", "a cat", "a puppy", "a kitten", "two dogs", "two cats",
-    "a corgi", "a husky", "a golden retriever", "a small dog", "a large dog",
-    "a small cat", "a pet", "a domestic animal"
-]
-
-actions = [
-    # Motion
-    "is running", "is jumping", "is walking", "is chasing", "is rolling",
-    # Interaction
-    "is playing", "is fetching", "is tugging a toy", "is biting", "is scratching",
-    "is licking its paw", "is sniffing something", "is shaking its body",
-    # Emotion / Expression
-    "is barking", "is meowing", "is wagging its tail", "is stretching",
-    "is yawning", "is curious", "is watching something",
-    # Static / Rest
-    "is sleeping", "is lying down", "is sitting", "is resting", "is staying still"
-]
-
-scenes = [
-    "on the grass", "in the park", "on the beach", "in the living room",
-    "in the bedroom", "in the kitchen", "in the backyard", "in the garden",
-    "on the sofa", "on the bed", "by the window", "on the floor",
-    "in the yard", "at home", "outdoors", "under the table"
-]
-
-objects = [
-    "with a ball", "with a frisbee", "with a toy", "with a stick", "with a bone",
-    "with a rope", "with a plush toy", "with a pillow", "with food", "with a bowl",
-    "chasing another pet", "playing with a person", "looking at the camera",
-    "being brushed", "taking a bath", "wearing a collar", "next to its owner"
-]
-templates = [
-    # "{s} {a}",
-    # "{s} {a} {sc}",
-    # "{s} {a} {o}",
-    "{s} {a} {sc} {o}"
-]
-
-def generate_prompts(subjects, actions, scenes, objects, templates,
+def generate_prompts(subjects, actions, scenarios, objects, templates,
                      max_samples=200000, seed=42):
-    print("[INFO] Generating prompts form {} subjects, {} actions, {} scenes, {} objects.".format(
-        len(subjects), len(actions), len(scenes), len(objects)
+    print("[INFO] Generating prompts form {} subjects, {} actions, {} scenarios, {} objects.".format(
+        len(subjects), len(actions), len(scenarios), len(objects)
     ))
     random.seed(seed)
     prompts = set()
 
-    combos = list(itertools.product(subjects, actions, scenes, objects))
+    combos = list(itertools.product(subjects, actions, scenarios, objects))
     random.shuffle(combos)
 
     for (s, a, sc, o) in tqdm(combos, desc="Generating prompts", total=len(combos)):
@@ -544,9 +614,16 @@ def make_interactive_cluster_plot(
 
 # ================== Main ==================
 def main(args):
+    # load prompt components
+    scene = prompt_components[args.scene]
+    subjects = scene["subjects"]
+    actions = scene["actions"]
+    scenarios = scene["scenarios"]
+    objects = scene["objects"]
+    templates = prompt_components["templates"]
 
-    print(f"Generating pet prompts from {len(subjects)} subjects, {len(actions)} actions, {len(scenes)} scenes, {len(objects)} objects.")
-    prompts = generate_prompts(subjects, actions, scenes, objects, templates, max_samples=args.max_samples)
+    print(f"Generating pet prompts from {len(subjects)} subjects, {len(actions)} actions, {len(scenarios)} scenarios, {len(objects)} objects.")
+    prompts = generate_prompts(subjects, actions, scenarios, objects, templates, max_samples=args.max_samples)
     print(f"[INFO] Generated {len(prompts)} initial prompts.")
 
     # cluster embeddings and prune similar ones
@@ -580,14 +657,14 @@ def main(args):
         embeddings,
         eps=args.eps,
         min_samples=args.min_points,
-        metric="cosine"
+        metric=args.metric,
     )
     end = time.perf_counter()
     print(f"[PROFILING] DBSCAN clustering and plotting completed in {end - start:.2f} seconds.")
     print(f"[INFO] Completed DBSCAN clustering with eps={args.eps}, min_samples={args.min_points}.")
 
     # add eps and min_points to folder name if needed
-    output_dir_name = f"dbscan_eps{args.eps}_minpts{args.min_points}"
+    output_dir_name = f"{args.scene}_dbscan_eps{args.eps}_minpts{args.min_points}"
     output_dir = os.path.join(args.output_dir, output_dir_name)
     print(f"[INFO] Saving results to {output_dir}")
     if not os.path.exists(output_dir):
@@ -598,7 +675,7 @@ def main(args):
             print(f"[ERROR] Failed to create output directory at {output_dir}: {e}")
             return
 
-    cluster_plot_path = os.path.join(output_dir, "dbscan_pet_prompts.png")
+    cluster_plot_path = os.path.join(output_dir, f"{args.scene}_dbscan_full_cluster_layout.png")
     fig.savefig(cluster_plot_path, dpi=150)
     print(f"[INFO] Saved DBSCAN clustering plot to {cluster_plot_path}.")
 
@@ -613,17 +690,24 @@ def main(args):
     
     print(f"[INFO] Prepared clustered prompts for {len(clustered_prompts)} clusters.")
     stats = compute_cluster_stats(embeddings, [str(l) for l in labels])
+    
     stats["eps"] = args.eps
     stats["min_samples"] = args.min_points
     stats["metric"] = args.metric
+    
+    stats["num_subjects"] = len(subjects)
+    stats["num_actions"] = len(actions)
+    stats["num_scenarios"] = len(scenarios)
+    stats["num_objects"] = len(objects)
+    stats["num_prompts"] = len(prompts)
 
     print(f"[INFO] prepared to dump cluster stats: {stats}")
-    stats_path = os.path.join(output_dir, "dbscan_cluster_stats.json")
+    stats_path = os.path.join(output_dir, f"{args.scene}_dbscan_cluster_stats.json")
     with open(stats_path, "w") as f:
         json.dump(stats, f, indent=4)
 
     print(f"[INFO] prepare to dump clustered prompts.")
-    prompts_path = os.path.join(output_dir, "dbscan_clustered_pet_prompts.json")
+    prompts_path = os.path.join(output_dir, f"{args.scene}_dbscan_full_cluster_prompts.json")
     with open(prompts_path, "w") as f:
         json.dump(clustered_prompts, f, indent=4)   
     end = time.perf_counter()
@@ -632,12 +716,12 @@ def main(args):
 
     # summarize and visualize semantics
     plot_clusters_with_text_samples(prompts, embeddings, labels, sample_per_cluster= min(int(len(labels) / 3), 15), figsize=(16, 12))
-    sementic_plot_path = os.path.join(output_dir, "dbscan_pet_prompts_with_texts.png")
+    sementic_plot_path = os.path.join(output_dir, f"{args.scene}_dbscan_cluster_with_text_sample.png")
     plt.savefig(sementic_plot_path, dpi=150)
     print(f"[INFO] Saved semantic cluster plot to {sementic_plot_path}.")
 
     # interactive plot
-    interactive_plot_path = os.path.join(output_dir, "dbscan_pet_prompts_interactive.html")
+    interactive_plot_path = os.path.join(output_dir, f"{args.scene}_dbscan_prompts_cluster_interactive.html")
     make_interactive_cluster_plot(prompts=prompts, embeddings=embeddings, labels=labels,
                                   method=args.projection,
                                   filename=interactive_plot_path)
@@ -645,15 +729,15 @@ def main(args):
 
     db_full = {
         "metadata": {
-            "domain": "pet scenes",
-            "generator": "pet_scenes_full",
+            "scene": args.scene,
+            "generator": f"{args.scene}_full",
             "created_at": datetime.now().isoformat(),
             "prompt_count": len(prompts)
         },
         "prompts": [{"tag": p} for p in prompts],
     }
 
-    out_file = os.path.join(output_dir, "dbscan_pet_prompts_full.json")
+    out_file = os.path.join(output_dir, f"{args.scene}_dbscan_full.json")
     with open(out_file, "w") as f:
         json.dump(db_full, f, indent=2, ensure_ascii=False)
 
@@ -666,8 +750,8 @@ def main(args):
             pruned_prompts.append(prompts[idx[0]])
     db_pruned = {
         "metadata": {
-            "domain": "pet scenes",
-            "generator": "pet_scenes_dbscan_cluster_pruned",
+            "scene": args.scene,
+            "generator": f"{args.scene}_dbscan_cluster_pruned",
             "created_at": datetime.now().isoformat(),
             "eps": args.eps,
             "min_samples": args.min_points,
@@ -677,7 +761,7 @@ def main(args):
         "prompts": [{"tag": p} for p in pruned_prompts],
     }
 
-    out_file = os.path.join(output_dir, "dbscan_pet_prompts_dbscan_cluster_pruned.json")
+    out_file = os.path.join(output_dir, f"{args.scene}_dbscan_cluster_pruned.json")
     with open(out_file, "w") as f:
         json.dump(db_pruned, f, indent=2, ensure_ascii=False)
 
@@ -694,6 +778,7 @@ if __name__ == "__main__":
     parser.add_argument("--eps", type=float, default=0.05)
     parser.add_argument("--min_points", type=int, default=2)
     parser.add_argument("--metric", type=str, default="cosine")
+    parser.add_argument("--scene", type=str, default="pet_scene", choices=["pet_scene", "family_scene", "daily_life_scene", "test_scene"])
     args = parser.parse_args()
 
     main(args)
