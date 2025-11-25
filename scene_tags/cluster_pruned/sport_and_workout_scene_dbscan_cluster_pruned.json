@@ -1,0 +1,1813 @@
+{
+  "metadata": {
+    "scene": "sport_and_workout_scene",
+    "generator": "sport_and_workout_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-11T23:58:51.311952",
+    "eps": 0.055,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 600
+  },
+  "prompts": [
+    {
+      "tag": "a basketball player is celebrating a win at a stadium filled with crowd with a ball mid-air"
+    },
+    {
+      "tag": "a basketball player is celebrating a win at a stadium filled with crowd with gym equipment in the background"
+    },
+    {
+      "tag": "a basketball player is celebrating a win at a stadium filled with crowd with sweat and towel"
+    },
+    {
+      "tag": "a basketball player is celebrating a win in a training field under rain with a ball mid-air"
+    },
+    {
+      "tag": "a basketball player is celebrating a win in an outdoor sports event at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a basketball player is celebrating a win on a beach during morning workout with a ball mid-air"
+    },
+    {
+      "tag": "a basketball player is celebrating a win on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a basketball player is celebrating a win on a mountain trail during a run with a ball mid-air"
+    },
+    {
+      "tag": "a basketball player is celebrating a win on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a basketball player is celebrating a win on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a basketball player is celebrating a win on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a basketball player is clapping or cheering on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a basketball player is crossing the finish line at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a basketball player is crossing the finish line on a mountain trail during a run with gym equipment in the background"
+    },
+    {
+      "tag": "a basketball player is crossing the finish line on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a basketball player is diving into the pool on a mountain trail during a run with gym equipment in the background"
+    },
+    {
+      "tag": "a basketball player is diving into the pool on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a basketball player is exhausted after a match at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a basketball player is exhausted after a match at a stadium filled with crowd with a dumbbell or barbell"
+    },
+    {
+      "tag": "a basketball player is exhausted after a match in a boxing ring under bright lights with water splashing around"
+    },
+    {
+      "tag": "a basketball player is exhausted after a match in a training field under rain with a dumbbell or barbell"
+    },
+    {
+      "tag": "a basketball player is exhausted after a match on a mountain trail during a run with boxing gloves"
+    },
+    {
+      "tag": "a basketball player is exhausted after a match on a podium receiving a medal with a bicycle helmet on"
+    },
+    {
+      "tag": "a basketball player is exhausted after a match on a yoga mat in natural light with boxing gloves"
+    },
+    {
+      "tag": "a basketball player is jumping high in the air inside a gym during workout with water splashing around"
+    },
+    {
+      "tag": "a basketball player is jumping high in the air on a mountain trail during a run with gym equipment in the background"
+    },
+    {
+      "tag": "a basketball player is posing proudly with a medal at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a basketball player is sprinting at full speed on a mountain trail during a run with gym equipment in the background"
+    },
+    {
+      "tag": "a basketball player is stretching before exercise on a mountain trail during a run with gym equipment in the background"
+    },
+    {
+      "tag": "a basketball player is swinging a racket mid-serve inside a gym during workout with water splashing around"
+    },
+    {
+      "tag": "a basketball player is swinging a racket mid-serve on a yoga mat in natural light with water splashing around"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a stadium filled with crowd with a tennis racket in motion"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a stadium filled with crowd with a trophy or medal"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a stadium filled with crowd with a yoga mat"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a stadium filled with crowd with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a stadium filled with crowd with sweat and towel"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a stadium filled with crowd with teammates hugging"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a stadium filled with crowd with water splashing around"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a swimming pool during competition with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a swimming pool during competition with a yoga mat"
+    },
+    {
+      "tag": "a boxer is celebrating a win at a swimming pool during competition with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is celebrating a win in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is celebrating a win in a locker room post-game moment with a yoga mat"
+    },
+    {
+      "tag": "a boxer is celebrating a win in a training field under rain with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win in a training field under rain with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is celebrating a win in an outdoor sports event at sunset with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win in an outdoor sports event at sunset with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is celebrating a win in an outdoor sports event at sunset with water splashing around"
+    },
+    {
+      "tag": "a boxer is celebrating a win inside a gym during workout with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win inside a gym during workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is celebrating a win inside a gym during workout with a tennis racket in motion"
+    },
+    {
+      "tag": "a boxer is celebrating a win inside a gym during workout with a trophy or medal"
+    },
+    {
+      "tag": "a boxer is celebrating a win inside a gym during workout with a yoga mat"
+    },
+    {
+      "tag": "a boxer is celebrating a win inside a gym during workout with sweat and towel"
+    },
+    {
+      "tag": "a boxer is celebrating a win inside a gym during workout with teammates hugging"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a basketball court in mid-game with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a basketball court in mid-game with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a basketball court in mid-game with a yoga mat"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a basketball court in mid-game with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a basketball court in mid-game with sweat and towel"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a basketball court in mid-game with water splashing around"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a beach during morning workout with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a beach during morning workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a beach during morning workout with a trophy or medal"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a beach during morning workout with a yoga mat"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a beach during morning workout with teammates hugging"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a mountain trail during a run with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a mountain trail during a run with a dumbbell or barbell"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a mountain trail during a run with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a mountain trail during a run with teammates hugging"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a mountain trail during a run with water splashing around"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a running track during a race with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a running track during a race with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a running track during a race with teammates hugging"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a running track during a race with water splashing around"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a soccer field during a match with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a soccer field during a match with a dumbbell or barbell"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a soccer field during a match with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a soccer field during a match with a trophy or medal"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a soccer field during a match with a yoga mat"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a soccer field during a match with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a soccer field during a match with sweat and towel"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a soccer field during a match with teammates hugging"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a soccer field during a match with water splashing around"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a tennis court during a rally with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a tennis court during a rally with a trophy or medal"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a tennis court during a rally with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a tennis court during a rally with sweat and towel"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a tennis court during a rally with teammates hugging"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a tennis court during a rally with water splashing around"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a yoga mat in natural light with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a yoga mat in natural light with teammates hugging"
+    },
+    {
+      "tag": "a boxer is celebrating a win on a yoga mat in natural light with water splashing around"
+    },
+    {
+      "tag": "a boxer is crossing the finish line at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is crossing the finish line in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is crossing the finish line inside a gym during workout with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is diving into the pool in a locker room post-game moment with water splashing around"
+    },
+    {
+      "tag": "a boxer is diving into the pool in a training field under rain with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is diving into the pool on a beach during morning workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is exhausted after a match at a stadium filled with crowd with a dumbbell or barbell"
+    },
+    {
+      "tag": "a boxer is exhausted after a match in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is exhausted after a match in a locker room post-game moment with a skipping rope mid-jump"
+    },
+    {
+      "tag": "a boxer is exhausted after a match in a locker room post-game moment with teammates hugging"
+    },
+    {
+      "tag": "a boxer is exhausted after a match in a locker room post-game moment with water splashing around"
+    },
+    {
+      "tag": "a boxer is exhausted after a match on a basketball court in mid-game with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is exhausted after a match on a basketball court in mid-game with a skipping rope mid-jump"
+    },
+    {
+      "tag": "a boxer is jumping high in the air in a locker room post-game moment with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is jumping high in the air in a training field under rain with sweat and towel"
+    },
+    {
+      "tag": "a boxer is jumping high in the air in an outdoor sports event at sunset with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is posing proudly with a medal in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is posing proudly with a medal in a locker room post-game moment with a skipping rope mid-jump"
+    },
+    {
+      "tag": "a boxer is posing proudly with a medal on a basketball court in mid-game with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is punching hard during training at a stadium filled with crowd with a yoga mat"
+    },
+    {
+      "tag": "a boxer is punching hard during training at a stadium filled with crowd with water splashing around"
+    },
+    {
+      "tag": "a boxer is punching hard during training in a training field under rain with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is punching hard during training on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is punching hard during training on a mountain trail during a run with teammates hugging"
+    },
+    {
+      "tag": "a boxer is punching hard during training on a podium receiving a medal with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is punching hard during training on a running track during a race with teammates hugging"
+    },
+    {
+      "tag": "a boxer is punching hard during training on a soccer field during a match with a yoga mat"
+    },
+    {
+      "tag": "a boxer is punching hard during training on a tennis court during a rally with teammates hugging"
+    },
+    {
+      "tag": "a boxer is punching hard during training on a tennis court during a rally with water splashing around"
+    },
+    {
+      "tag": "a boxer is punching hard during training on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is punching hard during training on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is punching hard during training on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a boxer is punching hard during training on a yoga mat in natural light with water splashing around"
+    },
+    {
+      "tag": "a boxer is scoring a goal inside a gym during workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is scoring a goal on a mountain trail during a run with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is scoring a goal on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is scoring a goal on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a boxer is sprinting at full speed on a running track during a race with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is stretching before exercise at a stadium filled with crowd with boxing gloves"
+    },
+    {
+      "tag": "a boxer is stretching before exercise in a locker room post-game moment with gym equipment in the background"
+    },
+    {
+      "tag": "a boxer is stretching before exercise on a basketball court in mid-game with a bicycle helmet on"
+    },
+    {
+      "tag": "a boxer is stretching before exercise on a basketball court in mid-game with a trophy or medal"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool in a training field under rain with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool in a training field under rain with gym equipment in the background"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool inside a gym during workout with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool on a beach during morning workout with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool on a mountain trail during a run with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool on a mountain trail during a run with a dumbbell or barbell"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool on a mountain trail during a run with boxing gloves"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool on a mountain trail during a run with gym equipment in the background"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool on a yoga mat in natural light with a dumbbell or barbell"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a cheering teammate is diving into the pool on a yoga mat in natural light with boxing gloves"
+    },
+    {
+      "tag": "a cheering teammate is exhausted after a match on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a cheering teammate is exhausted after a match on a mountain trail during a run with a ball mid-air"
+    },
+    {
+      "tag": "a cheering teammate is exhausted after a match on a mountain trail during a run with gym equipment in the background"
+    },
+    {
+      "tag": "a cheering teammate is exhausted after a match on a running track during a race with a ball mid-air"
+    },
+    {
+      "tag": "a cheering teammate is exhausted after a match on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is exhausted after a match on a yoga mat in natural light with gym equipment in the background"
+    },
+    {
+      "tag": "a cheering teammate is lifting heavy weights overhead at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is lifting heavy weights overhead at a swimming pool during competition with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is lifting heavy weights overhead inside a gym during workout with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is lifting heavy weights overhead on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is posing proudly with a medal in a boxing ring under bright lights with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is posing proudly with a medal in a training field under rain with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is posing proudly with a medal on a yoga mat in natural light with water splashing around"
+    },
+    {
+      "tag": "a cheering teammate is sprinting at full speed on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a cheering teammate is sprinting at full speed on a tennis court during a rally with gym equipment in the background"
+    },
+    {
+      "tag": "a cheering teammate is sprinting at full speed on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is sprinting at full speed on a yoga mat in natural light with gym equipment in the background"
+    },
+    {
+      "tag": "a cheering teammate is swinging a racket mid-serve in a training field under rain with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is swinging a racket mid-serve inside a gym during workout with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is swinging a racket mid-serve on a beach during morning workout with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is swinging a racket mid-serve on a mountain trail during a run with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is swinging a racket mid-serve on a mountain trail during a run with gym equipment in the background"
+    },
+    {
+      "tag": "a cheering teammate is swinging a racket mid-serve on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a cheering teammate is swinging a racket mid-serve on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a coach celebrating is exhausted after a match at a stadium filled with crowd with a ball mid-air"
+    },
+    {
+      "tag": "a coach celebrating is exhausted after a match on a running track during a race with gym equipment in the background"
+    },
+    {
+      "tag": "a coach celebrating is jumping high in the air on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a stadium filled with crowd with a dumbbell or barbell"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a stadium filled with crowd with a tennis racket in motion"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a stadium filled with crowd with a trophy or medal"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a stadium filled with crowd with a yoga mat"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a stadium filled with crowd with boxing gloves"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a stadium filled with crowd with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a stadium filled with crowd with sweat and towel"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a stadium filled with crowd with teammates hugging"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a stadium filled with crowd with water splashing around"
+    },
+    {
+      "tag": "a cyclist is celebrating a win at a swimming pool during competition with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a boxing ring under bright lights with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a locker room post-game moment with a dumbbell or barbell"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a locker room post-game moment with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a locker room post-game moment with sports shoes and uniform"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a locker room post-game moment with sweat and towel"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a locker room post-game moment with teammates hugging"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a training field under rain with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a training field under rain with sports shoes and uniform"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a training field under rain with sweat and towel"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in a training field under rain with teammates hugging"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in an outdoor sports event at sunset with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in an outdoor sports event at sunset with sports shoes and uniform"
+    },
+    {
+      "tag": "a cyclist is celebrating a win in an outdoor sports event at sunset with water splashing around"
+    },
+    {
+      "tag": "a cyclist is celebrating a win inside a gym during workout with a trophy or medal"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a basketball court in mid-game with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a basketball court in mid-game with sweat and towel"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a basketball court in mid-game with water splashing around"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a beach during morning workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a beach during morning workout with sports shoes and uniform"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a beach during morning workout with water splashing around"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a podium receiving a medal with teammates hugging"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a soccer field during a match with a ball mid-air"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a soccer field during a match with a dumbbell or barbell"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a soccer field during a match with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a soccer field during a match with a trophy or medal"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a soccer field during a match with a yoga mat"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a soccer field during a match with boxing gloves"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a soccer field during a match with sweat and towel"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a soccer field during a match with teammates hugging"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a soccer field during a match with water splashing around"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a tennis court during a rally with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a tennis court during a rally with a trophy or medal"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a tennis court during a rally with boxing gloves"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a tennis court during a rally with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a tennis court during a rally with sports shoes and uniform"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a tennis court during a rally with sweat and towel"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is celebrating a win on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line in a locker room post-game moment with a yoga mat"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line in a training field under rain with sports shoes and uniform"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line inside a gym during workout with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line on a beach during morning workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line on a beach during morning workout with teammates hugging"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line on a mountain trail during a run with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line on a running track during a race with sweat and towel"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line on a soccer field during a match with water splashing around"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line on a tennis court during a rally with a trophy or medal"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line on a tennis court during a rally with a yoga mat"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is crossing the finish line on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a cyclist is exhausted after a match at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is exhausted after a match in a boxing ring under bright lights with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is exhausted after a match in a locker room post-game moment with a skipping rope mid-jump"
+    },
+    {
+      "tag": "a cyclist is exhausted after a match in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is exhausted after a match in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a cyclist is exhausted after a match in a training field under rain with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is exhausted after a match on a mountain trail during a run with a skipping rope mid-jump"
+    },
+    {
+      "tag": "a cyclist is exhausted after a match on a mountain trail during a run with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is exhausted after a match on a mountain trail during a run with water splashing around"
+    },
+    {
+      "tag": "a cyclist is exhausted after a match on a podium receiving a medal with a dumbbell or barbell"
+    },
+    {
+      "tag": "a cyclist is jumping high in the air in a boxing ring under bright lights with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is jumping high in the air in a training field under rain with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is jumping high in the air on a beach during morning workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is punching hard during training at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a cyclist is punching hard during training at a stadium filled with crowd with a yoga mat"
+    },
+    {
+      "tag": "a cyclist is punching hard during training at a stadium filled with crowd with water splashing around"
+    },
+    {
+      "tag": "a cyclist is punching hard during training in a locker room post-game moment with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is punching hard during training in an outdoor sports event at sunset with teammates hugging"
+    },
+    {
+      "tag": "a cyclist is punching hard during training in an outdoor sports event at sunset with water splashing around"
+    },
+    {
+      "tag": "a cyclist is punching hard during training on a beach during morning workout with teammates hugging"
+    },
+    {
+      "tag": "a cyclist is punching hard during training on a soccer field during a match with water splashing around"
+    },
+    {
+      "tag": "a cyclist is punching hard during training on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is punching hard during training on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a cyclist is scoring a goal at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a cyclist is scoring a goal on a yoga mat in natural light with a yoga mat"
+    },
+    {
+      "tag": "a cyclist is shooting a basketball at a stadium filled with crowd with a dumbbell or barbell"
+    },
+    {
+      "tag": "a cyclist is sprinting at full speed at a stadium filled with crowd with a dumbbell or barbell"
+    },
+    {
+      "tag": "a cyclist is stretching before exercise at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a cyclist is stretching before exercise at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is stretching before exercise in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is stretching before exercise in a locker room post-game moment with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is stretching before exercise in a locker room post-game moment with sports shoes and uniform"
+    },
+    {
+      "tag": "a cyclist is stretching before exercise on a basketball court in mid-game with a stopwatch or timer"
+    },
+    {
+      "tag": "a cyclist is stretching before exercise on a basketball court in mid-game with gym equipment in the background"
+    },
+    {
+      "tag": "a cyclist is swinging a racket mid-serve on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is celebrating a win at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a female athlete is celebrating a win at a stadium filled with crowd with gym equipment in the background"
+    },
+    {
+      "tag": "a female athlete is celebrating a win at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a female athlete is celebrating a win in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a female athlete is celebrating a win in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is celebrating a win in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a female athlete is celebrating a win in a locker room post-game moment with sports shoes and uniform"
+    },
+    {
+      "tag": "a female athlete is celebrating a win in an outdoor sports event at sunset with sports shoes and uniform"
+    },
+    {
+      "tag": "a female athlete is celebrating a win inside a gym during workout with a basketball in hand"
+    },
+    {
+      "tag": "a female athlete is celebrating a win inside a gym during workout with a bicycle helmet on"
+    },
+    {
+      "tag": "a female athlete is celebrating a win inside a gym during workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is celebrating a win inside a gym during workout with boxing gloves"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a basketball court in mid-game with a ball mid-air"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a basketball court in mid-game with a bicycle helmet on"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a basketball court in mid-game with a dumbbell or barbell"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a basketball court in mid-game with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a basketball court in mid-game with a yoga mat"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a basketball court in mid-game with boxing gloves"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a basketball court in mid-game with sweat and towel"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a basketball court in mid-game with water splashing around"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a beach during morning workout with sports shoes and uniform"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a soccer field during a match with a ball mid-air"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a soccer field during a match with a bicycle helmet on"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a soccer field during a match with a dumbbell or barbell"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a soccer field during a match with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a soccer field during a match with a trophy or medal"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a soccer field during a match with boxing gloves"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a soccer field during a match with sweat and towel"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a soccer field during a match with teammates hugging"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a soccer field during a match with water splashing around"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a tennis court during a rally with a dumbbell or barbell"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a tennis court during a rally with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a tennis court during a rally with boxing gloves"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a tennis court during a rally with sports shoes and uniform"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a tennis court during a rally with sweat and towel"
+    },
+    {
+      "tag": "a female athlete is celebrating a win on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a female athlete is clapping or cheering on a soccer field during a match with a ball mid-air"
+    },
+    {
+      "tag": "a female athlete is crossing the finish line at a stadium filled with crowd with gym equipment in the background"
+    },
+    {
+      "tag": "a female athlete is crossing the finish line in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a female athlete is crossing the finish line in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is crossing the finish line inside a gym during workout with a yoga mat"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match at a stadium filled with crowd with a dumbbell or barbell"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match at a stadium filled with crowd with water splashing around"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match in a locker room post-game moment with water splashing around"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match in a training field under rain with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match in a training field under rain with gym equipment in the background"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match in an outdoor sports event at sunset with water splashing around"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match on a beach during morning workout with water splashing around"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match on a podium receiving a medal with gym equipment in the background"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match on a podium receiving a medal with water splashing around"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match on a yoga mat in natural light with a dumbbell or barbell"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a female athlete is exhausted after a match on a yoga mat in natural light with water splashing around"
+    },
+    {
+      "tag": "a female athlete is jumping high in the air in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a female athlete is jumping high in the air in a locker room post-game moment with a yoga mat"
+    },
+    {
+      "tag": "a female athlete is jumping high in the air inside a gym during workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is jumping high in the air inside a gym during workout with a trophy or medal"
+    },
+    {
+      "tag": "a female athlete is jumping high in the air on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a female athlete is lifting heavy weights overhead in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is punching hard during training at a stadium filled with crowd with a ball mid-air"
+    },
+    {
+      "tag": "a female athlete is punching hard during training in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is punching hard during training in a locker room post-game moment with gym equipment in the background"
+    },
+    {
+      "tag": "a female athlete is punching hard during training on a soccer field during a match with a trophy or medal"
+    },
+    {
+      "tag": "a female athlete is scoring a goal at a stadium filled with crowd with gym equipment in the background"
+    },
+    {
+      "tag": "a female athlete is scoring a goal at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a female athlete is scoring a goal inside a gym during workout with a yoga mat"
+    },
+    {
+      "tag": "a female athlete is scoring a goal on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a female athlete is scoring a goal on a beach during morning workout with sports shoes and uniform"
+    },
+    {
+      "tag": "a female athlete is scoring a goal on a yoga mat in natural light with gym equipment in the background"
+    },
+    {
+      "tag": "a female athlete is shouting in excitement inside a gym during workout with gym equipment in the background"
+    },
+    {
+      "tag": "a female athlete is sprinting at full speed in a locker room post-game moment with a ball mid-air"
+    },
+    {
+      "tag": "a female athlete is sprinting at full speed on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a female athlete is stretching before exercise at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a female athlete is stretching before exercise at a stadium filled with crowd with gym equipment in the background"
+    },
+    {
+      "tag": "a female athlete is stretching before exercise in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a female athlete is stretching before exercise in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a female athlete is stretching before exercise inside a gym during workout with water splashing around"
+    },
+    {
+      "tag": "a female athlete is stretching before exercise on a basketball court in mid-game with boxing gloves"
+    },
+    {
+      "tag": "a female athlete is stretching before exercise on a soccer field during a match with a ball mid-air"
+    },
+    {
+      "tag": "a female athlete is stretching before exercise on a tennis court during a rally with a stopwatch or timer"
+    },
+    {
+      "tag": "a male athlete is celebrating a win inside a gym during workout with sports shoes and uniform"
+    },
+    {
+      "tag": "a male athlete is jumping high in the air in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a male athlete is punching hard during training at a stadium filled with crowd with a trophy or medal"
+    },
+    {
+      "tag": "a male athlete is punching hard during training at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a male athlete is punching hard during training at a stadium filled with crowd with sweat and towel"
+    },
+    {
+      "tag": "a male athlete is punching hard during training in a locker room post-game moment with sports shoes and uniform"
+    },
+    {
+      "tag": "a male athlete is punching hard during training in a locker room post-game moment with sweat and towel"
+    },
+    {
+      "tag": "a male athlete is punching hard during training inside a gym during workout with a trophy or medal"
+    },
+    {
+      "tag": "a male athlete is punching hard during training on a beach during morning workout with a trophy or medal"
+    },
+    {
+      "tag": "a male athlete is scoring a goal inside a gym during workout with sports shoes and uniform"
+    },
+    {
+      "tag": "a male athlete is scoring a goal inside a gym during workout with sweat and towel"
+    },
+    {
+      "tag": "a male athlete is shouting in excitement inside a gym during workout with sports shoes and uniform"
+    },
+    {
+      "tag": "a soccer player is celebrating a win at a stadium filled with crowd with gym equipment in the background"
+    },
+    {
+      "tag": "a soccer player is celebrating a win at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a soccer player is celebrating a win at a stadium filled with crowd with sweat and towel"
+    },
+    {
+      "tag": "a soccer player is celebrating a win at a stadium filled with crowd with teammates hugging"
+    },
+    {
+      "tag": "a soccer player is celebrating a win at a stadium filled with crowd with water splashing around"
+    },
+    {
+      "tag": "a soccer player is celebrating a win in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a soccer player is celebrating a win in a locker room post-game moment with gym equipment in the background"
+    },
+    {
+      "tag": "a soccer player is celebrating a win in an outdoor sports event at sunset with gym equipment in the background"
+    },
+    {
+      "tag": "a soccer player is celebrating a win in an outdoor sports event at sunset with sports shoes and uniform"
+    },
+    {
+      "tag": "a soccer player is celebrating a win in an outdoor sports event at sunset with water splashing around"
+    },
+    {
+      "tag": "a soccer player is celebrating a win inside a gym during workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a soccer player is celebrating a win inside a gym during workout with water splashing around"
+    },
+    {
+      "tag": "a soccer player is celebrating a win on a beach during morning workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a soccer player is celebrating a win on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a soccer player is celebrating a win on a yoga mat in natural light with a dumbbell or barbell"
+    },
+    {
+      "tag": "a soccer player is celebrating a win on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a soccer player is celebrating a win on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a soccer player is celebrating a win on a yoga mat in natural light with gym equipment in the background"
+    },
+    {
+      "tag": "a soccer player is celebrating a win on a yoga mat in natural light with water splashing around"
+    },
+    {
+      "tag": "a soccer player is punching hard during training at a swimming pool during competition with gym equipment in the background"
+    },
+    {
+      "tag": "a soccer player is punching hard during training at a swimming pool during competition with teammates hugging"
+    },
+    {
+      "tag": "a soccer player is punching hard during training on a podium receiving a medal with a bicycle helmet on"
+    },
+    {
+      "tag": "a soccer player is punching hard during training on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a soccer player is punching hard during training on a yoga mat in natural light with teammates hugging"
+    },
+    {
+      "tag": "a soccer player is punching hard during training on a yoga mat in natural light with water splashing around"
+    },
+    {
+      "tag": "a soccer player is stretching before exercise in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a soccer player is stretching before exercise in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a swimmer is celebrating a win at a stadium filled with crowd with a ball mid-air"
+    },
+    {
+      "tag": "a swimmer is celebrating a win at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a swimmer is celebrating a win at a stadium filled with crowd with a dumbbell or barbell"
+    },
+    {
+      "tag": "a swimmer is celebrating a win at a stadium filled with crowd with a tennis racket in motion"
+    },
+    {
+      "tag": "a swimmer is celebrating a win at a stadium filled with crowd with a yoga mat"
+    },
+    {
+      "tag": "a swimmer is celebrating a win at a stadium filled with crowd with boxing gloves"
+    },
+    {
+      "tag": "a swimmer is celebrating a win at a stadium filled with crowd with gym equipment in the background"
+    },
+    {
+      "tag": "a swimmer is celebrating a win at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a swimmer is celebrating a win at a stadium filled with crowd with sweat and towel"
+    },
+    {
+      "tag": "a swimmer is celebrating a win in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a swimmer is celebrating a win in a locker room post-game moment with gym equipment in the background"
+    },
+    {
+      "tag": "a swimmer is celebrating a win in a locker room post-game moment with sports shoes and uniform"
+    },
+    {
+      "tag": "a swimmer is celebrating a win in an outdoor sports event at sunset with gym equipment in the background"
+    },
+    {
+      "tag": "a swimmer is celebrating a win in an outdoor sports event at sunset with sports shoes and uniform"
+    },
+    {
+      "tag": "a swimmer is celebrating a win in an outdoor sports event at sunset with teammates hugging"
+    },
+    {
+      "tag": "a swimmer is celebrating a win inside a gym during workout with a ball mid-air"
+    },
+    {
+      "tag": "a swimmer is celebrating a win inside a gym during workout with a bicycle helmet on"
+    },
+    {
+      "tag": "a swimmer is celebrating a win inside a gym during workout with a tennis racket in motion"
+    },
+    {
+      "tag": "a swimmer is celebrating a win inside a gym during workout with teammates hugging"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a basketball court in mid-game with a ball mid-air"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a basketball court in mid-game with a stopwatch or timer"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a basketball court in mid-game with sweat and towel"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a basketball court in mid-game with teammates hugging"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a beach during morning workout with sports shoes and uniform"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a soccer field during a match with a ball mid-air"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a soccer field during a match with a bicycle helmet on"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a soccer field during a match with boxing gloves"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a soccer field during a match with sweat and towel"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a soccer field during a match with teammates hugging"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a tennis court during a rally with sports shoes and uniform"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a swimmer is celebrating a win on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a swimmer is clapping or cheering on a soccer field during a match with a ball mid-air"
+    },
+    {
+      "tag": "a swimmer is crossing the finish line at a stadium filled with crowd with a dumbbell or barbell"
+    },
+    {
+      "tag": "a swimmer is crossing the finish line in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a swimmer is crossing the finish line inside a gym during workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a swimmer is crossing the finish line on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a swimmer is exhausted after a match at a stadium filled with crowd with a ball mid-air"
+    },
+    {
+      "tag": "a swimmer is exhausted after a match at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a swimmer is exhausted after a match at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a swimmer is exhausted after a match in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a swimmer is exhausted after a match in a locker room post-game moment with a skipping rope mid-jump"
+    },
+    {
+      "tag": "a swimmer is exhausted after a match in an outdoor sports event at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a swimmer is exhausted after a match on a podium receiving a medal with a ball mid-air"
+    },
+    {
+      "tag": "a swimmer is jumping high in the air in a locker room post-game moment with gym equipment in the background"
+    },
+    {
+      "tag": "a swimmer is punching hard during training at a stadium filled with crowd with a ball mid-air"
+    },
+    {
+      "tag": "a swimmer is punching hard during training at a stadium filled with crowd with a dumbbell or barbell"
+    },
+    {
+      "tag": "a swimmer is punching hard during training at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a swimmer is punching hard during training at a stadium filled with crowd with a yoga mat"
+    },
+    {
+      "tag": "a swimmer is punching hard during training at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a swimmer is punching hard during training in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a swimmer is punching hard during training in a training field under rain with a bicycle helmet on"
+    },
+    {
+      "tag": "a swimmer is punching hard during training in an outdoor sports event at sunset with a bicycle helmet on"
+    },
+    {
+      "tag": "a swimmer is punching hard during training in an outdoor sports event at sunset with teammates hugging"
+    },
+    {
+      "tag": "a swimmer is punching hard during training on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a swimmer is punching hard during training on a yoga mat in natural light with a trophy or medal"
+    },
+    {
+      "tag": "a swimmer is scoring a goal on a basketball court in mid-game with teammates hugging"
+    },
+    {
+      "tag": "a swimmer is sprinting at full speed at a stadium filled with crowd with a ball mid-air"
+    },
+    {
+      "tag": "a swimmer is sprinting at full speed at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a swimmer is stretching before exercise on a soccer field during a match with a ball mid-air"
+    },
+    {
+      "tag": "a tennis player is celebrating a win at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a tennis player is celebrating a win at a stadium filled with crowd with a yoga mat"
+    },
+    {
+      "tag": "a tennis player is celebrating a win at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a tennis player is celebrating a win in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a tennis player is celebrating a win in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a tennis player is celebrating a win in a locker room post-game moment with sports shoes and uniform"
+    },
+    {
+      "tag": "a tennis player is celebrating a win in a training field under rain with a bicycle helmet on"
+    },
+    {
+      "tag": "a tennis player is celebrating a win in a training field under rain with gym equipment in the background"
+    },
+    {
+      "tag": "a tennis player is celebrating a win in an outdoor sports event at sunset with gym equipment in the background"
+    },
+    {
+      "tag": "a tennis player is celebrating a win in an outdoor sports event at sunset with sports shoes and uniform"
+    },
+    {
+      "tag": "a tennis player is celebrating a win inside a gym during workout with a trophy or medal"
+    },
+    {
+      "tag": "a tennis player is celebrating a win inside a gym during workout with sweat and towel"
+    },
+    {
+      "tag": "a tennis player is celebrating a win inside a gym during workout with teammates hugging"
+    },
+    {
+      "tag": "a tennis player is celebrating a win on a beach during morning workout with a stopwatch or timer"
+    },
+    {
+      "tag": "a tennis player is celebrating a win on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a tennis player is celebrating a win on a beach during morning workout with sports shoes and uniform"
+    },
+    {
+      "tag": "a tennis player is celebrating a win on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a tennis player is exhausted after a match in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a tennis player is exhausted after a match in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a tennis player is exhausted after a match in a locker room post-game moment with teammates hugging"
+    },
+    {
+      "tag": "a tennis player is exhausted after a match in a training field under rain with a stopwatch or timer"
+    },
+    {
+      "tag": "a tennis player is exhausted after a match in a training field under rain with sports shoes and uniform"
+    },
+    {
+      "tag": "a tennis player is exhausted after a match in an outdoor sports event at sunset with a stopwatch or timer"
+    },
+    {
+      "tag": "a tennis player is exhausted after a match on a mountain trail during a run with a stopwatch or timer"
+    },
+    {
+      "tag": "a tennis player is punching hard during training in an outdoor sports event at sunset with teammates hugging"
+    },
+    {
+      "tag": "a tennis player is stretching before exercise at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a tennis player is stretching before exercise in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a tennis player is stretching before exercise in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a tennis player is stretching before exercise in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win in a training field under rain with a bicycle helmet on"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win in a training field under rain with gym equipment in the background"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win inside a gym during workout with sweat and towel"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a basketball court in mid-game with a bicycle helmet on"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a basketball court in mid-game with water splashing around"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a beach during morning workout with a bicycle helmet on"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a beach during morning workout with a yoga mat"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a beach during morning workout with sports shoes and uniform"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a mountain trail during a run with a bicycle helmet on"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a running track during a race with a bicycle helmet on"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a soccer field during a match with a bicycle helmet on"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a soccer field during a match with a yoga mat"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a soccer field during a match with teammates hugging"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a yoga mat in natural light with a bicycle helmet on"
+    },
+    {
+      "tag": "a weightlifter is celebrating a win on a yoga mat in natural light with a stopwatch or timer"
+    },
+    {
+      "tag": "a weightlifter is crossing the finish line on a tennis court during a rally with gym equipment in the background"
+    },
+    {
+      "tag": "a weightlifter is exhausted after a match in a locker room post-game moment with a skipping rope mid-jump"
+    },
+    {
+      "tag": "a weightlifter is exhausted after a match in a locker room post-game moment with water splashing around"
+    },
+    {
+      "tag": "a weightlifter is exhausted after a match on a running track during a race with water splashing around"
+    },
+    {
+      "tag": "a weightlifter is punching hard during training at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a weightlifter is punching hard during training at a stadium filled with crowd with teammates hugging"
+    },
+    {
+      "tag": "a weightlifter is punching hard during training on a soccer field during a match with teammates hugging"
+    },
+    {
+      "tag": "a weightlifter is stretching before exercise on a running track during a race with gym equipment in the background"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win at a stadium filled with crowd with a dumbbell or barbell"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win at a stadium filled with crowd with a trophy or medal"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win at a stadium filled with crowd with boxing gloves"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win at a stadium filled with crowd with gym equipment in the background"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win at a stadium filled with crowd with sports shoes and uniform"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win at a stadium filled with crowd with teammates hugging"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win at a stadium filled with crowd with water splashing around"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a boxing ring under bright lights with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a locker room post-game moment with gym equipment in the background"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a locker room post-game moment with sports shoes and uniform"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a locker room post-game moment with water splashing around"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a training field under rain with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a training field under rain with a stopwatch or timer"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a training field under rain with a trophy or medal"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a training field under rain with gym equipment in the background"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in a training field under rain with sports shoes and uniform"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in an outdoor sports event at sunset with sports shoes and uniform"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win in an outdoor sports event at sunset with water splashing around"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win inside a gym during workout with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a basketball court in mid-game with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a basketball court in mid-game with a dumbbell or barbell"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a basketball court in mid-game with a stopwatch or timer"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a basketball court in mid-game with a tennis racket in motion"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a basketball court in mid-game with a trophy or medal"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a basketball court in mid-game with boxing gloves"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a basketball court in mid-game with gym equipment in the background"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a basketball court in mid-game with water splashing around"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a beach during morning workout with gym equipment in the background"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a beach during morning workout with sports shoes and uniform"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a podium receiving a medal with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a soccer field during a match with a ball mid-air"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a soccer field during a match with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a soccer field during a match with a dumbbell or barbell"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a soccer field during a match with a stopwatch or timer"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a soccer field during a match with a tennis racket in motion"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a soccer field during a match with a trophy or medal"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a soccer field during a match with boxing gloves"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a soccer field during a match with gym equipment in the background"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a soccer field during a match with teammates hugging"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a soccer field during a match with water splashing around"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a tennis court during a rally with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a tennis court during a rally with a stopwatch or timer"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a tennis court during a rally with a trophy or medal"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a tennis court during a rally with gym equipment in the background"
+    },
+    {
+      "tag": "a yoga instructor is celebrating a win on a tennis court during a rally with sports shoes and uniform"
+    },
+    {
+      "tag": "a yoga instructor is crossing the finish line at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a yoga instructor is crossing the finish line on a soccer field during a match with a ball mid-air"
+    },
+    {
+      "tag": "a yoga instructor is exhausted after a match at a stadium filled with crowd with a ball mid-air"
+    },
+    {
+      "tag": "a yoga instructor is exhausted after a match in a locker room post-game moment with a ball mid-air"
+    },
+    {
+      "tag": "a yoga instructor is exhausted after a match in a locker room post-game moment with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is exhausted after a match in a locker room post-game moment with a stopwatch or timer"
+    },
+    {
+      "tag": "a yoga instructor is exhausted after a match in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a yoga instructor is exhausted after a match on a basketball court in mid-game with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is exhausted after a match on a podium receiving a medal with a ball mid-air"
+    },
+    {
+      "tag": "a yoga instructor is exhausted after a match on a soccer field during a match with a ball mid-air"
+    },
+    {
+      "tag": "a yoga instructor is exhausted after a match on a soccer field during a match with a stopwatch or timer"
+    },
+    {
+      "tag": "a yoga instructor is exhausted after a match on a tennis court during a rally with a ball mid-air"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training at a stadium filled with crowd with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training at a stadium filled with crowd with a stopwatch or timer"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training at a stadium filled with crowd with a trophy or medal"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training at a stadium filled with crowd with water splashing around"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training in a locker room post-game moment with a trophy or medal"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training in a locker room post-game moment with gym equipment in the background"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training in a training field under rain with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training in a training field under rain with a stopwatch or timer"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training in a training field under rain with a trophy or medal"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training on a basketball court in mid-game with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training on a soccer field during a match with a bicycle helmet on"
+    },
+    {
+      "tag": "a yoga instructor is punching hard during training on a tennis court during a rally with a bicycle helmet on"
+    },
+    {
+      "tag": "a basketball player is clapping or cheering on a yoga mat in natural light with gym equipment in the background"
+    }
+  ]
+}

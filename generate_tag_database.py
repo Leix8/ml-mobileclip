@@ -19,6 +19,8 @@ import open_clip
 import torch
 import os
 import numpy as np
+import heapq
+
 from torch.cuda.amp import autocast
 import torch.nn.functional as F
 from typing import List, Dict, Any, Optional, Callable
@@ -36,7 +38,7 @@ from tqdm import tqdm
 subjects = [
     "a dog", "a cat", "a puppy", "a kitten", "two dogs", "two cats",
     "a corgi", "a husky", "a golden retriever", "a small dog", "a large dog",
-    # "a small cat", "a pet", "a domestic animal"
+    "a small cat", "a pet", "a domestic animal"
 ]
 
 actions = [
@@ -44,26 +46,26 @@ actions = [
     "is running", "is jumping", "is walking", "is chasing", "is rolling",
     # # Interaction
     "is playing", "is fetching", "is tugging a toy", "is biting", "is scratching",
-    # "is licking its paw", "is sniffing something", "is shaking its body",
-    # # Emotion / Expression
-    # "is barking", "is meowing", "is wagging its tail", "is stretching",
-    # "is yawning", "is curious", "is watching something",
-    # # Static / Rest
-    # "is sleeping", "is lying down", "is sitting", "is resting", "is staying still"
+    "is licking its paw", "is sniffing something", "is shaking its body",
+    # Emotion / Expression
+    "is barking", "is meowing", "is wagging its tail", "is stretching",
+    "is yawning", "is curious", "is watching something",
+    # Static / Rest
+    "is sleeping", "is lying down", "is sitting", "is resting", "is staying still"
 ]
 
 scenes = [
     "on the grass", "in the park", "on the beach", "in the living room",
     "in the bedroom", "in the kitchen", "in the backyard", "in the garden",
-    # "on the sofa", "on the bed", "by the window", "on the floor",
-    # "in the yard", "at home", "outdoors", "under the table"
+    "on the sofa", "on the bed", "by the window", "on the floor",
+    "in the yard", "at home", "outdoors", "under the table"
 ]
 
 objects = [
     "with a ball", "with a frisbee", "with a toy", "with a stick", "with a bone",
     "with a rope", "with a plush toy", "with a pillow", "with food", "with a bowl",
-    # "chasing another pet", "playing with a person", "looking at the camera",
-    # "being brushed", "taking a bath", "wearing a collar", "next to its owner"
+    "chasing another pet", "playing with a person", "looking at the camera",
+    "being brushed", "taking a bath", "wearing a collar", "next to its owner"
 ]
 
 
@@ -270,79 +272,157 @@ def cluster_and_prune_prompts(
     device: str = "cuda",
     context_length: int = 77,
     use_amp: bool = True,
-    similarity_threshold: float = 0.88,
     max_output: Optional[int] = None,
     return_info: bool = False,
+    topk_per_row: int = 0,       # 0 => full O(N^2). For large N, set e.g. 64 for memory savings.
+    progress: bool = True,
 ) -> List[str] | Dict[str, Any]:
     """
-    Cluster prompts by cosine similarity (same text geometry as your downstream MobileCLIP2),
-    pick one representative per cluster (closest to centroid), optionally cap the output.
+    Greedy agglomerative clustering by highest cosine similarity pairs until
+    the number of clusters <= max_output. No fixed threshold is used.
 
-    similarity_threshold: merge prompts if cosine >= threshold (0.85–0.92 typical).
-    max_output: if set, keep representatives from the largest clusters first.
+    - Start with each prompt as its own cluster.
+    - Maintain a centroid for each cluster (normalized sum of member embeddings).
+    - Use a max-heap of pairwise similarities (cosine on normalized vectors).
+    - Iteratively merge the highest-similarity pair whose clusters are still active.
+    - Stop when the number of clusters <= max_output.
+    - Representative for each cluster = member closest to the cluster centroid.
+
+    Notes:
+      * For N <= ~2000, full pairwise is fine (O(N^2) memory). For larger N,
+        set `topk_per_row` (e.g., 32–64) to push only per-row top-K candidate pairs.
+      * Embeddings are assumed L2-normalized. If not, they are normalized here.
     """
     N = len(prompts)
     if N == 0:
         return [] if not return_info else {"optimized": [], "clusters": [], "reps_idx": []}
 
-    # 1) Embed with your MobileCLIP2 text encoder
+    if (max_output is None) or (max_output >= N):
+        return prompts if not return_info else {
+            "optimized": prompts, "clusters": [[i] for i in range(N)], "reps_idx": list(range(N))
+        }
+
+    # 1) Encode prompts to embeddings (N, D), ideally already normalized
     E = _embed_prompts_with_mobileclip2(
-        prompts, model, tokenizer, device, context_length,
-        use_amp=use_amp
-    )  # (N, D), L2-normalized
-    print(f"[INFO] Prompt embeddings shape: {E.shape}")
+        prompts, model, tokenizer, device, context_length, use_amp=use_amp
+    ).astype(np.float32)
+    # Safety: normalize
+    E /= (np.linalg.norm(E, axis=1, keepdims=True) + 1e-12)
 
-    # 2) Cosine similarity graph + union-find clustering
-    #    (cosine on normalized vectors is just dot product)
-    uf = _UnionFind(N)
-    # Compute in blocks to keep memory modest if N is large
-    block = 1024
-    for i0 in tqdm(range(0, N, block), desc="Processing blocks to optimize prompts"):
-        i1 = min(N, i0 + block)
-        Ei = E[i0:i1]                # (Bi, D)
-        # Full sim against all j>i0 to avoid double union operations
-        S = Ei @ E.T                 # (Bi, N) cosine similarities
-        print(f"probing similarity values in block {i0}:{i1}, min={S.min():.4f}, max={S.max():.4f}, mean={S.mean():.4f}, std={S.std():.4f}, sample vals={S.ravel()[::len(S.ravel())//10]}")
-        for ii in range(i1 - i0):
-            i = i0 + ii
-            # only consider j > i to avoid duplicate unions
-            sims = S[ii, i+1:]
-            js = np.where(sims >= similarity_threshold)[0]
-            for offset in js:
-                j = i + 1 + int(offset)
-                uf.union(i, j)
-    print(f"check union-find parents: {[uf.find(i) for i in range(N)]}")
+    # 2) Initialize clusters: each item is its own cluster
+    #    We'll keep: active flags, members list, and centroid sums (unnormalized),
+    #    where centroid = normalize(sum_vec).
+    members = {i: [i] for i in range(N)}
+    sums = {i: E[i].copy() for i in range(N)}  # unnormalized sum of embeddings
+    active = {i: True for i in range(N)}
+    parent = list(range(N))  # disjoint-set-like "current id" (not strictly union-find, but helpful)
 
-    # 3) Collect clusters
-    root_to_members: Dict[int, List[int]] = {}
-    for i in range(N):
-        r = uf.find(i)
-        root_to_members.setdefault(r, []).append(i)
-    clusters = list(root_to_members.values())
+    def find_root(x: int) -> int:
+        # 'parent' here only collapses trivial chains from merges
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
 
-    # 4) Pick representatives: closest to centroid (max cosine to centroid)
-    reps_idx = []
-    print(f"check size of clusters: {[len(m) for m in clusters]}")
-    for idxs in clusters:
-        sub = E[idxs]                       # (k, D)
-        centroid = sub.mean(axis=0, keepdims=True)
+    # 3) Build a max-heap of pairwise similarities
+    heap: list[tuple[float, int, int]] = []  # stores (-sim, i, j)
+    def push_pair(i: int, j: int):
+        if i == j: 
+            return
+        # cosine between centroids (use normalized sums)
+        ci = sums[i] / (np.linalg.norm(sums[i]) + 1e-12)
+        cj = sums[j] / (np.linalg.norm(sums[j]) + 1e-12)
+        sim = float(ci @ cj)
+        heapq.heappush(heap, (-sim, i, j))
+
+    if topk_per_row and topk_per_row > 0 and N > 2048:
+        # Memory-friendly: push only top-K neighbors per row initially
+        # (We’ll keep updating similarities against the merged cluster later.)
+        for i in tqdm(range(N), disable=not progress, desc="Init topK heap"):
+            sims = E @ E[i]  # (N,)
+            print(f"probing original sims: mean={sims.mean():.4f}, max={sims.max():.4f}, min={sims.min():.4f}, std={sims.std():.4f}, sample_value ={sims[N//2]:.4f}")
+            sims[i] = -1.0
+            if topk_per_row < N - 1:
+                idxs = np.argpartition(-sims, topk_per_row)[:topk_per_row]
+            else:
+                idxs = np.arange(N); idxs = idxs[idxs != i]
+            for j in idxs:
+                if j > i:
+                    heapq.heappush(heap, (-float(sims[j]), i, j))
+    else:
+        # Full O(N^2) initialization
+        # Compute in blocks to limit peak memory if needed
+        B = 2048
+        for i0 in tqdm(range(0, N, B), disable=not progress, desc="Init full heap"):
+            i1 = min(N, i0 + B)
+            block_vecs = E[i0:i1]        # (B, D)
+            S = block_vecs @ E.T         # (B, N)
+            for ii in range(i1 - i0):
+                i = i0 + ii
+                # Only upper triangle to avoid duplicates
+                S[ii, :i+1] = -1.0
+                js = np.where(S[ii] > 0)[0]  # speed tweak: only push positive sims
+                for j in js:
+                    heapq.heappush(heap, (-float(S[ii, j]), i, j))
+
+    # 4) Greedy merges until cluster count <= max_output
+    cluster_count = N
+
+    def merge(a: int, b: int) -> int:
+        """Merge cluster b into a. Returns the surviving root id."""
+        # Choose larger cluster as the survivor to keep ids more stable
+        if len(members[b]) > len(members[a]):
+            a, b = b, a
+        # Merge b -> a
+        members[a].extend(members[b])
+        sums[a] += sums[b]
+        active[b] = False
+        parent[b] = a
+        # Recompute similarities for new 'a' against all active clusters
+        for c in list(members.keys()):
+            if c == a or not active.get(c, False):
+                continue
+            push_pair(a, c)
+        return a
+
+    # Keep merging best pairs while we have too many clusters
+    with tqdm(total=cluster_count, disable=not progress, desc="Merging clusters") as pbar:
+        while cluster_count > max_output and heap:
+            neg_sim, i, j = heapq.heappop(heap)
+            i = find_root(i)
+            j = find_root(j)
+            if i == j or not active.get(i, False) or not active.get(j, False):
+                continue  # stale pair, skip
+            # Merge these two clusters
+            merge(i, j)
+            cluster_count -= 1
+            pbar.update(1)  # Update progress bar
+    
+    # 5) Collect active clusters
+    final_clusters: List[List[int]] = [sorted(v) for k, v in members.items() if active.get(k, False)]
+
+    # 6) Representatives: pick item closest to centroid
+    reps_idx: List[int] = []
+    for k in final_clusters:
+        sub = E[k]  # (m, D)
+        centroid = sums[find_root(k[0])]
         centroid = centroid / (np.linalg.norm(centroid) + 1e-12)
-        sims = (sub @ centroid.T).ravel()   # cosine to centroid
-        best_local = idxs[int(np.argmax(sims))]
-        reps_idx.append(best_local)
-
-    # 5) Optional cap: keep reps from largest clusters first
-    if max_output is not None and len(reps_idx) > max_output:
-        sizes = [len(m) for m in clusters]
-        order = np.argsort(sizes)[::-1]
-        reps_idx = [reps_idx[i] for i in order[:max_output]]
+        sims = sub @ centroid
+        reps_idx.append(k[int(np.argmax(sims))])
 
     reps_idx = sorted(set(reps_idx))
     optimized = [prompts[i] for i in reps_idx]
 
+    # reconstruct the sim matrix of final picked prompts for analysis (optional)
+    # calculate the mean, min, max, std statics for the final similarity matrix and probe
+    final_embs = E[reps_idx]  # (M, D)
+    S_final = final_embs @ final_embs.T  # (M, M)
+    print(f"[INFO] Final similarity matrix stats: mean={S_final.mean():.4f}, max={S_final.max():.4f}, min={S_final.min():.4f}, std={S_final.std():.4f}, sample_value ={S_final[len(S_final)//2, len(S_final)//2]:.4f}")
+
     if return_info:
-        return {"optimized": optimized, "clusters": clusters, "reps_idx": reps_idx}
+        return {"optimized": optimized, "clusters": final_clusters, "reps_idx": reps_idx}
     return optimized
+
 # -----------------------------------------------------
 # 4. Generate and Save JSON Database
 # -----------------------------------------------------
@@ -380,8 +460,7 @@ def main():
     device=args.device,
     context_length=77,          # match your runtime
     use_amp=use_amp,
-    similarity_threshold=0.95,  # tune 0.85–0.92
-    max_output=10000            # or set e.g. 1000
+    max_output=1000            # or set e.g. 1000
     )
     print(f"pruned from {len(prompts)} initial prompts → {len(optimized)} after cluster pruning")
 

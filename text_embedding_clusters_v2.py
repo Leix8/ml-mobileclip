@@ -185,6 +185,152 @@ prompt_components = {
             "with sports shoes and uniform", "with gym equipment in the background", 
             "with water splashing around"
         ]
+    }, 
+    "fishing_scene": {
+        "subjects": [
+            "an angler", "a fisherman", "a fisherwoman", "a person fishing",
+            "two people fishing", "a fishing partner", "a guide and a client",
+            "a person holding a fishing rod", "a person wearing waders",
+            "a person on a boat", "a person by the shoreline", 
+            "a person standing in shallow water",
+            "a first-person perspective of the angler", 
+            "a GoPro first-person view", "a drone view of an angler"
+        ],
+        "actions": [
+            "is casting a line", "is reeling in quickly", "is reeling smoothly",
+            "is setting the hook", "is fighting a fish", 
+            "is struggling with a strong pull",
+            "is landing a fish", "is lifting the fish out of the water",
+            "is releasing a fish", "is holding a fish up for the camera",
+            "is reacting excitedly", "is shouting in excitement",
+            "is carefully unhooking a fish",
+            "is watching the bobber dip", "is adjusting the reel drag",
+            "is waiting patiently", "is checking the bait",
+            "is pulling the rod upward", "is tightening the fishing line",
+            
+            "is experiencing a sudden rod bend", 
+            "is hit by a sudden bite",
+            "is reacting to a splash",
+            
+            "is moving the boat", "is paddling", "is positioning the boat"
+        ],
+        "scenarios": [
+            "on a lake", "on a river", "on a calm pond", "on the ocean",
+            "on a fishing boat", "on a kayak", "on a small skiff",
+            "from a pier", "from a dock", "from the beach",
+            "in shallow water", "in waders", "standing in the river current",
+            "on a rocky shoreline", "near tall grass", "near reeds",
+            "at sunrise", "at sunset", "on a cloudy day",
+            "in windy conditions", "in bright sunlight",
+            
+            "from a first-person camera", "from a chest-mounted GoPro",
+            "from a head-mounted camera", "from a drone overhead",
+            
+            "during a strong splash", "during a fast reel-in",
+            "during the hook-set moment", "during a rod-bending fight"
+        ],
+        "objects": [
+            "with a fishing rod", "with a spinning reel", "with a baitcaster",
+            "with a fly rod", "with a lure", "with a baited hook",
+            "with a bobber", "with a net", "with a tackle box",
+            "holding a fish", "with a fish jumping", "with a fish splashing water",
+            "with a large fish", "with a small fish", "with a fish near the surface",
+            "with the line tight", "with the rod bending heavily",
+            "with water splashing upward", "with the hook visible",
+            "with a hook-set moment", "with the lure visible in water",
+            
+            "with a boat motor", "with paddles", "with a cooler",
+            "with fishing gear scattered nearby"
+        ]
+    }, 
+    "basketball_scene": {
+        "subjects": [
+            "a basketball player", "a person playing basketball", 
+            "a person dribbling", "a person shooting a basketball",
+            "a defender guarding closely", "an offensive player driving forward",
+            "two people playing one-on-one", "a group playing pick-up basketball",
+            "a coach and a player", "a small group doing drills",
+            "a family playing basketball", "kids playing basketball",
+            "a high school basketball team", "a college basketball player",
+            "a referee on the court", "a bench of teammates cheering",
+            
+            "a person wearing a jersey", "a person wearing sportswear",
+            "a person jumping for a shot", "a person dunking",
+            
+            "a first-person perspective of dribbling", 
+            "a GoPro first-person view of shooting",
+            "a drone view of a full court"
+        ],
+        
+        "actions": [
+            "is dribbling quickly", "is dribbling between the legs",
+            "is dribbling behind the back", "is crossing over an opponent",
+            "is driving toward the basket", "is making a fast break",
+            "is passing the ball", "is performing a no-look pass",
+            "is shooting a three-pointer", "is shooting a jump shot",
+            "is attempting a layup", "is performing a reverse layup",
+            "is dunking the ball", "is attempting an alley-oop",
+            "is blocking a shot", "is contesting a shot",
+            "is stealing the ball", "is diving for a loose ball",
+            "is grabbing a rebound", "is boxing out an opponent",
+            
+            "is celebrating after scoring", "is shouting in excitement",
+            "is reacting to a missed shot", "is calling for the ball",
+            "is signaling a play", "is defending tightly",
+            
+            "is practicing dribbling drills", "is practicing shooting drills",
+            "is practicing free throws", "is running conditioning drills",
+            
+            "is waiting on the free-throw line", 
+            "is watching a teammate shoot",
+            "is checking the shot clock",
+            
+            "is running back on defense", "is hustling to the ball"
+        ],
+        
+        "scenarios": [
+            "on an indoor basketball court", "on an outdoor court",
+            "in a school gym", "on a neighborhood court",
+            "in a driveway at home", "in a public park",
+            "in a college arena", "in a large stadium",
+            "on a small half-court", "on a full-sized court",
+            
+            "during a pick-up game", "during a practice session",
+            "during a team scrimmage", "during a school match",
+            "during a competitive tournament", "during a championship game",
+            
+            "at sunset", "at night under court lights", 
+            "in bright daylight", "in a noisy packed gym",
+            
+            "from a first-person camera", "from a chest GoPro",
+            "from a head-mounted camera", "from a drone view",
+            
+            "during a fast break", "during a blocked shot",
+            "during a game-winning shot attempt",
+            "during a steal and transition play",
+            "during a rebound battle", "during an intense defensive play"
+        ],
+        
+        "objects": [
+            "with a basketball", "with a hoop", "with a backboard",
+            "with a net swishing", "with a loose ball on the floor",
+            "with the ball mid-air", "with a scoreboard visible",
+            "with a shot clock counting down", "with cones for drills",
+            
+            "with a player wearing a jersey", "with matching uniforms",
+            "with a defender's hand extended", "with both feet off the ground",
+            "with the ball about to hit the rim", "with the ball bouncing",
+            "with sneakers squeaking on the floor", "with chalk dust or sweat flying",
+            
+            "with a crowd cheering", "with a bench celebrating",
+            "with a coach giving instructions", "with a referee signaling",
+            
+            "with a clean backboard", "with a glass backboard reflection",
+            "with a chain net", "with an outdoor metal hoop",
+            
+            "with the ball spinning", "with a swish moment",
+            "with the net moving", "with the rim shaking after a dunk"
+        ]
     }
 }
 
@@ -809,14 +955,14 @@ if __name__ == "__main__":
     parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip2_s4.pt")
     parser.add_argument("--output_dir", type=str, default="./experiments/text_embedding_cluster")
     parser.add_argument("--projection", type = str, default = "pca", choices=["pca", "tsne", "umap"])
-    parser.add_argument('--max_samples', type=int, default=200000, help='Maximum number of prompts to generate.')
+    parser.add_argument('--max_samples', type=int, default=400000, help='Maximum number of prompts to generate.')
     parser.add_argument("--seed", type=int, default=1234)
     parser.add_argument("--no_amp", action="store_true")
     parser.add_argument("--device", type=str, default="cuda:0")
     parser.add_argument("--eps", type=float, default=0.05)
     parser.add_argument("--min_points", type=int, default=2)
     parser.add_argument("--metric", type=str, default="cosine")
-    parser.add_argument("--scene", type=str, default="pet_scene", choices=["test_scene", "pet_scene", "family_scene", "daily_life_scene", "sport_and_workout_scene"])
+    parser.add_argument("--scene", type=str, default="pet_scene", choices=["test_scene", "pet_scene", "family_scene", "daily_life_scene", "sport_and_workout_scene", "fishing_scene", "basketball_scene"])
     args = parser.parse_args()
 
     main(args)

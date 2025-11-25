@@ -1,0 +1,1666 @@
+{
+  "metadata": {
+    "scene": "family_scene",
+    "generator": "family_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-11T21:40:05.078792",
+    "eps": 0.07,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 551
+  },
+  "prompts": [
+    {
+      "tag": "a baby is celebrating a birthday at a birthday party with a TV in the background"
+    },
+    {
+      "tag": "a baby is celebrating a birthday at a playground with a TV in the background"
+    },
+    {
+      "tag": "a baby is celebrating a birthday at the beach with a TV in the background"
+    },
+    {
+      "tag": "a baby is celebrating a birthday at the beach with a tablet or phone"
+    },
+    {
+      "tag": "a baby is celebrating a birthday on a city street with a TV in the background"
+    },
+    {
+      "tag": "a baby is celebrating a birthday on a city street with a bicycle"
+    },
+    {
+      "tag": "a baby is celebrating a birthday on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a baby is celebrating a birthday on a city street with a tablet or phone"
+    },
+    {
+      "tag": "a baby is cooking at a playground with a TV in the background"
+    },
+    {
+      "tag": "a baby is cooking at a playground with a ball"
+    },
+    {
+      "tag": "a baby is cooking at a playground with a book"
+    },
+    {
+      "tag": "a baby is cooking at a playground with a tablet or phone"
+    },
+    {
+      "tag": "a baby is cooking at a playground with balloons"
+    },
+    {
+      "tag": "a baby is cooking at a playground with holiday decorations"
+    },
+    {
+      "tag": "a baby is cooking at a playground with wrapped gifts"
+    },
+    {
+      "tag": "a baby is cooking at the beach with a TV in the background"
+    },
+    {
+      "tag": "a baby is cooking at the beach with a ball"
+    },
+    {
+      "tag": "a baby is cooking at the beach with a book"
+    },
+    {
+      "tag": "a baby is cooking at the beach with a tablet or phone"
+    },
+    {
+      "tag": "a baby is cooking at the beach with a toy"
+    },
+    {
+      "tag": "a baby is cooking at the beach with balloons"
+    },
+    {
+      "tag": "a baby is cooking at the beach with holiday decorations"
+    },
+    {
+      "tag": "a baby is cooking at the beach with wrapped gifts"
+    },
+    {
+      "tag": "a baby is cooking in the backyard with a book"
+    },
+    {
+      "tag": "a baby is cooking on a city street with a TV in the background"
+    },
+    {
+      "tag": "a baby is cooking on a city street with a ball"
+    },
+    {
+      "tag": "a baby is cooking on a city street with a birthday cake"
+    },
+    {
+      "tag": "a baby is cooking on a city street with a book"
+    },
+    {
+      "tag": "a baby is cooking on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a baby is cooking on a city street with a tablet or phone"
+    },
+    {
+      "tag": "a baby is cooking on a city street with balloons"
+    },
+    {
+      "tag": "a baby is cooking on a city street with holiday decorations"
+    },
+    {
+      "tag": "a baby is cooking on a city street with wrapped gifts"
+    },
+    {
+      "tag": "a baby is decorating for a holiday at a playground with a tablet or phone"
+    },
+    {
+      "tag": "a baby is decorating for a holiday on a city street with a TV in the background"
+    },
+    {
+      "tag": "a baby is eating together on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a baby is holding hands at a birthday party with a book"
+    },
+    {
+      "tag": "a baby is holding hands at a family gathering with a book"
+    },
+    {
+      "tag": "a baby is holding hands at a playground with a book"
+    },
+    {
+      "tag": "a baby is holding hands at a school event with a book"
+    },
+    {
+      "tag": "a baby is holding hands at a school event with a tablet or phone"
+    },
+    {
+      "tag": "a baby is holding hands at a school event with a toy"
+    },
+    {
+      "tag": "a baby is holding hands at the beach with a TV in the background"
+    },
+    {
+      "tag": "a baby is holding hands at the beach with holiday decorations"
+    },
+    {
+      "tag": "a baby is holding hands at the dining table with a TV in the background"
+    },
+    {
+      "tag": "a baby is holding hands at the dining table with a book"
+    },
+    {
+      "tag": "a baby is holding hands at the dining table with a picnic blanket"
+    },
+    {
+      "tag": "a baby is holding hands at the dining table with holiday decorations"
+    },
+    {
+      "tag": "a baby is holding hands in a bedroom with a book"
+    },
+    {
+      "tag": "a baby is holding hands in a bedroom with a picnic blanket"
+    },
+    {
+      "tag": "a baby is holding hands in a bedroom with holiday decorations"
+    },
+    {
+      "tag": "a baby is holding hands in the kitchen with a book"
+    },
+    {
+      "tag": "a baby is holding hands in the kitchen with wrapped gifts"
+    },
+    {
+      "tag": "a baby is holding hands in the park with a book"
+    },
+    {
+      "tag": "a baby is holding hands on a city street with a book"
+    },
+    {
+      "tag": "a baby is holding hands on vacation outdoors with a TV in the background"
+    },
+    {
+      "tag": "a baby is hugging at a birthday party with a book"
+    },
+    {
+      "tag": "a baby is hugging at a playground with a book"
+    },
+    {
+      "tag": "a baby is hugging at a school event with a toy"
+    },
+    {
+      "tag": "a baby is hugging at a school event with food on the table"
+    },
+    {
+      "tag": "a baby is hugging at the dining table with a TV in the background"
+    },
+    {
+      "tag": "a baby is hugging at the dining table with a book"
+    },
+    {
+      "tag": "a baby is hugging in a bedroom with a picnic blanket"
+    },
+    {
+      "tag": "a baby is hugging in the backyard with a book"
+    },
+    {
+      "tag": "a baby is hugging in the kitchen with a book"
+    },
+    {
+      "tag": "a baby is hugging on a city street with a TV in the background"
+    },
+    {
+      "tag": "a baby is hugging on a city street with a bicycle"
+    },
+    {
+      "tag": "a baby is hugging on a city street with a book"
+    },
+    {
+      "tag": "a baby is hugging on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a baby is hugging on a city street with a tablet or phone"
+    },
+    {
+      "tag": "a baby is hugging on a city street with food on the table"
+    },
+    {
+      "tag": "a baby is jumping at a school event with a book"
+    },
+    {
+      "tag": "a baby is jumping at the dining table with a book"
+    },
+    {
+      "tag": "a baby is laughing at a school event with a book"
+    },
+    {
+      "tag": "a baby is laughing at a school event with a tablet or phone"
+    },
+    {
+      "tag": "a baby is laughing at a school event with a toy"
+    },
+    {
+      "tag": "a baby is laughing at a school event with food on the table"
+    },
+    {
+      "tag": "a baby is laughing at the dining table with a book"
+    },
+    {
+      "tag": "a baby is laughing on a city street with a book"
+    },
+    {
+      "tag": "a baby is opening gifts at the beach with a TV in the background"
+    },
+    {
+      "tag": "a baby is opening gifts on a city street with a TV in the background"
+    },
+    {
+      "tag": "a baby is reading together on a city street with holiday decorations"
+    },
+    {
+      "tag": "a baby is taking a selfie at a birthday party with a picnic blanket"
+    },
+    {
+      "tag": "a baby is taking a selfie at a playground with holiday decorations"
+    },
+    {
+      "tag": "a baby is taking a selfie at a playground with wrapped gifts"
+    },
+    {
+      "tag": "a baby is taking a selfie at a school event with a TV in the background"
+    },
+    {
+      "tag": "a baby is taking a selfie at a school event with a ball"
+    },
+    {
+      "tag": "a baby is taking a selfie at a school event with a toy"
+    },
+    {
+      "tag": "a baby is taking a selfie at the beach with a toy"
+    },
+    {
+      "tag": "a baby is taking a selfie at the beach with wrapped gifts"
+    },
+    {
+      "tag": "a baby is taking a selfie at the dining table with a ball"
+    },
+    {
+      "tag": "a baby is taking a selfie at the dining table with a bicycle"
+    },
+    {
+      "tag": "a baby is taking a selfie at the dining table with wrapped gifts"
+    },
+    {
+      "tag": "a baby is taking a selfie in a bedroom with a toy"
+    },
+    {
+      "tag": "a baby is taking a selfie in the backyard with a toy"
+    },
+    {
+      "tag": "a baby is taking a selfie in the backyard with food on the table"
+    },
+    {
+      "tag": "a baby is taking a selfie in the kitchen with a bicycle"
+    },
+    {
+      "tag": "a baby is taking a selfie in the kitchen with wrapped gifts"
+    },
+    {
+      "tag": "a baby is taking a selfie in the park with wrapped gifts"
+    },
+    {
+      "tag": "a baby is taking a selfie on a city street with a bicycle"
+    },
+    {
+      "tag": "a baby is taking a selfie on a city street with a birthday cake"
+    },
+    {
+      "tag": "a baby is taking a selfie on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a baby is taking a selfie on a city street with a stroller"
+    },
+    {
+      "tag": "a baby is taking a selfie on a city street with a toy"
+    },
+    {
+      "tag": "a baby is taking a selfie on a city street with food on the table"
+    },
+    {
+      "tag": "a baby is taking a selfie on a city street with holiday decorations"
+    },
+    {
+      "tag": "a baby is taking a selfie on a city street with wrapped gifts"
+    },
+    {
+      "tag": "a baby is taking a selfie on vacation outdoors with a toy"
+    },
+    {
+      "tag": "a baby is taking a selfie on vacation outdoors with wrapped gifts"
+    },
+    {
+      "tag": "a baby is walking together at a school event with a book"
+    },
+    {
+      "tag": "a baby is watching TV at the beach with a ball"
+    },
+    {
+      "tag": "a baby is watching TV on a city street with a ball"
+    },
+    {
+      "tag": "a baby is watching TV on a city street with a bicycle"
+    },
+    {
+      "tag": "a baby is watching TV on a city street with a birthday cake"
+    },
+    {
+      "tag": "a baby is watching TV on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a baby is watching TV on a city street with a tablet or phone"
+    },
+    {
+      "tag": "a baby is watching TV on a city street with balloons"
+    },
+    {
+      "tag": "a baby is watching TV on a city street with food on the table"
+    },
+    {
+      "tag": "a family with a pet is celebrating a birthday at the beach with a TV in the background"
+    },
+    {
+      "tag": "a family with a pet is celebrating a birthday on a city street with a TV in the background"
+    },
+    {
+      "tag": "a family with a pet is cooking on a city street with a TV in the background"
+    },
+    {
+      "tag": "a family with a pet is reading together on a city street with a ball"
+    },
+    {
+      "tag": "a family with a pet is taking a selfie on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a family with a pet is taking a selfie on a city street with food on the table"
+    },
+    {
+      "tag": "a family with a pet is taking a selfie on a city street with holiday decorations"
+    },
+    {
+      "tag": "a family with a pet is watching TV on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a family with a pet is watching TV on a city street with balloons"
+    },
+    {
+      "tag": "a father and child is celebrating a birthday at a playground with a tablet or phone"
+    },
+    {
+      "tag": "a father and child is celebrating a birthday at the beach with a TV in the background"
+    },
+    {
+      "tag": "a father and child is celebrating a birthday on a city street with a TV in the background"
+    },
+    {
+      "tag": "a father and child is cooking at a playground with a TV in the background"
+    },
+    {
+      "tag": "a father and child is cooking at the beach with holiday decorations"
+    },
+    {
+      "tag": "a father and child is cooking at the beach with wrapped gifts"
+    },
+    {
+      "tag": "a father and child is cooking on a city street with a TV in the background"
+    },
+    {
+      "tag": "a father and child is cooking on a city street with a ball"
+    },
+    {
+      "tag": "a father and child is cooking on a city street with balloons"
+    },
+    {
+      "tag": "a father and child is cooking on a city street with holiday decorations"
+    },
+    {
+      "tag": "a father and child is cooking on a city street with wrapped gifts"
+    },
+    {
+      "tag": "a father and child is eating together on a city street with a TV in the background"
+    },
+    {
+      "tag": "a father and child is holding hands at a school event with a book"
+    },
+    {
+      "tag": "a father and child is holding hands at the dining table with a TV in the background"
+    },
+    {
+      "tag": "a father and child is holding hands at the dining table with a book"
+    },
+    {
+      "tag": "a father and child is holding hands in a bedroom with a book"
+    },
+    {
+      "tag": "a father and child is holding hands on a city street with a TV in the background"
+    },
+    {
+      "tag": "a father and child is hugging at a playground with a TV in the background"
+    },
+    {
+      "tag": "a father and child is hugging at the dining table with a book"
+    },
+    {
+      "tag": "a father and child is hugging in the backyard with a book"
+    },
+    {
+      "tag": "a father and child is hugging in the kitchen with a book"
+    },
+    {
+      "tag": "a father and child is hugging on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a father and child is jumping at a school event with food on the table"
+    },
+    {
+      "tag": "a father and child is laughing at the dining table with a book"
+    },
+    {
+      "tag": "a father and child is laughing in a bedroom with a book"
+    },
+    {
+      "tag": "a father and child is laughing on a city street with a TV in the background"
+    },
+    {
+      "tag": "a father and child is laughing on a city street with a book"
+    },
+    {
+      "tag": "a father and child is laughing on a city street with a toy"
+    },
+    {
+      "tag": "a father and child is laughing on a city street with food on the table"
+    },
+    {
+      "tag": "a father and child is opening gifts at the beach with a TV in the background"
+    },
+    {
+      "tag": "a father and child is reading together on a city street with a ball"
+    },
+    {
+      "tag": "a father and child is taking a selfie at a playground with a birthday cake"
+    },
+    {
+      "tag": "a father and child is taking a selfie at a playground with food on the table"
+    },
+    {
+      "tag": "a father and child is taking a selfie at a playground with holiday decorations"
+    },
+    {
+      "tag": "a father and child is taking a selfie at a playground with wrapped gifts"
+    },
+    {
+      "tag": "a father and child is taking a selfie at the beach with wrapped gifts"
+    },
+    {
+      "tag": "a father and child is taking a selfie on a city street with a TV in the background"
+    },
+    {
+      "tag": "a father and child is taking a selfie on a city street with a birthday cake"
+    },
+    {
+      "tag": "a father and child is taking a selfie on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a father and child is taking a selfie on a city street with food on the table"
+    },
+    {
+      "tag": "a father and child is taking a selfie on a city street with holiday decorations"
+    },
+    {
+      "tag": "a father and child is taking a selfie on a city street with wrapped gifts"
+    },
+    {
+      "tag": "a father and child is watching TV on a city street with a ball"
+    },
+    {
+      "tag": "a father and child is watching TV on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a father and child is watching TV on a city street with balloons"
+    },
+    {
+      "tag": "a man is celebrating a birthday at a playground with a TV in the background"
+    },
+    {
+      "tag": "a man is cooking at a birthday party with a ball"
+    },
+    {
+      "tag": "a man is cooking at a birthday party with a tablet or phone"
+    },
+    {
+      "tag": "a man is cooking at a playground with a TV in the background"
+    },
+    {
+      "tag": "a man is cooking at a playground with balloons"
+    },
+    {
+      "tag": "a man is cooking at a playground with holiday decorations"
+    },
+    {
+      "tag": "a man is cooking at the beach with holiday decorations"
+    },
+    {
+      "tag": "a man is cooking at the dining table with a ball"
+    },
+    {
+      "tag": "a man is cooking at the dining table with a bicycle"
+    },
+    {
+      "tag": "a man is cooking at the dining table with a book"
+    },
+    {
+      "tag": "a man is cooking at the dining table with a tablet or phone"
+    },
+    {
+      "tag": "a man is cooking in the backyard with a ball"
+    },
+    {
+      "tag": "a man is cooking in the backyard with a book"
+    },
+    {
+      "tag": "a man is cooking in the backyard with a tablet or phone"
+    },
+    {
+      "tag": "a man is cooking in the backyard with a toy"
+    },
+    {
+      "tag": "a man is cooking in the backyard with food on the table"
+    },
+    {
+      "tag": "a man is cooking in the park with a bicycle"
+    },
+    {
+      "tag": "a man is cooking on a city street with a TV in the background"
+    },
+    {
+      "tag": "a man is cooking on a city street with a toy"
+    },
+    {
+      "tag": "a man is cooking on a city street with food on the table"
+    },
+    {
+      "tag": "a man is cooking on a city street with holiday decorations"
+    },
+    {
+      "tag": "a man is eating together at a playground with a book"
+    },
+    {
+      "tag": "a man is eating together at a playground with a toy"
+    },
+    {
+      "tag": "a man is eating together at a playground with holiday decorations"
+    },
+    {
+      "tag": "a man is eating together at a school event with a book"
+    },
+    {
+      "tag": "a man is eating together at the beach with holiday decorations"
+    },
+    {
+      "tag": "a man is eating together in a bedroom with a ball"
+    },
+    {
+      "tag": "a man is eating together in the backyard with a TV in the background"
+    },
+    {
+      "tag": "a man is eating together in the backyard with a ball"
+    },
+    {
+      "tag": "a man is eating together in the backyard with a bicycle"
+    },
+    {
+      "tag": "a man is eating together in the backyard with a tablet or phone"
+    },
+    {
+      "tag": "a man is eating together in the backyard with wrapped gifts"
+    },
+    {
+      "tag": "a man is eating together in the park with food on the table"
+    },
+    {
+      "tag": "a man is eating together in the park with holiday decorations"
+    },
+    {
+      "tag": "a man is eating together on a city street with a book"
+    },
+    {
+      "tag": "a man is eating together on a city street with a toy"
+    },
+    {
+      "tag": "a man is eating together on a city street with food on the table"
+    },
+    {
+      "tag": "a man is eating together on a city street with holiday decorations"
+    },
+    {
+      "tag": "a man is eating together on vacation outdoors with food on the table"
+    },
+    {
+      "tag": "a man is eating together on vacation outdoors with holiday decorations"
+    },
+    {
+      "tag": "a man is holding hands at a school event with holiday decorations"
+    },
+    {
+      "tag": "a man is holding hands at the beach with holiday decorations"
+    },
+    {
+      "tag": "a man is holding hands at the dining table with food on the table"
+    },
+    {
+      "tag": "a man is holding hands at the dining table with holiday decorations"
+    },
+    {
+      "tag": "a man is holding hands in a bedroom with a TV in the background"
+    },
+    {
+      "tag": "a man is holding hands in a bedroom with a ball"
+    },
+    {
+      "tag": "a man is holding hands in a bedroom with a bicycle"
+    },
+    {
+      "tag": "a man is holding hands in a bedroom with a birthday cake"
+    },
+    {
+      "tag": "a man is holding hands in a bedroom with a book"
+    },
+    {
+      "tag": "a man is holding hands in a bedroom with a picnic blanket"
+    },
+    {
+      "tag": "a man is holding hands in a bedroom with a tablet or phone"
+    },
+    {
+      "tag": "a man is holding hands in a bedroom with a toy"
+    },
+    {
+      "tag": "a man is holding hands in a bedroom with holiday decorations"
+    },
+    {
+      "tag": "a man is holding hands in a bedroom with party decorations"
+    },
+    {
+      "tag": "a man is holding hands in a bedroom with wrapped gifts"
+    },
+    {
+      "tag": "a man is holding hands in the backyard with a TV in the background"
+    },
+    {
+      "tag": "a man is holding hands in the backyard with a ball"
+    },
+    {
+      "tag": "a man is holding hands in the backyard with food on the table"
+    },
+    {
+      "tag": "a man is holding hands in the backyard with holiday decorations"
+    },
+    {
+      "tag": "a man is holding hands on a city street with holiday decorations"
+    },
+    {
+      "tag": "a man is holding hands on vacation outdoors with a ball"
+    },
+    {
+      "tag": "a man is holding hands on vacation outdoors with a bicycle"
+    },
+    {
+      "tag": "a man is holding hands on vacation outdoors with holiday decorations"
+    },
+    {
+      "tag": "a man is hugging at the dining table with food on the table"
+    },
+    {
+      "tag": "a man is hugging in a bedroom with a birthday cake"
+    },
+    {
+      "tag": "a man is hugging in a bedroom with a book"
+    },
+    {
+      "tag": "a man is hugging in a bedroom with a picnic blanket"
+    },
+    {
+      "tag": "a man is hugging in a bedroom with a tablet or phone"
+    },
+    {
+      "tag": "a man is hugging in the backyard with a tablet or phone"
+    },
+    {
+      "tag": "a man is hugging in the backyard with food on the table"
+    },
+    {
+      "tag": "a man is hugging in the kitchen with holiday decorations"
+    },
+    {
+      "tag": "a man is hugging in the park with holiday decorations"
+    },
+    {
+      "tag": "a man is hugging on a city street with a TV in the background"
+    },
+    {
+      "tag": "a man is hugging on a city street with holiday decorations"
+    },
+    {
+      "tag": "a man is hugging on vacation outdoors with holiday decorations"
+    },
+    {
+      "tag": "a man is hugging on vacation outdoors with wrapped gifts"
+    },
+    {
+      "tag": "a man is jumping at a birthday party with a TV in the background"
+    },
+    {
+      "tag": "a man is jumping at a birthday party with food on the table"
+    },
+    {
+      "tag": "a man is jumping at a playground with a TV in the background"
+    },
+    {
+      "tag": "a man is jumping at a playground with a birthday cake"
+    },
+    {
+      "tag": "a man is jumping at a playground with food on the table"
+    },
+    {
+      "tag": "a man is jumping at the beach with food on the table"
+    },
+    {
+      "tag": "a man is jumping at the dining table with a birthday cake"
+    },
+    {
+      "tag": "a man is jumping at the dining table with a book"
+    },
+    {
+      "tag": "a man is jumping at the dining table with a picnic blanket"
+    },
+    {
+      "tag": "a man is jumping at the dining table with a tablet or phone"
+    },
+    {
+      "tag": "a man is jumping at the dining table with holiday decorations"
+    },
+    {
+      "tag": "a man is jumping in a bedroom with a book"
+    },
+    {
+      "tag": "a man is jumping in a bedroom with a picnic blanket"
+    },
+    {
+      "tag": "a man is jumping in a bedroom with a tablet or phone"
+    },
+    {
+      "tag": "a man is jumping in the backyard with food on the table"
+    },
+    {
+      "tag": "a man is jumping in the kitchen with a ball"
+    },
+    {
+      "tag": "a man is jumping in the kitchen with a tablet or phone"
+    },
+    {
+      "tag": "a man is jumping in the kitchen with a toy"
+    },
+    {
+      "tag": "a man is jumping in the park with food on the table"
+    },
+    {
+      "tag": "a man is jumping on a city street with food on the table"
+    },
+    {
+      "tag": "a man is jumping on vacation outdoors with food on the table"
+    },
+    {
+      "tag": "a man is laughing at a school event with holiday decorations"
+    },
+    {
+      "tag": "a man is laughing at the dining table with a TV in the background"
+    },
+    {
+      "tag": "a man is laughing in a bedroom with a TV in the background"
+    },
+    {
+      "tag": "a man is laughing in a bedroom with a book"
+    },
+    {
+      "tag": "a man is laughing in the backyard with a tablet or phone"
+    },
+    {
+      "tag": "a man is laughing in the kitchen with a ball"
+    },
+    {
+      "tag": "a man is laughing in the kitchen with wrapped gifts"
+    },
+    {
+      "tag": "a man is laughing in the park with a TV in the background"
+    },
+    {
+      "tag": "a man is laughing in the park with holiday decorations"
+    },
+    {
+      "tag": "a man is laughing in the park with party decorations"
+    },
+    {
+      "tag": "a man is laughing in the park with wrapped gifts"
+    },
+    {
+      "tag": "a man is laughing on a city street with a TV in the background"
+    },
+    {
+      "tag": "a man is laughing on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a man is laughing on a city street with food on the table"
+    },
+    {
+      "tag": "a man is laughing on a city street with holiday decorations"
+    },
+    {
+      "tag": "a man is laughing on a city street with wrapped gifts"
+    },
+    {
+      "tag": "a man is laughing on vacation outdoors with a TV in the background"
+    },
+    {
+      "tag": "a man is laughing on vacation outdoors with a bicycle"
+    },
+    {
+      "tag": "a man is laughing on vacation outdoors with a tablet or phone"
+    },
+    {
+      "tag": "a man is laughing on vacation outdoors with a toy"
+    },
+    {
+      "tag": "a man is laughing on vacation outdoors with food on the table"
+    },
+    {
+      "tag": "a man is laughing on vacation outdoors with holiday decorations"
+    },
+    {
+      "tag": "a man is opening gifts at a playground with a TV in the background"
+    },
+    {
+      "tag": "a man is playing together at a playground with a toy"
+    },
+    {
+      "tag": "a man is playing together on a city street with holiday decorations"
+    },
+    {
+      "tag": "a man is playing together on vacation outdoors with a book"
+    },
+    {
+      "tag": "a man is playing with the pet at a playground with a TV in the background"
+    },
+    {
+      "tag": "a man is posing for a photo at a birthday party with a ball"
+    },
+    {
+      "tag": "a man is posing for a photo at a birthday party with a book"
+    },
+    {
+      "tag": "a man is posing for a photo at a playground with a book"
+    },
+    {
+      "tag": "a man is posing for a photo at a playground with a tablet or phone"
+    },
+    {
+      "tag": "a man is posing for a photo at a playground with food on the table"
+    },
+    {
+      "tag": "a man is posing for a photo at a school event with a book"
+    },
+    {
+      "tag": "a man is posing for a photo at a school event with food on the table"
+    },
+    {
+      "tag": "a man is posing for a photo at the dining table with a book"
+    },
+    {
+      "tag": "a man is posing for a photo at the dining table with food on the table"
+    },
+    {
+      "tag": "a man is posing for a photo in a bedroom with a book"
+    },
+    {
+      "tag": "a man is posing for a photo in the backyard with a tablet or phone"
+    },
+    {
+      "tag": "a man is posing for a photo in the kitchen with a book"
+    },
+    {
+      "tag": "a man is posing for a photo in the kitchen with a tablet or phone"
+    },
+    {
+      "tag": "a man is posing for a photo in the park with a tablet or phone"
+    },
+    {
+      "tag": "a man is posing for a photo in the park with a toy"
+    },
+    {
+      "tag": "a man is posing for a photo in the park with food on the table"
+    },
+    {
+      "tag": "a man is posing for a photo on a city street with a book"
+    },
+    {
+      "tag": "a man is posing for a photo on a city street with a tablet or phone"
+    },
+    {
+      "tag": "a man is posing for a photo on vacation outdoors with a book"
+    },
+    {
+      "tag": "a man is posing for a photo outside the house with a toy"
+    },
+    {
+      "tag": "a man is reading together at a birthday party with a TV in the background"
+    },
+    {
+      "tag": "a man is reading together at a playground with a TV in the background"
+    },
+    {
+      "tag": "a man is reading together in a bedroom with a TV in the background"
+    },
+    {
+      "tag": "a man is reading together in a bedroom with a birthday cake"
+    },
+    {
+      "tag": "a man is reading together in a bedroom with a picnic blanket"
+    },
+    {
+      "tag": "a man is reading together in a bedroom with holiday decorations"
+    },
+    {
+      "tag": "a man is reading together in a bedroom with party decorations"
+    },
+    {
+      "tag": "a man is reading together in a bedroom with wrapped gifts"
+    },
+    {
+      "tag": "a man is reading together on a city street with a book"
+    },
+    {
+      "tag": "a man is reading together on vacation outdoors with holiday decorations"
+    },
+    {
+      "tag": "a man is running in a bedroom with a book"
+    },
+    {
+      "tag": "a man is running on vacation outdoors with holiday decorations"
+    },
+    {
+      "tag": "a man is taking a selfie in a bedroom with a TV in the background"
+    },
+    {
+      "tag": "a man is walking together at a birthday party with wrapped gifts"
+    },
+    {
+      "tag": "a man is walking together at a playground with a picnic blanket"
+    },
+    {
+      "tag": "a man is walking together at a school event with holiday decorations"
+    },
+    {
+      "tag": "a man is walking together at the beach with holiday decorations"
+    },
+    {
+      "tag": "a man is walking together in a bedroom with a TV in the background"
+    },
+    {
+      "tag": "a man is walking together in a bedroom with a ball"
+    },
+    {
+      "tag": "a man is walking together in a bedroom with a bicycle"
+    },
+    {
+      "tag": "a man is walking together in a bedroom with a book"
+    },
+    {
+      "tag": "a man is walking together in a bedroom with a picnic blanket"
+    },
+    {
+      "tag": "a man is walking together in a bedroom with a tablet or phone"
+    },
+    {
+      "tag": "a man is walking together in a bedroom with a toy"
+    },
+    {
+      "tag": "a man is walking together in a bedroom with holiday decorations"
+    },
+    {
+      "tag": "a man is walking together in the backyard with a TV in the background"
+    },
+    {
+      "tag": "a man is walking together in the backyard with a ball"
+    },
+    {
+      "tag": "a man is walking together in the backyard with a picnic blanket"
+    },
+    {
+      "tag": "a man is walking together in the backyard with a tablet or phone"
+    },
+    {
+      "tag": "a man is walking together on vacation outdoors with holiday decorations"
+    },
+    {
+      "tag": "a man is watching TV at a playground with a birthday cake"
+    },
+    {
+      "tag": "a man is watching TV on a city street with a TV in the background"
+    },
+    {
+      "tag": "a man is watching TV on a city street with holiday decorations"
+    },
+    {
+      "tag": "a man is watching TV on vacation outdoors with a TV in the background"
+    },
+    {
+      "tag": "a mother and child is celebrating a birthday at a playground with a tablet or phone"
+    },
+    {
+      "tag": "a mother and child is celebrating a birthday at the beach with a TV in the background"
+    },
+    {
+      "tag": "a mother and child is hugging at a playground with a TV in the background"
+    },
+    {
+      "tag": "a mother and child is hugging in a bedroom with a book"
+    },
+    {
+      "tag": "a mother and child is hugging in the backyard with a book"
+    },
+    {
+      "tag": "a mother and child is laughing on a city street with a TV in the background"
+    },
+    {
+      "tag": "a mother and child is laughing on a city street with a book"
+    },
+    {
+      "tag": "a mother and child is laughing on a city street with food on the table"
+    },
+    {
+      "tag": "a teenager is eating together on a city street with holiday decorations"
+    },
+    {
+      "tag": "a teenager is walking together at the beach with holiday decorations"
+    },
+    {
+      "tag": "a teenager is walking together in a bedroom with a book"
+    },
+    {
+      "tag": "a woman is cooking at a birthday party with a ball"
+    },
+    {
+      "tag": "a woman is cooking at a playground with a TV in the background"
+    },
+    {
+      "tag": "a woman is cooking at a playground with holiday decorations"
+    },
+    {
+      "tag": "a woman is cooking at the dining table with a ball"
+    },
+    {
+      "tag": "a woman is cooking in the backyard with a ball"
+    },
+    {
+      "tag": "a woman is cooking in the backyard with food on the table"
+    },
+    {
+      "tag": "a woman is cooking on a city street with holiday decorations"
+    },
+    {
+      "tag": "a woman is eating together at a playground with food on the table"
+    },
+    {
+      "tag": "a woman is eating together at a playground with holiday decorations"
+    },
+    {
+      "tag": "a woman is eating together at the beach with holiday decorations"
+    },
+    {
+      "tag": "a woman is eating together in a bedroom with a ball"
+    },
+    {
+      "tag": "a woman is eating together in the backyard with a TV in the background"
+    },
+    {
+      "tag": "a woman is eating together in the backyard with a ball"
+    },
+    {
+      "tag": "a woman is eating together in the backyard with a bicycle"
+    },
+    {
+      "tag": "a woman is eating together in the backyard with a tablet or phone"
+    },
+    {
+      "tag": "a woman is eating together in the park with a bicycle"
+    },
+    {
+      "tag": "a woman is eating together in the park with food on the table"
+    },
+    {
+      "tag": "a woman is eating together in the park with holiday decorations"
+    },
+    {
+      "tag": "a woman is eating together on a city street with a book"
+    },
+    {
+      "tag": "a woman is eating together on a city street with food on the table"
+    },
+    {
+      "tag": "a woman is eating together on a city street with holiday decorations"
+    },
+    {
+      "tag": "a woman is eating together on vacation outdoors with holiday decorations"
+    },
+    {
+      "tag": "a woman is holding hands at the dining table with food on the table"
+    },
+    {
+      "tag": "a woman is holding hands in a bedroom with a TV in the background"
+    },
+    {
+      "tag": "a woman is holding hands in a bedroom with a book"
+    },
+    {
+      "tag": "a woman is holding hands in a bedroom with a tablet or phone"
+    },
+    {
+      "tag": "a woman is holding hands in the backyard with a TV in the background"
+    },
+    {
+      "tag": "a woman is holding hands in the backyard with a tablet or phone"
+    },
+    {
+      "tag": "a woman is holding hands in the backyard with food on the table"
+    },
+    {
+      "tag": "a woman is jumping at the dining table with a tablet or phone"
+    },
+    {
+      "tag": "a woman is jumping in the kitchen with a tablet or phone"
+    },
+    {
+      "tag": "a woman is jumping in the park with food on the table"
+    },
+    {
+      "tag": "a woman is jumping on a city street with food on the table"
+    },
+    {
+      "tag": "a woman is jumping on vacation outdoors with food on the table"
+    },
+    {
+      "tag": "a woman is laughing at the dining table with a TV in the background"
+    },
+    {
+      "tag": "a woman is laughing in a bedroom with a TV in the background"
+    },
+    {
+      "tag": "a woman is laughing in the park with a TV in the background"
+    },
+    {
+      "tag": "a woman is laughing on a city street with a TV in the background"
+    },
+    {
+      "tag": "a woman is laughing on a city street with a tablet or phone"
+    },
+    {
+      "tag": "a woman is laughing on a city street with food on the table"
+    },
+    {
+      "tag": "a woman is playing together in the kitchen with a tablet or phone"
+    },
+    {
+      "tag": "a woman is playing together on a city street with holiday decorations"
+    },
+    {
+      "tag": "a woman is posing for a photo in the kitchen with a book"
+    },
+    {
+      "tag": "a woman is posing for a photo on a city street with a book"
+    },
+    {
+      "tag": "a woman is posing for a photo outside the house with a book"
+    },
+    {
+      "tag": "a woman is reading together at a playground with a TV in the background"
+    },
+    {
+      "tag": "a woman is reading together on a city street with a book"
+    },
+    {
+      "tag": "a woman is walking together at a birthday party with holiday decorations"
+    },
+    {
+      "tag": "a woman is walking together in a bedroom with a TV in the background"
+    },
+    {
+      "tag": "a woman is walking together in a bedroom with a ball"
+    },
+    {
+      "tag": "a woman is walking together in a bedroom with a birthday cake"
+    },
+    {
+      "tag": "a woman is walking together in a bedroom with a book"
+    },
+    {
+      "tag": "a woman is walking together in a bedroom with a picnic blanket"
+    },
+    {
+      "tag": "a woman is walking together in a bedroom with a tablet or phone"
+    },
+    {
+      "tag": "a woman is walking together in a bedroom with holiday decorations"
+    },
+    {
+      "tag": "a woman is walking together in the backyard with a TV in the background"
+    },
+    {
+      "tag": "a woman is walking together in the backyard with a picnic blanket"
+    },
+    {
+      "tag": "a woman is walking together in the backyard with a tablet or phone"
+    },
+    {
+      "tag": "a woman is walking together on vacation outdoors with holiday decorations"
+    },
+    {
+      "tag": "a woman is watching TV on a city street with a TV in the background"
+    },
+    {
+      "tag": "a woman is watching TV on a city street with holiday decorations"
+    },
+    {
+      "tag": "an elderly man is cooking at a playground with a ball"
+    },
+    {
+      "tag": "an elderly man is cooking at a playground with a book"
+    },
+    {
+      "tag": "an elderly man is cooking at the beach with a toy"
+    },
+    {
+      "tag": "an elderly man is cooking at the beach with wrapped gifts"
+    },
+    {
+      "tag": "an elderly man is cooking on a city street with a TV in the background"
+    },
+    {
+      "tag": "an elderly man is cooking on a city street with a ball"
+    },
+    {
+      "tag": "an elderly man is cooking on a city street with balloons"
+    },
+    {
+      "tag": "an elderly man is cooking on a city street with holiday decorations"
+    },
+    {
+      "tag": "an elderly man is eating together on a city street with a ball"
+    },
+    {
+      "tag": "an elderly man is holding hands at a birthday party with a TV in the background"
+    },
+    {
+      "tag": "an elderly man is holding hands at a school event with a TV in the background"
+    },
+    {
+      "tag": "an elderly man is holding hands at a school event with a book"
+    },
+    {
+      "tag": "an elderly man is holding hands at a school event with a tablet or phone"
+    },
+    {
+      "tag": "an elderly man is holding hands at a school event with a toy"
+    },
+    {
+      "tag": "an elderly man is holding hands at a school event with food on the table"
+    },
+    {
+      "tag": "an elderly man is holding hands at a school event with wrapped gifts"
+    },
+    {
+      "tag": "an elderly man is holding hands at the beach with a TV in the background"
+    },
+    {
+      "tag": "an elderly man is holding hands at the beach with a book"
+    },
+    {
+      "tag": "an elderly man is holding hands at the beach with holiday decorations"
+    },
+    {
+      "tag": "an elderly man is holding hands at the dining table with a book"
+    },
+    {
+      "tag": "an elderly man is holding hands at the dining table with a picnic blanket"
+    },
+    {
+      "tag": "an elderly man is holding hands at the dining table with holiday decorations"
+    },
+    {
+      "tag": "an elderly man is holding hands in a bedroom with a book"
+    },
+    {
+      "tag": "an elderly man is holding hands in a bedroom with a picnic blanket"
+    },
+    {
+      "tag": "an elderly man is holding hands in the backyard with a TV in the background"
+    },
+    {
+      "tag": "an elderly man is holding hands in the backyard with a book"
+    },
+    {
+      "tag": "an elderly man is holding hands in the kitchen with a book"
+    },
+    {
+      "tag": "an elderly man is holding hands in the park with a TV in the background"
+    },
+    {
+      "tag": "an elderly man is holding hands in the park with a book"
+    },
+    {
+      "tag": "an elderly man is holding hands on a city street with a TV in the background"
+    },
+    {
+      "tag": "an elderly man is holding hands on a city street with a book"
+    },
+    {
+      "tag": "an elderly man is holding hands on a city street with a picnic blanket"
+    },
+    {
+      "tag": "an elderly man is holding hands on a city street with a tablet or phone"
+    },
+    {
+      "tag": "an elderly man is holding hands on vacation outdoors with a TV in the background"
+    },
+    {
+      "tag": "an elderly man is hugging at a playground with food on the table"
+    },
+    {
+      "tag": "an elderly man is hugging at a school event with a tablet or phone"
+    },
+    {
+      "tag": "an elderly man is hugging at a school event with a toy"
+    },
+    {
+      "tag": "an elderly man is hugging at the dining table with a book"
+    },
+    {
+      "tag": "an elderly man is hugging at the dining table with a toy"
+    },
+    {
+      "tag": "an elderly man is hugging at the dining table with holiday decorations"
+    },
+    {
+      "tag": "an elderly man is hugging in a bedroom with a book"
+    },
+    {
+      "tag": "an elderly man is hugging in a bedroom with a toy"
+    },
+    {
+      "tag": "an elderly man is hugging in the backyard with a toy"
+    },
+    {
+      "tag": "an elderly man is hugging in the park with a toy"
+    },
+    {
+      "tag": "an elderly man is hugging on a city street with a TV in the background"
+    },
+    {
+      "tag": "an elderly man is hugging on a city street with a bicycle"
+    },
+    {
+      "tag": "an elderly man is hugging on a city street with a book"
+    },
+    {
+      "tag": "an elderly man is hugging on a city street with a picnic blanket"
+    },
+    {
+      "tag": "an elderly man is hugging on a city street with a tablet or phone"
+    },
+    {
+      "tag": "an elderly man is hugging on a city street with a toy"
+    },
+    {
+      "tag": "an elderly man is hugging on a city street with food on the table"
+    },
+    {
+      "tag": "an elderly man is hugging on a city street with holiday decorations"
+    },
+    {
+      "tag": "an elderly man is hugging on a city street with wrapped gifts"
+    },
+    {
+      "tag": "an elderly man is jumping at a playground with a book"
+    },
+    {
+      "tag": "an elderly man is jumping at a school event with a book"
+    },
+    {
+      "tag": "an elderly man is jumping at a school event with a toy"
+    },
+    {
+      "tag": "an elderly man is jumping at a school event with food on the table"
+    },
+    {
+      "tag": "an elderly man is jumping at the dining table with a book"
+    },
+    {
+      "tag": "an elderly man is jumping in a bedroom with a book"
+    },
+    {
+      "tag": "an elderly man is jumping on a city street with a book"
+    },
+    {
+      "tag": "an elderly man is laughing at a school event with a book"
+    },
+    {
+      "tag": "an elderly man is laughing at a school event with a toy"
+    },
+    {
+      "tag": "an elderly man is laughing at the dining table with a toy"
+    },
+    {
+      "tag": "an elderly man is laughing in a bedroom with a book"
+    },
+    {
+      "tag": "an elderly man is laughing on a city street with a TV in the background"
+    },
+    {
+      "tag": "an elderly man is laughing on a city street with a book"
+    },
+    {
+      "tag": "an elderly man is laughing on a city street with a toy"
+    },
+    {
+      "tag": "an elderly man is laughing on a city street with food on the table"
+    },
+    {
+      "tag": "an elderly man is laughing on a city street with holiday decorations"
+    },
+    {
+      "tag": "an elderly man is reading together on a city street with a ball"
+    },
+    {
+      "tag": "an elderly man is reading together on a city street with a picnic blanket"
+    },
+    {
+      "tag": "an elderly man is reading together on a city street with a stroller"
+    },
+    {
+      "tag": "an elderly man is reading together on a city street with holiday decorations"
+    },
+    {
+      "tag": "an elderly man is running at a school event with a book"
+    },
+    {
+      "tag": "an elderly man is running at a school event with a toy"
+    },
+    {
+      "tag": "an elderly man is running on a city street with a book"
+    },
+    {
+      "tag": "an elderly man is taking a selfie at a school event with a TV in the background"
+    },
+    {
+      "tag": "an elderly man is taking a selfie at the beach with a toy"
+    },
+    {
+      "tag": "an elderly man is taking a selfie at the dining table with a ball"
+    },
+    {
+      "tag": "an elderly man is taking a selfie in a bedroom with a toy"
+    },
+    {
+      "tag": "an elderly man is taking a selfie in the backyard with a toy"
+    },
+    {
+      "tag": "an elderly man is taking a selfie in the kitchen with a toy"
+    },
+    {
+      "tag": "an elderly man is taking a selfie in the park with a toy"
+    },
+    {
+      "tag": "an elderly man is taking a selfie on a city street with a picnic blanket"
+    },
+    {
+      "tag": "an elderly man is taking a selfie on a city street with a stroller"
+    },
+    {
+      "tag": "an elderly man is taking a selfie on a city street with a toy"
+    },
+    {
+      "tag": "an elderly man is taking a selfie on a city street with food on the table"
+    },
+    {
+      "tag": "an elderly man is taking a selfie on a city street with wrapped gifts"
+    },
+    {
+      "tag": "an elderly man is taking a selfie on vacation outdoors with a toy"
+    },
+    {
+      "tag": "an elderly man is walking together at a school event with a book"
+    },
+    {
+      "tag": "an elderly man is walking together at a school event with a toy"
+    },
+    {
+      "tag": "an elderly man is watching TV on a city street with a ball"
+    },
+    {
+      "tag": "grandparents with grandchildren is celebrating a birthday at a birthday party with a TV in the background"
+    },
+    {
+      "tag": "the whole family is cooking at the beach with holiday decorations"
+    },
+    {
+      "tag": "the whole family is eating together in the backyard with a ball"
+    },
+    {
+      "tag": "the whole family is eating together on a city street with holiday decorations"
+    },
+    {
+      "tag": "the whole family is hugging at a birthday party with a book"
+    },
+    {
+      "tag": "two children is celebrating a birthday at the beach with a TV in the background"
+    },
+    {
+      "tag": "two children is celebrating a birthday at the beach with a tablet or phone"
+    },
+    {
+      "tag": "two children is celebrating a birthday on a city street with a TV in the background"
+    },
+    {
+      "tag": "two children is celebrating a birthday on a city street with a bicycle"
+    },
+    {
+      "tag": "two children is celebrating a birthday on a city street with a tablet or phone"
+    },
+    {
+      "tag": "two children is cooking at the beach with wrapped gifts"
+    },
+    {
+      "tag": "two children is cooking on a city street with a ball"
+    },
+    {
+      "tag": "two children is cooking on a city street with a tablet or phone"
+    },
+    {
+      "tag": "two children is cooking on a city street with holiday decorations"
+    },
+    {
+      "tag": "two children is cooking on a city street with wrapped gifts"
+    },
+    {
+      "tag": "two children is holding hands at a playground with a book"
+    },
+    {
+      "tag": "two children is holding hands at the dining table with a picnic blanket"
+    },
+    {
+      "tag": "two children is holding hands at the dining table with holiday decorations"
+    },
+    {
+      "tag": "two children is holding hands in a bedroom with a book"
+    },
+    {
+      "tag": "two children is holding hands in the kitchen with a book"
+    },
+    {
+      "tag": "two children is holding hands on vacation outdoors with a TV in the background"
+    },
+    {
+      "tag": "two children is hugging at the beach with holiday decorations"
+    },
+    {
+      "tag": "two children is hugging at the dining table with holiday decorations"
+    },
+    {
+      "tag": "two children is hugging in the kitchen with a book"
+    },
+    {
+      "tag": "two children is hugging on a city street with a TV in the background"
+    },
+    {
+      "tag": "two children is hugging on a city street with a book"
+    },
+    {
+      "tag": "two children is hugging on a city street with a toy"
+    },
+    {
+      "tag": "two children is hugging on a city street with food on the table"
+    },
+    {
+      "tag": "two children is hugging on a city street with holiday decorations"
+    },
+    {
+      "tag": "two children is laughing in a bedroom with a book"
+    },
+    {
+      "tag": "two children is laughing on a city street with a TV in the background"
+    },
+    {
+      "tag": "two children is laughing on a city street with a book"
+    },
+    {
+      "tag": "two children is taking a selfie on a city street with food on the table"
+    },
+    {
+      "tag": "two children is watching TV on a city street with a ball"
+    },
+    {
+      "tag": "two children is watching TV on a city street with a birthday cake"
+    },
+    {
+      "tag": "two children is watching TV on a city street with a picnic blanket"
+    },
+    {
+      "tag": "a father and child is celebrating a birthday on a city street with a picnic blanket"
+    }
+  ]
+}

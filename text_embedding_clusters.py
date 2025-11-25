@@ -73,33 +73,33 @@ subjects = [
 actions = [
     # Motion
     "is running", "is jumping", "is walking", "is chasing", "is rolling",
-    # # # Interaction
-    # "is playing", "is fetching", "is tugging a toy", "is biting", "is scratching",
-    # "is licking its paw", "is sniffing something", "is shaking its body",
-    # # Emotion / Expression
-    # "is barking", "is meowing", "is wagging its tail", "is stretching",
-    # "is yawning", "is curious", "is watching something",
-    # # Static / Rest
-    # "is sleeping", "is lying down", "is sitting", "is resting", "is staying still"
+    # # Interaction
+    "is playing", "is fetching", "is tugging a toy", "is biting", "is scratching",
+    "is licking its paw", "is sniffing something", "is shaking its body",
+    # Emotion / Expression
+    "is barking", "is meowing", "is wagging its tail", "is stretching",
+    "is yawning", "is curious", "is watching something",
+    # Static / Rest
+    "is sleeping", "is lying down", "is sitting", "is resting", "is staying still"
 ]
 
 scenes = [
     "on the grass", "in the park", "on the beach", "in the living room",
-    # "in the bedroom", "in the kitchen", "in the backyard", "in the garden",
-    # "on the sofa", "on the bed", "by the window", "on the floor",
-    # "in the yard", "at home", "outdoors", "under the table"
+    "in the bedroom", "in the kitchen", "in the backyard", "in the garden",
+    "on the sofa", "on the bed", "by the window", "on the floor",
+    "in the yard", "at home", "outdoors", "under the table"
 ]
 
 objects = [
     "with a ball", "with a frisbee", "with a toy", "with a stick", "with a bone",
-    # "with a rope", "with a plush toy", "with a pillow", "with food", "with a bowl",
-    # "chasing another pet", "playing with a person", "looking at the camera",
-    # "being brushed", "taking a bath", "wearing a collar", "next to its owner"
+    "with a rope", "with a plush toy", "with a pillow", "with food", "with a bowl",
+    "chasing another pet", "playing with a person", "looking at the camera",
+    "being brushed", "taking a bath", "wearing a collar", "next to its owner"
 ]
 templates = [
-    # "{s} {a}",
-    # "{s} {a} {sc}",
-    # "{s} {a} {o}",
+    "{s} {a}",
+    "{s} {a} {sc}",
+    "{s} {a} {o}",
     "{s} {a} {sc} {o}"
 ]
 
@@ -267,7 +267,7 @@ def cluster_and_plot_dbscan(
         if idx_noise.any():
             ax.scatter(X2[idx_noise, 0], X2[idx_noise, 1], s=16, marker="x", alpha=0.85, label="Noise (-1)")
 
-    ax.set_title("embedding clusters (DBScane | PCA 2D)")
+    ax.set_title("embedding clusters (DBScan | PCA 2D)")
     ax.set_xlabel("PC 1")
     ax.set_ylabel("PC 2")
     ax.margins(0.05)          # a bit of breathing room
@@ -519,7 +519,7 @@ def main(args):
     print(f"[INFO] Saved clustered prompts to {prompts_path}.")
 
     # summarize and visualize semantics
-    plot_clusters_with_text_samples(prompts, embeddings, labels, sample_per_cluster= int(len(labels) / 3), figsize=(16, 12))
+    plot_clusters_with_text_samples(prompts, embeddings, labels, sample_per_cluster= min(int(len(labels) / 3), 15), figsize=(16, 12))
     sementic_plot_path = os.path.join(output_dir, "dbscan_pet_prompts_with_texts.png")
     plt.savefig(sementic_plot_path, dpi=150)
     print(f"[INFO] Saved semantic cluster plot to {sementic_plot_path}.")

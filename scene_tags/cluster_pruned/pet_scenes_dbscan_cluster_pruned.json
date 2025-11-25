@@ -1,0 +1,1492 @@
+{
+  "metadata": {
+    "domain": "pet scenes",
+    "generator": "pet_scenes_dbscan_cluster_pruned",
+    "created_at": "2025-11-11T03:13:54.399461",
+    "eps": 0.05,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 493
+  },
+  "prompts": [
+    {
+      "tag": "a cat is barking at home being brushed"
+    },
+    {
+      "tag": "a cat is barking at home looking at the camera"
+    },
+    {
+      "tag": "a cat is barking at home taking a bath"
+    },
+    {
+      "tag": "a cat is barking at home wearing a collar"
+    },
+    {
+      "tag": "a cat is barking at home with a pillow"
+    },
+    {
+      "tag": "a cat is barking by the window being brushed"
+    },
+    {
+      "tag": "a cat is barking by the window looking at the camera"
+    },
+    {
+      "tag": "a cat is barking by the window taking a bath"
+    },
+    {
+      "tag": "a cat is barking by the window wearing a collar"
+    },
+    {
+      "tag": "a cat is barking by the window with a frisbee"
+    },
+    {
+      "tag": "a cat is barking in the backyard being brushed"
+    },
+    {
+      "tag": "a cat is barking in the backyard looking at the camera"
+    },
+    {
+      "tag": "a cat is barking in the backyard next to its owner"
+    },
+    {
+      "tag": "a cat is barking in the backyard taking a bath"
+    },
+    {
+      "tag": "a cat is barking in the backyard wearing a collar"
+    },
+    {
+      "tag": "a cat is barking in the backyard with a bowl"
+    },
+    {
+      "tag": "a cat is barking in the backyard with a pillow"
+    },
+    {
+      "tag": "a cat is barking in the backyard with a plush toy"
+    },
+    {
+      "tag": "a cat is barking in the backyard with food"
+    },
+    {
+      "tag": "a cat is barking in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a cat is barking on the beach being brushed"
+    },
+    {
+      "tag": "a cat is barking on the beach looking at the camera"
+    },
+    {
+      "tag": "a cat is barking on the beach next to its owner"
+    },
+    {
+      "tag": "a cat is barking on the beach taking a bath"
+    },
+    {
+      "tag": "a cat is barking on the beach wearing a collar"
+    },
+    {
+      "tag": "a cat is barking on the beach with food"
+    },
+    {
+      "tag": "a cat is barking on the floor looking at the camera"
+    },
+    {
+      "tag": "a cat is barking on the floor next to its owner"
+    },
+    {
+      "tag": "a cat is barking on the floor wearing a collar"
+    },
+    {
+      "tag": "a cat is barking on the floor with a ball"
+    },
+    {
+      "tag": "a cat is barking on the floor with a bone"
+    },
+    {
+      "tag": "a cat is barking on the floor with a bowl"
+    },
+    {
+      "tag": "a cat is barking on the floor with a pillow"
+    },
+    {
+      "tag": "a cat is barking on the floor with a plush toy"
+    },
+    {
+      "tag": "a cat is barking on the floor with a stick"
+    },
+    {
+      "tag": "a cat is barking on the floor with food"
+    },
+    {
+      "tag": "a cat is barking on the grass being brushed"
+    },
+    {
+      "tag": "a cat is barking on the grass looking at the camera"
+    },
+    {
+      "tag": "a cat is barking on the grass next to its owner"
+    },
+    {
+      "tag": "a cat is barking on the grass taking a bath"
+    },
+    {
+      "tag": "a cat is barking on the grass wearing a collar"
+    },
+    {
+      "tag": "a cat is barking on the grass with a ball"
+    },
+    {
+      "tag": "a cat is barking on the grass with a bone"
+    },
+    {
+      "tag": "a cat is barking on the grass with a bowl"
+    },
+    {
+      "tag": "a cat is barking on the grass with a pillow"
+    },
+    {
+      "tag": "a cat is barking on the grass with a plush toy"
+    },
+    {
+      "tag": "a cat is barking on the grass with food"
+    },
+    {
+      "tag": "a cat is barking on the sofa looking at the camera"
+    },
+    {
+      "tag": "a cat is barking on the sofa wearing a collar"
+    },
+    {
+      "tag": "a cat is barking on the sofa with food"
+    },
+    {
+      "tag": "a cat is barking under the table being brushed"
+    },
+    {
+      "tag": "a cat is barking under the table with a frisbee"
+    },
+    {
+      "tag": "a cat is biting at home looking at the camera"
+    },
+    {
+      "tag": "a cat is biting at home wearing a collar"
+    },
+    {
+      "tag": "a cat is biting by the window looking at the camera"
+    },
+    {
+      "tag": "a cat is biting in the backyard looking at the camera"
+    },
+    {
+      "tag": "a cat is biting in the backyard wearing a collar"
+    },
+    {
+      "tag": "a cat is biting in the backyard with food"
+    },
+    {
+      "tag": "a cat is biting in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a cat is biting on the beach looking at the camera"
+    },
+    {
+      "tag": "a cat is biting on the beach wearing a collar"
+    },
+    {
+      "tag": "a cat is biting on the beach with food"
+    },
+    {
+      "tag": "a cat is biting on the floor looking at the camera"
+    },
+    {
+      "tag": "a cat is biting on the floor wearing a collar"
+    },
+    {
+      "tag": "a cat is biting on the floor with food"
+    },
+    {
+      "tag": "a cat is biting on the grass looking at the camera"
+    },
+    {
+      "tag": "a cat is biting on the grass wearing a collar"
+    },
+    {
+      "tag": "a cat is biting on the grass with food"
+    },
+    {
+      "tag": "a cat is biting on the sofa looking at the camera"
+    },
+    {
+      "tag": "a cat is licking its paw at home looking at the camera"
+    },
+    {
+      "tag": "a cat is licking its paw by the window looking at the camera"
+    },
+    {
+      "tag": "a cat is licking its paw in the backyard looking at the camera"
+    },
+    {
+      "tag": "a cat is licking its paw in the backyard next to its owner"
+    },
+    {
+      "tag": "a cat is licking its paw in the backyard wearing a collar"
+    },
+    {
+      "tag": "a cat is licking its paw on the beach looking at the camera"
+    },
+    {
+      "tag": "a cat is licking its paw on the floor looking at the camera"
+    },
+    {
+      "tag": "a cat is licking its paw on the grass chasing another pet"
+    },
+    {
+      "tag": "a cat is licking its paw on the grass looking at the camera"
+    },
+    {
+      "tag": "a cat is licking its paw on the sofa looking at the camera"
+    },
+    {
+      "tag": "a cat is rolling at home looking at the camera"
+    },
+    {
+      "tag": "a cat is rolling at home with food"
+    },
+    {
+      "tag": "a cat is rolling by the window looking at the camera"
+    },
+    {
+      "tag": "a cat is rolling in the backyard looking at the camera"
+    },
+    {
+      "tag": "a cat is rolling in the backyard wearing a collar"
+    },
+    {
+      "tag": "a cat is rolling in the backyard with food"
+    },
+    {
+      "tag": "a cat is rolling in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a cat is rolling in the kitchen wearing a collar"
+    },
+    {
+      "tag": "a cat is rolling on the beach looking at the camera"
+    },
+    {
+      "tag": "a cat is rolling on the grass looking at the camera"
+    },
+    {
+      "tag": "a cat is rolling on the sofa looking at the camera"
+    },
+    {
+      "tag": "a cat is scratching at home looking at the camera"
+    },
+    {
+      "tag": "a cat is scratching by the window looking at the camera"
+    },
+    {
+      "tag": "a cat is scratching in the backyard looking at the camera"
+    },
+    {
+      "tag": "a cat is scratching in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a cat is scratching in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a cat is scratching on the beach looking at the camera"
+    },
+    {
+      "tag": "a cat is scratching on the floor looking at the camera"
+    },
+    {
+      "tag": "a cat is scratching on the grass looking at the camera"
+    },
+    {
+      "tag": "a cat is scratching on the sofa looking at the camera"
+    },
+    {
+      "tag": "a cat is shaking its body at home looking at the camera"
+    },
+    {
+      "tag": "a cat is shaking its body in the backyard looking at the camera"
+    },
+    {
+      "tag": "a cat is shaking its body in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a cat is shaking its body in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a cat is shaking its body in the park looking at the camera"
+    },
+    {
+      "tag": "a cat is shaking its body on the beach looking at the camera"
+    },
+    {
+      "tag": "a cat is shaking its body on the floor looking at the camera"
+    },
+    {
+      "tag": "a cat is shaking its body on the floor with food"
+    },
+    {
+      "tag": "a cat is shaking its body on the grass looking at the camera"
+    },
+    {
+      "tag": "a cat is shaking its body on the sofa looking at the camera"
+    },
+    {
+      "tag": "a cat is stretching at home looking at the camera"
+    },
+    {
+      "tag": "a cat is stretching in the backyard looking at the camera"
+    },
+    {
+      "tag": "a cat is stretching in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a cat is stretching in the park looking at the camera"
+    },
+    {
+      "tag": "a cat is stretching on the beach looking at the camera"
+    },
+    {
+      "tag": "a cat is stretching on the floor looking at the camera"
+    },
+    {
+      "tag": "a cat is stretching on the grass looking at the camera"
+    },
+    {
+      "tag": "a cat is stretching on the sofa looking at the camera"
+    },
+    {
+      "tag": "a cat is tugging a toy in the backyard taking a bath"
+    },
+    {
+      "tag": "a cat is tugging a toy on the grass taking a bath"
+    },
+    {
+      "tag": "a cat is wagging its tail at home looking at the camera"
+    },
+    {
+      "tag": "a cat is wagging its tail by the window looking at the camera"
+    },
+    {
+      "tag": "a cat is wagging its tail in the backyard looking at the camera"
+    },
+    {
+      "tag": "a cat is wagging its tail in the backyard wearing a collar"
+    },
+    {
+      "tag": "a cat is wagging its tail in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a cat is wagging its tail in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a cat is wagging its tail in the park looking at the camera"
+    },
+    {
+      "tag": "a cat is wagging its tail in the park with food"
+    },
+    {
+      "tag": "a cat is wagging its tail on the beach looking at the camera"
+    },
+    {
+      "tag": "a cat is wagging its tail on the floor looking at the camera"
+    },
+    {
+      "tag": "a cat is wagging its tail on the floor with food"
+    },
+    {
+      "tag": "a cat is wagging its tail on the grass looking at the camera"
+    },
+    {
+      "tag": "a cat is wagging its tail on the grass with food"
+    },
+    {
+      "tag": "a cat is wagging its tail on the sofa looking at the camera"
+    },
+    {
+      "tag": "a cat is yawning at home looking at the camera"
+    },
+    {
+      "tag": "a cat is yawning by the window looking at the camera"
+    },
+    {
+      "tag": "a cat is yawning in the backyard looking at the camera"
+    },
+    {
+      "tag": "a cat is yawning on the beach looking at the camera"
+    },
+    {
+      "tag": "a cat is yawning on the floor looking at the camera"
+    },
+    {
+      "tag": "a cat is yawning on the grass looking at the camera"
+    },
+    {
+      "tag": "a cat is yawning on the sofa looking at the camera"
+    },
+    {
+      "tag": "a corgi is barking at home being brushed"
+    },
+    {
+      "tag": "a corgi is barking by the window being brushed"
+    },
+    {
+      "tag": "a corgi is barking by the window with a frisbee"
+    },
+    {
+      "tag": "a corgi is barking on the beach being brushed"
+    },
+    {
+      "tag": "a corgi is barking on the floor looking at the camera"
+    },
+    {
+      "tag": "a corgi is barking under the table being brushed"
+    },
+    {
+      "tag": "a corgi is scratching in the backyard looking at the camera"
+    },
+    {
+      "tag": "a dog is barking at home looking at the camera"
+    },
+    {
+      "tag": "a dog is barking at home taking a bath"
+    },
+    {
+      "tag": "a dog is barking at home wearing a collar"
+    },
+    {
+      "tag": "a dog is barking by the window looking at the camera"
+    },
+    {
+      "tag": "a dog is barking in the backyard being brushed"
+    },
+    {
+      "tag": "a dog is barking in the backyard looking at the camera"
+    },
+    {
+      "tag": "a dog is barking in the backyard next to its owner"
+    },
+    {
+      "tag": "a dog is barking in the backyard wearing a collar"
+    },
+    {
+      "tag": "a dog is barking in the backyard with a ball"
+    },
+    {
+      "tag": "a dog is barking in the backyard with a bone"
+    },
+    {
+      "tag": "a dog is barking in the backyard with a bowl"
+    },
+    {
+      "tag": "a dog is barking in the backyard with a pillow"
+    },
+    {
+      "tag": "a dog is barking in the backyard with a plush toy"
+    },
+    {
+      "tag": "a dog is barking in the backyard with food"
+    },
+    {
+      "tag": "a dog is barking in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a dog is barking in the kitchen wearing a collar"
+    },
+    {
+      "tag": "a dog is barking in the kitchen with a pillow"
+    },
+    {
+      "tag": "a dog is barking in the kitchen with a stick"
+    },
+    {
+      "tag": "a dog is barking on the beach looking at the camera"
+    },
+    {
+      "tag": "a dog is barking on the beach taking a bath"
+    },
+    {
+      "tag": "a dog is barking on the beach wearing a collar"
+    },
+    {
+      "tag": "a dog is barking on the beach with a bowl"
+    },
+    {
+      "tag": "a dog is barking on the beach with food"
+    },
+    {
+      "tag": "a dog is barking on the floor looking at the camera"
+    },
+    {
+      "tag": "a dog is barking on the floor wearing a collar"
+    },
+    {
+      "tag": "a dog is barking on the floor with a ball"
+    },
+    {
+      "tag": "a dog is barking on the floor with a bone"
+    },
+    {
+      "tag": "a dog is barking on the floor with a bowl"
+    },
+    {
+      "tag": "a dog is barking on the floor with a pillow"
+    },
+    {
+      "tag": "a dog is barking on the floor with a rope"
+    },
+    {
+      "tag": "a dog is barking on the floor with a stick"
+    },
+    {
+      "tag": "a dog is barking on the floor with food"
+    },
+    {
+      "tag": "a dog is barking on the grass looking at the camera"
+    },
+    {
+      "tag": "a dog is barking on the grass next to its owner"
+    },
+    {
+      "tag": "a dog is barking on the grass wearing a collar"
+    },
+    {
+      "tag": "a dog is barking on the grass with a ball"
+    },
+    {
+      "tag": "a dog is barking on the grass with a bone"
+    },
+    {
+      "tag": "a dog is barking on the grass with a bowl"
+    },
+    {
+      "tag": "a dog is barking on the grass with a pillow"
+    },
+    {
+      "tag": "a dog is barking on the grass with a rope"
+    },
+    {
+      "tag": "a dog is barking on the grass with food"
+    },
+    {
+      "tag": "a dog is barking on the sofa looking at the camera"
+    },
+    {
+      "tag": "a dog is barking on the sofa wearing a collar"
+    },
+    {
+      "tag": "a dog is barking on the sofa with a ball"
+    },
+    {
+      "tag": "a dog is barking on the sofa with a bone"
+    },
+    {
+      "tag": "a dog is barking on the sofa with a bowl"
+    },
+    {
+      "tag": "a dog is barking on the sofa with a stick"
+    },
+    {
+      "tag": "a dog is biting at home looking at the camera"
+    },
+    {
+      "tag": "a dog is biting at home wearing a collar"
+    },
+    {
+      "tag": "a dog is biting by the window looking at the camera"
+    },
+    {
+      "tag": "a dog is biting by the window wearing a collar"
+    },
+    {
+      "tag": "a dog is biting in the backyard looking at the camera"
+    },
+    {
+      "tag": "a dog is biting in the backyard wearing a collar"
+    },
+    {
+      "tag": "a dog is biting in the backyard with food"
+    },
+    {
+      "tag": "a dog is biting in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a dog is biting in the kitchen wearing a collar"
+    },
+    {
+      "tag": "a dog is biting on the beach looking at the camera"
+    },
+    {
+      "tag": "a dog is biting on the beach wearing a collar"
+    },
+    {
+      "tag": "a dog is biting on the floor looking at the camera"
+    },
+    {
+      "tag": "a dog is biting on the floor wearing a collar"
+    },
+    {
+      "tag": "a dog is biting on the floor with food"
+    },
+    {
+      "tag": "a dog is biting on the grass looking at the camera"
+    },
+    {
+      "tag": "a dog is biting on the sofa looking at the camera"
+    },
+    {
+      "tag": "a dog is biting on the sofa wearing a collar"
+    },
+    {
+      "tag": "a dog is biting outdoors looking at the camera"
+    },
+    {
+      "tag": "a dog is biting under the table looking at the camera"
+    },
+    {
+      "tag": "a dog is jumping on the floor looking at the camera"
+    },
+    {
+      "tag": "a dog is licking its paw at home looking at the camera"
+    },
+    {
+      "tag": "a dog is licking its paw at home wearing a collar"
+    },
+    {
+      "tag": "a dog is licking its paw by the window looking at the camera"
+    },
+    {
+      "tag": "a dog is licking its paw in the backyard chasing another pet"
+    },
+    {
+      "tag": "a dog is licking its paw in the backyard looking at the camera"
+    },
+    {
+      "tag": "a dog is licking its paw in the backyard next to its owner"
+    },
+    {
+      "tag": "a dog is licking its paw in the backyard wearing a collar"
+    },
+    {
+      "tag": "a dog is licking its paw in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a dog is licking its paw on the beach looking at the camera"
+    },
+    {
+      "tag": "a dog is licking its paw on the floor looking at the camera"
+    },
+    {
+      "tag": "a dog is licking its paw on the floor next to its owner"
+    },
+    {
+      "tag": "a dog is licking its paw on the grass looking at the camera"
+    },
+    {
+      "tag": "a dog is licking its paw on the sofa looking at the camera"
+    },
+    {
+      "tag": "a dog is rolling at home looking at the camera"
+    },
+    {
+      "tag": "a dog is rolling at home wearing a collar"
+    },
+    {
+      "tag": "a dog is rolling by the window looking at the camera"
+    },
+    {
+      "tag": "a dog is rolling by the window wearing a collar"
+    },
+    {
+      "tag": "a dog is rolling in the backyard looking at the camera"
+    },
+    {
+      "tag": "a dog is rolling in the backyard wearing a collar"
+    },
+    {
+      "tag": "a dog is rolling in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a dog is rolling in the bedroom with food"
+    },
+    {
+      "tag": "a dog is rolling in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a dog is rolling in the kitchen wearing a collar"
+    },
+    {
+      "tag": "a dog is rolling on the beach looking at the camera"
+    },
+    {
+      "tag": "a dog is rolling on the grass looking at the camera"
+    },
+    {
+      "tag": "a dog is rolling on the grass with food"
+    },
+    {
+      "tag": "a dog is rolling on the sofa looking at the camera"
+    },
+    {
+      "tag": "a dog is scratching at home looking at the camera"
+    },
+    {
+      "tag": "a dog is scratching by the window looking at the camera"
+    },
+    {
+      "tag": "a dog is scratching in the backyard looking at the camera"
+    },
+    {
+      "tag": "a dog is scratching in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a dog is scratching in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a dog is scratching on the beach looking at the camera"
+    },
+    {
+      "tag": "a dog is scratching on the floor looking at the camera"
+    },
+    {
+      "tag": "a dog is scratching on the grass looking at the camera"
+    },
+    {
+      "tag": "a dog is scratching on the sofa looking at the camera"
+    },
+    {
+      "tag": "a dog is shaking its body at home looking at the camera"
+    },
+    {
+      "tag": "a dog is shaking its body in the backyard looking at the camera"
+    },
+    {
+      "tag": "a dog is shaking its body in the backyard wearing a collar"
+    },
+    {
+      "tag": "a dog is shaking its body in the backyard with a bowl"
+    },
+    {
+      "tag": "a dog is shaking its body in the backyard with food"
+    },
+    {
+      "tag": "a dog is shaking its body in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a dog is shaking its body in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a dog is shaking its body in the kitchen wearing a collar"
+    },
+    {
+      "tag": "a dog is shaking its body in the park looking at the camera"
+    },
+    {
+      "tag": "a dog is shaking its body in the park with food"
+    },
+    {
+      "tag": "a dog is shaking its body on the beach looking at the camera"
+    },
+    {
+      "tag": "a dog is shaking its body on the floor looking at the camera"
+    },
+    {
+      "tag": "a dog is shaking its body on the floor wearing a collar"
+    },
+    {
+      "tag": "a dog is shaking its body on the floor with a bowl"
+    },
+    {
+      "tag": "a dog is shaking its body on the floor with food"
+    },
+    {
+      "tag": "a dog is shaking its body on the grass looking at the camera"
+    },
+    {
+      "tag": "a dog is shaking its body on the grass wearing a collar"
+    },
+    {
+      "tag": "a dog is shaking its body on the grass with a bowl"
+    },
+    {
+      "tag": "a dog is shaking its body on the grass with food"
+    },
+    {
+      "tag": "a dog is shaking its body on the sofa looking at the camera"
+    },
+    {
+      "tag": "a dog is sniffing something in the backyard looking at the camera"
+    },
+    {
+      "tag": "a dog is sniffing something on the floor looking at the camera"
+    },
+    {
+      "tag": "a dog is sniffing something on the floor with food"
+    },
+    {
+      "tag": "a dog is sniffing something on the grass looking at the camera"
+    },
+    {
+      "tag": "a dog is sniffing something on the sofa looking at the camera"
+    },
+    {
+      "tag": "a dog is stretching at home looking at the camera"
+    },
+    {
+      "tag": "a dog is stretching by the window looking at the camera"
+    },
+    {
+      "tag": "a dog is stretching in the backyard looking at the camera"
+    },
+    {
+      "tag": "a dog is stretching in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a dog is stretching in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a dog is stretching in the park looking at the camera"
+    },
+    {
+      "tag": "a dog is stretching on the beach looking at the camera"
+    },
+    {
+      "tag": "a dog is stretching on the floor looking at the camera"
+    },
+    {
+      "tag": "a dog is stretching on the floor with food"
+    },
+    {
+      "tag": "a dog is stretching on the grass looking at the camera"
+    },
+    {
+      "tag": "a dog is stretching on the sofa looking at the camera"
+    },
+    {
+      "tag": "a dog is tugging a toy in the backyard taking a bath"
+    },
+    {
+      "tag": "a dog is tugging a toy on the grass taking a bath"
+    },
+    {
+      "tag": "a dog is wagging its tail at home looking at the camera"
+    },
+    {
+      "tag": "a dog is wagging its tail at home with food"
+    },
+    {
+      "tag": "a dog is wagging its tail by the window looking at the camera"
+    },
+    {
+      "tag": "a dog is wagging its tail in the backyard looking at the camera"
+    },
+    {
+      "tag": "a dog is wagging its tail in the backyard wearing a collar"
+    },
+    {
+      "tag": "a dog is wagging its tail in the backyard with a bowl"
+    },
+    {
+      "tag": "a dog is wagging its tail in the backyard with food"
+    },
+    {
+      "tag": "a dog is wagging its tail in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a dog is wagging its tail in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a dog is wagging its tail in the kitchen wearing a collar"
+    },
+    {
+      "tag": "a dog is wagging its tail in the park looking at the camera"
+    },
+    {
+      "tag": "a dog is wagging its tail in the park with food"
+    },
+    {
+      "tag": "a dog is wagging its tail on the beach looking at the camera"
+    },
+    {
+      "tag": "a dog is wagging its tail on the floor looking at the camera"
+    },
+    {
+      "tag": "a dog is wagging its tail on the floor wearing a collar"
+    },
+    {
+      "tag": "a dog is wagging its tail on the floor with a bowl"
+    },
+    {
+      "tag": "a dog is wagging its tail on the floor with a pillow"
+    },
+    {
+      "tag": "a dog is wagging its tail on the floor with food"
+    },
+    {
+      "tag": "a dog is wagging its tail on the grass looking at the camera"
+    },
+    {
+      "tag": "a dog is wagging its tail on the grass wearing a collar"
+    },
+    {
+      "tag": "a dog is wagging its tail on the grass with a bowl"
+    },
+    {
+      "tag": "a dog is wagging its tail on the grass with food"
+    },
+    {
+      "tag": "a dog is wagging its tail on the sofa looking at the camera"
+    },
+    {
+      "tag": "a dog is yawning in the backyard looking at the camera"
+    },
+    {
+      "tag": "a dog is yawning in the backyard wearing a collar"
+    },
+    {
+      "tag": "a dog is yawning on the beach looking at the camera"
+    },
+    {
+      "tag": "a dog is yawning on the floor looking at the camera"
+    },
+    {
+      "tag": "a dog is yawning on the floor wearing a collar"
+    },
+    {
+      "tag": "a dog is yawning on the floor with food"
+    },
+    {
+      "tag": "a dog is yawning on the grass looking at the camera"
+    },
+    {
+      "tag": "a dog is yawning on the grass wearing a collar"
+    },
+    {
+      "tag": "a dog is yawning on the grass with food"
+    },
+    {
+      "tag": "a dog is yawning on the sofa looking at the camera"
+    },
+    {
+      "tag": "a domestic animal is rolling in the backyard being brushed"
+    },
+    {
+      "tag": "a domestic animal is rolling in the backyard with food"
+    },
+    {
+      "tag": "a domestic animal is rolling in the bedroom wearing a collar"
+    },
+    {
+      "tag": "a domestic animal is rolling in the bedroom with a bowl"
+    },
+    {
+      "tag": "a domestic animal is rolling in the bedroom with food"
+    },
+    {
+      "tag": "a domestic animal is scratching at home looking at the camera"
+    },
+    {
+      "tag": "a domestic animal is scratching in the park looking at the camera"
+    },
+    {
+      "tag": "a domestic animal is shaking its body in the bedroom wearing a collar"
+    },
+    {
+      "tag": "a domestic animal is wagging its tail at home looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is barking at home being brushed"
+    },
+    {
+      "tag": "a golden retriever is barking by the window being brushed"
+    },
+    {
+      "tag": "a golden retriever is barking in the backyard looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is barking in the backyard with a bowl"
+    },
+    {
+      "tag": "a golden retriever is barking in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is barking on the beach being brushed"
+    },
+    {
+      "tag": "a golden retriever is barking on the beach looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is barking on the beach taking a bath"
+    },
+    {
+      "tag": "a golden retriever is barking on the floor looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is barking on the floor with a bowl"
+    },
+    {
+      "tag": "a golden retriever is barking on the floor with food"
+    },
+    {
+      "tag": "a golden retriever is barking on the grass looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is barking under the table being brushed"
+    },
+    {
+      "tag": "a golden retriever is biting at home looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is biting by the window looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is biting in the backyard looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is biting on the beach looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is biting on the floor looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is biting on the sofa looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is jumping in the backyard looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is rolling in the backyard looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is scratching at home looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is scratching by the window looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is scratching in the backyard looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is scratching in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is scratching on the sofa looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is shaking its body in the backyard looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is shaking its body on the floor with food"
+    },
+    {
+      "tag": "a golden retriever is stretching in the backyard looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is tugging a toy in the backyard taking a bath"
+    },
+    {
+      "tag": "a golden retriever is wagging its tail at home looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is wagging its tail in the backyard looking at the camera"
+    },
+    {
+      "tag": "a golden retriever is wagging its tail in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a husky is barking at home being brushed"
+    },
+    {
+      "tag": "a husky is barking by the window being brushed"
+    },
+    {
+      "tag": "a husky is barking by the window with a frisbee"
+    },
+    {
+      "tag": "a husky is barking in the backyard looking at the camera"
+    },
+    {
+      "tag": "a husky is barking in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a husky is barking in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a husky is barking on the beach being brushed"
+    },
+    {
+      "tag": "a husky is barking on the beach taking a bath"
+    },
+    {
+      "tag": "a husky is barking on the floor looking at the camera"
+    },
+    {
+      "tag": "a husky is barking on the floor next to its owner"
+    },
+    {
+      "tag": "a husky is barking on the floor wearing a collar"
+    },
+    {
+      "tag": "a husky is barking on the floor with a bowl"
+    },
+    {
+      "tag": "a husky is barking on the floor with food"
+    },
+    {
+      "tag": "a husky is barking on the grass looking at the camera"
+    },
+    {
+      "tag": "a husky is barking under the table being brushed"
+    },
+    {
+      "tag": "a husky is biting at home looking at the camera"
+    },
+    {
+      "tag": "a husky is biting by the window looking at the camera"
+    },
+    {
+      "tag": "a husky is biting in the backyard looking at the camera"
+    },
+    {
+      "tag": "a husky is biting in the kitchen looking at the camera"
+    },
+    {
+      "tag": "a husky is biting on the beach looking at the camera"
+    },
+    {
+      "tag": "a husky is biting on the floor looking at the camera"
+    },
+    {
+      "tag": "a husky is biting on the floor wearing a collar"
+    },
+    {
+      "tag": "a husky is biting on the grass looking at the camera"
+    },
+    {
+      "tag": "a husky is biting on the sofa looking at the camera"
+    },
+    {
+      "tag": "a husky is jumping in the backyard looking at the camera"
+    },
+    {
+      "tag": "a husky is licking its paw at home looking at the camera"
+    },
+    {
+      "tag": "a husky is licking its paw in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a husky is rolling at home looking at the camera"
+    },
+    {
+      "tag": "a husky is rolling in the backyard looking at the camera"
+    },
+    {
+      "tag": "a husky is rolling in the backyard wearing a collar"
+    },
+    {
+      "tag": "a husky is rolling in the backyard with food"
+    },
+    {
+      "tag": "a husky is scratching in the backyard looking at the camera"
+    },
+    {
+      "tag": "a husky is scratching in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a husky is shaking its body in the backyard looking at the camera"
+    },
+    {
+      "tag": "a husky is shaking its body in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a husky is shaking its body on the floor with food"
+    },
+    {
+      "tag": "a husky is stretching at home looking at the camera"
+    },
+    {
+      "tag": "a husky is stretching in the backyard looking at the camera"
+    },
+    {
+      "tag": "a husky is stretching in the bedroom looking at the camera"
+    },
+    {
+      "tag": "a husky is tugging a toy in the backyard taking a bath"
+    },
+    {
+      "tag": "a husky is wagging its tail at home looking at the camera"
+    },
+    {
+      "tag": "a husky is wagging its tail in the backyard looking at the camera"
+    },
+    {
+      "tag": "a husky is wagging its tail in the bedroom looking at the camera"
+    },
+    {
+      "tag": "two cats is barking at home looking at the camera"
+    },
+    {
+      "tag": "two cats is barking at home taking a bath"
+    },
+    {
+      "tag": "two cats is barking at home with a frisbee"
+    },
+    {
+      "tag": "two cats is barking by the window with a frisbee"
+    },
+    {
+      "tag": "two cats is barking in the backyard looking at the camera"
+    },
+    {
+      "tag": "two cats is barking in the backyard taking a bath"
+    },
+    {
+      "tag": "two cats is barking in the backyard wearing a collar"
+    },
+    {
+      "tag": "two cats is barking in the backyard with food"
+    },
+    {
+      "tag": "two cats is barking on the beach looking at the camera"
+    },
+    {
+      "tag": "two cats is barking on the beach taking a bath"
+    },
+    {
+      "tag": "two cats is barking on the beach wearing a collar"
+    },
+    {
+      "tag": "two cats is barking on the beach with a frisbee"
+    },
+    {
+      "tag": "two cats is barking on the floor looking at the camera"
+    },
+    {
+      "tag": "two cats is barking on the floor next to its owner"
+    },
+    {
+      "tag": "two cats is barking on the floor wearing a collar"
+    },
+    {
+      "tag": "two cats is barking on the floor with a bowl"
+    },
+    {
+      "tag": "two cats is barking on the floor with a pillow"
+    },
+    {
+      "tag": "two cats is barking on the floor with food"
+    },
+    {
+      "tag": "two cats is barking on the grass looking at the camera"
+    },
+    {
+      "tag": "two cats is barking on the grass next to its owner"
+    },
+    {
+      "tag": "two cats is barking on the grass taking a bath"
+    },
+    {
+      "tag": "two cats is barking on the grass wearing a collar"
+    },
+    {
+      "tag": "two cats is barking on the grass with a bowl"
+    },
+    {
+      "tag": "two cats is barking on the grass with food"
+    },
+    {
+      "tag": "two cats is biting in the backyard wearing a collar"
+    },
+    {
+      "tag": "two cats is biting on the beach looking at the camera"
+    },
+    {
+      "tag": "two cats is biting on the grass looking at the camera"
+    },
+    {
+      "tag": "two cats is biting on the grass wearing a collar"
+    },
+    {
+      "tag": "two cats is licking its paw at home looking at the camera"
+    },
+    {
+      "tag": "two cats is licking its paw in the backyard looking at the camera"
+    },
+    {
+      "tag": "two cats is rolling in the backyard looking at the camera"
+    },
+    {
+      "tag": "two cats is rolling in the backyard wearing a collar"
+    },
+    {
+      "tag": "two cats is rolling in the backyard with food"
+    },
+    {
+      "tag": "two cats is scratching in the backyard looking at the camera"
+    },
+    {
+      "tag": "two cats is shaking its body in the backyard looking at the camera"
+    },
+    {
+      "tag": "two cats is tugging a toy in the backyard taking a bath"
+    },
+    {
+      "tag": "two cats is wagging its tail at home looking at the camera"
+    },
+    {
+      "tag": "two cats is wagging its tail in the backyard looking at the camera"
+    },
+    {
+      "tag": "two cats is wagging its tail in the bedroom looking at the camera"
+    },
+    {
+      "tag": "two dogs is barking at home looking at the camera"
+    },
+    {
+      "tag": "two dogs is barking at home taking a bath"
+    },
+    {
+      "tag": "two dogs is barking at home wearing a collar"
+    },
+    {
+      "tag": "two dogs is barking by the window looking at the camera"
+    },
+    {
+      "tag": "two dogs is barking by the window taking a bath"
+    },
+    {
+      "tag": "two dogs is barking by the window with a frisbee"
+    },
+    {
+      "tag": "two dogs is barking in the backyard looking at the camera"
+    },
+    {
+      "tag": "two dogs is barking in the backyard wearing a collar"
+    },
+    {
+      "tag": "two dogs is barking in the backyard with a bowl"
+    },
+    {
+      "tag": "two dogs is barking in the bedroom looking at the camera"
+    },
+    {
+      "tag": "two dogs is barking on the beach looking at the camera"
+    },
+    {
+      "tag": "two dogs is barking on the beach taking a bath"
+    },
+    {
+      "tag": "two dogs is barking on the beach wearing a collar"
+    },
+    {
+      "tag": "two dogs is barking on the floor looking at the camera"
+    },
+    {
+      "tag": "two dogs is barking on the floor next to its owner"
+    },
+    {
+      "tag": "two dogs is barking on the floor wearing a collar"
+    },
+    {
+      "tag": "two dogs is barking on the floor with a bone"
+    },
+    {
+      "tag": "two dogs is barking on the floor with a bowl"
+    },
+    {
+      "tag": "two dogs is barking on the floor with a pillow"
+    },
+    {
+      "tag": "two dogs is barking on the floor with food"
+    },
+    {
+      "tag": "two dogs is barking on the grass looking at the camera"
+    },
+    {
+      "tag": "two dogs is barking on the grass next to its owner"
+    },
+    {
+      "tag": "two dogs is barking on the grass wearing a collar"
+    },
+    {
+      "tag": "two dogs is barking on the grass with a bone"
+    },
+    {
+      "tag": "two dogs is barking on the grass with a bowl"
+    },
+    {
+      "tag": "two dogs is barking on the grass with a pillow"
+    },
+    {
+      "tag": "two dogs is biting in the backyard looking at the camera"
+    },
+    {
+      "tag": "two dogs is biting on the floor looking at the camera"
+    },
+    {
+      "tag": "two dogs is biting on the grass looking at the camera"
+    },
+    {
+      "tag": "two dogs is biting on the sofa wearing a collar"
+    },
+    {
+      "tag": "two dogs is licking its paw at home looking at the camera"
+    },
+    {
+      "tag": "two dogs is licking its paw in the backyard looking at the camera"
+    },
+    {
+      "tag": "two dogs is licking its paw in the bedroom looking at the camera"
+    },
+    {
+      "tag": "two dogs is rolling in the backyard looking at the camera"
+    },
+    {
+      "tag": "two dogs is rolling in the backyard with food"
+    },
+    {
+      "tag": "two dogs is scratching in the backyard looking at the camera"
+    },
+    {
+      "tag": "two dogs is shaking its body in the backyard looking at the camera"
+    },
+    {
+      "tag": "two dogs is shaking its body in the backyard wearing a collar"
+    },
+    {
+      "tag": "two dogs is shaking its body on the floor with food"
+    },
+    {
+      "tag": "two dogs is shaking its body on the grass wearing a collar"
+    },
+    {
+      "tag": "two dogs is stretching in the backyard looking at the camera"
+    },
+    {
+      "tag": "two dogs is tugging a toy in the backyard taking a bath"
+    },
+    {
+      "tag": "two dogs is wagging its tail at home looking at the camera"
+    },
+    {
+      "tag": "two dogs is wagging its tail in the backyard looking at the camera"
+    },
+    {
+      "tag": "two dogs is wagging its tail in the bedroom looking at the camera"
+    },
+    {
+      "tag": "two dogs is yawning on the floor next to its owner"
+    },
+    {
+      "tag": "two dogs is yawning on the grass next to its owner"
+    },
+    {
+      "tag": "a corgi is licking its paw on the floor looking at the camera"
+    }
+  ]
+}

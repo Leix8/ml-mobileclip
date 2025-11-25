@@ -1,0 +1,1567 @@
+{
+  "metadata": {
+    "scene": "daily_life_scene",
+    "generator": "daily_life_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-11T22:05:09.438022",
+    "eps": 0.07,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 518
+  },
+  "prompts": [
+    {
+      "tag": "a baby is cleaning the room at a coffee shop with a backpack"
+    },
+    {
+      "tag": "a baby is cleaning the room at the bus stop with books and notebooks"
+    },
+    {
+      "tag": "a baby is cleaning the room in a park with books and notebooks"
+    },
+    {
+      "tag": "a baby is cleaning the room on a city street with books and notebooks"
+    },
+    {
+      "tag": "a baby is cleaning the room on public transportation with books and notebooks"
+    },
+    {
+      "tag": "a baby is cooking at a coffee shop with a pet"
+    },
+    {
+      "tag": "a baby is cooking at the gym with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is cooking in a park with a camera"
+    },
+    {
+      "tag": "a baby is cooking in a park with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is cooking in a park with a pet"
+    },
+    {
+      "tag": "a baby is cooking in a park with books and notebooks"
+    },
+    {
+      "tag": "a baby is cooking in a park with gym equipment"
+    },
+    {
+      "tag": "a baby is cooking in a supermarket with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is cooking in a supermarket with a pet"
+    },
+    {
+      "tag": "a baby is cooking in the backyard with a camera"
+    },
+    {
+      "tag": "a baby is cooking in the backyard with gym equipment"
+    },
+    {
+      "tag": "a baby is cooking on a city street with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is cooking on a city street with books and notebooks"
+    },
+    {
+      "tag": "a baby is cooking on a city street with gym equipment"
+    },
+    {
+      "tag": "a baby is cooking on public transportation with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is cooking on public transportation with books and notebooks"
+    },
+    {
+      "tag": "a baby is cooking on the balcony with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is cooking on the balcony with books and notebooks"
+    },
+    {
+      "tag": "a baby is cooking on the balcony with gym equipment"
+    },
+    {
+      "tag": "a baby is doing laundry in a park with a camera"
+    },
+    {
+      "tag": "a baby is drinking coffee in a park with cleaning tools"
+    },
+    {
+      "tag": "a baby is drinking coffee in a park with gym equipment"
+    },
+    {
+      "tag": "a baby is drinking coffee in the backyard with gym equipment"
+    },
+    {
+      "tag": "a baby is drinking coffee on a city street with gym equipment"
+    },
+    {
+      "tag": "a baby is drinking coffee on the balcony with gym equipment"
+    },
+    {
+      "tag": "a baby is feeding a pet at the gym with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is feeding a pet on a city street with books and notebooks"
+    },
+    {
+      "tag": "a baby is jogging or exercising at a coffee shop with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is jogging or exercising at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "a baby is jogging or exercising at a coffee shop with cleaning tools"
+    },
+    {
+      "tag": "a baby is jogging or exercising at a coffee shop with shopping bags"
+    },
+    {
+      "tag": "a baby is jogging or exercising at a restaurant table with cleaning tools"
+    },
+    {
+      "tag": "a baby is jogging or exercising at the gym with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is jogging or exercising in a park with books and notebooks"
+    },
+    {
+      "tag": "a baby is jogging or exercising in a park with cleaning tools"
+    },
+    {
+      "tag": "a baby is jogging or exercising in a supermarket with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is jogging or exercising in the backyard with cleaning tools"
+    },
+    {
+      "tag": "a baby is jogging or exercising on a city street with cleaning tools"
+    },
+    {
+      "tag": "a baby is jogging or exercising on public transportation with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is jogging or exercising on public transportation with books and notebooks"
+    },
+    {
+      "tag": "a baby is jogging or exercising on public transportation with cleaning tools"
+    },
+    {
+      "tag": "a baby is jogging or exercising on the balcony with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is reading a book at the bus stop with gym equipment"
+    },
+    {
+      "tag": "a baby is reading a book at the office with a camera"
+    },
+    {
+      "tag": "a baby is reading a book at the office with a phone"
+    },
+    {
+      "tag": "a baby is reading a book in a bedroom with a camera"
+    },
+    {
+      "tag": "a baby is reading a book in a classroom with earphones"
+    },
+    {
+      "tag": "a baby is reading a book in a park with a camera"
+    },
+    {
+      "tag": "a baby is reading a book in a park with gym equipment"
+    },
+    {
+      "tag": "a baby is reading a book in a park with shopping bags"
+    },
+    {
+      "tag": "a baby is reading a book in a supermarket with gym equipment"
+    },
+    {
+      "tag": "a baby is reading a book in the backyard with gym equipment"
+    },
+    {
+      "tag": "a baby is reading a book in the kitchen with a camera"
+    },
+    {
+      "tag": "a baby is reading a book on a city street with cleaning tools"
+    },
+    {
+      "tag": "a baby is reading a book on a city street with gym equipment"
+    },
+    {
+      "tag": "a baby is reading a book on public transportation with cleaning tools"
+    },
+    {
+      "tag": "a baby is reading a book on public transportation with gym equipment"
+    },
+    {
+      "tag": "a baby is reading a book on the balcony with gym equipment"
+    },
+    {
+      "tag": "a baby is reading a book on the balcony with shopping bags"
+    },
+    {
+      "tag": "a baby is relaxing on the couch at the bus stop with cleaning tools"
+    },
+    {
+      "tag": "a baby is relaxing on the couch in a park with a backpack"
+    },
+    {
+      "tag": "a baby is relaxing on the couch in a park with a camera"
+    },
+    {
+      "tag": "a baby is relaxing on the couch in a park with a pet"
+    },
+    {
+      "tag": "a baby is relaxing on the couch in a park with cleaning tools"
+    },
+    {
+      "tag": "a baby is relaxing on the couch in a park with gym equipment"
+    },
+    {
+      "tag": "a baby is relaxing on the couch in a park with shopping bags"
+    },
+    {
+      "tag": "a baby is relaxing on the couch in a supermarket with a camera"
+    },
+    {
+      "tag": "a baby is relaxing on the couch in a supermarket with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is relaxing on the couch in a supermarket with cleaning tools"
+    },
+    {
+      "tag": "a baby is relaxing on the couch in a supermarket with gym equipment"
+    },
+    {
+      "tag": "a baby is relaxing on the couch on a city street with a backpack"
+    },
+    {
+      "tag": "a baby is relaxing on the couch on a city street with a camera"
+    },
+    {
+      "tag": "a baby is relaxing on the couch on a city street with a cup of coffee"
+    },
+    {
+      "tag": "a baby is relaxing on the couch on a city street with a pet"
+    },
+    {
+      "tag": "a baby is relaxing on the couch on a city street with cleaning tools"
+    },
+    {
+      "tag": "a baby is relaxing on the couch on a city street with gym equipment"
+    },
+    {
+      "tag": "a baby is relaxing on the couch on public transportation with cleaning tools"
+    },
+    {
+      "tag": "a baby is relaxing on the couch on the balcony with a backpack"
+    },
+    {
+      "tag": "a baby is relaxing on the couch on the balcony with a camera"
+    },
+    {
+      "tag": "a baby is relaxing on the couch on the balcony with gym equipment"
+    },
+    {
+      "tag": "a baby is relaxing on the couch on the balcony with shopping bags"
+    },
+    {
+      "tag": "a baby is shopping for groceries in a park with gym equipment"
+    },
+    {
+      "tag": "a baby is shopping for groceries on a city street with gym equipment"
+    },
+    {
+      "tag": "a baby is shopping for groceries on the balcony with gym equipment"
+    },
+    {
+      "tag": "a baby is taking a photo at a coffee shop with gym equipment"
+    },
+    {
+      "tag": "a baby is taking a photo at a coffee shop with shopping bags"
+    },
+    {
+      "tag": "a baby is taking a photo at the gym with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is taking a photo at the gym with shopping bags"
+    },
+    {
+      "tag": "a baby is taking a photo at the office with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is taking a photo at the office with books and notebooks"
+    },
+    {
+      "tag": "a baby is taking a photo at the office with shopping bags"
+    },
+    {
+      "tag": "a baby is taking a photo in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is taking a photo in a bedroom with shopping bags"
+    },
+    {
+      "tag": "a baby is taking a photo in a park with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is taking a photo in a park with books and notebooks"
+    },
+    {
+      "tag": "a baby is taking a photo in a park with cleaning tools"
+    },
+    {
+      "tag": "a baby is taking a photo in a park with food or drinks"
+    },
+    {
+      "tag": "a baby is taking a photo in a park with gym equipment"
+    },
+    {
+      "tag": "a baby is taking a photo in a park with shopping bags"
+    },
+    {
+      "tag": "a baby is taking a photo in a supermarket with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is taking a photo in a supermarket with gym equipment"
+    },
+    {
+      "tag": "a baby is taking a photo in the backyard with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is taking a photo in the backyard with books and notebooks"
+    },
+    {
+      "tag": "a baby is taking a photo in the backyard with gym equipment"
+    },
+    {
+      "tag": "a baby is taking a photo in the backyard with shopping bags"
+    },
+    {
+      "tag": "a baby is taking a photo in the kitchen with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is taking a photo on a city street with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is taking a photo on a city street with books and notebooks"
+    },
+    {
+      "tag": "a baby is taking a photo on a city street with cleaning tools"
+    },
+    {
+      "tag": "a baby is taking a photo on a city street with gym equipment"
+    },
+    {
+      "tag": "a baby is taking a photo on a city street with shopping bags"
+    },
+    {
+      "tag": "a baby is taking a photo on public transportation with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is taking a photo on public transportation with gym equipment"
+    },
+    {
+      "tag": "a baby is taking a photo on public transportation with shopping bags"
+    },
+    {
+      "tag": "a baby is taking a photo on the balcony with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is taking a photo on the balcony with gym equipment"
+    },
+    {
+      "tag": "a baby is taking a photo on the balcony with shopping bags"
+    },
+    {
+      "tag": "a baby is talking on the phone at the gym with books and notebooks"
+    },
+    {
+      "tag": "a baby is talking on the phone at the office with shopping bags"
+    },
+    {
+      "tag": "a baby is talking on the phone in a park with cleaning tools"
+    },
+    {
+      "tag": "a baby is talking on the phone in a park with gym equipment"
+    },
+    {
+      "tag": "a baby is talking on the phone in a park with shopping bags"
+    },
+    {
+      "tag": "a baby is talking on the phone on a city street with cleaning tools"
+    },
+    {
+      "tag": "a baby is talking on the phone on a city street with gym equipment"
+    },
+    {
+      "tag": "a baby is talking on the phone on a city street with shopping bags"
+    },
+    {
+      "tag": "a baby is talking on the phone on the balcony with gym equipment"
+    },
+    {
+      "tag": "a baby is talking on the phone on the balcony with shopping bags"
+    },
+    {
+      "tag": "a baby is typing on a laptop in a park with gym equipment"
+    },
+    {
+      "tag": "a baby is typing on a laptop on a city street with gym equipment"
+    },
+    {
+      "tag": "a baby is typing on a laptop on the balcony with gym equipment"
+    },
+    {
+      "tag": "a baby is waiting at a bus stop on the balcony with books and notebooks"
+    },
+    {
+      "tag": "a baby is waiting at a bus stop on the balcony with gym equipment"
+    },
+    {
+      "tag": "a baby is walking across the street at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "a baby is walking across the street at a coffee shop with cleaning tools"
+    },
+    {
+      "tag": "a baby is walking across the street at the gym with a laptop"
+    },
+    {
+      "tag": "a baby is walking across the street at the office with a camera"
+    },
+    {
+      "tag": "a baby is walking across the street in a bedroom with a backpack"
+    },
+    {
+      "tag": "a baby is walking across the street in a bedroom with a camera"
+    },
+    {
+      "tag": "a baby is walking across the street in a bedroom with a laptop"
+    },
+    {
+      "tag": "a baby is walking across the street in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is walking across the street in a bedroom with a phone"
+    },
+    {
+      "tag": "a baby is walking across the street in a bedroom with earphones"
+    },
+    {
+      "tag": "a baby is walking across the street in a classroom with a phone"
+    },
+    {
+      "tag": "a baby is walking across the street in a supermarket with a camera"
+    },
+    {
+      "tag": "a baby is walking across the street in a supermarket with a laptop"
+    },
+    {
+      "tag": "a baby is walking across the street in a supermarket with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is walking across the street in a supermarket with books and notebooks"
+    },
+    {
+      "tag": "a baby is walking across the street in a supermarket with cleaning tools"
+    },
+    {
+      "tag": "a baby is walking across the street in the backyard with a camera"
+    },
+    {
+      "tag": "a baby is walking across the street on the balcony with a backpack"
+    },
+    {
+      "tag": "a baby is walking across the street on the balcony with a camera"
+    },
+    {
+      "tag": "a baby is walking across the street on the balcony with a laptop"
+    },
+    {
+      "tag": "a baby is walking across the street on the balcony with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is walking across the street on the balcony with books and notebooks"
+    },
+    {
+      "tag": "a baby is walking across the street on the balcony with cleaning tools"
+    },
+    {
+      "tag": "a baby is walking across the street on the balcony with gym equipment"
+    },
+    {
+      "tag": "a baby is walking across the street on the balcony with shopping bags"
+    },
+    {
+      "tag": "a baby is writing or drawing at a coffee shop with cleaning tools"
+    },
+    {
+      "tag": "a baby is writing or drawing at a coffee shop with gym equipment"
+    },
+    {
+      "tag": "a baby is writing or drawing at the bus stop with gym equipment"
+    },
+    {
+      "tag": "a baby is writing or drawing at the gym with a newspaper or magazine"
+    },
+    {
+      "tag": "a baby is writing or drawing at the gym with a pet"
+    },
+    {
+      "tag": "a baby is writing or drawing at the office with a camera"
+    },
+    {
+      "tag": "a baby is writing or drawing at the office with a pet"
+    },
+    {
+      "tag": "a baby is writing or drawing in a bedroom with a pet"
+    },
+    {
+      "tag": "a baby is writing or drawing in a park with cleaning tools"
+    },
+    {
+      "tag": "a baby is writing or drawing in a park with gym equipment"
+    },
+    {
+      "tag": "a baby is writing or drawing in a park with shopping bags"
+    },
+    {
+      "tag": "a baby is writing or drawing in a supermarket with cleaning tools"
+    },
+    {
+      "tag": "a baby is writing or drawing in a supermarket with gym equipment"
+    },
+    {
+      "tag": "a baby is writing or drawing on a city street with a backpack"
+    },
+    {
+      "tag": "a baby is writing or drawing on a city street with a cup of coffee"
+    },
+    {
+      "tag": "a baby is writing or drawing on a city street with cleaning tools"
+    },
+    {
+      "tag": "a baby is writing or drawing on a city street with gym equipment"
+    },
+    {
+      "tag": "a baby is writing or drawing on a city street with shopping bags"
+    },
+    {
+      "tag": "a baby is writing or drawing on public transportation with a backpack"
+    },
+    {
+      "tag": "a baby is writing or drawing on public transportation with cleaning tools"
+    },
+    {
+      "tag": "a baby is writing or drawing on public transportation with gym equipment"
+    },
+    {
+      "tag": "a baby is writing or drawing on public transportation with shopping bags"
+    },
+    {
+      "tag": "a baby is writing or drawing on the balcony with a pet"
+    },
+    {
+      "tag": "a baby is writing or drawing on the balcony with gym equipment"
+    },
+    {
+      "tag": "a baby is writing or drawing on the balcony with shopping bags"
+    },
+    {
+      "tag": "a couple is cooking at a coffee shop with a backpack"
+    },
+    {
+      "tag": "a couple is cooking at a coffee shop with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is cooking at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "a couple is cooking at the bus stop with a backpack"
+    },
+    {
+      "tag": "a couple is cooking at the office with a backpack"
+    },
+    {
+      "tag": "a couple is cooking in a park with a backpack"
+    },
+    {
+      "tag": "a couple is cooking in a supermarket with a pet"
+    },
+    {
+      "tag": "a couple is cooking on a city street with a backpack"
+    },
+    {
+      "tag": "a couple is cooking on a city street with a pet"
+    },
+    {
+      "tag": "a couple is doing laundry at the bus stop with books and notebooks"
+    },
+    {
+      "tag": "a couple is doing laundry in a park with a backpack"
+    },
+    {
+      "tag": "a couple is doing laundry in the backyard with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is doing laundry on a city street with a backpack"
+    },
+    {
+      "tag": "a couple is drinking coffee at the gym with books and notebooks"
+    },
+    {
+      "tag": "a couple is drinking coffee in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is feeding a pet at the gym with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is feeding a pet in a park with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is feeding a pet on the balcony with gym equipment"
+    },
+    {
+      "tag": "a couple is jogging or exercising at a coffee shop with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is jogging or exercising at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "a couple is jogging or exercising at a coffee shop with cleaning tools"
+    },
+    {
+      "tag": "a couple is jogging or exercising in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is jogging or exercising in a bedroom with books and notebooks"
+    },
+    {
+      "tag": "a couple is jogging or exercising in the backyard with a backpack"
+    },
+    {
+      "tag": "a couple is jogging or exercising on the balcony with a backpack"
+    },
+    {
+      "tag": "a couple is reading a book in a bedroom with a camera"
+    },
+    {
+      "tag": "a couple is reading a book in a classroom with a backpack"
+    },
+    {
+      "tag": "a couple is reading a book in a classroom with a phone"
+    },
+    {
+      "tag": "a couple is reading a book in a classroom with food or drinks"
+    },
+    {
+      "tag": "a couple is relaxing on the couch at a coffee shop with a backpack"
+    },
+    {
+      "tag": "a couple is relaxing on the couch at a coffee shop with cleaning tools"
+    },
+    {
+      "tag": "a couple is relaxing on the couch at the bus stop with a backpack"
+    },
+    {
+      "tag": "a couple is relaxing on the couch at the bus stop with a cup of coffee"
+    },
+    {
+      "tag": "a couple is relaxing on the couch at the office with a backpack"
+    },
+    {
+      "tag": "a couple is relaxing on the couch at the office with a camera"
+    },
+    {
+      "tag": "a couple is relaxing on the couch in a park with a backpack"
+    },
+    {
+      "tag": "a couple is relaxing on the couch in a park with a cup of coffee"
+    },
+    {
+      "tag": "a couple is relaxing on the couch in a park with a laptop"
+    },
+    {
+      "tag": "a couple is relaxing on the couch in a park with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is relaxing on the couch in a park with a pet"
+    },
+    {
+      "tag": "a couple is relaxing on the couch in a park with a phone"
+    },
+    {
+      "tag": "a couple is relaxing on the couch in a park with books and notebooks"
+    },
+    {
+      "tag": "a couple is relaxing on the couch in a park with cleaning tools"
+    },
+    {
+      "tag": "a couple is relaxing on the couch in a park with gym equipment"
+    },
+    {
+      "tag": "a couple is relaxing on the couch in a park with shopping bags"
+    },
+    {
+      "tag": "a couple is relaxing on the couch in a supermarket with a backpack"
+    },
+    {
+      "tag": "a couple is relaxing on the couch on a city street with a cup of coffee"
+    },
+    {
+      "tag": "a couple is relaxing on the couch on a city street with a laptop"
+    },
+    {
+      "tag": "a couple is relaxing on the couch on the balcony with a laptop"
+    },
+    {
+      "tag": "a couple is relaxing on the couch on the balcony with a pet"
+    },
+    {
+      "tag": "a couple is shopping for groceries on the balcony with gym equipment"
+    },
+    {
+      "tag": "a couple is taking a photo at the office with food or drinks"
+    },
+    {
+      "tag": "a couple is taking a photo in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is taking a photo in a bedroom with a pet"
+    },
+    {
+      "tag": "a couple is taking a photo in a bedroom with books and notebooks"
+    },
+    {
+      "tag": "a couple is taking a photo in a bedroom with gym equipment"
+    },
+    {
+      "tag": "a couple is taking a photo in a bedroom with shopping bags"
+    },
+    {
+      "tag": "a couple is taking a photo in a classroom with a backpack"
+    },
+    {
+      "tag": "a couple is taking a photo in a classroom with food or drinks"
+    },
+    {
+      "tag": "a couple is taking a photo in a park with food or drinks"
+    },
+    {
+      "tag": "a couple is taking a photo in the backyard with a pet"
+    },
+    {
+      "tag": "a couple is taking a photo in the backyard with food or drinks"
+    },
+    {
+      "tag": "a couple is taking a photo on a city street with food or drinks"
+    },
+    {
+      "tag": "a couple is taking a photo on the balcony with food or drinks"
+    },
+    {
+      "tag": "a couple is talking on the phone at the office with food or drinks"
+    },
+    {
+      "tag": "a couple is talking on the phone in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is talking on the phone in a bedroom with books and notebooks"
+    },
+    {
+      "tag": "a couple is waiting at a bus stop on the balcony with a backpack"
+    },
+    {
+      "tag": "a couple is waiting at a bus stop on the balcony with a pet"
+    },
+    {
+      "tag": "a couple is walking across the street at a coffee shop with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is walking across the street at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "a couple is walking across the street at a coffee shop with cleaning tools"
+    },
+    {
+      "tag": "a couple is walking across the street at the bus stop with books and notebooks"
+    },
+    {
+      "tag": "a couple is walking across the street at the gym with a laptop"
+    },
+    {
+      "tag": "a couple is walking across the street in a bedroom with a backpack"
+    },
+    {
+      "tag": "a couple is walking across the street in a bedroom with a camera"
+    },
+    {
+      "tag": "a couple is walking across the street in a bedroom with a laptop"
+    },
+    {
+      "tag": "a couple is walking across the street in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a couple is walking across the street in a bedroom with a pet"
+    },
+    {
+      "tag": "a couple is walking across the street in a bedroom with a phone"
+    },
+    {
+      "tag": "a couple is walking across the street in a bedroom with books and notebooks"
+    },
+    {
+      "tag": "a couple is walking across the street in a bedroom with cleaning tools"
+    },
+    {
+      "tag": "a couple is walking across the street in a bedroom with earphones"
+    },
+    {
+      "tag": "a couple is walking across the street in a bedroom with shopping bags"
+    },
+    {
+      "tag": "a couple is walking across the street in a classroom with a laptop"
+    },
+    {
+      "tag": "a couple is walking across the street in a park with a camera"
+    },
+    {
+      "tag": "a couple is walking across the street in a park with a pet"
+    },
+    {
+      "tag": "a couple is walking across the street in the backyard with a laptop"
+    },
+    {
+      "tag": "a couple is walking across the street on the balcony with a cup of coffee"
+    },
+    {
+      "tag": "a couple is walking across the street on the balcony with a laptop"
+    },
+    {
+      "tag": "a couple is writing or drawing in a bedroom with a camera"
+    },
+    {
+      "tag": "a couple is writing or drawing in a bedroom with shopping bags"
+    },
+    {
+      "tag": "a coworker is cooking in a supermarket with a newspaper or magazine"
+    },
+    {
+      "tag": "a coworker is cooking on a city street with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is cleaning the room at a coffee shop with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is cleaning the room at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "a family is cleaning the room in a park with a laptop"
+    },
+    {
+      "tag": "a family is cleaning the room in the backyard with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is cooking at a coffee shop with gym equipment"
+    },
+    {
+      "tag": "a family is cooking at the gym with a laptop"
+    },
+    {
+      "tag": "a family is cooking at the gym with a pet"
+    },
+    {
+      "tag": "a family is cooking in a park with a camera"
+    },
+    {
+      "tag": "a family is cooking in a park with cleaning tools"
+    },
+    {
+      "tag": "a family is cooking in a supermarket with a phone"
+    },
+    {
+      "tag": "a family is cooking in the backyard with a camera"
+    },
+    {
+      "tag": "a family is cooking in the backyard with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is cooking in the backyard with books and notebooks"
+    },
+    {
+      "tag": "a family is cooking in the backyard with gym equipment"
+    },
+    {
+      "tag": "a family is cooking on public transportation with cleaning tools"
+    },
+    {
+      "tag": "a family is cooking on the balcony with books and notebooks"
+    },
+    {
+      "tag": "a family is doing laundry at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "a family is doing laundry at the gym with a laptop"
+    },
+    {
+      "tag": "a family is doing laundry at the office with a camera"
+    },
+    {
+      "tag": "a family is doing laundry at the office with a phone"
+    },
+    {
+      "tag": "a family is doing laundry in a classroom with a camera"
+    },
+    {
+      "tag": "a family is doing laundry in a park with a camera"
+    },
+    {
+      "tag": "a family is doing laundry in a park with books and notebooks"
+    },
+    {
+      "tag": "a family is doing laundry in a supermarket with books and notebooks"
+    },
+    {
+      "tag": "a family is doing laundry on public transportation with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is drinking coffee at a coffee shop with a backpack"
+    },
+    {
+      "tag": "a family is drinking coffee at the gym with books and notebooks"
+    },
+    {
+      "tag": "a family is drinking coffee in the backyard with gym equipment"
+    },
+    {
+      "tag": "a family is drinking coffee on a city street with books and notebooks"
+    },
+    {
+      "tag": "a family is feeding a pet in a classroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is feeding a pet on a city street with gym equipment"
+    },
+    {
+      "tag": "a family is jogging or exercising at a coffee shop with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is jogging or exercising at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "a family is jogging or exercising at the gym with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is jogging or exercising at the gym with a pet"
+    },
+    {
+      "tag": "a family is jogging or exercising at the gym with books and notebooks"
+    },
+    {
+      "tag": "a family is jogging or exercising in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is jogging or exercising in a bedroom with books and notebooks"
+    },
+    {
+      "tag": "a family is jogging or exercising in the backyard with books and notebooks"
+    },
+    {
+      "tag": "a family is jogging or exercising in the backyard with cleaning tools"
+    },
+    {
+      "tag": "a family is jogging or exercising on public transportation with a laptop"
+    },
+    {
+      "tag": "a family is jogging or exercising on the balcony with cleaning tools"
+    },
+    {
+      "tag": "a family is reading a book in a bedroom with a camera"
+    },
+    {
+      "tag": "a family is reading a book in the backyard with cleaning tools"
+    },
+    {
+      "tag": "a family is relaxing on the couch at a coffee shop with a backpack"
+    },
+    {
+      "tag": "a family is relaxing on the couch at a coffee shop with cleaning tools"
+    },
+    {
+      "tag": "a family is relaxing on the couch at the bus stop with cleaning tools"
+    },
+    {
+      "tag": "a family is relaxing on the couch at the gym with a pet"
+    },
+    {
+      "tag": "a family is relaxing on the couch at the office with a camera"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a classroom with a pet"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a park with a backpack"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a park with a camera"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a park with a laptop"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a park with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a park with a phone"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a park with books and notebooks"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a park with cleaning tools"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a park with gym equipment"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a park with shopping bags"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a supermarket with a camera"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a supermarket with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a supermarket with books and notebooks"
+    },
+    {
+      "tag": "a family is relaxing on the couch in a supermarket with cleaning tools"
+    },
+    {
+      "tag": "a family is relaxing on the couch on a city street with a cup of coffee"
+    },
+    {
+      "tag": "a family is relaxing on the couch on a city street with a laptop"
+    },
+    {
+      "tag": "a family is relaxing on the couch on a city street with a pet"
+    },
+    {
+      "tag": "a family is relaxing on the couch on public transportation with cleaning tools"
+    },
+    {
+      "tag": "a family is relaxing on the couch on the balcony with a camera"
+    },
+    {
+      "tag": "a family is relaxing on the couch on the balcony with a laptop"
+    },
+    {
+      "tag": "a family is relaxing on the couch on the balcony with cleaning tools"
+    },
+    {
+      "tag": "a family is relaxing on the couch on the balcony with shopping bags"
+    },
+    {
+      "tag": "a family is shopping for groceries in a park with gym equipment"
+    },
+    {
+      "tag": "a family is shopping for groceries on a city street with gym equipment"
+    },
+    {
+      "tag": "a family is taking a photo at the gym with a pet"
+    },
+    {
+      "tag": "a family is taking a photo at the gym with food or drinks"
+    },
+    {
+      "tag": "a family is taking a photo at the office with food or drinks"
+    },
+    {
+      "tag": "a family is taking a photo in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is taking a photo in a bedroom with books and notebooks"
+    },
+    {
+      "tag": "a family is taking a photo in a bedroom with gym equipment"
+    },
+    {
+      "tag": "a family is taking a photo in a bedroom with shopping bags"
+    },
+    {
+      "tag": "a family is taking a photo in a classroom with a pet"
+    },
+    {
+      "tag": "a family is taking a photo in a classroom with food or drinks"
+    },
+    {
+      "tag": "a family is taking a photo in a park with a pet"
+    },
+    {
+      "tag": "a family is taking a photo in a park with food or drinks"
+    },
+    {
+      "tag": "a family is taking a photo in the backyard with cleaning tools"
+    },
+    {
+      "tag": "a family is taking a photo on a city street with a pet"
+    },
+    {
+      "tag": "a family is taking a photo on a city street with food or drinks"
+    },
+    {
+      "tag": "a family is taking a photo on public transportation with cleaning tools"
+    },
+    {
+      "tag": "a family is talking on the phone at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "a family is talking on the phone at a coffee shop with gym equipment"
+    },
+    {
+      "tag": "a family is talking on the phone in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is talking on the phone in the backyard with books and notebooks"
+    },
+    {
+      "tag": "a family is talking on the phone in the backyard with gym equipment"
+    },
+    {
+      "tag": "a family is talking on the phone in the backyard with shopping bags"
+    },
+    {
+      "tag": "a family is talking on the phone in the kitchen with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is typing on a laptop in a park with cleaning tools"
+    },
+    {
+      "tag": "a family is typing on a laptop on a city street with cleaning tools"
+    },
+    {
+      "tag": "a family is waiting at a bus stop on the balcony with a backpack"
+    },
+    {
+      "tag": "a family is waiting at a bus stop on the balcony with a cup of coffee"
+    },
+    {
+      "tag": "a family is waiting at a bus stop on the balcony with cleaning tools"
+    },
+    {
+      "tag": "a family is walking across the street at a coffee shop with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is walking across the street at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "a family is walking across the street at a coffee shop with cleaning tools"
+    },
+    {
+      "tag": "a family is walking across the street at the gym with a laptop"
+    },
+    {
+      "tag": "a family is walking across the street in a bedroom with a backpack"
+    },
+    {
+      "tag": "a family is walking across the street in a bedroom with a camera"
+    },
+    {
+      "tag": "a family is walking across the street in a bedroom with a laptop"
+    },
+    {
+      "tag": "a family is walking across the street in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a family is walking across the street in a bedroom with a phone"
+    },
+    {
+      "tag": "a family is walking across the street in a bedroom with books and notebooks"
+    },
+    {
+      "tag": "a family is walking across the street in a bedroom with cleaning tools"
+    },
+    {
+      "tag": "a family is walking across the street in a bedroom with earphones"
+    },
+    {
+      "tag": "a family is walking across the street in a bedroom with shopping bags"
+    },
+    {
+      "tag": "a family is walking across the street in a classroom with a laptop"
+    },
+    {
+      "tag": "a family is walking across the street in a park with a camera"
+    },
+    {
+      "tag": "a family is walking across the street in a park with a pet"
+    },
+    {
+      "tag": "a family is walking across the street in a supermarket with a laptop"
+    },
+    {
+      "tag": "a family is walking across the street on the balcony with a cup of coffee"
+    },
+    {
+      "tag": "a family is walking across the street on the balcony with a laptop"
+    },
+    {
+      "tag": "a family is walking across the street on the balcony with a pet"
+    },
+    {
+      "tag": "a family is writing or drawing at a coffee shop with gym equipment"
+    },
+    {
+      "tag": "a family is writing or drawing at the gym with a backpack"
+    },
+    {
+      "tag": "a family is writing or drawing at the office with a phone"
+    },
+    {
+      "tag": "a family is writing or drawing at the office with shopping bags"
+    },
+    {
+      "tag": "a family is writing or drawing in a bedroom with a camera"
+    },
+    {
+      "tag": "a family is writing or drawing in a park with a cup of coffee"
+    },
+    {
+      "tag": "a family is writing or drawing on a city street with a backpack"
+    },
+    {
+      "tag": "a family is writing or drawing on a city street with a cup of coffee"
+    },
+    {
+      "tag": "a group of friends is cooking at the gym with a laptop"
+    },
+    {
+      "tag": "a group of friends is jogging or exercising at a coffee shop with a newspaper or magazine"
+    },
+    {
+      "tag": "a group of friends is jogging or exercising at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "a group of friends is jogging or exercising at a coffee shop with cleaning tools"
+    },
+    {
+      "tag": "a group of friends is jogging or exercising at the gym with a newspaper or magazine"
+    },
+    {
+      "tag": "a group of friends is jogging or exercising at the gym with books and notebooks"
+    },
+    {
+      "tag": "a group of friends is jogging or exercising in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a group of friends is reading a book at the bus stop with gym equipment"
+    },
+    {
+      "tag": "a group of friends is relaxing on the couch at a coffee shop with a backpack"
+    },
+    {
+      "tag": "a group of friends is relaxing on the couch on a city street with a laptop"
+    },
+    {
+      "tag": "a group of friends is taking a photo at the office with books and notebooks"
+    },
+    {
+      "tag": "a group of friends is taking a photo at the office with food or drinks"
+    },
+    {
+      "tag": "a group of friends is taking a photo in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a group of friends is taking a photo in a bedroom with books and notebooks"
+    },
+    {
+      "tag": "a group of friends is taking a photo in a bedroom with shopping bags"
+    },
+    {
+      "tag": "a group of friends is taking a photo in a classroom with a backpack"
+    },
+    {
+      "tag": "a group of friends is taking a photo in a classroom with food or drinks"
+    },
+    {
+      "tag": "a group of friends is taking a photo in a park with food or drinks"
+    },
+    {
+      "tag": "a group of friends is talking on the phone in a park with gym equipment"
+    },
+    {
+      "tag": "a group of friends is walking across the street at a coffee shop with cleaning tools"
+    },
+    {
+      "tag": "a group of friends is walking across the street at the office with a camera"
+    },
+    {
+      "tag": "a group of friends is walking across the street in a bedroom with a backpack"
+    },
+    {
+      "tag": "a group of friends is walking across the street in a bedroom with a camera"
+    },
+    {
+      "tag": "a group of friends is walking across the street in a bedroom with a laptop"
+    },
+    {
+      "tag": "a group of friends is walking across the street in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a group of friends is walking across the street in a bedroom with a phone"
+    },
+    {
+      "tag": "a group of friends is walking across the street in a bedroom with books and notebooks"
+    },
+    {
+      "tag": "a group of friends is walking across the street in a bedroom with shopping bags"
+    },
+    {
+      "tag": "a group of friends is walking across the street on the balcony with a cup of coffee"
+    },
+    {
+      "tag": "a group of friends is walking across the street on the balcony with a laptop"
+    },
+    {
+      "tag": "a group of friends is writing or drawing at the office with a camera"
+    },
+    {
+      "tag": "a group of friends is writing or drawing at the office with a pet"
+    },
+    {
+      "tag": "a group of friends is writing or drawing on a city street with a backpack"
+    },
+    {
+      "tag": "a group of friends is writing or drawing on public transportation with a backpack"
+    },
+    {
+      "tag": "a person riding a bicycle is cooking in a park with a newspaper or magazine"
+    },
+    {
+      "tag": "a person riding a bicycle is relaxing on the couch in a park with a pet"
+    },
+    {
+      "tag": "a person riding a bicycle is taking a photo in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "a person riding a bicycle is taking a photo in a bedroom with shopping bags"
+    },
+    {
+      "tag": "a person riding a bicycle is walking across the street in a bedroom with a pet"
+    },
+    {
+      "tag": "a person riding a bicycle is writing or drawing in a park with shopping bags"
+    },
+    {
+      "tag": "a person walking a dog is cleaning the room on a city street with books and notebooks"
+    },
+    {
+      "tag": "a person walking a dog is relaxing on the couch in a park with books and notebooks"
+    },
+    {
+      "tag": "a person walking a dog is relaxing on the couch in a park with cleaning tools"
+    },
+    {
+      "tag": "a person walking a dog is relaxing on the couch in a park with gym equipment"
+    },
+    {
+      "tag": "a person walking a dog is writing or drawing in a park with shopping bags"
+    },
+    {
+      "tag": "an elderly man is cooking at the gym with a newspaper or magazine"
+    },
+    {
+      "tag": "an elderly man is cooking in a park with a newspaper or magazine"
+    },
+    {
+      "tag": "an elderly man is cooking in a park with gym equipment"
+    },
+    {
+      "tag": "an elderly man is cooking on a city street with gym equipment"
+    },
+    {
+      "tag": "an elderly man is cooking on the balcony with gym equipment"
+    },
+    {
+      "tag": "an elderly man is drinking coffee on the balcony with gym equipment"
+    },
+    {
+      "tag": "an elderly man is reading a book in a classroom with a camera"
+    },
+    {
+      "tag": "an elderly man is reading a book on a city street with cleaning tools"
+    },
+    {
+      "tag": "an elderly man is reading a book on a city street with gym equipment"
+    },
+    {
+      "tag": "an elderly man is reading a book on the balcony with gym equipment"
+    },
+    {
+      "tag": "an elderly man is relaxing on the couch at the gym with a pet"
+    },
+    {
+      "tag": "an elderly man is relaxing on the couch at the office with a camera"
+    },
+    {
+      "tag": "an elderly man is relaxing on the couch in a park with a backpack"
+    },
+    {
+      "tag": "an elderly man is relaxing on the couch in a park with a camera"
+    },
+    {
+      "tag": "an elderly man is relaxing on the couch in a supermarket with cleaning tools"
+    },
+    {
+      "tag": "an elderly man is relaxing on the couch on a city street with a backpack"
+    },
+    {
+      "tag": "an elderly man is relaxing on the couch on a city street with a camera"
+    },
+    {
+      "tag": "an elderly man is relaxing on the couch on a city street with a pet"
+    },
+    {
+      "tag": "an elderly man is relaxing on the couch on a city street with cleaning tools"
+    },
+    {
+      "tag": "an elderly man is relaxing on the couch on the balcony with a backpack"
+    },
+    {
+      "tag": "an elderly man is relaxing on the couch on the balcony with gym equipment"
+    },
+    {
+      "tag": "an elderly man is shopping for groceries on the balcony with gym equipment"
+    },
+    {
+      "tag": "an elderly man is taking a photo at the office with a newspaper or magazine"
+    },
+    {
+      "tag": "an elderly man is taking a photo in a bedroom with a newspaper or magazine"
+    },
+    {
+      "tag": "an elderly man is taking a photo in a classroom with a newspaper or magazine"
+    },
+    {
+      "tag": "an elderly man is taking a photo in a classroom with shopping bags"
+    },
+    {
+      "tag": "an elderly man is taking a photo in a park with a newspaper or magazine"
+    },
+    {
+      "tag": "an elderly man is taking a photo in a park with cleaning tools"
+    },
+    {
+      "tag": "an elderly man is taking a photo in a park with gym equipment"
+    },
+    {
+      "tag": "an elderly man is taking a photo in a park with shopping bags"
+    },
+    {
+      "tag": "an elderly man is taking a photo in the backyard with a newspaper or magazine"
+    },
+    {
+      "tag": "an elderly man is taking a photo on a city street with cleaning tools"
+    },
+    {
+      "tag": "an elderly man is taking a photo on a city street with gym equipment"
+    },
+    {
+      "tag": "an elderly man is taking a photo on the balcony with gym equipment"
+    },
+    {
+      "tag": "an elderly man is taking a photo on the balcony with shopping bags"
+    },
+    {
+      "tag": "an elderly man is talking on the phone on a city street with cleaning tools"
+    },
+    {
+      "tag": "an elderly man is typing on a laptop in a park with gym equipment"
+    },
+    {
+      "tag": "an elderly man is typing on a laptop on a city street with cleaning tools"
+    },
+    {
+      "tag": "an elderly man is typing on a laptop on the balcony with gym equipment"
+    },
+    {
+      "tag": "an elderly man is walking across the street at a coffee shop with a newspaper or magazine"
+    },
+    {
+      "tag": "an elderly man is walking across the street at a coffee shop with books and notebooks"
+    },
+    {
+      "tag": "an elderly man is walking across the street at the gym with a pet"
+    },
+    {
+      "tag": "an elderly man is walking across the street in a bedroom with a backpack"
+    },
+    {
+      "tag": "an elderly man is walking across the street in a bedroom with a camera"
+    },
+    {
+      "tag": "an elderly man is walking across the street in a classroom with a camera"
+    },
+    {
+      "tag": "an elderly man is walking across the street in a classroom with a laptop"
+    },
+    {
+      "tag": "an elderly man is walking across the street in a supermarket with cleaning tools"
+    },
+    {
+      "tag": "an elderly man is walking across the street in the backyard with a camera"
+    },
+    {
+      "tag": "an elderly man is walking across the street on the balcony with a backpack"
+    },
+    {
+      "tag": "an elderly man is walking across the street on the balcony with a camera"
+    },
+    {
+      "tag": "an elderly man is walking across the street on the balcony with a newspaper or magazine"
+    },
+    {
+      "tag": "an elderly man is walking across the street on the balcony with books and notebooks"
+    },
+    {
+      "tag": "an elderly man is walking across the street on the balcony with gym equipment"
+    },
+    {
+      "tag": "an elderly man is writing or drawing at a coffee shop with gym equipment"
+    },
+    {
+      "tag": "an elderly man is writing or drawing at the bus stop with gym equipment"
+    },
+    {
+      "tag": "an elderly man is writing or drawing at the gym with a pet"
+    },
+    {
+      "tag": "an elderly man is writing or drawing in a park with gym equipment"
+    },
+    {
+      "tag": "an elderly man is writing or drawing on a city street with a backpack"
+    },
+    {
+      "tag": "an elderly man is writing or drawing on a city street with a pet"
+    },
+    {
+      "tag": "an elderly man is writing or drawing on a city street with cleaning tools"
+    },
+    {
+      "tag": "an elderly man is writing or drawing on a city street with gym equipment"
+    },
+    {
+      "tag": "an elderly man is writing or drawing on public transportation with cleaning tools"
+    },
+    {
+      "tag": "an elderly man is writing or drawing on the balcony with gym equipment"
+    },
+    {
+      "tag": "a couple is cleaning the room at the gym with a newspaper or magazine"
+    }
+  ]
+}

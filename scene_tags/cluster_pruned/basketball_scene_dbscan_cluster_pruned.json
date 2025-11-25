@@ -1,0 +1,3583 @@
+{
+  "metadata": {
+    "scene": "basketball_scene",
+    "generator": "basketball_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-21T04:05:11.406733",
+    "eps": 0.05,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 1190
+  },
+  "prompts": [
+    {
+      "tag": "a GoPro first-person view of shooting is attempting a layup at night under court lights with a basketball"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting a layup at sunset with a backboard"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting a layup at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting a layup at sunset with a crowd cheering"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting a layup at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting a layup during a blocked shot with a backboard"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting a layup from a drone view with a bench celebrating"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting a layup from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting a layup from a drone view with cones for drills"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting a layup in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting a layup in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting an alley-oop at sunset with a hoop"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting an alley-oop at sunset with a loose ball on the floor"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting an alley-oop from a drone view with a chain net"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting an alley-oop in a driveway at home with cones for drills"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting an alley-oop in a public park with cones for drills"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is blocking a shot at sunset with cones for drills"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is blocking a shot from a drone view with a crowd cheering"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is celebrating after scoring in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is checking the shot clock in a public park with a chain net"
+    },
+    {
+      "tag": "a basketball player is attempting a layup at sunset with a basketball"
+    },
+    {
+      "tag": "a basketball player is attempting a layup at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a basketball player is attempting a layup at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a basketball player is attempting a layup from a drone view with a basketball"
+    },
+    {
+      "tag": "a basketball player is attempting a layup from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a basketball player is attempting an alley-oop at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a basketball player is attempting an alley-oop from a drone view with a bench celebrating"
+    },
+    {
+      "tag": "a basketball player is attempting an alley-oop from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "a basketball player is checking the shot clock at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a basketball player is checking the shot clock at sunset with cones for drills"
+    },
+    {
+      "tag": "a basketball player is checking the shot clock in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "a basketball player is checking the shot clock in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a basketball player is shouting in excitement at sunset with both feet off the ground"
+    },
+    {
+      "tag": "a basketball player is shouting in excitement in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "a bench of teammates cheering is attempting a layup at night under court lights with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a bench of teammates cheering is attempting a layup at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a bench of teammates cheering is attempting a layup at sunset with cones for drills"
+    },
+    {
+      "tag": "a bench of teammates cheering is attempting a layup during a championship game with a glass backboard reflection"
+    },
+    {
+      "tag": "a bench of teammates cheering is attempting a layup from a drone view with cones for drills"
+    },
+    {
+      "tag": "a bench of teammates cheering is attempting a layup in a driveway at home with cones for drills"
+    },
+    {
+      "tag": "a bench of teammates cheering is attempting a layup in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a bench of teammates cheering is attempting an alley-oop from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "a bench of teammates cheering is attempting an alley-oop in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a bench of teammates cheering is attempting an alley-oop in a public park with cones for drills"
+    },
+    {
+      "tag": "a bench of teammates cheering is blocking a shot at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a bench of teammates cheering is blocking a shot from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a bench of teammates cheering is blocking a shot in a driveway at home with a glass backboard reflection"
+    },
+    {
+      "tag": "a bench of teammates cheering is checking the shot clock at sunset with a chain net"
+    },
+    {
+      "tag": "a bench of teammates cheering is checking the shot clock in a public park with a chain net"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup at night under court lights with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup at sunset with a shot clock counting down"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup at sunset with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup from a chest GoPro with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup from a chest GoPro with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup from a chest GoPro with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup from a drone view with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup from a drone view with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup from a drone view with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup from a first-person camera with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup from a first-person camera with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup in a college arena with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup in a driveway at home with a glass backboard reflection"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup in a driveway at home with a shot clock counting down"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a coach and a player is attempting a layup in a public park with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is attempting an alley-oop at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is attempting an alley-oop at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a coach and a player is attempting an alley-oop from a chest GoPro with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is attempting an alley-oop from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a coach and a player is attempting an alley-oop in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a coach and a player is attempting an alley-oop in a driveway at home with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is attempting an alley-oop in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is blocking a shot in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is blocking a shot in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent at sunset with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent at sunset with the net moving"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent from a chest GoPro with a chain net"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent from a first-person camera with the net moving"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is boxing out an opponent in a public park with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is calling for the ball from a head-mounted camera with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is calling for the ball in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is celebrating after scoring at sunset with a player wearing a jersey"
+    },
+    {
+      "tag": "a coach and a player is celebrating after scoring at sunset with the ball about to hit the rim"
+    },
+    {
+      "tag": "a coach and a player is celebrating after scoring from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is celebrating after scoring in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a coach and a player is celebrating after scoring in a public park with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is checking the shot clock during a championship game with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a coach and a player is checking the shot clock from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "a coach and a player is checking the shot clock in bright daylight with a chain net"
+    },
+    {
+      "tag": "a coach and a player is crossing over an opponent in a large stadium with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is diving for a loose ball at sunset with a chain net"
+    },
+    {
+      "tag": "a coach and a player is diving for a loose ball during a blocked shot with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is diving for a loose ball from a first-person camera with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a coach and a player is dribbling behind the back at night under court lights with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a coach and a player is dribbling behind the back at sunset with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is dribbling behind the back from a chest GoPro with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is dribbling behind the back from a head-mounted camera with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is dribbling behind the back in a college arena with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is dribbling behind the back in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is dribbling between the legs in a large stadium with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a coach and a player is grabbing a rebound in a driveway at home with a scoreboard visible"
+    },
+    {
+      "tag": "a coach and a player is practicing free throws in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is practicing free throws in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is practicing free throws in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a coach and a player is practicing free throws in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a coach and a player is running back on defense at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a coach and a player is running back on defense from a first-person camera with a shot clock counting down"
+    },
+    {
+      "tag": "a coach and a player is shouting in excitement at sunset with both feet off the ground"
+    },
+    {
+      "tag": "a coach and a player is shouting in excitement from a first-person camera with a glass backboard reflection"
+    },
+    {
+      "tag": "a coach and a player is shouting in excitement from a first-person camera with a net swishing"
+    },
+    {
+      "tag": "a coach and a player is shouting in excitement from a first-person camera with both feet off the ground"
+    },
+    {
+      "tag": "a coach and a player is shouting in excitement from a first-person camera with cones for drills"
+    },
+    {
+      "tag": "a coach and a player is shouting in excitement in a college arena with both feet off the ground"
+    },
+    {
+      "tag": "a coach and a player is shouting in excitement in a public park with a coach giving instructions"
+    },
+    {
+      "tag": "a coach and a player is shouting in excitement in a public park with both feet off the ground"
+    },
+    {
+      "tag": "a coach and a player is shouting in excitement in bright daylight with the ball about to hit the rim"
+    },
+    {
+      "tag": "a defender guarding closely is attempting a layup at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a defender guarding closely is attempting a layup at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is attempting a layup from a chest GoPro with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is attempting a layup from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is attempting a layup from a first-person camera with cones for drills"
+    },
+    {
+      "tag": "a defender guarding closely is attempting an alley-oop from a drone view with a backboard"
+    },
+    {
+      "tag": "a defender guarding closely is attempting an alley-oop in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is attempting an alley-oop in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is attempting an alley-oop in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is attempting an alley-oop in bright daylight with a chain net"
+    },
+    {
+      "tag": "a defender guarding closely is blocking a shot from a drone view with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is blocking a shot from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent in a college arena with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent in a college arena with a crowd cheering"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent in a college arena with a shot clock counting down"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent in a college arena with cones for drills"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent in a large stadium with a crowd cheering"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent in a public park with cones for drills"
+    },
+    {
+      "tag": "a defender guarding closely is boxing out an opponent in a school gym with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is calling for the ball at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is celebrating after scoring at sunset with a basketball"
+    },
+    {
+      "tag": "a defender guarding closely is celebrating after scoring at sunset with a net swishing"
+    },
+    {
+      "tag": "a defender guarding closely is celebrating after scoring from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is celebrating after scoring in a college arena with a chain net"
+    },
+    {
+      "tag": "a defender guarding closely is celebrating after scoring in a noisy packed gym with a shot clock counting down"
+    },
+    {
+      "tag": "a defender guarding closely is celebrating after scoring in a public park with a chain net"
+    },
+    {
+      "tag": "a defender guarding closely is celebrating after scoring in a public park with a hoop"
+    },
+    {
+      "tag": "a defender guarding closely is celebrating after scoring in a public park with a player wearing a jersey"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock during a blocked shot with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock during a blocked shot with a crowd cheering"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock during a blocked shot with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock from a chest GoPro with a net swishing"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock from a first-person camera with a basketball"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock from a first-person camera with a loose ball on the floor"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock from a first-person camera with the net moving"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock in a college arena with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock in a driveway at home with a net swishing"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock in a large stadium with a chain net"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock in a large stadium with a coach giving instructions"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock in a noisy packed gym with a net swishing"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock in a public park with a backboard"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock in a public park with a chain net"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock in a public park with a coach giving instructions"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock in a public park with a loose ball on the floor"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock in bright daylight with a backboard"
+    },
+    {
+      "tag": "a defender guarding closely is checking the shot clock on a neighborhood court with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is diving for a loose ball at sunset with a crowd cheering"
+    },
+    {
+      "tag": "a defender guarding closely is diving for a loose ball at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a defender guarding closely is diving for a loose ball at sunset with a shot clock counting down"
+    },
+    {
+      "tag": "a defender guarding closely is diving for a loose ball in a college arena with a glass backboard reflection"
+    },
+    {
+      "tag": "a defender guarding closely is diving for a loose ball in a college arena with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is diving for a loose ball in a driveway at home with a scoreboard visible"
+    },
+    {
+      "tag": "a defender guarding closely is diving for a loose ball in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is diving for a loose ball in a public park with a chain net"
+    },
+    {
+      "tag": "a defender guarding closely is diving for a loose ball in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "a defender guarding closely is dribbling behind the back at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is dribbling between the legs from a chest GoPro with a crowd cheering"
+    },
+    {
+      "tag": "a defender guarding closely is driving toward the basket from a first-person camera with a shot clock counting down"
+    },
+    {
+      "tag": "a defender guarding closely is dunking the ball at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a defender guarding closely is dunking the ball in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is practicing free throws at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is practicing free throws from a drone view with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is practicing free throws from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a defender guarding closely is practicing free throws in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is practicing free throws in a large stadium with a shot clock counting down"
+    },
+    {
+      "tag": "a defender guarding closely is practicing free throws in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is practicing free throws in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "a defender guarding closely is practicing free throws in a public park with a shot clock counting down"
+    },
+    {
+      "tag": "a defender guarding closely is practicing free throws in a public park with cones for drills"
+    },
+    {
+      "tag": "a defender guarding closely is practicing shooting drills at sunset with a player wearing a jersey"
+    },
+    {
+      "tag": "a defender guarding closely is running back on defense at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement at sunset with a chain net"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement from a drone view with a backboard"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement from a first-person camera with a backboard"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement from a first-person camera with a glass backboard reflection"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement from a first-person camera with a hoop"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement from a first-person camera with a net swishing"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement in a college arena with a backboard"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement in a college arena with a glass backboard reflection"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement in a college arena with both feet off the ground"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement in a driveway at home with a chain net"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement in a large stadium with a swish moment"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement in a noisy packed gym with both feet off the ground"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement in a public park with a hoop"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement in a public park with the ball bouncing"
+    },
+    {
+      "tag": "a defender guarding closely is shouting in excitement on a full-sized court with a defender's hand extended"
+    },
+    {
+      "tag": "a defender guarding closely is waiting on the free-throw line from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a defender guarding closely is waiting on the free-throw line in a driveway at home with a chain net"
+    },
+    {
+      "tag": "a drone view of a full court is attempting a layup at sunset with a chain net"
+    },
+    {
+      "tag": "a family playing basketball is attempting a layup at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a family playing basketball is attempting a layup from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "a family playing basketball is attempting a layup from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a family playing basketball is celebrating after scoring at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is attempting a layup at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is attempting a layup at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is attempting a layup at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is attempting a layup from a drone view with cones for drills"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is attempting a layup in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is attempting a layup in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is attempting a layup in a public park with a shot clock counting down"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is attempting an alley-oop at sunset with a crowd cheering"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is attempting an alley-oop at sunset with cones for drills"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is attempting an alley-oop from a first-person camera with a shot clock counting down"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is attempting an alley-oop in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is blocking a shot from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is calling for the ball in a driveway at home with cones for drills"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is checking the shot clock at sunset with a chain net"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is checking the shot clock during a blocked shot with a bench celebrating"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is checking the shot clock from a drone view with a crowd cheering"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is checking the shot clock in a college arena with an outdoor metal hoop"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is checking the shot clock in a college arena with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a first-person perspective of dribbling is checking the shot clock on a neighborhood court with a bench celebrating"
+    },
+    {
+      "tag": "a group playing pick-up basketball is attempting a layup at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a group playing pick-up basketball is attempting a layup at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a group playing pick-up basketball is attempting a layup from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "a group playing pick-up basketball is attempting a layup from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a high school basketball team is attempting a layup at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a high school basketball team is attempting an alley-oop at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a high school basketball team is attempting an alley-oop from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "a person dribbling is attempting an alley-oop from a first-person camera with a net swishing"
+    },
+    {
+      "tag": "a person dribbling is attempting an alley-oop from a first-person camera with an outdoor metal hoop"
+    },
+    {
+      "tag": "a person dribbling is boxing out an opponent from a chest GoPro with a glass backboard reflection"
+    },
+    {
+      "tag": "a person dribbling is boxing out an opponent in a public park with a chain net"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock at sunset with a defender's hand extended"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock during a blocked shot with a crowd cheering"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock during a championship game with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock during a fast break with a bench celebrating"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock from a head-mounted camera with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock in a college arena with a glass backboard reflection"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock in a college arena with cones for drills"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock in a driveway at home with cones for drills"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock in a large stadium with a chain net"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock in bright daylight with a chain net"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock in bright daylight with a clean backboard"
+    },
+    {
+      "tag": "a person dribbling is checking the shot clock on a full-sized court with a bench celebrating"
+    },
+    {
+      "tag": "a person dribbling is diving for a loose ball in a large stadium with a referee signaling"
+    },
+    {
+      "tag": "a person dribbling is driving toward the basket at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person dribbling is driving toward the basket from a chest GoPro with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement from a chest GoPro with a backboard"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement from a first-person camera with a backboard"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement from a first-person camera with a glass backboard reflection"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement from a first-person camera with a hoop"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement from a first-person camera with a net swishing"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement from a head-mounted camera with a backboard"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement from a head-mounted camera with a net swishing"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement from a head-mounted camera with the ball bouncing"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement in a driveway at home with a chain net"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement in a driveway at home with a coach giving instructions"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement in a large stadium with a loose ball on the floor"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement in a noisy packed gym with a coach giving instructions"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement in a public park with a backboard"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement in a public park with a loose ball on the floor"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement in a school gym with a player wearing a jersey"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement on a full-sized court with a net swishing"
+    },
+    {
+      "tag": "a person dribbling is shouting in excitement on a full-sized court with a player wearing a jersey"
+    },
+    {
+      "tag": "a person dunking is attempting an alley-oop at sunset with a chain net"
+    },
+    {
+      "tag": "a person dunking is attempting an alley-oop at sunset with a clean backboard"
+    },
+    {
+      "tag": "a person dunking is attempting an alley-oop at sunset with a shot clock counting down"
+    },
+    {
+      "tag": "a person dunking is attempting an alley-oop from a chest GoPro with a net swishing"
+    },
+    {
+      "tag": "a person dunking is attempting an alley-oop from a chest GoPro with a shot clock counting down"
+    },
+    {
+      "tag": "a person dunking is attempting an alley-oop from a drone view with a net swishing"
+    },
+    {
+      "tag": "a person dunking is attempting an alley-oop from a first-person camera with a net swishing"
+    },
+    {
+      "tag": "a person dunking is attempting an alley-oop from a first-person camera with a scoreboard visible"
+    },
+    {
+      "tag": "a person dunking is attempting an alley-oop from a first-person camera with a shot clock counting down"
+    },
+    {
+      "tag": "a person dunking is attempting an alley-oop from a head-mounted camera with a bench celebrating"
+    },
+    {
+      "tag": "a person dunking is boxing out an opponent in a college arena with a bench celebrating"
+    },
+    {
+      "tag": "a person dunking is boxing out an opponent in a driveway at home with cones for drills"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock at sunset with a chain net"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock at sunset with a coach giving instructions"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock at sunset with a crowd cheering"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock at sunset with cones for drills"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock during a blocked shot with a bench celebrating"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock during a blocked shot with a crowd cheering"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock during a blocked shot with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock during a team scrimmage with a bench celebrating"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock from a first-person camera with a chain net"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock from a first-person camera with a glass backboard reflection"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock in a college arena with a chain net"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock in a college arena with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock in a college arena with cones for drills"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock in a driveway at home with a coach giving instructions"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock in a large stadium with a crowd cheering"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock in a noisy packed gym with cones for drills"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock in a public park with cones for drills"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock in a school gym with a glass backboard reflection"
+    },
+    {
+      "tag": "a person dunking is checking the shot clock in bright daylight with a defender's hand extended"
+    },
+    {
+      "tag": "a person dunking is driving toward the basket from a chest GoPro with a shot clock counting down"
+    },
+    {
+      "tag": "a person dunking is waiting on the free-throw line from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a person dunking is waiting on the free-throw line in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a person jumping for a shot is celebrating after scoring from a first-person camera with matching uniforms"
+    },
+    {
+      "tag": "a person jumping for a shot is checking the shot clock from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a person jumping for a shot is shouting in excitement on a small half-court with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop at sunset with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop at sunset with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop at sunset with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop at sunset with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop during a blocked shot with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a chest GoPro with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a chest GoPro with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a chest GoPro with an outdoor metal hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a drone view with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a first-person camera with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a first-person camera with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a first-person camera with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a first-person camera with a loose ball on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a first-person camera with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a first-person camera with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a head-mounted camera with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a head-mounted camera with a coach giving instructions"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a head-mounted camera with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a head-mounted camera with the ball bouncing"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop from a head-mounted camera with the net moving"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a college arena with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a driveway at home with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a large stadium with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a large stadium with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a large stadium with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a noisy packed gym with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a public park with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a public park with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a public park with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a public park with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a school gym with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a school gym with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a school gym with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in a school gym with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in bright daylight with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in bright daylight with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in bright daylight with a loose ball on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in bright daylight with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in bright daylight with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in bright daylight with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in bright daylight with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop in bright daylight with the net moving"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop on a full-sized court with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is attempting an alley-oop on a small half-court with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot at night under court lights with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot at sunset with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot at sunset with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot from a drone view with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot from a first-person camera with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in a driveway at home with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in a large stadium with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in a large stadium with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in a public park with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in a public park with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in bright daylight with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in bright daylight with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is blocking a shot in bright daylight with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is boxing out an opponent at night under court lights with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is boxing out an opponent at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is boxing out an opponent from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is boxing out an opponent from a drone view with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is boxing out an opponent from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is boxing out an opponent from a first-person camera with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is boxing out an opponent in a driveway at home with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is boxing out an opponent in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is boxing out an opponent in a driveway at home with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball at sunset with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball at sunset with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball from a drone view with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball from a first-person camera with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball from a first-person camera with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball from a first-person camera with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball from a head-mounted camera with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in a college arena with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in a college arena with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in a college arena with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in a driveway at home with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in a driveway at home with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in a large stadium with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in a public park with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in a public park with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in a school gym with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in bright daylight with a coach giving instructions"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in bright daylight with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in bright daylight with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in bright daylight with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball in bright daylight with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is calling for the ball on a full-sized court with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring at sunset with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring at sunset with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring at sunset with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring at sunset with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring from a chest GoPro with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring from a chest GoPro with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring from a chest GoPro with a loose ball on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring from a first-person camera with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring in a driveway at home with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring in a large stadium with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring in a noisy packed gym with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring in a public park with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring in a public park with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is celebrating after scoring in a public park with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock at night under court lights with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock at sunset with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock at sunset with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock at sunset with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock at sunset with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock at sunset with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock during a blocked shot with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock during a competitive tournament with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock during a game-winning shot attempt with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock from a chest GoPro with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock from a chest GoPro with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock from a chest GoPro with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock from a drone view with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock from a drone view with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock from a first-person camera with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock from a head-mounted camera with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock in a college arena with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock in a college arena with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock in a large stadium with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock in a noisy packed gym with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock in a noisy packed gym with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock in a public park with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock in a public park with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock in a school gym with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock in bright daylight with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock in bright daylight with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is checking the shot clock on a full-sized court with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot at sunset with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot at sunset with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot from a first-person camera with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot in a large stadium with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot in a large stadium with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot in a public park with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot in bright daylight with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot in bright daylight with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot in bright daylight with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is contesting a shot in bright daylight with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent at night under court lights with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent at sunset with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent at sunset with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent during a practice session with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a chest GoPro with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a chest GoPro with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a drone view with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a drone view with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a first-person camera with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a first-person camera with a coach giving instructions"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a first-person camera with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a first-person camera with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a first-person camera with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a head-mounted camera with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent from a head-mounted camera with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a college arena with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a college arena with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a college arena with the ball bouncing"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a college arena with the net moving"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a driveway at home with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a driveway at home with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a driveway at home with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a driveway at home with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a large stadium with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a large stadium with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a large stadium with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a noisy packed gym with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a noisy packed gym with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a noisy packed gym with the net moving"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a public park with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a public park with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a public park with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a public park with an outdoor metal hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a public park with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in a school gym with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in bright daylight with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in bright daylight with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in bright daylight with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in bright daylight with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in bright daylight with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in bright daylight with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent in bright daylight with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent on a full-sized court with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent on a full-sized court with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent on a full-sized court with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent on a neighborhood court with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is crossing over an opponent on an outdoor court with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is defending tightly at sunset with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is defending tightly in a school gym with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is defending tightly in a school gym with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is defending tightly in bright daylight with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is diving for a loose ball at night under court lights with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is driving toward the basket from a chest GoPro with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is driving toward the basket from a first-person camera with a coach giving instructions"
+    },
+    {
+      "tag": "a person wearing a jersey is driving toward the basket from a head-mounted camera with the net moving"
+    },
+    {
+      "tag": "a person wearing a jersey is driving toward the basket in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is driving toward the basket in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is grabbing a rebound from a first-person camera with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is grabbing a rebound in a large stadium with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is grabbing a rebound in a public park with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is grabbing a rebound in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is grabbing a rebound in bright daylight with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is grabbing a rebound in bright daylight with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is grabbing a rebound in bright daylight with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is hustling to the ball at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is hustling to the ball from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is hustling to the ball in a college arena with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is hustling to the ball in a public park with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is hustling to the ball in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is hustling to the ball in a school gym with an outdoor metal hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is hustling to the ball in bright daylight with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is hustling to the ball in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is hustling to the ball in bright daylight with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is making a fast break at sunset with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is making a fast break at sunset with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is making a fast break in a college arena with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is making a fast break in a driveway at home with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is making a fast break in a large stadium with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is making a fast break in a large stadium with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is making a fast break in a public park with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is making a fast break in a school gym with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is making a fast break in a school gym with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is making a fast break in bright daylight with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is passing the ball at night under court lights with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is passing the ball in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is passing the ball in a school gym with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is passing the ball in a school gym with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is passing the ball in bright daylight with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is performing a no-look pass at sunset with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is performing a no-look pass in a college arena with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is performing a no-look pass in a large stadium with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is performing a no-look pass in a public park with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is performing a no-look pass in a public park with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is performing a no-look pass in bright daylight with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is performing a no-look pass in bright daylight with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing free throws at sunset with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing free throws at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing free throws from a chest GoPro with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing free throws from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing free throws in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills at sunset with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills at sunset with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills at sunset with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills in a driveway at home with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills in a noisy packed gym with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills in a public park with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills in a public park with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills in a public park with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills in a public park with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is practicing shooting drills in a public park with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot from a first-person camera with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot in a college arena with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot in a college arena with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot in a college arena with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot in a college arena with the ball mid-air"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot in a large stadium with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot in a large stadium with a coach giving instructions"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot in a large stadium with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot in a large stadium with the ball about to hit the rim"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot in a public park with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot in a school gym with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is reacting to a missed shot in bright daylight with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense at sunset with a loose ball on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense from a chest GoPro with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense from a first-person camera with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense from a first-person camera with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense from a first-person camera with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense from a first-person camera with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense from a head-mounted camera with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense in a college arena with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense in a large stadium with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense in a noisy packed gym with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense in a public park with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is running back on defense in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills at sunset with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills at sunset with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills from a chest GoPro with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills from a chest GoPro with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills from a chest GoPro with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills from a first-person camera with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills from a first-person camera with a coach giving instructions"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills from a first-person camera with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills from a first-person camera with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills from a head-mounted camera with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills from a head-mounted camera with a coach giving instructions"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills from a head-mounted camera with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills in a college arena with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills in a large stadium with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills in a large stadium with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills in a noisy packed gym with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills in a public park with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills in a public park with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills in a school gym with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills in bright daylight with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is running conditioning drills on a full-sized court with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is shooting a jump shot at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is shooting a three-pointer in bright daylight with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at night under court lights with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at night under court lights with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at night under court lights with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at night under court lights with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at sunset with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at sunset with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at sunset with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at sunset with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at sunset with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at sunset with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement at sunset with the ball about to hit the rim"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement during a blocked shot with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement during a blocked shot with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement during a championship game with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement during a fast break with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement during a pick-up game with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement during a pick-up game with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement during a pick-up game with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement during a pick-up game with the ball bouncing"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement during a steal and transition play with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement during a team scrimmage with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a chest GoPro with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a chest GoPro with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a chest GoPro with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a chest GoPro with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a chest GoPro with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a chest GoPro with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a chest GoPro with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a chest GoPro with the ball about to hit the rim"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a drone view with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a drone view with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a drone view with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a drone view with an outdoor metal hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a drone view with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a drone view with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a drone view with the ball bouncing"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a first-person camera with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a first-person camera with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a first-person camera with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a first-person camera with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a first-person camera with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a first-person camera with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a first-person camera with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a first-person camera with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a first-person camera with the ball about to hit the rim"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a head-mounted camera with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a head-mounted camera with a loose ball on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a head-mounted camera with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a head-mounted camera with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a head-mounted camera with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a head-mounted camera with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement from a head-mounted camera with the ball bouncing"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a college arena with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a college arena with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a college arena with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a college arena with a loose ball on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a college arena with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a college arena with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a college arena with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a college arena with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a driveway at home with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a driveway at home with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a driveway at home with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a driveway at home with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a driveway at home with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a large stadium with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a large stadium with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a noisy packed gym with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a noisy packed gym with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a noisy packed gym with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a noisy packed gym with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a noisy packed gym with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a public park with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a public park with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a public park with a hoop"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a public park with a loose ball on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a public park with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a public park with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a public park with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a public park with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a public park with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a public park with the ball about to hit the rim"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in a school gym with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in bright daylight with a clean backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in bright daylight with a loose ball on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in bright daylight with a net swishing"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in bright daylight with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement in bright daylight with the ball about to hit the rim"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement on a full-sized court with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement on a full-sized court with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement on a full-sized court with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement on a full-sized court with a referee signaling"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement on a full-sized court with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement on a full-sized court with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement on a neighborhood court with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement on a neighborhood court with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement on a neighborhood court with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement on a small half-court with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is shouting in excitement on an outdoor court with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing a jersey is signaling a play from a drone view with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is signaling a play from a first-person camera with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is signaling a play from a first-person camera with cones for drills"
+    },
+    {
+      "tag": "a person wearing a jersey is signaling a play in a driveway at home with a swish moment"
+    },
+    {
+      "tag": "a person wearing a jersey is signaling a play in a large stadium with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing a jersey is signaling a play in a large stadium with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is signaling a play in a public park with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing a jersey is signaling a play in a public park with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is signaling a play in bright daylight with a coach giving instructions"
+    },
+    {
+      "tag": "a person wearing a jersey is signaling a play in bright daylight with the net moving"
+    },
+    {
+      "tag": "a person wearing a jersey is stealing the ball at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing a jersey is stealing the ball at sunset with matching uniforms"
+    },
+    {
+      "tag": "a person wearing a jersey is stealing the ball in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing a jersey is watching a teammate shoot at sunset with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is watching a teammate shoot at sunset with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is watching a teammate shoot in a driveway at home with a backboard"
+    },
+    {
+      "tag": "a person wearing a jersey is watching a teammate shoot in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is watching a teammate shoot in a driveway at home with the net moving"
+    },
+    {
+      "tag": "a person wearing a jersey is watching a teammate shoot in a large stadium with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is watching a teammate shoot in a public park with a chain net"
+    },
+    {
+      "tag": "a person wearing a jersey is watching a teammate shoot in a public park with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "a person wearing a jersey is watching a teammate shoot in a public park with the ball bouncing"
+    },
+    {
+      "tag": "a person wearing a jersey is watching a teammate shoot in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing a jersey is watching a teammate shoot in bright daylight with a chain net"
+    },
+    {
+      "tag": "a person wearing sportswear is attempting an alley-oop from a first-person camera with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing sportswear is blocking a shot in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing sportswear is blocking a shot in bright daylight with matching uniforms"
+    },
+    {
+      "tag": "a person wearing sportswear is calling for the ball at night under court lights with a glass backboard reflection"
+    },
+    {
+      "tag": "a person wearing sportswear is calling for the ball from a first-person camera with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing sportswear is calling for the ball from a first-person camera with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing sportswear is calling for the ball in bright daylight with a backboard"
+    },
+    {
+      "tag": "a person wearing sportswear is celebrating after scoring at sunset with a shot clock counting down"
+    },
+    {
+      "tag": "a person wearing sportswear is checking the shot clock in a college arena with a crowd cheering"
+    },
+    {
+      "tag": "a person wearing sportswear is crossing over an opponent from a chest GoPro with a backboard"
+    },
+    {
+      "tag": "a person wearing sportswear is passing the ball in a school gym with a bench celebrating"
+    },
+    {
+      "tag": "a person wearing sportswear is practicing free throws in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a person wearing sportswear is running back on defense from a chest GoPro with a backboard"
+    },
+    {
+      "tag": "a person wearing sportswear is running back on defense in a public park with a swish moment"
+    },
+    {
+      "tag": "a person wearing sportswear is running conditioning drills from a first-person camera with a backboard"
+    },
+    {
+      "tag": "a person wearing sportswear is shooting a three-pointer at sunset with both feet off the ground"
+    },
+    {
+      "tag": "a person wearing sportswear is shouting in excitement at sunset with a player wearing a jersey"
+    },
+    {
+      "tag": "a person wearing sportswear is shouting in excitement in a college arena with a defender's hand extended"
+    },
+    {
+      "tag": "a person wearing sportswear is signaling a play in bright daylight with a backboard"
+    },
+    {
+      "tag": "a person wearing sportswear is watching a teammate shoot in a large stadium with both feet off the ground"
+    },
+    {
+      "tag": "a referee on the court is attempting a layup at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a referee on the court is attempting a layup at sunset with cones for drills"
+    },
+    {
+      "tag": "a referee on the court is attempting a layup from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a referee on the court is attempting an alley-oop at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a referee on the court is blocking a shot from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "a referee on the court is blocking a shot in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "a referee on the court is calling for the ball at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup at night under court lights with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup at sunset with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup at sunset with cones for drills"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup from a chest GoPro with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup from a drone view with cones for drills"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup in a driveway at home with a glass backboard reflection"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup in a driveway at home with a scoreboard visible"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup in a public park with a net swishing"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a small group doing drills is attempting a layup in a public park with cones for drills"
+    },
+    {
+      "tag": "a small group doing drills is attempting an alley-oop from a chest GoPro with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is attempting an alley-oop from a first-person camera with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is attempting an alley-oop from a first-person camera with a scoreboard visible"
+    },
+    {
+      "tag": "a small group doing drills is attempting an alley-oop from a first-person camera with matching uniforms"
+    },
+    {
+      "tag": "a small group doing drills is attempting an alley-oop from a head-mounted camera with cones for drills"
+    },
+    {
+      "tag": "a small group doing drills is attempting an alley-oop in a large stadium with a player wearing a jersey"
+    },
+    {
+      "tag": "a small group doing drills is blocking a shot at sunset with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is blocking a shot from a chest GoPro with cones for drills"
+    },
+    {
+      "tag": "a small group doing drills is blocking a shot in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "a small group doing drills is blocking a shot in a public park with a shot clock counting down"
+    },
+    {
+      "tag": "a small group doing drills is boxing out an opponent at sunset with a coach giving instructions"
+    },
+    {
+      "tag": "a small group doing drills is boxing out an opponent at sunset with a net swishing"
+    },
+    {
+      "tag": "a small group doing drills is boxing out an opponent during a blocked shot with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is boxing out an opponent during a blocked shot with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a small group doing drills is boxing out an opponent during a competitive tournament with a shot clock counting down"
+    },
+    {
+      "tag": "a small group doing drills is boxing out an opponent from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is boxing out an opponent from a chest GoPro with cones for drills"
+    },
+    {
+      "tag": "a small group doing drills is boxing out an opponent from a first-person camera with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is boxing out an opponent in a driveway at home with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is boxing out an opponent in a large stadium with a swish moment"
+    },
+    {
+      "tag": "a small group doing drills is boxing out an opponent on a neighborhood court with a shot clock counting down"
+    },
+    {
+      "tag": "a small group doing drills is calling for the ball at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a small group doing drills is calling for the ball in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is calling for the ball in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is calling for the ball in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is celebrating after scoring in a college arena with cones for drills"
+    },
+    {
+      "tag": "a small group doing drills is celebrating after scoring in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is celebrating after scoring in a large stadium with the rim shaking after a dunk"
+    },
+    {
+      "tag": "a small group doing drills is celebrating after scoring in a public park with both feet off the ground"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock at sunset with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock at sunset with a player wearing a jersey"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock during a blocked shot with cones for drills"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock during a championship game with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock from a first-person camera with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock from a first-person camera with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock in a noisy packed gym with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock in a noisy packed gym with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock in bright daylight with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock on a full-sized court with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is checking the shot clock on a full-sized court with cones for drills"
+    },
+    {
+      "tag": "a small group doing drills is contesting a shot in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is contesting a shot in a public park with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is crossing over an opponent in a driveway at home with cones for drills"
+    },
+    {
+      "tag": "a small group doing drills is crossing over an opponent in a large stadium with a scoreboard visible"
+    },
+    {
+      "tag": "a small group doing drills is defending tightly in a college arena with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is defending tightly in bright daylight with both feet off the ground"
+    },
+    {
+      "tag": "a small group doing drills is diving for a loose ball during a fast break with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is diving for a loose ball from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is diving for a loose ball from a first-person camera with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is diving for a loose ball in a college arena with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is diving for a loose ball in a college arena with chalk dust or sweat flying"
+    },
+    {
+      "tag": "a small group doing drills is dribbling behind the back from a drone view with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is dribbling behind the back from a head-mounted camera with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is dribbling behind the back from a head-mounted camera with a shot clock counting down"
+    },
+    {
+      "tag": "a small group doing drills is dribbling behind the back in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is dribbling behind the back in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is dribbling behind the back in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is dribbling behind the back in a large stadium with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is dribbling between the legs at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a small group doing drills is dribbling between the legs in a public park with a shot clock counting down"
+    },
+    {
+      "tag": "a small group doing drills is dribbling quickly from a first-person camera with a scoreboard visible"
+    },
+    {
+      "tag": "a small group doing drills is driving toward the basket from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is driving toward the basket in a large stadium with a net swishing"
+    },
+    {
+      "tag": "a small group doing drills is driving toward the basket in a public park with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is driving toward the basket in bright daylight with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is dunking the ball from a chest GoPro with a glass backboard reflection"
+    },
+    {
+      "tag": "a small group doing drills is dunking the ball from a chest GoPro with a scoreboard visible"
+    },
+    {
+      "tag": "a small group doing drills is hustling to the ball in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "a small group doing drills is practicing free throws from a chest GoPro with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is practicing free throws from a first-person camera with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is practicing free throws in a college arena with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is practicing free throws in a public park with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is practicing shooting drills in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is reacting to a missed shot in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is running back on defense from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is running back on defense in a college arena with a crowd cheering"
+    },
+    {
+      "tag": "a small group doing drills is shooting a jump shot in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "a small group doing drills is shouting in excitement from a first-person camera with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is shouting in excitement from a first-person camera with a clean backboard"
+    },
+    {
+      "tag": "a small group doing drills is shouting in excitement from a first-person camera with a defender's hand extended"
+    },
+    {
+      "tag": "a small group doing drills is shouting in excitement in a college arena with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is shouting in excitement in a driveway at home with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is shouting in excitement in a public park with a backboard"
+    },
+    {
+      "tag": "a small group doing drills is shouting in excitement on a neighborhood court with a backboard"
+    },
+    {
+      "tag": "a small group doing drills is shouting in excitement on a neighborhood court with a chain net"
+    },
+    {
+      "tag": "a small group doing drills is waiting on the free-throw line from a first-person camera with chalk dust or sweat flying"
+    },
+    {
+      "tag": "an offensive player driving forward is attempting a layup in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "an offensive player driving forward is attempting an alley-oop in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "an offensive player driving forward is blocking a shot in a college arena with a coach giving instructions"
+    },
+    {
+      "tag": "an offensive player driving forward is boxing out an opponent from a chest GoPro with a crowd cheering"
+    },
+    {
+      "tag": "an offensive player driving forward is boxing out an opponent in a noisy packed gym with a scoreboard visible"
+    },
+    {
+      "tag": "an offensive player driving forward is celebrating after scoring in a driveway at home with a scoreboard visible"
+    },
+    {
+      "tag": "an offensive player driving forward is celebrating after scoring in a large stadium with a referee signaling"
+    },
+    {
+      "tag": "an offensive player driving forward is celebrating after scoring in a public park with a crowd cheering"
+    },
+    {
+      "tag": "an offensive player driving forward is checking the shot clock at sunset with a chain net"
+    },
+    {
+      "tag": "an offensive player driving forward is checking the shot clock in a college arena with a glass backboard reflection"
+    },
+    {
+      "tag": "an offensive player driving forward is checking the shot clock in a large stadium with a chain net"
+    },
+    {
+      "tag": "an offensive player driving forward is checking the shot clock in a noisy packed gym with a bench celebrating"
+    },
+    {
+      "tag": "an offensive player driving forward is checking the shot clock in a noisy packed gym with a glass backboard reflection"
+    },
+    {
+      "tag": "an offensive player driving forward is checking the shot clock in a public park with a chain net"
+    },
+    {
+      "tag": "an offensive player driving forward is checking the shot clock on a neighborhood court with chalk dust or sweat flying"
+    },
+    {
+      "tag": "an offensive player driving forward is diving for a loose ball in a large stadium with a net swishing"
+    },
+    {
+      "tag": "an offensive player driving forward is dribbling behind the back at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "an offensive player driving forward is practicing free throws at sunset with a crowd cheering"
+    },
+    {
+      "tag": "an offensive player driving forward is practicing free throws from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "an offensive player driving forward is practicing free throws from a chest GoPro with chalk dust or sweat flying"
+    },
+    {
+      "tag": "an offensive player driving forward is practicing free throws from a first-person camera with a crowd cheering"
+    },
+    {
+      "tag": "an offensive player driving forward is practicing free throws in a large stadium with a crowd cheering"
+    },
+    {
+      "tag": "an offensive player driving forward is shouting in excitement in a college arena with cones for drills"
+    },
+    {
+      "tag": "an offensive player driving forward is shouting in excitement in a driveway at home with a chain net"
+    },
+    {
+      "tag": "an offensive player driving forward is shouting in excitement in a public park with a player wearing a jersey"
+    },
+    {
+      "tag": "an offensive player driving forward is shouting in excitement on a full-sized court with a crowd cheering"
+    },
+    {
+      "tag": "an offensive player driving forward is shouting in excitement on a full-sized court with a scoreboard visible"
+    },
+    {
+      "tag": "kids playing basketball is attempting a layup at sunset with cones for drills"
+    },
+    {
+      "tag": "kids playing basketball is attempting a layup from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "kids playing basketball is attempting an alley-oop at sunset with a bench celebrating"
+    },
+    {
+      "tag": "kids playing basketball is attempting an alley-oop at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "kids playing basketball is attempting an alley-oop at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup at night under court lights with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup at night under court lights with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup at sunset with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup at sunset with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup at sunset with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup from a chest GoPro with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup from a drone view with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup from a drone view with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a college arena with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a driveway at home with a glass backboard reflection"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a driveway at home with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a driveway at home with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a large stadium with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a public park with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a public park with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a public park with a glass backboard reflection"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a public park with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in a school gym with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting a layup in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop at sunset with a loose ball on the floor"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop during a fast break with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop from a chest GoPro with a coach giving instructions"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop from a chest GoPro with a hoop"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop from a chest GoPro with both feet off the ground"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop from a chest GoPro with the ball about to hit the rim"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop from a drone view with a hoop"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop from a drone view with a loose ball on the floor"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop from a first-person camera with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop from a first-person camera with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop from a first-person camera with a glass backboard reflection"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop from a first-person camera with a loose ball on the floor"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop from a first-person camera with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop in a college arena with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop in a driveway at home with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop in a public park with a swish moment"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop in a public park with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop in bright daylight with a swish moment"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop on a full-sized court with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop on a full-sized court with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is attempting an alley-oop on a small half-court with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot at night under court lights with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot at sunset with a defender's hand extended"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot at sunset with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot at sunset with matching uniforms"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot from a chest GoPro with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot in a large stadium with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot in a public park with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot in a public park with matching uniforms"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot in a public park with sneakers squeaking on the floor"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot in a school gym with matching uniforms"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot in bright daylight with a player wearing a jersey"
+    },
+    {
+      "tag": "two people playing one-on-one is blocking a shot in bright daylight with matching uniforms"
+    },
+    {
+      "tag": "two people playing one-on-one is boxing out an opponent from a chest GoPro with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball at sunset with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball at sunset with matching uniforms"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball from a drone view with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball from a drone view with a shot clock counting down"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball from a first-person camera with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball in a college arena with a player wearing a jersey"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball in a driveway at home with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball in a large stadium with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball in a public park with a basketball"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball in a public park with a referee signaling"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball in a school gym with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball in bright daylight with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball in bright daylight with a player wearing a jersey"
+    },
+    {
+      "tag": "two people playing one-on-one is calling for the ball in bright daylight with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is celebrating after scoring at sunset with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is celebrating after scoring from a chest GoPro with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is celebrating after scoring from a drone view with a coach giving instructions"
+    },
+    {
+      "tag": "two people playing one-on-one is celebrating after scoring from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is celebrating after scoring in a driveway at home with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is celebrating after scoring in a public park with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is celebrating after scoring on an indoor basketball court with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock at sunset with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock at sunset with a hoop"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock at sunset with the rim shaking after a dunk"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock during a blocked shot with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock during a blocked shot with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock during a blocked shot with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock during a blocked shot with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock from a drone view with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock from a drone view with a hoop"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock in a college arena with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock in a driveway at home with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock in a noisy packed gym with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is checking the shot clock on a full-sized court with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is contesting a shot at sunset with a swish moment"
+    },
+    {
+      "tag": "two people playing one-on-one is contesting a shot from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is contesting a shot from a chest GoPro with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is contesting a shot from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "two people playing one-on-one is contesting a shot in a public park with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is contesting a shot in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is crossing over an opponent at sunset with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is crossing over an opponent from a first-person camera with both feet off the ground"
+    },
+    {
+      "tag": "two people playing one-on-one is crossing over an opponent in a driveway at home with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is crossing over an opponent in a large stadium with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is crossing over an opponent in a large stadium with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is defending tightly at sunset with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is defending tightly in a driveway at home with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is diving for a loose ball during a championship game with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is diving for a loose ball in a college arena with a net swishing"
+    },
+    {
+      "tag": "two people playing one-on-one is diving for a loose ball in a driveway at home with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is diving for a loose ball in a large stadium with a net swishing"
+    },
+    {
+      "tag": "two people playing one-on-one is diving for a loose ball in a noisy packed gym with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is diving for a loose ball in a noisy packed gym with a shot clock counting down"
+    },
+    {
+      "tag": "two people playing one-on-one is diving for a loose ball in a public park with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back at sunset with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back at sunset with a glass backboard reflection"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back from a chest GoPro with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back from a chest GoPro with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back from a head-mounted camera with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back in a college arena with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back in a public park with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back in a public park with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling behind the back in bright daylight with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling between the legs at sunset with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling between the legs from a drone view with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling between the legs in a driveway at home with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling between the legs in a public park with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is dribbling quickly in a public park with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is driving toward the basket from a first-person camera with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is driving toward the basket from a first-person camera with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is driving toward the basket in a college arena with a shot clock counting down"
+    },
+    {
+      "tag": "two people playing one-on-one is driving toward the basket in a college arena with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is driving toward the basket in a public park with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is dunking the ball from a first-person camera with a referee signaling"
+    },
+    {
+      "tag": "two people playing one-on-one is dunking the ball in a public park with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is dunking the ball in a public park with a shot clock counting down"
+    },
+    {
+      "tag": "two people playing one-on-one is hustling to the ball at sunset with a referee signaling"
+    },
+    {
+      "tag": "two people playing one-on-one is hustling to the ball in a large stadium with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is making a fast break in a driveway at home with matching uniforms"
+    },
+    {
+      "tag": "two people playing one-on-one is making a fast break in a public park with a swish moment"
+    },
+    {
+      "tag": "two people playing one-on-one is passing the ball from a chest GoPro with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is passing the ball in bright daylight with a basketball"
+    },
+    {
+      "tag": "two people playing one-on-one is performing a no-look pass in bright daylight with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is performing a no-look pass in bright daylight with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is performing a no-look pass in bright daylight with a swish moment"
+    },
+    {
+      "tag": "two people playing one-on-one is performing a no-look pass in bright daylight with both feet off the ground"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws at night under court lights with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws at night under court lights with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws at sunset with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws at sunset with a shot clock counting down"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws during a championship game with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws from a chest GoPro with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws from a chest GoPro with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws from a drone view with a glass backboard reflection"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws from a drone view with a shot clock counting down"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws from a first-person camera with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws from a first-person camera with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws from a first-person camera with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws in a large stadium with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws in a noisy packed gym with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws in a public park with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing free throws in a public park with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is practicing shooting drills in a driveway at home with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is reacting to a missed shot in a large stadium with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is reacting to a missed shot in bright daylight with a defender's hand extended"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense at sunset with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense at sunset with a hoop"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense at sunset with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense during a practice session with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense from a chest GoPro with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense from a chest GoPro with a hoop"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense from a chest GoPro with a net swishing"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense from a chest GoPro with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense from a drone view with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense from a head-mounted camera with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in a college arena with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in a college arena with a glass backboard reflection"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in a college arena with a shot clock counting down"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in a college arena with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in a driveway at home with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in a large stadium with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in a noisy packed gym with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in a public park with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in a public park with a glass backboard reflection"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in a public park with a swish moment"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in a school gym with chalk dust or sweat flying"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense in bright daylight with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense on a full-sized court with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense on a full-sized court with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is running back on defense on a small half-court with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is running conditioning drills from a first-person camera with a shot clock counting down"
+    },
+    {
+      "tag": "two people playing one-on-one is running conditioning drills in a college arena with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is running conditioning drills in a public park with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is running conditioning drills in a public park with a swish moment"
+    },
+    {
+      "tag": "two people playing one-on-one is running conditioning drills on a full-sized court with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is running conditioning drills on a neighborhood court with a crowd cheering"
+    },
+    {
+      "tag": "two people playing one-on-one is shooting a three-pointer in bright daylight with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is shooting a three-pointer in bright daylight with a swish moment"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement at sunset with the ball bouncing"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement during a practice session with both feet off the ground"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement from a chest GoPro with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement from a chest GoPro with a player wearing a jersey"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement from a drone view with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement from a drone view with a loose ball on the floor"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement from a first-person camera with a backboard"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement from a first-person camera with a glass backboard reflection"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement from a first-person camera with a hoop"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement from a first-person camera with cones for drills"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement from a head-mounted camera with a defender's hand extended"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement from a head-mounted camera with a net swishing"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a college arena with a basketball"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a college arena with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a college arena with a coach giving instructions"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a college arena with a hoop"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a college arena with a loose ball on the floor"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a driveway at home with a hoop"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a driveway at home with a net swishing"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a driveway at home with a swish moment"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a noisy packed gym with a glass backboard reflection"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a noisy packed gym with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a public park with a chain net"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a public park with a hoop"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a public park with the ball about to hit the rim"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement in a school gym with a loose ball on the floor"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement on a full-sized court with a bench celebrating"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement on a full-sized court with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement on a neighborhood court with a defender's hand extended"
+    },
+    {
+      "tag": "two people playing one-on-one is shouting in excitement on a neighborhood court with a player wearing a jersey"
+    },
+    {
+      "tag": "two people playing one-on-one is waiting on the free-throw line in a public park with a net swishing"
+    },
+    {
+      "tag": "a GoPro first-person view of shooting is attempting an alley-oop at sunset with a bench celebrating"
+    }
+  ]
+}

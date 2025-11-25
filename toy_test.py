@@ -49,10 +49,20 @@ def main(image_dir, output_dir):
     # text_labels += ["a cat", "a cat is jumping", "a cat is jumping in the living room", "a cat is jumping in the living room for a wand"]
 
     # testing sentence vs words
-    text_labels += ["a dog is playing soccer on the grass", "dog, play, soccer, grass"]
-    text_labels += ["a dog is eating snacks in the livingroom", "dog, eat, snack, livingroom"]
-    text_labels += ["a cat is jumping for a wand in the bedroom", "cat, jump, wand, bedroom"]
-    text_labels += ["a dog is sleeping in the cage", "dog, sleep, cage"]
+    # text_labels += ["a dog is playing soccer on the grass", "dog, play, soccer, grass", "dog play soccer grass"]
+    # text_labels += ["a dog is eating snacks in the livingroom", "dog, eat, snack, livingroom", "dog eat snack livingroom"]
+    # text_labels += ["a cat is jumping for a wand in the bedroom", "cat, jump, wand, bedroom", "cat jump wand bedroom"]
+    # text_labels += ["a dog is sleeping in the cage", "dog, sleep, cage", "dog sleep cage"]
+
+    # testing negative semantics
+    # text_labels += ["a dog is playing soccer on the grass", "dog play soccer grass"]
+    # text_labels += ["a soccer is playing a dog under the grass", "soccer play dog grass"]
+    # text_labels += ["a dog is eating snacks in the livingroom", "dog eat snack livingroom"]
+    # text_labels += ["a snack is eating a dog in the sky", "snack eat dog sky"]
+    
+    # testing they way sentence is formed
+    text_labels += ["a dog is playing soccer on the grass", "on the grass a dog is playing soccer", "soccer on the grass is being played by a dog", "A photo of a dog running after a ball on the grassland"]
+
 
     model_name = "MobileCLIP2-S4"
     model_kwargs = {}

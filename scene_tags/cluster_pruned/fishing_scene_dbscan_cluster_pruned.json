@@ -1,0 +1,1297 @@
+{
+  "metadata": {
+    "scene": "fishing_scene",
+    "generator": "fishing_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-18T04:17:58.099738",
+    "eps": 0.05,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 428
+  },
+  "prompts": [
+    {
+      "tag": "a GoPro first-person view is adjusting the reel drag at sunrise holding a fish"
+    },
+    {
+      "tag": "a GoPro first-person view is adjusting the reel drag at sunrise with a net"
+    },
+    {
+      "tag": "a GoPro first-person view is adjusting the reel drag during a fast reel-in holding a fish"
+    },
+    {
+      "tag": "a GoPro first-person view is adjusting the reel drag on a rocky shoreline with a baitcaster"
+    },
+    {
+      "tag": "a GoPro first-person view is casting a line in bright sunlight with a net"
+    },
+    {
+      "tag": "a GoPro first-person view is casting a line on a cloudy day with a net"
+    },
+    {
+      "tag": "a GoPro first-person view is holding a fish up for the camera in bright sunlight with a net"
+    },
+    {
+      "tag": "a GoPro first-person view is moving the boat at sunrise with a net"
+    },
+    {
+      "tag": "a GoPro first-person view is moving the boat from a drone overhead with a net"
+    },
+    {
+      "tag": "a GoPro first-person view is moving the boat on a cloudy day with a net"
+    },
+    {
+      "tag": "a GoPro first-person view is watching the bobber dip at sunrise with a net"
+    },
+    {
+      "tag": "a GoPro first-person view is watching the bobber dip from the beach with a net"
+    },
+    {
+      "tag": "a drone view of an angler is adjusting the reel drag at sunrise holding a fish"
+    },
+    {
+      "tag": "a drone view of an angler is adjusting the reel drag on a rocky shoreline holding a fish"
+    },
+    {
+      "tag": "a first-person perspective of the angler is adjusting the reel drag at sunrise holding a fish"
+    },
+    {
+      "tag": "a first-person perspective of the angler is reacting to a splash from the beach with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a fisherman is reacting excitedly in bright sunlight with a net"
+    },
+    {
+      "tag": "a fisherman is waiting patiently from the beach with paddles"
+    },
+    {
+      "tag": "a fisherman is waiting patiently in waders with paddles"
+    },
+    {
+      "tag": "a fisherman is waiting patiently in windy conditions with a cooler"
+    },
+    {
+      "tag": "a fisherman is waiting patiently on a cloudy day with a boat motor"
+    },
+    {
+      "tag": "a fisherwoman is experiencing a sudden rod bend in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is moving the boat at sunrise with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is paddling from the beach with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly at sunrise with a boat motor"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly at sunrise with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly at sunrise with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly at sunrise with paddles"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly from a dock with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly from a dock with a net"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly from a dock with paddles"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly from a drone overhead with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly from a drone overhead with a net"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly from a first-person camera with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly from a first-person camera with a tackle box"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly from a first-person camera with paddles"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly from a pier with a tackle box"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly from the beach with a net"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly in bright sunlight with a boat motor"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly in bright sunlight with paddles"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly in waders with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly in waders with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly in waders with paddles"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly near reeds with a boat motor"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly near reeds with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly near reeds with a tackle box"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly near reeds with paddles"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly on a cloudy day with a boat motor"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly on a cloudy day with a tackle box"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly on a cloudy day with paddles"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly on a rocky shoreline with a boat motor"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly on a rocky shoreline with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is reacting excitedly on a rocky shoreline with paddles"
+    },
+    {
+      "tag": "a fisherwoman is reacting to a splash from a dock with a boat motor"
+    },
+    {
+      "tag": "a fisherwoman is reacting to a splash from the beach with paddles"
+    },
+    {
+      "tag": "a fisherwoman is reacting to a splash in bright sunlight with a tackle box"
+    },
+    {
+      "tag": "a fisherwoman is reacting to a splash near tall grass with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a fisherwoman is reacting to a splash on a cloudy day with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a fisherwoman is shouting in excitement near reeds with a net"
+    },
+    {
+      "tag": "a fisherwoman is waiting patiently during a rod-bending fight with paddles"
+    },
+    {
+      "tag": "a fisherwoman is waiting patiently from a dock with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is waiting patiently from a dock with paddles"
+    },
+    {
+      "tag": "a fisherwoman is waiting patiently from the beach with a cooler"
+    },
+    {
+      "tag": "a fisherwoman is waiting patiently from the beach with paddles"
+    },
+    {
+      "tag": "a fishing partner is reacting to a splash in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a fishing partner is waiting patiently during a strong splash with a cooler"
+    },
+    {
+      "tag": "a guide and a client is adjusting the reel drag at sunrise with a cooler"
+    },
+    {
+      "tag": "a guide and a client is adjusting the reel drag from a first-person camera with a net"
+    },
+    {
+      "tag": "a guide and a client is casting a line at sunrise with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is casting a line at sunrise with a cooler"
+    },
+    {
+      "tag": "a guide and a client is casting a line at sunrise with paddles"
+    },
+    {
+      "tag": "a guide and a client is casting a line at sunrise with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is casting a line during a strong splash with a net"
+    },
+    {
+      "tag": "a guide and a client is casting a line during the hook-set moment with a cooler"
+    },
+    {
+      "tag": "a guide and a client is casting a line from a dock with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is casting a line from a dock with paddles"
+    },
+    {
+      "tag": "a guide and a client is casting a line from a first-person camera with a cooler"
+    },
+    {
+      "tag": "a guide and a client is casting a line from a first-person camera with a net"
+    },
+    {
+      "tag": "a guide and a client is casting a line from a first-person camera with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is casting a line from a head-mounted camera with a cooler"
+    },
+    {
+      "tag": "a guide and a client is casting a line from a head-mounted camera with a net"
+    },
+    {
+      "tag": "a guide and a client is casting a line from a head-mounted camera with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is casting a line from a pier with a cooler"
+    },
+    {
+      "tag": "a guide and a client is casting a line from the beach with paddles"
+    },
+    {
+      "tag": "a guide and a client is casting a line from the beach with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is casting a line in bright sunlight with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is casting a line in bright sunlight with a bobber"
+    },
+    {
+      "tag": "a guide and a client is casting a line in bright sunlight with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is casting a line in bright sunlight with paddles"
+    },
+    {
+      "tag": "a guide and a client is casting a line in bright sunlight with the line tight"
+    },
+    {
+      "tag": "a guide and a client is casting a line in bright sunlight with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is casting a line in shallow water with a cooler"
+    },
+    {
+      "tag": "a guide and a client is casting a line in windy conditions with a cooler"
+    },
+    {
+      "tag": "a guide and a client is casting a line in windy conditions with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is casting a line near reeds with paddles"
+    },
+    {
+      "tag": "a guide and a client is casting a line near tall grass with a cooler"
+    },
+    {
+      "tag": "a guide and a client is casting a line near tall grass with a net"
+    },
+    {
+      "tag": "a guide and a client is casting a line near tall grass with paddles"
+    },
+    {
+      "tag": "a guide and a client is casting a line on a cloudy day with a net"
+    },
+    {
+      "tag": "a guide and a client is casting a line on a cloudy day with paddles"
+    },
+    {
+      "tag": "a guide and a client is casting a line on a cloudy day with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is casting a line on a kayak with a cooler"
+    },
+    {
+      "tag": "a guide and a client is casting a line on a rocky shoreline with a cooler"
+    },
+    {
+      "tag": "a guide and a client is casting a line on the ocean with a cooler"
+    },
+    {
+      "tag": "a guide and a client is experiencing a sudden rod bend from the beach with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is experiencing a sudden rod bend from the beach with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is experiencing a sudden rod bend near reeds with a net"
+    },
+    {
+      "tag": "a guide and a client is experiencing a sudden rod bend on a cloudy day with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is hit by a sudden bite at sunrise with paddles"
+    },
+    {
+      "tag": "a guide and a client is hit by a sudden bite at sunrise with the rod bending heavily"
+    },
+    {
+      "tag": "a guide and a client is hit by a sudden bite from a dock with a cooler"
+    },
+    {
+      "tag": "a guide and a client is hit by a sudden bite from a dock with paddles"
+    },
+    {
+      "tag": "a guide and a client is hit by a sudden bite near reeds with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a guide and a client is hit by a sudden bite on a calm pond with a cooler"
+    },
+    {
+      "tag": "a guide and a client is holding a fish up for the camera at sunrise with a net"
+    },
+    {
+      "tag": "a guide and a client is holding a fish up for the camera from the beach with a net"
+    },
+    {
+      "tag": "a guide and a client is holding a fish up for the camera in bright sunlight with a net"
+    },
+    {
+      "tag": "a guide and a client is moving the boat at sunrise with a bobber"
+    },
+    {
+      "tag": "a guide and a client is moving the boat at sunrise with a cooler"
+    },
+    {
+      "tag": "a guide and a client is moving the boat at sunrise with paddles"
+    },
+    {
+      "tag": "a guide and a client is moving the boat during a strong splash with a bobber"
+    },
+    {
+      "tag": "a guide and a client is moving the boat during a strong splash with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is moving the boat during the hook-set moment with a cooler"
+    },
+    {
+      "tag": "a guide and a client is moving the boat during the hook-set moment with paddles"
+    },
+    {
+      "tag": "a guide and a client is moving the boat from a first-person camera with a net"
+    },
+    {
+      "tag": "a guide and a client is moving the boat from a pier with a cooler"
+    },
+    {
+      "tag": "a guide and a client is moving the boat in bright sunlight with a bobber"
+    },
+    {
+      "tag": "a guide and a client is moving the boat in bright sunlight with a net"
+    },
+    {
+      "tag": "a guide and a client is moving the boat in bright sunlight with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is moving the boat in waders with a cooler"
+    },
+    {
+      "tag": "a guide and a client is moving the boat in windy conditions with a net"
+    },
+    {
+      "tag": "a guide and a client is moving the boat near reeds with paddles"
+    },
+    {
+      "tag": "a guide and a client is moving the boat near tall grass with a bobber"
+    },
+    {
+      "tag": "a guide and a client is moving the boat near tall grass with paddles"
+    },
+    {
+      "tag": "a guide and a client is moving the boat on a cloudy day with a bobber"
+    },
+    {
+      "tag": "a guide and a client is moving the boat on a rocky shoreline with paddles"
+    },
+    {
+      "tag": "a guide and a client is paddling from a first-person camera with paddles"
+    },
+    {
+      "tag": "a guide and a client is paddling from a first-person camera with the rod bending heavily"
+    },
+    {
+      "tag": "a guide and a client is paddling from the beach with a cooler"
+    },
+    {
+      "tag": "a guide and a client is paddling from the beach with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is paddling in bright sunlight with a small fish"
+    },
+    {
+      "tag": "a guide and a client is paddling near reeds with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is paddling on a lake with a cooler"
+    },
+    {
+      "tag": "a guide and a client is positioning the boat from a drone overhead with a cooler"
+    },
+    {
+      "tag": "a guide and a client is pulling the rod upward from a dock with a cooler"
+    },
+    {
+      "tag": "a guide and a client is pulling the rod upward on a calm pond with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly at sunrise with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly at sunrise with a bobber"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly at sunrise with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly at sunrise with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly at sunrise with a spinning reel"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly at sunrise with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly at sunrise with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly at sunrise with the rod bending heavily"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly during a fast reel-in with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly during a fast reel-in with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly during a fast reel-in with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly during a fast reel-in with the line tight"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly during a rod-bending fight with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly during a strong splash with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly during a strong splash with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly during the hook-set moment with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a chest-mounted GoPro with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a dock with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a dock with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a dock with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a drone overhead with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a drone overhead with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a drone overhead with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a first-person camera with a baited hook"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a first-person camera with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a first-person camera with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a first-person camera with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a first-person camera with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a first-person camera with the rod bending heavily"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a head-mounted camera with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a head-mounted camera with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a head-mounted camera with the rod bending heavily"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a pier with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from a pier with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from the beach with a baitcaster"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from the beach with a bobber"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from the beach with a hook-set moment"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from the beach with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from the beach with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from the beach with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from the beach with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from the beach with the line tight"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly from the beach with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in bright sunlight with a baited hook"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in bright sunlight with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in bright sunlight with a bobber"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in bright sunlight with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in bright sunlight with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in bright sunlight with the rod bending heavily"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in shallow water with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in shallow water with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in shallow water with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in waders with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in waders with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in windy conditions with a baitcaster"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in windy conditions with a hook-set moment"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in windy conditions with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly in windy conditions with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly near reeds with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly near reeds with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly near reeds with a hook-set moment"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly near reeds with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly near reeds with the line tight"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly near tall grass with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly near tall grass with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly near tall grass with the rod bending heavily"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a calm pond with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a calm pond with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a cloudy day with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a cloudy day with a hook-set moment"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a cloudy day with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a cloudy day with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a cloudy day with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a cloudy day with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a cloudy day with the line tight"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a kayak with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a kayak with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a kayak with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a lake with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a lake with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a rocky shoreline with a bobber"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a rocky shoreline with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a rocky shoreline with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a rocky shoreline with paddles"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on a small skiff with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on the ocean with a bobber"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly on the ocean with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly standing in the river current with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is reacting excitedly standing in the river current with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting to a splash at sunrise with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reacting to a splash from a chest-mounted GoPro with a net"
+    },
+    {
+      "tag": "a guide and a client is reacting to a splash in bright sunlight with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a guide and a client is reacting to a splash on a rocky shoreline with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is reeling in quickly during a strong splash with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reeling in quickly from a first-person camera with a bobber"
+    },
+    {
+      "tag": "a guide and a client is reeling in quickly from a first-person camera with the line tight"
+    },
+    {
+      "tag": "a guide and a client is reeling in quickly from the beach with a bobber"
+    },
+    {
+      "tag": "a guide and a client is reeling in quickly in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reeling in quickly in bright sunlight with a net"
+    },
+    {
+      "tag": "a guide and a client is reeling in quickly in waders with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reeling in quickly near reeds with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reeling smoothly on a lake with a cooler"
+    },
+    {
+      "tag": "a guide and a client is reeling smoothly on the ocean with water splashing upward"
+    },
+    {
+      "tag": "a guide and a client is setting the hook from a dock with a cooler"
+    },
+    {
+      "tag": "a guide and a client is shouting in excitement from a dock with a bobber"
+    },
+    {
+      "tag": "a guide and a client is struggling with a strong pull at sunrise with the line tight"
+    },
+    {
+      "tag": "a guide and a client is waiting patiently at sunrise with a cooler"
+    },
+    {
+      "tag": "a guide and a client is waiting patiently at sunrise with the line tight"
+    },
+    {
+      "tag": "a guide and a client is waiting patiently during a strong splash with a baited hook"
+    },
+    {
+      "tag": "a guide and a client is waiting patiently during a strong splash with a lure"
+    },
+    {
+      "tag": "a guide and a client is waiting patiently from a dock with a cooler"
+    },
+    {
+      "tag": "a guide and a client is waiting patiently from the beach with a baited hook"
+    },
+    {
+      "tag": "a guide and a client is waiting patiently from the beach with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is waiting patiently in bright sunlight with a baited hook"
+    },
+    {
+      "tag": "a guide and a client is waiting patiently on a cloudy day with a hook-set moment"
+    },
+    {
+      "tag": "a guide and a client is waiting patiently on the ocean with a baited hook"
+    },
+    {
+      "tag": "a guide and a client is watching the bobber dip at sunrise with a boat motor"
+    },
+    {
+      "tag": "a guide and a client is watching the bobber dip from a dock with a cooler"
+    },
+    {
+      "tag": "a guide and a client is watching the bobber dip from a first-person camera with a net"
+    },
+    {
+      "tag": "a guide and a client is watching the bobber dip from a first-person camera with a tackle box"
+    },
+    {
+      "tag": "a guide and a client is watching the bobber dip from the beach with a cooler"
+    },
+    {
+      "tag": "a guide and a client is watching the bobber dip near reeds with a net"
+    },
+    {
+      "tag": "a person by the shoreline is casting a line at sunrise with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is casting a line from a first-person camera with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is casting a line from a pier with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is casting a line from the beach with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is casting a line in bright sunlight with a net"
+    },
+    {
+      "tag": "a person by the shoreline is casting a line in bright sunlight with paddles"
+    },
+    {
+      "tag": "a person by the shoreline is casting a line in bright sunlight with water splashing upward"
+    },
+    {
+      "tag": "a person by the shoreline is casting a line on a cloudy day with a net"
+    },
+    {
+      "tag": "a person by the shoreline is experiencing a sudden rod bend at sunrise with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is experiencing a sudden rod bend from a drone overhead with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is experiencing a sudden rod bend from the beach with paddles"
+    },
+    {
+      "tag": "a person by the shoreline is experiencing a sudden rod bend on a cloudy day with water splashing upward"
+    },
+    {
+      "tag": "a person by the shoreline is hit by a sudden bite from the beach with the line tight"
+    },
+    {
+      "tag": "a person by the shoreline is hit by a sudden bite in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is hit by a sudden bite in bright sunlight with water splashing upward"
+    },
+    {
+      "tag": "a person by the shoreline is moving the boat during the hook-set moment with paddles"
+    },
+    {
+      "tag": "a person by the shoreline is moving the boat in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is moving the boat in windy conditions with paddles"
+    },
+    {
+      "tag": "a person by the shoreline is paddling at sunrise with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is pulling the rod upward at sunrise with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly at sunrise with a boat motor"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly at sunrise with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly at sunrise with a tackle box"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly at sunrise with paddles"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly at sunrise with the line tight"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly at sunset with the rod bending heavily"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly during a fast reel-in with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly during the hook-set moment with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly from a chest-mounted GoPro with paddles"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly from a drone overhead with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly from a drone overhead with a net"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly from a drone overhead with paddles"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly from a first-person camera with a boat motor"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly from a first-person camera with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly from a first-person camera with a tackle box"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly from a first-person camera with paddles"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly from a head-mounted camera with a net"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly from a pier with paddles"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly from the beach with the line tight"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly in bright sunlight with paddles"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly in waders with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly near reeds with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly near reeds with a net"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly near reeds with a tackle box"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly near reeds with paddles"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly on a cloudy day with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly on a cloudy day with a tackle box"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly on a kayak with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly on a rocky shoreline with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting excitedly on the ocean with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reacting to a splash from a drone overhead with a boat motor"
+    },
+    {
+      "tag": "a person by the shoreline is reacting to a splash in bright sunlight with a boat motor"
+    },
+    {
+      "tag": "a person by the shoreline is reacting to a splash on a cloudy day with a net"
+    },
+    {
+      "tag": "a person by the shoreline is reeling in quickly from the beach with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is reeling in quickly on a cloudy day with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is setting the hook at sunrise with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is setting the hook from the beach with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is shouting in excitement from a dock with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is waiting patiently at sunrise with the line tight"
+    },
+    {
+      "tag": "a person by the shoreline is waiting patiently during the hook-set moment with a hook-set moment"
+    },
+    {
+      "tag": "a person by the shoreline is waiting patiently from a dock with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is waiting patiently from a first-person camera holding a fish"
+    },
+    {
+      "tag": "a person by the shoreline is waiting patiently from the beach with a cooler"
+    },
+    {
+      "tag": "a person by the shoreline is waiting patiently from the beach with a tackle box"
+    },
+    {
+      "tag": "a person by the shoreline is waiting patiently from the beach with the line tight"
+    },
+    {
+      "tag": "a person by the shoreline is waiting patiently in waders with a boat motor"
+    },
+    {
+      "tag": "a person by the shoreline is watching the bobber dip in waders with a cooler"
+    },
+    {
+      "tag": "a person on a boat is experiencing a sudden rod bend from a dock with a cooler"
+    },
+    {
+      "tag": "a person on a boat is experiencing a sudden rod bend from the beach with a cooler"
+    },
+    {
+      "tag": "a person on a boat is hit by a sudden bite at sunrise with paddles"
+    },
+    {
+      "tag": "a person on a boat is hit by a sudden bite from a dock with a net"
+    },
+    {
+      "tag": "a person on a boat is hit by a sudden bite near reeds with a tackle box"
+    },
+    {
+      "tag": "a person on a boat is hit by a sudden bite on a lake with a tackle box"
+    },
+    {
+      "tag": "a person on a boat is holding a fish up for the camera during a strong splash with a net"
+    },
+    {
+      "tag": "a person on a boat is moving the boat on a cloudy day with a cooler"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly at sunrise with a net"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly at sunrise with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly at sunrise with paddles"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly at sunset with a tackle box"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly from a dock with a net"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly from a dock with paddles"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly from a drone overhead with a net"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly in bright sunlight with a boat motor"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly in bright sunlight with a net"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly in bright sunlight with a tackle box"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly in bright sunlight with paddles"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly in bright sunlight with the line tight"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly near reeds with a net"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly near reeds with a tackle box"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly near reeds with paddles"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly on a cloudy day with a bobber"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly on a cloudy day with a cooler"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly on a cloudy day with a net"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly on a cloudy day with a tackle box"
+    },
+    {
+      "tag": "a person on a boat is reacting excitedly on a rocky shoreline with a net"
+    },
+    {
+      "tag": "a person on a boat is reacting to a splash on a cloudy day with fishing gear scattered nearby"
+    },
+    {
+      "tag": "a person on a boat is struggling with a strong pull from a dock with a cooler"
+    },
+    {
+      "tag": "a person on a boat is waiting patiently from a dock with a cooler"
+    },
+    {
+      "tag": "a person on a boat is waiting patiently from the beach with a cooler"
+    },
+    {
+      "tag": "a person on a boat is waiting patiently from the beach with the line tight"
+    },
+    {
+      "tag": "a person on a boat is waiting patiently from the beach with water splashing upward"
+    },
+    {
+      "tag": "a person on a boat is watching the bobber dip during a strong splash with a net"
+    },
+    {
+      "tag": "a person standing in shallow water is casting a line in bright sunlight with a net"
+    },
+    {
+      "tag": "a person standing in shallow water is hit by a sudden bite in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a person standing in shallow water is moving the boat at sunrise with paddles"
+    },
+    {
+      "tag": "a person standing in shallow water is moving the boat in bright sunlight with a bobber"
+    },
+    {
+      "tag": "a person standing in shallow water is moving the boat in bright sunlight with a net"
+    },
+    {
+      "tag": "a person standing in shallow water is pulling the rod upward at sunrise with a cooler"
+    },
+    {
+      "tag": "a person standing in shallow water is reacting excitedly from a drone overhead with a cooler"
+    },
+    {
+      "tag": "a person standing in shallow water is reacting excitedly in bright sunlight with paddles"
+    },
+    {
+      "tag": "a person standing in shallow water is reacting excitedly near reeds with a tackle box"
+    },
+    {
+      "tag": "a person wearing waders is casting a line in bright sunlight with a net"
+    },
+    {
+      "tag": "a person wearing waders is casting a line on the ocean with a cooler"
+    },
+    {
+      "tag": "a person wearing waders is experiencing a sudden rod bend from a dock with a cooler"
+    },
+    {
+      "tag": "a person wearing waders is hit by a sudden bite near reeds with a cooler"
+    },
+    {
+      "tag": "a person wearing waders is moving the boat from a first-person camera with a net"
+    },
+    {
+      "tag": "a person wearing waders is moving the boat in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a person wearing waders is moving the boat near reeds with water splashing upward"
+    },
+    {
+      "tag": "a person wearing waders is moving the boat on a cloudy day with a net"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly at sunrise with a boat motor"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly at sunrise with a bobber"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly at sunrise with a cooler"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly at sunrise with a tackle box"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly at sunrise with paddles"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly from a dock with a boat motor"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly from a dock with a cooler"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly from a dock with a net"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly from a drone overhead with a cooler"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly from a drone overhead with a net"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly from a first-person camera with a boat motor"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly from a first-person camera with a net"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly from a pier with paddles"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly in bright sunlight with a boat motor"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly near reeds with a boat motor"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly near reeds with a cooler"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly near reeds with a net"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly near reeds with a tackle box"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly near tall grass with paddles"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly on a cloudy day with a boat motor"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly on a cloudy day with a cooler"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly on a cloudy day with a net"
+    },
+    {
+      "tag": "a person wearing waders is reacting excitedly on a cloudy day with paddles"
+    },
+    {
+      "tag": "a person wearing waders is reacting to a splash from a dock with a tackle box"
+    },
+    {
+      "tag": "a person wearing waders is reacting to a splash from a drone overhead with a tackle box"
+    },
+    {
+      "tag": "a person wearing waders is reacting to a splash in bright sunlight with paddles"
+    },
+    {
+      "tag": "a person wearing waders is shouting in excitement from a first-person camera with a tackle box"
+    },
+    {
+      "tag": "a person wearing waders is waiting patiently at sunrise with a boat motor"
+    },
+    {
+      "tag": "a person wearing waders is waiting patiently from a dock with a boat motor"
+    },
+    {
+      "tag": "a person wearing waders is waiting patiently from a dock with a cooler"
+    },
+    {
+      "tag": "a person wearing waders is waiting patiently from a first-person camera with a net"
+    },
+    {
+      "tag": "a person wearing waders is watching the bobber dip from a first-person camera with a net"
+    },
+    {
+      "tag": "two people fishing is reacting excitedly at sunrise with a boat motor"
+    },
+    {
+      "tag": "two people fishing is reacting excitedly at sunrise with a cooler"
+    },
+    {
+      "tag": "two people fishing is reacting excitedly in bright sunlight with a cooler"
+    },
+    {
+      "tag": "a GoPro first-person view is adjusting the reel drag from a drone overhead with water splashing upward"
+    }
+  ]
+}
