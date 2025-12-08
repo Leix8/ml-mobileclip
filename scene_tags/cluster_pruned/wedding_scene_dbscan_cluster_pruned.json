@@ -1,0 +1,3487 @@
+{
+  "metadata": {
+    "scene": "wedding_scene",
+    "generator": "wedding_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-25T20:05:23.764424",
+    "eps": 0.065,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 1158
+  },
+  "prompts": [
+    {
+      "tag": "a bride is adjusting the dress at an indoor wedding with a boutonniere"
+    },
+    {
+      "tag": "a bride is adjusting the dress at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a bride is adjusting the dress during golden hour with a decorated arch"
+    },
+    {
+      "tag": "a bride is adjusting the dress during golden hour with a guest book"
+    },
+    {
+      "tag": "a bride is adjusting the dress during golden hour with a seating chart"
+    },
+    {
+      "tag": "a bride is adjusting the dress during golden hour with a wedding sign"
+    },
+    {
+      "tag": "a bride is adjusting the dress during golden hour with candles"
+    },
+    {
+      "tag": "a bride is adjusting the dress from a drone overhead with candles"
+    },
+    {
+      "tag": "a bride is adjusting the dress from a drone overhead with fairy lights"
+    },
+    {
+      "tag": "a bride is adjusting the dress from a first-person POV with a decorated arch"
+    },
+    {
+      "tag": "a bride is adjusting the dress from a first-person POV with a guest book"
+    },
+    {
+      "tag": "a bride is adjusting the dress from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a bride is adjusting the dress from a first-person POV with a wedding sign"
+    },
+    {
+      "tag": "a bride is adjusting the dress from a first-person POV with candles"
+    },
+    {
+      "tag": "a bride is adjusting the dress from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a bride is adjusting the dress in a rustic barn with a boutonniere"
+    },
+    {
+      "tag": "a bride is adjusting the dress in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a beach with a decorated arch"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a beach with a guest book"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a beach with a seating chart"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a beach with a wedding sign"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a beach with candles"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a beach with fairy lights"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a beach with guests applauding"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a mountain overlook with a decorated arch"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a mountain overlook with a guest book"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a mountain overlook with a wedding sign"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a mountain overlook with candles"
+    },
+    {
+      "tag": "a bride is adjusting the dress on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a bride is adjusting the dress under floral decorations with a guest book"
+    },
+    {
+      "tag": "a bride is adjusting the dress under floral decorations with a wedding sign"
+    },
+    {
+      "tag": "a bride is adjusting the dress under floral decorations with confetti falling"
+    },
+    {
+      "tag": "a bride is adjusting the dress under string lights with a guest book"
+    },
+    {
+      "tag": "a bride is adjusting the dress under string lights with a wedding sign"
+    },
+    {
+      "tag": "a bride is catching the bouquet during golden hour with a seating chart"
+    },
+    {
+      "tag": "a bride is catching the bouquet during golden hour with a wedding sign"
+    },
+    {
+      "tag": "a bride is catching the bouquet from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a bride is catching the bouquet from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a bride is catching the bouquet in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is catching the bouquet on a beach with a seating chart"
+    },
+    {
+      "tag": "a bride is catching the bouquet on a beach with a wedding sign"
+    },
+    {
+      "tag": "a bride is catching the bouquet on a beach with fairy lights"
+    },
+    {
+      "tag": "a bride is catching the bouquet on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is catching the bouquet on a mountain overlook with candles"
+    },
+    {
+      "tag": "a bride is catching the bouquet on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a bride is catching the bouquet under string lights with a wedding sign"
+    },
+    {
+      "tag": "a bride is celebrating with friends from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a bride is celebrating with friends under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a bride is celebrating with friends under string lights with a seating chart"
+    },
+    {
+      "tag": "a bride is cutting the wedding cake during golden hour with confetti falling"
+    },
+    {
+      "tag": "a bride is cutting the wedding cake in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is cutting the wedding cake on a beach with confetti falling"
+    },
+    {
+      "tag": "a bride is cutting the wedding cake on a beach with fairy lights"
+    },
+    {
+      "tag": "a bride is cutting the wedding cake on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is dancing together during golden hour with candles"
+    },
+    {
+      "tag": "a bride is dancing together under floral decorations with a guest book"
+    },
+    {
+      "tag": "a bride is exchanging rings during golden hour with a seating chart"
+    },
+    {
+      "tag": "a bride is exchanging rings on a beach with a wedding sign"
+    },
+    {
+      "tag": "a bride is fixing the boutonniere during golden hour with confetti falling"
+    },
+    {
+      "tag": "a bride is fixing the boutonniere from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a bride is fixing the boutonniere from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a bride is fixing the boutonniere in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is fixing the boutonniere on a beach with confetti falling"
+    },
+    {
+      "tag": "a bride is fixing the boutonniere on a beach with fairy lights"
+    },
+    {
+      "tag": "a bride is fixing the boutonniere on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is fixing the boutonniere on a mountain overlook with confetti falling"
+    },
+    {
+      "tag": "a bride is holding hands at an outdoor wedding with a seating chart"
+    },
+    {
+      "tag": "a bride is holding hands during a night celebration with a wedding sign"
+    },
+    {
+      "tag": "a bride is holding hands during golden hour with candles"
+    },
+    {
+      "tag": "a bride is holding hands in a church with a wedding sign"
+    },
+    {
+      "tag": "a bride is holding hands in a church with fairy lights"
+    },
+    {
+      "tag": "a bride is holding hands under floral decorations with a wedding sign"
+    },
+    {
+      "tag": "a bride is hugging joyfully at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a bride is kissing at the altar during golden hour with a guest book"
+    },
+    {
+      "tag": "a bride is kissing at the altar from a drone overhead with fairy lights"
+    },
+    {
+      "tag": "a bride is kissing at the altar from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a bride is kissing at the altar from a first-person POV with candles"
+    },
+    {
+      "tag": "a bride is kissing at the altar from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a bride is kissing at the altar in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is kissing at the altar on a beach with a guest book"
+    },
+    {
+      "tag": "a bride is kissing at the altar on a beach with a seating chart"
+    },
+    {
+      "tag": "a bride is kissing at the altar on a beach with fairy lights"
+    },
+    {
+      "tag": "a bride is kissing at the altar on a mountain overlook with a guest book"
+    },
+    {
+      "tag": "a bride is kissing at the altar on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a bride is kissing at the altar on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is kissing at the altar on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a bride is laughing together at the altar with wedding rings"
+    },
+    {
+      "tag": "a bride is laughing together during a night celebration with candles"
+    },
+    {
+      "tag": "a bride is posing for photos at an indoor wedding with a decorated arch"
+    },
+    {
+      "tag": "a bride is posing for photos at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a bride is posing for photos at an indoor wedding with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is posing for photos at an indoor wedding with a wedding cake"
+    },
+    {
+      "tag": "a bride is posing for photos at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a bride is posing for photos at an indoor wedding with candles"
+    },
+    {
+      "tag": "a bride is posing for photos at an indoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a bride is posing for photos at an indoor wedding with wedding rings"
+    },
+    {
+      "tag": "a bride is posing for photos at an outdoor wedding with a seating chart"
+    },
+    {
+      "tag": "a bride is posing for photos at an outdoor wedding with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is posing for photos at an outdoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a bride is posing for photos at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a bride is posing for photos at an outdoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a bride is posing for photos at an outdoor wedding with confetti falling"
+    },
+    {
+      "tag": "a bride is posing for photos at an outdoor wedding with fairy lights"
+    },
+    {
+      "tag": "a bride is posing for photos at an outdoor wedding with wedding rings"
+    },
+    {
+      "tag": "a bride is posing for photos at the altar with a wedding sign"
+    },
+    {
+      "tag": "a bride is posing for photos at the altar with wedding rings"
+    },
+    {
+      "tag": "a bride is posing for photos during golden hour with fairy lights"
+    },
+    {
+      "tag": "a bride is posing for photos on a dance floor with fairy lights"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate during golden hour with candles"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate during golden hour with confetti falling"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate on a beach with a dance floor setup"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate on a beach with candles"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate on a beach with confetti falling"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate on a beach with fairy lights"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate on a mountain overlook with candles"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate on a mountain overlook with confetti falling"
+    },
+    {
+      "tag": "a bride is signing the marriage certificate on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a bride is walking down the aisle at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a bride is walking down the aisle at an indoor wedding with candles"
+    },
+    {
+      "tag": "a bride is walking down the aisle during a night celebration with a guest book"
+    },
+    {
+      "tag": "a bride is walking down the aisle during a night celebration with a wedding sign"
+    },
+    {
+      "tag": "a bride is walking down the aisle during golden hour with a guest book"
+    },
+    {
+      "tag": "a bride is walking down the aisle during golden hour with a seating chart"
+    },
+    {
+      "tag": "a bride is walking down the aisle during golden hour with a wedding sign"
+    },
+    {
+      "tag": "a bride is walking down the aisle during golden hour with candles"
+    },
+    {
+      "tag": "a bride is walking down the aisle in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a beach with a guest book"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a beach with a seating chart"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a beach with a veil flowing"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a beach with a wedding sign"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a beach with candles"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a beach with fairy lights"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a mountain overlook with a guest book"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a mountain overlook with a veil flowing"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a mountain overlook with a wedding sign"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a mountain overlook with candles"
+    },
+    {
+      "tag": "a bride is walking down the aisle on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a bride is walking down the aisle under floral decorations with a guest book"
+    },
+    {
+      "tag": "a bride is walking down the aisle under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a bride is walking down the aisle under string lights with a guest book"
+    },
+    {
+      "tag": "a bride is walking down the aisle under string lights with a seating chart"
+    },
+    {
+      "tag": "a bride is walking down the aisle under string lights with a veil flowing"
+    },
+    {
+      "tag": "a bride is walking down the aisle under string lights with a wedding sign"
+    },
+    {
+      "tag": "a bride is wiping tears at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a bride is wiping tears at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a bride is wiping tears at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a bride is wiping tears at an outdoor wedding with a seating chart"
+    },
+    {
+      "tag": "a bride is wiping tears at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a bride is wiping tears during golden hour with a wedding sign"
+    },
+    {
+      "tag": "a bride is wiping tears from a drone overhead with a decorated arch"
+    },
+    {
+      "tag": "a bride is wiping tears from a drone overhead with a wedding sign"
+    },
+    {
+      "tag": "a bride is wiping tears from a drone overhead with candles"
+    },
+    {
+      "tag": "a bride is wiping tears from a drone overhead with fairy lights"
+    },
+    {
+      "tag": "a bride is wiping tears from a first-person POV with a dance floor setup"
+    },
+    {
+      "tag": "a bride is wiping tears from a first-person POV with a guest book"
+    },
+    {
+      "tag": "a bride is wiping tears from a first-person POV with a scenic venue"
+    },
+    {
+      "tag": "a bride is wiping tears from a first-person POV with a suit or tuxedo"
+    },
+    {
+      "tag": "a bride is wiping tears from a first-person POV with a wedding sign"
+    },
+    {
+      "tag": "a bride is wiping tears in a church with a wedding sign"
+    },
+    {
+      "tag": "a bride is wiping tears on a beach with a dance floor setup"
+    },
+    {
+      "tag": "a bride is wiping tears on a beach with a guest book"
+    },
+    {
+      "tag": "a bride is wiping tears on a beach with a wedding sign"
+    },
+    {
+      "tag": "a bride is wiping tears on a beach with candles"
+    },
+    {
+      "tag": "a bride is wiping tears on a dance floor with a decorated arch"
+    },
+    {
+      "tag": "a bride is wiping tears on a dance floor with a guest book"
+    },
+    {
+      "tag": "a bride is wiping tears on a dance floor with a wedding sign"
+    },
+    {
+      "tag": "a bride is wiping tears on a mountain overlook with a wedding sign"
+    },
+    {
+      "tag": "a bride is wiping tears under floral decorations with a guest book"
+    },
+    {
+      "tag": "a bride is wiping tears under floral decorations with a wedding sign"
+    },
+    {
+      "tag": "a bride is wiping tears under string lights with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress at an indoor wedding with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress at an indoor wedding with candles"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress at an indoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress at an indoor wedding with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress at an indoor wedding with flower petals on the aisle"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress at an indoor wedding with guests applauding"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress at an outdoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress at an outdoor wedding with guests applauding"
+    },
+    {
+      "tag": "a close-up of hands is adjusting the dress during golden hour with a dance floor setup"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet during a night celebration with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet during a night celebration with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet during a night celebration with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet during golden hour with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet during golden hour with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet during golden hour with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet during golden hour with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet during golden hour with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet during golden hour with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet during golden hour with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a drone overhead with a dance floor setup"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a drone overhead with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a drone overhead with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a drone overhead with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a drone overhead with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a drone overhead with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a drone overhead with candles"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a drone overhead with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a drone overhead with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a drone overhead with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a first-person POV with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a first-person POV with a scenic venue"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a first-person POV with a suit or tuxedo"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a first-person POV with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a first-person POV with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a first-person POV with candles"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet from a first-person POV with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet in a church with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet in a rustic barn with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet in a rustic barn with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet in a rustic barn with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet in a rustic barn with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet in a rustic barn with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with a dance floor setup"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with candles"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with flower petals on the aisle"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a beach with guests applauding"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a dance floor with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with a dance floor setup"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with candles"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet on a mountain overlook with flower petals on the aisle"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet under floral decorations with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet under string lights with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet under string lights with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet under string lights with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is catching the bouquet under string lights with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends during a night celebration with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends during a night celebration with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends during golden hour with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends during golden hour with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends during golden hour with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends during golden hour with a suit or tuxedo"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends during golden hour with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends during golden hour with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends during golden hour with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends during golden hour with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a drone overhead with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a drone overhead with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a drone overhead with a suit or tuxedo"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a drone overhead with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a drone overhead with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a drone overhead with candles"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a drone overhead with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a first-person POV with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a first-person POV with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a first-person POV with a scenic venue"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a first-person POV with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends from a first-person POV with candles"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends in a hotel ballroom with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends in a rustic barn with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends in a rustic barn with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends in a rustic barn with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends in a rustic barn with candles"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends in a rustic barn with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends in a rustic barn with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends in a rustic barn with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with a dance floor setup"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with a scenic venue"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with a suit or tuxedo"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with candles"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a beach with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with a suit or tuxedo"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with candles"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends on a mountain overlook with flower petals on the aisle"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends under floral decorations with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends under floral decorations with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends under floral decorations with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends under string lights with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends under string lights with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends under string lights with a suit or tuxedo"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends under string lights with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is celebrating with friends under string lights with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is dancing together at an outdoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is dancing together at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a close-up of hands is dancing together during golden hour with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is dancing together during golden hour with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is dancing together during golden hour with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is dancing together during golden hour with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is dancing together from a drone overhead with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is dancing together from a drone overhead with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is dancing together from a drone overhead with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is dancing together from a drone overhead with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is dancing together from a drone overhead with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is dancing together from a first-person POV with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is dancing together from a first-person POV with candles"
+    },
+    {
+      "tag": "a close-up of hands is dancing together in a rustic barn with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is dancing together in a rustic barn with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is dancing together in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is dancing together in a rustic barn with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is dancing together in a rustic barn with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is dancing together in a rustic barn with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is dancing together on a beach with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is dancing together on a beach with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is dancing together on a beach with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is dancing together on a beach with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is dancing together on a mountain overlook with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is dancing together on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is dancing together on a mountain overlook with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is dancing together on a mountain overlook with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is dancing together on a mountain overlook with flower petals on the aisle"
+    },
+    {
+      "tag": "a close-up of hands is dancing together under floral decorations with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is dancing together under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is dancing together under floral decorations with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is dancing together under string lights with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is dancing together under string lights with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is dancing together under string lights with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings during a night celebration with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings during golden hour with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings during golden hour with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings during golden hour with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings during golden hour with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings during golden hour with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings from a drone overhead with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings from a drone overhead with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings from a drone overhead with candles"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings from a drone overhead with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a beach with a dance floor setup"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a beach with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a beach with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a beach with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a beach with candles"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a beach with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a beach with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a mountain overlook with a dance floor setup"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a mountain overlook with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a mountain overlook with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a mountain overlook with candles"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a mountain overlook with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a mountain overlook with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings on a mountain overlook with flower petals on the aisle"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is exchanging rings under string lights with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is holding hands at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is holding hands at an indoor wedding with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is holding hands at an outdoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is holding hands at an outdoor wedding with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is holding hands at the altar with a scenic venue"
+    },
+    {
+      "tag": "a close-up of hands is holding hands during golden hour with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is holding hands during golden hour with a wedding cake"
+    },
+    {
+      "tag": "a close-up of hands is holding hands during golden hour with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is holding hands during golden hour with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a drone overhead with a scenic venue"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a drone overhead with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a drone overhead with a suit or tuxedo"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a drone overhead with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a first-person POV with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a first-person POV with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a first-person POV with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a first-person POV with a scenic venue"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a first-person POV with a suit or tuxedo"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a first-person POV with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a first-person POV with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is holding hands from a first-person POV with candles"
+    },
+    {
+      "tag": "a close-up of hands is holding hands in a rustic barn with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is holding hands in a rustic barn with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is holding hands in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is holding hands in a rustic barn with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is holding hands in a rustic barn with a wedding cake"
+    },
+    {
+      "tag": "a close-up of hands is holding hands in a rustic barn with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is holding hands on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is holding hands on a beach with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is holding hands on a beach with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is holding hands on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is holding hands on a mountain overlook with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is holding hands on a mountain overlook with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is holding hands under floral decorations with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an indoor wedding with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an indoor wedding with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an indoor wedding with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an indoor wedding with candles"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an indoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an outdoor wedding with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an outdoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at an outdoor wedding with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully at the altar with a scenic venue"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully during golden hour with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully from a drone overhead with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully on a mountain overlook with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is hugging joyfully on a mountain overlook with flower petals on the aisle"
+    },
+    {
+      "tag": "a close-up of hands is kissing at the altar at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is kissing at the altar at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is kissing at the altar at an indoor wedding with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is kissing at the altar at an indoor wedding with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is kissing at the altar from a drone overhead with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is kissing at the altar in a rustic barn with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is kissing at the altar on a beach with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is kissing at the altar on a mountain overlook with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an indoor wedding with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an indoor wedding with a dance floor setup"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an indoor wedding with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an indoor wedding with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an indoor wedding with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an indoor wedding with candles"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an indoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an indoor wedding with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an outdoor wedding with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an outdoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an outdoor wedding with a veil flowing"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an outdoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at an outdoor wedding with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is laughing together at the altar with a scenic venue"
+    },
+    {
+      "tag": "a close-up of hands is laughing together during golden hour with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is laughing together during golden hour with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is laughing together from a drone overhead with a wedding dress"
+    },
+    {
+      "tag": "a close-up of hands is laughing together from a first-person POV with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is laughing together in a rustic barn with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is laughing together on a beach with a wedding dress"
+    },
+    {
+      "tag": "a close-up of hands is laughing together on a dance floor with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is laughing together on a dance floor with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is laughing together on a mountain overlook with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at an indoor wedding with a suit or tuxedo"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at an indoor wedding with a wedding cake"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at an indoor wedding with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at an outdoor wedding with a wedding cake"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at an outdoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at the altar with a decorated arch"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at the altar with a scenic venue"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at the altar with candles"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos at the altar with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos during golden hour with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is posing for photos under floral decorations with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is signing the marriage certificate on a mountain overlook with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is walking down the aisle on a mountain overlook with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is walking down the aisle on a mountain overlook with candles"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with a dance floor setup"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with a sunset backdrop"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with candles"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with confetti falling"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with flower petals on the aisle"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an indoor wedding with guests applauding"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at an outdoor wedding with a seating chart"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears at the altar with a scenic venue"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears during a night celebration with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears during golden hour with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears during golden hour with a dance floor setup"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears during golden hour with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears during golden hour with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears from a drone overhead with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears from a drone overhead with a wedding dress"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears from a first-person POV with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears in a rustic barn with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears on a beach with a wedding dress"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears on a dance floor with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears on a dance floor with fairy lights"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears on a dance floor with floral decorations"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears on a mountain overlook with a boutonniere"
+    },
+    {
+      "tag": "a close-up of hands is wiping tears on a mountain overlook with a wedding cake"
+    },
+    {
+      "tag": "a couple getting married is holding hands during a night celebration with a seating chart"
+    },
+    {
+      "tag": "a couple getting married is holding hands during golden hour with a seating chart"
+    },
+    {
+      "tag": "a couple getting married is walking down the aisle during a night celebration with a seating chart"
+    },
+    {
+      "tag": "a couple getting married is wiping tears from a drone overhead with a seating chart"
+    },
+    {
+      "tag": "a couple getting married is wiping tears from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a couple getting married is wiping tears on a beach with a seating chart"
+    },
+    {
+      "tag": "a couple getting married is wiping tears on a dance floor with a seating chart"
+    },
+    {
+      "tag": "a couple getting married is wiping tears under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a couple getting married is wiping tears under floral decorations with a wedding sign"
+    },
+    {
+      "tag": "a drone view of the wedding venue is adjusting the dress in a rustic barn with a boutonniere"
+    },
+    {
+      "tag": "a drone view of the wedding venue is adjusting the dress in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a drone view of the wedding venue is cutting the wedding cake in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress at an indoor wedding with candles"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress at an outdoor wedding with a dance floor setup"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress at an outdoor wedding with a decorated arch"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress at an outdoor wedding with a seating chart"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress during golden hour with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress during golden hour with flower petals on the aisle"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress on a beach with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress on a beach with flower petals on the aisle"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress on a mountain overlook with a decorated arch"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress on a mountain overlook with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress on a mountain overlook with confetti falling"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress on a mountain overlook with flower petals on the aisle"
+    },
+    {
+      "tag": "a family posing together is adjusting the dress under string lights with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet during golden hour with a decorated arch"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet during golden hour with a seating chart"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet during golden hour with a wedding sign"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet during golden hour with candles"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet during golden hour with confetti falling"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a drone overhead with a decorated arch"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a drone overhead with a seating chart"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a drone overhead with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a drone overhead with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a drone overhead with candles"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a drone overhead with fairy lights"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with a dance floor setup"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with a decorated arch"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with a guest book"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with a scenic venue"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with a suit or tuxedo"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with a wedding sign"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with candles"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with champagne glasses"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with confetti falling"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet in a church with a seating chart"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet in a church with candles"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet on a beach with a decorated arch"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet on a beach with a guest book"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet on a beach with a seating chart"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet on a beach with candles"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet on a beach with confetti falling"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet on a beach with fairy lights"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet on a mountain overlook with candles"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet under floral decorations with a guest book"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet under floral decorations with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is catching the bouquet under floral decorations with a wedding sign"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends during golden hour with a suit or tuxedo"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends from a first-person POV with a decorated arch"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends from a first-person POV with a guest book"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends from a first-person POV with a scenic venue"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends from a first-person POV with a suit or tuxedo"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends from a first-person POV with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends from a first-person POV with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends from a first-person POV with candles"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends from a first-person POV with guests applauding"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends in a church with a scenic venue"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends in a church with candles"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends on a beach with a suit or tuxedo"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is celebrating with friends on a beach with candles"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake at an indoor wedding with flower petals on the aisle"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake during golden hour with a seating chart"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake during golden hour with confetti falling"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake during golden hour with flower petals on the aisle"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake from a drone overhead with a seating chart"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake from a drone overhead with fairy lights"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake on a beach with flower petals on the aisle"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake on a mountain overlook with a decorated arch"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake on a mountain overlook with confetti falling"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake on a mountain overlook with flower petals on the aisle"
+    },
+    {
+      "tag": "a family posing together is cutting the wedding cake under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a family posing together is dancing together at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a family posing together is dancing together during golden hour with a guest book"
+    },
+    {
+      "tag": "a family posing together is dancing together during golden hour with candles"
+    },
+    {
+      "tag": "a family posing together is dancing together from a first-person POV with a guest book"
+    },
+    {
+      "tag": "a family posing together is dancing together from a first-person POV with a scenic venue"
+    },
+    {
+      "tag": "a family posing together is dancing together from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a family posing together is dancing together from a first-person POV with a suit or tuxedo"
+    },
+    {
+      "tag": "a family posing together is dancing together from a first-person POV with a wedding dress"
+    },
+    {
+      "tag": "a family posing together is dancing together from a first-person POV with a wedding sign"
+    },
+    {
+      "tag": "a family posing together is dancing together from a first-person POV with candles"
+    },
+    {
+      "tag": "a family posing together is dancing together from a first-person POV with floral decorations"
+    },
+    {
+      "tag": "a family posing together is dancing together from a first-person POV with wedding rings"
+    },
+    {
+      "tag": "a family posing together is dancing together in a church with a guest book"
+    },
+    {
+      "tag": "a family posing together is dancing together in a church with a seating chart"
+    },
+    {
+      "tag": "a family posing together is dancing together in a church with candles"
+    },
+    {
+      "tag": "a family posing together is dancing together on a beach with a guest book"
+    },
+    {
+      "tag": "a family posing together is dancing together on a beach with a seating chart"
+    },
+    {
+      "tag": "a family posing together is dancing together on a beach with candles"
+    },
+    {
+      "tag": "a family posing together is dancing together on a beach with floral decorations"
+    },
+    {
+      "tag": "a family posing together is dancing together under floral decorations with a guest book"
+    },
+    {
+      "tag": "a family posing together is exchanging rings at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a family posing together is exchanging rings during a night celebration with a decorated arch"
+    },
+    {
+      "tag": "a family posing together is exchanging rings during a night celebration with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is exchanging rings during golden hour with a decorated arch"
+    },
+    {
+      "tag": "a family posing together is exchanging rings during golden hour with a seating chart"
+    },
+    {
+      "tag": "a family posing together is exchanging rings during golden hour with candles"
+    },
+    {
+      "tag": "a family posing together is exchanging rings during golden hour with confetti falling"
+    },
+    {
+      "tag": "a family posing together is exchanging rings during golden hour with fairy lights"
+    },
+    {
+      "tag": "a family posing together is exchanging rings from a drone overhead with fairy lights"
+    },
+    {
+      "tag": "a family posing together is exchanging rings from a first-person POV with candles"
+    },
+    {
+      "tag": "a family posing together is exchanging rings from a first-person POV with confetti falling"
+    },
+    {
+      "tag": "a family posing together is exchanging rings in a church with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is exchanging rings on a beach with a decorated arch"
+    },
+    {
+      "tag": "a family posing together is exchanging rings on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is exchanging rings on a beach with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is exchanging rings on a beach with candles"
+    },
+    {
+      "tag": "a family posing together is exchanging rings on a beach with confetti falling"
+    },
+    {
+      "tag": "a family posing together is exchanging rings on a beach with fairy lights"
+    },
+    {
+      "tag": "a family posing together is exchanging rings on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is exchanging rings on a mountain overlook with candles"
+    },
+    {
+      "tag": "a family posing together is exchanging rings on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a family posing together is exchanging rings under floral decorations with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is exchanging rings under floral decorations with a wedding sign"
+    },
+    {
+      "tag": "a family posing together is exchanging rings under floral decorations with confetti falling"
+    },
+    {
+      "tag": "a family posing together is exchanging rings under string lights with a wedding sign"
+    },
+    {
+      "tag": "a family posing together is exchanging rings under string lights with confetti falling"
+    },
+    {
+      "tag": "a family posing together is fixing the boutonniere on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a family posing together is kissing at the altar from a first-person POV with a boutonniere"
+    },
+    {
+      "tag": "a family posing together is signing the marriage certificate at an indoor wedding with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is signing the marriage certificate at an indoor wedding with candles"
+    },
+    {
+      "tag": "a family posing together is signing the marriage certificate at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a family posing together is walking down the aisle at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a family posing together is walking down the aisle at an indoor wedding with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is walking down the aisle at an indoor wedding with a veil flowing"
+    },
+    {
+      "tag": "a family posing together is walking down the aisle at an indoor wedding with candles"
+    },
+    {
+      "tag": "a family posing together is walking down the aisle at an indoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a family posing together is walking down the aisle at an indoor wedding with wedding rings"
+    },
+    {
+      "tag": "a family posing together is walking down the aisle during golden hour with fairy lights"
+    },
+    {
+      "tag": "a family posing together is walking down the aisle from a drone overhead with a boutonniere"
+    },
+    {
+      "tag": "a family posing together is walking down the aisle from a first-person POV with a boutonniere"
+    },
+    {
+      "tag": "a family posing together is walking down the aisle on a beach with a boutonniere"
+    },
+    {
+      "tag": "a family posing together is wiping tears at an indoor wedding with a dance floor setup"
+    },
+    {
+      "tag": "a family posing together is wiping tears at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a family posing together is wiping tears at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a family posing together is wiping tears at an indoor wedding with a sunset backdrop"
+    },
+    {
+      "tag": "a family posing together is wiping tears at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a family posing together is wiping tears at an indoor wedding with candles"
+    },
+    {
+      "tag": "a family posing together is wiping tears at an outdoor wedding with a dance floor setup"
+    },
+    {
+      "tag": "a family posing together is wiping tears at the altar with a scenic venue"
+    },
+    {
+      "tag": "a family posing together is wiping tears during golden hour with a dance floor setup"
+    },
+    {
+      "tag": "a family posing together is wiping tears during golden hour with floral decorations"
+    },
+    {
+      "tag": "a family posing together is wiping tears on a beach with a boutonniere"
+    },
+    {
+      "tag": "a family posing together is wiping tears on a dance floor with a boutonniere"
+    },
+    {
+      "tag": "a family posing together is wiping tears on a dance floor with a wedding cake"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is catching the bouquet on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is catching the bouquet on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is catching the bouquet on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is cutting the wedding cake during golden hour with confetti falling"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is cutting the wedding cake from a drone overhead with a sunset backdrop"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is cutting the wedding cake from a drone overhead with confetti falling"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is cutting the wedding cake in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is cutting the wedding cake on a beach with confetti falling"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is cutting the wedding cake on a mountain overlook with confetti falling"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is hugging joyfully at an outdoor wedding with a seating chart"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is kissing at the altar during a night celebration with a guest book"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is wiping tears at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is wiping tears at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is wiping tears at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "a first-person perspective walking down the aisle is wiping tears at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is adjusting the dress at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is adjusting the dress at an indoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is adjusting the dress at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is adjusting the dress during golden hour with a seating chart"
+    },
+    {
+      "tag": "a flower girl is adjusting the dress during golden hour with guests applauding"
+    },
+    {
+      "tag": "a flower girl is adjusting the dress in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a flower girl is adjusting the dress on a beach with guests applauding"
+    },
+    {
+      "tag": "a flower girl is adjusting the dress under string lights with a guest book"
+    },
+    {
+      "tag": "a flower girl is adjusting the dress under string lights with a seating chart"
+    },
+    {
+      "tag": "a flower girl is catching the bouquet during golden hour with a seating chart"
+    },
+    {
+      "tag": "a flower girl is catching the bouquet from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a flower girl is catching the bouquet from a first-person POV with candles"
+    },
+    {
+      "tag": "a flower girl is catching the bouquet from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a flower girl is catching the bouquet under string lights with a guest book"
+    },
+    {
+      "tag": "a flower girl is catching the bouquet under string lights with a seating chart"
+    },
+    {
+      "tag": "a flower girl is celebrating with friends on a beach with a suit or tuxedo"
+    },
+    {
+      "tag": "a flower girl is celebrating with friends on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a flower girl is celebrating with friends on a beach with a veil flowing"
+    },
+    {
+      "tag": "a flower girl is celebrating with friends on a beach with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is celebrating with friends on a beach with candles"
+    },
+    {
+      "tag": "a flower girl is celebrating with friends on a beach with fairy lights"
+    },
+    {
+      "tag": "a flower girl is celebrating with friends on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a flower girl is celebrating with friends on a mountain overlook with candles"
+    },
+    {
+      "tag": "a flower girl is celebrating with friends on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a flower girl is celebrating with friends under floral decorations with a veil flowing"
+    },
+    {
+      "tag": "a flower girl is cutting the wedding cake during golden hour with a seating chart"
+    },
+    {
+      "tag": "a flower girl is cutting the wedding cake from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a flower girl is cutting the wedding cake on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a flower girl is dancing together during golden hour with a guest book"
+    },
+    {
+      "tag": "a flower girl is dancing together during golden hour with a seating chart"
+    },
+    {
+      "tag": "a flower girl is dancing together during golden hour with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is dancing together during golden hour with candles"
+    },
+    {
+      "tag": "a flower girl is dancing together from a first-person POV with a guest book"
+    },
+    {
+      "tag": "a flower girl is dancing together from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a flower girl is dancing together from a first-person POV with a sunset backdrop"
+    },
+    {
+      "tag": "a flower girl is dancing together from a first-person POV with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is dancing together from a first-person POV with candles"
+    },
+    {
+      "tag": "a flower girl is dancing together from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a flower girl is dancing together in a rustic barn with candles"
+    },
+    {
+      "tag": "a flower girl is dancing together on a beach with a decorated arch"
+    },
+    {
+      "tag": "a flower girl is dancing together on a beach with a guest book"
+    },
+    {
+      "tag": "a flower girl is dancing together on a beach with a seating chart"
+    },
+    {
+      "tag": "a flower girl is dancing together on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a flower girl is dancing together on a beach with a veil flowing"
+    },
+    {
+      "tag": "a flower girl is dancing together on a beach with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is dancing together on a beach with candles"
+    },
+    {
+      "tag": "a flower girl is dancing together on a beach with champagne glasses"
+    },
+    {
+      "tag": "a flower girl is dancing together on a beach with fairy lights"
+    },
+    {
+      "tag": "a flower girl is dancing together on a mountain overlook with a guest book"
+    },
+    {
+      "tag": "a flower girl is dancing together on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a flower girl is dancing together on a mountain overlook with candles"
+    },
+    {
+      "tag": "a flower girl is dancing together on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a flower girl is dancing together under floral decorations with a guest book"
+    },
+    {
+      "tag": "a flower girl is dancing together under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a flower girl is dancing together under floral decorations with a veil flowing"
+    },
+    {
+      "tag": "a flower girl is dancing together under floral decorations with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is dancing together under string lights with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is exchanging rings during a night celebration with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is exchanging rings during golden hour with a seating chart"
+    },
+    {
+      "tag": "a flower girl is exchanging rings from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a flower girl is exchanging rings from a first-person POV with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is exchanging rings from a first-person POV with candles"
+    },
+    {
+      "tag": "a flower girl is exchanging rings from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a flower girl is exchanging rings under string lights with a seating chart"
+    },
+    {
+      "tag": "a flower girl is fixing the boutonniere during golden hour with confetti falling"
+    },
+    {
+      "tag": "a flower girl is holding hands at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a flower girl is holding hands at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is holding hands at an indoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is holding hands at an indoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a flower girl is holding hands at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "a flower girl is holding hands at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is holding hands at an outdoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a flower girl is holding hands during a night celebration with a boutonniere"
+    },
+    {
+      "tag": "a flower girl is holding hands during golden hour with fairy lights"
+    },
+    {
+      "tag": "a flower girl is holding hands on a beach with a boutonniere"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully at an indoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully at an indoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully at an outdoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully during golden hour with a decorated arch"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully during golden hour with a veil flowing"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully from a drone overhead with a scenic venue"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully in a church with a veil flowing"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully in a rustic barn with candles"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully on a beach with a decorated arch"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully on a beach with a veil flowing"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully on a mountain overlook with a decorated arch"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully on a mountain overlook with a veil flowing"
+    },
+    {
+      "tag": "a flower girl is hugging joyfully on a mountain overlook with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is laughing together at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a flower girl is laughing together at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is laughing together at an indoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is laughing together at an indoor wedding with wedding rings"
+    },
+    {
+      "tag": "a flower girl is laughing together at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "a flower girl is laughing together at an outdoor wedding with a wedding cake"
+    },
+    {
+      "tag": "a flower girl is laughing together at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is laughing together at an outdoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a flower girl is laughing together during golden hour with fairy lights"
+    },
+    {
+      "tag": "a flower girl is laughing together from a first-person POV with a bridal bouquet"
+    },
+    {
+      "tag": "a flower girl is laughing together in a church with a boutonniere"
+    },
+    {
+      "tag": "a flower girl is laughing together on a beach with a boutonniere"
+    },
+    {
+      "tag": "a flower girl is laughing together on a mountain overlook with a boutonniere"
+    },
+    {
+      "tag": "a flower girl is posing for photos at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a flower girl is posing for photos at an indoor wedding with a suit or tuxedo"
+    },
+    {
+      "tag": "a flower girl is posing for photos at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is posing for photos at an indoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is posing for photos at an indoor wedding with wedding rings"
+    },
+    {
+      "tag": "a flower girl is posing for photos at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "a flower girl is posing for photos at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is posing for photos at an outdoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a flower girl is posing for photos at an outdoor wedding with wedding rings"
+    },
+    {
+      "tag": "a flower girl is posing for photos at the altar with wedding rings"
+    },
+    {
+      "tag": "a flower girl is posing for photos in a church with a boutonniere"
+    },
+    {
+      "tag": "a flower girl is posing for photos on a beach with a boutonniere"
+    },
+    {
+      "tag": "a flower girl is walking down the aisle at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a flower girl is walking down the aisle at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a flower girl is walking down the aisle during golden hour with a veil flowing"
+    },
+    {
+      "tag": "a flower girl is walking down the aisle under string lights with a veil flowing"
+    },
+    {
+      "tag": "a flower girl is wiping tears at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a flower girl is wiping tears at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a flower girl is wiping tears at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a flower girl is wiping tears at an indoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is wiping tears at an indoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a flower girl is wiping tears at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a flower girl is wiping tears during golden hour with fairy lights"
+    },
+    {
+      "tag": "a flower girl is wiping tears in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a groom is adjusting the dress at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a groom is adjusting the dress at an indoor wedding with candles"
+    },
+    {
+      "tag": "a groom is adjusting the dress at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a groom is adjusting the dress during golden hour with a decorated arch"
+    },
+    {
+      "tag": "a groom is adjusting the dress during golden hour with a seating chart"
+    },
+    {
+      "tag": "a groom is adjusting the dress during golden hour with candles"
+    },
+    {
+      "tag": "a groom is adjusting the dress from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a groom is adjusting the dress on a beach with a seating chart"
+    },
+    {
+      "tag": "a groom is adjusting the dress on a beach with candles"
+    },
+    {
+      "tag": "a groom is adjusting the dress on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a groom is adjusting the dress on a mountain overlook with candles"
+    },
+    {
+      "tag": "a groom is celebrating with friends during golden hour with candles"
+    },
+    {
+      "tag": "a groom is celebrating with friends on a beach with a seating chart"
+    },
+    {
+      "tag": "a groom is celebrating with friends on a beach with fairy lights"
+    },
+    {
+      "tag": "a groom is holding hands at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a groom is holding hands at an indoor wedding with candles"
+    },
+    {
+      "tag": "a groom is holding hands at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a groom is holding hands during a night celebration with a decorated arch"
+    },
+    {
+      "tag": "a groom is holding hands during a night celebration with a wedding sign"
+    },
+    {
+      "tag": "a groom is holding hands during golden hour with a decorated arch"
+    },
+    {
+      "tag": "a groom is holding hands during golden hour with a seating chart"
+    },
+    {
+      "tag": "a groom is holding hands during golden hour with a wedding cake"
+    },
+    {
+      "tag": "a groom is holding hands during golden hour with candles"
+    },
+    {
+      "tag": "a groom is holding hands during golden hour with champagne glasses"
+    },
+    {
+      "tag": "a groom is holding hands in a church with a decorated arch"
+    },
+    {
+      "tag": "a groom is holding hands on a beach with a seating chart"
+    },
+    {
+      "tag": "a groom is holding hands on a beach with candles"
+    },
+    {
+      "tag": "a groom is holding hands on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a groom is holding hands on a mountain overlook with candles"
+    },
+    {
+      "tag": "a groom is holding hands under floral decorations with a guest book"
+    },
+    {
+      "tag": "a groom is holding hands under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a groom is holding hands under floral decorations with confetti falling"
+    },
+    {
+      "tag": "a groom is holding hands under string lights with a seating chart"
+    },
+    {
+      "tag": "a groom is hugging joyfully during a night celebration with a decorated arch"
+    },
+    {
+      "tag": "a groom is hugging joyfully under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a groom is hugging joyfully under floral decorations with confetti falling"
+    },
+    {
+      "tag": "a groom is laughing together at an indoor wedding with wedding rings"
+    },
+    {
+      "tag": "a groom is laughing together at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a groom is laughing together at an outdoor wedding with fairy lights"
+    },
+    {
+      "tag": "a groom is laughing together at an outdoor wedding with wedding rings"
+    },
+    {
+      "tag": "a groom is laughing together during golden hour with fairy lights"
+    },
+    {
+      "tag": "a groom is laughing together in a church with wedding rings"
+    },
+    {
+      "tag": "a groom is laughing together on a beach with a decorated arch"
+    },
+    {
+      "tag": "a groom is laughing together on a beach with candles"
+    },
+    {
+      "tag": "a groom is posing for photos at an outdoor wedding with a veil flowing"
+    },
+    {
+      "tag": "a groom is posing for photos at an outdoor wedding with a wedding cake"
+    },
+    {
+      "tag": "a groom is posing for photos at an outdoor wedding with fairy lights"
+    },
+    {
+      "tag": "a groom is posing for photos at an outdoor wedding with wedding rings"
+    },
+    {
+      "tag": "a groom is posing for photos during golden hour with fairy lights"
+    },
+    {
+      "tag": "a groom is posing for photos during golden hour with floral decorations"
+    },
+    {
+      "tag": "a groom is walking down the aisle at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a groom is walking down the aisle at an indoor wedding with candles"
+    },
+    {
+      "tag": "a groom is walking down the aisle during a night celebration with a decorated arch"
+    },
+    {
+      "tag": "a groom is walking down the aisle during a night celebration with a wedding sign"
+    },
+    {
+      "tag": "a groom is walking down the aisle during golden hour with a guest book"
+    },
+    {
+      "tag": "a groom is walking down the aisle during golden hour with a seating chart"
+    },
+    {
+      "tag": "a groom is walking down the aisle during golden hour with a wedding cake"
+    },
+    {
+      "tag": "a groom is walking down the aisle during golden hour with candles"
+    },
+    {
+      "tag": "a groom is walking down the aisle during golden hour with champagne glasses"
+    },
+    {
+      "tag": "a groom is walking down the aisle from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a groom is walking down the aisle from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a groom is walking down the aisle on a beach with a seating chart"
+    },
+    {
+      "tag": "a groom is walking down the aisle on a beach with fairy lights"
+    },
+    {
+      "tag": "a groom is walking down the aisle on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a groom is walking down the aisle on a mountain overlook with candles"
+    },
+    {
+      "tag": "a groom is walking down the aisle on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a groom is walking down the aisle under string lights with a guest book"
+    },
+    {
+      "tag": "a groom is wiping tears during golden hour with a decorated arch"
+    },
+    {
+      "tag": "a groom is wiping tears during golden hour with a seating chart"
+    },
+    {
+      "tag": "a groom is wiping tears during golden hour with candles"
+    },
+    {
+      "tag": "a groom is wiping tears from a drone overhead with a seating chart"
+    },
+    {
+      "tag": "a groom is wiping tears from a first-person POV with a decorated arch"
+    },
+    {
+      "tag": "a groom is wiping tears from a first-person POV with a scenic venue"
+    },
+    {
+      "tag": "a groom is wiping tears from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a groom is wiping tears on a beach with a dance floor setup"
+    },
+    {
+      "tag": "a groom is wiping tears on a beach with a seating chart"
+    },
+    {
+      "tag": "a groom is wiping tears on a beach with fairy lights"
+    },
+    {
+      "tag": "a groom is wiping tears on a dance floor with a decorated arch"
+    },
+    {
+      "tag": "a groom is wiping tears on a dance floor with candles"
+    },
+    {
+      "tag": "a groom is wiping tears on a mountain overlook with a dance floor setup"
+    },
+    {
+      "tag": "a groom is wiping tears on a mountain overlook with a decorated arch"
+    },
+    {
+      "tag": "a groom is wiping tears on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a groom is wiping tears on a mountain overlook with candles"
+    },
+    {
+      "tag": "a groom is wiping tears under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a groom is wiping tears under string lights with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is adjusting the dress at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is adjusting the dress at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is adjusting the dress at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a photographer capturing moments is adjusting the dress at an indoor wedding with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is adjusting the dress at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is adjusting the dress at an outdoor wedding with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is adjusting the dress at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is adjusting the dress during golden hour with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet during a night celebration with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet during a night celebration with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet during a night celebration with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet during golden hour with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet during golden hour with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet during golden hour with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a drone overhead with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a drone overhead with a sunset backdrop"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a drone overhead with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a drone overhead with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a first-person POV with a dance floor setup"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a first-person POV with a decorated arch"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a first-person POV with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a first-person POV with a suit or tuxedo"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a first-person POV with a sunset backdrop"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a first-person POV with a veil flowing"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a first-person POV with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet in a church with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet in a church with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet in a church with a sunset backdrop"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet in a church with a wedding sign"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet in a church with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet in a church with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet in a rustic barn with a sunset backdrop"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet in a rustic barn with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a beach with a dance floor setup"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a beach with a decorated arch"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a beach with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a beach with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a beach with a veil flowing"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a beach with a wedding sign"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a beach with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a beach with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a mountain overlook with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a mountain overlook with a veil flowing"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet under floral decorations with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is catching the bouquet under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends during golden hour with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends during golden hour with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends during golden hour with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends from a first-person POV with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends from a first-person POV with a scenic venue"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends in a church with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends in a church with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends in a church with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends in a church with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends on a beach with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends on a beach with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends on a beach with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends on a beach with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is celebrating with friends on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is cutting the wedding cake on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is cutting the wedding cake under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is dancing together from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is dancing together in a church with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is dancing together in a church with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is dancing together on a beach with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is dancing together on a beach with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings during a night celebration with a decorated arch"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings during a night celebration with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings during a night celebration with a veil flowing"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings during a night celebration with a wedding sign"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings during golden hour with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings in a church with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings in a church with a wedding sign"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings in a church with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings on a beach with a wedding sign"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings on a beach with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings on a beach with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings under floral decorations with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings under floral decorations with a veil flowing"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings under floral decorations with a wedding sign"
+    },
+    {
+      "tag": "a photographer capturing moments is exchanging rings under string lights with a wedding sign"
+    },
+    {
+      "tag": "a photographer capturing moments is holding hands on a beach with a scenic venue"
+    },
+    {
+      "tag": "a photographer capturing moments is hugging joyfully at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is hugging joyfully at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is hugging joyfully at the altar with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is laughing together at an indoor wedding with wedding rings"
+    },
+    {
+      "tag": "a photographer capturing moments is laughing together at an outdoor wedding with a boutonniere"
+    },
+    {
+      "tag": "a photographer capturing moments is laughing together at the altar with a wedding dress"
+    },
+    {
+      "tag": "a photographer capturing moments is laughing together at the altar with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is laughing together during golden hour with a scenic venue"
+    },
+    {
+      "tag": "a photographer capturing moments is laughing together during the reception with a bridal bouquet"
+    },
+    {
+      "tag": "a photographer capturing moments is laughing together in a church with a boutonniere"
+    },
+    {
+      "tag": "a photographer capturing moments is signing the marriage certificate at an indoor wedding with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is walking down the aisle at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a photographer capturing moments is walking down the aisle at an indoor wedding with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is walking down the aisle at an indoor wedding with champagne glasses"
+    },
+    {
+      "tag": "a photographer capturing moments is walking down the aisle on a beach with a boutonniere"
+    },
+    {
+      "tag": "a photographer capturing moments is wiping tears at an indoor wedding with a dance floor setup"
+    },
+    {
+      "tag": "a photographer capturing moments is wiping tears at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a photographer capturing moments is wiping tears at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a photographer capturing moments is wiping tears at an indoor wedding with a sunset backdrop"
+    },
+    {
+      "tag": "a photographer capturing moments is wiping tears at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a photographer capturing moments is wiping tears at an indoor wedding with candles"
+    },
+    {
+      "tag": "a photographer capturing moments is wiping tears at an indoor wedding with fairy lights"
+    },
+    {
+      "tag": "a photographer capturing moments is wiping tears at an outdoor wedding with a dance floor setup"
+    },
+    {
+      "tag": "a photographer capturing moments is wiping tears at the altar with a scenic venue"
+    },
+    {
+      "tag": "a photographer capturing moments is wiping tears during golden hour with a scenic venue"
+    },
+    {
+      "tag": "a ring bearer is catching the bouquet during golden hour with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is catching the bouquet from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is catching the bouquet from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "a ring bearer is catching the bouquet on a mountain overlook with candles"
+    },
+    {
+      "tag": "a ring bearer is catching the bouquet on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a ring bearer is catching the bouquet under string lights with a guest book"
+    },
+    {
+      "tag": "a ring bearer is catching the bouquet under string lights with a wedding sign"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends during golden hour with a guest book"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends during golden hour with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends in a rustic barn with fairy lights"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a beach with a decorated arch"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a beach with a guest book"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a beach with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a beach with a sunset backdrop"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a beach with a wedding sign"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a beach with candles"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a beach with fairy lights"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a mountain overlook with a guest book"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a mountain overlook with a wedding sign"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a mountain overlook with candles"
+    },
+    {
+      "tag": "a ring bearer is celebrating with friends on a mountain overlook with fairy lights"
+    },
+    {
+      "tag": "a ring bearer is dancing together during golden hour with a guest book"
+    },
+    {
+      "tag": "a ring bearer is dancing together during golden hour with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is dancing together during golden hour with a wedding sign"
+    },
+    {
+      "tag": "a ring bearer is dancing together during golden hour with candles"
+    },
+    {
+      "tag": "a ring bearer is dancing together from a first-person POV with a guest book"
+    },
+    {
+      "tag": "a ring bearer is dancing together from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is dancing together on a beach with a guest book"
+    },
+    {
+      "tag": "a ring bearer is dancing together on a beach with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is dancing together on a beach with a wedding sign"
+    },
+    {
+      "tag": "a ring bearer is dancing together on a beach with candles"
+    },
+    {
+      "tag": "a ring bearer is dancing together on a beach with champagne glasses"
+    },
+    {
+      "tag": "a ring bearer is dancing together on a beach with fairy lights"
+    },
+    {
+      "tag": "a ring bearer is dancing together on a mountain overlook with a guest book"
+    },
+    {
+      "tag": "a ring bearer is dancing together on a mountain overlook with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is dancing together under string lights with a wedding sign"
+    },
+    {
+      "tag": "a ring bearer is holding hands at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is holding hands at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a ring bearer is holding hands at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a ring bearer is holding hands on a beach with a veil flowing"
+    },
+    {
+      "tag": "a ring bearer is hugging joyfully at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is hugging joyfully at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a ring bearer is hugging joyfully on a mountain overlook with a decorated arch"
+    },
+    {
+      "tag": "a ring bearer is laughing together at an indoor wedding with a wedding sign"
+    },
+    {
+      "tag": "a ring bearer is laughing together at an indoor wedding with candles"
+    },
+    {
+      "tag": "a ring bearer is laughing together at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a ring bearer is laughing together during golden hour with champagne glasses"
+    },
+    {
+      "tag": "a ring bearer is laughing together during golden hour with fairy lights"
+    },
+    {
+      "tag": "a ring bearer is laughing together from a first-person POV with a suit or tuxedo"
+    },
+    {
+      "tag": "a ring bearer is laughing together on a beach with a boutonniere"
+    },
+    {
+      "tag": "a ring bearer is posing for photos at an outdoor wedding with candles"
+    },
+    {
+      "tag": "a ring bearer is wiping tears at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "a ring bearer is wiping tears at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "a ring bearer is wiping tears during golden hour with fairy lights"
+    },
+    {
+      "tag": "a wedding party is adjusting the dress during golden hour with a seating chart"
+    },
+    {
+      "tag": "a wedding party is adjusting the dress from a drone overhead with candles"
+    },
+    {
+      "tag": "a wedding party is adjusting the dress on a beach with a seating chart"
+    },
+    {
+      "tag": "a wedding party is adjusting the dress on a beach with a veil flowing"
+    },
+    {
+      "tag": "a wedding party is adjusting the dress on a beach with candles"
+    },
+    {
+      "tag": "a wedding party is adjusting the dress on a beach with fairy lights"
+    },
+    {
+      "tag": "a wedding party is adjusting the dress on a mountain overlook with a decorated arch"
+    },
+    {
+      "tag": "a wedding party is adjusting the dress on a mountain overlook with a sunset backdrop"
+    },
+    {
+      "tag": "a wedding party is adjusting the dress under floral decorations with a veil flowing"
+    },
+    {
+      "tag": "a wedding party is holding hands on a mountain overlook with a boutonniere"
+    },
+    {
+      "tag": "a wedding party is laughing together during a night celebration with a boutonniere"
+    },
+    {
+      "tag": "a wedding party is laughing together in a church with a boutonniere"
+    },
+    {
+      "tag": "a wedding party is laughing together on a beach with a boutonniere"
+    },
+    {
+      "tag": "a wedding party is wiping tears at an outdoor wedding with fairy lights"
+    },
+    {
+      "tag": "a wedding party is wiping tears from a first-person POV with wedding rings"
+    },
+    {
+      "tag": "a wedding party is wiping tears on a beach with a boutonniere"
+    },
+    {
+      "tag": "a wedding party is wiping tears on a mountain overlook with a boutonniere"
+    },
+    {
+      "tag": "a wedding party is wiping tears under floral decorations with a wedding sign"
+    },
+    {
+      "tag": "a wedding party is wiping tears under string lights with a suit or tuxedo"
+    },
+    {
+      "tag": "bridesmaids is holding hands at an indoor wedding with a guest book"
+    },
+    {
+      "tag": "bridesmaids is holding hands at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "bridesmaids is holding hands at an indoor wedding with candles"
+    },
+    {
+      "tag": "bridesmaids is holding hands at an outdoor wedding with a guest book"
+    },
+    {
+      "tag": "bridesmaids is holding hands at an outdoor wedding with a veil flowing"
+    },
+    {
+      "tag": "bridesmaids is holding hands at an outdoor wedding with a wedding cake"
+    },
+    {
+      "tag": "bridesmaids is holding hands at an outdoor wedding with candles"
+    },
+    {
+      "tag": "bridesmaids is holding hands at an outdoor wedding with champagne glasses"
+    },
+    {
+      "tag": "bridesmaids is holding hands at the altar with a scenic venue"
+    },
+    {
+      "tag": "bridesmaids is holding hands during golden hour with fairy lights"
+    },
+    {
+      "tag": "bridesmaids is hugging joyfully at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "bridesmaids is hugging joyfully at an indoor wedding with candles"
+    },
+    {
+      "tag": "bridesmaids is hugging joyfully at an outdoor wedding with candles"
+    },
+    {
+      "tag": "bridesmaids is laughing together at an indoor wedding with candles"
+    },
+    {
+      "tag": "bridesmaids is laughing together at an indoor wedding with wedding rings"
+    },
+    {
+      "tag": "bridesmaids is laughing together at an outdoor wedding with a decorated arch"
+    },
+    {
+      "tag": "bridesmaids is laughing together at an outdoor wedding with a wedding cake"
+    },
+    {
+      "tag": "bridesmaids is laughing together at an outdoor wedding with candles"
+    },
+    {
+      "tag": "bridesmaids is laughing together at an outdoor wedding with wedding rings"
+    },
+    {
+      "tag": "bridesmaids is laughing together on a beach with a boutonniere"
+    },
+    {
+      "tag": "bridesmaids is signing the marriage certificate during golden hour with fairy lights"
+    },
+    {
+      "tag": "bridesmaids is wiping tears at an indoor wedding with a seating chart"
+    },
+    {
+      "tag": "bridesmaids is wiping tears at an indoor wedding with candles"
+    },
+    {
+      "tag": "bridesmaids is wiping tears at an indoor wedding with champagne glasses"
+    },
+    {
+      "tag": "bridesmaids is wiping tears at an outdoor wedding with candles"
+    },
+    {
+      "tag": "bridesmaids is wiping tears during golden hour with fairy lights"
+    },
+    {
+      "tag": "bridesmaids is wiping tears on a beach with a boutonniere"
+    },
+    {
+      "tag": "bridesmaids is wiping tears on a mountain overlook with a boutonniere"
+    },
+    {
+      "tag": "groomsmen is hugging joyfully during golden hour with fairy lights"
+    },
+    {
+      "tag": "guests celebrating is catching the bouquet from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "guests celebrating is catching the bouquet from a first-person POV with candles"
+    },
+    {
+      "tag": "guests celebrating is catching the bouquet from a first-person POV with fairy lights"
+    },
+    {
+      "tag": "guests celebrating is celebrating with friends from a first-person POV with a guest book"
+    },
+    {
+      "tag": "guests celebrating is celebrating with friends from a first-person POV with a seating chart"
+    },
+    {
+      "tag": "guests celebrating is holding hands at the altar with a scenic venue"
+    },
+    {
+      "tag": "guests celebrating is holding hands during golden hour with floral decorations"
+    },
+    {
+      "tag": "guests celebrating is hugging joyfully at the altar with candles"
+    },
+    {
+      "tag": "guests celebrating is hugging joyfully at the altar with champagne glasses"
+    },
+    {
+      "tag": "guests celebrating is laughing together at the altar with wedding rings"
+    },
+    {
+      "tag": "guests celebrating is wiping tears at the altar with a scenic venue"
+    },
+    {
+      "tag": "guests celebrating is wiping tears at the altar with candles"
+    },
+    {
+      "tag": "guests celebrating is wiping tears during golden hour with floral decorations"
+    },
+    {
+      "tag": "a bride is adjusting the dress under floral decorations with a seating chart"
+    }
+  ]
+}

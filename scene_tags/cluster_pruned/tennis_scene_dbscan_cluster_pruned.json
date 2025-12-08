@@ -1,0 +1,1687 @@
+{
+  "metadata": {
+    "scene": "tennis_scene",
+    "generator": "tennis_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-25T20:25:50.907291",
+    "eps": 0.04,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 558
+  },
+  "prompts": [
+    {
+      "tag": "a beginner practicing serves is adjusting grip at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip at sunset with a scoreboard"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip at sunset with chalk dust on clay"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip during a casual match with a water bottle"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip on a hard court with a water bottle"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip under bright sunlight with a net in view"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip under bright sunlight with a tennis bag"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip under bright sunlight with chalk dust on clay"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip under stadium lights with chalk dust on clay"
+    },
+    {
+      "tag": "a beginner practicing serves is celebrating a winner during a casual match with a net in view"
+    },
+    {
+      "tag": "a beginner practicing serves is celebrating a winner during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a beginner practicing serves is celebrating a winner during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a beginner practicing serves is celebrating a winner during a casual match with a tennis racket"
+    },
+    {
+      "tag": "a beginner practicing serves is celebrating a winner during a casual match with a water bottle"
+    },
+    {
+      "tag": "a beginner practicing serves is celebrating a winner under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a beginner practicing serves is hitting a backhand at sunset with a water bottle"
+    },
+    {
+      "tag": "a beginner practicing serves is hitting a backhand during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a beginner practicing serves is hitting a backhand during a casual match with a water bottle"
+    },
+    {
+      "tag": "a beginner practicing serves is hitting a backhand on a clay court with a scoreboard"
+    },
+    {
+      "tag": "a beginner practicing serves is hitting a backhand on a clay court with a water bottle"
+    },
+    {
+      "tag": "a beginner practicing serves is hitting a backhand on a grass court with a scoreboard"
+    },
+    {
+      "tag": "a beginner practicing serves is hitting a backhand on a grass court with a water bottle"
+    },
+    {
+      "tag": "a beginner practicing serves is hitting a backhand under bright sunlight with a scoreboard"
+    },
+    {
+      "tag": "a beginner practicing serves is hitting a backhand under bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a beginner practicing serves is hitting a backhand under stadium lights with a scoreboard"
+    },
+    {
+      "tag": "a beginner practicing serves is hitting a backhand under stadium lights with a water bottle"
+    },
+    {
+      "tag": "a beginner practicing serves is stretching for a wide shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a beginner practicing serves is stretching for a wide shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "a beginner practicing serves is stretching for a wide shot on a hard court with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip at sunset with a net in view"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip at sunset with chalk dust on clay"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip during a casual match with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip on a hard court with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip under bright sunlight with a net in view"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip under bright sunlight with a tennis bag"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip under bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip under bright sunlight with chalk dust on clay"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip under stadium lights with a net in view"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip under stadium lights with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is adjusting grip under stadium lights with chalk dust on clay"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner during a casual match with a net in view"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner during a casual match with a tennis racket"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner during a casual match with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner on a clay court with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner on a hard court with a net in view"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner on a hard court with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is celebrating a winner under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is hitting a backhand at sunset with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is hitting a backhand at sunset with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is hitting a backhand during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is hitting a backhand during a casual match with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is hitting a backhand on a clay court with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is hitting a backhand on a clay court with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is hitting a backhand on a grass court with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is hitting a backhand on a grass court with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is hitting a backhand under bright sunlight with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is hitting a backhand under stadium lights with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is hitting an overhead smash during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is hitting an overhead smash during a casual match with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is reacting to a missed shot at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is reacting to a missed shot during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is reacting to a missed shot during a casual match with a net in view"
+    },
+    {
+      "tag": "a coach training a student is reacting to a missed shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is reacting to a missed shot during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a coach training a student is reacting to a missed shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is reacting to a missed shot during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a coach training a student is reacting to a missed shot on a hard court with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is reacting to a missed shot under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is reacting to a missed shot under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is running to the net during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is running to the net during a casual match with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is sliding to reach the ball at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is sliding to reach the ball at sunset with a tennis ball"
+    },
+    {
+      "tag": "a coach training a student is sliding to reach the ball during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is sliding to reach the ball during a casual match with a net in view"
+    },
+    {
+      "tag": "a coach training a student is sliding to reach the ball during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is sliding to reach the ball during a casual match with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is sliding to reach the ball during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a coach training a student is sliding to reach the ball on a hard court with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is sliding to reach the ball under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is sliding to reach the ball under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot during a casual match with a net in view"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot on a hard court with a net in view"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot on a hard court with a water bottle"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a coach training a student is stretching for a wide shot under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip at sunset with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip at sunset with a tennis ball"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip at sunset with a tennis racket"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip during a casual match with a net in view"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip during a casual match with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip on a clay court with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip on a clay court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip on a clay court with chalk dust on clay"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip on a hard court with a net in view"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip on a hard court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip under bright sunlight with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip under bright sunlight with a tennis ball"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip under bright sunlight with a tennis racket"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip under stadium lights with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is adjusting grip under stadium lights with a tennis ball"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner at sunset with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner at sunset with a tennis ball"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner at sunset with a tennis racket"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner during a casual match with a net in view"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner during a casual match with a tennis ball"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner during a casual match with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner during a casual match with ball marks on court"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on a clay court with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on a clay court with a net in view"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on a clay court with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on a clay court with a tennis racket"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on a clay court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on a grass court with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on a grass court with a tennis racket"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on a hard court with a net in view"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on a hard court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on an indoor court with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on an indoor court with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner on an indoor court with a tennis racket"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner under bright sunlight with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner under bright sunlight with a tennis ball"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner under bright sunlight with a tennis racket"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner under stadium lights with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is celebrating a winner under stadium lights with a tennis ball"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand at sunset with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand at sunset with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand at sunset with chalk dust on clay"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand during a casual match with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand on a clay court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand on a grass court with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand on a grass court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand on an indoor court with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand on an indoor court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand under bright sunlight with a net in view"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand under bright sunlight with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand under bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand under bright sunlight with chalk dust on clay"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand under stadium lights with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand under stadium lights with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is hitting a backhand under stadium lights with chalk dust on clay"
+    },
+    {
+      "tag": "a competitive match player is hitting an overhead smash during a casual match with a net in view"
+    },
+    {
+      "tag": "a competitive match player is hitting an overhead smash during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is hitting an overhead smash during a casual match with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is hitting an overhead smash on a hard court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot at sunset with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot during a casual match with a net in view"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot on a clay court with a net in view"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot on a clay court with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot on a clay court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot on a grass court with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot on a hard court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot on an indoor court with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot under bright sunlight with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot under bright sunlight with a tennis ball"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot under stadium lights with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is reacting to a missed shot under stadium lights with a tennis ball"
+    },
+    {
+      "tag": "a competitive match player is running to the net during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is running to the net during a casual match with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is running to the net on a hard court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball at sunset with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball during a casual match with a net in view"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball during a casual match with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball on a clay court with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball on a grass court with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball on a hard court with a net in view"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball on a hard court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball on an indoor court with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is sliding to reach the ball under stadium lights with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot at sunset with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot at sunset with a tennis ball"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot during a casual match with a net in view"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot on a clay court with a net in view"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot on a clay court with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot on a clay court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot on a grass court with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot on a hard court with a net in view"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot on a hard court with a water bottle"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot on an indoor court with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot under bright sunlight with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot under bright sunlight with a tennis ball"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot under stadium lights with a tennis bag"
+    },
+    {
+      "tag": "a competitive match player is stretching for a wide shot under stadium lights with a tennis ball"
+    },
+    {
+      "tag": "a doubles team is adjusting grip at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is adjusting grip during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is adjusting grip during a casual match with a net in view"
+    },
+    {
+      "tag": "a doubles team is adjusting grip during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is adjusting grip during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a doubles team is adjusting grip during a casual match with a water bottle"
+    },
+    {
+      "tag": "a doubles team is adjusting grip during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a doubles team is adjusting grip on a clay court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is adjusting grip on a clay court with chalk dust on clay"
+    },
+    {
+      "tag": "a doubles team is adjusting grip on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is adjusting grip on a hard court with a net in view"
+    },
+    {
+      "tag": "a doubles team is adjusting grip on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is adjusting grip on a hard court with a water bottle"
+    },
+    {
+      "tag": "a doubles team is adjusting grip on an indoor court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is adjusting grip under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is adjusting grip under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner during a casual match with a net in view"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner during a casual match with a tennis racket"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner during a casual match with a water bottle"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner on a clay court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner on a hard court with a net in view"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner on a hard court with a water bottle"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner on an indoor court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a winner under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand at sunset with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand at sunset with a tennis bag"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand at sunset with a water bottle"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand at sunset with chalk dust on clay"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand during a casual match with a water bottle"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand on a clay court with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand on a clay court with a water bottle"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand on a grass court with a net in view"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand on a grass court with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand on a grass court with a tennis bag"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand on a grass court with a water bottle"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand on an indoor court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand on an indoor court with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand on an indoor court with a water bottle"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under bright sunlight with a net in view"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under bright sunlight with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under bright sunlight with a tennis bag"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under bright sunlight with chalk dust on clay"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under stadium lights with a net in view"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under stadium lights with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under stadium lights with a tennis bag"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under stadium lights with a water bottle"
+    },
+    {
+      "tag": "a doubles team is hitting a backhand under stadium lights with chalk dust on clay"
+    },
+    {
+      "tag": "a doubles team is hitting an overhead smash during a casual match with a net in view"
+    },
+    {
+      "tag": "a doubles team is hitting an overhead smash during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is hitting an overhead smash during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a doubles team is hitting an overhead smash during a casual match with a water bottle"
+    },
+    {
+      "tag": "a doubles team is hitting an overhead smash on a hard court with a water bottle"
+    },
+    {
+      "tag": "a doubles team is performing a slice serve under stadium lights with a water bottle"
+    },
+    {
+      "tag": "a doubles team is rallying quickly at sunset with chalk dust on clay"
+    },
+    {
+      "tag": "a doubles team is rallying quickly under bright sunlight with chalk dust on clay"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot during a casual match with a net in view"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot on a hard court with a water bottle"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot on an indoor court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is reacting to a missed shot under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is running to the net during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is running to the net during a casual match with a water bottle"
+    },
+    {
+      "tag": "a doubles team is running to the net on a hard court with a water bottle"
+    },
+    {
+      "tag": "a doubles team is running to the net under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball during a casual match with a net in view"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball during a casual match with a water bottle"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball on a hard court with a net in view"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball on a hard court with a water bottle"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball on an indoor court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is sliding to reach the ball under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot during a casual match with a net in view"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot during a casual match with a tennis bag"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot on a hard court with a net in view"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot on a hard court with a water bottle"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot on an indoor court with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a doubles team is stretching for a wide shot under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a drone view of a tennis court is adjusting grip at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a drone view of a tennis court is adjusting grip at sunset with a water bottle"
+    },
+    {
+      "tag": "a drone view of a tennis court is adjusting grip at sunset with chalk dust on clay"
+    },
+    {
+      "tag": "a drone view of a tennis court is adjusting grip during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip at sunset with a scoreboard"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip at sunset with a water bottle"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip at sunset with chalk dust on clay"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip during a casual match with a water bottle"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip on an indoor court with a water bottle"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip under bright sunlight with a scoreboard"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip under bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip under bright sunlight with chalk dust on clay"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip under stadium lights with a scoreboard"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip under stadium lights with a water bottle"
+    },
+    {
+      "tag": "a family playing tennis is adjusting grip under stadium lights with chalk dust on clay"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip at sunset with a ball mid-air"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip at sunset with a scoreboard"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip at sunset with a water bottle"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip at sunset with chalk dust on clay"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip during a casual match with a water bottle"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip on a clay court with a water bottle"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip on a grass court with a water bottle"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip on a grass court with chalk dust on clay"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip on a hard court with a water bottle"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip under bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip under bright sunlight with chalk dust on clay"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip under stadium lights with a water bottle"
+    },
+    {
+      "tag": "a first-person racket view is adjusting grip under stadium lights with chalk dust on clay"
+    },
+    {
+      "tag": "a first-person racket view is celebrating a winner during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a first-person racket view is celebrating a winner during a casual match with a water bottle"
+    },
+    {
+      "tag": "a first-person racket view is celebrating a winner on a clay court with a scoreboard"
+    },
+    {
+      "tag": "a first-person racket view is hitting a backhand during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a first-person racket view is hitting a backhand on a grass court with a scoreboard"
+    },
+    {
+      "tag": "a first-person racket view is hitting a backhand under bright sunlight with a scoreboard"
+    },
+    {
+      "tag": "a person holding a racket is adjusting grip at sunset with chalk dust on clay"
+    },
+    {
+      "tag": "a person holding a racket is adjusting grip during a casual match with a net in view"
+    },
+    {
+      "tag": "a person holding a racket is adjusting grip during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a person holding a racket is adjusting grip during a casual match with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is adjusting grip on a grass court with chalk dust on clay"
+    },
+    {
+      "tag": "a person holding a racket is adjusting grip on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a person holding a racket is adjusting grip on a hard court with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is adjusting grip under bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is adjusting grip under bright sunlight with chalk dust on clay"
+    },
+    {
+      "tag": "a person holding a racket is adjusting grip under stadium lights with chalk dust on clay"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a winner during a casual match with a net in view"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a winner during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a winner during a casual match with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a winner during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a winner under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a person holding a racket is hitting a backhand at sunset with a scoreboard"
+    },
+    {
+      "tag": "a person holding a racket is hitting a backhand at sunset with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is hitting a backhand during a casual match with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is hitting a backhand on a grass court with a scoreboard"
+    },
+    {
+      "tag": "a person holding a racket is hitting a backhand on a grass court with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is hitting a backhand on an indoor court with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is hitting a backhand under bright sunlight with a scoreboard"
+    },
+    {
+      "tag": "a person holding a racket is hitting a backhand under stadium lights with a scoreboard"
+    },
+    {
+      "tag": "a person holding a racket is hitting a backhand under stadium lights with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is hitting an overhead smash during a casual match with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is reacting to a missed shot during a casual match with a net in view"
+    },
+    {
+      "tag": "a person holding a racket is reacting to a missed shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a person holding a racket is reacting to a missed shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is reacting to a missed shot under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "a person holding a racket is stretching for a wide shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a person holding a racket is stretching for a wide shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "a person holding a racket is stretching for a wide shot on a hard court with a scoreboard"
+    },
+    {
+      "tag": "a person holding a racket is stretching for a wide shot on a hard court with a water bottle"
+    },
+    {
+      "tag": "a tennis player is adjusting grip during a casual match with a net in view"
+    },
+    {
+      "tag": "a tennis player is adjusting grip during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a tennis player is adjusting grip during a casual match with a water bottle"
+    },
+    {
+      "tag": "a tennis player is celebrating a winner during a casual match with a net in view"
+    },
+    {
+      "tag": "a tennis player is celebrating a winner during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a tennis player is celebrating a winner during a casual match with a water bottle"
+    },
+    {
+      "tag": "a tennis player is hitting a backhand at sunset with a water bottle"
+    },
+    {
+      "tag": "a tennis player is hitting a backhand under bright sunlight with a scoreboard"
+    },
+    {
+      "tag": "a tennis player is hitting a backhand under bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a tennis player is hitting a backhand under bright sunlight with chalk dust on clay"
+    },
+    {
+      "tag": "a tennis player is hitting a backhand under stadium lights with a scoreboard"
+    },
+    {
+      "tag": "a tennis player is hitting a backhand under stadium lights with a water bottle"
+    },
+    {
+      "tag": "a tennis player is hitting an overhead smash during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a tennis player is hitting an overhead smash during a casual match with a water bottle"
+    },
+    {
+      "tag": "a tennis player is sliding to reach the ball during a casual match with a net in view"
+    },
+    {
+      "tag": "a tennis player is sliding to reach the ball during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a tennis player is sliding to reach the ball during a casual match with a water bottle"
+    },
+    {
+      "tag": "a tennis player is stretching for a wide shot during a casual match with a net in view"
+    },
+    {
+      "tag": "a tennis player is stretching for a wide shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "a tennis player is stretching for a wide shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "two players rallying is adjusting grip at sunset with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is adjusting grip at sunset with a net in view"
+    },
+    {
+      "tag": "two players rallying is adjusting grip at sunset with a tennis bag"
+    },
+    {
+      "tag": "two players rallying is adjusting grip at sunset with a water bottle"
+    },
+    {
+      "tag": "two players rallying is adjusting grip at sunset with chalk dust on clay"
+    },
+    {
+      "tag": "two players rallying is adjusting grip during a casual match with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is adjusting grip during a casual match with a tennis bag"
+    },
+    {
+      "tag": "two players rallying is adjusting grip during a casual match with a tennis ball"
+    },
+    {
+      "tag": "two players rallying is adjusting grip during a casual match with a tennis racket"
+    },
+    {
+      "tag": "two players rallying is adjusting grip during a casual match with a water bottle"
+    },
+    {
+      "tag": "two players rallying is adjusting grip during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "two players rallying is adjusting grip on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is adjusting grip on a hard court with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is adjusting grip on a hard court with a water bottle"
+    },
+    {
+      "tag": "two players rallying is adjusting grip on an indoor court with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is adjusting grip under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is adjusting grip under bright sunlight with a net in view"
+    },
+    {
+      "tag": "two players rallying is adjusting grip under bright sunlight with a tennis bag"
+    },
+    {
+      "tag": "two players rallying is adjusting grip under bright sunlight with a water bottle"
+    },
+    {
+      "tag": "two players rallying is adjusting grip under bright sunlight with chalk dust on clay"
+    },
+    {
+      "tag": "two players rallying is adjusting grip under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is adjusting grip under stadium lights with a net in view"
+    },
+    {
+      "tag": "two players rallying is adjusting grip under stadium lights with a tennis bag"
+    },
+    {
+      "tag": "two players rallying is adjusting grip under stadium lights with a water bottle"
+    },
+    {
+      "tag": "two players rallying is adjusting grip under stadium lights with chalk dust on clay"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner at sunset with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner during a casual match with a net in view"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner during a casual match with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner during a casual match with a tennis bag"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner during a casual match with a tennis ball"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner during a casual match with a tennis racket"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner during a casual match with a water bottle"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner on a clay court with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner on a hard court with a net in view"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner on a hard court with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner on a hard court with a water bottle"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner on an indoor court with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a winner under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand at sunset with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand during a casual match with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand during a casual match with a water bottle"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand on a clay court with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand on a clay court with a water bottle"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand on a grass court with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand on a grass court with a tennis bag"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand on a grass court with a water bottle"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand on an indoor court with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand on an indoor court with a water bottle"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand under bright sunlight with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is hitting a backhand under stadium lights with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is hitting an overhead smash during a casual match with a net in view"
+    },
+    {
+      "tag": "two players rallying is hitting an overhead smash during a casual match with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is hitting an overhead smash during a casual match with a tennis bag"
+    },
+    {
+      "tag": "two players rallying is hitting an overhead smash during a casual match with a water bottle"
+    },
+    {
+      "tag": "two players rallying is hitting an overhead smash on a hard court with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is hitting an overhead smash on a hard court with a water bottle"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot at sunset with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot during a casual match with a net in view"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot during a casual match with a tennis bag"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot during a casual match with chalk dust on clay"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot on a hard court with a net in view"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot on a hard court with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot on a hard court with a water bottle"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is reacting to a missed shot under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is running to the net during a casual match with a water bottle"
+    },
+    {
+      "tag": "two players rallying is running to the net on a hard court with a water bottle"
+    },
+    {
+      "tag": "two players rallying is running to the net under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball at sunset with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball during a casual match with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball during a casual match with a net in view"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball during a casual match with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball during a casual match with a tennis bag"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball during a casual match with a water bottle"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball on a grass court with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball on a hard court with a net in view"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball on a hard court with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball on a hard court with a water bottle"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball under bright sunlight with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is sliding to reach the ball under stadium lights with a ball mid-air"
+    },
+    {
+      "tag": "two players rallying is stretching for a wide shot during a casual match with a net in view"
+    },
+    {
+      "tag": "two players rallying is stretching for a wide shot during a casual match with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is stretching for a wide shot during a casual match with a water bottle"
+    },
+    {
+      "tag": "two players rallying is stretching for a wide shot on a hard court with a scoreboard"
+    },
+    {
+      "tag": "two players rallying is stretching for a wide shot on a hard court with a water bottle"
+    },
+    {
+      "tag": "a beginner practicing serves is adjusting grip at sunset with a water bottle"
+    }
+  ]
+}

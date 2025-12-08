@@ -1,0 +1,4327 @@
+{
+  "metadata": {
+    "scene": "soccer_scene",
+    "generator": "soccer_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-25T17:23:27.273096",
+    "eps": 0.05,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 1438
+  },
+  "prompts": [
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick at night under stadium lights with a goalpost"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick at sunset with a goalpost"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick during a casual game with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick during a casual game with cones for drills"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick during a corner kick with dirt splashing"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick during a penalty shootout with water spray from wet grass"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick from a drone overhead with water spray from wet grass"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick in a backyard with cheering fans"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick in a school field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick in a school field with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick on a dusty outdoor field with a soccer ball"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick on a grass field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick on a muddy field with a rolling ball"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot at sunset with a net shaking from a goal"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot at sunset with an offside flag"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot at sunset with cheering fans"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot at sunset with dirt splashing"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot at sunset with grass flying after a kick"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot at sunset with water spray from wet grass"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot during a defensive wall setup with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot during a school match with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot from a drone overhead with a scoreboard visible"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is blocking a shot in a stadium with cones for drills"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot at night under stadium lights with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot at night under stadium lights with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot at night under stadium lights with water spray from wet grass"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot at sunset with goalkeeper gloves"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot at sunset with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot from a drone overhead with goalkeeper gloves"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot in a backyard with an offside flag"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot in a backyard with water spray from wet grass"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot in a stadium with dirt splashing"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot on a muddy field with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is catching a fast shot on a rainy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is celebrating a goal at sunset with cones for drills"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is celebrating a goal in a backyard with goalkeeper gloves"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is celebrating a goal on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is celebrating a goal on a muddy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is celebrating a goal on a muddy field with an offside flag"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is celebrating a goal on a rainy field with cones for drills"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is celebrating a goal on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is chest-trapping the ball at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is chest-trapping the ball at sunset with a referee whistle"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is chest-trapping the ball at sunset with cleats digging into the turf"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is chest-trapping the ball from a drone overhead with grass flying after a kick"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is chest-trapping the ball in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is chest-trapping the ball in a backyard with cones for drills"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is chest-trapping the ball on a community park field with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is chest-trapping the ball on a dusty outdoor field with goalkeeper gloves"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is chest-trapping the ball on a rainy field with an offside flag"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is chest-trapping the ball on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is controlling a high pass from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is controlling a high pass from a drone overhead with cones for drills"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is controlling a high pass on a rainy field with cheering fans"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is crossing the ball into the box in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is crossing the ball into the box on a dusty outdoor field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is crossing the ball into the box on a dusty outdoor field with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is crossing the ball into the box on a rainy field with a scoreboard visible"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is curling the ball toward the goal from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is disappointed after a miss from a drone overhead with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is diving for a save on a community park field with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is diving for a save on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is dribbling past a defender at sunset with a rolling ball"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is dribbling past a defender in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is dribbling past a defender on a dusty outdoor field with a spinning ball"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is grabbing the ball mid-air on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is grabbing the ball mid-air on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is grabbing the ball mid-air on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is heading the ball from a drone overhead with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is intercepting a pass in a backyard with shin guards"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is juggling the ball on a sunny day with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is maneuvering the ball with close control at sunset with dirt splashing"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is maneuvering the ball with close control at sunset with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is practicing dribbling cones in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is practicing dribbling cones in a backyard with cleats digging into the turf"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is practicing dribbling cones in a school field with a scoreboard visible"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is practicing dribbling cones in a stadium with a soccer ball"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates at night under stadium lights with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates at sunset with a referee whistle"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates at sunset with an offside flag"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates during a casual game with cones for drills"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates during a defensive wall setup with team benches on the side"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates from a drone overhead with a goalpost"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates from a drone overhead with a soccer ball"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates in a backyard with a goalpost"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates in a school field with cones for drills"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates on a dusty outdoor field with a goalpost"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates on a dusty outdoor field with a soccer ball"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates on a dusty outdoor field with cheering fans"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates on a grass field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates on a muddy field with a goalpost"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates on a rainy field with a scoreboard visible"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is raising hands to teammates on a sunny day with the ball bouncing off the post"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is stretching on the sideline at sunset with a spinning ball"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is taking a free kick at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick at night under stadium lights with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick at sunset with a goalpost"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick at sunset with a net shaking from a goal"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick during a casual game with a net shaking from a goal"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick during a casual game with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick during a casual game with cleats digging into the turf"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick during a championship final with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick during a competitive tournament with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick during a competitive tournament with corner flags"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick during a corner kick with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick during a school match with grass flying after a kick"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick from a drone overhead with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick from a drone overhead with an offside flag"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick from a first-person head cam with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick on a dusty outdoor field with a spinning ball"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick on a muddy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick on a muddy field with a goalpost"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick on a muddy field with an offside flag"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick on a rainy field with a spinning ball"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick on a rainy field with an offside flag"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is attempting a bicycle kick on a turf field with a spinning ball"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot at night under stadium lights with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot at night under stadium lights with goalkeeper gloves"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot at sunset with a soccer ball"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot at sunset with an offside flag"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot at sunset with cheering fans"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot at sunset with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot during a competitive tournament with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot during a defensive wall setup with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot during a goal celebration with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot from a drone overhead with a net shaking from a goal"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot from a drone overhead with cheering fans"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot from a drone overhead with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot from a first-person head cam with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot from a first-person head cam with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot from a first-person head cam with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot from a sideline camera with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot in a backyard with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot in a backyard with goalkeeper gloves"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot in a backyard with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot in a backyard with the ball crossing the goal line"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a dusty outdoor field with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a dusty outdoor field with corner flags"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a dusty outdoor field with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a muddy field with corner flags"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a muddy field with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a rainy field with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a rainy field with an offside flag"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a rainy field with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a rainy field with goalkeeper gloves"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a sunny day with cheering fans"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a sunny day with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a sunny day with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is blocking a shot on a sunny day with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot at night under stadium lights with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot at night under stadium lights with an offside flag"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot at sunset with goalkeeper gloves"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot at sunset with grass flying after a kick"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot at sunset with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot at sunset with water spray from wet grass"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot during a defensive wall setup with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot during a slide tackle with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot from a drone overhead with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot in a backyard with an offside flag"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot in a stadium with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot in a stadium with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot on a dusty outdoor field with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot on a muddy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot on a muddy field with goalkeeper gloves"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot on a rainy field with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is catching a fast shot on a sunny day with a referee whistle"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal at sunset with cleats digging into the turf"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal at sunset with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal during a defensive wall setup with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal from a drone overhead with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal from a drone overhead with goalkeeper gloves"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal from a drone overhead with water spray from wet grass"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal on a dusty outdoor field with a referee whistle"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal on a dusty outdoor field with goalkeeper gloves"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal on a dusty outdoor field with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal on a muddy field with a referee whistle"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal on a rainy field with a referee whistle"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal on a rainy field with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is celebrating a goal on a sunny day with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is chest-trapping the ball at night under stadium lights with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is chest-trapping the ball at sunset with a referee whistle"
+    },
+    {
+      "tag": "a coach giving instructions is chest-trapping the ball from a drone overhead with an offside flag"
+    },
+    {
+      "tag": "a coach giving instructions is chest-trapping the ball from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is chest-trapping the ball from a drone overhead with grass flying after a kick"
+    },
+    {
+      "tag": "a coach giving instructions is chest-trapping the ball from a first-person head cam with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is chest-trapping the ball in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is chest-trapping the ball in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is chest-trapping the ball in a school field with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is chest-trapping the ball on a rainy field with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is chest-trapping the ball on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is controlling a high pass at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is controlling a high pass from a first-person head cam with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is controlling a high pass in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a coach giving instructions is controlling a high pass in a backyard with cheering fans"
+    },
+    {
+      "tag": "a coach giving instructions is controlling a high pass on a community park field with cheering fans"
+    },
+    {
+      "tag": "a coach giving instructions is controlling a high pass on a dusty outdoor field with cleats digging into the turf"
+    },
+    {
+      "tag": "a coach giving instructions is controlling a high pass on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is controlling a high pass on a rainy field with a goalpost"
+    },
+    {
+      "tag": "a coach giving instructions is crossing the ball into the box at night under stadium lights with water spray from wet grass"
+    },
+    {
+      "tag": "a coach giving instructions is crossing the ball into the box at sunset with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is crossing the ball into the box from a first-person head cam with a referee whistle"
+    },
+    {
+      "tag": "a coach giving instructions is crossing the ball into the box from a sideline camera with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is crossing the ball into the box on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is crossing the ball into the box on a sunny day with goalkeeper gloves"
+    },
+    {
+      "tag": "a coach giving instructions is curling the ball toward the goal during a championship final with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is curling the ball toward the goal during a competitive tournament with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is curling the ball toward the goal from a drone overhead with cleats digging into the turf"
+    },
+    {
+      "tag": "a coach giving instructions is curling the ball toward the goal in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is curling the ball toward the goal in a stadium with a spinning ball"
+    },
+    {
+      "tag": "a coach giving instructions is disappointed after a miss during a casual game with grass flying after a kick"
+    },
+    {
+      "tag": "a coach giving instructions is disappointed after a miss during a competitive tournament with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is disappointed after a miss during a slide tackle with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is disappointed after a miss during practice drills with the ball bouncing off the post"
+    },
+    {
+      "tag": "a coach giving instructions is disappointed after a miss from a first-person head cam with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is disappointed after a miss from a first-person head cam with grass flying after a kick"
+    },
+    {
+      "tag": "a coach giving instructions is disappointed after a miss in a backyard with a spinning ball"
+    },
+    {
+      "tag": "a coach giving instructions is disappointed after a miss in a school field with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is disappointed after a miss in a stadium with a spinning ball"
+    },
+    {
+      "tag": "a coach giving instructions is disappointed after a miss on a grass field with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is disappointed after a miss on a rainy field with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save at night under stadium lights with cleats digging into the turf"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save at sunset with a spinning ball"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save during a casual game with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save during a defensive wall setup with a net shaking from a goal"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save during a defensive wall setup with a soccer ball"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save during a defensive wall setup with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save during a defensive wall setup with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save during a penalty shootout with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save during a school match with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save from a first-person head cam with grass flying after a kick"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save from a first-person head cam with the net moving after a shot"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save on a dusty outdoor field with an offside flag"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save on a grass field with a net shaking from a goal"
+    },
+    {
+      "tag": "a coach giving instructions is diving for a save on a grass field with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is dribbling past a defender at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is dribbling past a defender at sunset with cheering fans"
+    },
+    {
+      "tag": "a coach giving instructions is dribbling past a defender during a casual game with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is dribbling past a defender during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is dribbling past a defender in a backyard with a goalpost"
+    },
+    {
+      "tag": "a coach giving instructions is dribbling past a defender on a dusty outdoor field with a goalpost"
+    },
+    {
+      "tag": "a coach giving instructions is dribbling past a defender on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is dribbling quickly from a sideline camera with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is dribbling quickly on a sunny day with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is grabbing the ball mid-air at sunset with cheering fans"
+    },
+    {
+      "tag": "a coach giving instructions is grabbing the ball mid-air in a backyard with corner flags"
+    },
+    {
+      "tag": "a coach giving instructions is grabbing the ball mid-air on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is heading the ball at sunset with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is intercepting a pass on a rainy field with cleats digging into the turf"
+    },
+    {
+      "tag": "a coach giving instructions is intercepting a pass on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is jostling for position on a muddy field with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is juggling the ball at sunset with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is juggling the ball during a championship final with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is juggling the ball on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is missing a shot at night under stadium lights with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is performing warm-up exercises at night under stadium lights with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is practicing dribbling cones during a competitive tournament with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is practicing dribbling cones during a one-on-one with the goalkeeper with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is practicing dribbling cones from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is practicing dribbling cones from a first-person head cam with grass flying after a kick"
+    },
+    {
+      "tag": "a coach giving instructions is practicing dribbling cones in a school field with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is practicing shooting drills on a grass field with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is practicing shooting drills on a rainy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is punching the ball away during a championship final with cones for drills"
+    },
+    {
+      "tag": "a coach giving instructions is punching the ball away on a community park field with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is punching the ball away on a sunny day with the ball crossing the goal line"
+    },
+    {
+      "tag": "a coach giving instructions is raising hands to teammates at sunset with a net shaking from a goal"
+    },
+    {
+      "tag": "a coach giving instructions is raising hands to teammates during a slide tackle with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is raising hands to teammates from a drone overhead with an offside flag"
+    },
+    {
+      "tag": "a coach giving instructions is raising hands to teammates in a backyard with a net shaking from a goal"
+    },
+    {
+      "tag": "a coach giving instructions is raising hands to teammates in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is raising hands to teammates on a dusty outdoor field with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is raising hands to teammates on a muddy field with the ball bouncing off the post"
+    },
+    {
+      "tag": "a coach giving instructions is raising hands to teammates on a rainy field with a goalpost"
+    },
+    {
+      "tag": "a coach giving instructions is running into open space at night under stadium lights with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is running into open space during a competitive tournament with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is running into open space in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a coach giving instructions is running into open space in a backyard with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is running into open space in a stadium with a soccer ball"
+    },
+    {
+      "tag": "a coach giving instructions is scoring a goal on a dusty outdoor field with cheering fans"
+    },
+    {
+      "tag": "a coach giving instructions is shouting in excitement during a competitive tournament with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is shouting in excitement during a defensive wall setup with a spinning ball"
+    },
+    {
+      "tag": "a coach giving instructions is shouting in excitement from a first-person head cam with grass flying after a kick"
+    },
+    {
+      "tag": "a coach giving instructions is shouting in excitement from a first-person head cam with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is shouting in excitement on a muddy field with a soccer ball"
+    },
+    {
+      "tag": "a coach giving instructions is shouting in excitement on a rainy field with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle during a defensive wall setup with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle from a first-person head cam with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle in a backyard with a spinning ball"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle in a school field with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle in a school field with dirt splashing"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle in a school field with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle in a stadium with shin guards"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle on a grass field with a scoreboard visible"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a coach giving instructions is sliding for a tackle on a sunny day with a spinning ball"
+    },
+    {
+      "tag": "a coach giving instructions is tackling an opponent on a dusty outdoor field with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is tackling an opponent on a rainy field with a rolling ball"
+    },
+    {
+      "tag": "a coach giving instructions is taking a penalty kick in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is attempting a bicycle kick at night under stadium lights with a goalpost"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is attempting a bicycle kick at night under stadium lights with cleats digging into the turf"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is attempting a bicycle kick at sunset with a net shaking from a goal"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is attempting a bicycle kick at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is attempting a bicycle kick during a casual game with a coach holding a clipboard"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is attempting a bicycle kick during a competitive tournament with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is attempting a bicycle kick in a backyard with a goalpost"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is attempting a bicycle kick in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is attempting a bicycle kick on a dusty outdoor field with a referee whistle"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is attempting a bicycle kick on a muddy field with a goalpost"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is attempting a bicycle kick on a sunny day with a goalpost"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot at night under stadium lights with cones for drills"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot at night under stadium lights with water spray from wet grass"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot at sunset with cones for drills"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot at sunset with corner flags"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot in a backyard with corner flags"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot on a dusty outdoor field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot on a dusty outdoor field with cones for drills"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot on a muddy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is blocking a shot on a rainy field with shin guards"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot at night under stadium lights with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot at sunset with cleats digging into the turf"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot at sunset with dirt splashing"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot from a drone overhead with cones for drills"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot on a dusty outdoor field with corner flags"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot on a dusty outdoor field with goalkeeper gloves"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot on a rainy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot on a rainy field with an offside flag"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is catching a fast shot on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is celebrating a goal at night under stadium lights with a coach holding a clipboard"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is celebrating a goal at night under stadium lights with dirt splashing"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is celebrating a goal from a drone overhead with an offside flag"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is celebrating a goal in a backyard with goalkeeper gloves"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is chest-trapping the ball at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is chest-trapping the ball from a drone overhead with a coach holding a clipboard"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is chest-trapping the ball from a drone overhead with water spray from wet grass"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is chest-trapping the ball in a stadium with dirt splashing"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is chest-trapping the ball on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is controlling a high pass at sunset with goalkeeper gloves"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is controlling a high pass at sunset with water spray from wet grass"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is controlling a high pass on a rainy field with cleats digging into the turf"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is controlling a high pass on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is crossing the ball into the box at sunset with team benches on the side"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is crossing the ball into the box on a rainy field with a referee whistle"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is disappointed after a miss at sunset with an offside flag"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is disappointed after a miss in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is disappointed after a miss in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is disappointed after a miss on a community park field with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is disappointed after a miss on a dusty outdoor field with dirt splashing"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is dribbling past a defender at sunset with a goalpost"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is heading the ball on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is juggling the ball in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is making a long pass on a sunny day with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is maneuvering the ball with close control on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is practicing dribbling cones during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is practicing dribbling cones during a championship final with dirt splashing"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is scoring a goal in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is sliding for a tackle in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a crowd cheering from the sideline is sliding for a tackle on a community park field with shin guards"
+    },
+    {
+      "tag": "a defender blocking a shot is attempting a bicycle kick at night under stadium lights with a coach holding a clipboard"
+    },
+    {
+      "tag": "a defender blocking a shot is attempting a bicycle kick at sunset with a referee whistle"
+    },
+    {
+      "tag": "a defender blocking a shot is attempting a bicycle kick from a drone overhead with an offside flag"
+    },
+    {
+      "tag": "a defender blocking a shot is attempting a bicycle kick from a drone overhead with grass flying after a kick"
+    },
+    {
+      "tag": "a defender blocking a shot is attempting a bicycle kick in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a defender blocking a shot is attempting a bicycle kick on a dusty outdoor field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a defender blocking a shot is attempting a bicycle kick on a dusty outdoor field with an offside flag"
+    },
+    {
+      "tag": "a defender blocking a shot is attempting a bicycle kick on a dusty outdoor field with cones for drills"
+    },
+    {
+      "tag": "a defender blocking a shot is attempting a bicycle kick on a dusty outdoor field with team benches on the side"
+    },
+    {
+      "tag": "a defender blocking a shot is attempting a bicycle kick on a rainy field with a scoreboard visible"
+    },
+    {
+      "tag": "a defender blocking a shot is attempting a bicycle kick on a rainy field with an offside flag"
+    },
+    {
+      "tag": "a defender blocking a shot is blocking a shot from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is blocking a shot from a drone overhead with team benches on the side"
+    },
+    {
+      "tag": "a defender blocking a shot is blocking a shot in a backyard with cheering fans"
+    },
+    {
+      "tag": "a defender blocking a shot is blocking a shot in a stadium with dirt splashing"
+    },
+    {
+      "tag": "a defender blocking a shot is blocking a shot on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a defender blocking a shot is blocking a shot on a dusty outdoor field with corner flags"
+    },
+    {
+      "tag": "a defender blocking a shot is blocking a shot on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is catching a fast shot at sunset with water spray from wet grass"
+    },
+    {
+      "tag": "a defender blocking a shot is catching a fast shot on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a defender blocking a shot is celebrating a goal at night under stadium lights with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is celebrating a goal at sunset with cleats digging into the turf"
+    },
+    {
+      "tag": "a defender blocking a shot is celebrating a goal at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is celebrating a goal from a drone overhead with cones for drills"
+    },
+    {
+      "tag": "a defender blocking a shot is celebrating a goal from a first-person head cam with cones for drills"
+    },
+    {
+      "tag": "a defender blocking a shot is celebrating a goal on a grass field with shin guards"
+    },
+    {
+      "tag": "a defender blocking a shot is celebrating a goal on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a defender blocking a shot is chest-trapping the ball at sunset with dirt splashing"
+    },
+    {
+      "tag": "a defender blocking a shot is chest-trapping the ball on a muddy field with team benches on the side"
+    },
+    {
+      "tag": "a defender blocking a shot is controlling a high pass at sunset with team benches on the side"
+    },
+    {
+      "tag": "a defender blocking a shot is controlling a high pass in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a defender blocking a shot is crossing the ball into the box at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a defender blocking a shot is crossing the ball into the box on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is curling the ball toward the goal in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is curling the ball toward the goal on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a defender blocking a shot is curling the ball toward the goal on a sunny day with cones for drills"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss at night under stadium lights with a soccer ball"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss at night under stadium lights with goalkeeper gloves"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss during a casual game with dirt splashing"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss during a championship final with a scoreboard visible"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss during a corner kick with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss during a school match with cheering fans"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss during a youth league match with a referee whistle"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss from a goalkeeper POV with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss in a backyard with an offside flag"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss in a school field with cones for drills"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss on a dusty outdoor field with a goalpost"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss on a muddy field with a net shaking from a goal"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss on a muddy field with a spinning ball"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss on a muddy field with dirt splashing"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss on a rainy field with a rolling ball"
+    },
+    {
+      "tag": "a defender blocking a shot is disappointed after a miss on a sunny day with a rolling ball"
+    },
+    {
+      "tag": "a defender blocking a shot is diving for a save on a rainy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a defender blocking a shot is dribbling past a defender at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is dribbling past a defender on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is dribbling past a defender on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a defender blocking a shot is heading the ball on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is practicing dribbling cones at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a defender blocking a shot is practicing dribbling cones at sunset with cheering fans"
+    },
+    {
+      "tag": "a defender blocking a shot is practicing dribbling cones on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is raising hands to teammates from a first-person head cam with cones for drills"
+    },
+    {
+      "tag": "a defender blocking a shot is raising hands to teammates on a community park field with a referee whistle"
+    },
+    {
+      "tag": "a defender blocking a shot is raising hands to teammates on a dusty outdoor field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a defender blocking a shot is raising hands to teammates on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a defender blocking a shot is raising hands to teammates on a sunny day with the ball bouncing off the post"
+    },
+    {
+      "tag": "a defender blocking a shot is shouting in excitement during a casual game with cones for drills"
+    },
+    {
+      "tag": "a defender blocking a shot is shouting in excitement in a school field with shin guards"
+    },
+    {
+      "tag": "a defender blocking a shot is sliding for a tackle in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a defender blocking a shot is stretching on the sideline on a sunny day with a rolling ball"
+    },
+    {
+      "tag": "a defender blocking a shot is taking a free kick on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a defender blocking a shot is taking a free kick on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a drone view over a soccer field is attempting a bicycle kick at night under stadium lights with a coach holding a clipboard"
+    },
+    {
+      "tag": "a drone view over a soccer field is attempting a bicycle kick at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a drone view over a soccer field is attempting a bicycle kick at sunset with a net shaking from a goal"
+    },
+    {
+      "tag": "a drone view over a soccer field is attempting a bicycle kick during a casual game with a soccer ball"
+    },
+    {
+      "tag": "a drone view over a soccer field is attempting a bicycle kick on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a drone view over a soccer field is attempting a bicycle kick on a rainy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a drone view over a soccer field is attempting a bicycle kick on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a drone view over a soccer field is crossing the ball into the box on a muddy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a family playing soccer in the yard is attempting a bicycle kick at night under stadium lights with a rolling ball"
+    },
+    {
+      "tag": "a family playing soccer in the yard is attempting a bicycle kick at sunset with a referee whistle"
+    },
+    {
+      "tag": "a family playing soccer in the yard is attempting a bicycle kick on a rainy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a family playing soccer in the yard is blocking a shot at night under stadium lights with colorful jerseys"
+    },
+    {
+      "tag": "a family playing soccer in the yard is blocking a shot at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a family playing soccer in the yard is blocking a shot at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a family playing soccer in the yard is blocking a shot at sunset with team benches on the side"
+    },
+    {
+      "tag": "a family playing soccer in the yard is blocking a shot on a muddy field with team benches on the side"
+    },
+    {
+      "tag": "a family playing soccer in the yard is catching a fast shot on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a family playing soccer in the yard is catching a fast shot on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a family playing soccer in the yard is chest-trapping the ball from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a family playing soccer in the yard is controlling a high pass on a rainy field with a scoreboard visible"
+    },
+    {
+      "tag": "a family playing soccer in the yard is controlling a high pass on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a family playing soccer in the yard is curling the ball toward the goal on a muddy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a family playing soccer in the yard is dribbling quickly from a drone overhead with a scoreboard visible"
+    },
+    {
+      "tag": "a family playing soccer in the yard is raising hands to teammates on a dusty outdoor field with grass flying after a kick"
+    },
+    {
+      "tag": "a first-person dribbling view is attempting a bicycle kick at night under stadium lights with a goalpost"
+    },
+    {
+      "tag": "a first-person dribbling view is attempting a bicycle kick at sunset with goalkeeper gloves"
+    },
+    {
+      "tag": "a first-person dribbling view is attempting a bicycle kick at sunset with shin guards"
+    },
+    {
+      "tag": "a first-person dribbling view is attempting a bicycle kick during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "a first-person dribbling view is attempting a bicycle kick from a drone overhead with a rolling ball"
+    },
+    {
+      "tag": "a first-person dribbling view is attempting a bicycle kick in a backyard with a goalpost"
+    },
+    {
+      "tag": "a first-person dribbling view is attempting a bicycle kick on a dusty outdoor field with a net shaking from a goal"
+    },
+    {
+      "tag": "a first-person dribbling view is attempting a bicycle kick on a dusty outdoor field with a soccer ball"
+    },
+    {
+      "tag": "a first-person dribbling view is attempting a bicycle kick on a rainy field with an offside flag"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot at night under stadium lights with water spray from wet grass"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot at sunset with a referee whistle"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot at sunset with cheering fans"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot at sunset with dirt splashing"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot from a drone overhead with a coach holding a clipboard"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot from a drone overhead with a referee whistle"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot in a backyard with cheering fans"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot in a backyard with cones for drills"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot in a backyard with water spray from wet grass"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot on a community park field with team benches on the side"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot on a dusty outdoor field with goalkeeper gloves"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot on a muddy field with corner flags"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot on a rainy field with cheering fans"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a first-person dribbling view is blocking a shot on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot at sunset with an offside flag"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot at sunset with team benches on the side"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot from a drone overhead with goalkeeper gloves"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot in a backyard with corner flags"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot in a stadium with dirt splashing"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot on a muddy field with a scoreboard visible"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot on a rainy field with corner flags"
+    },
+    {
+      "tag": "a first-person dribbling view is catching a fast shot on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a first-person dribbling view is celebrating a goal from a drone overhead with a scoreboard visible"
+    },
+    {
+      "tag": "a first-person dribbling view is celebrating a goal from a drone overhead with corner flags"
+    },
+    {
+      "tag": "a first-person dribbling view is celebrating a goal from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a first-person dribbling view is celebrating a goal in a backyard with goalkeeper gloves"
+    },
+    {
+      "tag": "a first-person dribbling view is celebrating a goal on a muddy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a first-person dribbling view is celebrating a goal on a muddy field with team benches on the side"
+    },
+    {
+      "tag": "a first-person dribbling view is chest-trapping the ball at sunset with cleats digging into the turf"
+    },
+    {
+      "tag": "a first-person dribbling view is chest-trapping the ball in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a first-person dribbling view is controlling a high pass in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a first-person dribbling view is controlling a high pass in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a first-person dribbling view is controlling a high pass on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a first-person dribbling view is controlling a high pass on a dusty outdoor field with team benches on the side"
+    },
+    {
+      "tag": "a first-person dribbling view is controlling a high pass on a rainy field with a referee whistle"
+    },
+    {
+      "tag": "a first-person dribbling view is crossing the ball into the box at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a first-person dribbling view is crossing the ball into the box from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a first-person dribbling view is curling the ball toward the goal during a defensive wall setup with dirt splashing"
+    },
+    {
+      "tag": "a first-person dribbling view is curling the ball toward the goal from a drone overhead with water spray from wet grass"
+    },
+    {
+      "tag": "a first-person dribbling view is disappointed after a miss on a dusty outdoor field with an offside flag"
+    },
+    {
+      "tag": "a first-person dribbling view is diving for a save during a competitive tournament with colorful jerseys"
+    },
+    {
+      "tag": "a first-person dribbling view is passing the ball on a sunny day with shin guards"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates at night under stadium lights with a soccer ball"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates at sunset with a spinning ball"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates during a casual game with a coach holding a clipboard"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates during a competitive tournament with a referee whistle"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates during a competitive tournament with a scoreboard visible"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates during a competitive tournament with dirt splashing"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates during a fast counterattack with colorful jerseys"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates during a one-on-one with the goalkeeper with a coach holding a clipboard"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates during a slide tackle with a spinning ball"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates in a backyard with a goalpost"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates in a school field with cones for drills"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates on a community park field with a goalpost"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates on a community park field with a scoreboard visible"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates on a dusty outdoor field with a spinning ball"
+    },
+    {
+      "tag": "a first-person dribbling view is raising hands to teammates on a muddy field with a rolling ball"
+    },
+    {
+      "tag": "a first-person dribbling view is shouting in excitement during practice drills with a scoreboard visible"
+    },
+    {
+      "tag": "a first-person dribbling view is shouting in excitement in a school field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a goalkeeper diving for a save is blocking a shot at sunset with water spray from wet grass"
+    },
+    {
+      "tag": "a goalkeeper diving for a save is blocking a shot from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a goalkeeper diving for a save is chest-trapping the ball at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a goalkeeper diving for a save is chest-trapping the ball at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a goalkeeper diving for a save is controlling a high pass on a rainy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a goalkeeper diving for a save is curling the ball toward the goal in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick at night under stadium lights with a rolling ball"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick at night under stadium lights with an offside flag"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick at sunset with a goalpost"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick during a championship final with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick during a championship final with corner flags"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick during a competitive tournament with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick during a defensive wall setup with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick during a fast counterattack with colorful jerseys"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick from a drone overhead with a goalpost"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick from a first-person head cam with cones for drills"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick on a grass field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick on a grass field with team benches on the side"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick on a muddy field with a rolling ball"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick on a rainy field with a rolling ball"
+    },
+    {
+      "tag": "a group practicing passing drills is attempting a bicycle kick on a rainy field with an offside flag"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot at night under stadium lights with a goalpost"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot at night under stadium lights with water spray from wet grass"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot at sunset with a goalpost"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot at sunset with a referee whistle"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot at sunset with cheering fans"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot during a slide tackle with cheering fans"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot from a drone overhead with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot from a drone overhead with a referee whistle"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot from a drone overhead with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot from a drone overhead with an offside flag"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot from a drone overhead with cleats digging into the turf"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot from a first-person head cam with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot in a backyard with cheering fans"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot in a stadium with a referee whistle"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot in a stadium with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot on a dusty outdoor field with corner flags"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot on a dusty outdoor field with goalkeeper gloves"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot on a muddy field with an offside flag"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot on a rainy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a group practicing passing drills is blocking a shot on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a group practicing passing drills is catching a fast shot at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is catching a fast shot at sunset with water spray from wet grass"
+    },
+    {
+      "tag": "a group practicing passing drills is catching a fast shot from a drone overhead with grass flying after a kick"
+    },
+    {
+      "tag": "a group practicing passing drills is catching a fast shot from a first-person head cam with team benches on the side"
+    },
+    {
+      "tag": "a group practicing passing drills is catching a fast shot in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a group practicing passing drills is catching a fast shot on a rainy field with an offside flag"
+    },
+    {
+      "tag": "a group practicing passing drills is catching a fast shot on a rainy field with goalkeeper gloves"
+    },
+    {
+      "tag": "a group practicing passing drills is catching a fast shot on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is celebrating a goal at night under stadium lights with team benches on the side"
+    },
+    {
+      "tag": "a group practicing passing drills is celebrating a goal at sunset with goalkeeper gloves"
+    },
+    {
+      "tag": "a group practicing passing drills is celebrating a goal from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is celebrating a goal in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is celebrating a goal on a rainy field with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is celebrating a goal on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is chest-trapping the ball at night under stadium lights with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is chest-trapping the ball at night under stadium lights with colorful jerseys"
+    },
+    {
+      "tag": "a group practicing passing drills is chest-trapping the ball at sunset with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is chest-trapping the ball at sunset with team benches on the side"
+    },
+    {
+      "tag": "a group practicing passing drills is chest-trapping the ball in a stadium with cheering fans"
+    },
+    {
+      "tag": "a group practicing passing drills is chest-trapping the ball on a dusty outdoor field with team benches on the side"
+    },
+    {
+      "tag": "a group practicing passing drills is chest-trapping the ball on a muddy field with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is chest-trapping the ball on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is controlling a high pass at sunset with cleats digging into the turf"
+    },
+    {
+      "tag": "a group practicing passing drills is controlling a high pass from a drone overhead with water spray from wet grass"
+    },
+    {
+      "tag": "a group practicing passing drills is controlling a high pass in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a group practicing passing drills is crossing the ball into the box on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a group practicing passing drills is crossing the ball into the box on a sunny day with a spinning ball"
+    },
+    {
+      "tag": "a group practicing passing drills is curling the ball toward the goal during a competitive tournament with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is curling the ball toward the goal in a backyard with a soccer ball"
+    },
+    {
+      "tag": "a group practicing passing drills is disappointed after a miss at sunset with an offside flag"
+    },
+    {
+      "tag": "a group practicing passing drills is disappointed after a miss during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a group practicing passing drills is disappointed after a miss during a casual game with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is disappointed after a miss during a championship final with cheering fans"
+    },
+    {
+      "tag": "a group practicing passing drills is disappointed after a miss during a school match with team benches on the side"
+    },
+    {
+      "tag": "a group practicing passing drills is disappointed after a miss during a youth league match with shin guards"
+    },
+    {
+      "tag": "a group practicing passing drills is disappointed after a miss from a first-person head cam with shin guards"
+    },
+    {
+      "tag": "a group practicing passing drills is disappointed after a miss on a community park field with cones for drills"
+    },
+    {
+      "tag": "a group practicing passing drills is disappointed after a miss on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save at night under stadium lights with a goalpost"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save at night under stadium lights with cleats digging into the turf"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save during a championship final with cheering fans"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save during a competitive tournament with a referee whistle"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save during a competitive tournament with cones for drills"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save during a competitive tournament with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save during a penalty shootout with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save from a first-person head cam with a rolling ball"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save on a community park field with a net shaking from a goal"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save on a community park field with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is diving for a save on a muddy field with a rolling ball"
+    },
+    {
+      "tag": "a group practicing passing drills is dribbling quickly at night under stadium lights with goalkeeper gloves"
+    },
+    {
+      "tag": "a group practicing passing drills is dribbling quickly at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is dribbling quickly at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a group practicing passing drills is dribbling quickly from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a group practicing passing drills is dribbling quickly on a muddy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is dribbling quickly on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is grabbing the ball mid-air in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is grabbing the ball mid-air on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is intercepting a pass on a dusty outdoor field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a group practicing passing drills is performing warm-up exercises in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is raising hands to teammates during a casual game with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is raising hands to teammates during a casual game with team benches on the side"
+    },
+    {
+      "tag": "a group practicing passing drills is raising hands to teammates from a drone overhead with a referee whistle"
+    },
+    {
+      "tag": "a group practicing passing drills is raising hands to teammates on a grass field with a scoreboard visible"
+    },
+    {
+      "tag": "a group practicing passing drills is shouting in excitement in a school field with dirt splashing"
+    },
+    {
+      "tag": "a group practicing passing drills is sliding for a tackle in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a high school soccer team is attempting a bicycle kick at sunset with a referee whistle"
+    },
+    {
+      "tag": "a high school soccer team is attempting a bicycle kick at sunset with corner flags"
+    },
+    {
+      "tag": "a high school soccer team is attempting a bicycle kick from a drone overhead with a coach holding a clipboard"
+    },
+    {
+      "tag": "a high school soccer team is attempting a bicycle kick in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a high school soccer team is attempting a bicycle kick on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a high school soccer team is attempting a bicycle kick on a dusty outdoor field with an offside flag"
+    },
+    {
+      "tag": "a high school soccer team is attempting a bicycle kick on a muddy field with an offside flag"
+    },
+    {
+      "tag": "a high school soccer team is attempting a bicycle kick on a muddy field with cones for drills"
+    },
+    {
+      "tag": "a high school soccer team is attempting a bicycle kick on a muddy field with team benches on the side"
+    },
+    {
+      "tag": "a high school soccer team is attempting a bicycle kick on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a high school soccer team is blocking a shot at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is blocking a shot on a rainy field with a scoreboard visible"
+    },
+    {
+      "tag": "a high school soccer team is catching a fast shot at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a high school soccer team is catching a fast shot from a drone overhead with water spray from wet grass"
+    },
+    {
+      "tag": "a high school soccer team is catching a fast shot on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is catching a fast shot on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a high school soccer team is celebrating a goal in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a high school soccer team is celebrating a goal on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a high school soccer team is celebrating a goal on a rainy field with a scoreboard visible"
+    },
+    {
+      "tag": "a high school soccer team is celebrating a goal on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is chest-trapping the ball on a rainy field with a referee whistle"
+    },
+    {
+      "tag": "a high school soccer team is chest-trapping the ball on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is crossing the ball into the box on a muddy field with a scoreboard visible"
+    },
+    {
+      "tag": "a high school soccer team is crossing the ball into the box on a sunny day with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is curling the ball toward the goal on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a high school soccer team is disappointed after a miss at night under stadium lights with a net shaking from a goal"
+    },
+    {
+      "tag": "a high school soccer team is disappointed after a miss at night under stadium lights with dirt splashing"
+    },
+    {
+      "tag": "a high school soccer team is disappointed after a miss at sunset with an offside flag"
+    },
+    {
+      "tag": "a high school soccer team is disappointed after a miss at sunset with cones for drills"
+    },
+    {
+      "tag": "a high school soccer team is disappointed after a miss from a drone overhead with a coach holding a clipboard"
+    },
+    {
+      "tag": "a high school soccer team is disappointed after a miss from a drone overhead with cones for drills"
+    },
+    {
+      "tag": "a high school soccer team is disappointed after a miss in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a high school soccer team is disappointed after a miss in a backyard with cheering fans"
+    },
+    {
+      "tag": "a high school soccer team is disappointed after a miss on a muddy field with a referee whistle"
+    },
+    {
+      "tag": "a high school soccer team is disappointed after a miss on a muddy field with cones for drills"
+    },
+    {
+      "tag": "a high school soccer team is disappointed after a miss on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is diving for a save at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a high school soccer team is diving for a save on a dusty outdoor field with a referee whistle"
+    },
+    {
+      "tag": "a high school soccer team is diving for a save on a dusty outdoor field with an offside flag"
+    },
+    {
+      "tag": "a high school soccer team is diving for a save on a rainy field with an offside flag"
+    },
+    {
+      "tag": "a high school soccer team is diving for a save on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is dribbling quickly on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is missing a shot from a drone overhead with an offside flag"
+    },
+    {
+      "tag": "a high school soccer team is missing a shot in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is missing a shot on a community park field with a scoreboard visible"
+    },
+    {
+      "tag": "a high school soccer team is missing a shot on a rainy field with cones for drills"
+    },
+    {
+      "tag": "a high school soccer team is practicing dribbling cones at sunset with team benches on the side"
+    },
+    {
+      "tag": "a high school soccer team is practicing dribbling cones from a first-person head cam with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is practicing dribbling cones from a goalkeeper POV with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is raising hands to teammates at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is raising hands to teammates on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is shouting in excitement at night under stadium lights with a referee whistle"
+    },
+    {
+      "tag": "a high school soccer team is sliding for a tackle on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a high school soccer team is sliding for a tackle on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a high school soccer team is stretching on the sideline on a muddy field with cones for drills"
+    },
+    {
+      "tag": "a midfielder controlling the ball is attempting a bicycle kick at night under stadium lights with colorful jerseys"
+    },
+    {
+      "tag": "a midfielder controlling the ball is attempting a bicycle kick at sunset with team benches on the side"
+    },
+    {
+      "tag": "a midfielder controlling the ball is attempting a bicycle kick at sunset with water spray from wet grass"
+    },
+    {
+      "tag": "a midfielder controlling the ball is attempting a bicycle kick in a backyard with a net shaking from a goal"
+    },
+    {
+      "tag": "a midfielder controlling the ball is attempting a bicycle kick in a backyard with cheering fans"
+    },
+    {
+      "tag": "a midfielder controlling the ball is attempting a bicycle kick in a backyard with cones for drills"
+    },
+    {
+      "tag": "a midfielder controlling the ball is attempting a bicycle kick in a backyard with corner flags"
+    },
+    {
+      "tag": "a midfielder controlling the ball is attempting a bicycle kick in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a midfielder controlling the ball is attempting a bicycle kick on a grass field with a scoreboard visible"
+    },
+    {
+      "tag": "a midfielder controlling the ball is attempting a bicycle kick on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a midfielder controlling the ball is attempting a bicycle kick on a rainy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a midfielder controlling the ball is celebrating a goal at sunset with cones for drills"
+    },
+    {
+      "tag": "a midfielder controlling the ball is celebrating a goal in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a midfielder controlling the ball is celebrating a goal on a sunny day with shin guards"
+    },
+    {
+      "tag": "a midfielder controlling the ball is disappointed after a miss at night under stadium lights with a referee whistle"
+    },
+    {
+      "tag": "a midfielder controlling the ball is disappointed after a miss at night under stadium lights with a spinning ball"
+    },
+    {
+      "tag": "a midfielder controlling the ball is disappointed after a miss at sunset with a rolling ball"
+    },
+    {
+      "tag": "a midfielder controlling the ball is disappointed after a miss during a youth league match with colorful jerseys"
+    },
+    {
+      "tag": "a midfielder controlling the ball is disappointed after a miss during practice drills with a scoreboard visible"
+    },
+    {
+      "tag": "a midfielder controlling the ball is disappointed after a miss from a drone overhead with a net shaking from a goal"
+    },
+    {
+      "tag": "a midfielder controlling the ball is disappointed after a miss on a muddy field with corner flags"
+    },
+    {
+      "tag": "a midfielder controlling the ball is diving for a save from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a midfielder controlling the ball is diving for a save on a rainy field with a scoreboard visible"
+    },
+    {
+      "tag": "a midfielder controlling the ball is diving for a save on a rainy field with cones for drills"
+    },
+    {
+      "tag": "a midfielder controlling the ball is practicing dribbling cones on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a midfielder controlling the ball is practicing dribbling cones on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a midfielder controlling the ball is raising hands to teammates at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a midfielder controlling the ball is raising hands to teammates at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a midfielder controlling the ball is raising hands to teammates during a slide tackle with dirt splashing"
+    },
+    {
+      "tag": "a midfielder controlling the ball is raising hands to teammates in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a midfielder controlling the ball is raising hands to teammates in a backyard with a spinning ball"
+    },
+    {
+      "tag": "a midfielder controlling the ball is raising hands to teammates on a dusty outdoor field with a referee whistle"
+    },
+    {
+      "tag": "a midfielder controlling the ball is raising hands to teammates on a dusty outdoor field with team benches on the side"
+    },
+    {
+      "tag": "a midfielder controlling the ball is raising hands to teammates on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a midfielder controlling the ball is shouting in excitement from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a midfielder controlling the ball is shouting in excitement in a stadium with the ball mid-air"
+    },
+    {
+      "tag": "a midfielder controlling the ball is shouting in excitement on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a midfielder controlling the ball is shouting in excitement on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a midfielder controlling the ball is shouting in excitement on a dusty outdoor field with team benches on the side"
+    },
+    {
+      "tag": "a midfielder controlling the ball is stretching on the sideline at sunset with cones for drills"
+    },
+    {
+      "tag": "a midfielder controlling the ball is stretching on the sideline on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a midfielder controlling the ball is stretching on the sideline on a sunny day with shin guards"
+    },
+    {
+      "tag": "a midfielder controlling the ball is tackling an opponent on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a midfielder controlling the ball is tackling an opponent on a sunny day with cones for drills"
+    },
+    {
+      "tag": "a midfielder controlling the ball is taking a free kick in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a person juggling the ball is attempting a bicycle kick during a championship final with cones for drills"
+    },
+    {
+      "tag": "a person juggling the ball is attempting a bicycle kick during a defensive wall setup with a scoreboard visible"
+    },
+    {
+      "tag": "a person juggling the ball is attempting a bicycle kick in a backyard with an offside flag"
+    },
+    {
+      "tag": "a person juggling the ball is attempting a bicycle kick on a community park field with dirt splashing"
+    },
+    {
+      "tag": "a person juggling the ball is blocking a shot from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a person juggling the ball is blocking a shot in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a person juggling the ball is catching a fast shot at sunset with a referee whistle"
+    },
+    {
+      "tag": "a person juggling the ball is catching a fast shot in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a person juggling the ball is celebrating a goal at night under stadium lights with colorful jerseys"
+    },
+    {
+      "tag": "a person juggling the ball is celebrating a goal during a defensive wall setup with colorful jerseys"
+    },
+    {
+      "tag": "a person juggling the ball is celebrating a goal during a youth league match with team benches on the side"
+    },
+    {
+      "tag": "a person juggling the ball is celebrating a goal in a stadium with dirt splashing"
+    },
+    {
+      "tag": "a person juggling the ball is chest-trapping the ball on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a person juggling the ball is crossing the ball into the box at sunset with a rolling ball"
+    },
+    {
+      "tag": "a person juggling the ball is crossing the ball into the box during a championship final with shin guards"
+    },
+    {
+      "tag": "a person juggling the ball is crossing the ball into the box during a defensive wall setup with cheering fans"
+    },
+    {
+      "tag": "a person juggling the ball is crossing the ball into the box during a fast counterattack with the ball bouncing off the post"
+    },
+    {
+      "tag": "a person juggling the ball is crossing the ball into the box from a first-person head cam with the ball mid-air"
+    },
+    {
+      "tag": "a person juggling the ball is crossing the ball into the box in a backyard with cones for drills"
+    },
+    {
+      "tag": "a person juggling the ball is crossing the ball into the box in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a person juggling the ball is crossing the ball into the box on a grass field with a rolling ball"
+    },
+    {
+      "tag": "a person juggling the ball is crossing the ball into the box on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a person juggling the ball is curling the ball toward the goal during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "a person juggling the ball is disappointed after a miss in a stadium with a net shaking from a goal"
+    },
+    {
+      "tag": "a person juggling the ball is diving for a save during practice drills with team benches on the side"
+    },
+    {
+      "tag": "a person juggling the ball is diving for a save on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a person juggling the ball is dribbling past a defender during a championship final with team benches on the side"
+    },
+    {
+      "tag": "a person juggling the ball is dribbling past a defender on a dusty outdoor field with a spinning ball"
+    },
+    {
+      "tag": "a person juggling the ball is dribbling quickly in a stadium with dirt splashing"
+    },
+    {
+      "tag": "a person juggling the ball is dribbling quickly on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a person juggling the ball is heading the ball in a backyard with cheering fans"
+    },
+    {
+      "tag": "a person juggling the ball is juggling the ball from a sideline camera with dirt splashing"
+    },
+    {
+      "tag": "a person juggling the ball is practicing dribbling cones during a one-on-one with the goalkeeper with colorful jerseys"
+    },
+    {
+      "tag": "a person juggling the ball is practicing dribbling cones in a backyard with a net shaking from a goal"
+    },
+    {
+      "tag": "a person juggling the ball is practicing dribbling cones in a school field with cheering fans"
+    },
+    {
+      "tag": "a person juggling the ball is practicing dribbling cones on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a person juggling the ball is raising hands to teammates in a backyard with a soccer ball"
+    },
+    {
+      "tag": "a person juggling the ball is raising hands to teammates on a sunny day with a net shaking from a goal"
+    },
+    {
+      "tag": "a person juggling the ball is shouting in excitement from a first-person head cam with a scoreboard visible"
+    },
+    {
+      "tag": "a person juggling the ball is sliding for a tackle in a stadium with a rolling ball"
+    },
+    {
+      "tag": "a person juggling the ball is tackling an opponent during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a person playing soccer is attempting a bicycle kick at night under stadium lights with an offside flag"
+    },
+    {
+      "tag": "a person playing soccer is attempting a bicycle kick at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person playing soccer is attempting a bicycle kick at sunset with cones for drills"
+    },
+    {
+      "tag": "a person playing soccer is attempting a bicycle kick from a drone overhead with a scoreboard visible"
+    },
+    {
+      "tag": "a person playing soccer is attempting a bicycle kick from a drone overhead with cheering fans"
+    },
+    {
+      "tag": "a person playing soccer is attempting a bicycle kick from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a person playing soccer is attempting a bicycle kick from a drone overhead with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is attempting a bicycle kick in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a person playing soccer is attempting a bicycle kick in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a person playing soccer is attempting a bicycle kick on a sunny day with colorful jerseys"
+    },
+    {
+      "tag": "a person playing soccer is attempting a bicycle kick on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is celebrating a goal at sunset with shin guards"
+    },
+    {
+      "tag": "a person playing soccer is celebrating a goal at sunset with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is celebrating a goal on a dusty outdoor field with shin guards"
+    },
+    {
+      "tag": "a person playing soccer is celebrating a goal on a muddy field with shin guards"
+    },
+    {
+      "tag": "a person playing soccer is celebrating a goal on a muddy field with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is crossing the ball into the box in a backyard with cheering fans"
+    },
+    {
+      "tag": "a person playing soccer is crossing the ball into the box on a sunny day with shin guards"
+    },
+    {
+      "tag": "a person playing soccer is curling the ball toward the goal on a dusty outdoor field with cheering fans"
+    },
+    {
+      "tag": "a person playing soccer is curling the ball toward the goal on a sunny day with cheering fans"
+    },
+    {
+      "tag": "a person playing soccer is curling the ball toward the goal on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss at night under stadium lights with a rolling ball"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss at night under stadium lights with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss at sunset with corner flags"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss during a casual game with a scoreboard visible"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss during a casual game with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss during a championship final with dirt splashing"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss during a competitive tournament with cheering fans"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss during a free kick opportunity with cones for drills"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss during a slide tackle with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss from a drone overhead with a referee whistle"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss from a drone overhead with an offside flag"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss from a drone overhead with the net moving after a shot"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss from a goalkeeper POV with colorful jerseys"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss from a sideline camera with shin guards"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss on a community park field with corner flags"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss on a muddy field with a net shaking from a goal"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss on a muddy field with a referee whistle"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss on a muddy field with an offside flag"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss on a muddy field with dirt splashing"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss on a rainy field with corner flags"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss on a sunny day with a rolling ball"
+    },
+    {
+      "tag": "a person playing soccer is disappointed after a miss on a sunny day with shin guards"
+    },
+    {
+      "tag": "a person playing soccer is diving for a save on a community park field with cones for drills"
+    },
+    {
+      "tag": "a person playing soccer is dribbling past a defender in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a person playing soccer is performing warm-up exercises in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is practicing dribbling cones from a drone overhead with a scoreboard visible"
+    },
+    {
+      "tag": "a person playing soccer is practicing dribbling cones from a first-person head cam with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is practicing dribbling cones in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a person playing soccer is raising hands to teammates at night under stadium lights with dirt splashing"
+    },
+    {
+      "tag": "a person playing soccer is raising hands to teammates at night under stadium lights with water spray from wet grass"
+    },
+    {
+      "tag": "a person playing soccer is raising hands to teammates from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a person playing soccer is raising hands to teammates from a drone overhead with water spray from wet grass"
+    },
+    {
+      "tag": "a person playing soccer is raising hands to teammates from a first-person head cam with cones for drills"
+    },
+    {
+      "tag": "a person playing soccer is raising hands to teammates from a sideline camera with colorful jerseys"
+    },
+    {
+      "tag": "a person playing soccer is raising hands to teammates on a rainy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person playing soccer is raising hands to teammates on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person playing soccer is raising hands to teammates on a sunny day with a soccer ball"
+    },
+    {
+      "tag": "a person playing soccer is running into open space during a defensive wall setup with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is running into open space in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a person playing soccer is running into open space on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a person playing soccer is shouting in excitement at night under stadium lights with colorful jerseys"
+    },
+    {
+      "tag": "a person playing soccer is shouting in excitement from a first-person head cam with an offside flag"
+    },
+    {
+      "tag": "a person playing soccer is shouting in excitement in a backyard with goalkeeper gloves"
+    },
+    {
+      "tag": "a person playing soccer is shouting in excitement on a dusty outdoor field with cleats digging into the turf"
+    },
+    {
+      "tag": "a person playing soccer is shouting in excitement on a dusty outdoor field with goalkeeper gloves"
+    },
+    {
+      "tag": "a person playing soccer is shouting in excitement on a grass field with shin guards"
+    },
+    {
+      "tag": "a person playing soccer is shouting in excitement on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a person playing soccer is sliding for a tackle on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a person playing soccer is stretching on the sideline at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a person playing soccer is stretching on the sideline at sunset with goalkeeper gloves"
+    },
+    {
+      "tag": "a person playing soccer is stretching on the sideline in a backyard with goalkeeper gloves"
+    },
+    {
+      "tag": "a person playing soccer is stretching on the sideline on a rainy field with shin guards"
+    },
+    {
+      "tag": "a person playing soccer is stretching on the sideline on a sunny day with cheering fans"
+    },
+    {
+      "tag": "a person playing soccer is tackling an opponent in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a person sprinting is attempting a bicycle kick on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a person sprinting is attempting a bicycle kick on a sunny day with the net moving after a shot"
+    },
+    {
+      "tag": "a person sprinting is blocking a shot from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a person sprinting is blocking a shot in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a person sprinting is blocking a shot on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a person sprinting is blocking a shot on a sunny day with shin guards"
+    },
+    {
+      "tag": "a person sprinting is catching a fast shot at night under stadium lights with shin guards"
+    },
+    {
+      "tag": "a person sprinting is catching a fast shot in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a person sprinting is catching a fast shot in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a person sprinting is catching a fast shot on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a person sprinting is catching a fast shot on a sunny day with cheering fans"
+    },
+    {
+      "tag": "a person sprinting is celebrating a goal at sunset with dirt splashing"
+    },
+    {
+      "tag": "a person sprinting is celebrating a goal during a defensive wall setup with colorful jerseys"
+    },
+    {
+      "tag": "a person sprinting is celebrating a goal during a defensive wall setup with cones for drills"
+    },
+    {
+      "tag": "a person sprinting is celebrating a goal from a first-person head cam with a referee whistle"
+    },
+    {
+      "tag": "a person sprinting is celebrating a goal from a first-person head cam with a spinning ball"
+    },
+    {
+      "tag": "a person sprinting is celebrating a goal in a school field with cones for drills"
+    },
+    {
+      "tag": "a person sprinting is celebrating a goal on a grass field with a scoreboard visible"
+    },
+    {
+      "tag": "a person sprinting is celebrating a goal on a grass field with shin guards"
+    },
+    {
+      "tag": "a person sprinting is celebrating a goal on a sunny day with the ball bouncing off the post"
+    },
+    {
+      "tag": "a person sprinting is controlling a high pass in a stadium with colorful jerseys"
+    },
+    {
+      "tag": "a person sprinting is crossing the ball into the box from a drone overhead with a rolling ball"
+    },
+    {
+      "tag": "a person sprinting is crossing the ball into the box on a sunny day with the ball bouncing off the post"
+    },
+    {
+      "tag": "a person sprinting is curling the ball toward the goal in a stadium with a rolling ball"
+    },
+    {
+      "tag": "a person sprinting is curling the ball toward the goal in a stadium with cones for drills"
+    },
+    {
+      "tag": "a person sprinting is curling the ball toward the goal in a stadium with dirt splashing"
+    },
+    {
+      "tag": "a person sprinting is curling the ball toward the goal on a dusty outdoor field with team benches on the side"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a casual game with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a casual game with a scoreboard visible"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a casual game with an offside flag"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a casual game with team benches on the side"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a championship final with a goalpost"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a championship final with a net shaking from a goal"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a championship final with cheering fans"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a competitive tournament with a rolling ball"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a corner kick with shin guards"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a corner kick with team benches on the side"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a free kick opportunity with cones for drills"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a one-on-one with the goalkeeper with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss during a school match with grass flying after a kick"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss from a sideline camera with a net shaking from a goal"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss from a sideline camera with a rolling ball"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss in a backyard with an offside flag"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss in a school field with a scoreboard visible"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss in a school field with cheering fans"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss in a school field with cones for drills"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss on a community park field with a goalpost"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss on a community park field with an offside flag"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss on a community park field with cleats digging into the turf"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss on a grass field with a rolling ball"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss on a rainy field with a net shaking from a goal"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss on a rainy field with a rolling ball"
+    },
+    {
+      "tag": "a person sprinting is disappointed after a miss on a sunny day with the ball bouncing off the post"
+    },
+    {
+      "tag": "a person sprinting is diving for a save at sunset with an offside flag"
+    },
+    {
+      "tag": "a person sprinting is diving for a save during a casual game with shin guards"
+    },
+    {
+      "tag": "a person sprinting is diving for a save during a competitive tournament with a referee whistle"
+    },
+    {
+      "tag": "a person sprinting is diving for a save on a dusty outdoor field with an offside flag"
+    },
+    {
+      "tag": "a person sprinting is diving for a save on a grass field with grass flying after a kick"
+    },
+    {
+      "tag": "a person sprinting is diving for a save on a rainy field with a rolling ball"
+    },
+    {
+      "tag": "a person sprinting is dribbling past a defender from a first-person head cam with cheering fans"
+    },
+    {
+      "tag": "a person sprinting is intercepting a pass from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a person sprinting is missing a shot in a stadium with shin guards"
+    },
+    {
+      "tag": "a person sprinting is performing warm-up exercises during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a person sprinting is performing warm-up exercises during a defensive wall setup with team benches on the side"
+    },
+    {
+      "tag": "a person sprinting is practicing dribbling cones at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a person sprinting is practicing dribbling cones from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a person sprinting is practicing dribbling cones in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person sprinting is practicing dribbling cones on a dusty outdoor field with cheering fans"
+    },
+    {
+      "tag": "a person sprinting is practicing dribbling cones on a muddy field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person sprinting is punching the ball away at sunset with team benches on the side"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates at sunset with a net shaking from a goal"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates at sunset with shin guards"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates during a casual game with cones for drills"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates during a championship final with a referee whistle"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates from a drone overhead with cones for drills"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates from a first-person head cam with corner flags"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates from a first-person head cam with shin guards"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates in a backyard with an offside flag"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates on a dusty outdoor field with a net shaking from a goal"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates on a rainy field with a referee whistle"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a person sprinting is raising hands to teammates on a rainy field with cones for drills"
+    },
+    {
+      "tag": "a person sprinting is shouting in excitement during a casual game with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person sprinting is shouting in excitement during a casual game with corner flags"
+    },
+    {
+      "tag": "a person sprinting is shouting in excitement during a competitive tournament with shin guards"
+    },
+    {
+      "tag": "a person sprinting is shouting in excitement during a one-on-one with the goalkeeper with an offside flag"
+    },
+    {
+      "tag": "a person sprinting is shouting in excitement during practice drills with a spinning ball"
+    },
+    {
+      "tag": "a person sprinting is shouting in excitement from a sideline camera with goalkeeper gloves"
+    },
+    {
+      "tag": "a person sprinting is stretching on the sideline during a championship final with cheering fans"
+    },
+    {
+      "tag": "a person sprinting is stretching on the sideline during a championship final with dirt splashing"
+    },
+    {
+      "tag": "a person sprinting is tackling an opponent in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a person sprinting is taking a free kick at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a person sprinting is taking a free kick from a first-person head cam with shin guards"
+    },
+    {
+      "tag": "a person sprinting is taking a free kick on a muddy field with a referee whistle"
+    },
+    {
+      "tag": "a person wearing cleats is blocking a shot at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is blocking a shot at sunset with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is blocking a shot during a defensive wall setup with shin guards"
+    },
+    {
+      "tag": "a person wearing cleats is blocking a shot in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing cleats is blocking a shot in a backyard with corner flags"
+    },
+    {
+      "tag": "a person wearing cleats is blocking a shot on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is blocking a shot on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person wearing cleats is blocking a shot on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing cleats is blocking a shot on a sunny day with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is blocking a shot on a sunny day with shin guards"
+    },
+    {
+      "tag": "a person wearing cleats is catching a fast shot at sunset with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is catching a fast shot during a defensive wall setup with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is catching a fast shot during a defensive wall setup with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is catching a fast shot during a slide tackle with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is catching a fast shot from a first-person head cam with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is catching a fast shot in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a person wearing cleats is catching a fast shot in a stadium with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is catching a fast shot in a stadium with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is catching a fast shot on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is celebrating a goal at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person wearing cleats is celebrating a goal during a defensive wall setup with a soccer ball"
+    },
+    {
+      "tag": "a person wearing cleats is celebrating a goal during practice drills with a soccer ball"
+    },
+    {
+      "tag": "a person wearing cleats is celebrating a goal from a drone overhead with a referee whistle"
+    },
+    {
+      "tag": "a person wearing cleats is celebrating a goal from a drone overhead with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is celebrating a goal from a first-person head cam with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is celebrating a goal in a school field with shin guards"
+    },
+    {
+      "tag": "a person wearing cleats is celebrating a goal on a rainy field with a referee whistle"
+    },
+    {
+      "tag": "a person wearing cleats is celebrating a goal on a sunny day with a net shaking from a goal"
+    },
+    {
+      "tag": "a person wearing cleats is chest-trapping the ball at sunset with a referee whistle"
+    },
+    {
+      "tag": "a person wearing cleats is chest-trapping the ball during practice drills with shin guards"
+    },
+    {
+      "tag": "a person wearing cleats is chest-trapping the ball in a backyard with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is chest-trapping the ball on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is controlling a high pass from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is controlling a high pass in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is crossing the ball into the box during a casual game with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is crossing the ball into the box during a casual game with shin guards"
+    },
+    {
+      "tag": "a person wearing cleats is crossing the ball into the box on a community park field with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is crossing the ball into the box on a sunny day with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is curling the ball toward the goal on a sunny day with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a casual game with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a casual game with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a championship final with an offside flag"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a competitive tournament with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a fast counterattack with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a free kick opportunity with a referee whistle"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a free kick opportunity with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a one-on-one with the goalkeeper with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a one-on-one with the goalkeeper with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a one-on-one with the goalkeeper with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a school match with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss during a slide tackle with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss from a drone overhead with a net shaking from a goal"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss from a first-person head cam with the net moving after a shot"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss in a school field with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss in a school field with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss on a community park field with a net shaking from a goal"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss on a community park field with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss on a dusty outdoor field with a soccer ball"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss on a muddy field with a referee whistle"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss on a muddy field with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is disappointed after a miss on a rainy field with a soccer ball"
+    },
+    {
+      "tag": "a person wearing cleats is diving for a save during a championship final with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is diving for a save on a grass field with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is dribbling past a defender in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is dribbling past a defender on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing cleats is dribbling quickly at night under stadium lights with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is dribbling quickly on a sunny day with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is grabbing the ball mid-air at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person wearing cleats is grabbing the ball mid-air during practice drills with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is grabbing the ball mid-air from a sideline camera with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is grabbing the ball mid-air in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is grabbing the ball mid-air on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person wearing cleats is intercepting a pass on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing cleats is jostling for position during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is juggling the ball during a competitive tournament with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is making a long pass from a first-person head cam with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person wearing cleats is making a long pass in a stadium with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is maneuvering the ball with close control in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is maneuvering the ball with close control on a muddy field with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is maneuvering the ball with close control on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is passing the ball from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is performing warm-up exercises during a championship final with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing cleats is performing warm-up exercises during a one-on-one with the goalkeeper with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing cleats is performing warm-up exercises during a slide tackle with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is performing warm-up exercises in a school field with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is performing warm-up exercises in a stadium with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is performing warm-up exercises on a rainy field with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is performing warm-up exercises on a sunny day with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is practicing dribbling cones during a slide tackle with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is practicing dribbling cones from a first-person head cam with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is practicing dribbling cones on a muddy field with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is practicing shooting drills on a dusty outdoor field with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is punching the ball away during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is raising hands to teammates at sunset with an offside flag"
+    },
+    {
+      "tag": "a person wearing cleats is raising hands to teammates during a competitive tournament with a coach holding a clipboard"
+    },
+    {
+      "tag": "a person wearing cleats is raising hands to teammates in a school field with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is raising hands to teammates on a dusty outdoor field with an offside flag"
+    },
+    {
+      "tag": "a person wearing cleats is raising hands to teammates on a sunny day with a net shaking from a goal"
+    },
+    {
+      "tag": "a person wearing cleats is running into open space during a casual game with an offside flag"
+    },
+    {
+      "tag": "a person wearing cleats is running into open space during a defensive wall setup with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is running into open space from a first-person head cam with a spinning ball"
+    },
+    {
+      "tag": "a person wearing cleats is running into open space in a school field with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is running into open space on a sunny day with shin guards"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement at night under stadium lights with the ball crossing the goal line"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement at sunset with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement at sunset with cleats digging into the turf"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement during a casual game with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement during a casual game with shin guards"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement during a championship final with a scoreboard visible"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement during a competitive tournament with a referee whistle"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement during a defensive wall setup with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement during a school match with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement during a school match with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement during practice drills with grass flying after a kick"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement from a sideline camera with a net shaking from a goal"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement in a stadium with a spinning ball"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement on a community park field with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement on a dusty outdoor field with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement on a small training pitch with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is shouting in excitement on a sunny day with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle at night under stadium lights with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle at night under stadium lights with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle at sunset with a referee whistle"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle during practice drills with dirt splashing"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle during practice drills with shin guards"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle from a first-person head cam with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle from a first-person head cam with corner flags"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle from a sideline camera with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle in a backyard with a spinning ball"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle in a backyard with cones for drills"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle on a community park field with corner flags"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle on a rainy field with a spinning ball"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle on a sunny day with a net shaking from a goal"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle on a sunny day with a soccer ball"
+    },
+    {
+      "tag": "a person wearing cleats is sliding for a tackle on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is stretching on the sideline during a defensive wall setup with goalkeeper gloves"
+    },
+    {
+      "tag": "a person wearing cleats is stretching on the sideline on a dusty outdoor field with a spinning ball"
+    },
+    {
+      "tag": "a person wearing cleats is stretching on the sideline on a grass field with colorful jerseys"
+    },
+    {
+      "tag": "a person wearing cleats is stretching on the sideline on a muddy field with a rolling ball"
+    },
+    {
+      "tag": "a person wearing cleats is stretching on the sideline on a sunny day with a soccer ball"
+    },
+    {
+      "tag": "a person wearing cleats is tackling an opponent during a championship final with cheering fans"
+    },
+    {
+      "tag": "a person wearing cleats is tackling an opponent during a championship final with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is tackling an opponent during a goal celebration with a spinning ball"
+    },
+    {
+      "tag": "a person wearing cleats is tackling an opponent during practice drills with team benches on the side"
+    },
+    {
+      "tag": "a person wearing cleats is tackling an opponent from a first-person head cam with a scoreboard visible"
+    },
+    {
+      "tag": "a player in a jersey is blocking a shot at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a player in a jersey is blocking a shot at sunset with shin guards"
+    },
+    {
+      "tag": "a player in a jersey is blocking a shot during practice drills with shin guards"
+    },
+    {
+      "tag": "a player in a jersey is blocking a shot from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is blocking a shot in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a player in a jersey is blocking a shot in a backyard with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is blocking a shot in a stadium with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is blocking a shot in a stadium with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is catching a fast shot at sunset with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is catching a fast shot from a drone overhead with a referee whistle"
+    },
+    {
+      "tag": "a player in a jersey is catching a fast shot from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is catching a fast shot from a first-person head cam with a coach holding a clipboard"
+    },
+    {
+      "tag": "a player in a jersey is catching a fast shot from a first-person head cam with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is catching a fast shot in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a player in a jersey is catching a fast shot in a backyard with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is catching a fast shot in a stadium with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is catching a fast shot on a sunny day with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is catching a fast shot on a turf field with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is celebrating a goal during a slide tackle with a rolling ball"
+    },
+    {
+      "tag": "a player in a jersey is celebrating a goal during a slide tackle with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is celebrating a goal from a first-person head cam with water spray from wet grass"
+    },
+    {
+      "tag": "a player in a jersey is celebrating a goal in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a player in a jersey is celebrating a goal on a rainy field with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is celebrating a goal on a sunny day with a net shaking from a goal"
+    },
+    {
+      "tag": "a player in a jersey is chest-trapping the ball at sunset with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is chest-trapping the ball at sunset with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is chest-trapping the ball in a backyard with a referee whistle"
+    },
+    {
+      "tag": "a player in a jersey is chest-trapping the ball in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a player in a jersey is chest-trapping the ball on a sunny day with shin guards"
+    },
+    {
+      "tag": "a player in a jersey is chest-trapping the ball on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is controlling a high pass at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a player in a jersey is controlling a high pass at sunset with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is controlling a high pass in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is controlling a high pass on a sunny day with a coach holding a clipboard"
+    },
+    {
+      "tag": "a player in a jersey is crossing the ball into the box at sunset with a spinning ball"
+    },
+    {
+      "tag": "a player in a jersey is crossing the ball into the box during a defensive wall setup with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is crossing the ball into the box from a first-person head cam with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is crossing the ball into the box from a sideline camera with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is crossing the ball into the box in a stadium with a scoreboard visible"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss at night under stadium lights with a spinning ball"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss during a casual game with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss during a casual game with the ball mid-air"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss during a championship final with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss during a championship final with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss during a competitive tournament with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss during a corner kick with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss during a free kick opportunity with colorful jerseys"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss during a one-on-one with the goalkeeper with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss during a school match with shin guards"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss during a youth league match with corner flags"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss during practice drills with a referee whistle"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss from a drone overhead with goalkeeper gloves"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss from a first-person head cam with a rolling ball"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss from a first-person head cam with grass flying after a kick"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss in a backyard with a soccer ball"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss on a dusty outdoor field with the ball bouncing off the post"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss on a sunny day with a net shaking from a goal"
+    },
+    {
+      "tag": "a player in a jersey is disappointed after a miss on a sunny day with a spinning ball"
+    },
+    {
+      "tag": "a player in a jersey is diving for a save from a first-person head cam with colorful jerseys"
+    },
+    {
+      "tag": "a player in a jersey is diving for a save from a first-person head cam with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is diving for a save in a school field with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is diving for a save on a dusty outdoor field with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is diving for a save on a rainy field with a rolling ball"
+    },
+    {
+      "tag": "a player in a jersey is dribbling quickly from a drone overhead with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is dribbling quickly on a sunny day with the ball bouncing off the post"
+    },
+    {
+      "tag": "a player in a jersey is grabbing the ball mid-air during a casual game with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is grabbing the ball mid-air from a sideline camera with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is grabbing the ball mid-air in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is heading the ball in a backyard with shin guards"
+    },
+    {
+      "tag": "a player in a jersey is heading the ball in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is heading the ball on a sunny day with colorful jerseys"
+    },
+    {
+      "tag": "a player in a jersey is intercepting a pass on a sunny day with shin guards"
+    },
+    {
+      "tag": "a player in a jersey is jostling for position at sunset with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is juggling the ball on a sunny day with a spinning ball"
+    },
+    {
+      "tag": "a player in a jersey is maneuvering the ball with close control on a sunny day with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is missing a shot on a community park field with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is missing a shot on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is passing the ball on a sunny day with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is performing warm-up exercises during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a player in a jersey is performing warm-up exercises during a casual game with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is performing warm-up exercises during a competitive tournament with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is performing warm-up exercises from a sideline camera with a referee whistle"
+    },
+    {
+      "tag": "a player in a jersey is performing warm-up exercises in a stadium with a spinning ball"
+    },
+    {
+      "tag": "a player in a jersey is performing warm-up exercises on a muddy field with a referee whistle"
+    },
+    {
+      "tag": "a player in a jersey is practicing dribbling cones from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is practicing dribbling cones in a backyard with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is punching the ball away in a stadium with corner flags"
+    },
+    {
+      "tag": "a player in a jersey is punching the ball away on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a player in a jersey is punching the ball away on a sunny day with a rolling ball"
+    },
+    {
+      "tag": "a player in a jersey is raising hands to teammates during a casual game with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is raising hands to teammates during a championship final with a scoreboard visible"
+    },
+    {
+      "tag": "a player in a jersey is raising hands to teammates from a first-person head cam with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is raising hands to teammates in a backyard with a spinning ball"
+    },
+    {
+      "tag": "a player in a jersey is raising hands to teammates on a rainy field with a rolling ball"
+    },
+    {
+      "tag": "a player in a jersey is raising hands to teammates on a sunny day with a rolling ball"
+    },
+    {
+      "tag": "a player in a jersey is running into open space at sunset with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is running into open space during a casual game with the ball mid-air"
+    },
+    {
+      "tag": "a player in a jersey is running into open space during practice drills with shin guards"
+    },
+    {
+      "tag": "a player in a jersey is running into open space from a first-person head cam with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is running into open space in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a player in a jersey is running into open space in a school field with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is running into open space in a school field with shin guards"
+    },
+    {
+      "tag": "a player in a jersey is running into open space on a small training pitch with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is shouting in excitement at night under stadium lights with a rolling ball"
+    },
+    {
+      "tag": "a player in a jersey is shouting in excitement at sunset with a rolling ball"
+    },
+    {
+      "tag": "a player in a jersey is shouting in excitement during a casual game with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is shouting in excitement during practice drills with a spinning ball"
+    },
+    {
+      "tag": "a player in a jersey is shouting in excitement from a sideline camera with the ball bouncing off the post"
+    },
+    {
+      "tag": "a player in a jersey is shouting in excitement in a school field with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is shouting in excitement in a school field with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is shouting in excitement on a dusty outdoor field with a rolling ball"
+    },
+    {
+      "tag": "a player in a jersey is shouting in excitement on a dusty outdoor field with an offside flag"
+    },
+    {
+      "tag": "a player in a jersey is shouting in excitement on a grass field with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is shouting in excitement on a rainy field with cleats digging into the turf"
+    },
+    {
+      "tag": "a player in a jersey is sliding for a tackle during a one-on-one with the goalkeeper with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is stretching on the sideline during a casual game with dirt splashing"
+    },
+    {
+      "tag": "a player in a jersey is stretching on the sideline during a championship final with a referee whistle"
+    },
+    {
+      "tag": "a player in a jersey is stretching on the sideline during a fast counterattack with cones for drills"
+    },
+    {
+      "tag": "a player in a jersey is stretching on the sideline in a school field with the ball mid-air"
+    },
+    {
+      "tag": "a player in a jersey is stretching on the sideline in a stadium with a spinning ball"
+    },
+    {
+      "tag": "a player in a jersey is stretching on the sideline on a grass field with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is stretching on the sideline on a rainy field with an offside flag"
+    },
+    {
+      "tag": "a player in a jersey is stretching on the sideline on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a player in a jersey is tackling an opponent during a casual game with cheering fans"
+    },
+    {
+      "tag": "a player in a jersey is tackling an opponent in a school field with team benches on the side"
+    },
+    {
+      "tag": "a player in a jersey is tackling an opponent on a dusty outdoor field with cones for drills"
+    },
+    {
+      "tag": "a referee on the field is attempting a bicycle kick at sunset with a net shaking from a goal"
+    },
+    {
+      "tag": "a referee on the field is attempting a bicycle kick during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is attempting a bicycle kick during a corner kick with dirt splashing"
+    },
+    {
+      "tag": "a referee on the field is attempting a bicycle kick on a dusty outdoor field with a referee whistle"
+    },
+    {
+      "tag": "a referee on the field is attempting a bicycle kick on a rainy field with a rolling ball"
+    },
+    {
+      "tag": "a referee on the field is blocking a shot at night under stadium lights with a coach holding a clipboard"
+    },
+    {
+      "tag": "a referee on the field is blocking a shot at night under stadium lights with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is blocking a shot at sunset with an offside flag"
+    },
+    {
+      "tag": "a referee on the field is blocking a shot in a backyard with shin guards"
+    },
+    {
+      "tag": "a referee on the field is blocking a shot on a muddy field with an offside flag"
+    },
+    {
+      "tag": "a referee on the field is blocking a shot on a muddy field with goalkeeper gloves"
+    },
+    {
+      "tag": "a referee on the field is blocking a shot on a muddy field with team benches on the side"
+    },
+    {
+      "tag": "a referee on the field is catching a fast shot at night under stadium lights with dirt splashing"
+    },
+    {
+      "tag": "a referee on the field is catching a fast shot at sunset with water spray from wet grass"
+    },
+    {
+      "tag": "a referee on the field is catching a fast shot on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a referee on the field is catching a fast shot on a sunny day with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is celebrating a goal at sunset with cones for drills"
+    },
+    {
+      "tag": "a referee on the field is celebrating a goal at sunset with shin guards"
+    },
+    {
+      "tag": "a referee on the field is celebrating a goal at sunset with team benches on the side"
+    },
+    {
+      "tag": "a referee on the field is celebrating a goal from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is celebrating a goal from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a referee on the field is celebrating a goal from a drone overhead with team benches on the side"
+    },
+    {
+      "tag": "a referee on the field is celebrating a goal from a sideline camera with dirt splashing"
+    },
+    {
+      "tag": "a referee on the field is celebrating a goal on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "a referee on the field is celebrating a goal on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a referee on the field is chest-trapping the ball from a drone overhead with dirt splashing"
+    },
+    {
+      "tag": "a referee on the field is chest-trapping the ball from a drone overhead with team benches on the side"
+    },
+    {
+      "tag": "a referee on the field is chest-trapping the ball from a drone overhead with water spray from wet grass"
+    },
+    {
+      "tag": "a referee on the field is chest-trapping the ball in a backyard with a coach holding a clipboard"
+    },
+    {
+      "tag": "a referee on the field is chest-trapping the ball on a rainy field with cheering fans"
+    },
+    {
+      "tag": "a referee on the field is controlling a high pass on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is crossing the ball into the box from a sideline camera with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is crossing the ball into the box in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a referee on the field is crossing the ball into the box on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a referee on the field is curling the ball toward the goal at sunset with a coach holding a clipboard"
+    },
+    {
+      "tag": "a referee on the field is disappointed after a miss at sunset with a net shaking from a goal"
+    },
+    {
+      "tag": "a referee on the field is disappointed after a miss during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is disappointed after a miss during a championship final with a coach holding a clipboard"
+    },
+    {
+      "tag": "a referee on the field is disappointed after a miss during a championship final with dirt splashing"
+    },
+    {
+      "tag": "a referee on the field is disappointed after a miss during a defensive wall setup with cheering fans"
+    },
+    {
+      "tag": "a referee on the field is disappointed after a miss during a slide tackle with a net shaking from a goal"
+    },
+    {
+      "tag": "a referee on the field is disappointed after a miss on a dusty outdoor field with a spinning ball"
+    },
+    {
+      "tag": "a referee on the field is disappointed after a miss on a muddy field with a rolling ball"
+    },
+    {
+      "tag": "a referee on the field is diving for a save at sunset with a goalpost"
+    },
+    {
+      "tag": "a referee on the field is diving for a save during a goal celebration with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is diving for a save in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is diving for a save on a dusty outdoor field with an offside flag"
+    },
+    {
+      "tag": "a referee on the field is diving for a save on a dusty outdoor field with dirt splashing"
+    },
+    {
+      "tag": "a referee on the field is dribbling past a defender at night under stadium lights with dirt splashing"
+    },
+    {
+      "tag": "a referee on the field is dribbling quickly on a muddy field with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is dribbling quickly on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is grabbing the ball mid-air at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a referee on the field is grabbing the ball mid-air on a dusty outdoor field with a coach holding a clipboard"
+    },
+    {
+      "tag": "a referee on the field is heading the ball at sunset with cleats digging into the turf"
+    },
+    {
+      "tag": "a referee on the field is heading the ball on a dusty outdoor field with team benches on the side"
+    },
+    {
+      "tag": "a referee on the field is intercepting a pass at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is intercepting a pass at sunset with dirt splashing"
+    },
+    {
+      "tag": "a referee on the field is intercepting a pass on a muddy field with a scoreboard visible"
+    },
+    {
+      "tag": "a referee on the field is jostling for position at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "a referee on the field is jostling for position from a drone overhead with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is jostling for position on a rainy field with a scoreboard visible"
+    },
+    {
+      "tag": "a referee on the field is passing the ball at sunset with cones for drills"
+    },
+    {
+      "tag": "a referee on the field is practicing dribbling cones during a casual game with dirt splashing"
+    },
+    {
+      "tag": "a referee on the field is practicing dribbling cones during a free kick opportunity with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is punching the ball away at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is raising hands to teammates during a casual game with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is raising hands to teammates during a competitive tournament with dirt splashing"
+    },
+    {
+      "tag": "a referee on the field is raising hands to teammates in a backyard with a goalpost"
+    },
+    {
+      "tag": "a referee on the field is raising hands to teammates on a dusty outdoor field with a rolling ball"
+    },
+    {
+      "tag": "a referee on the field is running into open space at sunset with team benches on the side"
+    },
+    {
+      "tag": "a referee on the field is running into open space during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "a referee on the field is shooting a volley in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a referee on the field is shouting in excitement during practice drills with a soccer ball"
+    },
+    {
+      "tag": "a referee on the field is shouting in excitement from a sideline camera with a rolling ball"
+    },
+    {
+      "tag": "a referee on the field is shouting in excitement on a muddy field with a goalpost"
+    },
+    {
+      "tag": "a referee on the field is shouting in excitement on a muddy field with cheering fans"
+    },
+    {
+      "tag": "a referee on the field is shouting in excitement on a rainy field with a spinning ball"
+    },
+    {
+      "tag": "a referee on the field is sliding for a tackle at night under stadium lights with a scoreboard visible"
+    },
+    {
+      "tag": "a referee on the field is sliding for a tackle on a dusty outdoor field with a rolling ball"
+    },
+    {
+      "tag": "a referee on the field is tackling an opponent on a muddy field with a rolling ball"
+    },
+    {
+      "tag": "a soccer player is attempting a bicycle kick on a rainy field with a referee whistle"
+    },
+    {
+      "tag": "a soccer player is attempting a bicycle kick on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "a soccer player is celebrating a goal on a grass field with colorful jerseys"
+    },
+    {
+      "tag": "a soccer player is celebrating a goal on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "a soccer player is curling the ball toward the goal in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a soccer player is dribbling past a defender from a drone overhead with a scoreboard visible"
+    },
+    {
+      "tag": "a soccer player is dribbling past a defender on a dusty outdoor field with cheering fans"
+    },
+    {
+      "tag": "a soccer player is raising hands to teammates at night under stadium lights with a coach holding a clipboard"
+    },
+    {
+      "tag": "a soccer player is raising hands to teammates at sunset with water spray from wet grass"
+    },
+    {
+      "tag": "a soccer player is raising hands to teammates from a drone overhead with corner flags"
+    },
+    {
+      "tag": "a soccer player is sliding for a tackle at sunset with dirt splashing"
+    },
+    {
+      "tag": "a striker running forward is celebrating a goal from a drone overhead with cones for drills"
+    },
+    {
+      "tag": "a striker running forward is celebrating a goal in a backyard with corner flags"
+    },
+    {
+      "tag": "a striker running forward is disappointed after a miss during a casual game with dirt splashing"
+    },
+    {
+      "tag": "a striker running forward is disappointed after a miss during a competitive tournament with colorful jerseys"
+    },
+    {
+      "tag": "a striker running forward is disappointed after a miss during a penalty shootout with cones for drills"
+    },
+    {
+      "tag": "a striker running forward is disappointed after a miss on a sunny day with a rolling ball"
+    },
+    {
+      "tag": "a striker running forward is diving for a save on a sunny day with a rolling ball"
+    },
+    {
+      "tag": "a striker running forward is grabbing the ball mid-air in a backyard with team benches on the side"
+    },
+    {
+      "tag": "a striker running forward is performing warm-up exercises during a goal celebration with colorful jerseys"
+    },
+    {
+      "tag": "a striker running forward is performing warm-up exercises in a backyard with a rolling ball"
+    },
+    {
+      "tag": "a striker running forward is raising hands to teammates in a school field with corner flags"
+    },
+    {
+      "tag": "a striker running forward is shouting in excitement in a stadium with a rolling ball"
+    },
+    {
+      "tag": "a striker running forward is sliding for a tackle during practice drills with team benches on the side"
+    },
+    {
+      "tag": "a striker running forward is sliding for a tackle in a backyard with cheering fans"
+    },
+    {
+      "tag": "a youth soccer team is attempting a bicycle kick at sunset with dirt splashing"
+    },
+    {
+      "tag": "a youth soccer team is attempting a bicycle kick in a backyard with a scoreboard visible"
+    },
+    {
+      "tag": "a youth soccer team is attempting a bicycle kick in a backyard with cones for drills"
+    },
+    {
+      "tag": "a youth soccer team is disappointed after a miss at night under stadium lights with cones for drills"
+    },
+    {
+      "tag": "a youth soccer team is disappointed after a miss at sunset with colorful jerseys"
+    },
+    {
+      "tag": "a youth soccer team is disappointed after a miss on a muddy field with corner flags"
+    },
+    {
+      "tag": "a youth soccer team is performing warm-up exercises on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "a youth soccer team is running into open space at sunset with dirt splashing"
+    },
+    {
+      "tag": "a youth soccer team is shouting in excitement on a sunny day with a rolling ball"
+    },
+    {
+      "tag": "kids playing soccer is attempting a bicycle kick from a first-person head cam with team benches on the side"
+    },
+    {
+      "tag": "kids playing soccer is disappointed after a miss in a backyard with a rolling ball"
+    },
+    {
+      "tag": "kids playing soccer is practicing dribbling cones from a first-person head cam with colorful jerseys"
+    },
+    {
+      "tag": "two people playing soccer is attempting a bicycle kick from a drone overhead with an offside flag"
+    },
+    {
+      "tag": "two people playing soccer is attempting a bicycle kick on a muddy field with a rolling ball"
+    },
+    {
+      "tag": "two people playing soccer is attempting a bicycle kick on a rainy field with an offside flag"
+    },
+    {
+      "tag": "two people playing soccer is blocking a shot at sunset with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing soccer is blocking a shot at sunset with water spray from wet grass"
+    },
+    {
+      "tag": "two people playing soccer is blocking a shot from a drone overhead with water spray from wet grass"
+    },
+    {
+      "tag": "two people playing soccer is blocking a shot on a dusty outdoor field with corner flags"
+    },
+    {
+      "tag": "two people playing soccer is blocking a shot on a rainy field with colorful jerseys"
+    },
+    {
+      "tag": "two people playing soccer is blocking a shot on a rainy field with team benches on the side"
+    },
+    {
+      "tag": "two people playing soccer is blocking a shot on a sunny day with cheering fans"
+    },
+    {
+      "tag": "two people playing soccer is blocking a shot on a sunny day with team benches on the side"
+    },
+    {
+      "tag": "two people playing soccer is catching a fast shot at sunset with dirt splashing"
+    },
+    {
+      "tag": "two people playing soccer is catching a fast shot on a dusty outdoor field with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing soccer is celebrating a goal at sunset with team benches on the side"
+    },
+    {
+      "tag": "two people playing soccer is celebrating a goal on a dusty outdoor field with colorful jerseys"
+    },
+    {
+      "tag": "two people playing soccer is celebrating a goal on a sunny day with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing soccer is chest-trapping the ball at night under stadium lights with water spray from wet grass"
+    },
+    {
+      "tag": "two people playing soccer is chest-trapping the ball from a drone overhead with an offside flag"
+    },
+    {
+      "tag": "two people playing soccer is chest-trapping the ball from a drone overhead with team benches on the side"
+    },
+    {
+      "tag": "two people playing soccer is chest-trapping the ball in a backyard with colorful jerseys"
+    },
+    {
+      "tag": "two people playing soccer is crossing the ball into the box from a sideline camera with dirt splashing"
+    },
+    {
+      "tag": "two people playing soccer is crossing the ball into the box on a muddy field with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing soccer is disappointed after a miss at sunset with a soccer ball"
+    },
+    {
+      "tag": "two people playing soccer is disappointed after a miss during a casual game with an offside flag"
+    },
+    {
+      "tag": "two people playing soccer is disappointed after a miss during a casual game with team benches on the side"
+    },
+    {
+      "tag": "two people playing soccer is disappointed after a miss during a championship final with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing soccer is disappointed after a miss during a fast counterattack with cones for drills"
+    },
+    {
+      "tag": "two people playing soccer is disappointed after a miss during a youth league match with colorful jerseys"
+    },
+    {
+      "tag": "two people playing soccer is disappointed after a miss from a drone overhead with a soccer ball"
+    },
+    {
+      "tag": "two people playing soccer is disappointed after a miss on a dusty outdoor field with a rolling ball"
+    },
+    {
+      "tag": "two people playing soccer is disappointed after a miss on a sunny day with a soccer ball"
+    },
+    {
+      "tag": "two people playing soccer is diving for a save during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "two people playing soccer is diving for a save on a grass field with cones for drills"
+    },
+    {
+      "tag": "two people playing soccer is dribbling quickly at sunset with colorful jerseys"
+    },
+    {
+      "tag": "two people playing soccer is grabbing the ball mid-air on a rainy field with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing soccer is practicing dribbling cones during a casual game with dirt splashing"
+    },
+    {
+      "tag": "two people playing soccer is practicing dribbling cones during a competitive tournament with team benches on the side"
+    },
+    {
+      "tag": "two people playing soccer is raising hands to teammates at night under stadium lights with a scoreboard visible"
+    },
+    {
+      "tag": "two people playing soccer is raising hands to teammates at night under stadium lights with a spinning ball"
+    },
+    {
+      "tag": "two people playing soccer is raising hands to teammates at sunset with a soccer ball"
+    },
+    {
+      "tag": "two people playing soccer is raising hands to teammates during a championship final with colorful jerseys"
+    },
+    {
+      "tag": "two people playing soccer is raising hands to teammates during a championship final with team benches on the side"
+    },
+    {
+      "tag": "two people playing soccer is raising hands to teammates during a competitive tournament with dirt splashing"
+    },
+    {
+      "tag": "two people playing soccer is raising hands to teammates in a school field with dirt splashing"
+    },
+    {
+      "tag": "two people playing soccer is raising hands to teammates on a community park field with an offside flag"
+    },
+    {
+      "tag": "two people playing soccer is raising hands to teammates on a dusty outdoor field with cheering fans"
+    },
+    {
+      "tag": "two people playing soccer is raising hands to teammates on a rainy field with a goalpost"
+    },
+    {
+      "tag": "two people playing soccer is shouting in excitement on a grass field with a soccer ball"
+    },
+    {
+      "tag": "two people playing soccer is stretching on the sideline on a sunny day with a soccer ball"
+    },
+    {
+      "tag": "a GoPro chest-mounted view is attempting a bicycle kick at night under stadium lights with a coach holding a clipboard"
+    }
+  ]
+}

@@ -1,0 +1,3823 @@
+{
+  "metadata": {
+    "scene": "hiking_scene",
+    "generator": "hiking_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-25T17:37:27.492861",
+    "eps": 0.05,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 1270
+  },
+  "prompts": [
+    {
+      "tag": "a GoPro chest-mounted hiker is adjusting their backpack straps at a scenic viewpoint with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is adjusting their backpack straps near a waterfall with sunlight filtering through trees"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is adjusting their backpack straps near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is adjusting their backpack straps on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is adjusting their backpack straps on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is brushing past branches during golden hour with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is brushing past branches during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is brushing past branches from a drone overhead with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is brushing past branches on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is brushing past branches under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is brushing past branches under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is brushing past branches under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is celebrating at the summit during golden hour with a waterfall nearby"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is celebrating at the summit from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is celebrating at the summit from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is celebrating at the summit from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is celebrating at the summit on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is celebrating at the summit under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is checking a map at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is checking a map at a scenic viewpoint with tree roots on the ground"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is checking a map under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is climbing uphill during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is climbing uphill during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is climbing uphill during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is climbing uphill from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is climbing uphill from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is climbing uphill on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is climbing uphill on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is climbing uphill under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is climbing uphill under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is crossing a stream during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is crossing a stream on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is crossing a stream under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is crossing a stream under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is crossing a stream under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is drinking water at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is drinking water at a scenic viewpoint with tree roots on the ground"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is drinking water under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is drinking water under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise from a drone overhead with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise from a drone overhead with a rocky trail"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise on a muddy trail with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise on a riverside trail with fog rolling in"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking at sunrise under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is hiking in light rain from a drone overhead with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is jumping over a puddle during golden hour with a GPS device"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is navigating switchbacks under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is photographing the landscape from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is photographing the landscape under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is pointing at scenery under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is stepping over rocks under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is taking a break on a rock under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is tying shoelaces at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is tying shoelaces under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is adjusting their backpack straps at a scenic viewpoint with a GPS device"
+    },
+    {
+      "tag": "a backpacker is adjusting their backpack straps during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is adjusting their backpack straps from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is adjusting their backpack straps from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is adjusting their backpack straps on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is adjusting their backpack straps under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is adjusting their backpack straps under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is brushing past branches during golden hour with a summit sign"
+    },
+    {
+      "tag": "a backpacker is brushing past branches during golden hour with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is brushing past branches during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is brushing past branches during golden hour with fog rolling in"
+    },
+    {
+      "tag": "a backpacker is brushing past branches during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is brushing past branches during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is brushing past branches from a drone overhead with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is brushing past branches from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is brushing past branches from a drone overhead with fog rolling in"
+    },
+    {
+      "tag": "a backpacker is brushing past branches from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is brushing past branches near a waterfall with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is brushing past branches on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is brushing past branches on a snowy path with fog rolling in"
+    },
+    {
+      "tag": "a backpacker is brushing past branches on a snowy path with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is brushing past branches under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a backpacker is brushing past branches under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is brushing past branches under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is brushing past branches under cloudy skies with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is brushing past branches under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is celebrating at the summit on a desert trail with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is celebrating at the summit on a muddy trail with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is celebrating at the summit on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is celebrating at the summit on a riverside trail with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is celebrating at the summit under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is checking a map at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is checking a map during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is checking a map during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is checking a map during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is checking a map during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is checking a map during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is checking a map during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is checking a map during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is checking a map from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is checking a map from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is checking a map from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is checking a map on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is checking a map on a riverside trail with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is checking a map on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is checking a map on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is checking a map on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is checking a map on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is checking a map under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is checking a map under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is checking a map under cloudy skies with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is checking a map under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is checking a map under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is climbing uphill under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is crossing a stream during golden hour with a GPS device"
+    },
+    {
+      "tag": "a backpacker is crossing a stream during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is crossing a stream during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is crossing a stream during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is crossing a stream during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is crossing a stream during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is crossing a stream during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is crossing a stream from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is crossing a stream from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is crossing a stream from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is crossing a stream on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is crossing a stream on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is crossing a stream under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a backpacker is crossing a stream under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is crossing a stream under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is crossing a stream under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is crossing a stream under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is drinking water during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is drinking water during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is drinking water during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is drinking water during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is drinking water during golden hour with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is drinking water during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is drinking water during misty conditions with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is drinking water during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is drinking water during misty conditions with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is drinking water from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is drinking water from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is drinking water from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is drinking water from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is drinking water from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is drinking water from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is drinking water from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is drinking water from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is drinking water from a first-person POV with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is drinking water in a canyon with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is drinking water on a muddy trail with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is drinking water on a riverside trail with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is drinking water on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is drinking water on a snowy path with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is drinking water on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is drinking water on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is drinking water under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a backpacker is drinking water under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a backpacker is drinking water under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is drinking water under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is drinking water under cloudy skies with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is drinking water under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is drinking water under cloudy skies with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is hiking at sunrise under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is hiking in fog from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is hiking in fog on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain during golden hour with a summit sign"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain during golden hour with a trail map"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain during golden hour with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain during golden hour with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain from a drone overhead with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain on a riverside trail with a trail map"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain on a riverside trail with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is hiking in light rain on a snowy path with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle at a scenic viewpoint with a GPS device"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is jumping over a puddle under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a backpacker is pointing at scenery during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is pointing at scenery during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is pointing at scenery during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is pointing at scenery on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is pointing at scenery on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is pointing at scenery on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is pointing at scenery under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is pointing at scenery under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is pointing at scenery under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is stepping over rocks from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is stepping over rocks from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is stepping over rocks on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is stepping over rocks under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is stepping over rocks under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is taking a break on a rock during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is taking a break on a rock during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is taking a break on a rock during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is taking a break on a rock from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is taking a break on a rock on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is taking a break on a rock on a riverside trail with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is taking a break on a rock on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is taking a break on a rock on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is taking a break on a rock under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is taking a break on a rock under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces from a drone overhead with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces on a muddy trail with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces on a riverside trail with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces on a riverside trail with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces on a snowy path with wildlife in the distance"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a backpacker is tying shoelaces under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is using trekking poles under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a backpacker is walking along the trail under cloudy skies with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps at a scenic viewpoint with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps during golden hour with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps from a drone overhead with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps from a drone overhead with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is adjusting their backpack straps under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches at a scenic viewpoint with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches at a scenic viewpoint with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches at a scenic viewpoint with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches at a scenic viewpoint with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with a backpack"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during golden hour with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during misty conditions with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during misty conditions with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during misty conditions with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during misty conditions with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during misty conditions with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a drone overhead with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a drone overhead with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a drone overhead with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a drone overhead with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a drone overhead with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with a backpack"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches from a first-person POV with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches near a waterfall with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches near a waterfall with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches near a waterfall with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches near a waterfall with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches near a waterfall with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a desert trail with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a muddy trail with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a muddy trail with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a riverside trail with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a snowy path with a backpack"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a snowy path with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a snowy path with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a snowy path with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a snowy path with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches under cloudy skies with a backpack"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches under cloudy skies with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches under cloudy skies with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is brushing past branches under cloudy skies with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit from a drone overhead with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is celebrating at the summit under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is checking a map at a scenic viewpoint with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is checking a map at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is checking a map at a scenic viewpoint with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is checking a map during golden hour with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is checking a map during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is checking a map during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is checking a map during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is checking a map during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is checking a map during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is checking a map during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is checking a map during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is checking a map from a drone overhead with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is checking a map from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is checking a map from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is checking a map from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is checking a map from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is checking a map from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is checking a map from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is checking a map from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is checking a map from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is checking a map near a waterfall with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is checking a map near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is checking a map on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is checking a map on a muddy trail with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is checking a map on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is checking a map on a riverside trail with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is checking a map on a riverside trail with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is checking a map on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is checking a map on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is checking a map on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is checking a map on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is checking a map on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is checking a map under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is checking a map under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is checking a map under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is checking a map under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is climbing uphill from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is climbing uphill from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is climbing uphill from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is climbing uphill from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is climbing uphill from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is climbing uphill from a first-person POV with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is climbing uphill on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is climbing uphill under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream during golden hour with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream during golden hour with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream during misty conditions with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a drone overhead with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a drone overhead with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a drone overhead with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a first-person POV with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a first-person POV with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream on a snowy path with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream on a snowy path with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream under cloudy skies with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is crossing a stream under cloudy skies with trekking poles"
+    },
+    {
+      "tag": "a couple on a hike is drinking water at a scenic viewpoint with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is drinking water at a scenic viewpoint with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is drinking water at a scenic viewpoint with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during golden hour with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during golden hour with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during golden hour with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during golden hour with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during misty conditions with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during misty conditions with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during misty conditions with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is drinking water during misty conditions with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a drone overhead with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a drone overhead with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a first-person POV with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a first-person POV with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a first-person POV with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a first-person POV with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is drinking water from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is drinking water near a waterfall with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water on a muddy trail with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is drinking water on a muddy trail with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is drinking water on a riverside trail with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is drinking water on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is drinking water on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water on a snowy path with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is drinking water on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is drinking water on a snowy path with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is drinking water under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is drinking water under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is drinking water under cloudy skies with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is drinking water under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is drinking water under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is drinking water under cloudy skies with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is drinking water under cloudy skies with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise during misty conditions with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise during misty conditions with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise from a drone overhead with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise near a waterfall with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise near a waterfall with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise near a waterfall with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a muddy trail with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a muddy trail with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a muddy trail with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a muddy trail with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a riverside trail with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a riverside trail with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a riverside trail with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a snowy path with a backpack"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a snowy path with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a snowy path with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise under cloudy skies with a backpack"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise under cloudy skies with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking at sunrise under cloudy skies with trekking poles"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog from a drone overhead with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog near a waterfall with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog near a waterfall with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog near a waterfall with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog on a muddy trail with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog on a riverside trail with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is hiking in fog on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain during golden hour with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain during golden hour with a backpack"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain during golden hour with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain during golden hour with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain during golden hour with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain during golden hour with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain during golden hour with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain during golden hour with trekking poles"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a drone overhead with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a drone overhead with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a drone overhead with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a drone overhead with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a drone overhead with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a first-person POV with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a first-person POV with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a first-person POV with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain near a waterfall with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain near a waterfall with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain near a waterfall with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain near a waterfall with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a desert trail with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a riverside trail with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a riverside trail with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a riverside trail with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a riverside trail with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a snowy path with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is hiking in light rain on a snowy path with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle at a scenic viewpoint with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle during golden hour with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle during golden hour with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle during golden hour with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle during misty conditions with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle from a drone overhead with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle from a drone overhead with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle on a snowy path with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle on a snowy path with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is jumping over a puddle under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is navigating switchbacks during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is navigating switchbacks from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is navigating switchbacks from a first-person POV with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is navigating switchbacks under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is navigating switchbacks under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is navigating switchbacks under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape on a muddy trail with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape on a muddy trail with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape on a riverside trail with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape on a riverside trail with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is photographing the landscape under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery at a scenic viewpoint with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery during golden hour with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery on a muddy trail with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is pointing at scenery under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks near a waterfall with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks near a waterfall with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is stepping over rocks under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock during golden hour with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock during golden hour with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock during golden hour with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock during misty conditions with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock during misty conditions with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock from a drone overhead with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock from a first-person POV with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock from a first-person POV with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock on a muddy trail with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock on a snowy path with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock under cloudy skies with a trail marker"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is taking a break on a rock under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces during golden hour with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces during golden hour with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces during golden hour with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces from a drone overhead with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces from a first-person POV with fog rolling in"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces from a first-person POV with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces from a first-person POV with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces near a waterfall with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces on a muddy trail with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces on a muddy trail with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces on a riverside trail with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces on a snowy path with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is tying shoelaces under cloudy skies with wildlife in the distance"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles at a scenic viewpoint with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles from a drone overhead with a summit sign"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles from a drone overhead with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles near a waterfall with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles on a muddy trail with mountains in the background"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is using trekking poles under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a couple on a hike is walking along the trail under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a couple on a hike is walking along the trail under cloudy skies with wildlife in the distance"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is adjusting their backpack straps during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is adjusting their backpack straps under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is adjusting their backpack straps under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is brushing past branches under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is hiking at sunrise near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is hiking at sunrise on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is hiking at sunrise on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is hiking at sunrise on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is hiking at sunrise under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is hiking at sunrise under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is hiking at sunrise under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is hiking at sunrise under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is jumping over a puddle during golden hour with a GPS device"
+    },
+    {
+      "tag": "a drone view of hikers on a trail is stepping over rocks under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps at a scenic viewpoint with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps during golden hour with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps from a drone overhead with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps from a drone overhead with fog rolling in"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps from a first-person POV with fog rolling in"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is adjusting their backpack straps on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches at a scenic viewpoint with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches during golden hour with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches from a drone overhead with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches on a snowy path with fog rolling in"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a family hiking together is brushing past branches under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is celebrating at the summit from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is celebrating at the summit from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is celebrating at the summit from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is celebrating at the summit from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is celebrating at the summit from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is celebrating at the summit on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is celebrating at the summit on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is celebrating at the summit on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is celebrating at the summit under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is checking a map at a scenic viewpoint with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is checking a map at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is checking a map near a waterfall with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is checking a map on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is checking a map on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is climbing uphill from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is climbing uphill from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a family hiking together is climbing uphill from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is climbing uphill from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream from a first-person POV with fog rolling in"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream from a first-person POV with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream on a snowy path with fog rolling in"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a family hiking together is crossing a stream under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is drinking water at a scenic viewpoint with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is drinking water at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is drinking water at a scenic viewpoint with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is drinking water under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise during misty conditions with a summit sign"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise near a waterfall with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise on a muddy trail with a trail map"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise under cloudy skies with a trail marker"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is hiking at sunrise under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is hiking in fog from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is hiking in fog from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is hiking in fog from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is hiking in fog near a waterfall with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is hiking in fog near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is hiking in fog on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is hiking in fog on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is hiking in fog on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is hiking in light rain from a drone overhead with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is jumping over a puddle at a scenic viewpoint with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is jumping over a puddle at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is jumping over a puddle during golden hour with a GPS device"
+    },
+    {
+      "tag": "a family hiking together is jumping over a puddle during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is jumping over a puddle during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is jumping over a puddle from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is jumping over a puddle from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is jumping over a puddle on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is photographing the landscape at a scenic viewpoint with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is photographing the landscape near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is photographing the landscape on a muddy trail with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is photographing the landscape on a muddy trail with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is photographing the landscape on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is pointing at scenery at a scenic viewpoint with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is pointing at scenery under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is stepping over rocks from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is stepping over rocks from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is stepping over rocks from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is stepping over rocks from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is taking a break on a rock during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is taking a break on a rock under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is tying shoelaces during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is tying shoelaces during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is tying shoelaces on a muddy trail with fog rolling in"
+    },
+    {
+      "tag": "a family hiking together is tying shoelaces under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a family hiking together is using trekking poles at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is using trekking poles during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a family hiking together is using trekking poles during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a family hiking together is using trekking poles near a waterfall with sunlight filtering through trees"
+    },
+    {
+      "tag": "a family hiking together is using trekking poles on a snowy path with a waterfall nearby"
+    },
+    {
+      "tag": "a family hiking together is using trekking poles on a snowy path with sunlight filtering through trees"
+    },
+    {
+      "tag": "a first-person hiking view is brushing past branches during golden hour with a backpack"
+    },
+    {
+      "tag": "a first-person hiking view is brushing past branches during misty conditions with a backpack"
+    },
+    {
+      "tag": "a first-person hiking view is brushing past branches during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a first-person hiking view is brushing past branches in a canyon with a backpack"
+    },
+    {
+      "tag": "a first-person hiking view is brushing past branches on a desert trail with a backpack"
+    },
+    {
+      "tag": "a first-person hiking view is brushing past branches on a snowy path with a backpack"
+    },
+    {
+      "tag": "a first-person hiking view is brushing past branches under cloudy skies with a backpack"
+    },
+    {
+      "tag": "a first-person hiking view is brushing past branches under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a first-person hiking view is climbing uphill from a drone overhead with wildlife in the distance"
+    },
+    {
+      "tag": "a first-person hiking view is climbing uphill under cloudy skies with wildlife in the distance"
+    },
+    {
+      "tag": "a first-person hiking view is crossing a stream under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a first-person hiking view is drinking water at the summit with dust kicking up"
+    },
+    {
+      "tag": "a first-person hiking view is drinking water at the summit with wildlife in the distance"
+    },
+    {
+      "tag": "a first-person hiking view is drinking water on a desert trail with a summit sign"
+    },
+    {
+      "tag": "a first-person hiking view is drinking water on a forest trail with dust kicking up"
+    },
+    {
+      "tag": "a first-person hiking view is drinking water on a forest trail with wildlife in the distance"
+    },
+    {
+      "tag": "a first-person hiking view is drinking water on a riverside trail with a summit sign"
+    },
+    {
+      "tag": "a first-person hiking view is drinking water on a snowy path with a summit sign"
+    },
+    {
+      "tag": "a first-person hiking view is drinking water under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise during misty conditions with a trail map"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise during misty conditions with a trail marker"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise in a canyon with a trail map"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise near a waterfall with a trail map"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise near a waterfall with a trail marker"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise near a waterfall with leaves covering the trail"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a desert trail with a trail map"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a muddy trail with a GPS device"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a muddy trail with a trail map"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a muddy trail with a trail marker"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a muddy trail with a waterfall nearby"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a muddy trail with dust kicking up"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a muddy trail with trekking poles"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a muddy trail with wildlife in the distance"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a riverside trail with a rocky trail"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a riverside trail with a trail map"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a riverside trail with a trail marker"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a riverside trail with fog rolling in"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a riverside trail with leaves covering the trail"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a riverside trail with mountains in the background"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a riverside trail with trekking poles"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a riverside trail with wildlife in the distance"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a snowy path with a trail map"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with a trail marker"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with a water bottle"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with mountains in the background"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with trekking poles"
+    },
+    {
+      "tag": "a first-person hiking view is hiking at sunrise under cloudy skies with wildlife in the distance"
+    },
+    {
+      "tag": "a first-person hiking view is hiking in light rain during golden hour with a backpack"
+    },
+    {
+      "tag": "a first-person hiking view is hiking in light rain on a riverside trail with a backpack"
+    },
+    {
+      "tag": "a first-person hiking view is navigating switchbacks under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a first-person hiking view is pointing at scenery under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a first-person hiking view is stepping over rocks near a waterfall with a summit sign"
+    },
+    {
+      "tag": "a first-person hiking view is stepping over rocks under cloudy skies with a water bottle"
+    },
+    {
+      "tag": "a first-person hiking view is taking a break on a rock under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is adjusting their backpack straps at a scenic viewpoint with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is adjusting their backpack straps from a drone overhead with fog rolling in"
+    },
+    {
+      "tag": "a group of hikers is adjusting their backpack straps from a drone overhead with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is adjusting their backpack straps from a drone overhead with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is adjusting their backpack straps under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches at a scenic viewpoint with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches at a scenic viewpoint with a waterfall nearby"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches at a scenic viewpoint with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches at a scenic viewpoint with fog rolling in"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches during golden hour with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches during golden hour with a trail map"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches during misty conditions with a trail map"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches from a drone overhead with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches near a waterfall with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches on a snowy path with a backpack"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches under cloudy skies with a backpack"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a group of hikers is brushing past branches under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit on a muddy trail with a backpack"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit on a muddy trail with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit on a riverside trail with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit on a snowy path with a backpack"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit on a snowy path with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit under cloudy skies with a backpack"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is celebrating at the summit under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is checking a map at a scenic viewpoint with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is checking a map at a scenic viewpoint with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is checking a map under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill during golden hour with a trail map"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill from a first-person POV with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill from a first-person POV with a trail map"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill from a first-person POV with wildlife in the distance"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill near a waterfall with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a group of hikers is climbing uphill under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is crossing a stream from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is crossing a stream from a first-person POV with a waterfall nearby"
+    },
+    {
+      "tag": "a group of hikers is crossing a stream on a snowy path with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is crossing a stream under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is drinking water at a scenic viewpoint with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is drinking water at a scenic viewpoint with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is drinking water at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a group of hikers is drinking water at a scenic viewpoint with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is drinking water during misty conditions with a trail map"
+    },
+    {
+      "tag": "a group of hikers is drinking water during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a group of hikers is drinking water under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is drinking water under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise during misty conditions with a trail map"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise during misty conditions with a trail marker"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise from a first-person POV with sunlight filtering through trees"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise in a canyon with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise near a waterfall with a trail map"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise near a waterfall with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a desert trail with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a muddy trail with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a muddy trail with a backpack"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a muddy trail with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a muddy trail with a trail map"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a muddy trail with mountains in the background"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a riverside trail with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a riverside trail with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a riverside trail with a trail map"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a riverside trail with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a riverside trail with wildlife in the distance"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a snowy path with a trail map"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a snowy path with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise on a snowy path with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise under cloudy skies with a backpack"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise under cloudy skies with a trail marker"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a group of hikers is hiking at sunrise under cloudy skies with trekking poles"
+    },
+    {
+      "tag": "a group of hikers is hiking in light rain during golden hour with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is hiking in light rain during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a group of hikers is hiking in light rain from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is hiking in light rain near a waterfall with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is hiking in light rain on a riverside trail with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is navigating switchbacks during golden hour with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is navigating switchbacks from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is navigating switchbacks under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is photographing the landscape from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is photographing the landscape from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is photographing the landscape under cloudy skies with a trail marker"
+    },
+    {
+      "tag": "a group of hikers is photographing the landscape under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is pointing at scenery at a scenic viewpoint with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is pointing at scenery at a scenic viewpoint with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is pointing at scenery at a scenic viewpoint with sunlight filtering through trees"
+    },
+    {
+      "tag": "a group of hikers is pointing at scenery during misty conditions with a waterfall nearby"
+    },
+    {
+      "tag": "a group of hikers is pointing at scenery under cloudy skies with a backpack"
+    },
+    {
+      "tag": "a group of hikers is pointing at scenery under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is reacting to a beautiful view in a canyon with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is reacting to a beautiful view in a canyon with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is reacting to a beautiful view near a waterfall with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is reacting to a beautiful view under cloudy skies with a rocky trail"
+    },
+    {
+      "tag": "a group of hikers is reacting to a beautiful view under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a group of hikers is reacting to a beautiful view under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a group of hikers is stepping over rocks under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is taking a break on a rock from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is taking a break on a rock near a waterfall with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is taking a break on a rock on a muddy trail with a backpack"
+    },
+    {
+      "tag": "a group of hikers is taking a break on a rock on a snowy path with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is taking a break on a rock on a snowy path with a summit sign"
+    },
+    {
+      "tag": "a group of hikers is taking a break on a rock under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is tying shoelaces at a scenic viewpoint with dust kicking up"
+    },
+    {
+      "tag": "a group of hikers is tying shoelaces from a first-person POV with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is tying shoelaces under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a group of hikers is tying shoelaces under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a group of hikers is tying shoelaces under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is brushing past branches during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is brushing past branches during golden hour with fog rolling in"
+    },
+    {
+      "tag": "a person climbing uphill is brushing past branches during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a person climbing uphill is brushing past branches during misty conditions with a GPS device"
+    },
+    {
+      "tag": "a person climbing uphill is brushing past branches from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is brushing past branches under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a person climbing uphill is brushing past branches under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a person climbing uphill is brushing past branches under cloudy skies with a water bottle"
+    },
+    {
+      "tag": "a person climbing uphill is brushing past branches under cloudy skies with a waterfall nearby"
+    },
+    {
+      "tag": "a person climbing uphill is brushing past branches under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is brushing past branches under cloudy skies with mountains in the background"
+    },
+    {
+      "tag": "a person climbing uphill is celebrating at the summit on a muddy trail with wildlife in the distance"
+    },
+    {
+      "tag": "a person climbing uphill is celebrating at the summit on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is checking a map during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is checking a map during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is checking a map during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is checking a map from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is checking a map under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a person climbing uphill is checking a map under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is checking a map under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a person climbing uphill is crossing a stream during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is crossing a stream from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is crossing a stream under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a person climbing uphill is crossing a stream under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is crossing a stream under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during golden hour with a trail map"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during golden hour with fog rolling in"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during golden hour with mountains in the background"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during golden hour with tree roots on the ground"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during misty conditions with a GPS device"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during misty conditions with a trail map"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during misty conditions with mountains in the background"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water during misty conditions with tree roots on the ground"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water from a drone overhead with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water from a drone overhead with mountains in the background"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water from a drone overhead with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water from a first-person POV with a summit sign"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water from a first-person POV with a trail map"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water from a first-person POV with fog rolling in"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water from a first-person POV with mountains in the background"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water from a first-person POV with tree roots on the ground"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water from a first-person POV with wildlife in the distance"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water on a snowy path with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water on a snowy path with wildlife in the distance"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water under cloudy skies with a summit sign"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water under cloudy skies with mountains in the background"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water under cloudy skies with tree roots on the ground"
+    },
+    {
+      "tag": "a person climbing uphill is drinking water under cloudy skies with wildlife in the distance"
+    },
+    {
+      "tag": "a person climbing uphill is hiking at sunrise under cloudy skies with a GPS device"
+    },
+    {
+      "tag": "a person climbing uphill is hiking at sunrise under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a person climbing uphill is hiking in light rain during golden hour with a GPS device"
+    },
+    {
+      "tag": "a person climbing uphill is hiking in light rain during golden hour with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is photographing the landscape during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is photographing the landscape during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is photographing the landscape under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is photographing the landscape under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is pointing at scenery during golden hour with leaves covering the trail"
+    },
+    {
+      "tag": "a person climbing uphill is pointing at scenery during misty conditions with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is pointing at scenery under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is pointing at scenery under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a person climbing uphill is pointing at scenery under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is pointing at scenery under cloudy skies with wildlife in the distance"
+    },
+    {
+      "tag": "a person climbing uphill is stepping over rocks from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is taking a break on a rock during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is taking a break on a rock under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is taking a break on a rock under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is tying shoelaces during golden hour with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is tying shoelaces during golden hour with wildlife in the distance"
+    },
+    {
+      "tag": "a person climbing uphill is tying shoelaces from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is tying shoelaces under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a person climbing uphill is tying shoelaces under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person climbing uphill is tying shoelaces under cloudy skies with wildlife in the distance"
+    },
+    {
+      "tag": "a person walking with trekking poles is brushing past branches under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a person walking with trekking poles is crossing a stream under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a person walking with trekking poles is hiking at sunrise during misty conditions with leaves covering the trail"
+    },
+    {
+      "tag": "a person walking with trekking poles is hiking at sunrise on a muddy trail with leaves covering the trail"
+    },
+    {
+      "tag": "a person walking with trekking poles is hiking at sunrise on a riverside trail with dust kicking up"
+    },
+    {
+      "tag": "a person walking with trekking poles is hiking at sunrise under cloudy skies with a trail map"
+    },
+    {
+      "tag": "a person walking with trekking poles is hiking at sunrise under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a person walking with trekking poles is hiking at sunrise under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a person walking with trekking poles is stepping over rocks from a first-person POV with dust kicking up"
+    },
+    {
+      "tag": "a person walking with trekking poles is stepping over rocks from a first-person POV with leaves covering the trail"
+    },
+    {
+      "tag": "a person walking with trekking poles is stepping over rocks under cloudy skies with leaves covering the trail"
+    },
+    {
+      "tag": "a person walking with trekking poles is stepping over rocks under cloudy skies with sunlight filtering through trees"
+    },
+    {
+      "tag": "a trail runner is brushing past branches under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a trail runner is drinking water under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a trail runner is pointing at scenery under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "two friends hiking is drinking water under cloudy skies with dust kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted hiker is adjusting their backpack straps during golden hour with a waterfall nearby"
+    }
+  ]
+}

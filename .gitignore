@@ -8,6 +8,7 @@ experiments
 experiment
 sam_checkpoints
 embedding_database
+data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

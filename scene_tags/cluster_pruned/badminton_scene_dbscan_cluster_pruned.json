@@ -1,0 +1,877 @@
+{
+  "metadata": {
+    "scene": "badminton_scene",
+    "generator": "badminton_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-26T00:06:33.804700",
+    "eps": 0.045,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 288
+  },
+  "prompts": [
+    {
+      "tag": "a badminton player is celebrating a point a club tournament with a badminton racket"
+    },
+    {
+      "tag": "a badminton player is celebrating a point a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "a badminton player is celebrating a point backyard badminton with court lines"
+    },
+    {
+      "tag": "a badminton player is celebrating a point in a crowded gym with a badminton racket"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point a club tournament with a birdie in mid-air"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point a club tournament with a net"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point a club tournament with a racket bag"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point a club tournament with court lines"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point a club tournament with lightweight shoes"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point backyard badminton with overhead lighting reflections"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point casual warm-up with court lines"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point casual warm-up with lightweight shoes"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point in a crowded gym with a badminton racket"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point in a crowded gym with a birdie in mid-air"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point in a crowded gym with a net"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point in a crowded gym with a racket bag"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point in a crowded gym with overhead lighting reflections"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point in an indoor sports hall with a birdie in mid-air"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point in an indoor sports hall with a net"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point in an indoor sports hall with a racket bag"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point in an indoor sports hall with overhead lighting reflections"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point on an outdoor court with a badminton racket"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point on an outdoor court with a birdie in mid-air"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point on an outdoor court with a net"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point on an outdoor court with a racket bag"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point on an outdoor court with overhead lighting reflections"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point under bright lights with a badminton racket"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point under bright lights with a birdie in mid-air"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point under bright lights with a racket bag"
+    },
+    {
+      "tag": "a coach training a beginner is celebrating a point under bright lights with a shuttlecock"
+    },
+    {
+      "tag": "a coach training a beginner is diving for a save a club tournament with a badminton racket"
+    },
+    {
+      "tag": "a coach training a beginner is diving for a save a club tournament with a birdie in mid-air"
+    },
+    {
+      "tag": "a coach training a beginner is diving for a save a club tournament with a net"
+    },
+    {
+      "tag": "a coach training a beginner is diving for a save a club tournament with a racket bag"
+    },
+    {
+      "tag": "a coach training a beginner is diving for a save a club tournament with a shuttlecock"
+    },
+    {
+      "tag": "a coach training a beginner is diving for a save a club tournament with court lines"
+    },
+    {
+      "tag": "a coach training a beginner is diving for a save a club tournament with lightweight shoes"
+    },
+    {
+      "tag": "a coach training a beginner is diving for a save a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "a coach training a beginner is diving for a save in an indoor sports hall with a badminton racket"
+    },
+    {
+      "tag": "a coach training a beginner is diving for a save on an outdoor court with a badminton racket"
+    },
+    {
+      "tag": "a coach training a beginner is hitting a clear a club tournament with court lines"
+    },
+    {
+      "tag": "a coach training a beginner is hitting a clear in a crowded gym with court lines"
+    },
+    {
+      "tag": "a coach training a beginner is hitting a clear in a crowded gym with lightweight shoes"
+    },
+    {
+      "tag": "a coach training a beginner is hitting a clear in an indoor sports hall with court lines"
+    },
+    {
+      "tag": "a coach training a beginner is hitting a clear in an indoor sports hall with lightweight shoes"
+    },
+    {
+      "tag": "a coach training a beginner is hitting a clear on an outdoor court with court lines"
+    },
+    {
+      "tag": "a coach training a beginner is hitting a clear under bright lights with a net"
+    },
+    {
+      "tag": "a coach training a beginner is hitting a clear under bright lights with court lines"
+    },
+    {
+      "tag": "a coach training a beginner is hitting a clear under bright lights with lightweight shoes"
+    },
+    {
+      "tag": "a competitive club player is celebrating a point a club tournament with a birdie in mid-air"
+    },
+    {
+      "tag": "a competitive club player is celebrating a point a club tournament with a racket bag"
+    },
+    {
+      "tag": "a competitive club player is celebrating a point a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "a competitive club player is celebrating a point in an indoor sports hall with a birdie in mid-air"
+    },
+    {
+      "tag": "a competitive club player is diving for a save a club tournament with a birdie in mid-air"
+    },
+    {
+      "tag": "a competitive club player is diving for a save a club tournament with a net"
+    },
+    {
+      "tag": "a competitive club player is diving for a save a club tournament with a racket bag"
+    },
+    {
+      "tag": "a competitive club player is diving for a save a club tournament with a shuttlecock"
+    },
+    {
+      "tag": "a competitive club player is diving for a save a club tournament with court lines"
+    },
+    {
+      "tag": "a competitive club player is diving for a save a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear a club tournament with a net"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear a club tournament with court lines"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear a club tournament with lightweight shoes"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear a school gym match with a birdie in mid-air"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear a school gym match with a net"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear a school gym match with court lines"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear a school gym match with lightweight shoes"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear a school gym match with overhead lighting reflections"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear casual warm-up with a net"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear casual warm-up with court lines"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear casual warm-up with lightweight shoes"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear casual warm-up with overhead lighting reflections"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear in a crowded gym with a birdie in mid-air"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear in a crowded gym with a net"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear in a crowded gym with a racket bag"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear in a crowded gym with court lines"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear in a crowded gym with lightweight shoes"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear in a crowded gym with overhead lighting reflections"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear in an indoor sports hall with a net"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear in an indoor sports hall with a racket bag"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear in an indoor sports hall with court lines"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear in an indoor sports hall with lightweight shoes"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear in an indoor sports hall with overhead lighting reflections"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear on an outdoor court with a birdie in mid-air"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear on an outdoor court with a net"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear on an outdoor court with a racket bag"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear on an outdoor court with court lines"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear on an outdoor court with overhead lighting reflections"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear under bright lights with a birdie in mid-air"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear under bright lights with a net"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear under bright lights with a racket bag"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear under bright lights with a shuttlecock"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear under bright lights with court lines"
+    },
+    {
+      "tag": "a competitive club player is hitting a clear under bright lights with lightweight shoes"
+    },
+    {
+      "tag": "a competitive club player is jumping for a smash a club tournament with court lines"
+    },
+    {
+      "tag": "a competitive club player is reacting quickly a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "a doubles team is celebrating a point a club tournament with a badminton racket"
+    },
+    {
+      "tag": "a doubles team is celebrating a point a club tournament with a birdie in mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a point a club tournament with a racket bag"
+    },
+    {
+      "tag": "a doubles team is celebrating a point a club tournament with lightweight shoes"
+    },
+    {
+      "tag": "a doubles team is celebrating a point a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "a doubles team is celebrating a point a school gym match with overhead lighting reflections"
+    },
+    {
+      "tag": "a doubles team is celebrating a point backyard badminton with a badminton racket"
+    },
+    {
+      "tag": "a doubles team is celebrating a point backyard badminton with overhead lighting reflections"
+    },
+    {
+      "tag": "a doubles team is celebrating a point casual warm-up with a birdie in mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a point casual warm-up with a net"
+    },
+    {
+      "tag": "a doubles team is celebrating a point casual warm-up with court lines"
+    },
+    {
+      "tag": "a doubles team is celebrating a point casual warm-up with lightweight shoes"
+    },
+    {
+      "tag": "a doubles team is celebrating a point casual warm-up with overhead lighting reflections"
+    },
+    {
+      "tag": "a doubles team is celebrating a point in a crowded gym with a badminton racket"
+    },
+    {
+      "tag": "a doubles team is celebrating a point in a crowded gym with a birdie in mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a point in a crowded gym with a racket bag"
+    },
+    {
+      "tag": "a doubles team is celebrating a point in an indoor sports hall with a badminton racket"
+    },
+    {
+      "tag": "a doubles team is celebrating a point in an indoor sports hall with a birdie in mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a point on an outdoor court with a badminton racket"
+    },
+    {
+      "tag": "a doubles team is celebrating a point under bright lights with a birdie in mid-air"
+    },
+    {
+      "tag": "a doubles team is celebrating a point under bright lights with a shuttlecock"
+    },
+    {
+      "tag": "a doubles team is diving for a save a club tournament with a badminton racket"
+    },
+    {
+      "tag": "a doubles team is diving for a save a club tournament with a racket bag"
+    },
+    {
+      "tag": "a doubles team is diving for a save a club tournament with a shuttlecock"
+    },
+    {
+      "tag": "a doubles team is diving for a save a club tournament with court lines"
+    },
+    {
+      "tag": "a doubles team is diving for a save in an indoor sports hall with a badminton racket"
+    },
+    {
+      "tag": "a doubles team is diving for a save on an outdoor court with a badminton racket"
+    },
+    {
+      "tag": "a doubles team is hitting a clear a club tournament with a net"
+    },
+    {
+      "tag": "a doubles team is hitting a clear a club tournament with court lines"
+    },
+    {
+      "tag": "a doubles team is hitting a clear a school gym match with a birdie in mid-air"
+    },
+    {
+      "tag": "a doubles team is hitting a clear a school gym match with a net"
+    },
+    {
+      "tag": "a doubles team is hitting a clear a school gym match with court lines"
+    },
+    {
+      "tag": "a doubles team is hitting a clear a school gym match with lightweight shoes"
+    },
+    {
+      "tag": "a doubles team is hitting a clear in a crowded gym with a net"
+    },
+    {
+      "tag": "a doubles team is hitting a clear in a crowded gym with court lines"
+    },
+    {
+      "tag": "a doubles team is hitting a clear in a crowded gym with lightweight shoes"
+    },
+    {
+      "tag": "a doubles team is hitting a clear in a crowded gym with overhead lighting reflections"
+    },
+    {
+      "tag": "a doubles team is hitting a clear in an indoor sports hall with a net"
+    },
+    {
+      "tag": "a doubles team is hitting a clear in an indoor sports hall with a racket bag"
+    },
+    {
+      "tag": "a doubles team is hitting a clear in an indoor sports hall with court lines"
+    },
+    {
+      "tag": "a doubles team is hitting a clear in an indoor sports hall with lightweight shoes"
+    },
+    {
+      "tag": "a doubles team is hitting a clear in an indoor sports hall with overhead lighting reflections"
+    },
+    {
+      "tag": "a doubles team is hitting a clear on an outdoor court with a badminton racket"
+    },
+    {
+      "tag": "a doubles team is hitting a clear on an outdoor court with a birdie in mid-air"
+    },
+    {
+      "tag": "a doubles team is hitting a clear on an outdoor court with a net"
+    },
+    {
+      "tag": "a doubles team is hitting a clear on an outdoor court with a racket bag"
+    },
+    {
+      "tag": "a doubles team is hitting a clear on an outdoor court with court lines"
+    },
+    {
+      "tag": "a doubles team is hitting a clear on an outdoor court with lightweight shoes"
+    },
+    {
+      "tag": "a doubles team is hitting a clear on an outdoor court with overhead lighting reflections"
+    },
+    {
+      "tag": "a doubles team is hitting a clear under bright lights with a net"
+    },
+    {
+      "tag": "a doubles team is hitting a clear under bright lights with a racket bag"
+    },
+    {
+      "tag": "a doubles team is hitting a clear under bright lights with court lines"
+    },
+    {
+      "tag": "a doubles team is hitting a clear under bright lights with overhead lighting reflections"
+    },
+    {
+      "tag": "a doubles team is hitting a drop shot under bright lights with lightweight shoes"
+    },
+    {
+      "tag": "a doubles team is lunging forward under bright lights with lightweight shoes"
+    },
+    {
+      "tag": "a doubles team is serving a shuttlecock a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "a doubles team is serving a shuttlecock under bright lights with a badminton racket"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point a club tournament with a badminton racket"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point a club tournament with a birdie in mid-air"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point a club tournament with a net"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point a club tournament with a racket bag"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point a club tournament with court lines"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point a club tournament with lightweight shoes"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point backyard badminton with overhead lighting reflections"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point casual warm-up with a birdie in mid-air"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point casual warm-up with a net"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point casual warm-up with court lines"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point casual warm-up with lightweight shoes"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point casual warm-up with overhead lighting reflections"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point in a crowded gym with a net"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point in an indoor sports hall with a birdie in mid-air"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point under bright lights with a badminton racket"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point under bright lights with a birdie in mid-air"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point under bright lights with a net"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point under bright lights with a racket bag"
+    },
+    {
+      "tag": "a family in the backyard is celebrating a point under bright lights with overhead lighting reflections"
+    },
+    {
+      "tag": "a family in the backyard is diving for a save a club tournament with court lines"
+    },
+    {
+      "tag": "a family in the backyard is diving for a save a club tournament with lightweight shoes"
+    },
+    {
+      "tag": "a family in the backyard is diving for a save a school gym match with a birdie in mid-air"
+    },
+    {
+      "tag": "a family in the backyard is diving for a save a school gym match with overhead lighting reflections"
+    },
+    {
+      "tag": "a family in the backyard is diving for a save casual warm-up with overhead lighting reflections"
+    },
+    {
+      "tag": "a family in the backyard is diving for a save in an indoor sports hall with a badminton racket"
+    },
+    {
+      "tag": "a family in the backyard is hitting a clear a club tournament with court lines"
+    },
+    {
+      "tag": "a family in the backyard is hitting a clear a club tournament with lightweight shoes"
+    },
+    {
+      "tag": "a family in the backyard is hitting a clear in a crowded gym with court lines"
+    },
+    {
+      "tag": "a family in the backyard is hitting a clear in an indoor sports hall with a net"
+    },
+    {
+      "tag": "a family in the backyard is hitting a clear in an indoor sports hall with court lines"
+    },
+    {
+      "tag": "a family in the backyard is hitting a clear in an indoor sports hall with lightweight shoes"
+    },
+    {
+      "tag": "a family in the backyard is hitting a clear on an outdoor court with a net"
+    },
+    {
+      "tag": "a family in the backyard is hitting a clear on an outdoor court with court lines"
+    },
+    {
+      "tag": "a family in the backyard is hitting a clear on an outdoor court with lightweight shoes"
+    },
+    {
+      "tag": "a family in the backyard is hitting a clear on an outdoor court with overhead lighting reflections"
+    },
+    {
+      "tag": "a family in the backyard is hitting a drop shot in a crowded gym with lightweight shoes"
+    },
+    {
+      "tag": "a family in the backyard is jumping for a smash casual warm-up with overhead lighting reflections"
+    },
+    {
+      "tag": "a family in the backyard is jumping for a smash in a crowded gym with court lines"
+    },
+    {
+      "tag": "a family in the backyard is jumping for a smash in an indoor sports hall with court lines"
+    },
+    {
+      "tag": "a family in the backyard is jumping for a smash in an indoor sports hall with lightweight shoes"
+    },
+    {
+      "tag": "a family in the backyard is jumping for a smash on an outdoor court with court lines"
+    },
+    {
+      "tag": "a family in the backyard is lunging forward in a crowded gym with court lines"
+    },
+    {
+      "tag": "a family in the backyard is lunging forward in an indoor sports hall with court lines"
+    },
+    {
+      "tag": "a family in the backyard is lunging forward on an outdoor court with court lines"
+    },
+    {
+      "tag": "a family in the backyard is lunging forward under bright lights with lightweight shoes"
+    },
+    {
+      "tag": "a family in the backyard is serving a shuttlecock in an indoor sports hall with a badminton racket"
+    },
+    {
+      "tag": "a family in the backyard is serving a shuttlecock on an outdoor court with overhead lighting reflections"
+    },
+    {
+      "tag": "a family in the backyard is serving a shuttlecock under bright lights with a badminton racket"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point a club tournament with a birdie in mid-air"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point a club tournament with court lines"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point a club tournament with lightweight shoes"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point a school gym match with a birdie in mid-air"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point casual warm-up with a birdie in mid-air"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point casual warm-up with a net"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point casual warm-up with lightweight shoes"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point casual warm-up with overhead lighting reflections"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point in a crowded gym with a net"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point in a crowded gym with overhead lighting reflections"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point in an indoor sports hall with a birdie in mid-air"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point in an indoor sports hall with overhead lighting reflections"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point under bright lights with a badminton racket"
+    },
+    {
+      "tag": "a person holding a racket is celebrating a point under bright lights with a birdie in mid-air"
+    },
+    {
+      "tag": "a person holding a racket is diving for a save a club tournament with a racket bag"
+    },
+    {
+      "tag": "a person holding a racket is diving for a save in an indoor sports hall with a racket bag"
+    },
+    {
+      "tag": "a person holding a racket is diving for a save on an outdoor court with a badminton racket"
+    },
+    {
+      "tag": "a person holding a racket is diving for a save under bright lights with a racket bag"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear a club tournament with a net"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear a club tournament with court lines"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear a club tournament with lightweight shoes"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear a school gym match with a net"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear casual warm-up with court lines"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear in a crowded gym with court lines"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear in an indoor sports hall with a net"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear in an indoor sports hall with court lines"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear on an outdoor court with a net"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear on an outdoor court with overhead lighting reflections"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear under bright lights with a net"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear under bright lights with court lines"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear under bright lights with lightweight shoes"
+    },
+    {
+      "tag": "a person holding a racket is hitting a clear under bright lights with overhead lighting reflections"
+    },
+    {
+      "tag": "kids playing badminton is celebrating a point a club tournament with a badminton racket"
+    },
+    {
+      "tag": "kids playing badminton is celebrating a point a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "kids playing badminton is celebrating a point backyard badminton with overhead lighting reflections"
+    },
+    {
+      "tag": "two players rallying is celebrating a point a club tournament with a badminton racket"
+    },
+    {
+      "tag": "two players rallying is celebrating a point a club tournament with a birdie in mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a point a club tournament with a net"
+    },
+    {
+      "tag": "two players rallying is celebrating a point a club tournament with a racket bag"
+    },
+    {
+      "tag": "two players rallying is celebrating a point a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "two players rallying is celebrating a point a school gym match with a birdie in mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a point a school gym match with overhead lighting reflections"
+    },
+    {
+      "tag": "two players rallying is celebrating a point backyard badminton with overhead lighting reflections"
+    },
+    {
+      "tag": "two players rallying is celebrating a point casual warm-up with a birdie in mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a point casual warm-up with a net"
+    },
+    {
+      "tag": "two players rallying is celebrating a point casual warm-up with lightweight shoes"
+    },
+    {
+      "tag": "two players rallying is celebrating a point casual warm-up with overhead lighting reflections"
+    },
+    {
+      "tag": "two players rallying is celebrating a point in a crowded gym with a birdie in mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a point in a crowded gym with a net"
+    },
+    {
+      "tag": "two players rallying is celebrating a point in a crowded gym with a racket bag"
+    },
+    {
+      "tag": "two players rallying is celebrating a point in a crowded gym with overhead lighting reflections"
+    },
+    {
+      "tag": "two players rallying is celebrating a point in an indoor sports hall with a badminton racket"
+    },
+    {
+      "tag": "two players rallying is celebrating a point in an indoor sports hall with a birdie in mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a point in an indoor sports hall with a net"
+    },
+    {
+      "tag": "two players rallying is celebrating a point in an indoor sports hall with a racket bag"
+    },
+    {
+      "tag": "two players rallying is celebrating a point in an indoor sports hall with overhead lighting reflections"
+    },
+    {
+      "tag": "two players rallying is celebrating a point on an outdoor court with a birdie in mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a point on an outdoor court with a net"
+    },
+    {
+      "tag": "two players rallying is celebrating a point on an outdoor court with a racket bag"
+    },
+    {
+      "tag": "two players rallying is celebrating a point on an outdoor court with overhead lighting reflections"
+    },
+    {
+      "tag": "two players rallying is celebrating a point under bright lights with a badminton racket"
+    },
+    {
+      "tag": "two players rallying is celebrating a point under bright lights with a birdie in mid-air"
+    },
+    {
+      "tag": "two players rallying is celebrating a point under bright lights with a net"
+    },
+    {
+      "tag": "two players rallying is celebrating a point under bright lights with a racket bag"
+    },
+    {
+      "tag": "two players rallying is celebrating a point under bright lights with a shuttlecock"
+    },
+    {
+      "tag": "two players rallying is diving for a save a club tournament with a shuttlecock"
+    },
+    {
+      "tag": "two players rallying is diving for a save a club tournament with overhead lighting reflections"
+    },
+    {
+      "tag": "two players rallying is diving for a save on an outdoor court with a badminton racket"
+    },
+    {
+      "tag": "two players rallying is hitting a clear a club tournament with court lines"
+    },
+    {
+      "tag": "two players rallying is hitting a clear a club tournament with lightweight shoes"
+    },
+    {
+      "tag": "two players rallying is hitting a clear a school gym match with a net"
+    },
+    {
+      "tag": "two players rallying is hitting a clear a school gym match with court lines"
+    },
+    {
+      "tag": "two players rallying is hitting a clear a school gym match with lightweight shoes"
+    },
+    {
+      "tag": "two players rallying is hitting a clear casual warm-up with court lines"
+    },
+    {
+      "tag": "two players rallying is hitting a clear in a crowded gym with court lines"
+    },
+    {
+      "tag": "two players rallying is hitting a clear in a crowded gym with lightweight shoes"
+    },
+    {
+      "tag": "two players rallying is hitting a clear in an indoor sports hall with court lines"
+    },
+    {
+      "tag": "two players rallying is hitting a clear in an indoor sports hall with lightweight shoes"
+    },
+    {
+      "tag": "two players rallying is hitting a clear on an outdoor court with court lines"
+    },
+    {
+      "tag": "two players rallying is hitting a clear under bright lights with court lines"
+    },
+    {
+      "tag": "two players rallying is hitting a clear under bright lights with lightweight shoes"
+    },
+    {
+      "tag": "two players rallying is hitting a clear under bright lights with overhead lighting reflections"
+    },
+    {
+      "tag": "two players rallying is serving a shuttlecock a club tournament with a racket bag"
+    },
+    {
+      "tag": "a badminton player is celebrating a point in a crowded gym with lightweight shoes"
+    }
+  ]
+}

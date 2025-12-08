@@ -1,6 +1,7 @@
 prompt_components = {
     "templates": [
-        "{s} {a} {sc} {o}"
+        "{s} {a} {sc} {o}",
+        "{a} {sc} {o}",
     ],
     "test_scene": {
         "subjects": ["a person", "a cat"],
@@ -291,6 +292,7 @@ prompt_components = {
         ]
     },
     "soccer_scene": {
+
         "subjects": [
             "a soccer player", "a person playing soccer",
             "a striker running forward", "a midfielder controlling the ball",
@@ -379,6 +381,513 @@ prompt_components = {
             "with the net moving after a shot",
             
             "with colorful jerseys", "with cleats digging into the turf"
+        ]
+    },
+    "hiking_scene": {
+        "subjects": [
+            "a hiker", "a backpacker", "a person hiking alone",
+            "two friends hiking", "a group of hikers", 
+            "a family hiking together", "a couple on a hike",
+            "a person walking with trekking poles", 
+            "a person climbing uphill", "a person descending a steep trail",
+            "a trail runner", "a nature photographer hiking",
+            "a first-person hiking view", "a GoPro chest-mounted hiker",
+            "a drone view of hikers on a trail"
+        ],
+
+        "actions": [
+            "is climbing uphill", "is descending a steep slope",
+            "is walking along the trail", "is stepping over rocks",
+            "is crossing a stream", "is jumping over a puddle",
+            "is navigating switchbacks", "is using trekking poles",
+            "is taking in the view", "is pointing at scenery",
+            "is drinking water", "is taking a break on a rock",
+            "is adjusting their backpack straps", "is checking a map",
+            "is tying shoelaces", "is photographing the landscape",
+            "is watching wildlife", "is brushing past branches",
+            
+            "is reacting to a beautiful view", "is celebrating at the summit",
+            
+            "is hiking at sunrise", "is hiking at sunset",
+            "is hiking in fog", "is hiking in light rain"
+        ],
+
+        "scenarios": [
+            "on a mountain trail", "on a forest trail", "on a rocky path",
+            "on a desert trail", "in a national park", "on a riverside trail",
+            "through a dense forest", "on an open ridge", 
+            "on a snowy path", "on a muddy trail",
+            "at a scenic viewpoint", "at the summit", 
+            "in a canyon", "near a waterfall",
+            
+            "during golden hour", "in bright daylight",
+            "under cloudy skies", "during misty conditions",
+            
+            "from a first-person POV", "from a drone overhead"
+        ],
+
+        "objects": [
+            "with a backpack", "with trekking poles", "with hiking boots",
+            "with a hydration pack", "with a water bottle",
+            "with a trail map", "with a GPS device",
+            "with a rocky trail", "with tree roots on the ground",
+            "with dust kicking up", "with leaves covering the trail",
+            "with a waterfall nearby", "with mountains in the background",
+            
+            "with sunlight filtering through trees", 
+            "with fog rolling in",
+            
+            "with a summit sign", "with a trail marker",
+            "with wildlife in the distance"
+        ]
+    },
+    "cycling_scene": {
+        "subjects": [
+            "a cyclist", "a road cyclist", "a mountain biker",
+            "a person riding a bike", "a kid riding a bicycle",
+            "two cyclists riding together", "a cycling group or peloton",
+            "a family cycling", "a bike commuter",
+            "a person on an e-bike", "a downhill mountain biker",
+            
+            "a first-person handlebar perspective", 
+            "a GoPro chest-mounted cyclist", 
+            "a drone view of cyclists"
+        ],
+
+        "actions": [
+            "is pedaling fast", "is cruising downhill",
+            "is climbing a steep hill", "is standing up on the pedals",
+            "is making a sharp turn", "is drifting on gravel",
+            "is hitting a jump", "is landing after a jump",
+            "is braking hard", "is balancing at low speed",
+            "is overtaking another cyclist", "is drafting behind another rider",
+            
+            "is reacting with excitement", "is celebrating crossing a finish line",
+            
+            "is riding hands-free", "is signaling a turn",
+            "is checking over their shoulder",
+            
+            "is wiping sweat", "is adjusting their helmet"
+        ],
+
+        "scenarios": [
+            "on a mountain trail", "on a forest singletrack",
+            "on a paved road", "on a bike lane",
+            "on a gravel road", "on a dirt trail",
+            "along a riverside path", "along a coastal road",
+            "in a city street", "in a suburban neighborhood",
+            "in a bike park", "in a race event",
+            
+            "at sunrise", "at sunset", "in bright sunlight",
+            "in fog", "under light rain",
+            
+            "during a fast descent", "during a climb",
+            "during a sprint finish", "during a muddy trail ride"
+        ],
+
+        "objects": [
+            "with a road bike", "with a mountain bike", "with a gravel bike",
+            "with an e-bike", "with clipless pedals",
+            "with a winding trail", "with a steep climb",
+            "with dust or dirt kicking up", "with mud splashing",
+            
+            "with a helmet", "with cycling gloves", "with sunglasses",
+            "with a bike computer", "with a water bottle",
+            
+            "with a chain spinning", "with wheels in motion",
+            "with spokes blurring", "with tires skidding",
+            
+            "with a scenic background", "with buildings passing by",
+            "with a race banner or finish line"
+        ]
+    },
+    "wedding_scene": {
+        "subjects": [
+            "a bride", "a groom",
+            "a couple getting married", "newlyweds celebrating",
+            "a flower girl", "a ring bearer",
+            "a family posing together", "guests celebrating",
+            "a photographer capturing moments",
+            
+            "a close-up of hands", "a first-person perspective walking down the aisle",
+            "a drone view of the wedding venue"
+        ],
+
+        "actions": [
+            "is walking down the aisle", "is exchanging vows",
+            "is exchanging rings", "is holding hands",
+            "is kissing at the altar", "is hugging joyfully",
+            "is laughing together", "is wiping tears",
+            "is dancing together", "is having their first dance",
+            "is cutting the wedding cake", "is feeding cake to each other",
+            "is throwing the bouquet", "is catching the bouquet",
+            
+            "is posing for photos", "is signing the marriage certificate",
+            
+            "is celebrating with friends", "is cheering with guests",
+            
+            "is adjusting the dress", "is fixing the boutonniere"
+        ],
+
+        "scenarios": [
+            "at an outdoor wedding", "at an indoor wedding",
+            "in a church", "in a garden venue",
+            "on a beach", "on a mountain overlook",
+            "in a hotel ballroom", "in a rustic barn",
+            
+            "during the ceremony", "during the reception",
+            "during golden hour", "during a night celebration",
+            
+            "under string lights", "under floral decorations",
+            "on a dance floor", "at the altar",
+            
+            "from a drone overhead", "from a first-person POV"
+        ],
+
+        "objects": [
+            "with a wedding dress", "with a suit or tuxedo",
+            "bridesmaids", "groomsmen", "a wedding party",
+            "with a bridal bouquet", "with a boutonniere",
+            "with wedding rings", "with a veil flowing",
+            "with floral decorations", "with candles",
+            "with a wedding cake", "with champagne glasses",
+            
+            "with confetti falling", "with flower petals on the aisle",
+            "with guests applauding", "with fairy lights",
+            
+            "with a decorated arch", "with a wedding sign",
+            "with a guest book", "with a seating chart",
+            
+            "with a sunset backdrop", "with a scenic venue",
+            "with a dance floor setup"
+        ]
+    },
+    "tennis_scene": {
+        "subjects": [
+            "a tennis player", "a person holding a racket",
+            "two players rallying", "a doubles team",
+            "a coach training a student", "a family playing tennis",
+            "a beginner practicing serves", "a competitive match player",
+            "a first-person racket view", "a drone view of a tennis court"
+        ],
+        "actions": [
+            "is serving powerfully", "is performing a slice serve",
+            "is hitting a forehand", "is hitting a backhand",
+            "is returning a serve", "is rallying quickly",
+            "is hitting a volley", "is hitting an overhead smash",
+            "is running to the net", "is sliding to reach the ball",
+            "is stretching for a wide shot", "is celebrating a winner",
+            "is reacting to a missed shot", "is adjusting grip"
+        ],
+        "scenarios": [
+            "on an outdoor court", "on an indoor court",
+            "on a hard court", "on a clay court", "on a grass court",
+            "during a casual match", "during a lesson",
+            "during a competitive tournament",
+            "at sunset", "under bright sunlight", "under stadium lights"
+        ],
+        "objects": [
+            "with a tennis racket", "with a tennis ball",
+            "with a ball mid-air", "with a net in view",
+            "with ball marks on court", "with a scoreboard",
+            "with a water bottle", "with a tennis bag",
+            "with the ball bouncing", "with chalk dust on clay"
+        ]
+    },
+    "badminton_scene": {
+        "subjects": [
+            "a badminton player", "a person holding a racket",
+            "two players rallying", "a doubles team",
+            "a coach training a beginner", "kids playing badminton",
+            "a competitive club player", "a family in the backyard"
+        ],
+        "actions": [
+            "is serving a shuttlecock", "is performing a smash",
+            "is hitting a drop shot", "is hitting a clear",
+            "is lunging forward", "is jumping for a smash",
+            "is reacting quickly", "is diving for a save",
+            "is celebrating a point", "is retrieving a low shot"
+        ],
+        "scenarios": [
+            "in an indoor sports hall", "on an outdoor court",
+            "backyard badminton", "a school gym match",
+            "a club tournament", "casual warm-up",
+            "under bright lights", "in a crowded gym"
+        ],
+        "objects": [
+            "with a shuttlecock", "with a badminton racket",
+            "with a net", "with court lines",
+            "with a birdie in mid-air", "with a racket bag",
+            "with lightweight shoes", "with overhead lighting reflections"
+        ]
+    },
+    "bowling_scene": {
+        "subjects": [
+            "a bowler", "a person holding a bowling ball",
+            "a group of friends bowling", "a family bowling night",
+            "kids bowling with bumpers", "a competitive league bowler"
+        ],
+        "actions": [
+            "is swinging the ball", "is releasing the ball smoothly",
+            "is attempting a strike", "is aiming for a spare",
+            "is celebrating a strike", "is reacting with excitement",
+            "is watching the ball roll", "is adjusting stance"
+        ],
+        "scenarios": [
+            "in a bowling alley", "at a league match",
+            "in a neon-lit cosmic bowling session", 
+            "at a family entertainment center"
+        ],
+        "objects": [
+            "with a bowling ball", "with pins falling",
+            "with a bowling lane", "with score screens overhead",
+            "with rental shoes", "with lane arrows",
+            "with gutter bumpers", "with a ball return system"
+        ]
+    },
+    "golfing_scene": {
+        "subjects": [
+            "a golfer", "a person holding a golf club",
+            "two friends golfing", "a foursome on a course",
+            "a golfer with a caddie", "a family practicing at the range",
+            "a first-person swing perspective", "a drone view of a fairway"
+        ],
+        "actions": [
+            "is taking a full swing", "is teeing off",
+            "is hitting a long drive", "is performing a chip shot",
+            "is putting on the green", "is lining up a putt",
+            "is watching the ball flight", "is celebrating a good shot",
+            "is raking the sand bunker", "is cleaning the club"
+        ],
+        "scenarios": [
+            "on a golf course fairway", "on the putting green",
+            "at a golf driving range", "at a practice bunker",
+            "during a sunny round", "at sunrise", "in the late afternoon",
+            "during a tournament", "at a resort course"
+        ],
+        "objects": [
+            "with a golf club", "with a golf ball",
+            "with tees on the ground", "with a golf cart",
+            "with a flagstick", "with a sand bunker",
+            "with a water hazard", "with greenside grass",
+            "with a scorecard", "with a glove"
+        ]
+    },
+    "table_tennis_scene": {
+        "subjects": [
+            "a table tennis player", "a person holding a paddle",
+            "two players rallying", "a doubles match",
+            "a coach teaching a beginner", "kids practicing",
+            "a competitive league player"
+        ],
+        "actions": [
+            "is serving the ball", "is performing a smash",
+            "is hitting a topspin shot", "is blocking at the table",
+            "is looping forehand", "is counterattacking",
+            "is diving to save the ball", "is celebrating a point"
+        ],
+        "scenarios": [
+            "in a sports hall", "in a recreation center",
+            "in a garage setup", "in a school gym",
+            "during practice drills", "during a tournament"
+        ],
+        "objects": [
+            "with a ping pong ball", "with a paddle",
+            "with a table tennis table", "with a net",
+            "with spin on the ball", "with a scoreboard",
+            "with barriers around the table", "with sweat towel"
+        ]
+    },
+    "volleyball_scene": {
+        "subjects": [
+            "a volleyball player", "two players at the net",
+            "a full team", "a beach volleyball pair",
+            "a setter", "a hitter", "a libero",
+            "a group playing recreational volleyball"
+        ],
+        "actions": [
+            "is serving the ball", "is jumping to spike",
+            "is blocking at the net", "is diving to dig",
+            "is setting the ball", "is receiving a serve",
+            "is celebrating a point", "is signaling a play"
+        ],
+        "scenarios": [
+            "on an indoor court", "on a beach court",
+            "in a school gym", "in a sand recreational area",
+            "during a competitive match", "during practice",
+            "under bright gym lights", "at sunset on the beach"
+        ],
+        "objects": [
+            "with a volleyball", "with a net",
+            "with sand flying", "with floor dust",
+            "with court lines", "with kneepads",
+            "with team uniforms", "with cheering crowd"
+        ]
+    },
+    "gym_scene": {
+        "subjects": [
+            "a gym-goer", "a weightlifter", "a person training",
+            "a personal trainer coaching a client", 
+            "a group workout class", "a bodybuilder",
+            "a cardio exerciser", "a powerlifter",
+            "a person stretching", "a first-person workout POV"
+        ],
+        "actions": [
+            "is lifting weights", "is squatting heavy",
+            "is deadlifting", "is bench pressing",
+            "is curling dumbbells", "is doing pull-ups",
+            "is doing push-ups", "is doing planks",
+            "is running on a treadmill", "is rowing",
+            "is cycling on a stationary bike", "is adjusting machine settings",
+            "is sweating intensely", "is celebrating a PR"
+        ],
+        "scenarios": [
+            "in a gym with free weights", "in a cardio area",
+            "in a functional training zone", "in a powerlifting area",
+            "in a group class room", "in a garage gym",
+            "during strength training", "during cardio",
+            "during peak hours", "in an empty gym"
+        ],
+        "objects": [
+            "with dumbbells", "with barbells",
+            "with weight plates", "with kettlebells",
+            "with resistance bands", "with a treadmill",
+            "with a squat rack", "with cable machines",
+            "with chalk dust", "with mirrors"
+        ]
+    },
+    "swimming_scene": {
+        "subjects": [
+            "a swimmer", "a person swimming laps",
+            "two swimmers racing", "a family in a pool",
+            "a coach teaching kids", "a competitive swimmer",
+            "a lifeguard observing", "a first-person underwater view"
+        ],
+        "actions": [
+            "is freestyle swimming", "is doing breaststroke",
+            "is doing butterfly stroke", "is doing backstroke",
+            "is diving into the water", "is turning at the wall",
+            "is kicking underwater", "is racing in lanes",
+            "is floating", "is splashing water"
+        ],
+        "scenarios": [
+            "in an indoor pool", "in an outdoor pool",
+            "in a competition pool", "in a backyard pool",
+            "at a beach", "in a lake", "in a waterpark",
+            "during a swim meet", "during practice"
+        ],
+        "objects": [
+            "with swimming goggles", "with a swim cap",
+            "with lane lines", "with diving blocks",
+            "with splashing water", "with bubbles underwater",
+            "with float boards", "with kickboards"
+        ]
+    },
+    "yoga_scene": {
+        "subjects": [
+            "a yoga practitioner", "a person doing yoga",
+            "two people practicing", "a group yoga class",
+            "a yoga instructor", "a family doing yoga",
+            "a person meditating", "a first-person yoga mat view"
+        ],
+        "actions": [
+            "is holding a pose", "is stretching deeply",
+            "is doing downward dog", "is doing warrior pose",
+            "is balancing on one leg", "is doing a handstand",
+            "is breathing calmly", "is meditating",
+            "is transitioning between poses"
+        ],
+        "scenarios": [
+            "in a yoga studio", "in a home yoga space",
+            "outdoors in a park", "on a beach",
+            "during sunrise yoga", "during a hot yoga class",
+            "in a quiet, dim room"
+        ],
+        "objects": [
+            "with a yoga mat", "with yoga blocks",
+            "with a strap", "with candles",
+            "with natural light", "with indoor plants",
+            "with meditation cushions"
+        ]
+    },
+    "skiing_scene": {
+        "subjects": [
+            "a skier", "a person skiing downhill",
+            "a ski instructor with a student",
+            "a group skiing together", "a family skiing",
+            "a first-person ski goggle POV", "a drone view of skiers"
+        ],
+        "actions": [
+            "is carving turns", "is skiing downhill fast",
+            "is jumping off a slope", "is landing a jump",
+            "is stopping abruptly", "is skating uphill",
+            "is adjusting goggles", "is falling into snow",
+            "is celebrating at the bottom of the slope"
+        ],
+        "scenarios": [
+            "on a snowy mountain", "on a ski resort trail",
+            "in a beginner area", "in a terrain park",
+            "during heavy snow", "during a sunny ski day",
+            "at sunset", "on a crowded slope"
+        ],
+        "objects": [
+            "with skis", "with ski poles", "with goggles",
+            "with snow spraying", "with a ski lift",
+            "with a snowy trail", "with ski boots",
+            "with a mountain backdrop"
+        ]
+    },
+    "skating_scene": {
+        "subjects": [
+            "a skater", "a person ice skating",
+            "a person roller skating", "two friends skating",
+            "a figure skater", "a hockey skater practicing",
+            "kids skating", "a couple holding hands while skating"
+        ],
+        "actions": [
+            "is gliding smoothly", "is spinning", "is jumping",
+            "is performing footwork", "is braking sharply",
+            "is falling lightly", "is helping someone up",
+            "is skating backward", "is practicing routines"
+        ],
+        "scenarios": [
+            "on an ice rink", "on a frozen lake",
+            "at a roller skating rink", "on a smooth outdoor path",
+            "during a figure skating practice", "during a hockey warm-up",
+            "under colorful rink lights"
+        ],
+        "objects": [
+            "with ice skates", "with roller skates",
+            "with a hockey stick", "with cones for practice",
+            "with reflections on ice", "with skate marks",
+            "with rink boards", "with protective pads"
+        ]
+    },
+    "boxing_scene": {
+        "subjects": [
+            "a boxer", "two boxers sparring",
+            "a coach holding pads", "a trainee learning punches",
+            "a fitness boxer", "a professional fighter",
+            "a person skipping rope", "a person shadowboxing"
+        ],
+        "actions": [
+            "is throwing jabs", "is throwing hooks",
+            "is throwing uppercuts", "is slipping punches",
+            "is blocking and parrying", "is moving around the ring",
+            "is hitting focus mitts", "is hitting the heavy bag",
+            "is sweating intensely", "is celebrating a clean hit"
+        ],
+        "scenarios": [
+            "in a boxing gym", "in a training ring",
+            "in a competition ring", "during sparring practice",
+            "during conditioning drills", "during a pro match",
+            "under bright fight lights"
+        ],
+        "objects": [
+            "with boxing gloves", "with hand wraps",
+            "with a heavy bag", "with a speed bag",
+            "with focus mitts", "with a jump rope",
+            "with ring ropes", "with a corner stool"
         ]
     }
 }

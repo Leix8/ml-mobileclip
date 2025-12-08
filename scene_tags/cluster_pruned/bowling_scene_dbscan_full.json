@@ -1,0 +1,4618 @@
+{
+  "metadata": {
+    "scene": "bowling_scene",
+    "generator": "bowling_scene_full",
+    "created_at": "2025-11-26T00:36:09.349515",
+    "prompt_count": 1536
+  },
+  "prompts": [
+    {
+      "tag": "a bowler is adjusting stance at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a league match with a ball return system"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a league match with a bowling ball"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a league match with a bowling lane"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a league match with lane arrows"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a league match with pins falling"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a league match with rental shoes"
+    },
+    {
+      "tag": "a bowler is adjusting stance at a league match with score screens overhead"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a bowler is adjusting stance in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a league match with a ball return system"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a league match with a bowling ball"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a league match with a bowling lane"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a league match with lane arrows"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a league match with pins falling"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a league match with rental shoes"
+    },
+    {
+      "tag": "a bowler is aiming for a spare at a league match with score screens overhead"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a bowler is aiming for a spare in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a league match with pins falling"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "a bowler is attempting a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a bowler is attempting a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a league match with pins falling"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "a bowler is celebrating a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a bowler is celebrating a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a league match with a ball return system"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a league match with a bowling ball"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a league match with a bowling lane"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a league match with lane arrows"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a league match with pins falling"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a league match with rental shoes"
+    },
+    {
+      "tag": "a bowler is reacting with excitement at a league match with score screens overhead"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a bowler is reacting with excitement in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a league match with a ball return system"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a league match with a bowling ball"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a league match with a bowling lane"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a league match with lane arrows"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a league match with pins falling"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a league match with rental shoes"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly at a league match with score screens overhead"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a league match with a ball return system"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a league match with a bowling ball"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a league match with a bowling lane"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a league match with lane arrows"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a league match with pins falling"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a league match with rental shoes"
+    },
+    {
+      "tag": "a bowler is swinging the ball at a league match with score screens overhead"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a bowler is swinging the ball in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a league match with a ball return system"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a league match with a bowling ball"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a league match with a bowling lane"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a league match with lane arrows"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a league match with pins falling"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a league match with rental shoes"
+    },
+    {
+      "tag": "a bowler is watching the ball roll at a league match with score screens overhead"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a bowler is watching the ball roll in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a league match with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a league match with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a league match with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a league match with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a league match with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a league match with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance at a league match with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is adjusting stance in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a league match with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a league match with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a league match with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a league match with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a league match with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a league match with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare at a league match with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is aiming for a spare in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a league match with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is attempting a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a league match with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is celebrating a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a league match with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a league match with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a league match with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a league match with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a league match with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a league match with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement at a league match with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is reacting with excitement in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a league match with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a league match with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a league match with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a league match with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a league match with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a league match with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly at a league match with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is releasing the ball smoothly in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a league match with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a league match with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a league match with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a league match with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a league match with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a league match with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball at a league match with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is swinging the ball in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a league match with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a league match with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a league match with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a league match with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a league match with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a league match with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll at a league match with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a competitive league bowler is watching the ball roll in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a league match with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a league match with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a league match with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a league match with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a league match with pins falling"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a league match with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance at a league match with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is adjusting stance in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a league match with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a league match with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a league match with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a league match with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a league match with pins falling"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a league match with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare at a league match with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is aiming for a spare in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a league match with pins falling"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is attempting a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a league match with pins falling"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is celebrating a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a league match with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a league match with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a league match with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a league match with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a league match with pins falling"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a league match with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement at a league match with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is reacting with excitement in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a league match with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a league match with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a league match with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a league match with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a league match with pins falling"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a league match with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly at a league match with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is releasing the ball smoothly in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a league match with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a league match with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a league match with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a league match with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a league match with pins falling"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a league match with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball at a league match with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is swinging the ball in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a league match with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a league match with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a league match with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a league match with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a league match with pins falling"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a league match with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll at a league match with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a family bowling night is watching the ball roll in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a league match with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a league match with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a league match with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a league match with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a league match with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a league match with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance at a league match with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is adjusting stance in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a league match with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a league match with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a league match with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a league match with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a league match with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a league match with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare at a league match with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is aiming for a spare in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a league match with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is attempting a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a league match with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is celebrating a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a league match with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a league match with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a league match with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a league match with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a league match with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a league match with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement at a league match with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is reacting with excitement in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a league match with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a league match with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a league match with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a league match with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a league match with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a league match with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly at a league match with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is releasing the ball smoothly in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a league match with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a league match with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a league match with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a league match with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a league match with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a league match with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball at a league match with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is swinging the ball in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a league match with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a league match with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a league match with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a league match with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a league match with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a league match with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll at a league match with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a group of friends bowling is watching the ball roll in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a league match with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a league match with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a league match with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a league match with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a league match with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a league match with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance at a league match with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is adjusting stance in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a league match with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a league match with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a league match with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a league match with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a league match with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a league match with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare at a league match with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is aiming for a spare in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a league match with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is attempting a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a league match with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is celebrating a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a league match with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a league match with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a league match with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a league match with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a league match with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a league match with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement at a league match with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is reacting with excitement in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a league match with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a league match with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a league match with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a league match with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a league match with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a league match with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly at a league match with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is releasing the ball smoothly in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a league match with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a league match with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a league match with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a league match with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a league match with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a league match with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball at a league match with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is swinging the ball in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a league match with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a league match with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a league match with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a league match with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a league match with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a league match with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a league match with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll at a league match with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a bowling alley with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "a person holding a bowling ball is watching the ball roll in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a league match with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a league match with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a league match with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a league match with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a league match with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a league match with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a league match with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance at a league match with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a bowling alley with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is adjusting stance in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a league match with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a league match with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a league match with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a league match with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a league match with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a league match with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a league match with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare at a league match with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a bowling alley with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is aiming for a spare in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a league match with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is attempting a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a league match with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a league match with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a league match with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a league match with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a league match with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a league match with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a league match with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike at a league match with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a bowling alley with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is celebrating a strike in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a league match with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a league match with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a league match with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a league match with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a league match with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a league match with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a league match with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement at a league match with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a bowling alley with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is reacting with excitement in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a league match with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a league match with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a league match with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a league match with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a league match with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a league match with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a league match with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly at a league match with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a bowling alley with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is releasing the ball smoothly in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a league match with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a league match with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a league match with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a league match with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a league match with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a league match with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a league match with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball at a league match with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a bowling alley with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is swinging the ball in a neon-lit cosmic bowling session with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a family entertainment center with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a family entertainment center with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a family entertainment center with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a family entertainment center with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a family entertainment center with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a family entertainment center with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a family entertainment center with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a family entertainment center with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a league match with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a league match with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a league match with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a league match with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a league match with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a league match with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a league match with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll at a league match with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a bowling alley with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a bowling alley with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a bowling alley with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a bowling alley with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a bowling alley with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a bowling alley with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a bowling alley with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a bowling alley with score screens overhead"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a neon-lit cosmic bowling session with a ball return system"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a neon-lit cosmic bowling session with a bowling ball"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a neon-lit cosmic bowling session with a bowling lane"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a neon-lit cosmic bowling session with gutter bumpers"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a neon-lit cosmic bowling session with lane arrows"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a neon-lit cosmic bowling session with pins falling"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a neon-lit cosmic bowling session with rental shoes"
+    },
+    {
+      "tag": "kids bowling with bumpers is watching the ball roll in a neon-lit cosmic bowling session with score screens overhead"
+    }
+  ]
+}

@@ -1,0 +1,2080 @@
+{
+  "metadata": {
+    "scene": "cycling_scene",
+    "generator": "cycling_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-25T21:02:31.914137",
+    "eps": 0.045,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 689
+  },
+  "prompts": [
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet along a coastal road with a bike computer"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet along a riverside path with a bike computer"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet along a riverside path with a race banner or finish line"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet along a riverside path with buildings passing by"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet at sunrise with a bike computer"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet at sunrise with mud splashing"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet during a muddy trail ride with buildings passing by"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet in a suburban neighborhood with mud splashing"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet in fog with a bike computer"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet in fog with a race banner or finish line"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet in fog with buildings passing by"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet on a forest singletrack with buildings passing by"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet under light rain with a bike computer"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet under light rain with a race banner or finish line"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is adjusting their helmet under light rain with buildings passing by"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is celebrating crossing a finish line at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is celebrating crossing a finish line at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is drafting behind another rider in bright sunlight with a winding trail"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is drafting behind another rider in bright sunlight with dust or dirt kicking up"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is drafting behind another rider in bright sunlight with mud splashing"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is drifting on gravel at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is drifting on gravel at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is drifting on gravel at sunrise with mud splashing"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is standing up on the pedals at sunrise with a water bottle"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is standing up on the pedals at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet along a coastal road with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet along a coastal road with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet along a coastal road with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet along a coastal road with dust or dirt kicking up"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet along a coastal road with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet along a riverside path with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet along a riverside path with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet along a riverside path with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet along a riverside path with dust or dirt kicking up"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet along a riverside path with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet at sunrise with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet at sunrise with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet during a climb with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet during a muddy trail ride with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet during a muddy trail ride with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in a city street with a scenic background"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in a city street with dust or dirt kicking up"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in a city street with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in a suburban neighborhood with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in a suburban neighborhood with dust or dirt kicking up"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in a suburban neighborhood with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in bright sunlight with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in fog with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in fog with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in fog with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet in fog with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet under light rain with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet under light rain with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet under light rain with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is adjusting their helmet under light rain with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed along a riverside path with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed along a riverside path with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed at sunrise with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed during a muddy trail ride with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed in a city street with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed in a suburban neighborhood with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed in a suburban neighborhood with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed in fog with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is balancing at low speed under light rain with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line along a coastal road with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line along a coastal road with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line along a riverside path with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line along a riverside path with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line along a riverside path with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line at sunrise with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line at sunrise with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line at sunrise with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line during a muddy trail ride with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line in a suburban neighborhood with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line in a suburban neighborhood with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line in fog with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line in fog with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line in fog with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line in fog with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line under light rain with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line under light rain with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is celebrating crossing a finish line under light rain with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is checking over their shoulder in a bike park with a scenic background"
+    },
+    {
+      "tag": "a bike commuter is checking over their shoulder in a bike park with clipless pedals"
+    },
+    {
+      "tag": "a bike commuter is checking over their shoulder in a bike park with cycling gloves"
+    },
+    {
+      "tag": "a bike commuter is checking over their shoulder in a bike park with sunglasses"
+    },
+    {
+      "tag": "a bike commuter is checking over their shoulder in a city street with a scenic background"
+    },
+    {
+      "tag": "a bike commuter is checking over their shoulder in a city street with cycling gloves"
+    },
+    {
+      "tag": "a bike commuter is checking over their shoulder in a city street with sunglasses"
+    },
+    {
+      "tag": "a bike commuter is checking over their shoulder on a bike lane with cycling gloves"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider along a riverside path with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider along a riverside path with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider along a riverside path with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider at sunrise with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider at sunrise with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider at sunrise with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider in a suburban neighborhood with dust or dirt kicking up"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider in a suburban neighborhood with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider in bright sunlight with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider in fog with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider in fog with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is drafting behind another rider under light rain with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel along a riverside path with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel along a riverside path with cycling gloves"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel at sunrise with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel at sunrise with cycling gloves"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel in a city street with sunglasses"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel in a suburban neighborhood with a race banner or finish line"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel in a suburban neighborhood with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel in fog with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel in fog with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel under light rain with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is drifting on gravel under light rain with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement along a coastal road with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement along a riverside path with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement along a riverside path with cycling gloves"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement in a city street with a scenic background"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement in a city street with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement in a city street with cycling gloves"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement in a city street with sunglasses"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement in a suburban neighborhood with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement in a suburban neighborhood with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement in a suburban neighborhood with sunglasses"
+    },
+    {
+      "tag": "a bike commuter is reacting with excitement in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals at sunrise with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals at sunrise with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals during a climb with sunglasses"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a bike park with a scenic background"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a bike park with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a bike park with spokes blurring"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a bike park with sunglasses"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a city street with a scenic background"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a city street with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a city street with a winding trail"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a city street with dust or dirt kicking up"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a city street with sunglasses"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a suburban neighborhood with a scenic background"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a suburban neighborhood with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a suburban neighborhood with dust or dirt kicking up"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in a suburban neighborhood with sunglasses"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in bright sunlight with a bike computer"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in bright sunlight with dust or dirt kicking up"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in bright sunlight with mud splashing"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals in fog with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals on a bike lane with a scenic background"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals on a bike lane with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals on a bike lane with sunglasses"
+    },
+    {
+      "tag": "a bike commuter is standing up on the pedals under light rain with a water bottle"
+    },
+    {
+      "tag": "a bike commuter is wiping sweat in a bike park with a scenic background"
+    },
+    {
+      "tag": "a bike commuter is wiping sweat in a bike park with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is wiping sweat in a city street with a scenic background"
+    },
+    {
+      "tag": "a bike commuter is wiping sweat in a suburban neighborhood with a scenic background"
+    },
+    {
+      "tag": "a bike commuter is wiping sweat in a suburban neighborhood with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is wiping sweat in a suburban neighborhood with sunglasses"
+    },
+    {
+      "tag": "a bike commuter is wiping sweat in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a bike commuter is wiping sweat on a bike lane with a scenic background"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet along a coastal road with a bike computer"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet along a coastal road with a race banner or finish line"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet at sunrise with a bike computer"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet at sunrise with mud splashing"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet during a climb with a scenic background"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet in fog with a bike computer"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet in fog with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet on a dirt trail with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet under light rain with a bike computer"
+    },
+    {
+      "tag": "a cycling group or peloton is adjusting their helmet under light rain with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed along a riverside path with a race banner or finish line"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed along a riverside path with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed at sunrise with a water bottle"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed at sunrise with mud splashing"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed during a muddy trail ride with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed in a city street with a water bottle"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed in a city street with dust or dirt kicking up"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed in a suburban neighborhood with a race banner or finish line"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed in a suburban neighborhood with a water bottle"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed in a suburban neighborhood with dust or dirt kicking up"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed in a suburban neighborhood with mud splashing"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed in bright sunlight with cycling gloves"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed in fog with a water bottle"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed on a forest singletrack with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed under light rain with a race banner or finish line"
+    },
+    {
+      "tag": "a cycling group or peloton is balancing at low speed under light rain with a water bottle"
+    },
+    {
+      "tag": "a cycling group or peloton is celebrating crossing a finish line at sunrise with a water bottle"
+    },
+    {
+      "tag": "a cycling group or peloton is celebrating crossing a finish line at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is drifting on gravel at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a cycling group or peloton is drifting on gravel at sunrise with a water bottle"
+    },
+    {
+      "tag": "a cycling group or peloton is drifting on gravel at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is drifting on gravel at sunrise with cycling gloves"
+    },
+    {
+      "tag": "a cycling group or peloton is drifting on gravel at sunrise with mud splashing"
+    },
+    {
+      "tag": "a cycling group or peloton is standing up on the pedals at sunrise with a water bottle"
+    },
+    {
+      "tag": "a cycling group or peloton is standing up on the pedals at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a cycling group or peloton is standing up on the pedals at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a cycling group or peloton is standing up on the pedals on a bike lane with a water bottle"
+    },
+    {
+      "tag": "a cycling group or peloton is standing up on the pedals on a bike lane with sunglasses"
+    },
+    {
+      "tag": "a cycling group or peloton is standing up on the pedals on a dirt trail with a water bottle"
+    },
+    {
+      "tag": "a cycling group or peloton is standing up on the pedals on a dirt trail with sunglasses"
+    },
+    {
+      "tag": "a cycling group or peloton is wiping sweat during a climb with sunglasses"
+    },
+    {
+      "tag": "a cycling group or peloton is wiping sweat in a bike park with a bike computer"
+    },
+    {
+      "tag": "a cycling group or peloton is wiping sweat in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a cycling group or peloton is wiping sweat on a bike lane with a scenic background"
+    },
+    {
+      "tag": "a cycling group or peloton is wiping sweat on a dirt trail with sunglasses"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet along a coastal road with a bike computer"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet at sunrise with a bike computer"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet at sunrise with mud splashing"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet during a muddy trail ride with buildings passing by"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet in a suburban neighborhood with mud splashing"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet in fog with a bike computer"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet in fog with buildings passing by"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet on a forest singletrack with buildings passing by"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet under light rain with a bike computer"
+    },
+    {
+      "tag": "a drone view of cyclists is adjusting their helmet under light rain with buildings passing by"
+    },
+    {
+      "tag": "a drone view of cyclists is celebrating crossing a finish line at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a drone view of cyclists is drifting on gravel at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a drone view of cyclists is drifting on gravel at sunrise with a water bottle"
+    },
+    {
+      "tag": "a drone view of cyclists is drifting on gravel at sunrise with a winding trail"
+    },
+    {
+      "tag": "a drone view of cyclists is drifting on gravel at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet along a coastal road with a bike computer"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet along a coastal road with a race banner or finish line"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet along a coastal road with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet along a riverside path with a bike computer"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet along a riverside path with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet along a riverside path with mud splashing"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet at sunrise with a bike computer"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet at sunrise with a winding trail"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet at sunrise with mud splashing"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet during a climb with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet during a muddy trail ride with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet in fog with a bike computer"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet in fog with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet on a bike lane with a scenic background"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet on a dirt trail with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet on a forest singletrack with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet under light rain with a bike computer"
+    },
+    {
+      "tag": "a family cycling is adjusting their helmet under light rain with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed along a riverside path with a race banner or finish line"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed at sunrise with mud splashing"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in a city street with a water bottle"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in a city street with cycling gloves"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in a city street with dust or dirt kicking up"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in a city street with mud splashing"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in a city street with sunglasses"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in a suburban neighborhood with a race banner or finish line"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in a suburban neighborhood with a water bottle"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in a suburban neighborhood with cycling gloves"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in a suburban neighborhood with dust or dirt kicking up"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in a suburban neighborhood with mud splashing"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in bright sunlight with cycling gloves"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in bright sunlight with mud splashing"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed in fog with a race banner or finish line"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed under light rain with a race banner or finish line"
+    },
+    {
+      "tag": "a family cycling is balancing at low speed under light rain with cycling gloves"
+    },
+    {
+      "tag": "a family cycling is celebrating crossing a finish line along a riverside path with a bike computer"
+    },
+    {
+      "tag": "a family cycling is celebrating crossing a finish line at sunrise with a bike computer"
+    },
+    {
+      "tag": "a family cycling is celebrating crossing a finish line at sunrise with a water bottle"
+    },
+    {
+      "tag": "a family cycling is celebrating crossing a finish line at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is celebrating crossing a finish line at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a family cycling is celebrating crossing a finish line at sunrise with mud splashing"
+    },
+    {
+      "tag": "a family cycling is celebrating crossing a finish line in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a family cycling is celebrating crossing a finish line in fog with a bike computer"
+    },
+    {
+      "tag": "a family cycling is celebrating crossing a finish line under light rain with a bike computer"
+    },
+    {
+      "tag": "a family cycling is drifting on gravel at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a family cycling is drifting on gravel at sunrise with a water bottle"
+    },
+    {
+      "tag": "a family cycling is drifting on gravel at sunrise with a winding trail"
+    },
+    {
+      "tag": "a family cycling is drifting on gravel at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a family cycling is drifting on gravel at sunrise with cycling gloves"
+    },
+    {
+      "tag": "a family cycling is drifting on gravel at sunrise with sunglasses"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals at sunrise with a chain spinning"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals at sunrise with a gravel bike"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals at sunrise with a helmet"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals at sunrise with a water bottle"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals at sunrise with cycling gloves"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals at sunrise with mud splashing"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals at sunrise with sunglasses"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals during a climb with a helmet"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals during a climb with a water bottle"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals during a climb with sunglasses"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals during a sprint finish with a helmet"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals during a sprint finish with sunglasses"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals in bright sunlight with a bike computer"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals in bright sunlight with a chain spinning"
+    },
+    {
+      "tag": "a family cycling is standing up on the pedals on a bike lane with sunglasses"
+    },
+    {
+      "tag": "a family cycling is wiping sweat at sunrise with a helmet"
+    },
+    {
+      "tag": "a family cycling is wiping sweat during a climb with a helmet"
+    },
+    {
+      "tag": "a family cycling is wiping sweat in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a family cycling is wiping sweat in bright sunlight with spokes blurring"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet along a coastal road with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet along a riverside path with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet at sunrise with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet at sunrise with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet at sunrise with a gravel bike"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet at sunrise with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet at sunrise with a winding trail"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet at sunrise with clipless pedals"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet at sunrise with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a climb with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a climb with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a climb with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a climb with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a climb with an e-bike"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a climb with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a climb with clipless pedals"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a climb with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a climb with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a sprint finish with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a sprint finish with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a sprint finish with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a sprint finish with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet during a sprint finish with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet in a bike park with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet in a bike park with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet in a bike park with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet in a city street with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet in bright sunlight with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet in bright sunlight with a helmet"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet in fog with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet on a bike lane with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet on a dirt trail with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet on a dirt trail with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet on a forest singletrack with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet under light rain with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is adjusting their helmet under light rain with a gravel bike"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed along a coastal road with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed along a coastal road with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed along a coastal road with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed along a riverside path with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed along a riverside path with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed along a riverside path with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed along a riverside path with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed along a riverside path with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed along a riverside path with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed at sunrise with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed at sunrise with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed during a climb with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed during a climb with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed during a muddy trail ride with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed during a muddy trail ride with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a bike park with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a city street with a helmet"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a city street with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a city street with a winding trail"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a city street with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a city street with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a city street with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a suburban neighborhood with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a suburban neighborhood with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a suburban neighborhood with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a suburban neighborhood with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a suburban neighborhood with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in a suburban neighborhood with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in bright sunlight with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in bright sunlight with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in bright sunlight with a gravel bike"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in bright sunlight with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in bright sunlight with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in bright sunlight with spokes blurring"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in bright sunlight with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in fog with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in fog with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in fog with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in fog with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed in fog with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed on a forest singletrack with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed on a forest singletrack with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed on a gravel road with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed on a gravel road with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed under light rain with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed under light rain with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed under light rain with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed under light rain with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed under light rain with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is balancing at low speed under light rain with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line along a coastal road with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line along a coastal road with a steep climb"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line along a riverside path with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line along a riverside path with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line along a riverside path with a steep climb"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with a gravel bike"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with a helmet"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with a steep climb"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with a winding trail"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with clipless pedals"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line at sunrise with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line in a suburban neighborhood with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line in bright sunlight with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line in bright sunlight with spokes blurring"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line in fog with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line in fog with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line on a bike lane with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line on a bike lane with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line on a dirt trail with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line under light rain with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is celebrating crossing a finish line under light rain with spokes blurring"
+    },
+    {
+      "tag": "a first-person handlebar perspective is climbing a steep hill at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is climbing a steep hill at sunrise with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is climbing a steep hill at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is climbing a steep hill at sunrise with cycling gloves"
+    },
+    {
+      "tag": "a first-person handlebar perspective is climbing a steep hill at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is climbing a steep hill at sunrise with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is climbing a steep hill during a sprint finish with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider at sunrise with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider at sunrise with a helmet"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider at sunrise with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider at sunrise with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider at sunrise with a winding trail"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider at sunrise with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider in a city street with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider in a city street with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider in bright sunlight with a winding trail"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider in bright sunlight with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider in bright sunlight with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider in fog with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider under light rain with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drafting behind another rider under light rain with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel along a riverside path with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel along a riverside path with a steep climb"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with a helmet"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with a steep climb"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with a winding trail"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with clipless pedals"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with cycling gloves"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel at sunrise with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel during a climb with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel during a climb with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel during a sprint finish with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel during a sprint finish with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel in a suburban neighborhood with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel in bright sunlight with spokes blurring"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel in fog with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is drifting on gravel under light rain with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is hitting a jump at sunrise with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is hitting a jump in a city street with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is hitting a jump in bright sunlight with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is overtaking another cyclist at sunrise with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with a chain spinning"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with a helmet"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with a steep climb"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with a water bottle"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with a winding trail"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with clipless pedals"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with cycling gloves"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with mud splashing"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with spokes blurring"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals at sunrise with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals during a climb with a helmet"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals in bright sunlight with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals in bright sunlight with spokes blurring"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals in fog with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is standing up on the pedals under light rain with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is wiping sweat at sunrise with a helmet"
+    },
+    {
+      "tag": "a first-person handlebar perspective is wiping sweat at sunrise with sunglasses"
+    },
+    {
+      "tag": "a first-person handlebar perspective is wiping sweat during a climb with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is wiping sweat in a city street with a bike computer"
+    },
+    {
+      "tag": "a first-person handlebar perspective is wiping sweat in a city street with spokes blurring"
+    },
+    {
+      "tag": "a first-person handlebar perspective is wiping sweat in a suburban neighborhood with tires skidding"
+    },
+    {
+      "tag": "a first-person handlebar perspective is wiping sweat on a dirt trail with a scenic background"
+    },
+    {
+      "tag": "a first-person handlebar perspective is wiping sweat on a paved road with spokes blurring"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet along a coastal road with a race banner or finish line"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet along a riverside path with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet along a riverside path with buildings passing by"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet at sunrise with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet at sunrise with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet at sunrise with a winding trail"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet at sunrise with mud splashing"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet during a climb with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet during a sprint finish with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet during a sprint finish with buildings passing by"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet in a bike park with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet in fog with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet in fog with a race banner or finish line"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet in fog with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet on a bike lane with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet on a dirt trail with buildings passing by"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet on a forest singletrack with buildings passing by"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet under light rain with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet under light rain with a race banner or finish line"
+    },
+    {
+      "tag": "a kid riding a bicycle is adjusting their helmet under light rain with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed along a coastal road with dust or dirt kicking up"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed along a coastal road with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed along a riverside path with mud splashing"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed along a riverside path with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed at sunrise with mud splashing"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in a bike park with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in a city street with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in a city street with dust or dirt kicking up"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in a city street with mud splashing"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in a city street with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in a suburban neighborhood with dust or dirt kicking up"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in a suburban neighborhood with mud splashing"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in a suburban neighborhood with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in bright sunlight with buildings passing by"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in bright sunlight with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in bright sunlight with dust or dirt kicking up"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in bright sunlight with mud splashing"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in fog with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed in fog with mud splashing"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed on a bike lane with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is balancing at low speed under light rain with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is celebrating crossing a finish line along a riverside path with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is celebrating crossing a finish line at sunrise with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is celebrating crossing a finish line at sunrise with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is celebrating crossing a finish line at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a kid riding a bicycle is celebrating crossing a finish line at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a kid riding a bicycle is celebrating crossing a finish line at sunrise with mud splashing"
+    },
+    {
+      "tag": "a kid riding a bicycle is celebrating crossing a finish line in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is celebrating crossing a finish line in bright sunlight with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is celebrating crossing a finish line in fog with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is celebrating crossing a finish line under light rain with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider along a coastal road with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider along a riverside path with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider at sunrise with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider during a climb with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in a bike park with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in a bike park with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in a bike park with dust or dirt kicking up"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in a city street with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in a city street with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in a city street with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in a city street with dust or dirt kicking up"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in a city street with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in a suburban neighborhood with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in bright sunlight with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in bright sunlight with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in bright sunlight with a winding trail"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in bright sunlight with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in bright sunlight with dust or dirt kicking up"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider in bright sunlight with mud splashing"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider on a bike lane with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider under light rain with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider under light rain with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is drafting behind another rider under light rain with mud splashing"
+    },
+    {
+      "tag": "a kid riding a bicycle is drifting on gravel at sunrise with a helmet"
+    },
+    {
+      "tag": "a kid riding a bicycle is drifting on gravel at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "a kid riding a bicycle is drifting on gravel at sunrise with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is drifting on gravel at sunrise with a winding trail"
+    },
+    {
+      "tag": "a kid riding a bicycle is drifting on gravel at sunrise with buildings passing by"
+    },
+    {
+      "tag": "a kid riding a bicycle is drifting on gravel at sunrise with clipless pedals"
+    },
+    {
+      "tag": "a kid riding a bicycle is drifting on gravel at sunrise with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is drifting on gravel at sunrise with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is reacting with excitement at sunrise with a helmet"
+    },
+    {
+      "tag": "a kid riding a bicycle is reacting with excitement on a bike lane with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is reacting with excitement on a bike lane with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is reacting with excitement on a bike lane with a winding trail"
+    },
+    {
+      "tag": "a kid riding a bicycle is reacting with excitement on a bike lane with cycling gloves"
+    },
+    {
+      "tag": "a kid riding a bicycle is reacting with excitement on a bike lane with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is reacting with excitement on a dirt trail with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is reacting with excitement on a dirt trail with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is standing up on the pedals at sunrise with a helmet"
+    },
+    {
+      "tag": "a kid riding a bicycle is standing up on the pedals at sunrise with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is standing up on the pedals at sunrise with a water bottle"
+    },
+    {
+      "tag": "a kid riding a bicycle is standing up on the pedals at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a kid riding a bicycle is standing up on the pedals at sunrise with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is standing up on the pedals in bright sunlight with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is standing up on the pedals on a bike lane with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat at sunrise with a helmet"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat at sunrise with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat at sunrise with a steep climb"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat at sunrise with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat during a climb with a helmet"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat during a climb with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat during a climb with an e-bike"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat during a climb with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat during a sprint finish with an e-bike"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat in a city street with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat in bright sunlight with a bike computer"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat in bright sunlight with spokes blurring"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat on a bike lane with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat on a bike lane with a winding trail"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat on a bike lane with sunglasses"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat on a dirt trail with a scenic background"
+    },
+    {
+      "tag": "a kid riding a bicycle is wiping sweat on a dirt trail with sunglasses"
+    },
+    {
+      "tag": "a person on an e-bike is balancing at low speed in a city street with dust or dirt kicking up"
+    },
+    {
+      "tag": "a person on an e-bike is hitting a jump in a city street with a scenic background"
+    },
+    {
+      "tag": "a person on an e-bike is reacting with excitement at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "a person on an e-bike is reacting with excitement during a climb with a chain spinning"
+    },
+    {
+      "tag": "a person on an e-bike is reacting with excitement during a climb with a scenic background"
+    },
+    {
+      "tag": "a person on an e-bike is reacting with excitement during a climb with buildings passing by"
+    },
+    {
+      "tag": "a person on an e-bike is reacting with excitement during a climb with sunglasses"
+    },
+    {
+      "tag": "a person on an e-bike is reacting with excitement during a sprint finish with sunglasses"
+    },
+    {
+      "tag": "a person on an e-bike is standing up on the pedals during a climb with sunglasses"
+    },
+    {
+      "tag": "a person on an e-bike is wiping sweat during a climb with a chain spinning"
+    },
+    {
+      "tag": "a person on an e-bike is wiping sweat during a climb with buildings passing by"
+    },
+    {
+      "tag": "a person on an e-bike is wiping sweat during a climb with sunglasses"
+    },
+    {
+      "tag": "a person on an e-bike is wiping sweat during a sprint finish with a winding trail"
+    },
+    {
+      "tag": "a person on an e-bike is wiping sweat during a sprint finish with sunglasses"
+    },
+    {
+      "tag": "two cyclists riding together is adjusting their helmet at sunrise with a gravel bike"
+    },
+    {
+      "tag": "two cyclists riding together is adjusting their helmet at sunrise with a winding trail"
+    },
+    {
+      "tag": "two cyclists riding together is adjusting their helmet at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "two cyclists riding together is adjusting their helmet at sunrise with mud splashing"
+    },
+    {
+      "tag": "two cyclists riding together is adjusting their helmet on a bike lane with a scenic background"
+    },
+    {
+      "tag": "two cyclists riding together is adjusting their helmet on a dirt trail with buildings passing by"
+    },
+    {
+      "tag": "two cyclists riding together is celebrating crossing a finish line along a riverside path with a bike computer"
+    },
+    {
+      "tag": "two cyclists riding together is celebrating crossing a finish line at sunrise with a bike computer"
+    },
+    {
+      "tag": "two cyclists riding together is celebrating crossing a finish line at sunrise with a water bottle"
+    },
+    {
+      "tag": "two cyclists riding together is celebrating crossing a finish line at sunrise with buildings passing by"
+    },
+    {
+      "tag": "two cyclists riding together is celebrating crossing a finish line at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "two cyclists riding together is celebrating crossing a finish line at sunrise with mud splashing"
+    },
+    {
+      "tag": "two cyclists riding together is celebrating crossing a finish line in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "two cyclists riding together is celebrating crossing a finish line in fog with a bike computer"
+    },
+    {
+      "tag": "two cyclists riding together is drifting on gravel at sunrise with a race banner or finish line"
+    },
+    {
+      "tag": "two cyclists riding together is drifting on gravel at sunrise with a water bottle"
+    },
+    {
+      "tag": "two cyclists riding together is drifting on gravel at sunrise with a winding trail"
+    },
+    {
+      "tag": "two cyclists riding together is drifting on gravel at sunrise with buildings passing by"
+    },
+    {
+      "tag": "two cyclists riding together is drifting on gravel at sunrise with cycling gloves"
+    },
+    {
+      "tag": "two cyclists riding together is standing up on the pedals at sunrise with a scenic background"
+    },
+    {
+      "tag": "two cyclists riding together is standing up on the pedals at sunrise with a water bottle"
+    },
+    {
+      "tag": "two cyclists riding together is standing up on the pedals at sunrise with dust or dirt kicking up"
+    },
+    {
+      "tag": "two cyclists riding together is standing up on the pedals at sunrise with sunglasses"
+    },
+    {
+      "tag": "two cyclists riding together is wiping sweat at sunrise with a scenic background"
+    },
+    {
+      "tag": "two cyclists riding together is wiping sweat in a suburban neighborhood with a bike computer"
+    },
+    {
+      "tag": "a GoPro chest-mounted cyclist is celebrating crossing a finish line in fog with buildings passing by"
+    }
+  ]
+}

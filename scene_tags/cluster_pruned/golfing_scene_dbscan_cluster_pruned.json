@@ -1,0 +1,514 @@
+{
+  "metadata": {
+    "scene": "golfing_scene",
+    "generator": "golfing_scene_dbscan_cluster_pruned",
+    "created_at": "2025-11-26T01:38:14.460223",
+    "eps": 0.04,
+    "min_samples": 2,
+    "metric": "cosine",
+    "prompt_count": 167
+  },
+  "prompts": [
+    {
+      "tag": "a drone view of a fairway is celebrating a good shot at a golf driving range with a flagstick"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot at a golf driving range with a flagstick"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot at a practice bunker with a water hazard"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot at a resort course with a glove"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot at a resort course with a water hazard"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot at sunrise with a flagstick"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot at sunrise with a glove"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot at sunrise with a scorecard"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot at sunrise with a water hazard"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot at sunrise with greenside grass"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot in the late afternoon with a glove"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot in the late afternoon with a scorecard"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot in the late afternoon with a water hazard"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot in the late afternoon with greenside grass"
+    },
+    {
+      "tag": "a family practicing at the range is cleaning the club at a resort course with a scorecard"
+    },
+    {
+      "tag": "a family practicing at the range is cleaning the club at sunrise with a golf ball"
+    },
+    {
+      "tag": "a family practicing at the range is cleaning the club at sunrise with a golf cart"
+    },
+    {
+      "tag": "a family practicing at the range is cleaning the club in the late afternoon with a golf ball"
+    },
+    {
+      "tag": "a family practicing at the range is hitting a long drive during a sunny round with a glove"
+    },
+    {
+      "tag": "a family practicing at the range is hitting a long drive during a sunny round with a water hazard"
+    },
+    {
+      "tag": "a family practicing at the range is hitting a long drive during a sunny round with greenside grass"
+    },
+    {
+      "tag": "a family practicing at the range is hitting a long drive during a tournament with a glove"
+    },
+    {
+      "tag": "a family practicing at the range is lining up a putt at sunrise with a glove"
+    },
+    {
+      "tag": "a family practicing at the range is lining up a putt at sunrise with a scorecard"
+    },
+    {
+      "tag": "a family practicing at the range is performing a chip shot at a resort course with a water hazard"
+    },
+    {
+      "tag": "a family practicing at the range is watching the ball flight at a resort course with a flagstick"
+    },
+    {
+      "tag": "a family practicing at the range is watching the ball flight at a resort course with a water hazard"
+    },
+    {
+      "tag": "a family practicing at the range is watching the ball flight at sunrise with a flagstick"
+    },
+    {
+      "tag": "a family practicing at the range is watching the ball flight at sunrise with greenside grass"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at a golf driving range with a flagstick"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at a golf driving range with a sand bunker"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at a practice bunker with a scorecard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at a practice bunker with a water hazard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at a resort course with a scorecard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at a resort course with a water hazard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at a resort course with greenside grass"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at sunrise with a flagstick"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at sunrise with a glove"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at sunrise with a sand bunker"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at sunrise with a scorecard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at sunrise with a water hazard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot at sunrise with greenside grass"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot during a sunny round with a flagstick"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot during a sunny round with a glove"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot during a sunny round with a scorecard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot during a sunny round with a water hazard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot during a sunny round with greenside grass"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot during a tournament with a flagstick"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot during a tournament with a glove"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot during a tournament with a scorecard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot during a tournament with a water hazard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot during a tournament with greenside grass"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot in the late afternoon with a flagstick"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot in the late afternoon with a glove"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot in the late afternoon with a scorecard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot in the late afternoon with a water hazard"
+    },
+    {
+      "tag": "a first-person swing perspective is celebrating a good shot in the late afternoon with greenside grass"
+    },
+    {
+      "tag": "a first-person swing perspective is cleaning the club at a resort course with a flagstick"
+    },
+    {
+      "tag": "a first-person swing perspective is cleaning the club at sunrise with a golf ball"
+    },
+    {
+      "tag": "a first-person swing perspective is cleaning the club at sunrise with a golf cart"
+    },
+    {
+      "tag": "a first-person swing perspective is cleaning the club during a sunny round with a golf ball"
+    },
+    {
+      "tag": "a first-person swing perspective is cleaning the club in the late afternoon with a golf ball"
+    },
+    {
+      "tag": "a first-person swing perspective is lining up a putt during a sunny round with a flagstick"
+    },
+    {
+      "tag": "a first-person swing perspective is lining up a putt in the late afternoon with a flagstick"
+    },
+    {
+      "tag": "a first-person swing perspective is putting on the green during a sunny round with a golf ball"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot at a golf driving range with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot at a golf driving range with a sand bunker"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot at a golf driving range with a scorecard"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot at a golf driving range with a water hazard"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot at a resort course with a scorecard"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot at sunrise with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot at sunrise with a golf cart"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot at sunrise with a sand bunker"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot at sunrise with a scorecard"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot during a sunny round with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot during a sunny round with a water hazard"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot in the late afternoon with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot in the late afternoon with a golf ball"
+    },
+    {
+      "tag": "a foursome on a course is celebrating a good shot on the putting green with a water hazard"
+    },
+    {
+      "tag": "a foursome on a course is cleaning the club at a golf driving range with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is cleaning the club at a resort course with a scorecard"
+    },
+    {
+      "tag": "a foursome on a course is cleaning the club at sunrise with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is cleaning the club at sunrise with a sand bunker"
+    },
+    {
+      "tag": "a foursome on a course is cleaning the club in the late afternoon with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive at a practice bunker with a scorecard"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive at a practice bunker with a water hazard"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive at a resort course with a glove"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive at a resort course with a scorecard"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive at a resort course with a water hazard"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive at sunrise with a glove"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive at sunrise with a water hazard"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive at sunrise with greenside grass"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive during a sunny round with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive during a sunny round with a glove"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive during a sunny round with a scorecard"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive during a sunny round with a water hazard"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive during a sunny round with greenside grass"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive during a tournament with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive during a tournament with a glove"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive during a tournament with a water hazard"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive in the late afternoon with a glove"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive in the late afternoon with a golf ball"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive in the late afternoon with a scorecard"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive in the late afternoon with a water hazard"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive in the late afternoon with greenside grass"
+    },
+    {
+      "tag": "a foursome on a course is hitting a long drive on a golf course fairway with a water hazard"
+    },
+    {
+      "tag": "a foursome on a course is lining up a putt at sunrise with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is lining up a putt at sunrise with a sand bunker"
+    },
+    {
+      "tag": "a foursome on a course is lining up a putt at sunrise with a scorecard"
+    },
+    {
+      "tag": "a foursome on a course is performing a chip shot at a resort course with a scorecard"
+    },
+    {
+      "tag": "a foursome on a course is performing a chip shot at sunrise with a golf ball"
+    },
+    {
+      "tag": "a foursome on a course is performing a chip shot in the late afternoon with a golf ball"
+    },
+    {
+      "tag": "a foursome on a course is putting on the green during a sunny round with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is putting on the green in the late afternoon with a flagstick"
+    },
+    {
+      "tag": "a foursome on a course is watching the ball flight at a resort course with a scorecard"
+    },
+    {
+      "tag": "a foursome on a course is watching the ball flight at sunrise with a golf ball"
+    },
+    {
+      "tag": "a foursome on a course is watching the ball flight during a sunny round with a golf ball"
+    },
+    {
+      "tag": "a foursome on a course is watching the ball flight in the late afternoon with a golf ball"
+    },
+    {
+      "tag": "a golfer is celebrating a good shot at a golf driving range with a flagstick"
+    },
+    {
+      "tag": "a golfer is celebrating a good shot at a golf driving range with a sand bunker"
+    },
+    {
+      "tag": "a golfer is celebrating a good shot at a golf driving range with a scorecard"
+    },
+    {
+      "tag": "a golfer is celebrating a good shot at a practice bunker with a scorecard"
+    },
+    {
+      "tag": "a golfer is celebrating a good shot at a resort course with a flagstick"
+    },
+    {
+      "tag": "a golfer is celebrating a good shot at a resort course with a water hazard"
+    },
+    {
+      "tag": "a golfer is celebrating a good shot at sunrise with a golf cart"
+    },
+    {
+      "tag": "a golfer is celebrating a good shot at sunrise with a scorecard"
+    },
+    {
+      "tag": "a golfer is celebrating a good shot at sunrise with tees on the ground"
+    },
+    {
+      "tag": "a golfer is cleaning the club at a golf driving range with a scorecard"
+    },
+    {
+      "tag": "a golfer is cleaning the club at sunrise with a flagstick"
+    },
+    {
+      "tag": "a golfer is cleaning the club at sunrise with a scorecard"
+    },
+    {
+      "tag": "a golfer is cleaning the club at sunrise with a water hazard"
+    },
+    {
+      "tag": "a golfer is cleaning the club during a sunny round with a flagstick"
+    },
+    {
+      "tag": "a golfer is cleaning the club during a sunny round with a scorecard"
+    },
+    {
+      "tag": "a golfer is cleaning the club during a sunny round with a water hazard"
+    },
+    {
+      "tag": "a golfer is cleaning the club in the late afternoon with a scorecard"
+    },
+    {
+      "tag": "a golfer is cleaning the club in the late afternoon with a water hazard"
+    },
+    {
+      "tag": "a golfer is hitting a long drive at a golf driving range with a water hazard"
+    },
+    {
+      "tag": "a golfer is hitting a long drive at a practice bunker with a water hazard"
+    },
+    {
+      "tag": "a golfer is hitting a long drive at sunrise with a water hazard"
+    },
+    {
+      "tag": "a golfer is hitting a long drive during a sunny round with a flagstick"
+    },
+    {
+      "tag": "a golfer is hitting a long drive during a sunny round with a scorecard"
+    },
+    {
+      "tag": "a golfer is hitting a long drive during a sunny round with a water hazard"
+    },
+    {
+      "tag": "a golfer is hitting a long drive in the late afternoon with a scorecard"
+    },
+    {
+      "tag": "a golfer is hitting a long drive in the late afternoon with a water hazard"
+    },
+    {
+      "tag": "a golfer is lining up a putt at sunrise with a water hazard"
+    },
+    {
+      "tag": "a golfer is lining up a putt during a sunny round with a scorecard"
+    },
+    {
+      "tag": "a golfer is lining up a putt during a sunny round with a water hazard"
+    },
+    {
+      "tag": "a golfer is performing a chip shot at sunrise with a water hazard"
+    },
+    {
+      "tag": "a golfer is performing a chip shot during a sunny round with a water hazard"
+    },
+    {
+      "tag": "a golfer with a caddie is celebrating a good shot at a golf driving range with a scorecard"
+    },
+    {
+      "tag": "a golfer with a caddie is celebrating a good shot at a resort course with a water hazard"
+    },
+    {
+      "tag": "a golfer with a caddie is hitting a long drive at sunrise with a water hazard"
+    },
+    {
+      "tag": "a golfer with a caddie is hitting a long drive during a sunny round with a scorecard"
+    },
+    {
+      "tag": "a golfer with a caddie is hitting a long drive during a sunny round with a water hazard"
+    },
+    {
+      "tag": "a golfer with a caddie is hitting a long drive in the late afternoon with a water hazard"
+    },
+    {
+      "tag": "a golfer with a caddie is lining up a putt at sunrise with a water hazard"
+    },
+    {
+      "tag": "a golfer with a caddie is lining up a putt during a sunny round with a scorecard"
+    },
+    {
+      "tag": "a golfer with a caddie is lining up a putt during a sunny round with a water hazard"
+    },
+    {
+      "tag": "a person holding a golf club is celebrating a good shot at a resort course with a water hazard"
+    },
+    {
+      "tag": "a person holding a golf club is hitting a long drive in the late afternoon with a water hazard"
+    },
+    {
+      "tag": "two friends golfing is celebrating a good shot at a golf driving range with a flagstick"
+    },
+    {
+      "tag": "two friends golfing is celebrating a good shot at a golf driving range with a sand bunker"
+    },
+    {
+      "tag": "two friends golfing is celebrating a good shot at a golf driving range with a scorecard"
+    },
+    {
+      "tag": "two friends golfing is celebrating a good shot at a golf driving range with a water hazard"
+    },
+    {
+      "tag": "two friends golfing is celebrating a good shot at a resort course with a water hazard"
+    },
+    {
+      "tag": "two friends golfing is cleaning the club at sunrise with a water hazard"
+    },
+    {
+      "tag": "a family practicing at the range is celebrating a good shot during a sunny round with a glove"
+    }
+  ]
+}

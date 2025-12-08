@@ -554,7 +554,7 @@ def main(args):
     print(f"[INFO] Completed DBSCAN clustering with eps={args.eps}, min_samples={args.min_points}.")
 
     # add eps and min_points to folder name if needed
-    output_dir_name = f"{args.scene}_dbscan_eps{args.eps}_minpts{args.min_points}"
+    output_dir_name = f"{args.scene}_dbscan_eps{args.eps}_minpts{args.min_points}_{args.output_suffix}"
     output_dir = os.path.join(args.output_dir, output_dir_name)
     print(f"[INFO] Saving results to {output_dir}")
     if not os.path.exists(output_dir):
@@ -660,15 +660,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_path", type=str, default="./checkpoints/mobileclip2_s4.pt")
     parser.add_argument("--output_dir", type=str, default="./experiments/text_embedding_cluster")
+    parser.add_argument("--output_suffix", type=str, default="")
     parser.add_argument("--projection", type = str, default = "pca", choices=["pca", "tsne", "umap"])
-    parser.add_argument('--max_samples', type=int, default=400000, help='Maximum number of prompts to generate.')
+    parser.add_argument('--max_samples', type=int, default=200000, help='Maximum number of prompts to generate.')
     parser.add_argument("--seed", type=int, default=1234)
     parser.add_argument("--no_amp", action="store_true")
     parser.add_argument("--device", type=str, default="cuda:0")
     parser.add_argument("--eps", type=float, default=0.05)
     parser.add_argument("--min_points", type=int, default=2)
     parser.add_argument("--metric", type=str, default="cosine")
-    parser.add_argument("--scene", type=str, default="pet_scene", choices=["test_scene", "pet_scene", "family_scene", "daily_life_scene", "sport_and_workout_scene", "fishing_scene", "basketball_scene"])
+    SCENES = list(prompt_components.keys())
+    parser.add_argument("--scene", type=str, default="pet_scene", choices=SCENES)
     args = parser.parse_args()
 
     main(args)
